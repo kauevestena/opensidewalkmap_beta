@@ -15,13 +15,17 @@ mid_lgt = (bounding_box[1]+bounding_box[3])/2
 
 
 # CREATING THE MAP
-m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,max_zoom=25,zoom_control=False)
+m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,max_zoom=25,zoom_control=False,tiles=None)
+
+# tile customization
+folium.TileLayer(max_zoom=25,max_native_zoom=25,name='OpenStreetMap',opacity=.5).add_to(m)
 
 
 # ADDING LAYERS
-folium.GeoJson('sidewalks.geojson',name='sidewalks').add_to(m)
+folium.GeoJson('sidewalks.geojson',name='sidewalks',popup=folium.GeoJsonPopup(fields=['surface','smoothness'])).add_to(m)
 
 folium.GeoJson('crossings.geojson',name='crossings').add_to(m)
+
 
 folium.GeoJson('kerbs.geojson',name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#3388ff'}),popup=folium.GeoJsonPopup(fields=['kerb','tactile_paving'])).add_to(m)
 

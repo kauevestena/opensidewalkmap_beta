@@ -26,11 +26,6 @@ def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top
         as_txt = style_ref.get_text()
         if img_key in as_txt:
             new_text = as_txt.replace(original,new)
-            print(as_txt)
-
-            # style_ref.replaceWith(as_txt)
-
-            print(style_ref)
 
             break
 
