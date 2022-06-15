@@ -26,7 +26,7 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.78703704"
-     inkscape:cx="533.01176"
+     inkscape:cx="435.81176"
      inkscape:cy="577.48235"
      inkscape:window-width="2514"
      inkscape:window-height="1016"
@@ -36,6 +36,12 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
+    <rect
+       x="1323.7674"
+       y="719.29873"
+       width="24.639051"
+       height="85.102657"
+       id="rect377" />
     <linearGradient
        inkscape:collect="always"
        id="linearGradient1383">
@@ -112,9 +118,10 @@
        y="863.80011"
        id="text1319"><tspan
          sodipodi:role="line"
-         id="tspan1317"
-         x="982.40192"
-         y="863.80011"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.7217px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke:url(#linearGradient1385);stroke-width:0.393039;stroke-opacity:0">Kauê de Moraes Vestena, 2022</tspan></text>
+         id="tspan373">2022, Kauê de Moraes Vestena</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text375"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect377)" />
   </g>
 </svg>

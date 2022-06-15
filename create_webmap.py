@@ -1,21 +1,28 @@
+from ossaudiodev import control_labels
 from time import sleep
+from turtle import position
 import folium
 from folium.plugins import FloatImage
 from functions import *
+from constants import *
 
-# hmtml file name
-page_name = "index.html"
+
+
+
+
 
 
 # CENTER OF THE MAP:
-bounding_box = (-25.46340831586,-49.26485433156466,-25.45836407828201,-49.257818266840495)
-
-mid_lat = (bounding_box[0]+bounding_box[2])/2
-mid_lgt = (bounding_box[1]+bounding_box[3])/2
+mid_lat = (bounding_box_sample[0]+bounding_box_sample[2])/2
+mid_lgt = (bounding_box_sample[1]+bounding_box_sample[3])/2
 
 
 # CREATING THE MAP
-m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,max_zoom=25,zoom_control=False,tiles=None)
+m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,min_zoom=15,max_zoom=25,zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],max_lat=bounding_box[2],max_lon=bounding_box[3],max_bounds=True)
+
+# TODO: include controlScale
+
+
 
 # tile customization
 
@@ -36,20 +43,37 @@ folium.TileLayer(tiles=' 	https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_
 
 
 # ADDING LAYERS
-folium.GeoJson('data/sidewalks.geojson',name='sidewalks').add_to(m)
+folium.GeoJson(sidewalks_path,name='sidewalks',zoom_on_click=True).add_to(m)
 
 
 # ,popup=folium.GeoJsonPopup(fields=['surface','smoothness']
 
-folium.GeoJson('data/crossings.geojson',name='crossings').add_to(m)
+folium.GeoJson(crossings_path,name='crossings',zoom_on_click=True).add_to(m)
 
 
-folium.GeoJson('data/kerbs.geojson',name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#FFFFFF'})).add_to(m)
+folium.GeoJson(kerbs_path,name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#FFFFFF'}),zoom_on_click=True).add_to(m)
+
+# # addinge them as choroplets:
+# import geopandas as gpd
+# import pandas as pd
+
+# sidewalks_gdf = gpd.read_file(sidewalks_path)
+
+# print(pd.DataFrame(sidewalks_gdf))
+# folium.Choropleth(
+#     geo_data=sidewalks_path,
+#     data=pd.DataFrame(sidewalks_gdf),
+#     key_on='feature.id',
+#     line_color='blue',
+#     line_weight=3,
+# )
+
+# AT THE END, CHOROPLET was a no-go
 
 # ,popup=folium.GeoJsonPopup(fields=['kerb','tactile_paving'])
 
 # LAYER CONTROL
-folium.LayerControl(collapsed=False,).add_to(m)
+folium.LayerControl(collapsed=True).add_to(m)
 
 # LOGO/IMAGES
 # thx: https://stackoverflow.com/a/47873895/4436950
@@ -60,6 +84,25 @@ float_image_1 = FloatImage(logo_path,bottom=.5,left=.5).add_to(m)
 footer_path = 'assets/footer.png'
 
 float_image_1 = FloatImage(footer_path,bottom=.5,left=0).add_to(m)
+
+
+
+## EXTRAS:
+
+# # geocoder
+# from folium.plugins import Geocoder
+# Geocoder().add_to(m)
+
+# # # locate control
+# from folium.plugins import LocateControl
+# LocateControl(position='topright').add_to(m)
+
+# # measure control_
+# from folium.plugins import MeasureControl
+# MeasureControl(position='topright').add_to(m)
+
+
+
 
 
 

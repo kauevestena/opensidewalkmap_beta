@@ -6,6 +6,6 @@
 
 import geopandas as gpd
 
-gdf = gpd.read_file('kerbs.geojson')
+gdf = gpd.read_file('data/sidewalks.geojson')
 
-print(gdf.columns)
+print(gdf)
