@@ -34,24 +34,31 @@ m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,min_zoom=15,max_zoom=25
 folium.TileLayer(max_zoom=25,max_native_zoom=25,name='OpenStreetMap std.',opacity=.5).add_to(m)
 
 # HUMANITARIAN:
-folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png ',max_zoom=25,max_native_zoom=25,name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM').add_to(m)
+folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM').add_to(m)
 
 
 # opvnkarte:
-folium.TileLayer(tiles=' 	https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport').add_to(m)
+folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport').add_to(m)
 
 
 
 # ADDING LAYERS
-folium.GeoJson(sidewalks_path,name='sidewalks',zoom_on_click=True).add_to(m)
+folium.GeoJson(sidewalks_path,name='sidewalks',
+popup=folium.GeoJsonPopup(fields=req_fields['sidewalks']),
+# zoom_on_click=True
+).add_to(m)
 
 
-# ,popup=folium.GeoJsonPopup(fields=['surface','smoothness']
+folium.GeoJson(crossings_path,name='crossings',
+popup=folium.GeoJsonPopup(fields=req_fields['crossings']),
+# zoom_on_click=True
+).add_to(m)
 
-folium.GeoJson(crossings_path,name='crossings',zoom_on_click=True).add_to(m)
 
-
-folium.GeoJson(kerbs_path,name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#FFFFFF'}),zoom_on_click=True).add_to(m)
+folium.GeoJson(kerbs_path,name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#FFFFFF'}),
+popup=folium.GeoJsonPopup(fields=req_fields['kerbs']),
+# zoom_on_click=True
+).add_to(m)
 
 # # addinge them as choroplets:
 # import geopandas as gpd
