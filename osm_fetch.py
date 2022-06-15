@@ -3,35 +3,32 @@
 '''
 
 
-from tempfile import tempdir
+# from tempfile import tempdir
 import requests, os, time, json
 # import codecs
 # import geopandas as gpd
 # from geopandas import read_file
 import osm2geojson
 from itertools import cycle
-from qgis.core import QgsApplication
+# from qgis.core import QgsApplication
 
 # doing some stuff again to avoid circular imports:
 # homepath = os.path.expanduser('~')
 
-profilepath = QgsApplication.qgisSettingsDirPath()
-base_pluginpath_p2 = 'python/plugins/osm_sidewalkreator'
-basepath = os.path.join(profilepath,base_pluginpath_p2)
+# profilepath = QgsApplication.qgisSettingsDirPath()
+# base_pluginpath_p2 = 'python/plugins/osm_sidewalkreator'
+basepath = '/data'
 
-'''
-## MAJOR TODO: evaluate the use of "import gdal" to use gdal ogr api and osm driver to convert the .osm files, leaving zero external dependencies...
-'''
 
 def delete_filelist_that_exists(filepathlist):
     for filepath in filepathlist:
         if os.path.exists(filepath):
             os.remove(filepath)
 
-def join_to_a_outfolder(filename,foldername='temporary'):
-    outfolder = os.path.join(basepath,foldername)
+# def join_to_a_outfolder(filename,foldername='temporary'):
+#     outfolder = os.path.join(basepath,foldername)
 
-    return os.path.join(outfolder,filename)
+#     return os.path.join(outfolder,filename)
 
 
 
@@ -156,41 +153,41 @@ def get_osm_data(querystring,tempfilesname,geomtype='LineString',print_response=
     if print_response:
         print(response)
 
-    if return_as_string or geojson_outpath:
+    if return_as_string:
         xml_filecontent = response.text
 
     else:
-        if not geojson_outpath:
-            # the outpaths for temporary files
-            if tempfilesname:
-                xmlfilepath = join_to_a_outfolder(tempfilesname+'_osm.xml')
+        
+        # the outpaths for temporary files
+        if tempfilesname:
+            xmlfilepath = f'data/{tempfilesname}_osm.xml'
 
-                geojsonfilepath = join_to_a_outfolder(tempfilesname+'_osm.geojson')
+            geojsonfilepath = f'data/{tempfilesname}_osm.geojson'
 
-            print('xml will be written to: ',xmlfilepath)
+        print('xml will be written to: ',xmlfilepath)
 
 
 
-            # the xml file writing part:
-            with open(xmlfilepath,'w+') as handle:
-                handle.write(response.text)
+        # the xml file writing part:
+        with open(xmlfilepath,'w+') as handle:
+            handle.write(response.text)
 
-            print('geojson will be written to: ',geojsonfilepath)
+        print('geojson will be written to: ',geojsonfilepath)
 
-            # # # # # the command-line call
-            # # # # # old method: using osmtogeojson app
-            # # # # runstring = f'osmtogeojson "{xmlfilepath}" > "{geojsonfilepath}"'
-            # # # # out = subprocess.run(runstring,shell=True)
+        # # # # # the command-line call
+        # # # # # old method: using osmtogeojson app
+        # # # # runstring = f'osmtogeojson "{xmlfilepath}" > "{geojsonfilepath}"'
+        # # # # out = subprocess.run(runstring,shell=True)
 
-            # # new method : osm2geojson library
-            # codecs.
-            with open(xmlfilepath, 'r', encoding='utf-8') as data:
-                xml_filecontent = data.read()
+        # # new method : osm2geojson library
+        # codecs.
+        with open(xmlfilepath, 'r', encoding='utf-8') as data:
+            xml_filecontent = data.read()
 
     # converting OSM XML to Geojson:
     geojson_datadict = osm2geojson.xml2geojson(xml_filecontent, filter_used_refs=False, log_level='INFO')
 
-    if not return_as_string and not geojson_outpath:
+    if not return_as_string:
         with open(geojsonfilepath.replace('.geojson','_unfiltered.geojson'),'w+') as geojson_handle:
             json.dump(geojson_datadict,geojson_handle)
 

@@ -1,0 +1,26 @@
+# time.sleep(1)
+
+#adding plugin 
+
+# import sys, os
+# import pathlib
+
+# # print(Path('osm_fetch.py').absolute)
+
+# # thx: https://stackoverflow.com/a/33244431/4436950
+# path_add = pathlib.Path.home() / 'openSidewalkMap_beta/osm_fetch.py' 
+
+# # print(path_add)
+
+# # thx https://stackoverflow.com/a/595315/4436950 
+# # path_add = Path(__file__).parents[3]
+# # print(path_add)
+
+# sys.path.append(str(path_add))
+# print(sys.path)
+
+# # # dirpath = Path(__file__).parents[0] 
+# # # print(dirpath)
+
+
+

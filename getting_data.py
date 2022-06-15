@@ -1,30 +1,8 @@
 # import subprocess, time
 
 # subprocess.run('wget -O https://raw.githubusercontent.com/kauevestena/osm_sidewalkreator/main/osm_fetch.py',shell=True)
+# DEPRECATED, now it will have its own version.
 
-# time.sleep(1)
-
-#adding plugin 
-
-# import sys, os
-# import pathlib
-
-# # print(Path('osm_fetch.py').absolute)
-
-# # thx: https://stackoverflow.com/a/33244431/4436950
-# path_add = pathlib.Path.home() / 'openSidewalkMap_beta/osm_fetch.py' 
-
-# # print(path_add)
-
-# # thx https://stackoverflow.com/a/595315/4436950 
-# # path_add = Path(__file__).parents[3]
-# # print(path_add)
-
-# sys.path.append(str(path_add))
-# print(sys.path)
-
-# # # dirpath = Path(__file__).parents[0] 
-# # # print(dirpath)
 
 
 # # ############
@@ -32,11 +10,11 @@
 from osm_fetch import *
 
 
-# the ten block sample
-bounding_box = (-25.46340831586,-49.26485433156466,-25.45836407828201,-49.257818266840495)
+# # the ten block sample
+# bounding_box = (-25.46340831586,-49.26485433156466,-25.45836407828201,-49.257818266840495)
 
 # # entire city
-# bounding_box = (-49.3891399999999976,-25.6450101000000004,-49.1843181999999999,-25.3467008999999983)
+bounding_box = (-25.6450101000000004,-49.3891399999999976,-25.3467008999999983,-49.1843181999999999)
 
 queries_dict = {
     'kerbs' : {'query':osm_query_string_by_bbox(*bounding_box,interest_key='kerb',node=True,way=False),'geomtype':'Point'},
@@ -45,9 +23,9 @@ queries_dict = {
     }
 
 for key in queries_dict:
-    outpath = f'{key}.geojson'
+    outpath = f'data/{key}.geojson'
 
-    get_osm_data(queries_dict[key]['query'],'',geomtype=queries_dict[key]['geomtype'],geojson_outpath=outpath)
+    get_osm_data(queries_dict[key]['query'],f'{key}_temp',geomtype=queries_dict[key]['geomtype'],print_response=True,geojson_outpath=outpath)
 
 
 

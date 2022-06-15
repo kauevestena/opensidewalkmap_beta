@@ -36,12 +36,17 @@ folium.TileLayer(tiles=' 	https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_
 
 
 # ADDING LAYERS
-folium.GeoJson('sidewalks.geojson',name='sidewalks',popup=folium.GeoJsonPopup(fields=['surface','smoothness'])).add_to(m)
-
-folium.GeoJson('crossings.geojson',name='crossings').add_to(m)
+folium.GeoJson('data/sidewalks.geojson',name='sidewalks').add_to(m)
 
 
-folium.GeoJson('kerbs.geojson',name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#3388ff'}),popup=folium.GeoJsonPopup(fields=['kerb','tactile_paving'])).add_to(m)
+# ,popup=folium.GeoJsonPopup(fields=['surface','smoothness']
+
+folium.GeoJson('data/crossings.geojson',name='crossings').add_to(m)
+
+
+folium.GeoJson('data/kerbs.geojson',name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#FFFFFF'})).add_to(m)
+
+# ,popup=folium.GeoJsonPopup(fields=['kerb','tactile_paving'])
 
 # LAYER CONTROL
 folium.LayerControl(collapsed=False,).add_to(m)
