@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1080"
+   height="1080"
+   viewBox="0 0 1080 1080"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (56b05e47e7, 2022-06-09, custom)"
+   sodipodi:docname="footer.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.78703704"
+     inkscape:cx="533.01176"
+     inkscape:cy="577.48235"
+     inkscape:window-width="2514"
+     inkscape:window-height="1016"
+     inkscape:window-x="46"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1383">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1379" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop1381" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1383"
+       id="linearGradient1385"
+       x1="976.05989"
+       y1="900.16535"
+       x2="1194.6376"
+       y2="900.16535"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(7.435237,-41.082598)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#dcdcdc;fill-opacity:0.800596;stroke:#000000;stroke-width:1.05577;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0;paint-order:normal"
+       id="rect283"
+       width="1184.4722"
+       height="29.925617"
+       x="34.789806"
+       y="844.71033"
+       rx="12.506898"
+       ry="0.7532084"
+       inkscape:export-filename="../49f6d564/footer.png"
+       inkscape:export-xdpi="80"
+       inkscape:export-ydpi="80" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.5406px;line-height:1.25;font-family:cmr10;-inkscape-font-specification:'cmr10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333;fill-opacity:0.798054;stroke:none;stroke-width:0.738517"
+       x="40.245827"
+       y="902.51056"
+       id="text63"
+       inkscape:export-filename="../1fe22816/are_sidewalks_acessible_typog.png"
+       inkscape:export-xdpi="20"
+       inkscape:export-ydpi="20"
+       transform="scale(1.040889,0.96071723)"><tspan
+         sodipodi:role="line"
+         id="tspan61"
+         x="40.245827"
+         y="902.51056"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.5406px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333;fill-opacity:0.798054;stroke-width:0.738517">&quot;Sidewalk mapping is a cartographic portrait of the structural capacitism.&quot;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.6148px;line-height:1.25;font-family:cmr10;-inkscape-font-specification:'cmr10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333;fill-opacity:0.798054;stroke:none;stroke-width:0.640371"
+       x="28.097513"
+       y="1075.9838"
+       id="text1288"
+       inkscape:export-filename="../1fe22816/are_sidewalks_acessible_typog.png"
+       inkscape:export-xdpi="20"
+       inkscape:export-ydpi="20"
+       transform="scale(1.040889,0.96071723)"><tspan
+         sodipodi:role="line"
+         id="tspan1286"
+         x="28.097513"
+         y="1075.9838"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.6148px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333;fill-opacity:0.798054;stroke-width:0.640371">&quot;O Mapeamento de calçadas é um retrato cartográfico do capacitismo estrutural.&quot;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.7217px;line-height:1.25;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:url(#linearGradient1385);stroke-width:0.393039;stroke-opacity:0"
+       x="982.40192"
+       y="863.80011"
+       id="text1319"><tspan
+         sodipodi:role="line"
+         id="tspan1317"
+         x="982.40192"
+         y="863.80011"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.7217px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke:url(#linearGradient1385);stroke-width:0.393039;stroke-opacity:0">Kauê de Moraes Vestena, 2022</tspan></text>
+  </g>
+</svg>

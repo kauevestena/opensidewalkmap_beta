@@ -1,8 +1,8 @@
-import subprocess, time
+# import subprocess, time
 
-subprocess.run('wget -O https://raw.githubusercontent.com/kauevestena/osm_sidewalkreator/main/osm_fetch.py',shell=True)
+# subprocess.run('wget -O https://raw.githubusercontent.com/kauevestena/osm_sidewalkreator/main/osm_fetch.py',shell=True)
 
-time.sleep(1)
+# time.sleep(1)
 
 #adding plugin 
 
@@ -31,7 +31,12 @@ time.sleep(1)
 
 from osm_fetch import *
 
+
+# the ten block sample
 bounding_box = (-25.46340831586,-49.26485433156466,-25.45836407828201,-49.257818266840495)
+
+# # entire city
+# bounding_box = (-49.3891399999999976,-25.6450101000000004,-49.1843181999999999,-25.3467008999999983)
 
 queries_dict = {
     'kerbs' : {'query':osm_query_string_by_bbox(*bounding_box,interest_key='kerb',node=True,way=False),'geomtype':'Point'},

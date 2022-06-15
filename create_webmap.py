@@ -18,7 +18,21 @@ mid_lgt = (bounding_box[1]+bounding_box[3])/2
 m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,max_zoom=25,zoom_control=False,tiles=None)
 
 # tile customization
-folium.TileLayer(max_zoom=25,max_native_zoom=25,name='OpenStreetMap',opacity=.5).add_to(m)
+
+# # positron (in doubt about license):
+# folium.TileLayer(tiles='CartoDB positron',max_zoom=25,max_native_zoom=25,opacity=.5).add_to(m)
+
+
+# standard:
+folium.TileLayer(max_zoom=25,max_native_zoom=25,name='OpenStreetMap std.',opacity=.5).add_to(m)
+
+# HUMANITARIAN:
+folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png ',max_zoom=25,max_native_zoom=25,name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM').add_to(m)
+
+
+# opvnkarte:
+folium.TileLayer(tiles=' 	https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport').add_to(m)
+
 
 
 # ADDING LAYERS
@@ -30,13 +44,18 @@ folium.GeoJson('crossings.geojson',name='crossings').add_to(m)
 folium.GeoJson('kerbs.geojson',name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#3388ff'}),popup=folium.GeoJsonPopup(fields=['kerb','tactile_paving'])).add_to(m)
 
 # LAYER CONTROL
-folium.LayerControl(collapsed=False).add_to(m)
+folium.LayerControl(collapsed=False,).add_to(m)
 
-# LOGO
+# LOGO/IMAGES
 # thx: https://stackoverflow.com/a/47873895/4436950
 logo_path = 'assets/are_sidewalks_acessible_typog.png'
 
 float_image_1 = FloatImage(logo_path,bottom=.5,left=.5).add_to(m)
+
+footer_path = 'assets/footer.png'
+
+float_image_1 = FloatImage(footer_path,bottom=.5,left=0).add_to(m)
+
 
 
 # saving the page:
