@@ -18,7 +18,9 @@ mid_lgt = (bounding_box_sample[1]+bounding_box_sample[3])/2
 
 
 # CREATING THE MAP
-m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,min_zoom=15,max_zoom=25,zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],max_lat=bounding_box[2],max_lon=bounding_box[3],max_bounds=True)
+m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,min_zoom=15,
+# max_zoom=25,
+zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],max_lat=bounding_box[2],max_lon=bounding_box[3],max_bounds=True)
 
 # TODO: include controlScale
 

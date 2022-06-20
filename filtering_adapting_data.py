@@ -1,5 +1,3 @@
-from audioop import cross
-from operator import index
 from constants import *
 import geopandas as gpd
 
@@ -40,7 +38,24 @@ for key in gdf_dict:
         if not req_col in gdf_dict[key]:
             gdf_dict[key][req_col] = '?'
 
+            # also creating a default note 
+            gdf_dict[key][f'{req_col}_score'] = default_score
+
     gdf_dict[key].fillna('?',inplace=True)
+
+    if key == 'sidewalks':
+        pass
+        # mapping smoothness to notes:
+
+        # mapping surface to notes:
+
+        # creating a simple metric for the 
+
+    if key == 'kerbs':
+        pass
+
+    if key == 'crossings':
+        pass
 
     gdf_dict[key].to_file(f'data/{key}.geojson',driver='GeoJSON')
 
