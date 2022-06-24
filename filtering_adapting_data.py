@@ -1,4 +1,5 @@
 from constants import *
+import pandas as pd
 import geopandas as gpd
 
 # reading as geodataframes:
@@ -11,6 +12,12 @@ gdf_dict = {
     'crossings':crossings_gdf,
     'kerbs':kerbs_gdf,
     }
+
+
+# reading the conversion table from  surface and smoothness:
+# exported from: https://docs.google.com/spreadsheets/d/18FiIDUV4xGeTskx3R2i841zir_OO1Cdc_zluPLdPq-w/edit#gid=0 
+
+smoothness_surface_conservation = pd.read_csv('data/smoothness_surface_conservationscore.csv',index_col='surface').transpose()
 
 
 # # removing unconnected crossings and kerbs:
@@ -30,7 +37,7 @@ kerbs_gdf = kerbs_gdf[~kerbs_gdf.disjoint(sidewalks_big_unary_buffer)]
 # crossings_gdf.to_file('test_crossings.geojson',driver='GeoJSON')
 # kerbs_gdf.to_file('test_kerbs.geojson',driver='GeoJSON')
 
-# creating missing columns:
+# dealing with the data:
 for key in gdf_dict:
 
     # referencing the geodataframe:
@@ -43,9 +50,15 @@ for key in gdf_dict:
 
     gdf_dict[key].fillna('?',inplace=True)
 
+    # replacing wrong values with "?" (unknown) or misspelled with the nearest valid:
+    for subkey in wrong_misspelled_values[key]:
+        gdf_dict[key][subkey].replace(wrong_misspelled_values[key][subkey],inplace=True)
+        
+
+
     if key == 'sidewalks':
         pass
-        # mapping smoothness to notes:
+        # mapping surface+smoothness to score of conservation:
 
         # mapping surface to notes:
 
