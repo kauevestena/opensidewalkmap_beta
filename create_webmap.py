@@ -1,4 +1,5 @@
 from ossaudiodev import control_labels
+from readline import insert_text
 from time import sleep
 from turtle import position
 import folium
@@ -33,7 +34,7 @@ zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],ma
 
 
 # standard:
-folium.TileLayer(max_zoom=25,max_native_zoom=25,name='OpenStreetMap std.',opacity=.5).add_to(m)
+folium.TileLayer(name='OpenStreetMap std.',opacity=.5).add_to(m)
 
 # HUMANITARIAN:
 folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM').add_to(m)
@@ -126,6 +127,13 @@ logo_ref = find_html_name(page_name,logo_path)
 style_changer(page_name,logo_ref)
 
 
+# inserting page title and favicon:
+head_insert_txt = """
+<title>OpenSidewalkMap</title>
+<link rel="icon" type="image/x-icon" href="assets/homepage/favicon_homepage.png">
+"""
+
+add_to_page_after_first_tag(page_name,head_insert_txt)
 # import bs4
 
 # # thx: https://stackoverflow.com/a/35355433/4436950

@@ -1,5 +1,5 @@
 import bs4
-from time import sleep
+from time import sleep, time
 import pandas as pd
 
 def find_html_name(input_htmlpath,specific_ref,tag_ref='img',specific_tag='src',identifier='id'):
@@ -37,7 +37,30 @@ def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top
     sleep(0.2)
 
         
-        
+def add_to_page_after_first_tag(html_filepath,element_string,tag_or_txt='<head>',count=1):
+    '''
+    Quick and dirty way to insert some stuff directly on the webpage 
+
+    Originally intended only for <head>
+
+    beware of tags that repeat! the "count" argument is very important!
+    '''
+
+
+    with open(html_filepath) as reader:
+        pag_txt = reader.read()
+
+    replace_text = f'{tag_or_txt} \n{element_string}\n'
+
+    
+    with open(html_filepath,'w+') as writer:
+        writer.write(pag_txt.replace(tag_or_txt,replace_text,count))
+
+    time.sleep(.1)
+    
+
+
+# Pandas stuff:
 def get_score_df(inputdict,category='sidewalks',osm_key='surface',input_field='score_default',output_field_base='score'):
 
     output_field_name = f'{category}_{osm_key}_{output_field_base}'
