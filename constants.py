@@ -256,31 +256,45 @@ fields_values_properties = {
         }
         },
     'crossings':{
+        # default scores should be what was named "bonus"
         'crossing':{
             'no':{
-                'score_default' : 0,
-                'bonus' : -100,
+                # 'score_default' : 0,
+                # 'bonus' : -100,
+                'score_default' : -100,
+
                 'color' : '#ff0000', # RED
             },
             'unmarked':{
-                'score_default' : 70,
-                'bonus' : 0,
+                # 'score_default' : 70,
+                # 'bonus' : 0,
+                'score_default' : 0,
+
                 'color' : '#000000', #black
             },
             'marked':{
-                'score_default' : 90,
-                'bonus' : 20,
+                # 'score_default' : 90,
+                # 'bonus' : 20,
+
+                'score_default' : 20,
+
                 'color' : '#000000', #black
             },
             'traffic_signals':{
-                'score_default' : 100,
-                'bonus' : 30,
+                # 'score_default' : 100,
+                # 'bonus' : 30,
+
+                'score_default' : 30,
+
                 'color' : '#ffffff', #white
             },
 
             '?':{
-                'score_default' : 10,
-                'bonus' : 0,
+                # 'score_default' : 10,
+                # 'bonus' : 0,
+
+                'score_default' : 0,
+
                 'color' : '#d9d9d9', #
             },
 
@@ -297,13 +311,15 @@ fields_values_properties = {
         },
         'traffic_calming':{
             'table':{
-                'score_default' : 100,
-                'bonus' : 20,
+                # 'score_default' : 100,
+                'score_default' : 20,
+
+                # 'bonus' : 20,
                 'color' : '#ffffff',
             },
 
             '?':{
-                'score_default' : 10,
+                'score_default' : 0,
                 'color' : '#d9d9d9', #
             },
 

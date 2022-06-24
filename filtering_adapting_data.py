@@ -9,16 +9,22 @@ crossings_gdf = gpd.read_file(crossings_path,index='id')
 kerbs_gdf = gpd.read_file(kerbs_path,index='id')
 
 # creating fields for scores:
-sidewalks_gdf['final_score'] = 5
-crossings_gdf['final_score'] = 5
-kerbs_gdf['final_score'] = 5
+# sidewalks_gdf['final_score'] = 5
+# crossings_gdf['final_score'] = 5
+# kerbs_gdf['final_score'] = 5
 
 # creating dataframes of scores for joining afterwards:
 scores_dfs = {}
+scores_dfs_fieldnames = {}
 for category in fields_values_properties:
     scores_dfs[category] = {}
+    scores_dfs_fieldnames[category] = {}
+
+    print(scores_dfs)
+
     for osm_key in fields_values_properties[category]:
-        scores_dfs[category][osm_key] = get_score_df(fields_values_properties,category,osm_key)
+        print(category,' : ',osm_key)
+        scores_dfs[category][osm_key],scores_dfs_fieldnames[category][osm_key] = get_score_df(fields_values_properties,category,osm_key)
 
 
 
@@ -83,12 +89,16 @@ for category in gdf_dict:
 
 
 
-    if category == 'sidewalks':
+    if category != 'kerbs':
         # gdf_dict[category]['initial_score'] = 
+        # crating aliases
+        sf = gdf_dict[category][scores_dfs_fieldnames[category]['surface']]
+        co = gdf_dict[category]['conservation_score']
+
+        # harmonic mean:
+        gdf_dict[category]['final_score'] = (2*sf*co)/(sf+co)
 
 
-
-        pass
         # mapping surface+smoothness to score of conservation:
 
         # mapping surface to notes:
@@ -96,12 +106,17 @@ for category in gdf_dict:
         # creating a simple metric for the 
 
     if category == 'kerbs':
+        # just a mere copy, but it may be improved in the future...
+
+        gdf_dict[category]['final_score'] = gdf_dict[category][scores_dfs_fieldnames[category]['kerb']]
 
         
         pass
 
     if category == 'crossings':
-        pass
+        # same as sidewalks but with bonifications
+
+        gdf_dict[category]['final_score'] += gdf_dict[category][scores_dfs_fieldnames[category]['crossing']]
 
     gdf_dict[category].to_file(f'data/{category}.geojson',driver='GeoJSON')
 

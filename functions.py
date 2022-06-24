@@ -40,11 +40,11 @@ def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top
         
 def get_score_df(inputdict,category='sidewalks',osm_key='surface',input_field='score_default',output_field_base='score'):
 
-    output_field = f'{category}_{osm_key}_{output_field_base}'
-    dict = {osm_key:[],output_field:[]}
+    output_field_name = f'{category}_{osm_key}_{output_field_base}'
+    dict = {osm_key:[],output_field_name:[]}
 
     for val_key in inputdict[category][osm_key]:
         dict[osm_key].append(val_key)
-        dict[output_field].append(inputdict[category][osm_key][val_key][input_field])
+        dict[output_field_name].append(inputdict[category][osm_key][val_key][input_field])
 
-    return  pd.DataFrame(dict)
+    return  pd.DataFrame(dict), output_field_name
