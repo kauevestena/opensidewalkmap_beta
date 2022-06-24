@@ -1,5 +1,6 @@
 import bs4
 from time import sleep
+import pandas as pd
 
 def find_html_name(input_htmlpath,specific_ref,tag_ref='img',specific_tag='src',identifier='id'):
 
@@ -37,4 +38,13 @@ def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top
 
         
         
+def get_score_df(inputdict,category='sidewalks',osm_key='surface',input_field='score_default',output_field_base='score'):
 
+    output_field = f'{category}_{osm_key}_{output_field_base}'
+    dict = {osm_key:[],output_field:[]}
+
+    for val_key in inputdict[category][osm_key]:
+        dict[osm_key].append(val_key)
+        dict[output_field].append(inputdict[category][osm_key][val_key][input_field])
+
+    return  pd.DataFrame(dict)

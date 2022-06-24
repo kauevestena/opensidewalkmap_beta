@@ -259,7 +259,7 @@ fields_values_properties = {
         'crossing':{
             'no':{
                 'score_default' : 0,
-                'bonus' : -10,
+                'bonus' : -100,
                 'color' : '#ff0000', # RED
             },
             'unmarked':{
@@ -280,6 +280,7 @@ fields_values_properties = {
 
             '?':{
                 'score_default' : 10,
+                'bonus' : 0,
                 'color' : '#d9d9d9', #
             },
 

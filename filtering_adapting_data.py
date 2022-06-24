@@ -1,4 +1,5 @@
 from constants import *
+from functions import *
 import pandas as pd
 import geopandas as gpd
 
@@ -6,6 +7,21 @@ import geopandas as gpd
 sidewalks_gdf = gpd.read_file(sidewalks_path,index='id')
 crossings_gdf = gpd.read_file(crossings_path,index='id')
 kerbs_gdf = gpd.read_file(kerbs_path,index='id')
+
+# creating fields for scores:
+sidewalks_gdf['final_score'] = 5
+crossings_gdf['final_score'] = 5
+kerbs_gdf['final_score'] = 5
+
+# creating dataframes of scores for joining afterwards:
+scores_dfs = {}
+for category in fields_values_properties:
+    scores_dfs[category] = {}
+    for osm_key in fields_values_properties[category]:
+        scores_dfs[category][osm_key] = get_score_df(fields_values_properties,category,osm_key)
+
+
+
 
 gdf_dict = {
     'sidewalks':sidewalks_gdf,
@@ -38,25 +54,40 @@ kerbs_gdf = kerbs_gdf[~kerbs_gdf.disjoint(sidewalks_big_unary_buffer)]
 # kerbs_gdf.to_file('test_kerbs.geojson',driver='GeoJSON')
 
 # dealing with the data:
-for key in gdf_dict:
+for category in gdf_dict:
 
     # referencing the geodataframe:
-    for req_col in req_fields[key]:
-        if not req_col in gdf_dict[key]:
-            gdf_dict[key][req_col] = '?'
+    for req_col in req_fields[category]:
+        if not req_col in gdf_dict[category]:
+            gdf_dict[category][req_col] = '?'
 
             # also creating a default note 
-            gdf_dict[key][f'{req_col}_score'] = default_score
+            gdf_dict[category][f'{req_col}_score'] = default_score
 
-    gdf_dict[key].fillna('?',inplace=True)
+    gdf_dict[category].fillna('?',inplace=True)
 
     # replacing wrong values with "?" (unknown) or misspelled with the nearest valid:
-    for subkey in wrong_misspelled_values[key]:
-        gdf_dict[key][subkey].replace(wrong_misspelled_values[key][subkey],inplace=True)
+    for subkey in wrong_misspelled_values[category]:
+        gdf_dict[category][subkey].replace(wrong_misspelled_values[category][subkey],inplace=True)
         
 
+    # conservation state (as a score):
+    if category != 'kerbs':
+        gdf_dict[category]['conservation_score'] = [smoothness_surface_conservation[surface][smoothness] for surface,smoothness in zip(gdf_dict[category]['surface'],gdf_dict[category]['smoothness'])]
 
-    if key == 'sidewalks':
+    # creating a score for each field, based on the "default_scores"
+    # in future other categories may be crated
+    for osm_key in fields_values_properties[category]:
+        print(category,' : ',osm_key)
+        gdf_dict[category] = gdf_dict[category].join(scores_dfs[category][osm_key].set_index(osm_key), on=osm_key)
+
+
+
+    if category == 'sidewalks':
+        # gdf_dict[category]['initial_score'] = 
+
+
+
         pass
         # mapping surface+smoothness to score of conservation:
 
@@ -64,13 +95,15 @@ for key in gdf_dict:
 
         # creating a simple metric for the 
 
-    if key == 'kerbs':
+    if category == 'kerbs':
+
+        
         pass
 
-    if key == 'crossings':
+    if category == 'crossings':
         pass
 
-    gdf_dict[key].to_file(f'data/{key}.geojson',driver='GeoJSON')
+    gdf_dict[category].to_file(f'data/{category}.geojson',driver='GeoJSON')
 
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="Overpass API 0.7.58.3 b33c3320">
 <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
-<meta osm_base="2022-06-24T01:08:08Z"/>
+<meta osm_base="2022-06-24T13:33:59Z"/>
 
   <node id="603560947" lat="-25.3652886" lon="-49.1862047">
     <tag k="crossing" v="zebra"/>

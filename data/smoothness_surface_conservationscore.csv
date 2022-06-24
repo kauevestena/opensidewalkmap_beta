@@ -1,6 +1,7 @@
 surface,excellent,good,intermediate,bad,very_bad,horrible,very_horrible,impassable,?
 asphalt,100,90,70,50,40,20,10,0,-1
 concrete,100,90,70,50,40,20,10,0,-1
+metal,100,90,70,50,40,20,10,0,-1
 paving_stones,100,100,80,50,40,20,10,0,-1
 paver,100,100,80,50,40,20,10,0,-1
 concrete:plates,100,100,80,50,40,20,10,0,-1
