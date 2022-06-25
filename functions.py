@@ -56,7 +56,7 @@ def add_to_page_after_first_tag(html_filepath,element_string,tag_or_txt='<head>'
     with open(html_filepath,'w+') as writer:
         writer.write(pag_txt.replace(tag_or_txt,replace_text,count))
 
-    time.sleep(.1)
+    sleep(.1)
     
 
 
@@ -71,3 +71,4 @@ def get_score_df(inputdict,category='sidewalks',osm_key='surface',input_field='s
         dict[output_field_name].append(inputdict[category][osm_key][val_key][input_field])
 
     return  pd.DataFrame(dict), output_field_name
+

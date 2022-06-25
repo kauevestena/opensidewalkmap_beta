@@ -2,13 +2,17 @@ from ossaudiodev import control_labels
 from readline import insert_text
 from time import sleep
 from turtle import position
+import geopandas as gpd
 import folium
 from folium.plugins import FloatImage
 from functions import *
 from constants import *
 
 
-
+# reading also as geodataframes:
+sidewalks_gdf = gpd.read_file(sidewalks_path,index='id')
+crossings_gdf = gpd.read_file(crossings_path,index='id')
+kerbs_gdf = gpd.read_file(kerbs_path,index='id')
 
 
 
@@ -20,7 +24,7 @@ mid_lgt = (bounding_box_sample[1]+bounding_box_sample[3])/2
 
 # CREATING THE MAP
 m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,min_zoom=15,
-# max_zoom=25,
+max_zoom=20,
 zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],max_lat=bounding_box[2],max_lon=bounding_box[3],max_bounds=True)
 
 # TODO: include controlScale
@@ -32,35 +36,75 @@ zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],ma
 # # positron (in doubt about license):
 # folium.TileLayer(tiles='CartoDB positron',max_zoom=25,max_native_zoom=25,opacity=.5).add_to(m)
 
+# # # darkmatter (in doubt about license):
+# folium.TileLayer(tiles='CartoDB dark_matter',max_zoom=25,max_native_zoom=25,opacity=.5).add_to(m)
+
 
 # standard:
-folium.TileLayer(name='OpenStreetMap std.',opacity=.5).add_to(m)
+folium.TileLayer(name='OpenStreetMap std.',opacity=.5,max_zoom=25,max_native_zoom=19).add_to(m)
 
 # HUMANITARIAN:
-folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM').add_to(m)
+folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM').add_to(m)
 
 
 # opvnkarte:
 folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport').add_to(m)
 
 
+### STYLING SIDEWALK:
+
+surface_colors = {}
+for surface_type in fields_values_properties['sidewalks']['surface']:
+    surface_colors[surface_type] = fields_values_properties['sidewalks']['surface'][surface_type]['color']
+
+sidewalks_gdf['surface_color'] = sidewalks_gdf['surface']
+
+sidewalks_gdf['surface_color'].replace(surface_colors,inplace=True)
+
+
+def style_sidewalk_surface(feature):
+    # real thanks to: https://gis.stackexchange.com/questions/394219/folium-draw-polygons-with-distinct-colours 
+    return {'color':feature['properties']['surface_color'], 'weight':5.5}
+
+def outline_style(feature):
+    return {'color':'black','weight':6.2,}
+
+
+def simple_highlight(feature):
+    return {'weight':12 }
+
 
 # ADDING LAYERS
-folium.GeoJson(sidewalks_path,name='sidewalks',
+# # dummy version, as a background
+folium.GeoJson(data=sidewalks_gdf
+# sidewalks_path
+,name='sidewalks_dummy',
+style_function= outline_style,control=False
+).add_to(m)
+
+folium.GeoJson(data=sidewalks_gdf
+# sidewalks_path
+,name='sidewalks',
 popup=folium.GeoJsonPopup(fields=req_fields['sidewalks']),
-# zoom_on_click=True
+# zoom_on_click=True,
+style_function= style_sidewalk_surface,
+highlight_function=simple_highlight,
 ).add_to(m)
 
 
 folium.GeoJson(crossings_path,name='crossings',
 popup=folium.GeoJsonPopup(fields=req_fields['crossings']),
-# zoom_on_click=True
+highlight_function=simple_highlight,
+zoom_on_click=True,
 ).add_to(m)
 
 
-folium.GeoJson(kerbs_path,name='kerbs',marker=folium.CircleMarker(radius=3,kwargs={'color':'#FFFFFF'}),
+folium.GeoJson(kerbs_path,
+name='kerbs',
+marker=folium.CircleMarker(radius=3,kwargs={'color':'#FFFFFF'}),
 popup=folium.GeoJsonPopup(fields=req_fields['kerbs']),
-# zoom_on_click=True
+zoom_on_click=True,
+highlight_function=simple_highlight,
 ).add_to(m)
 
 # # addinge them as choroplets:
