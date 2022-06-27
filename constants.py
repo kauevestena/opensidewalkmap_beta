@@ -1,5 +1,9 @@
 # intended for common values, constants, setup...
 
+
+# global min zoom level
+min_zoom = 16
+
 # hmtml file name
 page_name = "map.html"
 
@@ -257,18 +261,26 @@ fields_values_properties = {
         },
     'crossings':{
         # default scores should be what was named "bonus"
-        'crossing':{
+        'crossing': {
             'no':{
                 # 'score_default' : 0,
                 # 'bonus' : -100,
                 'score_default' : -100,
 
+                'dasharray' :"0",
+                'dashoffset': '0',
+
                 'color' : '#ff0000', # RED
+
             },
             'unmarked':{
                 # 'score_default' : 70,
                 # 'bonus' : 0,
                 'score_default' : 0,
+
+                'dasharray' :"5mm",
+                'dashoffset': '50%',
+
 
                 'color' : '#000000', #black
             },
@@ -278,13 +290,47 @@ fields_values_properties = {
 
                 'score_default' : 20,
 
+                'dasharray' :"0",
+                'dashoffset': '0',
+
+
                 'color' : '#000000', #black
             },
+
+            'zebra':{
+                # 'score_default' : 90,
+                # 'bonus' : 20,
+
+                'score_default' : 20,
+
+                'dasharray' :"0",
+                'dashoffset': '0',
+
+
+                'color' : '#000000', #black
+            },
+
+            'uncontrolled':{
+                # 'score_default' : 100,
+                # 'bonus' : 30,
+
+                'score_default' : 30,
+
+                'dasharray' :"0",
+                'dashoffset': '0',
+
+
+                'color' : '#ffffff', #white
+            },
+
             'traffic_signals':{
                 # 'score_default' : 100,
                 # 'bonus' : 30,
 
                 'score_default' : 30,
+
+                'dasharray' :"0",
+                'dashoffset': '0',
 
                 'color' : '#ffffff', #white
             },
@@ -294,6 +340,10 @@ fields_values_properties = {
                 # 'bonus' : 0,
 
                 'score_default' : 0,
+
+                'dasharray' :"0",
+                'dashoffset': '0',
+
 
                 'color' : '#d9d9d9', #
             },
@@ -337,9 +387,9 @@ fields_values_properties['crossings']['smoothness'] = fields_values_properties['
 
 # required_fields:
 req_fields = {
-    'sidewalks':['surface','smoothness','width','incline','tactile_paving','incline:across'],
-    'kerbs':['kerb','tactile_paving'],
-    'crossings':['crossing','surface','smoothness','traffic_calming'],
+    'sidewalks':['surface','smoothness','width','incline','tactile_paving','incline:across','osm_id'],
+    'kerbs':['kerb','tactile_paving','osm_id'],
+    'crossings':['crossing','surface','smoothness','traffic_calming','osm_id'],
 }
 
 # a case of "smoothness=concrete:pĺates" demanded this

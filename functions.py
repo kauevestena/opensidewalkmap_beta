@@ -16,7 +16,7 @@ def find_html_name(input_htmlpath,specific_ref,tag_ref='img',specific_tag='src',
             return found_imref[identifier]
             
 
-def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top'):
+def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top',append=None):
     with open(in_out_htmlpath) as inf:
         txt = inf.read()
         soup = bs4.BeautifulSoup(txt,features='lxml')
@@ -26,7 +26,14 @@ def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top
     for style_ref in style_refs:
         as_txt = style_ref.get_text()
         if img_key in as_txt:
-            new_text = as_txt.replace(original,new)
+
+            if new:
+                new_text = as_txt.replace(original,new)
+            else:
+                new_text = as_txt
+
+            if append:
+                new_text += append
 
             break
 
@@ -60,7 +67,7 @@ def add_to_page_after_first_tag(html_filepath,element_string,tag_or_txt='<head>'
     
 
 
-# Pandas stuff:
+# (geo)Pandas stuff:
 def get_score_df(inputdict,category='sidewalks',osm_key='surface',input_field='score_default',output_field_base='score'):
 
     output_field_name = f'{category}_{osm_key}_{output_field_base}'
@@ -72,3 +79,16 @@ def get_score_df(inputdict,category='sidewalks',osm_key='surface',input_field='s
 
     return  pd.DataFrame(dict), output_field_name
 
+
+def get_attr_dict(inputdict,category='sidewalks',osm_tag='surface',attr='color'):
+    color_dict = {}
+    for tag_value in inputdict[category][osm_tag]:
+        color_dict[tag_value] = inputdict[category][osm_tag][tag_value][attr]
+
+    return color_dict
+
+def return_weblink_way(string_id):
+    return f"<a href=https://www.openstreetmap.org/way/{string_id}>{string_id}</a>"
+
+def return_weblink_node(string_id):
+    return f"<a href=https://www.openstreetmap.org/node/{string_id}>{string_id}</a>"

@@ -1,7 +1,4 @@
-from ossaudiodev import control_labels
-from readline import insert_text
 from time import sleep
-from turtle import position
 import geopandas as gpd
 import folium
 from folium.plugins import FloatImage
@@ -15,6 +12,26 @@ crossings_gdf = gpd.read_file(crossings_path,index='id')
 kerbs_gdf = gpd.read_file(kerbs_path,index='id')
 
 
+gdf_dict = {
+    'sidewalks': sidewalks_gdf,
+    'crossings': crossings_gdf,
+    'kerbs' : kerbs_gdf,
+}
+
+type_dict = {
+    'sidewalks': 'way',
+    'crossings': 'way',
+    'kerbs' : 'node',
+}
+
+
+# formatting "id" field as a formatted "osm_id":
+for category in gdf_dict:
+    if category == 'kerbs':
+        gdf_dict[category]['osm_id'] = gdf_dict[category]['id'].astype('string').apply(return_weblink_node)
+    else:
+        gdf_dict[category]['osm_id'] = gdf_dict[category]['id'].astype('string').apply(return_weblink_way)
+
 
 
 # CENTER OF THE MAP:
@@ -23,7 +40,7 @@ mid_lgt = (bounding_box_sample[1]+bounding_box_sample[3])/2
 
 
 # CREATING THE MAP
-m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,min_zoom=15,
+m = folium.Map(location=[mid_lat, mid_lgt],zoom_start=18,min_zoom=min_zoom,
 max_zoom=20,
 zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],max_lat=bounding_box[2],max_lon=bounding_box[3],max_bounds=True)
 
@@ -41,30 +58,39 @@ zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],ma
 
 
 # standard:
-folium.TileLayer(name='OpenStreetMap std.',opacity=.5,max_zoom=25,max_native_zoom=19).add_to(m)
+folium.TileLayer(name='OpenStreetMap std.',
+min_zoom=min_zoom,
+opacity=.5,max_zoom=25,max_native_zoom=19).add_to(m)
 
 # HUMANITARIAN:
-folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM').add_to(m)
+folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM',
+min_zoom=min_zoom,).add_to(m)
 
 
 # opvnkarte:
-folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport').add_to(m)
+folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport',
+min_zoom=min_zoom,).add_to(m)
 
 
 ### STYLING SIDEWALK:
 
-surface_colors = {}
-for surface_type in fields_values_properties['sidewalks']['surface']:
-    surface_colors[surface_type] = fields_values_properties['sidewalks']['surface'][surface_type]['color']
-
+# for 'surface' tag 
+surface_colors =  get_attr_dict(fields_values_properties) # {}
 sidewalks_gdf['surface_color'] = sidewalks_gdf['surface']
-
 sidewalks_gdf['surface_color'].replace(surface_colors,inplace=True)
 
+# for 'smoothness' tag 
+smoothness_colors =  get_attr_dict(fields_values_properties,osm_tag='smoothness') # {}
+sidewalks_gdf['smoothness_color'] = sidewalks_gdf['smoothness']
+sidewalks_gdf['smoothness_color'].replace(smoothness_colors,inplace=True)
 
 def style_sidewalk_surface(feature):
     # real thanks to: https://gis.stackexchange.com/questions/394219/folium-draw-polygons-with-distinct-colours 
     return {'color':feature['properties']['surface_color'], 'weight':5.5}
+
+def style_sidewalk_smoothness(feature):
+    # real thanks to: https://gis.stackexchange.com/questions/394219/folium-draw-polygons-with-distinct-colours 
+    return {'color':feature['properties']['smoothness_color'], 'weight':5.5}
 
 def outline_style(feature):
     return {'color':'black','weight':6.2,}
@@ -74,34 +100,92 @@ def simple_highlight(feature):
     return {'weight':12 }
 
 
+### STYLING crossings:
+
+# for 'crossing' tag 
+crossing_colors =  get_attr_dict(fields_values_properties,category='crossings',osm_tag='crossing') # {}
+
+# dasharray:
+crossing_dash =  get_attr_dict(fields_values_properties,category='crossings',osm_tag='crossing',attr='dasharray') # {}
+
+# dashoffset:
+crossing_dashoffset =  get_attr_dict(fields_values_properties,category='crossings',osm_tag='crossing',attr='dashoffset') # {}
+
+# dealing with uncanny/mistaken values
+# TODO: create a "wrong value" report
+for value in crossings_gdf['crossing'].unique():
+    if not value in crossing_colors.keys():
+        crossing_colors[value] = '#000000'
+        crossing_dash[value] = '20'
+        crossing_dashoffset[value] = '50'
+
+
+
+crossings_gdf['crossing_colors'] = crossings_gdf['crossing']
+crossings_gdf['crossing_colors'].replace(crossing_colors,inplace=True)
+
+crossings_gdf['crossing_dash'] = crossings_gdf['crossing']
+crossings_gdf['crossing_dash'].replace(crossing_dash,inplace=True)
+
+
+crossings_gdf['crossing_dashoffset'] = crossings_gdf['crossing']
+crossings_gdf['crossing_dashoffset'].replace(crossing_dashoffset,inplace=True)
+
+def style_crossing(feature):
+    # real thanks to: https://gis.stackexchange.com/questions/394219/folium-draw-polygons-with-distinct-colours 
+    return {'color':feature['properties']['crossing_colors'], 'weight':4,'dashArray':feature['properties']['crossing_dash'],'dashOffset':feature['properties']['crossing_dashoffset'],'opacity':.6}
+
 # ADDING LAYERS
 # # dummy version, as a background
+
+# sidewalks
 folium.GeoJson(data=sidewalks_gdf
-# sidewalks_path
 ,name='sidewalks_dummy',
 style_function= outline_style,control=False
 ).add_to(m)
 
+# # crossings
+# folium.GeoJson(data=crossings_gdf
+# ,name='crossings_dummy',
+# style_function= outline_style,control=False
+# ).add_to(m)
+
+# # kerbs
+# folium.GeoJson(data=kerbs_gdf
+# ,name='kerbs_dummy',
+# style_function= outline_style,control=False
+# ).add_to(m)
+
 folium.GeoJson(data=sidewalks_gdf
 # sidewalks_path
-,name='sidewalks',
+,name='Sidewalks (surface)',
 popup=folium.GeoJsonPopup(fields=req_fields['sidewalks']),
 # zoom_on_click=True,
 style_function= style_sidewalk_surface,
 highlight_function=simple_highlight,
 ).add_to(m)
 
+folium.GeoJson(data=sidewalks_gdf
+# sidewalks_path
+,name='Sidewalks (smoothness)',
+popup=folium.GeoJsonPopup(fields=req_fields['sidewalks']),
+# zoom_on_click=True,
+style_function= style_sidewalk_smoothness,
+highlight_function=simple_highlight,
+show=False
+).add_to(m)
 
-folium.GeoJson(crossings_path,name='crossings',
+folium.GeoJson(data=crossings_gdf,name='crossings',
 popup=folium.GeoJsonPopup(fields=req_fields['crossings']),
 highlight_function=simple_highlight,
 zoom_on_click=True,
+style_function=style_crossing,
 ).add_to(m)
 
 
-folium.GeoJson(kerbs_path,
+folium.GeoJson(data=kerbs_gdf,
 name='kerbs',
-marker=folium.CircleMarker(radius=3,kwargs={'color':'#FFFFFF'}),
+marker=folium.CircleMarker(radius=4),
 popup=folium.GeoJsonPopup(fields=req_fields['kerbs']),
 zoom_on_click=True,
 highlight_function=simple_highlight,
@@ -137,7 +221,7 @@ float_image_1 = FloatImage(logo_path,bottom=.5,left=.5).add_to(m)
 
 footer_path = 'assets/footer.png'
 
-float_image_1 = FloatImage(footer_path,bottom=.5,left=0).add_to(m)
+float_image_2 = FloatImage(footer_path,bottom=.5,left=0).add_to(m)
 
 
 
@@ -169,6 +253,19 @@ sleep(.2)
 
 logo_ref = find_html_name(page_name,logo_path)
 style_changer(page_name,logo_ref)
+
+
+# applying a rule to hide footer message for small screens
+footer_ref = find_html_name(page_name,footer_path)
+
+footer_img_css_add =                        ''' @media (max-width:1230px) {
+  img#''' + footer_ref+ '''{
+    display: none;
+  }
+} '''
+
+style_changer(page_name,logo_ref,new=None,append=footer_img_css_add)
+
 
 
 # inserting page title and favicon:
