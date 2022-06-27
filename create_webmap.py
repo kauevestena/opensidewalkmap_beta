@@ -178,17 +178,47 @@ show=False
 folium.GeoJson(data=crossings_gdf,name='crossings',
 popup=folium.GeoJsonPopup(fields=req_fields['crossings']),
 highlight_function=simple_highlight,
-zoom_on_click=True,
+# zoom_on_click=True,
 style_function=style_crossing,
 ).add_to(m)
+
+############# KERBS
+
+
+kerbs_colors =  get_attr_dict(fields_values_properties,category='kerbs',osm_tag='kerb') # {}
+
+kerbs_gdf['kerbs_colors'] = kerbs_gdf['kerb']
+kerbs_gdf['kerbs_colors'].replace(kerbs_colors,inplace=True)
+
+def styling_kerbs(feature):
+    return {'color':'black','fillColor':feature['properties']['kerbs_colors'],'fillOpacity':1}
+
+folium.GeoJson(data=kerbs_gdf,
+name='kerbs',
+marker=folium.Circle(
+    radius=1,fill=True,weight=1),
+popup=folium.GeoJsonPopup(fields=req_fields['kerbs']),
+# zoom_on_click=True,
+highlight_function=simple_highlight,
+style_function=styling_kerbs,
+).add_to(m)
+
+# # # # # # KERBS TACTILE PAVING
+
+kerbs_tactilepaving_colors =  get_attr_dict(fields_values_properties,category='kerbs',osm_tag='tactile_paving') # {}
+
+kerbs_gdf['kerbs_tactilepaving_colors'] = kerbs_gdf['kerb']
+kerbs_gdf['kerbs_tactilepaving_colors'].replace(kerbs_colors,inplace=True)
+
+def styling_kerbs_tac_paving(feature):
+    return {'color':'black','fillColor':feature['properties']['kerbs_colors'],'fillOpacity':1}
 
 
 folium.GeoJson(data=kerbs_gdf,
 name='kerbs',
-marker=folium.CircleMarker(radius=4),
-popup=folium.GeoJsonPopup(fields=req_fields['kerbs']),
-zoom_on_click=True,
-highlight_function=simple_highlight,
+marker=folium.Circle(
+    radius=1,fill=True,weight=1),
+style_function=styling_kerbs,
 ).add_to(m)
 
 # # addinge them as choroplets:
