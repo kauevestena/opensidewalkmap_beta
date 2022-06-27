@@ -17,4 +17,6 @@ sidewalks_gdf = gpd.read_file(sidewalks_path,index='id')
 
 # print(sidewalks_gdf['colors'].replace(surface_colors))
 
-print(sidewalks_gdf['id'][0])
+# print(sidewalks_gdf.loc[sidewalks_gdf['tactile_paving']=='yes'])
+
+print(sidewalks_gdf.loc[sidewalks_gdf.set_index(['tactile_paving']).index.isin(['yes','contrasted'])])

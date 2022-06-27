@@ -242,19 +242,30 @@ fields_values_properties = {
             'yes':{
                 'score_default' : 100,
                 'color' : '#000000', #black
+
+                'opacity' : 1, 
             },
             'contrasted':{
                 'score_default' : 100,
                 'color' : '#000000', #black
+
+                'opacity' : 1, 
+
             },
             'no':{
-                'score_default' : 50,
-                'color' : 'rgba(0, 0, 0, 0)', # transparent
+                'score_default' : 0,
+                'color' : 'rgba(0, 0, 0, 1)', # transparent
+
+                'opacity' : 0, 
+
             },
 
             '?':{
-                'score_default' : 50, # equivalent to "no"
-                'color' : '#d9d9d9', #
+                'score_default' : 0, # equivalent to "no"
+                'color' : 'rgba(0, 0, 0, 1)', #
+
+                'opacity' : 0, 
+
             },
 
         }
@@ -278,8 +289,8 @@ fields_values_properties = {
                 # 'bonus' : 0,
                 'score_default' : 0,
 
-                'dasharray' :"5mm",
-                'dashoffset': '50%',
+                'dasharray' :"5,10",
+                'dashoffset': '0',
 
 
                 'color' : '#000000', #black

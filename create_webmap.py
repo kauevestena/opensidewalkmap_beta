@@ -33,6 +33,12 @@ for category in gdf_dict:
         gdf_dict[category]['osm_id'] = gdf_dict[category]['id'].astype('string').apply(return_weblink_way)
 
 
+'''
+
+    MAP CREATION
+
+'''
+
 
 # CENTER OF THE MAP:
 mid_lat = (bounding_box_sample[0]+bounding_box_sample[2])/2
@@ -57,6 +63,13 @@ zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],ma
 # folium.TileLayer(tiles='CartoDB dark_matter',max_zoom=25,max_native_zoom=25,opacity=.5).add_to(m)
 
 
+'''
+
+    TILESETS (BASEMAP LAYERS)
+
+'''
+
+
 # standard:
 folium.TileLayer(name='OpenStreetMap std.',
 min_zoom=min_zoom,
@@ -64,15 +77,19 @@ opacity=.5,max_zoom=25,max_native_zoom=19).add_to(m)
 
 # HUMANITARIAN:
 folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM',
-min_zoom=min_zoom,).add_to(m)
+min_zoom=min_zoom,max_zoom=25,max_native_zoom=18).add_to(m)
 
 
 # opvnkarte:
-folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=25,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport',
-min_zoom=min_zoom,).add_to(m)
+folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=18,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport',
+min_zoom=min_zoom).add_to(m)
+
+'''
+
+### STYLING SIDEWALKS AND CROSSINGS:
 
 
-### STYLING SIDEWALK:
+'''
 
 # for 'surface' tag 
 surface_colors =  get_attr_dict(fields_values_properties) # {}
@@ -135,8 +152,15 @@ def style_crossing(feature):
     # real thanks to: https://gis.stackexchange.com/questions/394219/folium-draw-polygons-with-distinct-colours 
     return {'color':feature['properties']['crossing_colors'], 'weight':4,'dashArray':feature['properties']['crossing_dash'],'dashOffset':feature['properties']['crossing_dashoffset'],'opacity':.6}
 
-# ADDING LAYERS
-# # dummy version, as a background
+# # ADDING LAYERS
+# # # dummy version, as a background
+
+
+'''
+
+    DUMMY LAYERS
+
+'''
 
 # sidewalks
 folium.GeoJson(data=sidewalks_gdf
@@ -155,6 +179,12 @@ style_function= outline_style,control=False
 # ,name='kerbs_dummy',
 # style_function= outline_style,control=False
 # ).add_to(m)
+
+'''
+
+    **** SIDEWALKS
+
+'''
 
 folium.GeoJson(data=sidewalks_gdf
 # sidewalks_path
@@ -175,6 +205,13 @@ highlight_function=simple_highlight,
 show=False
 ).add_to(m)
 
+'''
+
+    **** CROSSINGS
+
+'''
+
+
 folium.GeoJson(data=crossings_gdf,name='crossings',
 popup=folium.GeoJsonPopup(fields=req_fields['crossings']),
 highlight_function=simple_highlight,
@@ -182,8 +219,13 @@ highlight_function=simple_highlight,
 style_function=style_crossing,
 ).add_to(m)
 
+
+'''
+
 ############# KERBS
 
+
+'''
 
 kerbs_colors =  get_attr_dict(fields_values_properties,category='kerbs',osm_tag='kerb') # {}
 
@@ -203,45 +245,75 @@ highlight_function=simple_highlight,
 style_function=styling_kerbs,
 ).add_to(m)
 
+'''
+
 # # # # # # KERBS TACTILE PAVING
+ 
+ 
+'''
 
-kerbs_tactilepaving_colors =  get_attr_dict(fields_values_properties,category='kerbs',osm_tag='tactile_paving') # {}
+kerbs_tactilepaving_opacity =  get_attr_dict(fields_values_properties,category='kerbs',osm_tag='tactile_paving',attr='opacity') # {}
 
-kerbs_gdf['kerbs_tactilepaving_colors'] = kerbs_gdf['kerb']
-kerbs_gdf['kerbs_tactilepaving_colors'].replace(kerbs_colors,inplace=True)
+# print(kerbs_tactilepaving_colors)
+
+kerbs_gdf['kerbs_tactilepaving_opacity'] = kerbs_gdf['tactile_paving']
+kerbs_gdf['kerbs_tactilepaving_opacity'].replace(kerbs_tactilepaving_opacity,inplace=True)
+
+# print(kerbs_tactilepaving_opacity)
+# print(kerbs_gdf['kerbs_tactilepaving_opacity'])
 
 def styling_kerbs_tac_paving(feature):
-    return {'color':'black','fillColor':feature['properties']['kerbs_colors'],'fillOpacity':1}
+    return {
+        'opacity':0,
+    'fillColor':'black','fillOpacity':feature['properties']['kerbs_tactilepaving_opacity']}
 
 
 folium.GeoJson(data=kerbs_gdf,
-name='kerbs',
+name='kerbs_tp',
+control=False,
 marker=folium.Circle(
-    radius=1,fill=True,weight=1),
-style_function=styling_kerbs,
+    radius=.4,fill=True,weight=0.1),
+style_function=styling_kerbs_tac_paving,
 ).add_to(m)
 
-# # addinge them as choroplets:
-# import geopandas as gpd
-# import pandas as pd
 
-# sidewalks_gdf = gpd.read_file(sidewalks_path)
+'''
 
-# print(pd.DataFrame(sidewalks_gdf))
-# folium.Choropleth(
-#     geo_data=sidewalks_path,
-#     data=pd.DataFrame(sidewalks_gdf),
-#     key_on='feature.id',
-#     line_color='blue',
-#     line_weight=3,
-# )
+    SIDEWALKS TACTILE PAVING
 
-# AT THE END, CHOROPLET was a no-go
+'''
 
-# ,popup=folium.GeoJsonPopup(fields=['kerb','tactile_paving'])
+def tp_sw_style(feature):
+    return {'color':'black','weight':.5,'opacity':.7}
+
+sw_tp_gdf = sidewalks_gdf.loc[sidewalks_gdf.set_index(['tactile_paving']).index.isin(['yes','contrasted'])]
+
+
+# sidewalks tactile paving
+folium.GeoJson(data=sw_tp_gdf
+,name='sidewalks_tactile_paving_layer',
+style_function= tp_sw_style,
+control=False
+).add_to(m)
+
+
+
+'''
+
+    LAYER CONTROL
+
+'''
+
 
 # LAYER CONTROL
 folium.LayerControl(collapsed=True).add_to(m)
+
+
+'''
+
+    IMAGES
+
+'''
 
 # LOGO/IMAGES
 # thx: https://stackoverflow.com/a/47873895/4436950
@@ -271,15 +343,23 @@ float_image_2 = FloatImage(footer_path,bottom=.5,left=0).add_to(m)
 
 
 
+'''
 
+    SAVING HTML
+
+'''
 
 
 # saving the page:
 m.save(page_name)
 sleep(.2)
 
+
+'''
+
 # # DEALING DIRECTLY WITH THE HTML FILE:
 
+'''
 
 logo_ref = find_html_name(page_name,logo_path)
 style_changer(page_name,logo_ref)
