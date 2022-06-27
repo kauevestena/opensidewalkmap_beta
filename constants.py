@@ -289,6 +289,8 @@ fields_values_properties = {
                 # 'bonus' : 0,
                 'score_default' : 0,
 
+                # may get help on: https://gigacore.github.io/demos/svg-stroke-dasharray-generator/
+
                 'dasharray' :"5,10",
                 'dashoffset': '0',
 
