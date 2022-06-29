@@ -1,22 +1,7 @@
-from constants import *
-from functions import *
-import geopandas as gpd
+import altair as alt
+from vega_datasets import data
 import pandas as pd
 
+source = data.movies.url
 
-
-sidewalks_gdf = gpd.read_file(sidewalks_path,index='id')
-
-
-# surface_colors = {}
-# for surface_type in fields_values_properties['sidewalks']['surface']:
-#     surface_colors[surface_type] = fields_values_properties['sidewalks']['surface'][surface_type]['color']
-
-
-# sidewalks_gdf['colors'] = sidewalks_gdf['surface']
-
-# print(sidewalks_gdf['colors'].replace(surface_colors))
-
-# print(sidewalks_gdf.loc[sidewalks_gdf['tactile_paving']=='yes'])
-
-print(sidewalks_gdf.loc[sidewalks_gdf.set_index(['tactile_paving']).index.isin(['yes','contrasted'])])
+print(pd.DataFrame(source))
