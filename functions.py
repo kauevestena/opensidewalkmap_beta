@@ -1,6 +1,102 @@
 import bs4
 from time import sleep, time
 import pandas as pd
+from datetime import datetime 
+import json
+
+"""
+
+    TIME STUFF
+
+"""
+
+def formatted_datetime_now():
+    now = datetime.now()
+    return now.strftime("%d/%m/%Y %H:%M:%S")
+
+def read_json(inputpath):
+    with open(inputpath) as reader:
+        data = reader.read()
+
+    return json.loads(data)
+    
+def dump_json(inputdict,outputpath):
+    with open(outputpath,'w+') as json_handle:
+        json.dump(inputdict,json_handle)
+
+def record_datetime(key,json_path='data/last_updated.json'):
+
+    datadict = read_json(json_path)
+
+    datadict[key] = formatted_datetime_now()
+
+    dump_json(datadict,json_path)
+
+
+
+"""
+
+    HTML STUFF
+
+"""
+
+def gen_updatingg_infotable_page(outpath='data/data_updating.html',json_path='data/last_updated.json'):
+
+
+    tablepart = ''
+
+    records_dict = read_json(json_path)
+
+    for key in records_dict:
+        tablepart += f"<tr><th><b>{key}</b></th><th>{records_dict[key]}</th></tr>"
+
+    page_as_txt = f'''
+    <!DOCTYPE html>
+<html>
+<head>
+<title>OSWM Updating Info</title>
+
+
+<style>
+
+
+h1 {{text-align: center;}}
+
+
+
+table {{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}}
+
+td, th {{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}}
+
+tr:nth-child(even) {{
+  background-color: #dddddd;
+}}
+</style>
+</head>
+<body>
+
+<h1>OSWM Updating Info</h1>
+
+<table>
+
+{tablepart}
+
+</table>
+
+</body>
+</html>    
+    '''
+
+    with open(outpath,'w+') as writer:
+        writer.write(page_as_txt)
 
 def find_html_name(input_htmlpath,specific_ref,tag_ref='img',specific_tag='src',identifier='id'):
 

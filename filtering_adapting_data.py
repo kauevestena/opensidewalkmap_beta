@@ -122,3 +122,8 @@ for category in gdf_dict:
 
 
 
+# generate the "report" of the updating info
+record_datetime('Data Pre-Processing')
+
+gen_updatingg_infotable_page()
+

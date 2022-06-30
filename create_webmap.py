@@ -6,6 +6,8 @@ from functions import *
 from constants import *
 
 
+print('reading data...')
+
 # reading also as geodataframes:
 sidewalks_gdf = gpd.read_file(sidewalks_path,index='id')
 crossings_gdf = gpd.read_file(crossings_path,index='id')
@@ -38,6 +40,8 @@ for category in gdf_dict:
     MAP CREATION
 
 '''
+
+print('Creating Map...')
 
 
 # CENTER OF THE MAP:
@@ -115,6 +119,8 @@ def outline_style(feature):
 
 def simple_highlight(feature):
     return {'weight':12 }
+
+print('Styling...')
 
 
 ### STYLING crossings:
@@ -296,6 +302,7 @@ style_function= tp_sw_style,
 control=False
 ).add_to(m)
 
+print('Creating Resources...')
 
 
 '''
@@ -341,6 +348,7 @@ float_image_2 = FloatImage(footer_path,bottom=.5,left=0).add_to(m)
 # from folium.plugins import MeasureControl
 # MeasureControl(position='topright').add_to(m)
 
+print('Modifying HTML...')
 
 
 '''
@@ -397,3 +405,12 @@ add_to_page_after_first_tag(page_name,head_insert_txt)
 # image_ref = soup.find('img')
 
 # print(image_ref)
+
+print('Generating updating info...')
+
+
+# updating record:
+record_datetime('Webmap Generation')
+
+# generate the "report" of the updating info
+gen_updatingg_infotable_page()

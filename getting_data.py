@@ -9,6 +9,7 @@
 
 from osm_fetch import *
 from constants import *
+from functions import *
 
 
 
@@ -25,8 +26,11 @@ for key in queries_dict:
     get_osm_data(queries_dict[key]['query'],f'{key}_temp',geomtype=queries_dict[key]['geomtype'],print_response=True,geojson_outpath=outpath)
 
 
+# to record data aging:
+record_datetime('Data Fetching')
 
-
+# generate the "report" of the updating info
+gen_updatingg_infotable_page()
 
 
 
