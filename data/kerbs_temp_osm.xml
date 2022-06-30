@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="Overpass API 0.7.58.3 b33c3320">
 <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
-<meta osm_base="2022-06-24T20:05:16Z"/>
+<meta osm_base="2022-06-30T11:02:59Z"/>
 
   <node id="603560947" lat="-25.3652886" lon="-49.1862047">
     <tag k="crossing" v="zebra"/>
@@ -2782,6 +2782,36 @@
   <node id="9818664940" lat="-25.4547586" lon="-49.2433577">
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="lowered"/>
+    <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="9856655219" lat="-25.4627594" lon="-49.2240808">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+    <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="9856655220" lat="-25.4627502" lon="-49.2240301">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+    <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="9856655222" lat="-25.4628533" lon="-49.2241595">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+    <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="9856655224" lat="-25.4629000" lon="-49.2241469">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="rolled"/>
+    <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="9856655227" lat="-25.4628048" lon="-49.2239383">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+    <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="9856655229" lat="-25.4628442" lon="-49.2239261">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="rolled"/>
     <tag k="tactile_paving" v="no"/>
   </node>
 
