@@ -169,3 +169,4 @@ svg-inkscape/
 *.KLEGN1
 
 #OSMNX cache
+osmnx_routing/cache/
