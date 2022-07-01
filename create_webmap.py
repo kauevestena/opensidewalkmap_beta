@@ -392,6 +392,8 @@ head_insert_txt = """
 <link rel="icon" type="image/x-icon" href="assets/homepage/favicon_homepage.png">
 """
 
+
+
 add_to_page_after_first_tag(page_name,head_insert_txt)
 # import bs4
 

@@ -45,11 +45,6 @@ smoothness_surface_conservation = pd.read_csv('data/smoothness_surface_conservat
 # # removing unconnected crossings and kerbs:
 sidewalks_big_unary_buffer = sidewalks_gdf.to_crs('EPSG:3857').buffer(max_radius_cutoff).to_crs('EPSG:4326').unary_union
 
-# # exporting test:
-# # test_gdf = gpd.GeoDataFrame({'id':1,'geometry':sidewalks_big_unary_buffer},crs='EPSG:4326')
-
-# # test_gdf.to_file('test.geojson',driver='GeoJSON')
-
 # removing entries that arent in the buffer:
 crossings_gdf = crossings_gdf[~crossings_gdf.disjoint(sidewalks_big_unary_buffer)]
 

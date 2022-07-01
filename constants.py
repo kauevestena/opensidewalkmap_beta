@@ -212,28 +212,28 @@ fields_values_properties = {
     'kerbs':{
         'kerb':{
             'raised':{
-                'score_default' : 30,
+                'score_default' : -30,
                 'color' : '#000000', #black
             },
             'rolled':{
-                'score_default' : 50,
+                'score_default' : 0,
                 'color' : '#808080', #50% gray
             },
             'no':{
-                'score_default' : 70,
+                'score_default' : 10,
                 'color' : '#bebebe', #75% hray
             },
             'lowered':{
-                'score_default' : 90,
+                'score_default' : 50,
                 'color' : '#ffffff', #white
             },
             'flush':{
-                'score_default' : 100,
+                'score_default' : 60,
                 'color' : '#ffffff', #white
             },
 
             '?':{
-                'score_default' : 30, # equivalent to "raised"
+                'score_default' : -10, # equivalent to "raised"
                 'color' : '#d9d9d9', #
             },
 
