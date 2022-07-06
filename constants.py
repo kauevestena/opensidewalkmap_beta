@@ -147,35 +147,35 @@ fields_values_properties = {
             # valid:
             'excellent':{
                 'score_default' : 10, 
-                'color' : '#006d2c', #
+                'color' : '#2166ac', #
             },
             'good':{
                 'score_default' : 90, 
-                'color' : '#31a354', #
+                'color' : '#92c5de', #
             },
             'intermediate':{
                 'score_default' : 70, 
-                'color' : '#74c476', #
+                'color' : '#f7f7f7', #
             },
             'bad':{
                 'score_default' : 50, 
-                'color' : '#a1d99b', #
+                'color' : '#f4a582', #
             },
             'very_bad':{
                 'score_default' : 40, 
-                'color' : '#a1d99b', #
+                'color' : '#f4a582', #
             },
             'horrible':{
                 'score_default' : 20, 
-                'color' : '#c7e9c0', #
+                'color' : '#b2182b', #
             },
             'very_horrible':{
                 'score_default' : 10, 
-                'color' : '#c7e9c0', #
+                'color' : '#b2182b', #
             },
             'impassable':{
                 'score_default' : 0, 
-                'color' : '#edf8e9', #
+                'color' : '#67001f', #
             },
 
 

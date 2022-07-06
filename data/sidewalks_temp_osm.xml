@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="Overpass API 0.7.58.3 b33c3320">
 <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
-<meta osm_base="2022-06-30T15:50:37Z"/>
+<meta osm_base="2022-07-04T20:44:54Z"/>
 
   <node id="266973363" lat="-25.4409149" lon="-49.2339371">
     <tag k="noexit" v="yes"/>
@@ -430,6 +430,7 @@
   <node id="3907899890" lat="-25.3800337" lon="-49.2850633"/>
   <node id="3907899892" lat="-25.3800497" lon="-49.2850975"/>
   <node id="3907899893" lat="-25.3800510" lon="-49.2850461"/>
+  <node id="3933278185" lat="-25.5367722" lon="-49.2335950"/>
   <node id="3934026475" lat="-25.5222387" lon="-49.2254734">
     <tag k="highway" v="turning_circle"/>
   </node>
@@ -574,7 +575,6 @@
   </node>
   <node id="4687093187" lat="-25.4268622" lon="-49.2623111"/>
   <node id="4687093188" lat="-25.4265826" lon="-49.2615550"/>
-  <node id="4720108343" lat="-25.5367891" lon="-49.2335763"/>
   <node id="4782448535" lat="-25.4265920" lon="-49.2615803">
     <tag k="addr:city" v="Curitiba"/>
     <tag k="addr:housenumber" v="460"/>
@@ -7643,9 +7643,6 @@
   <node id="9597547244" lat="-25.4469908" lon="-49.2386114"/>
   <node id="9597547245" lat="-25.4469971" lon="-49.2386143"/>
   <node id="9597547246" lat="-25.4469834" lon="-49.2387124"/>
-  <node id="9597547247" lat="-25.4469783" lon="-49.2387436">
-    <tag k="highway" v="crossing"/>
-  </node>
   <node id="9597547248" lat="-25.4458413" lon="-49.2382010"/>
   <node id="9597547249" lat="-25.4458143" lon="-49.2381920">
     <tag k="highway" v="crossing"/>
@@ -10278,10 +10275,6 @@
   <node id="9813057205" lat="-25.4601738" lon="-49.2378071"/>
   <node id="9813057206" lat="-25.4600159" lon="-49.2379291"/>
   <node id="9813057207" lat="-25.4599352" lon="-49.2379879"/>
-  <node id="9813057208" lat="-25.4598345" lon="-49.2380656"/>
-  <node id="9813057209" lat="-25.4597158" lon="-49.2381516"/>
-  <node id="9813057210" lat="-25.4595794" lon="-49.2382495"/>
-  <node id="9813057211" lat="-25.4594506" lon="-49.2383354"/>
   <node id="9813057212" lat="-25.4593928" lon="-49.2383247"/>
   <node id="9813057215" lat="-25.4600221" lon="-49.2379246"/>
   <node id="9813061417" lat="-25.4715312" lon="-49.2316239"/>
@@ -10302,7 +10295,6 @@
   <node id="9813061432" lat="-25.4715603" lon="-49.2316212"/>
   <node id="9813061435" lat="-25.4724844" lon="-49.2308440"/>
   <node id="9813061439" lat="-25.4718526" lon="-49.2297651"/>
-  <node id="9813083517" lat="-25.4598421" lon="-49.2380597"/>
   <node id="9813083519" lat="-25.4591345" lon="-49.2378094"/>
   <node id="9813083520" lat="-25.4592058" lon="-49.2377622"/>
   <node id="9813083521" lat="-25.4592920" lon="-49.2377042"/>
@@ -10348,13 +10340,7 @@
   <node id="9815897909" lat="-25.4546445" lon="-49.2429006"/>
   <node id="9815897910" lat="-25.4545902" lon="-49.2428169"/>
   <node id="9815897911" lat="-25.4545246" lon="-49.2427010"/>
-  <node id="9815897912" lat="-25.4544630" lon="-49.2425883">
-    <tag k="footway" v="sidewalk"/>
-    <tag k="highway" v="footway"/>
-    <tag k="mapillary" v="4241008645919109"/>
-    <tag k="survey:date" v="2020-02-17"/>
-    <tag k="tactile_paving" v="no"/>
-  </node>
+  <node id="9815897912" lat="-25.4544630" lon="-49.2425883"/>
   <node id="9815897913" lat="-25.4544562" lon="-49.2425625"/>
   <node id="9815897914" lat="-25.4544562" lon="-49.2425322"/>
   <node id="9815897915" lat="-25.4546603" lon="-49.2423789"/>
@@ -10425,12 +10411,7 @@
   <node id="9817255156" lat="-25.4556676" lon="-49.2250292"/>
   <node id="9817938286" lat="-25.4547394" lon="-49.2432697"/>
   <node id="9817938287" lat="-25.4545805" lon="-49.2433812"/>
-  <node id="9817938288" lat="-25.4543926" lon="-49.2435100">
-    <tag k="footway" v="sidewalk"/>
-    <tag k="highway" v="footway"/>
-    <tag k="smoothness" v="good"/>
-    <tag k="surface" v="grass_paver"/>
-  </node>
+  <node id="9817938288" lat="-25.4543926" lon="-49.2435100"/>
   <node id="9817938289" lat="-25.4541562" lon="-49.2436967"/>
   <node id="9817938290" lat="-25.4539470" lon="-49.2438490"/>
   <node id="9817938291" lat="-25.4538230" lon="-49.2439434"/>
@@ -10478,10 +10459,6 @@
   <node id="9818768231" lat="-25.4542880" lon="-49.2426195"/>
   <node id="9818804439" lat="-25.4556561" lon="-49.2425916"/>
   <node id="9818806925" lat="-25.4549034" lon="-49.2421975"/>
-  <node id="9818814356" lat="-25.4556168" lon="-49.2426215">
-    <tag k="smoothness" v="intermediate"/>
-    <tag k="surface" v="grass_paver"/>
-  </node>
   <node id="9818822337" lat="-25.4549588" lon="-49.2421557">
     <tag k="smoothness" v="good"/>
     <tag k="surface" v="paving_stones"/>
@@ -10589,7 +10566,6 @@
   <node id="9823237480" lat="-25.4587876" lon="-49.2359206"/>
   <node id="9823264846" lat="-25.4600520" lon="-49.2371238"/>
   <node id="9823264847" lat="-25.4601032" lon="-49.2372241"/>
-  <node id="9823385664" lat="-25.4594438" lon="-49.2383401"/>
   <node id="9823385665" lat="-25.4603478" lon="-49.2376359"/>
   <node id="9823385666" lat="-25.4594412" lon="-49.2383419"/>
   <node id="9823385667" lat="-25.4594350" lon="-49.2377086"/>
@@ -11432,7 +11408,7 @@
     <tag k="highway" v="footway"/>
   </way>
   <way id="478819337">
-    <nd ref="4720108343"/>
+    <nd ref="3933278185"/>
     <nd ref="5471748108"/>
     <tag k="bicycle" v="yes"/>
     <tag k="footway" v="sidewalk"/>
@@ -26539,7 +26515,6 @@
     <nd ref="9597547245"/>
     <nd ref="9597547246"/>
     <nd ref="8654585739"/>
-    <nd ref="9597547247"/>
     <tag k="footway" v="sidewalk"/>
     <tag k="highway" v="footway"/>
   </way>
@@ -35544,26 +35519,6 @@
     <tag k="survey:date" v="2020-02-17"/>
     <tag k="tactile_paving" v="no"/>
   </way>
-  <way id="1069804651">
-    <nd ref="9815897906"/>
-    <nd ref="9818664932"/>
-    <nd ref="9815897907"/>
-    <nd ref="9815897908"/>
-    <nd ref="9818664931"/>
-    <nd ref="9815897909"/>
-    <nd ref="9815897910"/>
-    <nd ref="9815897911"/>
-    <nd ref="9815897912"/>
-    <nd ref="9815897913"/>
-    <nd ref="9815897914"/>
-    <nd ref="9815897915"/>
-    <nd ref="9815897916"/>
-    <nd ref="9818806925"/>
-    <tag k="footway" v="sidewalk"/>
-    <tag k="highway" v="footway"/>
-    <tag k="smoothness" v="good"/>
-    <tag k="surface" v="grass_paver"/>
-  </way>
   <way id="1069804652">
     <nd ref="9818806925"/>
     <nd ref="9818822337"/>
@@ -35584,44 +35539,6 @@
     <tag k="smoothness" v="good"/>
     <tag k="surface" v="paving_stones"/>
     <tag k="survey:date" v="2020-09-15"/>
-    <tag k="tactile_paving" v="no"/>
-  </way>
-  <way id="1069804812">
-    <nd ref="9815957717"/>
-    <nd ref="9815957718"/>
-    <tag k="footway" v="sidewalk"/>
-    <tag k="highway" v="footway"/>
-    <tag k="mapillary" v="310812707109012"/>
-    <tag k="smoothness" v="bad"/>
-    <tag k="surface" v="concrete"/>
-    <tag k="survey:date" v="2020-02-17"/>
-    <tag k="tactile_paving" v="no"/>
-  </way>
-  <way id="1069804813">
-    <nd ref="9815957718"/>
-    <nd ref="9815957719"/>
-    <nd ref="9815957720"/>
-    <nd ref="9815957721"/>
-    <tag k="footway" v="sidewalk"/>
-    <tag k="highway" v="footway"/>
-    <tag k="mapillary" v="1139200666556197"/>
-    <tag k="smoothness" v="good"/>
-    <tag k="surface" v="paving_stones"/>
-    <tag k="survey:date" v="2020-09-15"/>
-    <tag k="tactile_paving" v="no"/>
-  </way>
-  <way id="1069804876">
-    <nd ref="9818824923"/>
-    <nd ref="9815897904"/>
-    <nd ref="9818822889"/>
-    <nd ref="9815897905"/>
-    <nd ref="9815897906"/>
-    <tag k="footway" v="sidewalk"/>
-    <tag k="highway" v="footway"/>
-    <tag k="mapillary" v="1201510250290321"/>
-    <tag k="smoothness" v="intermediate"/>
-    <tag k="surface" v="grass_paver"/>
-    <tag k="survey:date" v="2020-02-17"/>
     <tag k="tactile_paving" v="no"/>
   </way>
   <way id="1069804898">
@@ -35654,18 +35571,6 @@
     <tag k="footway" v="sidewalk"/>
     <tag k="highway" v="footway"/>
     <tag k="mapillary" v="1382008372174435"/>
-    <tag k="smoothness" v="good"/>
-    <tag k="surface" v="paving_stones"/>
-    <tag k="survey:date" v="2020-02-17"/>
-    <tag k="tactile_paving" v="no"/>
-  </way>
-  <way id="1069805004">
-    <nd ref="9818814356"/>
-    <nd ref="9815897903"/>
-    <nd ref="9818824923"/>
-    <tag k="footway" v="sidewalk"/>
-    <tag k="highway" v="footway"/>
-    <tag k="mapillary" v="532443904590253"/>
     <tag k="smoothness" v="good"/>
     <tag k="surface" v="paving_stones"/>
     <tag k="survey:date" v="2020-02-17"/>
@@ -35768,20 +35673,6 @@
     <tag k="footway" v="sidewalk"/>
     <tag k="highway" v="footway"/>
   </way>
-  <way id="1070404335">
-    <nd ref="9813057207"/>
-    <nd ref="9813083517"/>
-    <nd ref="9813057208"/>
-    <nd ref="9813057209"/>
-    <nd ref="9813057210"/>
-    <nd ref="9813057211"/>
-    <nd ref="9823385664"/>
-    <nd ref="9823385666"/>
-    <nd ref="9823385678"/>
-    <tag k="footway" v="sidewalk"/>
-    <tag k="highway" v="footway"/>
-    <tag k="surface" v="asphalt"/>
-  </way>
   <way id="1070404336">
     <nd ref="9813057188"/>
     <nd ref="9813057189"/>
@@ -35878,6 +35769,7 @@
     <nd ref="9813057215"/>
     <nd ref="9813057206"/>
     <nd ref="9813057207"/>
+    <tag k="bicycle" v="yes"/>
     <tag k="footway" v="sidewalk"/>
     <tag k="highway" v="footway"/>
     <tag k="surface" v="asphalt"/>
@@ -36564,6 +36456,13 @@
     <tag k="footway" v="sidewalk"/>
     <tag k="highway" v="footway"/>
     <tag k="surface" v="paving_stones"/>
+  </way>
+  <way id="1075462776">
+    <nd ref="9823385666"/>
+    <nd ref="9823385678"/>
+    <tag k="footway" v="sidewalk"/>
+    <tag k="highway" v="footway"/>
+    <tag k="surface" v="asphalt"/>
   </way>
 
 </osm>

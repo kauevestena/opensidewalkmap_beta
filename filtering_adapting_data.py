@@ -2,6 +2,8 @@ from constants import *
 from functions import *
 import pandas as pd
 import geopandas as gpd
+from time import sleep
+
 
 # reading as geodataframes:
 sidewalks_gdf = gpd.read_file(sidewalks_path,index='id')
@@ -119,6 +121,7 @@ for category in gdf_dict:
 
 # generate the "report" of the updating info
 record_datetime('Data Pre-Processing')
+sleep(.1)
 
-gen_updatingg_infotable_page()
+gen_updating_infotable_page()
 

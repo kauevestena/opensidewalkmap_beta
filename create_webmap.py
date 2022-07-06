@@ -415,4 +415,4 @@ print('Generating updating info...')
 record_datetime('Webmap Generation')
 
 # generate the "report" of the updating info
-gen_updatingg_infotable_page()
+gen_updating_infotable_page()

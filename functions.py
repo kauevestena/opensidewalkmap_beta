@@ -2,7 +2,8 @@ import bs4
 from time import sleep, time
 import pandas as pd
 from datetime import datetime 
-import json
+import json, requests
+from xml.etree import ElementTree
 
 """
 
@@ -40,7 +41,7 @@ def record_datetime(key,json_path='data/last_updated.json'):
 
 """
 
-def gen_updatingg_infotable_page(outpath='data/data_updating.html',json_path='data/last_updated.json'):
+def gen_updating_infotable_page(outpath='data/data_updating.html',json_path='data/last_updated.json'):
 
 
     tablepart = ''
@@ -188,3 +189,70 @@ def return_weblink_way(string_id):
 
 def return_weblink_node(string_id):
     return f"<a href=https://www.openstreetmap.org/node/{string_id}>{string_id}</a>"
+
+'''
+
+HISTORY STUFF
+
+'''
+
+def get_feature_history_url(featureid,type='way'):
+    return f'https://www.openstreetmap.org/api/0.6/{type}/{featureid}/history'
+
+def get_datetime_last_update(featureid,featuretype='way',onlylast=True,return_parsed=True,return_special_tuple=True):
+
+    h_url = get_feature_history_url(featureid,featuretype)
+
+
+    response = requests.get(h_url)
+
+    print(featureid)
+
+
+    if response.status_code == 200:
+        tree = ElementTree.fromstring(response.content)
+
+        element_list = tree.findall(featuretype)
+
+        if element_list:
+            date_rec = [element.attrib['timestamp'][:-1] for element in element_list]
+
+            if onlylast:
+                if return_parsed:
+                    if return_special_tuple:
+                        parsed = datetime.strptime(date_rec[-1],'%Y-%m-%dT%H:%M:%S')
+                        return len(date_rec),parsed.day,parsed.month,parsed.year
+
+                    else:
+                        return datetime.strptime(date_rec[-1],'%Y-%m-%dT%H:%M:%S')
+
+                
+                else:
+                    return date_rec[-1]
+
+            else:
+                if return_parsed:
+                    return [datetime.strptime(record,'%Y-%m-%dT%H:%M:%S') for record in date_rec]
+
+
+                else:
+                    return date_rec
+
+
+        else:
+            if onlylast:
+                return ''
+            else:
+                return []
+    
+    else:
+        print('bad request, check feature id/type')
+        if onlylast:
+            return ''
+        else:
+            return []
+
+
+def get_datetime_last_update_node(featureid):
+    # all default options
+    return get_datetime_last_update(featureid,featuretype='node')

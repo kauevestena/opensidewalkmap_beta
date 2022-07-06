@@ -10,6 +10,8 @@
 from osm_fetch import *
 from constants import *
 from functions import *
+from time import sleep
+
 
 
 
@@ -28,9 +30,10 @@ for key in queries_dict:
 
 # to record data aging:
 record_datetime('Data Fetching')
+sleep(.1)
 
 # generate the "report" of the updating info
-gen_updatingg_infotable_page()
+gen_updating_infotable_page()
 
 
 
