@@ -199,6 +199,11 @@ popup=folium.GeoJsonPopup(fields=req_fields['sidewalks']),
 # zoom_on_click=True,
 style_function= style_sidewalk_surface,
 highlight_function=simple_highlight,
+# tooltip='Sidewalk',
+
+tooltip=folium.Tooltip('<b>Sidewalk</b><br>(click for details)','text-align:center')
+
+
 ).add_to(m)
 
 folium.GeoJson(data=sidewalks_gdf
@@ -208,6 +213,11 @@ popup=folium.GeoJsonPopup(fields=req_fields['sidewalks']),
 # zoom_on_click=True,
 style_function= style_sidewalk_smoothness,
 highlight_function=simple_highlight,
+# tooltip='Sidewalk',
+
+tooltip=folium.Tooltip('<b>Sidewalk</b><br>(click for details)','text-align:center'),
+
+
 show=False
 ).add_to(m)
 
@@ -223,6 +233,10 @@ popup=folium.GeoJsonPopup(fields=req_fields['crossings']),
 highlight_function=simple_highlight,
 # zoom_on_click=True,
 style_function=style_crossing,
+# tooltip='Crossing',
+tooltip=folium.Tooltip('<b>Crossing</b><br>(click for details)','text-align:center')
+
+
 ).add_to(m)
 
 
@@ -249,6 +263,12 @@ popup=folium.GeoJsonPopup(fields=req_fields['kerbs']),
 # zoom_on_click=True,
 highlight_function=simple_highlight,
 style_function=styling_kerbs,
+
+# tooltip='<b>Kerb</b><br>(click for details)',
+tooltip=folium.Tooltip('<b>Kerb</b><br>(click for details)','text-align:center')
+
+
+
 ).add_to(m)
 
 '''
