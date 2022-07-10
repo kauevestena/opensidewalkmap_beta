@@ -9,20 +9,30 @@ from copy import deepcopy
 from shapely.geometry import LineString
 import requests
 
+# CONSTANTS
+
+LEN_CRS = 'EPSG:31982'
+MAX_DISTANCE = 50
+
 
 # STREAMLIT PAGE CONFIGURATION
 
 print('begin')
 
-def simple_highlight(feature):
-    return {'weight':12 }
+
+
+# STREAMLIT SETUP
 
 st.set_page_config('OSWM Routing','assets/homepage/favicon_homepage.png','wide','expanded')
+
+
 
 # In-page title:
 st.header('OSWM Routing App')
 
-st.write('Welcome!! The first click will set Origin, Second the Destination, and the Third may be needed to draw the route')
+st.write('Welcome!! The first click will set Origin, the Second will set Destination, and the Third may be needed to draw the route')
+
+col1, col2, col3, col4 = st.columns([1,1,1,1])
 
 # initializing session state stuff:
 
@@ -40,6 +50,9 @@ if 'routing_gdf_shortest' not in st.session_state:
 
 
 ### FUNCTIONS
+
+def simple_highlight(feature):
+    return {'weight':12 }
 
 
 def json_to_gpx_string(json_string):
@@ -93,7 +106,6 @@ ss_id = get_session_id()
 
 # @st.cache
 # def permanent_stuff():
-MAX_DISTANCE = 50
 
 
 
@@ -144,19 +156,31 @@ name="Available Sidewalks",
 
 
 if 'routing_gdf_shortest' in st.session_state:
-    if not(st.session_state['routing_gdf_shortest'].empty):
-        folium.Choropleth(st.session_state['routing_gdf_shortest'],line_color='#e41a1c',line_weight=4,
+    gdf_sh = st.session_state['routing_gdf_shortest']
+    if not(gdf_sh.empty):
+        folium.Choropleth(gdf_sh,line_color='#e41a1c',line_weight=4,
         name='Shortest Route (RED)',
         highlight=simple_highlight).add_to(m)
 
-        wp = st.session_state.waypoints
+        # wp = st.session_state.waypoints
+
+        with col4:
+
+            st.download_button('download Shortest geojson',gdf_sh.to_json(),'oswm_sh_route.geojson','application/json')
+
+        with col2: 
+            st.download_button('download Shortest GPX',json_to_gpx_string(gdf_sh.to_json()),'oswm_sh_route.gpx','application/xml')
+
+
 
 
 
 
 if 'routing_gdf' in st.session_state:
-    if not(st.session_state['routing_gdf'].empty):
-        folium.Choropleth(st.session_state['routing_gdf'],line_color='#377eb8',line_weight=4,
+    gdf_opt = st.session_state['routing_gdf']
+
+    if not(gdf_opt.empty):
+        folium.Choropleth(gdf_opt,line_color='#377eb8',line_weight=4,
         name='Optimized Route (BLUE)',
         highlight=simple_highlight).add_to(m)
 
@@ -177,6 +201,12 @@ if 'routing_gdf' in st.session_state:
             icon=folium.Icon(color="blue", icon="flag"),
             draggable=True,
         ).add_to(m)
+
+        with col3:
+            st.download_button('download Optimized geojson',gdf_opt.to_json(),'oswm_opt_route.geojson','application/json')
+
+        with col1: 
+            st.download_button('download Optimized GPX',json_to_gpx_string(gdf_opt.to_json()),'oswm_opt_route.gpx','application/xml')
 
 # if ROUTE_GDF:
 #     folium.Choropleth(ROUTE_GDF).add_to(m)
