@@ -1,11 +1,10 @@
-from turtle import pos
 import streamlit as st
 from streamlit_folium import st_folium
 import folium
 import geopandas as gpd
 import osmnx as ox
-from collections import deque
-from copy import deepcopy
+# from collections import deque
+# from copy import deepcopy
 from shapely.geometry import LineString
 import requests
 
