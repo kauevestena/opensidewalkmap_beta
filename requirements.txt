@@ -1,0 +1,10 @@
+beautifulsoup4==4.11.1
+folium==0.12.1.post1
+geopandas==0.10.2
+osm2geojson==0.1.33
+osmnx==1.2.1
+pandas==1.4.2
+requests==2.22.0
+Shapely==1.8.2
+streamlit==1.10.0
+streamlit_folium==0.6.13
