@@ -16,6 +16,10 @@ import requests
 
 LEN_CRS = 'EPSG:31982'
 MAX_DISTANCE = 50
+WIDTH = 1000
+MAP_KEY = 'folium_map'
+
+
 
 
 # STREAMLIT PAGE CONFIGURATION
@@ -32,6 +36,22 @@ st.set_page_config('OSWM Routing','assets/homepage/favicon_homepage.png','wide',
 
 # In-page title:
 st.header('OSWM Routing App - [see the presentation](https://docs.google.com/presentation/d/e/2PACX-1vQR6zzLLoLE2p90saW3FRCeiEo1w5NEeHFzfbgeaMiQyHRJGXg3nVTfTYi_gb0nGAlYA-GUqJScL0cr/pub?start=false&loop=true&delayms=5000)')
+
+
+##### Device Type Selection
+
+device_type = st.radio('select device type:',('desktop','mobile'),horizontal=True)
+
+if device_type == 'mobile':
+    print('selected mobile')
+    WIDTH = 400
+    MAP_KEY = 'folium_map_mobile'
+
+else:
+    WIDTH = 1000
+    MAP_KEY = 'folium_map'
+
+    
 
 st.write('Welcome!! The first click will set Origin, the Second will set Destination, and the Third may be needed to draw the route')
 
@@ -66,7 +86,7 @@ def json_to_gpx_string(json_string):
 
 def route_to_gdf(inputgraph,routenodes):
     route_linestring = LineString(
-        [(inputgraph.nodes[node_id]['x'],route_graph.nodes[node_id]['y']) for node_id in routenodes]
+        [(inputgraph.nodes[node_id]['x'],route_graph.nodes[node_id]['y'],route_graph.nodes[node_id]['elevation']) for node_id in routenodes]
     )
 
     data = {'type':['route']}
@@ -226,7 +246,7 @@ folium.LayerControl(collapsed=False,position='topleft').add_to(m)
 
 
 # st_data = st_folium(m, width = 1200)
-st_data = st_folium(m,'folim_map',width=1000)
+st_data = st_folium(m,MAP_KEY,width=WIDTH)
 
 
 
