@@ -13,22 +13,13 @@ gdf_dict = {
     'kerbs':kerbs_gdf,
     }
 
-print(sidewalks_gdf)
+# keep only relevant fields:
+for category in gdf_dict:
+    gdf_dict[category] = gdf_dict[category][req_fields[category]]
 
-# updating info:
-sidewalks_updating = pd.read_json(sidewalks_versioning_path)
-crossings_updating = pd.read_json(crossings_versioning_path)
-kerbs_updating = pd.read_json(kerbs_versioning_path)
 
-updating_dict = {'sidewalks':sidewalks_updating,'crossings':crossings_updating,'kerbs':kerbs_updating}
+print(sidewalks_gdf.columns)
 
-for key in gdf_dict:
-    # gdf_dict[key]['last_update'] = '?'
-    updating_dict[key]['last_update'] = updating_dict[key]['rev_day'].astype(str) + "-" + updating_dict[key]['rev_month'].astype(str) + "-" + updating_dict[key]['rev_year'].astype(str)
-
-    gdf_dict[key] = gdf_dict[key].set_index('id').join(updating_dict[key].set_index('osmid')['last_update']).reset_index()
-
-    print(gdf_dict[key]['last_update'].unique())
 
 
 

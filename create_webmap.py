@@ -14,6 +14,14 @@ crossings_gdf = gpd.read_file(crossings_path,index='id')
 kerbs_gdf = gpd.read_file(kerbs_path,index='id')
 
 
+# keeping only really required fields
+extra_fields = ['id','geometry']
+
+sidewalks_gdf = sidewalks_gdf[req_fields['sidewalks']+extra_fields]
+crossings_gdf = crossings_gdf[req_fields['crossings']+extra_fields]
+kerbs_gdf = kerbs_gdf[req_fields['kerbs']+extra_fields]
+
+
 gdf_dict = {
     'sidewalks': sidewalks_gdf,
     'crossings': crossings_gdf,
@@ -410,11 +418,14 @@ style_changer(page_name,logo_ref,new=None,append=footer_img_css_add)
 head_insert_txt = """
 <title>OpenSidewalkMap</title>
 <link rel="icon" type="image/x-icon" href="assets/homepage/favicon_homepage.png">
+
 """
 
 
 
 add_to_page_after_first_tag(page_name,head_insert_txt)
+
+replace_at_html(page_name,'<html>','<html lang="en">')
 # import bs4
 
 # # thx: https://stackoverflow.com/a/35355433/4436950
