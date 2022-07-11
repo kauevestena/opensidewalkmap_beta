@@ -1,30 +1,34 @@
-# import osmnx as ox
 import geopandas as gpd
-import requests
-from shapely.geometry import LineString
+import pandas as pd
+from constants import * 
 
-# graph_path = 'osmnx_routing/routing_graph.graphml'
+# reading as geodataframes:
+sidewalks_gdf = gpd.read_file(sidewalks_path)
+crossings_gdf = gpd.read_file(crossings_path)
+kerbs_gdf = gpd.read_file(kerbs_path)
 
-# route_graph = ox.load_graphml(graph_path,edge_dtypes={'beta_wh_weight':float})
+gdf_dict = {
+    'sidewalks':sidewalks_gdf,
+    'crossings':crossings_gdf,
+    'kerbs':kerbs_gdf,
+    }
 
+print(sidewalks_gdf)
 
-# nodes, edges = ox.graph_to_gdfs(route_graph)
+# updating info:
+sidewalks_updating = pd.read_json(sidewalks_versioning_path)
+crossings_updating = pd.read_json(crossings_versioning_path)
+kerbs_updating = pd.read_json(kerbs_versioning_path)
 
-path_polyline  = [(-49,-25),(-48,-26)]
+updating_dict = {'sidewalks':sidewalks_updating,'crossings':crossings_updating,'kerbs':kerbs_updating}
 
-route_linestring = LineString(path_polyline)
+for key in gdf_dict:
+    # gdf_dict[key]['last_update'] = '?'
+    updating_dict[key]['last_update'] = updating_dict[key]['rev_day'].astype(str) + "-" + updating_dict[key]['rev_month'].astype(str) + "-" + updating_dict[key]['rev_year'].astype(str)
 
-dummy_data = {'type':['route']}
+    gdf_dict[key] = gdf_dict[key].set_index('id').join(updating_dict[key].set_index('osmid')['last_update']).reset_index()
 
-sample =  gpd.GeoDataFrame(dummy_data,geometry=[route_linestring],crs='EPSG:4326')
+    print(gdf_dict[key]['last_update'].unique())
 
-json_string = sample.to_json()
-
-print(json_string)
-
-
-response = requests.post('http://ogre.adc4gis.com/convertJson/',{'json':json_string,'format':'GPX'})
-
-print(response.text)
 
 

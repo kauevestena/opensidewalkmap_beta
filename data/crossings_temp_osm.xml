@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="Overpass API 0.7.58.3 b33c3320">
 <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
-<meta osm_base="2022-07-04T20:44:54Z"/>
+<meta osm_base="2022-07-11T18:03:39Z"/>
 
   <node id="266969004" lat="-25.4431401" lon="-49.1992877"/>
-  <node id="266971037" lat="-25.5207493" lon="-49.2281433"/>
+  <node id="266971037" lat="-25.5207465" lon="-49.2281402"/>
   <node id="266982725" lat="-25.5011700" lon="-49.2364661">
     <tag k="highway" v="traffic_signals"/>
   </node>
@@ -675,6 +675,7 @@
   <node id="2707368206" lat="-25.5212436" lon="-49.2941384"/>
   <node id="2707368208" lat="-25.5209120" lon="-49.2944033"/>
   <node id="2707368224" lat="-25.5210701" lon="-49.2940445"/>
+  <node id="3101233443" lat="-25.5178932" lon="-49.2296765"/>
   <node id="3144498001" lat="-25.5330689" lon="-49.2636302">
     <tag k="crossing" v="zebra"/>
     <tag k="highway" v="crossing"/>
@@ -830,12 +831,12 @@
     <tag k="highway" v="crossing"/>
     <tag k="lit" v="yes"/>
   </node>
-  <node id="4912987575" lat="-25.5207877" lon="-49.2282395">
+  <node id="4912987575" lat="-25.5207907" lon="-49.2282470">
     <tag k="crossing" v="marked"/>
     <tag k="highway" v="crossing"/>
     <tag k="traffic_calming" v="table"/>
   </node>
-  <node id="4912987576" lat="-25.5203556" lon="-49.2282435">
+  <node id="4912987576" lat="-25.5203552" lon="-49.2282426">
     <tag k="crossing" v="marked"/>
     <tag k="highway" v="crossing"/>
     <tag k="traffic_calming" v="table"/>
@@ -1389,7 +1390,7 @@
   <node id="6161810987" lat="-25.4601540" lon="-49.2119722"/>
   <node id="6161810988" lat="-25.4601294" lon="-49.2118942"/>
   <node id="6161810989" lat="-25.4601079" lon="-49.2118295"/>
-  <node id="6172162701" lat="-25.5203868" lon="-49.2283214"/>
+  <node id="6172162701" lat="-25.5203924" lon="-49.2283276"/>
   <node id="6172162705" lat="-25.5124879" lon="-49.2321727"/>
   <node id="6172162712" lat="-25.5071837" lon="-49.2348744">
     <tag k="crossing" v="marked"/>
@@ -1497,7 +1498,7 @@
     <tag k="highway" v="crossing"/>
   </node>
   <node id="6174044402" lat="-25.5176361" lon="-49.2298453"/>
-  <node id="6174044403" lat="-25.5178103" lon="-49.2297407">
+  <node id="6174044403" lat="-25.5177837" lon="-49.2297540">
     <tag k="highway" v="traffic_signals"/>
     <tag k="traffic_signals" v="signal"/>
   </node>
@@ -1740,7 +1741,6 @@
   </node>
   <node id="6217776766" lat="-25.5292004" lon="-49.2172726"/>
   <node id="6217776784" lat="-25.5270767" lon="-49.2220560"/>
-  <node id="6217776989" lat="-25.5178932" lon="-49.2296765"/>
   <node id="6217776990" lat="-25.5068010" lon="-49.2348163">
     <tag k="highway" v="crossing"/>
   </node>
@@ -8719,7 +8719,7 @@
   </way>
   <way id="663339774">
     <nd ref="6174044403"/>
-    <nd ref="6217776989"/>
+    <nd ref="3101233443"/>
     <tag k="bicycle" v="yes"/>
     <tag k="foot" v="designated"/>
     <tag k="footway" v="crossing"/>

@@ -23,7 +23,7 @@ queries_dict = {
     }
 
 for key in queries_dict:
-    outpath = f'data/{key}.geojson'
+    outpath = f'data/{key}_raw.geojson'
 
     get_osm_data(queries_dict[key]['query'],f'{key}_temp',geomtype=queries_dict[key]['geomtype'],print_response=True,geojson_outpath=outpath)
 

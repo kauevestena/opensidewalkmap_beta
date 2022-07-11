@@ -7,10 +7,19 @@ min_zoom = 16
 # hmtml file name
 page_name = "map.html"
 
-# data names
+# data paths
 sidewalks_path = 'data/sidewalks.geojson'
 crossings_path = 'data/crossings.geojson'
 kerbs_path = 'data/kerbs.geojson'
+
+sidewalks_path_raw = 'data/sidewalks_raw.geojson'
+crossings_path_raw = 'data/crossings_raw.geojson'
+kerbs_path_raw = 'data/kerbs_raw.geojson'
+
+
+sidewalks_versioning_path = 'data/sidewalks_versioning.json'
+crossings_versioning_path = 'data/crossings_versioning.json'
+kerbs_versioning_path = 'data/kerbs_versioning.json'
 
 # # the ten block sample
 bounding_box_sample = (-25.46340831586,-49.26485433156466,-25.45836407828201,-49.257818266840495)
@@ -400,9 +409,9 @@ fields_values_properties['crossings']['smoothness'] = fields_values_properties['
 
 # required_fields:
 req_fields = {
-    'sidewalks':['surface','smoothness','width','incline','tactile_paving','incline:across','osm_id'],
-    'kerbs':['kerb','tactile_paving','osm_id'],
-    'crossings':['crossing','surface','smoothness','traffic_calming','osm_id'],
+    'sidewalks':['surface','smoothness','width','incline','tactile_paving','incline:across','osm_id','last_update'],
+    'kerbs':['kerb','tactile_paving','osm_id','last_update'],
+    'crossings':['crossing','surface','smoothness','traffic_calming','osm_id','last_update'],
 }
 
 # a case of "smoothness=concrete:pĺates" demanded this

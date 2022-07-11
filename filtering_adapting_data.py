@@ -6,9 +6,9 @@ from time import sleep
 
 
 # reading as geodataframes:
-sidewalks_gdf = gpd.read_file(sidewalks_path,index='id')
-crossings_gdf = gpd.read_file(crossings_path,index='id')
-kerbs_gdf = gpd.read_file(kerbs_path,index='id')
+sidewalks_gdf = gpd.read_file(sidewalks_path_raw) #,index='id')
+crossings_gdf = gpd.read_file(crossings_path_raw) #,index='id')
+kerbs_gdf = gpd.read_file(kerbs_path_raw) #,index='id')
 
 # creating fields for scores:
 # sidewalks_gdf['final_score'] = 5
@@ -30,12 +30,19 @@ for category in fields_values_properties:
 
 
 
-
+# putting data in a dict
 gdf_dict = {
     'sidewalks':sidewalks_gdf,
     'crossings':crossings_gdf,
     'kerbs':kerbs_gdf,
     }
+
+# updating info:
+sidewalks_updating = pd.read_json(sidewalks_versioning_path)
+crossings_updating = pd.read_json(crossings_versioning_path)
+kerbs_updating = pd.read_json(kerbs_versioning_path)
+
+updating_dict = {'sidewalks':sidewalks_updating,'crossings':crossings_updating,'kerbs':kerbs_updating}
 
 
 # reading the conversion table from  surface and smoothness:
@@ -66,6 +73,7 @@ for category in gdf_dict:
 
             # also creating a default note 
             gdf_dict[category][f'{req_col}_score'] = default_score
+
 
     gdf_dict[category].fillna('?',inplace=True)
 
@@ -114,6 +122,20 @@ for category in gdf_dict:
         # same as sidewalks but with bonifications
 
         gdf_dict[category]['final_score'] += gdf_dict[category][scores_dfs_fieldnames[category]['crossing']]
+
+
+
+    # inserting last update:
+    updating_dict[category]['update_date'] = updating_dict[category]['rev_day'].astype(str) + "-" + updating_dict[category]['rev_month'].astype(str) + "-" + updating_dict[category]['rev_year'].astype(str)
+
+    # print(updating_dict[category].set_index('osmid')['last_update'])
+
+    gdf_dict[category] = gdf_dict[category].set_index('id').join(updating_dict[category].set_index('osmid')['update_date']
+    # ,rsuffix = 'r_remove',lsuffix = 'l_remove',
+    ).reset_index()
+
+    gdf_dict[category]['last_update'] = gdf_dict[category]['update_date']
+
 
     gdf_dict[category].to_file(f'data/{category}.geojson',driver='GeoJSON')
 
