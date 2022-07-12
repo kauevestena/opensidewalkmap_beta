@@ -1,6 +1,17 @@
 import geopandas as gpd
 import pandas as pd
+import sys
+from os import path
+
+
+# # ############
+
+# print(path.dirname( path.dirname( path.abspath(__file__) ) ))
+
+sys.path.append('.') #worked!!
+
 from constants import * 
+
 
 # reading as geodataframes:
 sidewalks_gdf = gpd.read_file(sidewalks_path)

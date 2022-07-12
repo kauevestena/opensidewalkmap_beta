@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<!-- thx, w3schools, this page was made following their tutorial!! -->
+
+<html lang="en">
+
+<head>
+
+<style>
+
+    /* using a styles from: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=changing-image-on-hover-with-css */
+    .big_div {
+        position: fixed;
+        top: 30%;
+        right: 0%;
+
+    }
+
+    /* sidewalk surface rules:  */
+    .sw-leg-sur {
+        position: fixed;
+        top: 30%;
+        right: 0%;
+        z-index: 1;
+    }
+
+    .sw-leg-sur .hover_base_sur {
+        display: none;
+        z-index: 101;
+
+    }
+
+    .sw-leg-sur:hover .hover_base_sur {
+        display: inline;
+        height: 120;
+        z-index: 101;
+        transform: scale(1.1,1.1);
+        background-color: white;
+
+    }
+
+    /* sidewalk smoothness rules:  */
+    .sw-leg-smo {
+        position: fixed;
+        top: 42%;
+        right: 0%;
+        z-index: 2;
+    }
+
+    .sw-leg-smo .hover_base_smo {
+        display: none;
+        z-index: 102;
+
+    }
+
+    .sw-leg-smo:hover .hover_base_smo {
+        display: inline;
+        z-index: 102;
+        transform: scale(1.1,1.1);
+        background-color: white;
+
+
+
+    }
+
+    /* crossings rules:  */
+        .crossings-leg {
+        position: fixed;
+        top: 54%;
+        right: 0%;
+        z-index: 3;
+    }
+
+    .crossings-leg .hover_base_cr {
+        display: none;
+        z-index: 103;
+
+    }
+
+    .crossings-leg:hover .hover_base_cr {
+        display: inline;
+        transform: scale(1.1,1.1);
+        background-color: white;
+
+
+    }
+
+    /* kerbs rules:  */
+        .kerbs-leg {
+        position: fixed;
+        top: 66%;
+        right: 0%;
+        z-index: 4;
+    }
+
+    .kerbs-leg .hover_base_kb {
+        display: none;
+        z-index: 104;
+
+    }
+
+    .kerbs-leg:hover .hover_base_kb {
+        display: inline;
+        z-index: 104;
+        transform: scale(1.1,1.1);
+        background-color: white;
+
+
+    }
+
+
+</style>
+
+
+</head>
+
+<body>
+
+    <!-- the 4 side images: -->
+    <div class="big_div">
+
+    <div class="kerbs-leg">
+        <img src="../assets/kerbs_leg.png" alt="kerbs_leg"></img>
+
+            <img src="../assets/kerbs_leg.png" alt="sw_surface_leg_hover" class="kerbs-leg hover_base_kb"></img>
+
+
+
+    </div>
+
+    <div class="crossings-leg">
+        <img src="../assets/crossings_leg.png" alt="crossings_leg"></img>
+
+            <img src="../assets/crossings_leg.png" alt="sw_surface_leg_hover" class="crossings-leg hover_base_cr"></img>
+
+
+
+    </div>
+
+    <div class="sw-leg-smo">
+
+
+        <img src="../assets/sw_leg_smoothness.png" alt="sw_leg_smoothness"></img>
+
+            <img src="../assets/sw_leg_smoothness.png" alt="sw_surface_leg_hover" class="sw-leg-smo hover_base_smo"></img>
+
+    </div>
+
+    <div class="sw-leg-sur">
+
+        <img src="../assets/sw_leg_surface.png" alt="sw_surface_leg" ></img>
+
+            <img src="../assets/sw_leg_surface.png" alt="sw_surface_leg_hover" class="sw-leg-sur hover_base_sur"></img>
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

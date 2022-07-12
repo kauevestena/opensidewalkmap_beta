@@ -1,12 +1,3 @@
-# import subprocess, time
-
-# subprocess.run('wget -O https://raw.githubusercontent.com/kauevestena/osm_sidewalkreator/main/osm_fetch.py',shell=True)
-# DEPRECATED, now it will have its own version.
-
-
-
-# # ############
-
 from osm_fetch import *
 from constants import *
 from functions import *
