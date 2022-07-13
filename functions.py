@@ -99,21 +99,38 @@ tr:nth-child(even) {{
     with open(outpath,'w+') as writer:
         writer.write(page_as_txt)
 
+def find_map_ref(input_htmlpath):
+    with open(input_htmlpath) as inf:
+        txt = inf.read()
+        soup = bs4.BeautifulSoup(txt,features='lxml')
+
+    refs = soup.find_all(attrs={'class':"folium-map"})
+
+    for found_ref in refs:
+        return found_ref['id']
+
+
+
+
 def find_html_name(input_htmlpath,specific_ref,tag_ref='img',specific_tag='src',identifier='id'):
 
     with open(input_htmlpath) as inf:
         txt = inf.read()
         soup = bs4.BeautifulSoup(txt,features='lxml')
 
-    image_refs = soup.find_all(tag_ref)
+    refs = soup.find_all(tag_ref)
 
-    for found_imref in image_refs:
 
-        if found_imref[specific_tag] == specific_ref:
-            return found_imref[identifier]
+    for found_ref in refs:
+
+
+        # if specific_tag in found_ref:
+
+        if found_ref[specific_tag] == specific_ref:
+            return found_ref[identifier]
             
 
-def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top',append=None):
+def style_changer(in_out_htmlpath,element_key,key='style',original='bottom',new='top',append=None):
     with open(in_out_htmlpath) as inf:
         txt = inf.read()
         soup = bs4.BeautifulSoup(txt,features='lxml')
@@ -122,7 +139,7 @@ def style_changer(in_out_htmlpath,img_key,key='style',original='bottom',new='top
 
     for style_ref in style_refs:
         as_txt = style_ref.get_text()
-        if img_key in as_txt:
+        if element_key in as_txt:
 
             if new:
                 new_text = as_txt.replace(original,new)

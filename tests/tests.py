@@ -2,34 +2,33 @@ import geopandas as gpd
 import pandas as pd
 import sys
 from os import path
+import bs4
+sys.path.append('.') #worked!!
+from constants import * 
+from functions import *
 
 
 # # ############
 
 # print(path.dirname( path.dirname( path.abspath(__file__) ) ))
 
-sys.path.append('.') #worked!!
-
-from constants import * 
 
 
-# reading as geodataframes:
-sidewalks_gdf = gpd.read_file(sidewalks_path)
-crossings_gdf = gpd.read_file(crossings_path)
-kerbs_gdf = gpd.read_file(kerbs_path)
+input_htmlpath = './map.html'
 
-gdf_dict = {
-    'sidewalks':sidewalks_gdf,
-    'crossings':crossings_gdf,
-    'kerbs':kerbs_gdf,
-    }
-
-# keep only relevant fields:
-for category in gdf_dict:
-    gdf_dict[category] = gdf_dict[category][req_fields[category]]
+# print(find_html_name('./map.html','folium_map','div','class'))
 
 
-print(sidewalks_gdf.columns)
+# # with open(input_htmlpath) as inf:
+# #     txt = inf.read()
+# #     soup = bs4.BeautifulSoup(txt,features='lxml')
+
+# # refs = soup.find_all('div')
+
+# print(refs)
+
+# print(find_map_ref(input_htmlpath))
+
 
 
 
