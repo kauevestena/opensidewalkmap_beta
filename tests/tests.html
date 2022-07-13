@@ -6,9 +6,11 @@
 
 <head>
 
-        <script>
-        function myFunction() {
-          var x = document.getElementById("kerbs-div");
+    <script>
+        function hideElementOnClick(elementid) {
+
+        // thx : https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+          var x = document.getElementById(elementid);
           if (x.style.display === "none") {
             x.style.display = "block";
           } else {
@@ -16,7 +18,7 @@
           }
         }
         </script>
-
+        
 <style>
 
     /* using a styles from: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=changing-image-on-hover-with-css */
@@ -223,18 +225,7 @@
 
 
 
-    <script>
-        function hideElementOnClick(elementid) {
 
-        // thx : https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
-          var x = document.getElementById(elementid);
-          if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
-          }
-        }
-        </script>
 
 
 
