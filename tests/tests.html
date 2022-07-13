@@ -6,10 +6,21 @@
 
 <head>
 
+        <script>
+        function myFunction() {
+          var x = document.getElementById("kerbs-div");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
+
 <style>
 
     /* using a styles from: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=changing-image-on-hover-with-css */
-    .big_div {
+    .leg_div {
         position: fixed;
         top: 30%;
         right: 0%;
@@ -41,6 +52,7 @@
 
 
     }
+
 
     /* sidewalk smoothness rules:  */
     .sw-leg-smo {
@@ -117,6 +129,22 @@
 
     }
 
+    .map-symbols-common {
+        display: none;
+        position: fixed;
+        top: 20%;
+        right: 0%;
+        transform: scale(.8,.8);
+
+    }
+
+    /* hiding rules 
+
+    #sw-smo-div:hover ~ #kerbs-div {
+        display: none;
+    } 
+    
+    */
 
 </style>
 
@@ -126,44 +154,68 @@
 <body>
 
     <!-- the 4 side images: -->
-    <div class="big_div">
+    <div class="leg_div">
 
-    <div class="kerbs-leg">
-        <img src="../assets/kerbs_leg.png" alt="kerbs_leg" title="test_hover 02"></img>
+    <div class="kerbs-leg" id="kerbs-div">
+        <img src="../assets/kerbs_leg.png" alt="kerbs_leg" title="test_hover 02"  id="kerbs-leg-img"></img>
 
-            <img src="../assets/kerbs_leg.png" alt="sw_surface_leg_hover" class="kerbs-leg hover_base_kb" title="Kerbs Map Symbols (click)"></img>
+            <img src="../assets/kerbs_leg.png" alt="sw_surface_leg_hover" class="kerbs-leg hover_base_kb" title="Kerbs Map Symbols (click)" onclick="hideElementOnClick('kerbs_symbols')"></img>
 
 
 
 
     </div>
 
-    <div class="crossings-leg">
+    <div class="crossings-leg" id="crossings-div">
         <img src="../assets/crossings_leg.png" alt="crossings_leg"></img>
 
-            <img src="../assets/crossings_leg.png" alt="sw_surface_leg_hover" class="crossings-leg hover_base_cr" title="Crossings Map Symbols (click)"></img>
+            <img src="../assets/crossings_leg.png" alt="sw_surface_leg_hover" class="crossings-leg hover_base_cr" title="Crossings Map Symbols (click)" onclick="hideElementOnClick('crossings_symbols')"></img>
 
 
 
     </div>
 
-    <div class="sw-leg-smo">
+    <div class="sw-leg-smo" id="sw-smo-div">
 
 
         <img src="../assets/sw_leg_smoothness.png" alt="sw_leg_smoothness"></img>
 
-            <img src="../assets/sw_leg_smoothness.png" alt="sw_surface_leg_hover" class="sw-leg-smo hover_base_smo" title="Sidewalk Smoothness Map Symbols (click)"></img>
+            <img src="../assets/sw_leg_smoothness.png" alt="sw_surface_leg_hover" class="sw-leg-smo hover_base_smo" title="Sidewalk Smoothness Map Symbols (click)" onclick="hideElementOnClick('sw_smoothness_symbols')"></img>
 
     </div>
 
-    <div class="sw-leg-sur">
+    <div class="sw-leg-sur" id="sw-sur-div">
 
-        <img src="../assets/sw_leg_surface.png" alt="sw_surface_leg" ></img>
+        <img src="../assets/sw_leg_surface.png" alt="sw_surface_leg"></img>
 
-            <img src="../assets/sw_leg_surface.png" alt="sw_surface_leg_hover" class="sw-leg-sur hover_base_sur" title="Sidewalk Surface Map Symbols (click)"></img>
+            <img src="../assets/sw_leg_surface.png" alt="sw_surface_leg_hover" class="sw-leg-sur hover_base_sur" title="Sidewalk Surface Map Symbols (click)" onclick="hideElementOnClick('sw_surface_symbols')"></img>
+
+
+
 
     </div>
 
+    <!-- SIDEWALKS SURFACE -->
+    <div> 
+        <img src="../assets/sw_leg_surface_content.png" alt="sw_leg_surface_content" class="map-symbols-common" id="sw_surface_symbols" onclick="hideElementOnClick('sw_surface_symbols')"></img>
+    </div>
+
+    <!-- SIDEWALKS SMOOTHNESS -->
+    <div> 
+        <img src="../assets/sw_leg_smoothness_content.png" alt="sw_leg_smoothness_content" class="map-symbols-common" id="sw_smoothness_symbols" onclick="hideElementOnClick('sw_smoothness_symbols')"></img>
+    </div>
+
+    <!-- CROSSINGS -->
+    <div> 
+        <img src="../assets/crossings_leg_content.png" alt="crossings_leg_content" class="map-symbols-common" id="crossings_symbols" onclick="hideElementOnClick('crossings_symbols')"></img>
+    </div>
+    
+    <!-- KERBS -->
+    <div> 
+        <img src="../assets/kerbs_leg_content.png" alt="kerbs_leg_content" class="map-symbols-common" id="kerbs_symbols" onclick="hideElementOnClick('kerbs_symbols')"></img>
+    </div>
+
+
     </div>
 
 
@@ -171,8 +223,18 @@
 
 
 
+    <script>
+        function hideElementOnClick(elementid) {
 
-
+        // thx : https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+          var x = document.getElementById(elementid);
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
 
 
 
