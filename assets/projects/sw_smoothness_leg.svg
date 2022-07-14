@@ -100,7 +100,7 @@
      id="layer5"
      inkscape:label="Layer 1">
     <path
-       fill="#2166ac"
+       fill="#4575b4"
        d="M 24.721443,41.857568 H 242.20177 v 23.93701 H 24.721443 Z"
        fill-rule="evenodd"
        id="path23" />
@@ -122,7 +122,7 @@
        id="path25-9"
        style="opacity:0.0533264;fill:url(#pattern8162);fill-opacity:1;stroke:url(#pattern8164);stroke-width:1;stroke-dasharray:none;stroke-opacity:0.137567;paint-order:stroke markers fill" />
     <path
-       fill="#92c5de"
+       fill="#abd9e9"
        d="M 24.721443,104.53496 H 242.20177 v 23.93701 H 24.721443 Z"
        fill-rule="evenodd"
        id="path27" />
@@ -135,7 +135,7 @@
        fill-rule="evenodd"
        id="path29" />
     <path
-       fill="#f7f7f7"
+       fill="#ffffbf"
        d="M 24.721443,167.21235 H 242.20177 v 23.937 H 24.721443 Z"
        fill-rule="evenodd"
        id="path31" />
@@ -148,7 +148,7 @@
        fill-rule="evenodd"
        id="path33" />
     <path
-       fill="#b2182b"
+       fill="#f46d43"
        d="M 24.721443,294.59252 H 242.20177 v 23.93701 H 24.721443 Z"
        fill-rule="evenodd"
        id="path35" />
@@ -161,7 +161,7 @@
        fill-rule="evenodd"
        id="path37" />
     <path
-       fill="#67001f"
+       fill="#a50026"
        d="M 24.721443,357.26992 H 242.20177 v 23.93701 H 24.721443 Z"
        fill-rule="evenodd"
        id="path39" />
@@ -267,7 +267,7 @@
        fill-rule="nonzero"
        id="path71" />
     <path
-       fill="#f4a582"
+       fill="#fdae61"
        d="M 24.721443,231.91514 H 242.20177 v 23.93701 H 24.721443 Z"
        fill-rule="evenodd"
        id="path73" />

@@ -41,7 +41,7 @@ default_score = 0.5
 fields_values_properties = {
     'sidewalks':{
         'surface': {
-            # colorscheme from colorbrewer, avaliiable at:
+            # colorscheme 12-class Set3 from colorbrewer (thx!!), avaliiable at:
             # https://colorbrewer2.org/?type=qualitative&scheme=Set3&n=12
 
             'asphalt':{
@@ -152,39 +152,40 @@ fields_values_properties = {
                 'color' : '#434343', #
             },
 
+            # color scheme: ColorBrewer (thx!!) 11-class RdYlBu
 
             # valid:
             'excellent':{
                 'score_default' : 10, 
-                'color' : '#2166ac', #
+                'color' : '#4575b4', #
             },
             'good':{
                 'score_default' : 90, 
-                'color' : '#92c5de', #
+                'color' : '#abd9e9', #
             },
             'intermediate':{
                 'score_default' : 70, 
-                'color' : '#f7f7f7', #
+                'color' : '#ffffbf', #
             },
             'bad':{
                 'score_default' : 50, 
-                'color' : '#f4a582', #
+                'color' : '#fdae61', #
             },
             'very_bad':{
                 'score_default' : 40, 
-                'color' : '#f4a582', #
+                'color' : '#fdae61', #
             },
             'horrible':{
                 'score_default' : 20, 
-                'color' : '#b2182b', #
+                'color' : '#f46d43', #
             },
             'very_horrible':{
                 'score_default' : 10, 
-                'color' : '#b2182b', #
+                'color' : '#f46d43', #
             },
             'impassable':{
                 'score_default' : 0, 
-                'color' : '#67001f', #
+                'color' : '#a50026', #
             },
 
 

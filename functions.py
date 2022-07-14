@@ -84,13 +84,45 @@ tr:nth-child(even) {{
 </head>
 <body>
 
-<h1>OSWM Updating Info</h1>
+<h1><a href="https://kauevestena.github.io/opensidewalkmap_beta">OSWM</a> Updating Info</h1>
 
 <table>
 
 {tablepart}
 
 </table>
+
+
+<h1>Download Data:</h1>
+
+<table>
+
+<tr>
+  <th>Sidewalks</th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/sidewalks_raw.geojson">Raw</a></th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/sidewalks.geojson">Filtered</a></th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/sidewalks_versioning.json">Versioning</a></th>
+</tr>
+
+<tr>
+  <th>Crossings</th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/crossings_raw.geojson">Raw</a></th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/crossings.geojson">Filtered</a></th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/crossings_versioning.json">Versioning</a></th>
+</tr>
+
+<tr>
+  <th>Kerbs</th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/kerbs_raw.geojson">Raw</a></th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/kerbs.geojson">Filtered</a></th>
+  <th><a href="https://kauevestena.github.io/opensidewalkmap_beta/data/kerbs_versioning.json">Versioning</a></th>
+</tr>
+
+
+
+</table>
+
+
 
 </body>
 </html>    
