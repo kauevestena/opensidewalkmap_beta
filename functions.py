@@ -21,15 +21,23 @@ def read_json(inputpath):
 
     return json.loads(data)
     
-def dump_json(inputdict,outputpath):
+def dump_json(inputdict,outputpath,indent=3):
     with open(outputpath,'w+') as json_handle:
-        json.dump(inputdict,json_handle)
+        json.dump(inputdict,json_handle,indent=indent)
 
 def record_datetime(key,json_path='data/last_updated.json'):
 
     datadict = read_json(json_path)
 
     datadict[key] = formatted_datetime_now()
+
+    dump_json(datadict,json_path)
+
+def record_to_json(key,obj,json_path):
+
+    datadict = read_json(json_path)
+
+    datadict[key] = obj
 
     dump_json(datadict,json_path)
 
@@ -323,3 +331,30 @@ def get_datetime_last_update(featureid,featuretype='way',onlylast=True,return_pa
 def get_datetime_last_update_node(featureid):
     # all default options
     return get_datetime_last_update(featureid,featuretype='node')
+
+
+def print_relevant_columnamesV2(input_df,not_include=('score','geometry','type','id'),outfilepath=None):
+
+    as_list = [column for column in input_df.columns if not any(word in column for word in not_include)]
+
+    print(*as_list)
+
+    if outfilepath:
+        with open(outfilepath,'w+') as writer:
+            writer.write(','.join(as_list))
+
+    return as_list
+
+
+def check_if_wikipage_exists(name,category="Key:",wiki_page='https://wiki.openstreetmap.org/wiki/'):
+
+    url = f'{wiki_page}{category}{name}'
+
+    while True:
+        try:
+            status = requests.head(url).status_code
+            break
+        except:
+            pass
+
+    return status == 200
