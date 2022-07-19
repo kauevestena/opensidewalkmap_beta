@@ -19,7 +19,7 @@ category = {
 
 improper_keys = {
     'sidewalks': {
-        'kerb':'sidewalks are drawn at path axis, kerb acess points should at the kerb ("meio-fio", pt-br)',
+        'kerb':'sidewalks are drawn at path axis, kerb acess points should be literally at the kerb ("meio-fio", pt-br)',
         'opening_hours':'if it has opening hours it may be a private pathway, not a sidewalk',
         'paving_stones':'paving stones is a value for "surface key"','crossing':"It's inappropriate for Sidewalks, probably mistakenly tagged",
         'barrier':"if there's a barrier it may be a node in the sidewalk, but not the sidewalk itself",
@@ -50,7 +50,8 @@ uncanny_keys = {
         },
     'crossings': {'level':'according to wiki it may be used only for indoor or if bound to a floor...'},
     'kerbs':     {
-        'button_operated': "it may be referring to the crossing, may be OK",'traffic_signals:sound':"it may be referring to the crossing, may be OK",
+        'button_operated': "it may be referring to the crossing, may be OK",
+        'traffic_signals:sound':"it may be referring to the crossing, may be OK",
         "traffic_signals:vibration": "it may be referring to the crossing, may be OK",
         "crossing:island" : "if in the middle of a crossing It's fine!! "
 
@@ -58,15 +59,108 @@ uncanny_keys = {
         ,
 }
 
+replaceable_values = {
+    'sidewalks': {},
+    'crossings': {'crossing':{'marked':'uncontrolled','zebra':'uncontrolled','island':"should use the TAG 'crossing:island=yes' "}},
+    'kerbs':     {},
+}
 
-categories_dict = {
+invalid_characters = {
+    '=' : "The '=' character is used ONLY in textual representation of tags to separate the key from the value",
+}
+
+
+
+
+categories_dict_keys = {
     "improper_keys": {
         'about':"Keys that (almost certainly) shouldn't be used at that feature type",
         'dict' : improper_keys,
+        'type':'keys',
+
+        'occurrences': {
+                            'sidewalks': [],
+                            'crossings': [],
+                            'kerbs':     [],
+                        },
     },
 
     "uncanny_keys": {
         'about':"Keys that may be OK in some specific situations, but may be a mistake",
         'dict' : uncanny_keys,
+        'type':'keys',
+
+        'occurrences': {
+                            'sidewalks': [],
+                            'crossings': [],
+                            'kerbs':     [],
+                        },
+        
     },
+
+    "replaceable_values": {
+        'about':"values that are not wrong, but there's a better  option that is in the commentary",
+        'dict' : replaceable_values,
+        'type':'values',
+
+        'occurrences': {
+                            'sidewalks': [],
+                            'crossings': [],
+                            'kerbs':     [],
+                        },
+
+    },
+
+    "wrong_mispelled_or_unlisted_values": {
+        'about':"Values that are probably wrong, but they may be mispelled or just unlisted",
+        'dict' : 'quality_check/valid_tag_values.json',
+        'type':'values',
+
+        'occurrences': {
+                            'sidewalks': [],
+                            'crossings': [],
+                            'kerbs':     [],
+                        },
+
+    },
+
+
+    "invalid_characters": {
+        'about':"characters that should not be in the value or in the key",
+        'dict' : invalid_characters,
+        'type':'tags',
+
+        'occurrences': {
+                            'sidewalks': [],
+                            'crossings': [],
+                            'kerbs':     [],
+                        },
+
+    },
+
+    "missing_value": {
+        'about':"tags with only a key, no value",
+        'dict' : None,
+        'type':'tags',
+
+        'occurrences': {
+                            'sidewalks': [],
+                            'crossings': [],
+                            'kerbs':     [],
+                        },
+
+    },
+
+
+
 }
+
+
+occurrence_per_feature = {
+    'sidewalks': {},
+    'crossings': {},
+    'kerbs':     {},
+}
+
+
+

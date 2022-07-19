@@ -21,9 +21,9 @@ def read_json(inputpath):
 
     return json.loads(data)
     
-def dump_json(inputdict,outputpath,indent=3):
-    with open(outputpath,'w+') as json_handle:
-        json.dump(inputdict,json_handle,indent=indent)
+def dump_json(inputdict,outputpath,indent=4):
+    with open(outputpath,'w+',encoding='utf8') as json_handle:
+        json.dump(inputdict,json_handle,indent=indent,ensure_ascii=False)
 
 def record_datetime(key,json_path='data/last_updated.json'):
 
@@ -49,6 +49,34 @@ def record_to_json(key,obj,json_path):
 
 """
 
+TABLES_STYLE = """
+
+<style>
+
+
+h1 {text-align: center;}
+
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+"""
+
 def gen_updating_infotable_page(outpath='data/data_updating.html',json_path='data/last_updated.json'):
 
 
@@ -57,38 +85,18 @@ def gen_updating_infotable_page(outpath='data/data_updating.html',json_path='dat
     records_dict = read_json(json_path)
 
     for key in records_dict:
-        tablepart += f"<tr><th><b>{key}</b></th><th>{records_dict[key]}</th></tr>"
+        tablepart += f"""
+        <tr><th><b>{key}</b></th><th>{records_dict[key]}</th></tr>
+        """
 
     page_as_txt = f'''
     <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>OSWM Updating Info</title>
 
+{TABLES_STYLE}
 
-<style>
-
-
-h1 {{text-align: center;}}
-
-
-
-table {{
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}}
-
-td, th {{
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}}
-
-tr:nth-child(even) {{
-  background-color: #dddddd;
-}}
-</style>
 </head>
 <body>
 
@@ -138,6 +146,71 @@ tr:nth-child(even) {{
 
     with open(outpath,'w+') as writer:
         writer.write(page_as_txt)
+
+
+def gen_quality_report_page(outpath,tabledata,feat_type,category,quality_category,text,occ_type,third_column=True):
+
+    third_column_part = ''
+
+    if third_column:
+        third_column_part = f'<th><b>value</b></th><th><b>commentary</b></th>'
+
+    tablepart = f"""<tr>
+    <th><b>OSM ID (link)</b></th>
+    <th><b>key</b></th>
+    {third_column_part}
+    </tr>"""
+
+    for line in tabledata:
+        line[0] = return_weblinkV2(str(line[0]),feat_type)
+
+        tablepart += "<tr>"
+
+        for element in line:
+            tablepart += f"<td>{str(element)}</td>"
+
+        tablepart += "</tr>\n"
+
+
+    with open(outpath,'w+') as writer:
+
+        page = f"""
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <title>OSWM QC {category[0]} {quality_category}</title>
+
+        {TABLES_STYLE}
+
+        </head>
+        <body>
+
+        <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta">OSWM</a> Quality Check: {category} {quality_category}</h1>
+
+        <h2>About: {text}</h2>
+        <h2>Type: {occ_type}</h2>
+
+
+        <table>
+
+        {tablepart}
+
+        </table>
+
+        
+
+
+        </table>
+
+
+
+        </body>
+        </html>   
+
+        """
+
+        writer.write(page)
 
 def find_map_ref(input_htmlpath):
     with open(input_htmlpath) as inf:
@@ -264,6 +337,9 @@ def return_weblink_way(string_id):
 
 def return_weblink_node(string_id):
     return f"<a href=https://www.openstreetmap.org/node/{string_id}>{string_id}</a>"
+
+def return_weblinkV2(string_id,featuretype):
+    return f"<a href=https://www.openstreetmap.org/{featuretype}/{string_id}>{string_id}</a>"
 
 '''
 

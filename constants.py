@@ -391,6 +391,22 @@ fields_values_properties = {
                 'color' : '#ffffff',
             },
 
+            'bump':{
+                # 'score_default' : 100,
+                'score_default' : 20,
+
+                # 'bonus' : 20,
+                'color' : '#ffffff',
+            },
+
+            'hump':{
+                # 'score_default' : 100,
+                'score_default' : 20,
+
+                # 'bonus' : 20,
+                'color' : '#ffffff',
+            },
+
             '?':{
                 'score_default' : 0,
                 'color' : '#d9d9d9', #
