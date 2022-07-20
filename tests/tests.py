@@ -31,15 +31,20 @@
 
 # print(list(map(list,a)))
 
-from collections import namedtuple
 
 
-point = namedtuple('point',['x','y'])
+# a = {1:[341297390178,6.546546546],2:439237894,3:32973289793}
 
-point_a = point(1,3)
 
-print(point_a)
+# print(list(a.values()))
 
-print(list(point_a))
 
-print(tuple(point_a))
+for i in range (10):
+    for j in range (100,110):
+        print(i,j)
+
+        if i > 2:
+            if j > 103:
+                break
+
+

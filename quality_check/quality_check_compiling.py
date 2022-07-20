@@ -46,12 +46,16 @@ for category in gdf_dict:
                         value = getattr(row,osmkey,None)
 
                         if value:
-                            curr['occurrences'][category].append([row.id,osmkey,value,curr['dict'][category][osmkey]])
+                            if not row.id in curr['occurrences'][category]:
+                                val_list = [row.id,osmkey,value,curr['dict'][category][osmkey]]
+
+                                curr['occurrences'][category][row.id] = val_list
 
 
-                            curr['occ_count'][category] += 1
+                                curr['occ_count'][category] += 1
 
-                            add_to_occurrences(category,row.id)
+                                add_to_occurrences(category,row.id)
+
 
                 if isinstance(curr['dict'],str):
                     curr_ref_dict = read_json(curr['dict'])[category]
@@ -61,14 +65,16 @@ for category in gdf_dict:
                         value = getattr(row,osmkey,None)
 
                         if value:
-                            print(value)
+                            if not row.id in curr['occurrences'][category]:
 
-                            curr['occurrences'][category].append([row.id,osmkey,value,'no wiki page for this key'])
+                                val_list = [row.id,osmkey,value,'no wiki page for this key']
+
+                                curr['occurrences'][category][row.id] = val_list
 
 
-                            curr['occ_count'][category] += 1
+                                curr['occ_count'][category] += 1
 
-                            add_to_occurrences(category,row.id)
+                                add_to_occurrences(category,row.id)
 
 
 
@@ -82,12 +88,19 @@ for category in gdf_dict:
                     for osmkey in curr['dict'][category]:
                         for osmvalue in curr['dict'][category][osmkey]:
                             if getattr(row,osmkey,None) == osmvalue:
-                                curr['occurrences'][category].append([row.id,osmkey,osmvalue,curr['dict'][category][osmkey][osmvalue]])
+                                if not row.id in curr['occurrences'][category]:
+                                
+                                
+                                    val_list = [row.id,osmkey,osmvalue,curr['dict'][category][osmkey][osmvalue]]
+                                    
+                                    
+                                    curr['occurrences'][category][row.id] = val_list
 
-                                curr['occ_count'][category] += 1
+                                    curr['occ_count'][category] += 1
 
 
-                                add_to_occurrences(category,row.id)
+                                    add_to_occurrences(category,row.id)
+
 
                 if isinstance(curr['dict'],str):
                     curr_ref_dict = read_json(curr['dict'])[category]
@@ -98,14 +111,42 @@ for category in gdf_dict:
 
                             if value :
                                 if value not in curr_ref_dict[osmkey]:
-
-                                    curr['occurrences'][category].append([row.id,osmkey,value,'unlisted at accepted/known values, probably wrong/misspelled'])
-
-
-                                    curr['occ_count'][category] += 1
+                                     if not row.id in curr['occurrences'][category]:
 
 
-                                    add_to_occurrences(category,row.id)
+
+                                        val_list = [row.id,osmkey,value,'unlisted at accepted/known values, probably wrong/misspelled']
+
+                                        curr['occurrences'][category][row.id] = val_list
+
+
+                                        curr['occ_count'][category] += 1
+
+
+                                        add_to_occurrences(category,row.id)
+
+            if curr['type'] == 'tags':
+
+                for character in curr['dict']:
+                    for field in row:
+                        if isinstance(field,str):
+                            if character in field:
+                                val_list = [row.id,'ANY (check at feature link)',field,curr['dict'][character]]
+
+                                curr['occurrences'][category][row.id] = val_list
+
+
+                                curr['occ_count'][category] += 1
+
+
+                                add_to_occurrences(category,row.id)
+
+                                break
+
+
+
+
+    
 
 
 
@@ -135,13 +176,13 @@ for category in gdf_dict:
             writer.writerow(['osm_id','key','value','commentary'])
 
 
-            for line_as_list in curr['occurrences'][category]:
+            for line_as_list in curr['occurrences'][category].values():
                 # writer.write(','.join(list(map(str,linelist)))+'\n')
 
 
                 writer.writerow(line_as_list)
 
-        gen_quality_report_page(pagepath,curr['occurrences'][category],type_dict[category],category,quality_category,curr['about'],curr['type'])
+        gen_quality_report_page(pagepath,list(curr['occurrences'][category].values()),type_dict[category],category,quality_category,curr['about'],curr['type'])
 
     number_occ_pagepath  = f'quality_check/pages/count_by_feature_{category}.html'
 

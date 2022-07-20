@@ -79,9 +79,9 @@ categories_dict_keys = {
         'type':'keys',
 
         'occurrences': {
-                            'sidewalks': [],
-                            'crossings': [],
-                            'kerbs':     [],
+                            'sidewalks': {},
+                            'crossings': {},
+                            'kerbs':     {},
                         },
 
 
@@ -100,9 +100,9 @@ categories_dict_keys = {
         'type':'keys',
 
         'occurrences': {
-                            'sidewalks': [],
-                            'crossings': [],
-                            'kerbs':     [],
+                            'sidewalks': {},
+                            'crossings': {},
+                            'kerbs':     {},
                         },
         
         'occ_count': {
@@ -120,9 +120,9 @@ categories_dict_keys = {
         'type':'keys',
 
         'occurrences': {
-                            'sidewalks': [],
-                            'crossings': [],
-                            'kerbs':     [],
+                            'sidewalks': {},
+                            'crossings': {},
+                            'kerbs':     {},
                         },
         
         'occ_count': {
@@ -139,9 +139,9 @@ categories_dict_keys = {
         'type':'values',
 
         'occurrences': {
-                            'sidewalks': [],
-                            'crossings': [],
-                            'kerbs':     [],
+                            'sidewalks': {},
+                            'crossings': {},
+                            'kerbs':     {},
                         },
 
 
@@ -159,9 +159,9 @@ categories_dict_keys = {
         'type':'values',
 
         'occurrences': {
-                            'sidewalks': [],
-                            'crossings': [],
-                            'kerbs':     [],
+                            'sidewalks': {},
+                            'crossings': {},
+                            'kerbs':     {},
                         },
 
 
@@ -180,9 +180,9 @@ categories_dict_keys = {
         'type':'tags',
 
         'occurrences': {
-                            'sidewalks': [],
-                            'crossings': [],
-                            'kerbs':     [],
+                            'sidewalks': {},
+                            'crossings': {},
+                            'kerbs':     {},
                         },
 
 
@@ -194,26 +194,26 @@ categories_dict_keys = {
 
     },
 
-    "missing_value": {
-        'about':"tags with only a key, no value",
-        'dict' : None,
-        'type':'tags',
+    # "missing_value": {
+    #     'about':"tags with only a key, no value",
+    #     'dict' : None,
+    #     'type':'tags',
 
-        'occurrences': {
-                            'sidewalks': [],
-                            'crossings': [],
-                            'kerbs':     [],
-                        },
+    #     'occurrences': {
+    #                         'sidewalks': {},
+    #                         'crossings': {},
+    #                         'kerbs':     {},
+    #                     },
 
 
 
-        'occ_count': {
-                    'sidewalks': 0,
-                    'crossings': 0,
-                    'kerbs':     0,
-                },
+    #     'occ_count': {
+    #                 'sidewalks': 0,
+    #                 'crossings': 0,
+    #                 'kerbs':     0,
+    #             },
 
-    },
+    # },
 
 
 

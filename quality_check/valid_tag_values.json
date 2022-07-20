@@ -18,7 +18,8 @@
             "gravel",
             "compacted",
             "ceramic:tiles",
-            "wood"
+            "wood",
+            "metal"
         ],
         "smoothness": [
             "excellent",
@@ -77,7 +78,8 @@
             "gravel",
             "compacted",
             "ceramic:tiles",
-            "wood"
+            "wood",
+            "metal"
         ],
         "smoothness": [
             "excellent",
@@ -90,7 +92,9 @@
             "impassable"
         ],
         "traffic_calming": [
-            "table"
+            "table",
+            "bump",
+            "hump"
         ]
     }
 }

@@ -183,7 +183,7 @@ def gen_quality_report_page(outpath,tabledata,feat_type,category,quality_categor
     <th><b>OSM ID (link)</b></th>
     <th><b>key</b></th>
     <th><b>value</b></th>
-    <th><b>commentary</b></th>'
+    <th><b>commentary</b></th>
     </tr>"""
 
 

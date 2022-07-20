@@ -1,1 +1,2 @@
 osm_id,key,value,commentary
+8842953120,ANY (check at feature link),lowered=no,The '=' character is used ONLY in textual representation of tags to separate the key from the value
