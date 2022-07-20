@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+
+<!-- thx, w3schools, this page was made following their tutorial!! -->
+
+<html lang="en">
+<head>
+    
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+
+
+<style>
+
+        body {
+                font-family: 'Poppins', sans-serif;
+                    font-size: 20px;
+                    text-align: center;
+                    color: black;
+
+            }
+
+</style>
+
+
+
+
+
+<style>
+
+
+h1 {text-align: center;}
+
+
+
+table {
+    font-size: 15px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+
+<style>
+
+h3 {
+    font-size :  16px;
+    text-align: left;
+    text-align: left;
+
+
+}
+
+h2 {
+    font-size :  25px;
+
+}
+
+h1 {
+    text-align:center;
+    font-size :  30px;
+}
+
+
+</style>
+
+<title>OpenSidewalkMap Quality Check</title>
+
+<link rel="icon" type="image/x-icon" href="../assets/homepage/favicon_homepage.png">
+
+<body>
+
+<h1>OpenSidewalkMap Quality Check</h1>
+
+<p>
+This Section is dedicated to find errors in the Features of interest in the Context of OSWM project.<br>
+In some cases it's a clear mistake, but it can be just a mispelling or an uncommon value<br><br>
+
+currently, there are the categories presented at the table,<br> each one with the number of occurrences that are item-wise detailed at each link<br>
+<a href="https://github.com/kauevestena/opensidewalkmap_beta/issues">you can post suggestions at repo "issues" section</a>
+
+</p>
+
+<table>
+
+
+
+    <tr>
+    <th><b>Category</b></th>
+    <th><b>Sidewalks</b></th>
+    <th><b>Crossings</b></th>
+    <th><b>Kerbs</b></th>
+
+    
+    </tr>
+
+<tr><td>improper_keys</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/improper_keys_sidewalks.html"> 63 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/improper_keys_crossings.html"> 7 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/improper_keys_kerbs.html"> 99 </a> </td></tr>
+<tr><td>uncanny_keys</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/uncanny_keys_sidewalks.html"> 58 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/uncanny_keys_crossings.html"> 2 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/uncanny_keys_kerbs.html"> 9 </a> </td></tr>
+<tr><td>keys_without_wiki</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/keys_without_wiki_sidewalks.html"> 2 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/keys_without_wiki_crossings.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/keys_without_wiki_kerbs.html"> 0 </a> </td></tr>
+<tr><td>replaceable_values</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/replaceable_values_sidewalks.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/replaceable_values_crossings.html"> 307 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/replaceable_values_kerbs.html"> 0 </a> </td></tr>
+<tr><td>wrong_mispelled_or_unlisted_values</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/wrong_mispelled_or_unlisted_values_sidewalks.html"> 36 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/wrong_mispelled_or_unlisted_values_crossings.html"> 14 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/wrong_mispelled_or_unlisted_values_kerbs.html"> 13 </a> </td></tr>
+<tr><td>invalid_characters</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/invalid_characters_sidewalks.html"> 2 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/invalid_characters_crossings.html"> 11 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/invalid_characters_kerbs.html"> 1 </a> </td></tr>
+
+
+
+</table>
+
+<p>
+The information here can be <b>outdated</b><br>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/data/data_updating.html">here you can check the last update and read more about this</a>
+<br>
+</p>
+
+<h2>About Each category: </h2>
+
+
+<h3>
+
+improper_keys : Keys that (almost certainly) shouldn't be used at that feature type<br>
+uncanny_keys : Keys that may be OK in some specific situations, but may be a mistake<br>
+keys_without_wiki : Keys that may be wrong, because there's no wiki article for it<br>
+replaceable_values : values that are not wrong, but there's a better  option that is in the commentary<br>
+wrong_mispelled_or_unlisted_values : Values that are probably wrong, but they may be mispelled or just unlisted<br>
+invalid_characters : characters that should not be in the value or in the key<br>
+</h3>
+
+
+<p>
+in a future topological and geometric errors may be included!! 
+</p>
+
+</body>
+</html> 
+

@@ -50,7 +50,7 @@ def record_to_json(key,obj,json_path):
 
 """
 
-FONT_DECLARATION = """
+FONT_STYLE = """
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,6 +61,9 @@ FONT_DECLARATION = """
 
         body {
                 font-family: 'Poppins', sans-serif;
+                    font-size: 20px;
+                    text-align: center;
+                    color: black;
 
             }
 
@@ -78,6 +81,7 @@ h1 {text-align: center;}
 
 
 table {
+    font-size: 15px;
   border-collapse: collapse;
   width: 100%;
 }
@@ -112,7 +116,7 @@ def gen_updating_infotable_page(outpath='data/data_updating.html',json_path='dat
 <html lang="en">
 <head>
 
-{FONT_DECLARATION}
+{FONT_STYLE}
 
 <title>OSWM Updating Info</title>
 
@@ -122,6 +126,9 @@ def gen_updating_infotable_page(outpath='data/data_updating.html',json_path='dat
 <body>
 
 <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta">OSWM</a> Updating Info</h1>
+
+<p> About: OSWM is currently hosted at GitHub Pages, which means that it relies on commits to stay updated!!<br>
+if the data is too outdated you may <a href="https://github.com/kauevestena/opensidewalkmap_beta/issues">post an issue</a> or contact me!!</p>
 
 <table>
 
@@ -214,7 +221,7 @@ def gen_quality_report_page(outpath,tabledata,feat_type,category,quality_categor
         <html lang="en">
         <head>
 
-        {FONT_DECLARATION}
+        {FONT_STYLE}
 
         <title>OSWM QC {category[0]} {quality_category}</title>
 

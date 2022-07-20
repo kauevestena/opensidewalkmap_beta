@@ -152,7 +152,7 @@ for category in gdf_dict:
 
 ######### PART 2: files generation
 
-
+print('generating subpages and files')
 
 # iterating again to generate the files:
 for category in gdf_dict:
@@ -198,6 +198,136 @@ for category in gdf_dict:
 
 ######### PART 3: Quality Check Main page
 
+print('generating QC main page')
+
+tablepart = """
+
+    <tr>
+    <th><b>Category</b></th>
+    <th><b>Sidewalks</b></th>
+    <th><b>Crossings</b></th>
+    <th><b>Kerbs</b></th>
+
+    
+    </tr>
+
+"""
+
+about_part = """
+<h3>
+
+"""
+
+
+for quality_category in categories_dict_keys:
+
+    tablepart += "<tr>"
+
+    tablepart += f"<td>{quality_category}</td>"
+
+
+    for category in gdf_dict:
+
+        tablepart += f'<td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/{quality_category}_{category}.html"> {categories_dict_keys[quality_category]["occ_count"][category]} </a> </td>'
+
+    
+    tablepart += "</tr>\n"
+
+    about_part += f"{quality_category} : {categories_dict_keys[quality_category]['about']}<br>\n"
+
+about_part += "</h3>"
+
+
+        
+
+
+
+
+qc_mainpage_path = 'quality_check/oswm_qc_main.html'
+
+qcmainpage_txt = f"""
+
+<!DOCTYPE html>
+
+<!-- thx, w3schools, this page was made following their tutorial!! -->
+
+<html lang="en">
+<head>
+    
+
+{FONT_STYLE}
+
+{TABLES_STYLE}
+
+<style>
+
+h3 {{
+    font-size :  16px;
+    text-align: left;
+    text-align: left;
+
+
+}}
+
+h2 {{
+    font-size :  25px;
+
+}}
+
+h1 {{
+    text-align:center;
+    font-size :  30px;
+}}
+
+
+</style>
+
+<title>OpenSidewalkMap Quality Check</title>
+
+<link rel="icon" type="image/x-icon" href="../assets/homepage/favicon_homepage.png">
+
+<body>
+
+<h1>OpenSidewalkMap Quality Check</h1>
+
+<p>
+This Section is dedicated to find errors in the Features of interest in the Context of OSWM project.<br>
+In some cases it's a clear mistake, but it can be just a mispelling or an uncommon value<br><br>
+
+currently, there are the categories presented at the table,<br> each one with the number of occurrences that are item-wise detailed at each link<br>
+<a href="https://github.com/kauevestena/opensidewalkmap_beta/issues">you can post suggestions at repo "issues" section</a>
+
+</p>
+
+<table>
+
+{tablepart}
+
+
+</table>
+
+<p>
+The information here can be <b>outdated</b><br>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/data/data_updating.html">here you can check the last update and read more about this</a>
+<br>
+</p>
+
+<h2>About Each category: </h2>
+
+{about_part}
+
+
+<p>
+in a future topological and geometric errors may be included!! 
+</p>
+
+</body>
+</html> 
+
+"""
+
+with open(qc_mainpage_path,'w+') as writer:
+    writer.write(qcmainpage_txt)
 
 
 # AGING PART:
