@@ -83,6 +83,15 @@ categories_dict_keys = {
                             'crossings': [],
                             'kerbs':     [],
                         },
+
+
+        'occ_count': {
+                    'sidewalks': 0,
+                    'crossings': 0,
+                    'kerbs':     0,
+                },
+
+
     },
 
     "uncanny_keys": {
@@ -96,7 +105,33 @@ categories_dict_keys = {
                             'kerbs':     [],
                         },
         
+        'occ_count': {
+                    'sidewalks': 0,
+                    'crossings': 0,
+                    'kerbs':     0,
+                },
+
     },
+
+
+        "keys_without_wiki": {
+        'about':"Keys that may be wrong, because there's no wiki article for it",
+        'dict' : 'quality_check/keys_without_wiki.json',
+        'type':'keys',
+
+        'occurrences': {
+                            'sidewalks': [],
+                            'crossings': [],
+                            'kerbs':     [],
+                        },
+        
+        'occ_count': {
+                    'sidewalks': 0,
+                    'crossings': 0,
+                    'kerbs':     0,
+                },
+
+        },
 
     "replaceable_values": {
         'about':"values that are not wrong, but there's a better  option that is in the commentary",
@@ -108,6 +143,13 @@ categories_dict_keys = {
                             'crossings': [],
                             'kerbs':     [],
                         },
+
+
+        'occ_count': {
+                    'sidewalks': 0,
+                    'crossings': 0,
+                    'kerbs':     0,
+                },
 
     },
 
@@ -121,6 +163,13 @@ categories_dict_keys = {
                             'crossings': [],
                             'kerbs':     [],
                         },
+
+
+        'occ_count': {
+                    'sidewalks': 0,
+                    'crossings': 0,
+                    'kerbs':     0,
+                },
 
     },
 
@@ -136,6 +185,13 @@ categories_dict_keys = {
                             'kerbs':     [],
                         },
 
+
+        'occ_count': {
+                    'sidewalks': 0,
+                    'crossings': 0,
+                    'kerbs':     0,
+                },
+
     },
 
     "missing_value": {
@@ -148,6 +204,14 @@ categories_dict_keys = {
                             'crossings': [],
                             'kerbs':     [],
                         },
+
+
+
+        'occ_count': {
+                    'sidewalks': 0,
+                    'crossings': 0,
+                    'kerbs':     0,
+                },
 
     },
 

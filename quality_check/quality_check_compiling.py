@@ -40,13 +40,42 @@ for category in gdf_dict:
             curr = categories_dict_keys[quality_category]
             
             if curr['type'] == 'keys':
-                for osmkey in curr['dict'][category]:
-                    value = getattr(row,osmkey,None)
+                if isinstance(curr['dict'],dict):
 
-                    if value:
-                        curr['occurrences'][category].append([row.id,osmkey,value,curr['dict'][category][osmkey]])
+                    for osmkey in curr['dict'][category]:
+                        value = getattr(row,osmkey,None)
 
-                        add_to_occurrences(category,row.id)
+                        if value:
+                            curr['occurrences'][category].append([row.id,osmkey,value,curr['dict'][category][osmkey]])
+
+
+                            curr['occ_count'][category] += 1
+
+                            add_to_occurrences(category,row.id)
+
+                if isinstance(curr['dict'],str):
+                    curr_ref_dict = read_json(curr['dict'])[category]
+
+                    for osmkey in curr_ref_dict:
+
+                        value = getattr(row,osmkey,None)
+
+                        if value:
+                            print(value)
+
+                            curr['occurrences'][category].append([row.id,osmkey,value,'no wiki page for this key'])
+
+
+                            curr['occ_count'][category] += 1
+
+                            add_to_occurrences(category,row.id)
+
+
+
+                
+
+
+
 
             if curr['type'] == 'values':
                 if isinstance(curr['dict'],dict):
@@ -54,6 +83,9 @@ for category in gdf_dict:
                         for osmvalue in curr['dict'][category][osmkey]:
                             if getattr(row,osmkey,None) == osmvalue:
                                 curr['occurrences'][category].append([row.id,osmkey,osmvalue,curr['dict'][category][osmkey][osmvalue]])
+
+                                curr['occ_count'][category] += 1
+
 
                                 add_to_occurrences(category,row.id)
 
@@ -68,6 +100,10 @@ for category in gdf_dict:
                                 if value not in curr_ref_dict[osmkey]:
 
                                     curr['occurrences'][category].append([row.id,osmkey,value,'unlisted at accepted/known values, probably wrong/misspelled'])
+
+
+                                    curr['occ_count'][category] += 1
+
 
                                     add_to_occurrences(category,row.id)
 
@@ -115,7 +151,7 @@ for category in gdf_dict:
     
     
 
-    gen_quality_report_page(number_occ_pagepath,list(map(list,sorted_occ_dict.items())),type_dict[category],category,'occurrence_per_feature','Features with more than one occurrence may be prioritized!!','count',None)
+    gen_quality_report_page(number_occ_pagepath,list(map(list,sorted_occ_dict.items())),type_dict[category],category,'occurrence_per_feature','Features with more than one occurrence may be prioritized!!','count',True)
 
 
 

@@ -1,3 +1,4 @@
+import csv
 import bs4
 from time import sleep, time
 import pandas as pd
@@ -49,6 +50,24 @@ def record_to_json(key,obj,json_path):
 
 """
 
+FONT_DECLARATION = """
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+
+
+<style>
+
+        body {
+                font-family: 'Poppins', sans-serif;
+
+            }
+
+</style>
+
+"""
+
 TABLES_STYLE = """
 
 <style>
@@ -59,7 +78,6 @@ h1 {text-align: center;}
 
 
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -93,6 +111,9 @@ def gen_updating_infotable_page(outpath='data/data_updating.html',json_path='dat
     <!DOCTYPE html>
 <html lang="en">
 <head>
+
+{FONT_DECLARATION}
+
 <title>OSWM Updating Info</title>
 
 {TABLES_STYLE}
@@ -148,18 +169,31 @@ def gen_updating_infotable_page(outpath='data/data_updating.html',json_path='dat
         writer.write(page_as_txt)
 
 
-def gen_quality_report_page(outpath,tabledata,feat_type,category,quality_category,text,occ_type,third_column=True):
+def gen_quality_report_page(outpath,tabledata,feat_type,category,quality_category,text,occ_type,count_page=False):
 
-    third_column_part = ''
+    pagename_base = f'{quality_category}_{category}'
 
-    if third_column:
-        third_column_part = f'<th><b>value</b></th><th><b>commentary</b></th>'
+    csv_url = f"""<h2>  
+        
+            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/tables/{pagename_base}.csv"> You can also download the raw .csv table </a>
+
+        </h2>"""
 
     tablepart = f"""<tr>
     <th><b>OSM ID (link)</b></th>
     <th><b>key</b></th>
-    {third_column_part}
+    <th><b>value</b></th>
+    <th><b>commentary</b></th>'
     </tr>"""
+
+
+    if count_page:
+        tablepart = f"""<tr>
+                    <th><b>OSM ID (link)</b></th>
+                    <th><b>count</b></th>"""
+
+        csv_url = ""
+
 
     for line in tabledata:
         line[0] = return_weblinkV2(str(line[0]),feat_type)
@@ -179,6 +213,9 @@ def gen_quality_report_page(outpath,tabledata,feat_type,category,quality_categor
         <!DOCTYPE html>
         <html lang="en">
         <head>
+
+        {FONT_DECLARATION}
+
         <title>OSWM QC {category[0]} {quality_category}</title>
 
         {TABLES_STYLE}
@@ -190,6 +227,9 @@ def gen_quality_report_page(outpath,tabledata,feat_type,category,quality_categor
 
         <h2>About: {text}</h2>
         <h2>Type: {occ_type}</h2>
+        {csv_url}
+
+
 
 
         <table>

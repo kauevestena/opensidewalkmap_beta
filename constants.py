@@ -130,6 +130,11 @@ fields_values_properties = {
                 'color' : '#bc80bd', #
             },
 
+            'metal':{
+                'score_default' : 100,
+                'color' : '#bc80bd', #
+            },
+
             # 'Petit_Pavê':{
             #     'score_default' : 65,
             #     'color' : '#bc80bd', #
