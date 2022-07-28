@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.78703704"
-     inkscape:cx="435.81176"
-     inkscape:cy="577.48235"
+     inkscape:zoom="1.1130385"
+     inkscape:cx="518.85"
+     inkscape:cy="658.10844"
      inkscape:window-width="2514"
      inkscape:window-height="1016"
      inkscape:window-x="46"
@@ -63,21 +63,21 @@
        x2="1194.6376"
        y2="900.16535"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(7.435237,-41.082598)" />
+       gradientTransform="translate(-33.132602,-40.572783)" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#dcdcdc;fill-opacity:0.800596;stroke:#000000;stroke-width:1.05577;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0;paint-order:normal"
+       style="fill:#dcdcdc;fill-opacity:0.800596;stroke:#000000;stroke-width:1.03488;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0;paint-order:normal"
        id="rect283"
-       width="1184.4722"
-       height="29.925617"
-       x="34.789806"
-       y="844.71033"
-       rx="12.506898"
-       ry="0.7532084"
+       width="1137.267"
+       height="29.946508"
+       x="34.779362"
+       y="844.69989"
+       rx="12.008456"
+       ry="0.75373423"
        inkscape:export-filename="../49f6d564/footer.png"
        inkscape:export-xdpi="80"
        inkscape:export-ydpi="80" />
@@ -95,7 +95,7 @@
          id="tspan61"
          x="40.245827"
          y="902.51056"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.5406px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333;fill-opacity:0.798054;stroke-width:0.738517">&quot;Sidewalk mapping is a cartographic portrait of the structural capacitism.&quot;</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.5406px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333;fill-opacity:0.798054;stroke-width:0.738517">&quot;Sidewalk mapping is a cartographic portrait of the structural ableism.&quot;</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.6148px;line-height:1.25;font-family:cmr10;-inkscape-font-specification:'cmr10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333;fill-opacity:0.798054;stroke:none;stroke-width:0.640371"
@@ -114,11 +114,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.7217px;line-height:1.25;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:url(#linearGradient1385);stroke-width:0.393039;stroke-opacity:0"
-       x="982.40192"
-       y="863.80011"
+       x="941.83411"
+       y="864.30994"
        id="text1319"><tspan
          sodipodi:role="line"
-         id="tspan373">2022, Kauê de Moraes Vestena</tspan></text>
+         id="tspan373"
+         style="stroke:url(#linearGradient1385)"
+         x="941.83411"
+         y="864.30994">2022, Kauê de Moraes Vestena</tspan></text>
     <text
        xml:space="preserve"
        id="text375"
