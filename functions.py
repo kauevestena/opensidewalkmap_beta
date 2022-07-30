@@ -223,14 +223,14 @@ def gen_quality_report_page(outpath,tabledata,feat_type,category,quality_categor
 
         {FONT_STYLE}
 
-        <title>OSWM QC {category[0]} {quality_category}</title>
+        <title>OSWM DQT {category[0]} {quality_category}</title>
 
         {TABLES_STYLE}
 
         </head>
         <body>
 
-        <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta">OSWM</a> Quality Check: {category} {quality_category}</h1>
+        <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta">OSWM</a> Data Quality Tool: {category} {quality_category}</h1>
 
         <h2>About: {text}</h2>
         <h2>Type: {occ_type}</h2>

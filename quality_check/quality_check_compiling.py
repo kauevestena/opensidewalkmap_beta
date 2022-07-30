@@ -282,13 +282,13 @@ h1 {{
 
 </style>
 
-<title>OpenSidewalkMap Quality Check</title>
+<title>OpenSidewalkMap Data Quality Tool</title>
 
 <link rel="icon" type="image/x-icon" href="../assets/homepage/favicon_homepage.png">
 
 <body>
 
-<h1>OpenSidewalkMap Quality Check</h1>
+<h1>OpenSidewalkMap Data Quality Tool</h1>
 
 <p>
 This Section is dedicated to find errors in the Features of interest in the Context of OSWM project.<br>
@@ -333,7 +333,7 @@ with open(qc_mainpage_path,'w+') as writer:
 # AGING PART:
 
 # generate the "report" of the updating info
-record_datetime('Quality Check of Tags')
+record_datetime("Data Quality Tool")
 sleep(.1)
 
 gen_updating_infotable_page()

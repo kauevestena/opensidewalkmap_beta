@@ -125,6 +125,6 @@
     <text
        xml:space="preserve"
        id="text375"
-       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect377)" />
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect377);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
   </g>
 </svg>
