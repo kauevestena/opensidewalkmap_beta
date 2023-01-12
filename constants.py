@@ -1,4 +1,8 @@
-# intended for common values, constants, setup...
+from config import *
+
+###############
+# intended for common values and constants, to setup the node for your city, please go to config.py
+###############
 
 
 # global min zoom level
@@ -20,14 +24,6 @@ kerbs_path_raw = 'data/kerbs_raw.geojson'
 sidewalks_versioning_path = 'data/sidewalks_versioning.json'
 crossings_versioning_path = 'data/crossings_versioning.json'
 kerbs_versioning_path = 'data/kerbs_versioning.json'
-
-# # the ten block sample
-bounding_box_sample = (-25.46340831586,-49.26485433156466,-25.45836407828201,-49.257818266840495)
-
-# # entire city
-bounding_box = (-25.6450101000000004,-49.3891399999999976,-25.3467008999999983,-49.1843181999999999)
-
-
 
 # max radius to cut off unconnected crossings and kerbs
 max_radius_cutoff = 50

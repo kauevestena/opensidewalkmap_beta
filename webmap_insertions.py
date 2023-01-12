@@ -178,8 +178,6 @@ insertions_dict = {
 
         """ ,
 
-
-
     "</body>":
         """
 
