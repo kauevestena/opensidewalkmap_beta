@@ -173,3 +173,4 @@ svg-inkscape/
 
 #OSMNX cache
 osmnx_routing/cache/
+cache/
