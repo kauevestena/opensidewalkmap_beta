@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<osm version="0.6" generator="Overpass API 0.7.58.3 b33c3320">
+<osm version="0.6" generator="Overpass API 0.7.59 e21c39fe">
 <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
-<meta osm_base="2022-07-11T19:19:54Z"/>
+<meta osm_base="2023-01-13T04:42:50Z"/>
 
   <node id="603560947" lat="-25.3652886" lon="-49.1862047">
     <tag k="crossing" v="zebra"/>
@@ -59,7 +59,12 @@
     <tag k="survey:date" v="2019-08-02"/>
     <tag k="wheelchair" v="yes"/>
   </node>
-  <node id="1229468354" lat="-25.4394175" lon="-49.2714311">
+  <node id="881735107" lat="-25.4022319" lon="-49.2698183">
+    <tag k="crossing" v="marked"/>
+    <tag k="highway" v="crossing"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="1229468354" lat="-25.4394178" lon="-49.2714310">
     <tag k="crossing" v="zebra"/>
     <tag k="highway" v="crossing"/>
     <tag k="kerb" v="flush"/>
@@ -86,7 +91,7 @@
     <tag k="survey:date" v="2019-10-17"/>
     <tag k="wheelchair" v="yes"/>
   </node>
-  <node id="1802228562" lat="-25.4163352" lon="-49.2300360">
+  <node id="1802228562" lat="-25.4163473" lon="-49.2300199">
     <tag k="highway" v="crossing"/>
     <tag k="kerb" v="flush"/>
     <tag k="mapillary" v="157913159638160"/>
@@ -282,6 +287,7 @@
     <tag k="mapillary" v="317279009773620"/>
     <tag k="survey:date" v="2020-02-18"/>
     <tag k="tactile_paving" v="no"/>
+    <tag k="traffic_signals:sound" v="no"/>
     <tag k="wheelchair" v="yes"/>
   </node>
   <node id="4604865120" lat="-25.4557224" lon="-49.2314591">
@@ -291,6 +297,7 @@
     <tag k="mapillary" v="142745234502084"/>
     <tag k="survey:date" v="2020-02-18"/>
     <tag k="tactile_paving" v="no"/>
+    <tag k="traffic_signals:sound" v="no"/>
     <tag k="wheelchair" v="yes"/>
   </node>
   <node id="4680160775" lat="-25.4498483" lon="-49.2317091">
@@ -300,6 +307,11 @@
     <tag k="mapillary" v="880367795879708"/>
     <tag k="survey:date" v="2020-02-18"/>
     <tag k="wheelchair" v="no"/>
+  </node>
+  <node id="5445949867" lat="-25.4235596" lon="-49.2681057">
+    <tag k="crossing" v="marked"/>
+    <tag k="highway" v="crossing"/>
+    <tag k="kerb" v="lowered"/>
   </node>
   <node id="5522508059" lat="-25.4566000" lon="-49.3088600">
     <tag k="highway" v="crossing"/>
@@ -444,6 +456,18 @@
     <tag k="survey:date" v="2021-04-21"/>
     <tag k="wheelchair" v="yes"/>
   </node>
+  <node id="6390644452" lat="-25.3976296" lon="-49.2699458">
+    <tag k="crossing" v="marked"/>
+    <tag k="crossing:island" v="no"/>
+    <tag k="highway" v="crossing"/>
+    <tag k="kerb" v="flush"/>
+  </node>
+  <node id="6390644454" lat="-25.3986948" lon="-49.2699500">
+    <tag k="crossing" v="marked"/>
+    <tag k="crossing:island" v="no"/>
+    <tag k="highway" v="crossing"/>
+    <tag k="kerb" v="flush"/>
+  </node>
   <node id="6403047144" lat="-25.4568324" lon="-49.2318672">
     <tag k="crossing" v="unmarked"/>
     <tag k="highway" v="crossing"/>
@@ -478,14 +502,6 @@
     <tag k="survey:date" v="2019-05-02"/>
     <tag k="wheelchair" v="yes"/>
   </node>
-  <node id="6635844913" lat="-25.4204776" lon="-49.2692912">
-    <tag k="button_operated" v="no"/>
-    <tag k="crossing" v="traffic_signals"/>
-    <tag k="highway" v="crossing"/>
-    <tag k="kerb" v="flush"/>
-    <tag k="traffic_signals:sound" v="no"/>
-    <tag k="traffic_signals:vibration" v="no"/>
-  </node>
   <node id="6707485895" lat="-25.4353014" lon="-49.2603071">
     <tag k="highway" v="crossing"/>
     <tag k="image" v="https://storage11.openstreetcam.org/files/photo/2019/5/2/lth/1436990_b62c8_707.jpg"/>
@@ -514,7 +530,7 @@
     <tag k="survey:date" v="2021-04-21"/>
     <tag k="wheelchair" v="yes"/>
   </node>
-  <node id="7130275471" lat="-25.4393919" lon="-49.2713647">
+  <node id="7130275471" lat="-25.4393923" lon="-49.2713645">
     <tag k="crossing" v="marked"/>
     <tag k="crossing:island" v="yes"/>
     <tag k="highway" v="crossing"/>
@@ -523,7 +539,7 @@
     <tag k="survey:date" v="2019-08-02"/>
     <tag k="wheelchair" v="yes"/>
   </node>
-  <node id="7130275473" lat="-25.4392005" lon="-49.2708686">
+  <node id="7130275473" lat="-25.4392014" lon="-49.2708682">
     <tag k="crossing" v="uncontrolled"/>
     <tag k="highway" v="crossing"/>
     <tag k="kerb" v="lowered"/>
@@ -531,7 +547,7 @@
     <tag k="survey:date" v="2019-08-02"/>
     <tag k="wheelchair" v="yes"/>
   </node>
-  <node id="7593965421" lat="-25.4216495" lon="-49.2694126">
+  <node id="7593965421" lat="-25.4216496" lon="-49.2694126">
     <tag k="kerb" v="raised"/>
   </node>
   <node id="8169120336" lat="-25.4531331" lon="-49.2402757">
@@ -546,7 +562,7 @@
     <tag k="tactile_paving" v="yes"/>
     <tag k="wheelchair" v="yes"/>
   </node>
-  <node id="8484708108" lat="-25.4216609" lon="-49.2693534">
+  <node id="8484708108" lat="-25.4216611" lon="-49.2693534">
     <tag k="kerb" v="raised"/>
   </node>
   <node id="8692701170" lat="-25.5169840" lon="-49.1994915">
@@ -574,8 +590,11 @@
     <tag k="tactile_paving" v="contrasted"/>
   </node>
   <node id="8813243753" lat="-25.4583935" lon="-49.2291138">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
+  </node>
+  <node id="8822621815" lat="-25.4556557" lon="-49.2314447">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
   </node>
   <node id="8822636756" lat="-25.4573020" lon="-49.2243887">
     <tag k="barrier" v="kerb"/>
@@ -625,12 +644,21 @@
     <tag k="survey:date" v="2020-09-15"/>
     <tag k="wheelchair" v="yes"/>
   </node>
+  <node id="8822681658" lat="-25.4623687" lon="-49.2320241">
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="8822681666" lat="-25.4628772" lon="-49.2314756">
+    <tag k="kerb" v="raised"/>
+  </node>
   <node id="8822681678" lat="-25.4621815" lon="-49.2309300">
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="lowered"/>
     <tag k="surface" v="concrete:plates"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="yes"/>
+  </node>
+  <node id="8822681684" lat="-25.4631922" lon="-49.2312153">
+    <tag k="kerb" v="raised"/>
   </node>
   <node id="8822683922" lat="-25.4620703" lon="-49.2308112">
     <tag k="barrier" v="kerb"/>
@@ -702,31 +730,24 @@
     <tag k="traffic_signals" v="no"/>
   </node>
   <node id="8822688643" lat="-25.4639975" lon="-49.2263697">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688645" lat="-25.4640094" lon="-49.2264194">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688726" lat="-25.4636496" lon="-49.2256041">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688866" lat="-25.4638270" lon="-49.2264596">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688868" lat="-25.4638197" lon="-49.2264268">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688869" lat="-25.4639376" lon="-49.2265468">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688871" lat="-25.4639747" lon="-49.2265381">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688872" lat="-25.4640086" lon="-49.2265318">
@@ -734,27 +755,21 @@
     <tag k="kerb" v="lowered"/>
   </node>
   <node id="8822688873" lat="-25.4639281" lon="-49.2263256">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688875" lat="-25.4638801" lon="-49.2263438">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688877" lat="-25.4637154" lon="-49.2256566">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688879" lat="-25.4637728" lon="-49.2256449">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688887" lat="-25.4632978" lon="-49.2256475">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688889" lat="-25.4633083" lon="-49.2256887">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8822688891" lat="-25.4633735" lon="-49.2265629">
@@ -848,7 +863,6 @@
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8822700491" lat="-25.4569342" lon="-49.2225298">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -934,7 +948,6 @@
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8836180436" lat="-25.4632642" lon="-49.2202351">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -944,12 +957,10 @@
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8836180497" lat="-25.4634323" lon="-49.2208047">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8836180505" lat="-25.4635890" lon="-49.2213187">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -985,12 +996,10 @@
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8836180523" lat="-25.4633691" lon="-49.2209014">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8836180532" lat="-25.4631849" lon="-49.2203395">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -1010,32 +1019,26 @@
     <tag k="wheelchair" v="limited"/>
   </node>
   <node id="8837075381" lat="-25.4678195" lon="-49.2190106">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837075399" lat="-25.4678125" lon="-49.2191565">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837075401" lat="-25.4677850" lon="-49.2190715">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837075421" lat="-25.4680010" lon="-49.2191076">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837075423" lat="-25.4679726" lon="-49.2190227">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837075426" lat="-25.4679252" lon="-49.2192132">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
@@ -1064,43 +1067,36 @@
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837121690" lat="-25.4704800" lon="-49.2276671">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837121692" lat="-25.4705218" lon="-49.2276366">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837121694" lat="-25.4709925" lon="-49.2284261">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837121696" lat="-25.4709506" lon="-49.2284558">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837121698" lat="-25.4711367" lon="-49.2284924">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837121700" lat="-25.4710936" lon="-49.2284217">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8837121702" lat="-25.4710984" lon="-49.2286163">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
@@ -1244,10 +1240,13 @@
     <tag k="wheelchair" v="yes"/>
   </node>
   <node id="8842288416" lat="-25.4620405" lon="-49.2336229">
+    <tag k="crossing" v="unmarked"/>
+    <tag k="crossing:island" v="yes"/>
     <tag k="highway" v="crossing"/>
     <tag k="kerb" v="raised"/>
     <tag k="mapillary" v="374427537306653"/>
     <tag k="survey:date" v="2020-02-17"/>
+    <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8842309418" lat="-25.4628459" lon="-49.2329814">
@@ -1382,6 +1381,14 @@
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="lowered=no"/>
   </node>
+  <node id="8843282971" lat="-25.4587603" lon="-49.2303897">
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="8843282993" lat="-25.4558610" lon="-49.2310985">
+    <tag k="crossing" v="marked"/>
+    <tag k="highway" v="crossing"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
   <node id="8843511178" lat="-25.4576696" lon="-49.2228911">
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="raised"/>
@@ -1411,23 +1418,18 @@
     <tag k="kerb" v="lowered"/>
   </node>
   <node id="8846406934" lat="-25.4633529" lon="-49.2266665">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8846406936" lat="-25.4632580" lon="-49.2265463">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8846406938" lat="-25.4633101" lon="-49.2265294">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8846406940" lat="-25.4631630" lon="-49.2256327">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8846406942" lat="-25.4632524" lon="-49.2256077">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8846406944" lat="-25.4630285" lon="-49.2257939">
@@ -1435,15 +1437,12 @@
     <tag k="kerb" v="raised"/>
   </node>
   <node id="8846406946" lat="-25.4630079" lon="-49.2257174">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8846406948" lat="-25.4630902" lon="-49.2258536">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8846406950" lat="-25.4631290" lon="-49.2258448">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="8846406958" lat="-25.4634804" lon="-49.2273586">
@@ -1506,12 +1505,10 @@
     <tag k="kerb" v="raised"/>
   </node>
   <node id="8863789030" lat="-25.4632972" lon="-49.2207021">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8863789031" lat="-25.4632288" lon="-49.2207264">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -1557,7 +1554,6 @@
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8864171032" lat="-25.4636027" lon="-49.2213618">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -1573,12 +1569,10 @@
     <tag k="wheelchair" v="yes"/>
   </node>
   <node id="8864304009" lat="-25.4580768" lon="-49.2215211">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="8864304010" lat="-25.4580618" lon="-49.2214747">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -1589,7 +1583,6 @@
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8869854127" lat="-25.4734203" lon="-49.2267607">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
@@ -1599,6 +1592,9 @@
     <tag k="crossing:island" v="no"/>
     <tag k="highway" v="crossing"/>
     <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="8882941483" lat="-25.4636576" lon="-49.2274998">
+    <tag k="kerb" v="raised"/>
   </node>
   <node id="8882941505" lat="-25.4651903" lon="-49.2279221">
     <tag k="barrier" v="kerb"/>
@@ -1953,7 +1949,6 @@
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8891102633" lat="-25.4735727" lon="-49.2268574">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
     <tag k="wheelchair" v="no"/>
@@ -1971,12 +1966,10 @@
     <tag k="wheelchair" v="yes"/>
   </node>
   <node id="8891106242" lat="-25.4735025" lon="-49.2265809">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
   <node id="8891106243" lat="-25.4734502" lon="-49.2266034">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="wheelchair" v="no"/>
   </node>
@@ -2133,7 +2126,7 @@
     <tag k="kerb" v="lowered"/>
     <tag k="traffic_signals:sound" v="yes"/>
   </node>
-  <node id="9366157641" lat="-25.4179678" lon="-49.2184232">
+  <node id="9366157641" lat="-25.4179650" lon="-49.2184078">
     <tag k="crossing" v="marked"/>
     <tag k="highway" v="crossing"/>
     <tag k="kerb" v="lowered"/>
@@ -2191,7 +2184,6 @@
     <tag k="kerb" v="raised"/>
   </node>
   <node id="9599767260" lat="-25.4518939" lon="-49.2365641">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="9599770778" lat="-25.4518474" lon="-49.2367220">
@@ -2630,11 +2622,9 @@
     <tag k="tactile_paving" v="yes"/>
   </node>
   <node id="9777589130" lat="-25.4539679" lon="-49.2237489">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="9777589132" lat="-25.4539539" lon="-49.2237050">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="9777589135" lat="-25.4552228" lon="-49.2232805">
@@ -2647,6 +2637,14 @@
     <tag k="kerb" v="raised"/>
     <tag k="tactile_paving" v="no"/>
   </node>
+  <node id="9786721962" lat="-25.4551853" lon="-49.2264518">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="9786721964" lat="-25.4551315" lon="-49.2265358">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
   <node id="9786722008" lat="-25.4547606" lon="-49.2264441">
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="lowered"/>
@@ -2655,6 +2653,14 @@
   <node id="9786722009" lat="-25.4547962" lon="-49.2265277">
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="9786722014" lat="-25.4561131" lon="-49.2257137">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="9786722016" lat="-25.4561785" lon="-49.2256861">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
   </node>
   <node id="9788702175" lat="-25.4535535" lon="-49.2270274">
     <tag k="barrier" v="kerb"/>
@@ -2675,10 +2681,22 @@
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="lowered"/>
   </node>
+  <node id="9788702210" lat="-25.4537495" lon="-49.2268508">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
   <node id="9788702212" lat="-25.4538027" lon="-49.2268285">
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="lowered"/>
     <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="9788702215" lat="-25.4542855" lon="-49.2266181">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="9788718217" lat="-25.4543460" lon="-49.2265927">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
   </node>
   <node id="9788832587" lat="-25.4534744" lon="-49.2270651">
     <tag k="barrier" v="kerb"/>
@@ -2740,23 +2758,18 @@
     <tag k="kerb" v="lowered"/>
   </node>
   <node id="9813083549" lat="-25.4600284" lon="-49.2372594">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="9813083551" lat="-25.4599892" lon="-49.2372022">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="9813083554" lat="-25.4591509" lon="-49.2378153">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="9813083559" lat="-25.4591857" lon="-49.2378739">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
   </node>
   <node id="9818664928" lat="-25.4547313" lon="-49.2431748">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -2775,7 +2788,6 @@
     <tag k="tactile_paving" v="no"/>
   </node>
   <node id="9818664938" lat="-25.4547296" lon="-49.2433073">
-    <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="no"/>
     <tag k="tactile_paving" v="no"/>
   </node>
@@ -2783,6 +2795,10 @@
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="lowered"/>
     <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="9820808464" lat="-25.4557726" lon="-49.2314782">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
   </node>
   <node id="9856655219" lat="-25.4627594" lon="-49.2240808">
     <tag k="barrier" v="kerb"/>
@@ -2813,6 +2829,354 @@
     <tag k="barrier" v="kerb"/>
     <tag k="kerb" v="rolled"/>
     <tag k="tactile_paving" v="no"/>
+  </node>
+  <node id="10249983696" lat="-25.4471530" lon="-49.2778987">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10249983698" lat="-25.4471284" lon="-49.2778346">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013134" lat="-25.4467405" lon="-49.2762387">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013136" lat="-25.4467154" lon="-49.2761747">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013149" lat="-25.4491851" lon="-49.2747987">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013151" lat="-25.4492095" lon="-49.2748631">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013154" lat="-25.4481017" lon="-49.2754803">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013156" lat="-25.4480769" lon="-49.2754161">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013174" lat="-25.4492822" lon="-49.2746643">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013176" lat="-25.4492144" lon="-49.2747021">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013199" lat="-25.4467087" lon="-49.2763286">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013204" lat="-25.4472398" lon="-49.2777150">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250013206" lat="-25.4471637" lon="-49.2777491">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039459" lat="-25.4528220" lon="-49.2763700">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039531" lat="-25.4504411" lon="-49.2777186">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039533" lat="-25.4503713" lon="-49.2777512">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039536" lat="-25.4508193" lon="-49.2789314">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039538" lat="-25.4508888" lon="-49.2788981">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039543" lat="-25.4508822" lon="-49.2790964">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039561" lat="-25.4493566" lon="-49.2748644">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039563" lat="-25.4492918" lon="-49.2749005">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039566" lat="-25.4499413" lon="-49.2764077">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="10250039568" lat="-25.4498744" lon="-49.2764383">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="10250039573" lat="-25.4500125" lon="-49.2765905">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039576" lat="-25.4502946" lon="-49.2775494">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039578" lat="-25.4503645" lon="-49.2775168">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039731" lat="-25.4522074" lon="-49.2782671">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039746" lat="-25.4518248" lon="-49.2770729">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039748" lat="-25.4517666" lon="-49.2771000">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039753" lat="-25.4516894" lon="-49.2768985">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039776" lat="-25.4475721" lon="-49.2789838">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039778" lat="-25.4475425" lon="-49.2789070">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039783" lat="-25.4477633" lon="-49.2788946">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039786" lat="-25.4489700" lon="-49.2782409">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039788" lat="-25.4489992" lon="-49.2783180">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039791" lat="-25.4491654" lon="-49.2782405">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039796" lat="-25.4502618" lon="-49.2776381">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039798" lat="-25.4502911" lon="-49.2777152">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039801" lat="-25.4504740" lon="-49.2776299">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039803" lat="-25.4504447" lon="-49.2775528">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039806" lat="-25.4516598" lon="-49.2769857">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039808" lat="-25.4516890" lon="-49.2770628">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039821" lat="-25.4518555" lon="-49.2769851">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039826" lat="-25.4528203" lon="-49.2765349">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250039828" lat="-25.4527914" lon="-49.2764577">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040114" lat="-25.4476520" lon="-49.2787825">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040116" lat="-25.4475763" lon="-49.2788177">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040119" lat="-25.4476539" lon="-49.2790191">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040121" lat="-25.4477295" lon="-49.2789838">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040139" lat="-25.4464585" lon="-49.2756921">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040144" lat="-25.4465629" lon="-49.2761874">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040146" lat="-25.4466363" lon="-49.2761465">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040353" lat="-25.4523294" lon="-49.2784069">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040355" lat="-25.4522715" lon="-49.2784346">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040365" lat="-25.4500465" lon="-49.2765050">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="10250040368" lat="-25.4498630" lon="-49.2765888">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040370" lat="-25.4498387" lon="-49.2765246">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="10250040697" lat="-25.4495112" lon="-49.2796901">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040715" lat="-25.4507845" lon="-49.2790152">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040720" lat="-25.4496880" lon="-49.2796005">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="raised"/>
+  </node>
+  <node id="10250040722" lat="-25.4496686" lon="-49.2795491">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040725" lat="-25.4521754" lon="-49.2783498">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040727" lat="-25.4521950" lon="-49.2784011">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040730" lat="-25.4509862" lon="-49.2789794">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040732" lat="-25.4509667" lon="-49.2789280">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250040745" lat="-25.4523686" lon="-49.2783179">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250041176" lat="-25.4496572" lon="-49.2796933">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250041178" lat="-25.4495903" lon="-49.2797253">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250041211" lat="-25.4490001" lon="-49.2743156">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042418" lat="-25.4495227" lon="-49.2795325">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042420" lat="-25.4495806" lon="-49.2795048">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042423" lat="-25.4491350" lon="-49.2783281">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042425" lat="-25.4490768" lon="-49.2783552">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042428" lat="-25.4490004" lon="-49.2781533">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042430" lat="-25.4490586" lon="-49.2781262">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042455" lat="-25.4535126" lon="-49.2761867">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042458" lat="-25.4529360" lon="-49.2763885">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042460" lat="-25.4530071" lon="-49.2764509">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042842" lat="-25.4530659" lon="-49.2778416">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042844" lat="-25.4531447" lon="-49.2778650">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042852" lat="-25.4534895" lon="-49.2766189">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042854" lat="-25.4535658" lon="-49.2766535">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042921" lat="-25.4529950" lon="-49.2765133">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042924" lat="-25.4534030" lon="-49.2766839">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250042926" lat="-25.4533848" lon="-49.2767361">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250045286" lat="-25.4535691" lon="-49.2768281">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
+  </node>
+  <node id="10250045288" lat="-25.4535961" lon="-49.2767395">
+    <tag k="barrier" v="kerb"/>
+    <tag k="kerb" v="lowered"/>
   </node>
 
 </osm>

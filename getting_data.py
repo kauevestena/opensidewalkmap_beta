@@ -3,20 +3,37 @@ from constants import *
 from functions import *
 from time import sleep
 
+import osmnx as ox
+
+USE_OSMNX = False
 
 
 
-
-queries_dict = {
-    'kerbs' : {'query':osm_query_string_by_bbox(*bounding_box,interest_key='kerb',node=True,way=False),'geomtype':'Point'},
-    'sidewalks': {'query':osm_query_string_by_bbox(*bounding_box,interest_key='footway',interest_value='sidewalk'),'geomtype':'LineString'},
-    'crossings': {'query':osm_query_string_by_bbox(*bounding_box,interest_key='footway',interest_value='crossing'),'geomtype':'LineString'}
+if USE_OSMNX:
+    queries_dict = {
+        'kerbs' : {'kerb':True},
+        'sidewalks' : {'footway':'sidewalk'},
+        'crossings' : {'footway':'crossing'},
     }
+else:
+    queries_dict = {
+        'kerbs' : {'query':osm_query_string_by_bbox(*bounding_box,interest_key='kerb',node=True,way=False),'geomtype':'Point'},
+        'sidewalks': {'query':osm_query_string_by_bbox(*bounding_box,interest_key='footway',interest_value='sidewalk'),'geomtype':'LineString'},
+        'crossings': {'query':osm_query_string_by_bbox(*bounding_box,interest_key='footway',interest_value='crossing'),'geomtype':'LineString'}
+        }
+
 
 for key in queries_dict:
     outpath = f'data/{key}_raw.geojson'
 
-    get_osm_data(queries_dict[key]['query'],f'{key}_temp',geomtype=queries_dict[key]['geomtype'],print_response=True,geojson_outpath=outpath)
+    if not USE_OSMNX:
+        get_osm_data(queries_dict[key]['query'],f'{key}_temp',geomtype=queries_dict[key]['geomtype'],print_response=True,geojson_outpath=outpath)
+    
+    else:
+
+        as_gdf = ox.geometries_from_bbox(bounding_box[2],bounding_box[0],bounding_box[3],bounding_box[1],queries_dict[key])
+
+        as_gdf.to_file(outpath)
 
 
 # to record data aging:
