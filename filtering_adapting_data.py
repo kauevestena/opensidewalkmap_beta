@@ -77,6 +77,8 @@ for category in gdf_dict:
 
     gdf_dict[category].fillna('?',inplace=True)
 
+
+
     # replacing wrong values with "?" (unknown) or misspelled with the nearest valid:
     for subkey in wrong_misspelled_values[category]:
         gdf_dict[category][subkey].replace(wrong_misspelled_values[category][subkey],inplace=True)

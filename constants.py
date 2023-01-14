@@ -4,6 +4,8 @@ from config import *
 # intended for common values and constants, to setup the node for your city, please go to config.py
 ###############
 
+# Wheter to use OSMNX or to use the 'osm_fetch.py' functions
+USE_OSMNX = True
 
 # global min zoom level
 min_zoom = 16
