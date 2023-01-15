@@ -88,9 +88,9 @@ folium.TileLayer(name='OpenStreetMap std.',
 min_zoom=min_zoom,
 opacity=.5,max_zoom=25,max_native_zoom=19).add_to(m)
 
-# cycloMAP:
-folium.TileLayer(tiles='https://{switch:a,b,c}.tile-cyclosm.openstreetmap.fr/cyclosm/{zoom}/{x}/{y}.png',name='CyclOSM',opacity=.5,attr='CyclOSM',
-min_zoom=min_zoom,max_zoom=25,max_native_zoom=18).add_to(m)
+# # cycloMAP:  (REVEALED BUGGY, suspended for now)
+# folium.TileLayer(tiles='https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',name='CyclOSM',opacity=.5,attr='CyclOSM',
+# min_zoom=min_zoom,max_zoom=25,max_native_zoom=18).add_to(m)
 
 # HUMANITARIAN:
 folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM',
