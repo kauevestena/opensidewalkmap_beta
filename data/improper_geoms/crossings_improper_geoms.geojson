@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "element_type": "node", "id": 2394975296, "highway": "crossing", "crossing": "marked", "lit": null, "wheelchair": null, "bicycle": null, "mapillary": null, "survey:date": null, "traffic_calming": null, "kerb": null, "footway": "crossing", "crossing:island": null, "tactile_paving": null, "name": null, "horse": null, "access": null, "smoothness": null, "surface": null, "foot": null, "segregated": null, "bridge": null, "layer": null, "oneway": null, "sidewalk": null, "note": null, "motor_vehicle": null, "incline": null, "lcn": null, "alt_name": null, "lanes": null, "level": null, "cycleway": null, "cycleway:right": null, "crossing:markings": null, "construction": null }, "geometry": { "type": "Point", "coordinates": [ -49.2427707, -25.4530157 ] } }
+]
+}
