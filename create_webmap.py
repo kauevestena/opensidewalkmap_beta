@@ -6,6 +6,7 @@ from functions import *
 from constants import *
 from webmap_insertions import *
 
+from folium.plugins import GroupedLayerControl
 
 print('reading data...')
 
@@ -84,22 +85,27 @@ zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],ma
 
 
 # standard:
-folium.TileLayer(name='OpenStreetMap std.',
+std_baselayer =  folium.TileLayer(name='OpenStreetMap std.',
 min_zoom=min_zoom,
-opacity=.5,max_zoom=25,max_native_zoom=19).add_to(m)
+opacity=.5,max_zoom=25,max_native_zoom=19) #.add_to(m)
+m.add_child(std_baselayer)
 
 # # cycloMAP:  (REVEALED BUGGY, suspended for now)
 # folium.TileLayer(tiles='https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',name='CyclOSM',opacity=.5,attr='CyclOSM',
 # min_zoom=min_zoom,max_zoom=25,max_native_zoom=18).add_to(m)
 
 # HUMANITARIAN:
-folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM',
-min_zoom=min_zoom,max_zoom=25,max_native_zoom=18).add_to(m)
+humanitarian_baselayer = folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM',
+min_zoom=min_zoom,max_zoom=25,max_native_zoom=18) #.add_to(m)
+m.add_child(humanitarian_baselayer)
+
 
 
 # opvnkarte:
-folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=18,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport',
-min_zoom=min_zoom).add_to(m)
+opvnkarte_baselayer = folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=18,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport',
+min_zoom=min_zoom) #.add_to(m)
+
+m.add_child(opvnkarte_baselayer)
 
 '''
 
@@ -205,7 +211,7 @@ style_function= outline_style,control=False
 
 '''
 
-folium.GeoJson(data=sidewalks_gdf
+sidewalk_surface_layer = folium.GeoJson(data=sidewalks_gdf
 # sidewalks_path
 ,name='Sidewalks (surface)',
 popup=folium.GeoJsonPopup(fields=req_fields['sidewalks']),
@@ -217,9 +223,9 @@ highlight_function=simple_highlight,
 tooltip=folium.Tooltip('<b>Sidewalk</b><br>(click for details)','text-align:center')
 
 
-).add_to(m)
+) #.add_to(m)
 
-folium.GeoJson(data=sidewalks_gdf
+sidewalk_smoothness_layer = folium.GeoJson(data=sidewalks_gdf
 # sidewalks_path
 ,name='Sidewalks (smoothness)',
 popup=folium.GeoJsonPopup(fields=req_fields['sidewalks']),
@@ -231,8 +237,13 @@ highlight_function=simple_highlight,
 tooltip=folium.Tooltip('<b>Sidewalk</b><br>(click for details)','text-align:center'),
 
 
-show=False
-).add_to(m)
+# show=False
+) #.add_to(m)
+
+m.add_child(sidewalk_surface_layer)
+m.add_child(sidewalk_smoothness_layer)
+
+
 
 '''
 
@@ -241,7 +252,7 @@ show=False
 '''
 
 
-folium.GeoJson(data=crossings_gdf,name='crossings',
+crossings_layer = folium.GeoJson(data=crossings_gdf,name='crossings',
 popup=folium.GeoJsonPopup(fields=req_fields['crossings']),
 highlight_function=simple_highlight,
 # zoom_on_click=True,
@@ -250,8 +261,9 @@ style_function=style_crossing,
 tooltip=folium.Tooltip('<b>Crossing</b><br>(click for details)','text-align:center')
 
 
-).add_to(m)
+) #.add_to(m)
 
+m.add_child(crossings_layer)
 
 '''
 
@@ -268,7 +280,7 @@ kerbs_gdf['kerbs_colors'].replace(kerbs_colors,inplace=True)
 def styling_kerbs(feature):
     return {'color':'black','fillColor':feature['properties']['kerbs_colors'],'fillOpacity':1}
 
-folium.GeoJson(data=kerbs_gdf,
+kerbs_layer = folium.GeoJson(data=kerbs_gdf,
 name='kerbs',
 marker=folium.Circle(
     radius=1,fill=True,weight=1),
@@ -282,7 +294,9 @@ tooltip=folium.Tooltip('<b>Kerb</b><br>(click for details)','text-align:center')
 
 
 
-).add_to(m)
+) #.add_to(m)
+
+m.add_child(kerbs_layer)
 
 '''
 
@@ -346,7 +360,17 @@ print('Creating Resources...')
 
 
 # LAYER CONTROL
-folium.LayerControl(collapsed=True).add_to(m)
+# thx Folium developers:
+# https://github.com/python-visualization/folium/pull/1592
+GroupedLayerControl(
+    groups={'Sidewalks Layers': [sidewalk_surface_layer, sidewalk_smoothness_layer],'Crossings Layers':[crossings_layer],'Kerbs Layers':[kerbs_layer],'Base Layers':[std_baselayer,humanitarian_baselayer,opvnkarte_baselayer]},
+    collapsed=True,
+).add_to(m)
+
+# folium.LayerControl(collapsed=True).add_to(m)
+
+
+
 
 
 '''
