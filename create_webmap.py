@@ -87,7 +87,7 @@ zoom_control=False,tiles=None,min_lat=bounding_box[0],min_lon=bounding_box[1],ma
 # standard:
 std_baselayer =  folium.TileLayer(name='OpenStreetMap std.',
 min_zoom=min_zoom,
-opacity=.5,max_zoom=25,max_native_zoom=19) #.add_to(m)
+opacity=.5,max_zoom=22,max_native_zoom=19) #.add_to(m)
 m.add_child(std_baselayer)
 
 # # cycloMAP:  (REVEALED BUGGY, suspended for now)
@@ -96,13 +96,13 @@ m.add_child(std_baselayer)
 
 # HUMANITARIAN:
 humanitarian_baselayer = folium.TileLayer(tiles='https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',name='Humanitarian OSM',opacity=.5,attr='Humanitarian OSM',
-min_zoom=min_zoom,max_zoom=25,max_native_zoom=18) #.add_to(m)
+min_zoom=min_zoom,max_zoom=22,max_native_zoom=18) #.add_to(m)
 m.add_child(humanitarian_baselayer)
 
 
 
 # opvnkarte:
-opvnkarte_baselayer = folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=25,max_native_zoom=18,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport',
+opvnkarte_baselayer = folium.TileLayer(tiles='https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',max_zoom=22,max_native_zoom=18,name='OPVN Karte Transport',opacity=.5,attr='OPVN Karte Transport',
 min_zoom=min_zoom) #.add_to(m)
 
 m.add_child(opvnkarte_baselayer)

@@ -50,9 +50,9 @@ geom_type_dict = {
 
 print('- Fetching updating info')
 # updating info:
-sidewalks_updating = pd.read_json(sidewalks_versioning_path)
-crossings_updating = pd.read_json(crossings_versioning_path)
-kerbs_updating = pd.read_json(kerbs_versioning_path)
+sidewalks_updating = pd.read_json(sidewalks_path_versioning)
+crossings_updating = pd.read_json(crossings_path_versioning)
+kerbs_updating = pd.read_json(kerbs_path_versioning)
 
 updating_dict = {'sidewalks':sidewalks_updating,'crossings':crossings_updating,'kerbs':kerbs_updating}
 
