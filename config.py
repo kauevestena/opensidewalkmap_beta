@@ -1,5 +1,7 @@
 """
   setup the variables for your city:
+
+  all of them are mandatory!!
 """
 
 # # entire city:
@@ -10,7 +12,7 @@ bounding_box = (
     -49.1843181999999999  # EASTMOST
     )
 
-# # sample for the current routing app:
+# # a sample of a region of special interest, like the city centre, 
 bounding_box_sample = (
     -25.46340831586,     # SOUTHMOST
     -49.26485433156466,  # WESTMOST

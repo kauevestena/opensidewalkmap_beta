@@ -416,7 +416,7 @@ print('Modifying HTML...')
 
 
 # saving the page:
-m.save(page_name)
+m.save(map_page_name)
 sleep(.2)
 
 
@@ -428,12 +428,12 @@ sleep(.2)
 
 # LOGO style changing
 
-logo_ref = find_html_name(page_name,logo_path)
-style_changer(page_name,logo_ref)
+logo_ref = find_html_name(map_page_name,logo_path)
+style_changer(map_page_name,logo_ref)
 
 
 # applying a rule to hide footer message for small screens
-footer_ref = find_html_name(page_name,footer_path)
+footer_ref = find_html_name(map_page_name,footer_path)
 
 footer_img_css_add = ''' 
 
@@ -445,12 +445,12 @@ footer_img_css_add = '''
 
 '''
 
-style_changer(page_name,logo_ref,new=None,append=footer_img_css_add)
+style_changer(map_page_name,logo_ref,new=None,append=footer_img_css_add)
 
 # SETTING MAP AS A FIXED ELEMENT:
 
 
-style_changer(page_name,find_map_ref(page_name),original='relative',new='fixed')
+style_changer(map_page_name,find_map_ref(map_page_name),original='relative',new='fixed')
 
 
 
@@ -458,11 +458,11 @@ style_changer(page_name,find_map_ref(page_name),original='relative',new='fixed')
 for insertion_point in insertions_dict:
     print(insertion_point)
 
-    # add_to_page_after_first_tag(page_name,insertions_dict[insertion_point],insertion_point)
+    # add_to_page_after_first_tag(map_page_name,insertions_dict[insertion_point],insertion_point)
 
-    replace_at_html(page_name,insertion_point,insertions_dict[insertion_point])
+    replace_at_html(map_page_name,insertion_point,insertions_dict[insertion_point])
 
-replace_at_html(page_name,'<html>','<html lang="en">')
+replace_at_html(map_page_name,'<html>','<html lang="en">')
 # import bs4
 
 # # thx: https://stackoverflow.com/a/35355433/4436950

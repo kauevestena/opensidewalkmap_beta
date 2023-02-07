@@ -13,8 +13,10 @@ min_zoom = 10
 # global max zoom level
 max_zoom = 22
 
-# hmtml file name
-page_name = "map.html"
+# hmtml file name of map
+map_page_name = "map.html"
+
+
 
 # ogr2ogr path
 OGR2OGR_PATH = 'ogr2ogr'
