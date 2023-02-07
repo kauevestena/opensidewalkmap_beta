@@ -397,12 +397,29 @@ HISTORY STUFF
 def get_feature_history_url(featureid,type='way'):
     return f'https://www.openstreetmap.org/api/0.6/{type}/{featureid}/history'
 
+def parse_datetime_str(inputstr,format='ymdhms'):
+
+    format_dict = {
+        'ymdhms' : '%Y-%m-%dT%H:%M:%S',
+    }
+
+    return datetime.strptime(inputstr,format_dict[format])
+
+
 def get_datetime_last_update(featureid,featuretype='way',onlylast=True,return_parsed=True,return_special_tuple=True):
 
     h_url = get_feature_history_url(featureid,featuretype)
 
+    try:
+        response = requests.get(h_url)
+    except:
+        if onlylast:
+            if return_parsed and return_special_tuple:
+                return [None]*4 #4 Nones
 
-    response = requests.get(h_url)
+            return ''
+        else:
+            return []
 
     print(featureid)
 
@@ -418,11 +435,13 @@ def get_datetime_last_update(featureid,featuretype='way',onlylast=True,return_pa
             if onlylast:
                 if return_parsed:
                     if return_special_tuple:
-                        parsed = datetime.strptime(date_rec[-1],'%Y-%m-%dT%H:%M:%S')
+                        # parsed = datetime.strptime(date_rec[-1],'%Y-%m-%dT%H:%M:%S')
+                        parsed = parse_datetime_str(date_rec[-1])
                         return len(date_rec),parsed.day,parsed.month,parsed.year
 
                     else:
-                        return datetime.strptime(date_rec[-1],'%Y-%m-%dT%H:%M:%S')
+                        # return datetime.strptime(date_rec[-1],'%Y-%m-%dT%H:%M:%S')
+                        return parse_datetime_str(date_rec[-1])
 
                 
                 else:
@@ -430,8 +449,7 @@ def get_datetime_last_update(featureid,featuretype='way',onlylast=True,return_pa
 
             else:
                 if return_parsed:
-                    return [datetime.strptime(record,'%Y-%m-%dT%H:%M:%S') for record in date_rec]
-
+                    return [parse_datetime_str(record) for record in date_rec]
 
                 else:
                     return date_rec

@@ -35,6 +35,8 @@ for category in gdf_dict:
 
     data['osmid'] = gdf_dict[category]['id']
 
+    print('category: ',category,'\n')
+
     if category != "kerbs":
         to_include = list(map(get_datetime_last_update,gdf_dict[category]['id']))
     else:
