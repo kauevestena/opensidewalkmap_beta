@@ -4,6 +4,7 @@
 '''
 
 def file_as_string(inputpath:str):
+    # no problem recreating some functions, it can avoid circular imports
     with open(inputpath) as reader:
         return reader.read()
 

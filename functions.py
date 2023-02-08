@@ -5,6 +5,32 @@ import pandas as pd
 from datetime import datetime 
 import json, requests
 from xml.etree import ElementTree
+import geopandas as gpd
+
+
+"""
+
+    READ/ DUMP STUFF
+
+"""
+def read_json(inputpath):
+    with open(inputpath) as reader:
+        data = reader.read()
+
+    return json.loads(data)
+    
+def dump_json(inputdict,outputpath,indent=4):
+    with open(outputpath,'w+',encoding='utf8') as json_handle:
+        json.dump(inputdict,json_handle,indent=indent,ensure_ascii=False)
+
+def file_as_string(inputpath:str):
+    with open(inputpath) as reader:
+        return reader.read()
+    
+def str_to_file(inputstr:str,outputpath:str):
+    with open(outputpath,'w+',encoding='utf8') as writer:
+        writer.write(inputstr)
+
 
 """
 
@@ -16,15 +42,7 @@ def formatted_datetime_now():
     now = datetime.now()
     return now.strftime("%d/%m/%Y %H:%M:%S")
 
-def read_json(inputpath):
-    with open(inputpath) as reader:
-        data = reader.read()
 
-    return json.loads(data)
-    
-def dump_json(inputdict,outputpath,indent=4):
-    with open(outputpath,'w+',encoding='utf8') as json_handle:
-        json.dump(inputdict,json_handle,indent=indent,ensure_ascii=False)
 
 def record_datetime(key,json_path='data/last_updated.json'):
 
@@ -50,7 +68,7 @@ def record_to_json(key,obj,json_path):
 
 """
 
-FONT_STYLE = """
+FONT_STYLE = f"""
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,42 +77,16 @@ FONT_STYLE = """
 
 <style>
 
-        body {
-                font-family: 'Poppins', sans-serif;
-                    font-size: 20px;
-                    text-align: center;
-                    color: black;
-
-            }
+    {file_as_string('assets/styles/font_styles.css')}
 
 </style>
 
 """
 
-TABLES_STYLE = """
+TABLES_STYLE = f"""
 
 <style>
-
-
-h1 {text-align: center;}
-
-
-
-table {
-    font-size: 15px;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+    {file_as_string('assets/styles/table_styles.css')}
 </style>
 
 """
@@ -499,3 +491,26 @@ def check_if_wikipage_exists(name,category="Key:",wiki_page='https://wiki.openst
             pass
 
     return status == 200
+
+"""
+    geopandas
+
+"""
+
+def gdf_to_js_file(input_gdf,output_path,output_varname):
+    """
+        this function converts a geopandas dataframe to a javascript file, was the only thing that worked for vectorGrid module 
+
+        returns the importing to be included in the html file
+    """
+
+    input_gdf.to_file(output_path,driver='GeoJSON')
+
+    as_str = f"{output_varname} = "+ file_as_string(output_path)
+
+    str_to_file(as_str,output_path)
+
+    return f'<script type="text/javascript" src="{output_path}"></script>'
+
+
+

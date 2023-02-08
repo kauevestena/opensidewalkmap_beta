@@ -39,6 +39,8 @@ type_dict = {
     'kerbs' : 'node',
 }
 
+# creating the ref for the layers in this brand new version
+layers_ref_str = """"""
 
 # formatting "id" field as a formatted "osm_id":
 for category in gdf_dict:
@@ -47,6 +49,12 @@ for category in gdf_dict:
     else:
         gdf_dict[category]['osm_id'] = gdf_dict[category]['id'].astype('string').apply(return_weblink_way)
 
+    l_ref_str = gdf_to_js_file(gdf_dict[category],f'assets/mapdata/{category}.js',category+'_layer')
+
+    # storing each one
+    layers_ref_str += l_ref_str +'\n'
+
+exit() # good way to terminate, instead of commenting the rest of the code
 
 '''
 
@@ -466,6 +474,14 @@ for insertion_point in insertions_dict:
     replace_at_html(map_page_name,insertion_point,insertions_dict[insertion_point])
 
 replace_at_html(map_page_name,'<html>','<html lang="en">')
+
+# importing of the map features data:
+replace_at_html(map_page_name,'<head>','<head>'+layers_ref_str)
+
+# importing the vectorGrid API:
+# watch for versioning
+replace_at_html(map_page_name,'</head>','<script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script> </head>')
+
 # import bs4
 
 # # thx: https://stackoverflow.com/a/35355433/4436950
