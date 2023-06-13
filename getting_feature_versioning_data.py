@@ -1,5 +1,5 @@
 from constants import *
-from functions import *
+from oswm_codebase.functions import *
 import geopandas as gpd
 import pandas as pd
 

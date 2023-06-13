@@ -3,7 +3,7 @@ import sys,csv
 import geopandas as gpd
 from quality_dicts import *
 sys.path.append('.')
-from functions import *
+from oswm_codebase.functions import *
 
 def add_to_occurrences(category,id):
     if id in occurrence_per_feature[category]:

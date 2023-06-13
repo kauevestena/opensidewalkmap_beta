@@ -1,7 +1,7 @@
 'File'
 
 from constants import *
-from functions import *
+from oswm_codebase.functions import *
 import pandas as pd
 import geopandas as gpd
 from time import sleep

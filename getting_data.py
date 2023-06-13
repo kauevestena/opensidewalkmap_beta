@@ -1,6 +1,6 @@
 from osm_fetch import *
 from constants import *
-from functions import *
+from oswm_codebase.functions import *
 from time import sleep
 
 import osmnx as ox
