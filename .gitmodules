@@ -1,0 +1,3 @@
+[submodule "oswm_codebase"] 
+  path = oswm_codebase 
+  url = https://github.com/kauevestena/oswm_codebase
