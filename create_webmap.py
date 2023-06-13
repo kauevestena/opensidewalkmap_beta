@@ -16,6 +16,7 @@ crossings_gdf = gpd.read_file(crossings_path,index='id')
 kerbs_gdf = gpd.read_file(kerbs_path,index='id')
 
 
+# 
 # keeping only really required fields
 extra_fields = ['id','geometry']
 
