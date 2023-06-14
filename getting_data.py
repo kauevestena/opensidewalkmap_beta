@@ -13,9 +13,9 @@ if USE_OSMNX:
     }
 else:
     queries_dict = {
-        'kerbs': {'query': osm_query_string_by_bbox(*bounding_box, interest_key='kerb', node=True, way=False), 'geomtype': 'Point'},
-        'sidewalks': {'query': osm_query_string_by_bbox(*bounding_box, interest_key='footway', interest_value='sidewalk'), 'geomtype': 'LineString'},
-        'crossings': {'query': osm_query_string_by_bbox(*bounding_box, interest_key='footway', interest_value='crossing'), 'geomtype': 'LineString'}
+        'kerbs': {'query': osm_query_string_by_bbox(*BOUNDING_BOX, interest_key='kerb', node=True, way=False), 'geomtype': 'Point'},
+        'sidewalks': {'query': osm_query_string_by_bbox(*BOUNDING_BOX, interest_key='footway', interest_value='sidewalk'), 'geomtype': 'LineString'},
+        'crossings': {'query': osm_query_string_by_bbox(*BOUNDING_BOX, interest_key='footway', interest_value='crossing'), 'geomtype': 'LineString'}
     }
 
 
@@ -30,7 +30,7 @@ for key in queries_dict:
         print('generating ', key, '\n')
 
         as_gdf = ox.geometries_from_bbox(
-            bounding_box[2], bounding_box[0], bounding_box[3], bounding_box[1], queries_dict[key])
+            BOUNDING_BOX[2], BOUNDING_BOX[0], BOUNDING_BOX[3], BOUNDING_BOX[1], queries_dict[key])
 
         # working around with Fiona couldn't handling columns parsed as lists
         for column in as_gdf.columns:

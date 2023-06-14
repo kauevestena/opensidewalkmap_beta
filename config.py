@@ -4,8 +4,17 @@
   all of them are mandatory!!
 """
 
+# Full city name, it may contain special characters, spaces...
+CITY_NAME = 'Curitiba'
+
+# simple name, spaces must be replaced by underscores, no special characters, all in lowercase
+CITY_SHORTNAME = 'curitiba' 
+
+# City OSM relation id: (search at  https://nominatim.openstreetmap.org/ui/search.html ):
+CITY_RELATION_ID = 'R297514' #as string!!
+
 # # entire city:
-bounding_box = (
+BOUNDING_BOX = (
     -25.6450101000000004, # SOUTHMOST
     -49.3891399999999976, # WESTMOST
     -25.3467008999999983, # NORTHMOST
@@ -13,7 +22,7 @@ bounding_box = (
     )
 
 # # a sample of a region of special interest, like the city centre, 
-bounding_box_sample = (
+BOUNDING_BOX_SAMPLE = (
     -25.46340831586,     # SOUTHMOST
     -49.26485433156466,  # WESTMOST
     -25.45836407828201,  # NORTHMOST
