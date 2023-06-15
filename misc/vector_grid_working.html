@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+
+        var lastHoveredFeatureId;
+    </script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
+
+    <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #map {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+
+        .leaflet-container {
+            font-size: 1rem;
+        }
+    </style>
+
+    <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
+
+    <script type="text/javascript" src="sidewalks.js"></script>
+
+</head>
+
+<body>
+
+
+    <!-- <script type="text/javascript" src="sidewalks2.js"></script> -->
+
+
+
+    <div class="folium-map" id="map"></div>
+
+    <script>
+
+
+
+        var map = L.map(
+            "map",
+            {
+                center: [0, 0],
+                crs: L.CRS.EPSG3857,
+                zoom: 1,
+                zoomControl: true,
+                preferCanvas: false,
+            }
+        );
+
+        // var originalStyle =
+
+        map.setView({ lat: -25.44853, lng: -49.27729 }, 17);
+
+        var tile_layer_89e0cda1e2f9a6adb43810c1f35dccea = L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            { "attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
+        ).addTo(map);
+
+        // var highlight;
+        // var clearHighlight = function () {
+        //     if (highlight) {
+        //         vectorGrid.resetFeatureStyle(highlight);
+        //     }
+        //     highlight = null;
+        // };
+
+        </script>
+        <script>
+
+        var vectorGrid = L.vectorGrid.slicer(
+
+            Sidewalks,
+
+
+            {
+
+                rendererFactory: L.svg.tile,
+                //   rendererFactory: L.canvas.tile,
+                vectorTileLayerStyles: {
+                    sliced:
+
+                        // {
+                        // //   fillColor: "red",
+                        //   color: "red",
+                        //   weight: 3
+                        // 			}
+
+
+                        function (properties, zoom) {
+                            var p = properties.surface;
+                            return {
+                                //   fillColor: "red",
+
+                                color: p === "concrete" ? "blue" : p === "sett" ? "green" : "purple",
+                                weight: 3
+                            }
+
+
+                        },
+                },
+                maxZoom: 22,
+                tolerance: 15,
+                indexMaxZoom: 18,       // max zoom in the initial tile index
+                promoteId: "id",
+                debug: 0,
+                extent: 4096,
+                indexMaxZoom: 18,
+                interactive: true,
+
+                getFeatureId: function (f) {
+                    return f.properties.id;
+                }
+            }
+
+
+
+
+
+
+        )
+            .on('mouseover', function (e) {
+
+                var properties = e.layer.properties;
+
+
+
+                var popup = L.popup()
+
+                popup.setContent(properties.surface).setLatLng(e.latlng).openOn(map);
+
+                // clearHighlight();
+                // highlight = properties.id;
+
+                p = properties.surface;
+
+                var style = {
+                    color: p === "concrete" ? "blue" : p === "sett" ? "green" : "purple",
+                    weight: 12
+                };
+                lastHoveredFeatureId = properties.id;
+
+                vectorGrid.setFeatureStyle(lastHoveredFeatureId, style);
+            }
+            )
+
+
+
+            .addTo(map);
+
+        vectorGrid.on('mouseout', function (e) {
+            if (lastHoveredFeatureId) {
+                vectorGrid.resetFeatureStyle(lastHoveredFeatureId);
+                map.closePopup();
+                // L.closePopup();
+            }
+        })
+        // var feature = vectorGrid.getFeatureAt(e.latlng);
+        // if (feature) {
+        //     color: 'red',
+        //     weight: 1};
+        //     });
+
+
+
+        // map.on('click', clearHighlight);
+
+
+
+    </script>
+
+</body>
+
+</html>

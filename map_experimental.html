@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e44fb5cbeae242a6ae3bad57e07c9d5e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+
+        <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
+
+        <script type="text/javascript" src="assets/mapdata/sidewalks.js"></script>
+		<script type="text/javascript" src="assets/mapdata/kerbs.js"></script>
+		<script type="text/javascript" src="assets/mapdata/crossings.js"></script>
+		
+        
+        </head>
+        
+<body>
+    
+    
+            <div class="folium-map" id="map_e44fb5cbeae242a6ae3bad57e07c9d5e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e44fb5cbeae242a6ae3bad57e07c9d5e = L.map(
+                "map_e44fb5cbeae242a6ae3bad57e07c9d5e",
+                {
+                    center: [-25.460886197071005, -49.26133629920258],
+                    crs: L.CRS.EPSG3857,
+                    maxBounds: [[-25.6450101, -49.38914], [-25.3467009, -49.1843182]],
+                    zoom: 18,
+                    zoomControl: false,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_95fefd5b003e18151a5a7afe84dc4515 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            ).addTo(map_e44fb5cbeae242a6ae3bad57e07c9d5e);
+        
+    
+            var tile_layer_d069c1a706f78eb92280dae25c0371af = L.tileLayer(
+                "https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
+                {"attribution": "Humanitarian OSM", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            ).addTo(map_e44fb5cbeae242a6ae3bad57e07c9d5e);
+        
+    
+            var tile_layer_ee48a13f901aa2530353ddeafc3e14d0 = L.tileLayer(
+                "https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png",
+                {"attribution": "OPVN Karte Transport", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            ).addTo(map_e44fb5cbeae242a6ae3bad57e07c9d5e);
+        
+</script>
+
+            <script>
+
+            var vectorGrid_sidewalks = L.vectorGrid.slicer(
+
+                        sidewalks_layer,
+
+
+                        {
+
+                            rendererFactory: L.svg.tile,
+                            //   rendererFactory: L.canvas.tile,
+                            vectorTileLayerStyles: {
+                                sliced:
+
+                                {
+        
+        fillColor: "red",
+color: "red",
+weight: "3",
+
+
+    }
+                            },
+
+                            maxZoom: 22,
+tolerance: 15,
+ indexMaxZoom: 18,
+ debug: 0,
+ extent: 4096,
+ interactive: true,
+promoteId:"id",
+
+                            getFeatureId: function (f) {
+                                return f.properties.id;
+                            }
+                        }
+
+
+
+
+
+
+                    )
+                        .on('mouseover', function (e) {
+
+                            var properties = e.layer.properties;
+
+
+
+                            var popup = L.popup()
+
+                            popup.setContent(properties.surface).setLatLng(e.latlng).openOn(map);
+
+
+                            p = properties.surface;
+
+                            var style = {
+                                color: p === "concrete" ? "blue" : p === "sett" ? "green" : "purple",
+                                weight: 12
+                            };
+                            lastHoveredFeatureId = properties.id;
+
+                            vectorGrid_sidewalks.setFeatureStyle(lastHoveredFeatureId, style);
+                        }
+                        )
+                        .addTo(map_e44fb5cbeae242a6ae3bad57e07c9d5e);
+
+                    vectorGrid_sidewalks.on('mouseout', function (e) {
+                        if (lastHoveredFeatureId) {
+                            vectorGrid_sidewalks.resetFeatureStyle(lastHoveredFeatureId);
+                            map.closePopup();
+                            // L.closePopup();
+                        }
+                    })
+                    </script>
+            
+</html>

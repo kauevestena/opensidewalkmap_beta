@@ -7,6 +7,7 @@ import osmnx as ox
 # from copy import deepcopy
 from shapely.geometry import LineString
 import requests
+from config import *
 
 
 ###### link at streamlit:
@@ -156,7 +157,13 @@ route_graph = ox.load_graphml(graph_path,edge_dtypes={'beta_wh_weight':float})
 # edges_data = gpd.read_file(edges_datapath)
 
 
-m = folium.Map(location=[-25.460765491025665,-49.2613971233368],
+# CENTER OF THE MAP:
+mid_lat = (BOUNDING_BOX_SAMPLE[0]+BOUNDING_BOX_SAMPLE[2])/2
+mid_lgt = (BOUNDING_BOX_SAMPLE[1]+BOUNDING_BOX_SAMPLE[3])/2
+
+# m = folium.Map(location=[-25.460765491025665,-49.2613971233368],
+m = folium.Map(location=[mid_lat,mid_lgt],
+               
 # height=600,
 # position='absolute',
 zoom_start=17,
