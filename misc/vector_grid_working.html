@@ -62,7 +62,7 @@
 
     <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
 
-    <script type="text/javascript" src="sidewalks.js"></script>
+    <script type="text/javascript" src="../assets/mapdata/sidewalks.js"></script>
 
 </head>
 
@@ -110,9 +110,12 @@
         </script>
         <script>
 
+
+
+
         var vectorGrid = L.vectorGrid.slicer(
 
-            Sidewalks,
+            sidewalks_layer,
 
 
             {
@@ -152,6 +155,10 @@
 
                 getFeatureId: function (f) {
                     return f.properties.id;
+                },
+
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup('<h1>'+feature.properties.f1+'</h1><p>name: '+feature.properties.f2+'</p>');
                 }
             }
 
@@ -161,15 +168,22 @@
 
 
         )
+        .on('click', function (e) { 
+    L.popup()
+    .setContent('<h1>'+e.layer.properties.surface+'</h1><p>Language: '+e.layer.properties.smoothness+'</p>')
+    .setLatLng(e.latlng)
+    .openOn(map)
+        })
+
             .on('mouseover', function (e) {
 
                 var properties = e.layer.properties;
 
 
 
-                var popup = L.popup()
+                // var popup = L.popup()
 
-                popup.setContent(properties.surface).setLatLng(e.latlng).openOn(map);
+                //           popup.setContent(properties.surface).setLatLng(e.latlng).openOn(map);
 
                 // clearHighlight();
                 // highlight = properties.id;
@@ -193,7 +207,7 @@
         vectorGrid.on('mouseout', function (e) {
             if (lastHoveredFeatureId) {
                 vectorGrid.resetFeatureStyle(lastHoveredFeatureId);
-                map.closePopup();
+                // map.closePopup();
                 // L.closePopup();
             }
         })
@@ -207,7 +221,7 @@
 
         // map.on('click', clearHighlight);
 
-
+        // vectorGrid.bindPopup('surface: '+vectorGrid.getFeatureId);
 
     </script>
 

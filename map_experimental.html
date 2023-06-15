@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e44fb5cbeae242a6ae3bad57e07c9d5e {
+                #map_d3c1cdcea0d51a432883719d7b7e1cd3 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -48,14 +48,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_e44fb5cbeae242a6ae3bad57e07c9d5e" ></div>
+            <div class="folium-map" id="map_d3c1cdcea0d51a432883719d7b7e1cd3" ></div>
         
 </body>
 <script>
     
     
-            var map_e44fb5cbeae242a6ae3bad57e07c9d5e = L.map(
-                "map_e44fb5cbeae242a6ae3bad57e07c9d5e",
+            var map_d3c1cdcea0d51a432883719d7b7e1cd3 = L.map(
+                "map_d3c1cdcea0d51a432883719d7b7e1cd3",
                 {
                     center: [-25.460886197071005, -49.26133629920258],
                     crs: L.CRS.EPSG3857,
@@ -70,22 +70,22 @@
 
         
     
-            var tile_layer_95fefd5b003e18151a5a7afe84dc4515 = L.tileLayer(
+            var tile_layer_7228c25b85baed2abf3209f68851d589 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
-            ).addTo(map_e44fb5cbeae242a6ae3bad57e07c9d5e);
+            ).addTo(map_d3c1cdcea0d51a432883719d7b7e1cd3);
         
     
-            var tile_layer_d069c1a706f78eb92280dae25c0371af = L.tileLayer(
+            var tile_layer_53f9a72cb5e6acbe48d7934c92a792b9 = L.tileLayer(
                 "https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
                 {"attribution": "Humanitarian OSM", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
-            ).addTo(map_e44fb5cbeae242a6ae3bad57e07c9d5e);
+            ).addTo(map_d3c1cdcea0d51a432883719d7b7e1cd3);
         
     
-            var tile_layer_ee48a13f901aa2530353ddeafc3e14d0 = L.tileLayer(
+            var tile_layer_0057f449ec120c3c8806e8a6213f3a3e = L.tileLayer(
                 "https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png",
                 {"attribution": "OPVN Karte Transport", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
-            ).addTo(map_e44fb5cbeae242a6ae3bad57e07c9d5e);
+            ).addTo(map_d3c1cdcea0d51a432883719d7b7e1cd3);
         
 </script>
 
@@ -114,7 +114,7 @@ weight: "3",
                             },
 
                             maxZoom: 22,
-tolerance: 15,
+ tolerance: 15,
  indexMaxZoom: 18,
  debug: 0,
  extent: 4096,
@@ -140,7 +140,7 @@ promoteId:"id",
 
                             var popup = L.popup()
 
-                            popup.setContent(properties.surface).setLatLng(e.latlng).openOn(map);
+                            popup.setContent(properties.surface).setLatLng(e.latlng).openOn(map_d3c1cdcea0d51a432883719d7b7e1cd3);
 
 
                             p = properties.surface;
@@ -154,12 +154,12 @@ promoteId:"id",
                             vectorGrid_sidewalks.setFeatureStyle(lastHoveredFeatureId, style);
                         }
                         )
-                        .addTo(map_e44fb5cbeae242a6ae3bad57e07c9d5e);
+                        .addTo(map_d3c1cdcea0d51a432883719d7b7e1cd3);
 
                     vectorGrid_sidewalks.on('mouseout', function (e) {
                         if (lastHoveredFeatureId) {
                             vectorGrid_sidewalks.resetFeatureStyle(lastHoveredFeatureId);
-                            map.closePopup();
+                            map_d3c1cdcea0d51a432883719d7b7e1cd3.closePopup();
                             // L.closePopup();
                         }
                     })
