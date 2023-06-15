@@ -1,0 +1,9 @@
+{
+    "maxZoom": 22,
+    "tolerance": 15,
+    "indexMaxZoom": 18,
+    "promoteId": "id",
+    "debug": 0,
+    "extent": 4096,
+    "interactive": true
+}

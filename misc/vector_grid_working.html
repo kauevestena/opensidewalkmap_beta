@@ -110,7 +110,9 @@
         </script>
         <script>
 
-
+        const def_opts_str = '{ "maxZoom": 22,    "tolerance": 15,    "indexMaxZoom": 18,    "promoteId": "id",    "debug": 0,   "extent": 4096,    "interactive": true}'
+        const def_opts = JSON.parse(def_opts_str);
+        
 
 
         var vectorGrid = L.vectorGrid.slicer(
@@ -137,16 +139,18 @@
                             return {
                                 //   fillColor: "red",
 
-                                color: p === "concrete" ? "blue" : p === "sett" ? "green" : "purple",
+                                // color: p === "concrete" ? "blue" : p === "sett" ? "green" : "purple",
+                                color:  p === "asphalt" ? "#fb8072" : p === "concrete" ? "#80b1d3" : p === "concrete:plates" ? "#fccde5" : p === "paving_stones" ? "#bebada" : p === "sett" ? "#ffed6f" : p === "cobblestone" ? "#ffed6f" : p === "unhewn_cobblestone" ? "#ffffb3" : p === "ground" ? "#fdb462" : p === "dirt" ? "#fdb462" : p === "earth" ? "#fdb462" : p === "sand" ? "#fdb462" : p === "grass" ? "#b3de69" : p === "paved" ? "#ffffff" : p === "unpaved" ? "#d9d9d9" : p === "gravel" ? "#bc80bd" : p === "compacted" ? "#bc80bd" : p === "ceramic:tiles" ? "#bc80bd" : p === "wood" ? "#bc80bd" : p === "metal" ? "#bc80bd" :"#434343",
                                 weight: 3
                             }
 
 
                         },
                 },
-                maxZoom: 22,
+
+                maxZoom: def_opts.maxZoom,
                 tolerance: 15,
-                indexMaxZoom: 18,       // max zoom in the initial tile index
+                indexMaxZoom: 18,      
                 promoteId: "id",
                 debug: 0,
                 extent: 4096,
