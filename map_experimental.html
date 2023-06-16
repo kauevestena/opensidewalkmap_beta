@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_d3c1cdcea0d51a432883719d7b7e1cd3 {
+                #map_9ece2d20fe5573b13792cb0c3affc4b2 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -48,14 +48,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_d3c1cdcea0d51a432883719d7b7e1cd3" ></div>
+            <div class="folium-map" id="map_9ece2d20fe5573b13792cb0c3affc4b2" ></div>
         
 </body>
 <script>
     
     
-            var map_d3c1cdcea0d51a432883719d7b7e1cd3 = L.map(
-                "map_d3c1cdcea0d51a432883719d7b7e1cd3",
+            var map_9ece2d20fe5573b13792cb0c3affc4b2 = L.map(
+                "map_9ece2d20fe5573b13792cb0c3affc4b2",
                 {
                     center: [-25.460886197071005, -49.26133629920258],
                     crs: L.CRS.EPSG3857,
@@ -70,22 +70,10 @@
 
         
     
-            var tile_layer_7228c25b85baed2abf3209f68851d589 = L.tileLayer(
+            var tile_layer_8ef5ee895e90c6c46db0b7bd4ec9e99e = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
-            ).addTo(map_d3c1cdcea0d51a432883719d7b7e1cd3);
-        
-    
-            var tile_layer_53f9a72cb5e6acbe48d7934c92a792b9 = L.tileLayer(
-                "https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
-                {"attribution": "Humanitarian OSM", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
-            ).addTo(map_d3c1cdcea0d51a432883719d7b7e1cd3);
-        
-    
-            var tile_layer_0057f449ec120c3c8806e8a6213f3a3e = L.tileLayer(
-                "https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png",
-                {"attribution": "OPVN Karte Transport", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
-            ).addTo(map_d3c1cdcea0d51a432883719d7b7e1cd3);
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 22, "minZoom": 10, "noWrap": false, "opacity": 0.3, "subdomains": "abc", "tms": false}
+            ).addTo(map_9ece2d20fe5573b13792cb0c3affc4b2);
         
 </script>
 
@@ -101,17 +89,22 @@
                             rendererFactory: L.svg.tile,
                             //   rendererFactory: L.canvas.tile,
                             vectorTileLayerStyles: {
-                                sliced:
+                                sliced: 
 
-                                {
-        
-        fillColor: "red",
-color: "red",
-weight: "3",
+                                
+        function (properties, zoom) {
+        var p = properties.surface;
+        return {
+            color:  p === "asphalt" ? "#fb8072" : p === "concrete" ? "#80b1d3" : p === "concrete:plates" ? "#fccde5" : p === "paving_stones" ? "#bebada" : p === "sett" ? "#ffed6f" : p === "cobblestone" ? "#ffed6f" : p === "unhewn_cobblestone" ? "#ffffb3" : p === "ground" ? "#fdb462" : p === "dirt" ? "#fdb462" : p === "earth" ? "#fdb462" : p === "sand" ? "#fdb462" : p === "grass" ? "#b3de69" : p === "paved" ? "#ffffff" : p === "unpaved" ? "#d9d9d9" : p === "gravel" ? "#bc80bd" : p === "compacted" ? "#bc80bd" : p === "ceramic:tiles" ? "#bc80bd" : p === "wood" ? "#bc80bd" : p === "metal" ? "#bc80bd" :"#434343",
+    
+    
 
+                                weight: 8,
+                            }
 
-    }
                             },
+                        }, 
+                    
 
                             maxZoom: 22,
  tolerance: 15,
@@ -129,10 +122,10 @@ promoteId:"id",
 
 
 
-
-
                     )
-                        .on('mouseover', function (e) {
+
+                        
+        .on('mouseover', function (e) {
 
                             var properties = e.layer.properties;
 
@@ -140,29 +133,36 @@ promoteId:"id",
 
                             var popup = L.popup()
 
-                            popup.setContent(properties.surface).setLatLng(e.latlng).openOn(map_d3c1cdcea0d51a432883719d7b7e1cd3);
+                            popup.setContent(properties.surface).setLatLng(e.latlng).openOn(map_9ece2d20fe5573b13792cb0c3affc4b2);
 
 
                             p = properties.surface;
 
                             var style = {
-                                color: p === "concrete" ? "blue" : p === "sett" ? "green" : "purple",
-                                weight: 12
+                                color:  p === "asphalt" ? "#fb8072" : p === "concrete" ? "#80b1d3" : p === "concrete:plates" ? "#fccde5" : p === "paving_stones" ? "#bebada" : p === "sett" ? "#ffed6f" : p === "cobblestone" ? "#ffed6f" : p === "unhewn_cobblestone" ? "#ffffb3" : p === "ground" ? "#fdb462" : p === "dirt" ? "#fdb462" : p === "earth" ? "#fdb462" : p === "sand" ? "#fdb462" : p === "grass" ? "#b3de69" : p === "paved" ? "#ffffff" : p === "unpaved" ? "#d9d9d9" : p === "gravel" ? "#bc80bd" : p === "compacted" ? "#bc80bd" : p === "ceramic:tiles" ? "#bc80bd" : p === "wood" ? "#bc80bd" : p === "metal" ? "#bc80bd" :"#434343",
+                                weight: 20
                             };
                             lastHoveredFeatureId = properties.id;
 
                             vectorGrid_sidewalks.setFeatureStyle(lastHoveredFeatureId, style);
                         }
                         )
-                        .addTo(map_d3c1cdcea0d51a432883719d7b7e1cd3);
+        
+                        
+                        .addTo(map_9ece2d20fe5573b13792cb0c3affc4b2);
 
-                    vectorGrid_sidewalks.on('mouseout', function (e) {
+                        
+                            vectorGrid_sidewalks.on('mouseout', function (e) {
                         if (lastHoveredFeatureId) {
                             vectorGrid_sidewalks.resetFeatureStyle(lastHoveredFeatureId);
-                            map_d3c1cdcea0d51a432883719d7b7e1cd3.closePopup();
+                            //map_9ece2d20fe5573b13792cb0c3affc4b2.closePopup();
                             // L.closePopup();
                         }
                     })
+        
+        
+
+
                     </script>
             
 </html>
