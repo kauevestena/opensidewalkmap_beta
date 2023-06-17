@@ -1,4 +1,4 @@
-# OpenSidewalkMap, <CITYNAME> node
+# OpenSidewalkMap, <CITYNAME>Curitiba<CITYNAME> node
 
 Main project page:
 
