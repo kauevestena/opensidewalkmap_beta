@@ -5,6 +5,8 @@
 <html lang="en">
 <head>
     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +18,7 @@
         font-family: 'Kdam Thmor Pro', sans-serif;font-size: 22px;
         text-align: center;
         color: rgb(255, 255, 255);
+        margin: 0;
     }
 
     .responsive {
@@ -101,17 +104,93 @@
 
     .media__body p { margin-bottom: 1.5em; }
 
+    .topnav {
+    overflow: hidden;
+    background-color: #333;
+    }
+
+    .topnav a {
+    float: center;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    }
+
+    .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    }
+
+    .topnav a.active {
+    background-color: rgb(56, 56, 56);
+    color: #ddd;
+    }
+
+    .topnav .icon {
+    display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    }
+
+    @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    }
+
+    /* #logo_img {
+  display: inline-block;
+  } */
+
+#logo_text_div {
+
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center; 
+    padding: 1%; 
+    font-size: larger;
+    background-color: rgba(107, 107, 107, 0.35);
+}
+
+#logo_header {
+    padding-top: 1%;
+    background-color: #ffffff00;
+}
+
+h3 {
+
+    margin-bottom: 2%;
+}
 
     
-    </style>
+</style>
 
-<title>OpenSidewalkMap Home</title>
+<title>OpenSidewalkMap Node Home</title>
 
 <link rel="icon" type="image/x-icon" href="oswm_codebase/assets/homepage/favicon_homepage.png">
 
 
 <!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js">
+</script>
 
 
 
@@ -126,11 +205,7 @@
 
 
 
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/kauevestena/opensidewalkmap_beta" data-color-scheme="no-preference: dark_dimmed; light: dark_dimmed; dark: dark_dimmed;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kauevestena/opensidewalkmap_beta on GitHub">Star</a>
 
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/kauevestena" data-color-scheme="no-preference: dark_dimmed; light: dark_dimmed; dark: dark_dimmed;" data-size="large" data-show-count="false" aria-label="Follow @kauevestena on GitHub">Follow @kauevestena</a>
 
     <style>
         body {
@@ -143,33 +218,60 @@
 
 <!-- <h1 style="text-align: center;color: white;font-family: Abril Fatface;">OpenSidewalkMap</h1> -->
 
-<h1>
 
+<!-- TOPBAR, THX W3 SCHOOLS, AGAIN -->
 
+<div class="topnav" id="myTopnav">
+    <a href="https://kauevestena.github.io/opensidewalkmap/" class="active">
+    click to get back to OSWM index map
+    </a>
+    <!-- <a href="https://kauevestena.github.io/opensidewalkmap/" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a> -->
+  </div>
+  
+  
+  <!-- <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script> -->
 
-        <img title="OSWM Logo" src="oswm_codebase/assets/homepage/project_logo.png" alt="OSWM Logo"
-        style="vertical-align:middle" class="responsive">
+<!-- TOPBAR END, THX W3 SCHOOLS, AGAIN -->
 
+    <h1 id="logo_header">
+
+        <div>
         
+        <img title="OSWM Logo" src="oswm_codebase/assets/homepage/project_logo_100px.png" alt="OSWM Logo"
+        style="vertical-align:middle; height: 50;" 
+        id="logo_img">
 
-        OpenSidewalkMap
-
-    
+        <div id="logo_text_div">
+        OpenSidewalkMap:
+        <span style="color: yellow;">
+        <!--CITYNAME INSERTION-->Curitiba<!--CITYNAME INSERTION-->
+        </span>
+        <div>
+            
+        </div>
+            
 
 
 
     </h1>
 
-<h2 style="text-align: center;color: white;">A project to map sidewalks as they are:<br>
-    <b style="color: rgb(251, 255, 0);">complex</b> and <em>ways</em> by themselves!! <br>
 
 
-</h2>
+<h3> 
+    
+        <a href="https://docs.google.com/presentation/d/e/2PACX-1vREy5o4tl4xt1osUidqQjImrmQDyAuh9sxAuc3SeP5jmQzAmzj5yjDrFxwN4dxMbbwnb8V0qlaCrlUn/pub?start=true&loop=false&delayms=60000" style="color: rgb(243, 243, 172);font-size: smaller; background-color: #86868677;">(each module is presented here)</a><br>
 
-<h3> Its modules <br>
-        <a href="https://docs.google.com/presentation/d/e/2PACX-1vREy5o4tl4xt1osUidqQjImrmQDyAuh9sxAuc3SeP5jmQzAmzj5yjDrFxwN4dxMbbwnb8V0qlaCrlUn/pub?start=true&loop=false&delayms=60000" style="color: rgb(243, 243, 172);font-size: smaller;">(each one is presented here)</a><br>
-
-        are:
 
 </h3>
 
@@ -201,6 +303,7 @@
 <p> </p>
 <!-- image 1: routes  -->
 
+<!--MODULES INSERTION POINT-->
 <div class="media">
 
 
@@ -221,9 +324,7 @@
     </a> 
 
 </div>
-<p> </p>
-
-<!-- image 1: webmap  -->
+<p></p>
 
 <div class="media">
 
@@ -245,8 +346,7 @@
     </a> 
 
 </div>
-
-<p> </p>
+<p></p>
 
 <div class="media">
 
@@ -268,6 +368,9 @@
     </a> 
 
 </div>
+<p></p>
+<!--MODULES INSERTION POINT-->
+
 
 
 
@@ -280,10 +383,32 @@
 </p>
 
 
+<h2 style="text-align: center;color: white;">
+    
+    
+    <!-- A project to map sidewalks as they are:<br>
+    <b style="color: rgb(251, 255, 0);">complex</b> and <em>ways</em> by themselves!! <br> -->
+    
+    OSWM is a  
+    <em>decentered </em>
+    and 
+    <em>modular </em>
+    project <br>
+    to manage the 
+    <b style="color: rgb(251, 255, 0);">pedestrian networks</b> 
+    <br>
+    of cities using OpenSteetMap data!
+
+</h2>
+
 
 <h2>
-    The main goal is to access <br> sidewalk <em>network</em>  level of <br>
-    <span style="background-color: #00000077; color: rgb(255, 255, 255);"> - ACCESSIBILITY - </span>
+    The main goal is to access the <br> pedestrian <em>network</em>  level of <br>
+    <span style="background-color: #00000077; color: rgb(255, 255, 255);"> - ACCESSIBILITY - </span><br>
+    <span style="background-color: #00000077; color: rgb(255, 255, 255);"> - SECURITY - </span><br>
+    <span style="background-color: #00000077; color: rgb(255, 255, 255);"> - COMFORT - </span><br>
+    and take care of the data!
+
 
 </h2>
 
@@ -295,30 +420,30 @@
 
 </p>
 
-<p> 
+<!-- <p> 
     <span style="background-color: #797979d7">
 
     We are creating optimized routes with <br><a href="https://github.com/gboeing/osmnx" style="color: rgb(243, 243, 172);">OSMNX Library</a> 
     </span>
 
-</p>
+</p> -->
 
-<p> 
+<!-- <p> 
     <span style="background-color: #797979d7">
 
     We are filling Sidewalk tags with <br><a href="https://pic4review.pavie.info/" style="color: rgb(243, 243, 172);">Pic4Review</a> 
 
     </span>
 
-</p>
+</p> -->
 
 <pre>
 we love
-sidewalk
-mapping
+to map for
+pedestrians
 </pre>
 
-<p>2022, by
+<p>since 2022, by
     
     <a href="https://github.com/kauevestena" style="color: rgb(243, 243, 172);">Kauê de Moraes Vestena</a> <br>
     as part of my PhD work at <a href="https://www.ufpr.br/portalufpr/" style="color: rgb(243, 243, 172);">UFPR</a> <br>
@@ -331,6 +456,12 @@ mapping
 
 
 </p>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/kauevestena/opensidewalkmap_beta" data-color-scheme="no-preference: dark_dimmed; light: dark_dimmed; dark: dark_dimmed;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star kauevestena/opensidewalkmap_beta on GitHub">Star</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/kauevestena" data-color-scheme="no-preference: dark_dimmed; light: dark_dimmed; dark: dark_dimmed;" data-size="large" data-show-count="false" aria-label="Follow @kauevestena on GitHub">Follow @kauevestena</a>
 
 </body>
 </html> 
