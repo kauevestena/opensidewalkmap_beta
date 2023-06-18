@@ -5,16 +5,16 @@
 """
 
 # Full city name, it may contain special characters, spaces...
-CITY_NAME = 'Pato Branco'
+CITY_NAME = 'Curitiba'
 
 # simple name, spaces must be replaced by underscores, no special characters, all in lowercase
 CITY_SHORTNAME = 'curitiba'
 
 # username, for adresses
-USERNAME = 'johna'
+USERNAME = 'kauevestena'
 
 # repository name, for many weblink references:
-REPO_NAME = 'opensidewalkmap_curitiba'
+REPO_NAME = 'opensidewalkmap_beta'
 
 # City OSM relation id: (search at  https://nominatim.openstreetmap.org/ui/search.html ):
 CITY_RELATION_ID = 'R297514' #as string!!
