@@ -7,7 +7,11 @@ import osmnx as ox
 # from copy import deepcopy
 from shapely.geometry import LineString
 import requests
-from config import *
+from oswm_codebase.constants import *
+
+graph_geojson_path = 'osmnx_routing/sample_routing.geojson'
+graph_path = 'osmnx_routing/routing_graph.graphml'
+sample_as_gdf = gpd.read_file(graph_geojson_path)
 
 
 ###### link at streamlit:
@@ -15,7 +19,7 @@ from config import *
 
 # CONSTANTS
 
-LEN_CRS = 'EPSG:31982'
+LEN_CRS = sample_as_gdf.estimate_utm_crs()
 MAX_DISTANCE = 50
 WIDTH = 1000
 MAP_KEY = 'folium_map'
@@ -135,9 +139,6 @@ ss_id = get_session_id()
 
 
 
-graph_geojson_path = 'osmnx_routing/sample_routing.geojson'
-
-graph_path = 'osmnx_routing/routing_graph.graphml'
 
 # @st.cache # for optimization
 # def load_routegraph(inputpath):
