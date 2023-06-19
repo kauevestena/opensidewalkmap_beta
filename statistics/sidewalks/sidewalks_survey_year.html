@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-a176a4a7a66be4944e096fbef197a319"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "Year of Survey type", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_7", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Year of Survey Image (sidewalks)", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-a176a4a7a66be4944e096fbef197a319": [{"Year of Survey type": "?", "count": 6763, "percent": "87.13%"}, {"Year of Survey type": "2020", "count": 684, "percent": "8.81%"}, {"Year of Survey type": "2019", "count": 284, "percent": "3.66%"}, {"Year of Survey type": "2021", "count": 31, "percent": "0.4%"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
