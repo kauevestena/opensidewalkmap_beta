@@ -1,1 +1,0 @@
-crossing,footway,highway,kerb,surface,tactile_paving,traffic_calming,bicycle,name,foot,lit,segregated,layer,access,alt_name,horse,note,motor_vehicle,incline,lcn,crossing:island,lanes,oneway,level,cycleway,cycleway:right,smoothness,wheelchair,mapillary,survey:date,barrier
