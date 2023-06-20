@@ -1,9 +1,10 @@
 osmnx
 altair
+geopandas
+html5lib
 beautifulsoup4
 folium
 pandas
-geopandas
 osm2geojson
 requests
 Shapely
