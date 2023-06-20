@@ -7,7 +7,7 @@ folium
 pandas
 osm2geojson
 requests
-Shapely
+shapely
 streamlit
 streamlit_folium
 scikit-learn
