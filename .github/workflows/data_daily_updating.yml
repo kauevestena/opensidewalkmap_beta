@@ -1,0 +1,58 @@
+name: data_daily_updating
+
+# Controls when the workflow will run
+on:
+  # # Triggers the workflow on push or pull request events but only for the "main" branch
+  # push:
+  #   branches: ["main"]
+  # pull_request:
+  #   branches: ["main"]
+
+  schedule:
+    # run 4h30min every day
+    - cron: "30 7 * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  data_daily_updating:
+    runs-on: ubuntu-latest
+    # continue-on-error: true
+    steps:
+      #### actions/checkout ____________________________________________________
+      # @see https://github.com/actions/checkout
+      - uses: actions/checkout@v3
+
+      #### setup-python ________________________________________________________
+      # @see https://github.com/actions/setup-python
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: 'pip' # caching pip dependencies
+
+      #### setup dependencies __________________________________________________
+      - run: pip install -r requirements.txt
+
+      #### main ________________________________________________________________
+
+      - run: python oswm_codebase/getting_data.py
+      
+      - run: python oswm_codebase/filtering_adapting_data.py
+
+      - run: python oswm_codebase/create_webmap.py
+
+      - run: python oswm_codebase/data_quality/tag_values_checking.py
+
+      - run: python oswm_codebase/data_quality/quality_check_compiling.py
+  
+      #### upload ______________________________________________________________
+      # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
+      - run: |
+          DATETIME="$(TZ=":America/Sao_Paulo" date +"%Y-%m-%d")"
+          COMMIT_MESSAGE="data updating at $DATETIME"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "$COMMIT_MESSAGE"
+          git push

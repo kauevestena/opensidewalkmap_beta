@@ -1,11 +1,13 @@
+osmnx
+altair
 beautifulsoup4
 folium
 pandas
 geopandas
 osm2geojson
-osmnx
 requests
 Shapely
 streamlit
 streamlit_folium
 scikit-learn
+

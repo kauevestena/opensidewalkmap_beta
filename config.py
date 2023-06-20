@@ -35,3 +35,4 @@ BOUNDING_BOX_SAMPLE = (
     -49.257818266840495  # EASTMOST
     )
 
+STREAMLIT_URL='https://kauevestena-opensidewalkmap-beta-streamlit-routing-app-52bins.streamlitapp.com/'
