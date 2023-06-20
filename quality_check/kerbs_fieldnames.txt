@@ -1,1 +1,0 @@
-crossing,crossing_ref,highway,kerb,tactile_paving,traffic_calming,bicycle,mapillary,survey:date,wheelchair,button_operated,traffic_signals:sound,traffic_signals:vibration,crossing:island,image,barrier,surface,kerb:height,traffic_signals,smoothness,description
