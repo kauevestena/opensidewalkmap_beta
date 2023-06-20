@@ -37,6 +37,7 @@ jobs:
           git submodule update
 
       - run: python oswm_codebase/patch_readme_homepage.py
+      - run: python oswm_codebase/special_updates.py
   
       #### upload ______________________________________________________________
       # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
