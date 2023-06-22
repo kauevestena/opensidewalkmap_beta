@@ -35,7 +35,7 @@ print('begin')
 
 # STREAMLIT SETUP
 
-st.set_page_config('OSWM Routing','assets/homepage/favicon_homepage.png','wide','expanded')
+st.set_page_config('OSWM Routing','https://kauevestena.github.io/oswm_codebase/assets/homepage/favicon_homepage.png','wide','expanded')
 
 
 
