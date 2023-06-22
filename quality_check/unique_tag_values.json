@@ -1,112 +1,40 @@
 {
     "sidewalks": {
-        "bicycle": [
-            "dismount",
-            null,
-            "no",
-            "yes",
-            "designated",
-            "permissive"
-        ],
-        "footway": [
-            "sidewalk"
-        ],
         "highway": [
             "footway",
+            NaN,
             "path",
             "pedestrian",
             "steps"
         ],
-        "name": [
-            "Travessa Nestor de Castro",
-            null,
-            "Rua Gaspar Carnilho Júnior",
-            "Rua Lápis",
-            "Rua Lindamir Bittencourt de Lara",
-            "Rua Henrique Itiberê da Cunha",
-            "Rua Monsenhor Celso",
-            "Avenida Rocha Pombo",
-            "Rua Ayrton Greiffo",
-            "Trincheira Maurício Henrique Borges Mourão",
-            "Rua Padre Agostinho",
-            "Avenida das Américas",
-            "Travessa Francisco Killian",
-            "Avenida Nossa Senhora da Penha",
-            "Calçada Parque Ybere",
-            "Rua Coronel Francisco de Paula Moura Britto",
-            "Galeria Guimarães & Cia",
-            "Rua da Cidadania Boa Vista",
-            "Rua Loanda",
-            "Rua Praça Getúlio Vargas",
-            "Rua Deputado Heitor Alencar Furtado",
-            "Rua Augusto de Andrade",
-            "Rua Monte Castelo",
-            "Rua José Antoniassi",
-            "Avenida Albino Raschendorfer",
-            "Rua Germânia",
-            "Rua Presidente João Goulart",
-            "Rua Capitão Souza Franco",
-            "Alameda Augusto Stellfeld",
-            "Rua Arlindo João da Costa",
-            "Rua Major Thomaz Walter Iwersen",
-            "Rua Cláudio Chatagnier",
-            "Rua Comendador Antônio Domingues de Barros",
-            "Rua Arapongas",
-            "Praça Tiradentes",
-            "Calçada",
-            "Rua Amazonas de Souza Azevedo",
-            "Praça Veneto",
-            "highway=footway footway=sidewalk surface=paving_stones paving_stones=good",
-            "Rua Moysés Marcondes"
+        "crossing": [
+            NaN,
+            "marked",
+            "unmarked",
+            "uncontrolled"
         ],
-        "foot": [
-            null,
+        "traffic_signals": [
+            NaN,
+            "no"
+        ],
+        "bicycle": [
+            NaN,
+            "dismount",
             "yes",
-            "permissive",
             "designated",
-            "no"
-        ],
-        "lcn": [
-            null,
-            "yes"
-        ],
-        "motor_vehicle": [
-            null,
             "no",
-            "yes"
-        ],
-        "segregated": [
-            null,
-            "yes",
-            "no"
-        ],
-        "access": [
-            null,
-            "no",
-            "private",
-            "yes",
-            "customers",
-            "permit"
-        ],
-        "horse": [
-            null,
-            "no",
-            "permissive",
-            "yes"
-        ],
-        "oneway": [
-            null,
-            "no"
+            "permissive"
         ],
         "mapillary": [
-            null,
+            "375371010502718",
+            "164768428919042",
+            NaN,
             "480075089907680",
             "490561562065088",
             "482290589643615",
             "274023951128328",
             "487938892421527",
             "836800840376906",
-            "892509951296207",
             "923076695206255",
             "238153364734850",
             "933917420737122",
@@ -162,7 +90,6 @@
             "307950771022074",
             "966715714162890",
             "498904831462881",
-            "385835719291523",
             "780650836152443",
             "302788068041927",
             "4059136997514052",
@@ -199,7 +126,6 @@
             "377886803545812",
             "4130773130314781",
             "465191994731180",
-            "187660146566139",
             "920094432104066",
             "828236724449699",
             "581573186147527",
@@ -509,43 +435,22 @@
             "178219260862257",
             "337039134421423",
             "473458737278722",
-            "467322617686504",
-            "160625572729064",
-            "487176649067227",
             "169264971693623",
             "812119149685284",
-            "469816414104264",
             "164153985643506",
             "510362860006364",
-            "487718842647008",
             "468341681100018",
             "241117881116168",
-            "186590566672442",
             "1132699407197096",
             "315085616795064",
             "463287558087634",
-            "315718916852239",
             "296050682239341",
             "811247259807231",
-            "335197051294972",
             "945927979566687",
-            "191891276120167",
-            "5413827935357775",
             "189652546348244",
             "217196989928405",
             "608534813878711",
             "163805318932145",
-            "505842404191284",
-            "157153023084460",
-            "301985548184741",
-            "1742437495928838",
-            "189808926227379",
-            "2883661211889224",
-            "2915234295410258",
-            "137441458378549",
-            "548238442828722",
-            "820843575194518",
-            "511256190227035",
             "242353427650869",
             "390179925492937",
             "582698752694947",
@@ -575,30 +480,19 @@
             "881305595782765",
             "222399582656361",
             "829559890979911",
-            "235277698365715",
-            "545479883288319",
             "180038930674234",
-            "201767275116594",
             "559676328536817",
-            "377718933567531",
-            "336765614713898",
-            "223465102551246",
             "983801529108313",
             "1570557603143297",
             "263166352213180",
             "4002832049810500",
             "1429778444065789",
-            "529484208195595",
             "753050795377760",
             "483079012898317",
-            "371482824283267",
             "896851151238696",
             "217014533292277",
             "355638632844644",
-            "1224173034764415",
-            "933208037411456",
             "270357768118135",
-            "156882526427753",
             "4061165907269981",
             "315813673477898",
             "181855263712793",
@@ -608,9 +502,6 @@
             "570565237255174",
             "407911777188360",
             "325311505784093",
-            "816492579242368",
-            "479768009934484",
-            "858476568079943",
             "960107241432472",
             "1082689032256344",
             "205593424721367",
@@ -813,7 +704,6 @@
             "216967080235286",
             "4230037030392622",
             "736389123695876",
-            "951638539024539",
             "495054395148516",
             "297528312039078",
             "2993195901000578",
@@ -919,10 +809,6 @@
             "529352931387891",
             "232279592000896",
             "1210790569355915",
-            "891738091390112",
-            "1250815345345730",
-            "266472498518005",
-            "218991419720111",
             "3775098319285823",
             "1367458523627681",
             "514978059689385",
@@ -995,7 +881,6 @@
             "515142729851679",
             "1834140846750403",
             "564352764725446",
-            "314565790165178",
             "5431362540271885",
             "527875601570894",
             "769134117137551",
@@ -1003,8 +888,6 @@
             "942657789827510",
             "175476274484851",
             "4101472356575706",
-            "301876521467616",
-            "612865383024652",
             "901110127113659",
             "1094653251060812",
             "946332052606129",
@@ -1012,17 +895,14 @@
             "2836401923276227",
             "580047602934112",
             "743836806277142",
-            "961892404564312"
-        ],
-        "maxspeed": [
-            null,
-            "20"
+            "961892404564312",
+            "335197051294972"
         ],
         "survey:date": [
-            null,
+            "2020-02-18",
+            NaN,
             "2019-10-09",
             "2020-03-09",
-            "2020-02-18",
             "2020-02-17",
             "2020-09-17",
             "2020-02-21",
@@ -1034,41 +914,148 @@
             "2020-09-15",
             "2019-07-19"
         ],
-        "tactile_paving": [
-            null,
+        "wheelchair": [
+            NaN,
             "no",
-            "yes"
+            "yes",
+            "limited"
         ],
-        "layer": [
-            null,
-            "1",
-            "-1"
+        "kerb": [
+            NaN,
+            "lowered",
+            "flush",
+            "raised"
+        ],
+        "barrier": [
+            NaN,
+            "kerb"
+        ],
+        "access": [
+            NaN,
+            "no",
+            "private",
+            "yes",
+            "customers",
+            "permit"
         ],
         "lit": [
-            null,
+            NaN,
             "yes",
             "no"
         ],
+        "foot": [
+            NaN,
+            "yes",
+            "designated",
+            "no"
+        ],
+        "addr:city": [
+            NaN,
+            "Curitiba"
+        ],
+        "addr:housenumber": [
+            NaN,
+            "701"
+        ],
+        "addr:street": [
+            NaN,
+            "Rua Astorga"
+        ],
+        "addr:suburb": [
+            NaN,
+            "Sítio Cercado"
+        ],
+        "name": [
+            NaN,
+            "Travessa Nestor de Castro",
+            "Rua Carmelo Rangel",
+            "Rua Gaspar Carnilho Júnior",
+            "Rua Lápis",
+            "Rua Desembargador Otávio do Amaral",
+            "Rua Saldanha Marinho",
+            "Rua Lindamir Bittencourt de Lara",
+            "Rua Henrique Itiberê da Cunha",
+            "Alameda Princesa Izabel",
+            "Rua Schiller",
+            "Rua Monsenhor Celso",
+            "Rua Ozório Duque Estrada",
+            "Praça Emirados Árabes Unidos",
+            "Alameda Júlia da Costa",
+            "Avenida Rocha Pombo",
+            "Rua Ayrton Greiffo",
+            "Trincheira Maurício Henrique Borges Mourão",
+            "Rua Padre Agostinho",
+            "Avenida Cândido Hartmann",
+            "Avenida das Américas",
+            "Travessa Francisco Killian",
+            "Avenida Nossa Senhora da Penha",
+            "Calçada Parque Ybere",
+            "Avenida Visconde de Guarapuava",
+            "Galeria Guimarães & Cia",
+            "Rua da Cidadania Boa Vista",
+            "Rua Tenente-Coronel Vilagrán Cabrita",
+            "Rua Praça Getúlio Vargas",
+            "Rua Fernandes de Barros",
+            "Rua Deputado Heitor Alencar Furtado",
+            "Rua Augusto de Andrade",
+            "Rua Ivo Leão",
+            "Rua Monte Castelo",
+            "Rua José Antoniassi",
+            "Avenida Albino Raschendorfer",
+            "Rua Germânia",
+            "Rua Presidente João Goulart",
+            "Rua Coronel Domingos Soares",
+            "Rua Arthur Pina",
+            "Rua Afonso Nassife",
+            "Rua Capitão Souza Franco",
+            "Alameda Augusto Stellfeld",
+            "Rua Arlindo João da Costa",
+            "Rua Gerônimo Muraro",
+            "Rua Major Thomaz Walter Iwersen",
+            "Rua Cláudio Chatagnier",
+            "Rua Comendador Antônio Domingues de Barros",
+            "Rua Arapongas",
+            "Praça Tiradentes",
+            "Rua Amazonas de Souza Azevedo",
+            "Rua Moysés Marcondes",
+            "Rua Alfaiate Alfredo Antônio Müller",
+            "Rua Luiz Massuquetto",
+            "Rua Alexandre Dalcuch",
+            "Rua José Cocconi",
+            "Rua José Todeschini",
+            "Rua Domingos Festa Filho",
+            "Rua Francisco Juglair",
+            "Rua Bruno Filgueira",
+            "Rua Padre Dehon"
+        ],
+        "bus": [
+            NaN,
+            "no"
+        ],
+        "tactile_paving": [
+            "no",
+            NaN,
+            "yes"
+        ],
         "surface": [
-            null,
-            "asphalt",
-            "wood",
-            "concrete",
-            "paved",
             "concrete:plates",
+            "concrete",
+            NaN,
+            "asphalt",
+            "cobblestone",
+            "paving_stones",
+            "wood",
+            "paved",
             "Petit_Pavê",
             "rock",
             "sett",
-            "cobblestone",
-            "grass",
-            "paving_stones",
             "ground",
+            "grass",
             "dirt",
             "compacted",
             "earth",
             "pebblestone",
             "fine_gravel",
-            "unpaved",
             "concrete:lanes",
             "unhewn_cobblestone",
             "porcelain tiles",
@@ -1076,293 +1063,226 @@
             "stepping_stones",
             "grass_paver",
             "betão",
+            "unpaved",
             "paver"
         ],
-        "tunnel": [
-            null,
-            "yes",
-            "building_passage"
-        ],
-        "incline": [
-            null,
-            "up",
-            "down",
-            "yes"
-        ],
         "smoothness": [
-            null,
-            "excellent",
             "good",
+            NaN,
+            "excellent",
             "intermediate",
             "bad",
             "very_bad",
-            "concrete:plates",
             "impassable",
             "horrible",
             "very_horrible"
         ],
-        "opening_hours": [
-            null,
-            "Tu-Su 06:00-20:00; Mo off",
-            "Mo-Fr 08:00-18:00; Sa 10:00-16:00"
-        ],
-        "cutting": [
-            null,
-            "yes"
-        ],
-        "embankment": [
-            null,
-            "yes"
-        ],
-        "dog": [
-            null,
-            "yes"
-        ],
-        "wheelchair": [
-            null,
-            "yes",
-            "limited",
-            "no"
-        ],
         "level": [
-            null,
+            NaN,
             "-1"
         ],
-        "cycleway": [
-            null,
-            "track",
+        "footway": [
+            "sidewalk"
+        ],
+        "building": [
+            NaN,
             "yes"
         ],
-        "cycleway:right": [
-            null,
-            "track"
-        ],
-        "ramp": [
-            null,
+        "covered": [
+            NaN,
             "yes"
         ],
-        "noname": [
-            null,
-            "yes"
-        ],
-        "crossing": [
-            null,
-            "marked",
-            "unmarked",
-            "uncontrolled"
-        ],
-        "alt_name": [
-            null,
-            "Rua Joaquim Augusto Andrade",
-            "Rua Carlos Benetti"
-        ],
-        "source": [
-            null,
-            "GPS"
-        ],
-        "handrail": [
-            null,
-            "yes"
-        ],
-        "ramp:wheelchair": [
-            null,
+        "hgv": [
+            NaN,
             "no"
         ],
+        "motorcar": [
+            NaN,
+            "no"
+        ],
+        "motorcycle": [
+            NaN,
+            "no"
+        ],
+        "oneway": [
+            NaN,
+            "no"
+        ],
+        "source": [
+            NaN,
+            "yahoo_imagery",
+            "Bing",
+            "GPS"
+        ],
+        "lcn": [
+            NaN,
+            "yes"
+        ],
+        "motor_vehicle": [
+            NaN,
+            "no",
+            "yes"
+        ],
+        "segregated": [
+            NaN,
+            "yes",
+            "no"
+        ],
+        "horse": [
+            NaN,
+            "no",
+            "permissive",
+            "yes"
+        ],
+        "maxspeed": [
+            NaN,
+            "20"
+        ],
+        "layer": [
+            NaN,
+            "1",
+            "-1",
+            "0"
+        ],
+        "handrail": [
+            NaN,
+            "no",
+            "yes"
+        ],
+        "incline": [
+            NaN,
+            "down",
+            "up",
+            "yes"
+        ],
+        "ramp": [
+            NaN,
+            "no",
+            "yes"
+        ],
         "step_count": [
-            null,
+            NaN,
+            "15",
             "9",
             "11"
         ],
-        "kerb": [
-            null,
-            "lowered"
+        "lanes": [
+            NaN,
+            "2",
+            "1"
         ],
-        "traffic_signals": [
-            null,
+        "leisure": [
+            NaN,
+            "park"
+        ],
+        "tunnel": [
+            NaN,
+            "yes",
+            "building_passage"
+        ],
+        "cutting": [
+            NaN,
+            "yes"
+        ],
+        "embankment": [
+            NaN,
+            "yes"
+        ],
+        "dog": [
+            NaN,
+            "yes"
+        ],
+        "cycleway": [
+            NaN,
+            "track"
+        ],
+        "cycleway:right": [
+            NaN,
+            "track"
+        ],
+        "noname": [
+            NaN,
+            "yes"
+        ],
+        "amenity": [
+            NaN,
+            "place_of_worship"
+        ],
+        "religion": [
+            NaN,
+            "christian"
+        ],
+        "opening_hours": [
+            NaN,
+            "Mo-Fr 08:00-18:00; Sa 10:00-16:00"
+        ],
+        "alt_name": [
+            NaN,
+            "Rua Joaquim Augusto Andrade",
+            "Rua Carlos Benetti"
+        ],
+        "ramp:wheelchair": [
+            NaN,
             "no"
         ],
+        "indoor": [
+            NaN,
+            "yes"
+        ],
         "description": [
-            null,
+            NaN,
             "low friction"
         ],
         "paving_stones": [
-            null,
+            NaN,
             "good"
         ],
-        "barrier": [
-            null,
-            "kerb"
+        "check_date:surface": [
+            NaN,
+            "2022-12-10"
         ]
     },
     "crossings": {
+        "highway": [
+            "footway",
+            "path",
+            "steps"
+        ],
         "crossing": [
             "zebra",
             "marked",
-            null,
             "unmarked",
+            NaN,
             "uncontrolled",
-            "un",
-            "crossing=crossing=unmarked_footway=crossing_highway=footway_footway=crossing_highway=footway",
-            "crossing=unmarked_footway=crossing_highway=footway",
-            "crossing=unmarked_footway=crossing_highway=footway_lit=yes",
-            "highway",
             "traffic_signals"
         ],
-        "footway": [
-            "crossing"
-        ],
-        "highway": [
-            "footway",
-            "pedestrian",
-            "path",
-            "steps",
-            null
-        ],
-        "kerb": [
-            "lowered",
-            null,
+        "lit": [
+            NaN,
+            "yes",
             "no"
         ],
-        "surface": [
-            "asphalt",
-            null,
-            "paving_stones",
-            "sett",
-            "concrete",
-            "wood",
-            "metal",
-            "paved",
-            "concrete:lanes"
-        ],
-        "tactile_paving": [
-            "no",
-            null
-        ],
-        "traffic_calming": [
-            "table",
-            null
+        "wheelchair": [
+            NaN,
+            "yes"
         ],
         "bicycle": [
-            null,
+            NaN,
             "yes",
             "no",
             "designated",
             "dismount"
         ],
-        "name": [
-            null,
-            "Rua São Francisco",
-            "Rua Moçambique",
-            "Travessa Oliveira Belo",
-            "Rua Duque de Caxias",
-            "Avenida das Américas",
-            "Rua Senador Alencar Guimaraes",
-            "Praça Rui Barbosa",
-            "Rua Engenheiro Alberto Monteiro de Carvalho",
-            "Rua Dona Isabel A Redentora",
-            "Rua Paulino de Siqueira Côrtes",
-            "Rua Coronel Luiz Victorino Ordine",
-            "Rua Bruno Figueira",
-            "Rua Padre Ildefonso",
-            "Rua Silveira Peixoto",
-            "Rua Pasteur",
-            "Rua Buenos Aires",
-            "Rua Padre Isaias de Andrade",
-            "Travessa"
-        ],
-        "foot": [
-            null,
-            "permissive",
-            "designated",
+        "crossing:markings": [
+            NaN,
             "yes",
-            "destination"
-        ],
-        "lit": [
-            null,
-            "yes",
-            "no"
-        ],
-        "segregated": [
-            null,
             "no",
-            "yes"
-        ],
-        "layer": [
-            null,
-            "1",
-            "-1"
-        ],
-        "access": [
-            null,
-            "no",
-            "customers",
-            "permit",
-            "permissive",
-            "yes"
-        ],
-        "alt_name": [
-            null,
-            "Travessa Oliveira Bello",
-            "Rua Padre Isais Andrade"
-        ],
-        "horse": [
-            null,
-            "no"
-        ],
-        "note": [
-            null,
-            "Cruzamento fechado para veículos em 03/2022"
-        ],
-        "motor_vehicle": [
-            null,
-            "no",
-            "yes"
-        ],
-        "incline": [
-            null,
-            "up"
-        ],
-        "lcn": [
-            null,
-            "yes"
-        ],
-        "crossing:island": [
-            null,
-            "yes",
-            "no"
-        ],
-        "lanes": [
-            null,
-            "2"
-        ],
-        "oneway": [
-            null,
-            "no"
-        ],
-        "level": [
-            null,
-            "0"
-        ],
-        "cycleway": [
-            null,
-            "track"
-        ],
-        "cycleway:right": [
-            null,
-            "track"
-        ],
-        "smoothness": [
-            null,
-            "excellent",
-            "intermediate",
-            "good"
-        ],
-        "wheelchair": [
-            null,
-            "yes"
+            "zebra"
         ],
         "mapillary": [
-            null,
+            NaN,
+            "820843575194518",
+            "235277698365715",
+            "336765614713898",
             "186526916673300",
             "301343841537563",
             "930446967751756",
@@ -1391,65 +1311,226 @@
             "315313819969205"
         ],
         "survey:date": [
-            null,
+            NaN,
+            "2020-02-18",
+            "2019-10-09",
             "2019-09-12"
         ],
+        "traffic_calming": [
+            "table",
+            NaN
+        ],
+        "button_operated": [
+            NaN,
+            "yes"
+        ],
+        "kerb": [
+            "lowered",
+            NaN,
+            "no",
+            "raised",
+            "rised"
+        ],
+        "crossing:island": [
+            NaN,
+            "yes",
+            "no"
+        ],
         "barrier": [
-            null,
+            NaN,
             "kerb"
+        ],
+        "tactile_paving": [
+            "no",
+            NaN
+        ],
+        "name": [
+            "Rua Senador Alencar Guimaraes",
+            "Rua São Francisco",
+            NaN,
+            "Rua Ivo Leão",
+            "Rua Voluntários da Pátria",
+            "Avenida das Américas",
+            "Rua 2",
+            "Praça Rui Barbosa",
+            "Rua Engenheiro Alberto Monteiro de Carvalho",
+            "Rua Dona Isabel A Redentora",
+            "Rua Coronel Luiz Victorino Ordine",
+            "Rua Bruno Figueira",
+            "Rua Padre Ildefonso",
+            "Rua Silveira Peixoto",
+            "Rua Pasteur",
+            "Rua Buenos Aires",
+            "Rua Padre Isaias de Andrade",
+            "Rua Diogo Mugiatti"
+        ],
+        "horse": [
+            NaN,
+            "no"
+        ],
+        "access": [
+            NaN,
+            "no",
+            "customers",
+            "permit",
+            "permissive",
+            "yes"
+        ],
+        "smoothness": [
+            NaN,
+            "excellent",
+            "good",
+            "intermediate",
+            "bad"
+        ],
+        "surface": [
+            "asphalt",
+            NaN,
+            "paving_stones",
+            "sett",
+            "concrete",
+            "wood",
+            "metal",
+            "paved",
+            "compacted",
+            "gravel",
+            "concrete:lanes",
+            "concrete:plates"
+        ],
+        "footway": [
+            "crossing"
+        ],
+        "foot": [
+            NaN,
+            "permissive",
+            "designated",
+            "yes",
+            "destination"
+        ],
+        "segregated": [
+            NaN,
+            "no",
+            "yes"
+        ],
+        "layer": [
+            NaN,
+            "1",
+            "-1"
+        ],
+        "oneway": [
+            NaN,
+            "yes",
+            "no"
+        ],
+        "note": [
+            NaN,
+            "Due to Dec 10, 2022"
+        ],
+        "motor_vehicle": [
+            NaN,
+            "no",
+            "yes"
+        ],
+        "incline": [
+            NaN,
+            "up"
+        ],
+        "lcn": [
+            NaN,
+            "yes"
+        ],
+        "alt_name": [
+            NaN,
+            "Rua Dois",
+            "Rua Padre Isais Andrade"
+        ],
+        "lanes": [
+            NaN,
+            "2"
+        ],
+        "level": [
+            NaN,
+            "0"
+        ],
+        "cycleway": [
+            NaN,
+            "track"
+        ],
+        "cycleway:right": [
+            NaN,
+            "track"
         ]
     },
     "kerbs": {
         "crossing": [
             "zebra",
-            null,
             "marked",
             "traffic_signals",
+            NaN,
             "uncontrolled",
             "unmarked"
         ],
         "crossing_ref": [
             "zebra",
-            null
+            NaN
         ],
         "highway": [
             "crossing",
-            null,
-            "traffic_signals"
+            "traffic_signals",
+            NaN,
+            "bus_stop",
+            "footway"
         ],
         "kerb": [
             "lowered",
-            "raised",
             "flush",
+            "raised",
             "rolled",
+            NaN,
             "no",
             "regular",
             "normal",
-            "lowered=no"
+            "lowered=no",
+            "barrier=kerb",
+            "yes",
+            "rised"
         ],
         "tactile_paving": [
             "no",
-            null,
+            NaN,
             "yes",
             "contrasted",
             "bad"
         ],
         "traffic_calming": [
             "table",
-            null
+            NaN
+        ],
+        "traffic_signals": [
+            NaN,
+            "no"
+        ],
+        "traffic_signals:direction": [
+            NaN,
+            "both"
+        ],
+        "crossing:markings": [
+            NaN,
+            "yes",
+            "no",
+            "zebra"
         ],
         "bicycle": [
-            null,
+            NaN,
             "yes",
             "no"
         ],
         "mapillary": [
-            null,
+            NaN,
             "616392826423407",
             "233451338548431",
             "894052207822104",
             "576614830396307",
-            "208925050866921",
             "823296954938102",
             "501421137650725",
             "157913159638160",
@@ -1463,13 +1544,13 @@
             "1398954920464209",
             "136631661831352",
             "509467843409235",
+            "880367795879708",
             "379438423426678",
             "4636562133307308",
             "785587122157947",
             "139373078215252",
             "317279009773620",
             "142745234502084",
-            "880367795879708",
             "414875646382956",
             "900418757188299",
             "3873828779401128",
@@ -1478,7 +1559,6 @@
             "235485061667035",
             "157551396356937",
             "862090991353985",
-            "1059946347866863",
             "507499427060262",
             "906620736583022",
             "385015129481937",
@@ -1547,10 +1627,11 @@
             "471725254085496",
             "844458092820328",
             "319868679654184",
-            "502094780941300"
+            "502094780941300",
+            "310483987146471"
         ],
         "survey:date": [
-            null,
+            NaN,
             "2019-08-02",
             "2020-07-29",
             "2019-10-17",
@@ -1561,7 +1642,6 @@
             "2020-02-18",
             "2020-12-01",
             "2021-04-21",
-            "2019-05-02",
             "2019-10-31",
             "2020-09-15",
             "2020-02-17",
@@ -1572,40 +1652,49 @@
             "2019-09-12"
         ],
         "wheelchair": [
-            null,
+            NaN,
             "yes",
             "no",
             "limited"
         ],
         "button_operated": [
-            null,
+            NaN,
             "yes",
             "no"
         ],
+        "direction": [
+            NaN,
+            "both",
+            "backward"
+        ],
+        "barrier": [
+            NaN,
+            "kerb"
+        ],
         "traffic_signals:sound": [
-            null,
+            NaN,
             "no",
             "yes"
         ],
         "traffic_signals:vibration": [
-            null,
+            NaN,
             "no"
         ],
         "crossing:island": [
-            null,
+            NaN,
             "no",
             "yes"
         ],
+        "traffic_sign:backward": [
+            NaN,
+            "BR:R-1"
+        ],
         "image": [
-            null,
+            NaN,
             "https://storage11.openstreetcam.org/files/photo/2019/5/2/lth/1436990_b62c8_707.jpg"
         ],
-        "barrier": [
-            null,
-            "kerb"
-        ],
         "surface": [
-            null,
+            NaN,
             "concrete:plates",
             "paving_stones",
             "concrete",
@@ -1613,20 +1702,18 @@
             "paver",
             "asphalt",
             "grass",
-            "unpaved"
+            "unpaved",
+            "paved",
+            "compacted"
         ],
         "kerb:height": [
-            null,
+            NaN,
             "10 cm",
             "1 cm",
             "2 cm"
         ],
-        "traffic_signals": [
-            null,
-            "no"
-        ],
         "smoothness": [
-            null,
+            NaN,
             "good",
             "bad",
             "horrible",
@@ -1635,8 +1722,46 @@
             "excellent"
         ],
         "description": [
-            null,
+            NaN,
             "Just a lowered kerb, not an actual ramp"
+        ],
+        "bin": [
+            NaN,
+            "no"
+        ],
+        "departures_board": [
+            NaN,
+            "no"
+        ],
+        "passenger_information_display": [
+            NaN,
+            "no"
+        ],
+        "shelter": [
+            NaN,
+            "yes"
+        ],
+        "footway": [
+            NaN,
+            "crossing",
+            "sidewalk"
+        ],
+        "name": [
+            NaN,
+            "Rua Senador Alencar Guimaraes",
+            "Rua Voluntários da Pátria"
+        ],
+        "landuse": [
+            NaN,
+            "grass"
+        ],
+        "oneway": [
+            NaN,
+            "yes"
+        ],
+        "lit": [
+            NaN,
+            "yes"
         ]
     }
 }
