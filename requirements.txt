@@ -1,4 +1,14 @@
-geopandas
-pyproj
 osmnx
+altair
+geopandas
+html5lib
+beautifulsoup4
 folium
+pandas
+osm2geojson
+requests
+shapely
+streamlit
+streamlit_folium
+scikit-learn
+
