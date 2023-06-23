@@ -40,6 +40,9 @@ jobs:
       - run: |
           git submodule init
           git submodule update
+          cd oswm_codebase
+          git pull -r https://github.com/kauevestena/oswm_codebase
+          cd ..
 
       - run: python oswm_codebase/patch_readme_homepage.py
       - run: python oswm_codebase/special_updates.py
