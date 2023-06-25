@@ -23,9 +23,6 @@
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_tactile_paving.html">Tactile Paving P.</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_width.html">Width Values</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_incline.html">Incline Values</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_survey_year.html">Year of Survey Image</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_yr_moth_update.html">Year and Month Of Update</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_number_revisions.html">Number Of Revisions</a>
 </div>
 
 
@@ -47,7 +44,7 @@
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-679d195346a6544f0ff139c404eae43f"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": {"field": "length(km)", "type": "quantitative"}, "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_5", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Width Values", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-679d195346a6544f0ff139c404eae43f": [{"tactile_paving type": "?", "feature count": 6793, "length(km)": 261.2996130486061}, {"tactile_paving type": "no", "feature count": 1044, "length(km)": 31.463766234666206}, {"tactile_paving type": "yes", "feature count": 11, "length(km)": 0.3342733270694504}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-f833726be2436cbb67a344558a3cf03b"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": {"field": "length(km)", "type": "quantitative"}, "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_5", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Width Values", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-f833726be2436cbb67a344558a3cf03b": [{"tactile_paving type": "?", "feature count": 6796, "length(km)": 261.52329610748615}, {"tactile_paving type": "no", "feature count": 1044, "length(km)": 31.463766234666195}, {"tactile_paving type": "yes", "feature count": 11, "length(km)": 0.3342733270694504}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

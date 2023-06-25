@@ -1,5 +1,14 @@
+sidewalks_survey_year
+sidewalks_yr_moth_update
+sidewalks_number_revisions
 crossing_types
 crossing_surface
+crossings_survey_year
+crossings_yr_moth_update
+crossings_number_revisions
 kerb_types
 kerb_tactile_paving
 kerb_wheelchair_access
+kerbs_survey_year
+kerbs_yr_moth_update
+kerbs_number_revisions
