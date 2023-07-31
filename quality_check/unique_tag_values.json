@@ -859,7 +859,6 @@
             "950304059125420",
             "235451045021706",
             "1091551764701132",
-            "310830720695273",
             "922069811702953",
             "919087352265731",
             "936608843793056",
@@ -919,6 +918,10 @@
             "no",
             "yes",
             "limited"
+        ],
+        "button_operated": [
+            NaN,
+            "yes"
         ],
         "kerb": [
             NaN,
@@ -1254,8 +1257,8 @@
             "marked",
             "unmarked",
             NaN,
-            "uncontrolled",
-            "traffic_signals"
+            "traffic_signals",
+            "uncontrolled"
         ],
         "lit": [
             NaN,
@@ -1350,6 +1353,7 @@
             "Rua São Francisco",
             NaN,
             "Rua Ivo Leão",
+            "Rua General Setembrino de Carvalho",
             "Rua Voluntários da Pátria",
             "Avenida das Américas",
             "Rua 2",
@@ -1493,7 +1497,6 @@
             "normal",
             "lowered=no",
             "barrier=kerb",
-            "yes",
             "rised"
         ],
         "tactile_paving": [
@@ -1672,6 +1675,11 @@
             NaN,
             "kerb"
         ],
+        "crossing:island": [
+            NaN,
+            "no",
+            "yes"
+        ],
         "traffic_signals:sound": [
             NaN,
             "no",
@@ -1680,11 +1688,6 @@
         "traffic_signals:vibration": [
             NaN,
             "no"
-        ],
-        "crossing:island": [
-            NaN,
-            "no",
-            "yes"
         ],
         "traffic_sign:backward": [
             NaN,
@@ -1704,7 +1707,6 @@
             "asphalt",
             "grass",
             "unpaved",
-            "paved",
             "compacted"
         ],
         "kerb:height": [
