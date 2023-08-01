@@ -267,6 +267,7 @@ osm_id,key,value,commentary
 669606154,paving_stones,nan,no wiki page for this key
 671329508,paving_stones,nan,no wiki page for this key
 671730778,paving_stones,nan,no wiki page for this key
+672436949,paving_stones,nan,no wiki page for this key
 676644910,paving_stones,nan,no wiki page for this key
 676644911,paving_stones,nan,no wiki page for this key
 678515166,paving_stones,nan,no wiki page for this key
@@ -357,6 +358,7 @@ osm_id,key,value,commentary
 718175483,paving_stones,nan,no wiki page for this key
 718175484,paving_stones,nan,no wiki page for this key
 720393847,paving_stones,nan,no wiki page for this key
+724433446,paving_stones,nan,no wiki page for this key
 724433450,paving_stones,nan,no wiki page for this key
 724720438,paving_stones,nan,no wiki page for this key
 724720439,paving_stones,nan,no wiki page for this key
@@ -659,6 +661,7 @@ osm_id,key,value,commentary
 955847248,paving_stones,nan,no wiki page for this key
 955925981,paving_stones,nan,no wiki page for this key
 955925982,paving_stones,nan,no wiki page for this key
+955926410,paving_stones,nan,no wiki page for this key
 955926411,paving_stones,nan,no wiki page for this key
 955926412,paving_stones,nan,no wiki page for this key
 955926415,paving_stones,nan,no wiki page for this key
@@ -1873,8 +1876,6 @@ osm_id,key,value,commentary
 1069804010,paving_stones,nan,no wiki page for this key
 1069804040,paving_stones,nan,no wiki page for this key
 1069804489,paving_stones,nan,no wiki page for this key
-1069804652,paving_stones,nan,no wiki page for this key
-1069804811,paving_stones,nan,no wiki page for this key
 1069804898,paving_stones,nan,no wiki page for this key
 1069804899,paving_stones,nan,no wiki page for this key
 1069804900,paving_stones,nan,no wiki page for this key
@@ -1921,7 +1922,6 @@ osm_id,key,value,commentary
 1070687540,paving_stones,nan,no wiki page for this key
 1070687541,paving_stones,nan,no wiki page for this key
 1070687543,paving_stones,nan,no wiki page for this key
-1070687546,paving_stones,nan,no wiki page for this key
 1070724371,paving_stones,nan,no wiki page for this key
 1070724372,paving_stones,nan,no wiki page for this key
 1070724373,paving_stones,nan,no wiki page for this key
@@ -7699,7 +7699,6 @@ osm_id,key,value,commentary
 1125942664,paving_stones,nan,no wiki page for this key
 1125942963,paving_stones,nan,no wiki page for this key
 1125942964,paving_stones,nan,no wiki page for this key
-1136294561,paving_stones,nan,no wiki page for this key
 1138718996,paving_stones,nan,no wiki page for this key
 1149515407,paving_stones,nan,no wiki page for this key
 1149515408,paving_stones,nan,no wiki page for this key
@@ -7877,3 +7876,9 @@ osm_id,key,value,commentary
 1193395538,paving_stones,nan,no wiki page for this key
 1193436563,paving_stones,nan,no wiki page for this key
 1193436564,paving_stones,nan,no wiki page for this key
+1193601290,paving_stones,nan,no wiki page for this key
+1193601297,paving_stones,nan,no wiki page for this key
+1193601299,paving_stones,nan,no wiki page for this key
+1193601313,paving_stones,nan,no wiki page for this key
+1193601314,paving_stones,nan,no wiki page for this key
+1193633267,paving_stones,nan,no wiki page for this key

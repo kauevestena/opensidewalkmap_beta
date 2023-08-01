@@ -845,10 +845,6 @@
             "156240529796043",
             "307017600879235",
             "315817063269211",
-            "378161706861666",
-            "226771289211357",
-            "3562540327185682",
-            "1139200666556197",
             "969247260282245",
             "1382008372174435",
             "289722472826703",
@@ -880,12 +876,7 @@
             "515142729851679",
             "1834140846750403",
             "564352764725446",
-            "5431362540271885",
             "527875601570894",
-            "769134117137551",
-            "205732337882142",
-            "942657789827510",
-            "175476274484851",
             "4101472356575706",
             "901110127113659",
             "1094653251060812",
@@ -909,9 +900,7 @@
             "2020-02-20",
             "2021-01-29",
             "2021-06-01",
-            "2019-09-12",
-            "2020-09-15",
-            "2019-07-19"
+            "2019-09-12"
         ],
         "wheelchair": [
             NaN,
@@ -999,6 +988,7 @@
             "Rua Praça Getúlio Vargas",
             "Rua Fernandes de Barros",
             "Rua Deputado Heitor Alencar Furtado",
+            "Rua Padre Vieira",
             "Rua Augusto de Andrade",
             "Rua Ivo Leão",
             "Rua Monte Castelo",
@@ -1025,7 +1015,6 @@
             "Rua Luiz Massuquetto",
             "Rua Alexandre Dalcuch",
             "Rua José Cocconi",
-            "Rua José Todeschini",
             "Rua Domingos Festa Filho",
             "Rua Francisco Juglair",
             "Rua Bruno Filgueira",
@@ -1265,10 +1254,6 @@
             "yes",
             "no"
         ],
-        "wheelchair": [
-            NaN,
-            "yes"
-        ],
         "bicycle": [
             NaN,
             "yes",
@@ -1319,6 +1304,10 @@
             "2020-02-18",
             "2019-10-09",
             "2019-09-12"
+        ],
+        "wheelchair": [
+            NaN,
+            "yes"
         ],
         "traffic_calming": [
             "table",
