@@ -1335,7 +1335,8 @@
         ],
         "tactile_paving": [
             "no",
-            NaN
+            NaN,
+            "yes"
         ],
         "name": [
             "Rua Senador Alencar Guimaraes",
