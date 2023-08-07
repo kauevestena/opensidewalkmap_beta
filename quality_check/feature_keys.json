@@ -84,13 +84,13 @@
         "foot",
         "segregated",
         "layer",
-        "oneway",
         "note",
         "motor_vehicle",
         "incline",
         "lcn",
         "alt_name",
         "lanes",
+        "oneway",
         "level",
         "cycleway",
         "cycleway:right"
@@ -126,9 +126,7 @@
         "passenger_information_display",
         "shelter",
         "footway",
-        "name",
         "landuse",
-        "oneway",
         "lit"
     ]
 }

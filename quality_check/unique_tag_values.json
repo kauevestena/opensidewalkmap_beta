@@ -990,6 +990,7 @@
             "Rua Deputado Heitor Alencar Furtado",
             "Rua Padre Vieira",
             "Rua Augusto de Andrade",
+            "Rua Voluntários da Pátria",
             "Rua Ivo Leão",
             "Rua Monte Castelo",
             "Rua José Antoniassi",
@@ -1339,15 +1340,12 @@
             "yes"
         ],
         "name": [
-            "Rua Senador Alencar Guimaraes",
-            "Rua São Francisco",
             NaN,
+            "Rua São Francisco",
             "Rua Ivo Leão",
             "Rua General Setembrino de Carvalho",
-            "Rua Voluntários da Pátria",
             "Avenida das Américas",
             "Rua 2",
-            "Praça Rui Barbosa",
             "Rua Engenheiro Alberto Monteiro de Carvalho",
             "Rua Dona Isabel A Redentora",
             "Rua Coronel Luiz Victorino Ordine",
@@ -1357,7 +1355,8 @@
             "Rua Pasteur",
             "Rua Buenos Aires",
             "Rua Padre Isaias de Andrade",
-            "Rua Diogo Mugiatti"
+            "Rua Diogo Mugiatti",
+            "Rua Voluntários da Pátria"
         ],
         "horse": [
             NaN,
@@ -1412,11 +1411,6 @@
             "1",
             "-1"
         ],
-        "oneway": [
-            NaN,
-            "yes",
-            "no"
-        ],
         "note": [
             NaN,
             "Due to Dec 10, 2022"
@@ -1442,6 +1436,10 @@
         "lanes": [
             NaN,
             "2"
+        ],
+        "oneway": [
+            NaN,
+            "no"
         ],
         "level": [
             NaN,
@@ -1739,18 +1737,9 @@
             "crossing",
             "sidewalk"
         ],
-        "name": [
-            NaN,
-            "Rua Senador Alencar Guimaraes",
-            "Rua Voluntários da Pátria"
-        ],
         "landuse": [
             NaN,
             "grass"
-        ],
-        "oneway": [
-            NaN,
-            "yes"
         ],
         "lit": [
             NaN,
