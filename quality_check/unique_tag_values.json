@@ -480,7 +480,6 @@
             "881305595782765",
             "222399582656361",
             "829559890979911",
-            "180038930674234",
             "559676328536817",
             "983801529108313",
             "1570557603143297",
@@ -915,7 +914,6 @@
         "kerb": [
             NaN,
             "lowered",
-            "flush",
             "raised"
         ],
         "barrier": [
@@ -1322,8 +1320,7 @@
             "lowered",
             NaN,
             "no",
-            "raised",
-            "rised"
+            "raised"
         ],
         "crossing:island": [
             NaN,
@@ -1484,8 +1481,7 @@
             "regular",
             "normal",
             "lowered=no",
-            "barrier=kerb",
-            "rised"
+            "barrier=kerb"
         ],
         "tactile_paving": [
             "no",
@@ -1694,8 +1690,7 @@
             "paver",
             "asphalt",
             "grass",
-            "unpaved",
-            "compacted"
+            "unpaved"
         ],
         "kerb:height": [
             NaN,
