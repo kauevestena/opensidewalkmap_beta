@@ -265,6 +265,7 @@ osm_id,key,value,commentary
 1042700515,crossing,marked,uncontrolled
 1042941943,crossing,marked,uncontrolled
 1047723997,crossing,marked,uncontrolled
+1049170289,crossing,marked,uncontrolled
 1049170290,crossing,marked,uncontrolled
 1049170415,crossing,marked,uncontrolled
 1049788955,crossing,marked,uncontrolled
@@ -274,11 +275,15 @@ osm_id,key,value,commentary
 1049788961,crossing,marked,uncontrolled
 1050447241,crossing,marked,uncontrolled
 1051401362,crossing,marked,uncontrolled
+1051402148,crossing,marked,uncontrolled
+1051402150,crossing,marked,uncontrolled
+1051402151,crossing,marked,uncontrolled
 1051403216,crossing,marked,uncontrolled
 1051403774,crossing,marked,uncontrolled
 1051403776,crossing,marked,uncontrolled
 1051404204,crossing,marked,uncontrolled
 1051404205,crossing,marked,uncontrolled
+1051406491,crossing,marked,uncontrolled
 1054973923,crossing,marked,uncontrolled
 1065303797,crossing,marked,uncontrolled
 1074628716,crossing,marked,uncontrolled
@@ -297,3 +302,4 @@ osm_id,key,value,commentary
 1169662140,crossing,marked,uncontrolled
 1201566879,crossing,marked,uncontrolled
 1201573127,crossing,marked,uncontrolled
+1201710069,crossing,marked,uncontrolled
