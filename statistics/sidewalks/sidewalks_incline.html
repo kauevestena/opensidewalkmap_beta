@@ -37,14 +37,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.14.1"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-8d44c53ed18aeeddf38d4467f8f289fb"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": {"field": "length(km)", "type": "quantitative"}, "x": {"field": "incline type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_6", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Incline Values", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-8d44c53ed18aeeddf38d4467f8f289fb": [{"incline type": "?", "feature count": 7772, "length(km)": 296.30338624110067}, {"incline type": "down", "feature count": 3, "length(km)": 0.25688471005801283}, {"incline type": "up", "feature count": 4, "length(km)": 0.2601001104455976}, {"incline type": "yes", "feature count": 2, "length(km)": 0.00547928169343366}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-8d44c53ed18aeeddf38d4467f8f289fb"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": {"field": "length(km)", "type": "quantitative"}, "x": {"field": "incline type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_6", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Incline Values", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.14.1.json", "datasets": {"data-8d44c53ed18aeeddf38d4467f8f289fb": [{"incline type": "?", "feature count": 7772, "length(km)": 296.30338624110067}, {"incline type": "down", "feature count": 3, "length(km)": 0.25688471005801283}, {"incline type": "up", "feature count": 4, "length(km)": 0.2601001104455976}, {"incline type": "yes", "feature count": 2, "length(km)": 0.00547928169343366}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

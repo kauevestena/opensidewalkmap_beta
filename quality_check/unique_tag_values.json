@@ -1312,7 +1312,6 @@
             NaN,
             "no",
             "customers",
-            "permit",
             "permissive",
             "yes"
         ],
@@ -1370,10 +1369,6 @@
         "incline": [
             NaN,
             "up"
-        ],
-        "lcn": [
-            NaN,
-            "yes"
         ],
         "alt_name": [
             NaN,
