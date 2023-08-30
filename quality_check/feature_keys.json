@@ -57,6 +57,7 @@
         "indoor",
         "description",
         "paving_stones",
+        "check_date:lit",
         "check_date:surface"
     ],
     "crossings": [

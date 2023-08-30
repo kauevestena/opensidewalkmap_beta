@@ -1184,6 +1184,10 @@
             NaN,
             "good"
         ],
+        "check_date:lit": [
+            NaN,
+            "2023-08-29"
+        ],
         "check_date:surface": [
             NaN,
             "2022-12-10"
