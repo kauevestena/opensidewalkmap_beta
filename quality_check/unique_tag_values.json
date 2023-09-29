@@ -923,7 +923,6 @@
             "Rua Lápis",
             "Rua Desembargador Otávio do Amaral",
             "Rua Saldanha Marinho",
-            "Rua Lindamir Bittencourt de Lara",
             "Rua Henrique Itiberê da Cunha",
             "Alameda Princesa Izabel",
             "Rua Schiller",
@@ -961,7 +960,6 @@
             "Rua Arlindo João da Costa",
             "Rua Oscar Chanoski",
             "Rua Gerônimo Muraro",
-            "Rua Major Thomaz Walter Iwersen",
             "Rua Cláudio Chatagnier",
             "Rua Comendador Antônio Domingues de Barros",
             "Rua Arapongas",
@@ -1357,10 +1355,6 @@
             NaN,
             "1",
             "-1"
-        ],
-        "note": [
-            NaN,
-            "Due to Dec 10, 2022"
         ],
         "motor_vehicle": [
             NaN,
