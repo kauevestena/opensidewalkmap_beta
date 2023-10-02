@@ -1036,14 +1036,6 @@
             NaN,
             "yes"
         ],
-        "amenity": [
-            NaN,
-            "place_of_worship"
-        ],
-        "indoor": [
-            NaN,
-            "yes"
-        ],
         "hgv": [
             NaN,
             "no"
@@ -1152,6 +1144,10 @@
             NaN,
             "yes"
         ],
+        "amenity": [
+            NaN,
+            "place_of_worship"
+        ],
         "religion": [
             NaN,
             "christian"
@@ -1169,6 +1165,10 @@
         "ramp:wheelchair": [
             NaN,
             "no"
+        ],
+        "indoor": [
+            NaN,
+            "yes"
         ],
         "description": [
             NaN,
