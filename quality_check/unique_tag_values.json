@@ -2,23 +2,23 @@
     "sidewalks": {
         "highway": [
             "footway",
-            NaN,
+            null,
             "path",
             "pedestrian",
             "steps"
         ],
         "traffic_signals": [
-            NaN,
+            null,
             "no"
         ],
         "crossing": [
-            NaN,
+            null,
             "marked",
             "unmarked",
             "uncontrolled"
         ],
         "bicycle": [
-            NaN,
+            null,
             "dismount",
             "yes",
             "designated",
@@ -28,7 +28,7 @@
         "mapillary": [
             "375371010502718",
             "164768428919042",
-            NaN,
+            null,
             "274023951128328",
             "487938892421527",
             "836800840376906",
@@ -846,7 +846,7 @@
         ],
         "survey:date": [
             "2020-02-18",
-            NaN,
+            null,
             "2020-03-09",
             "2020-02-17",
             "2020-09-17",
@@ -859,25 +859,25 @@
             "2019-09-12"
         ],
         "wheelchair": [
-            NaN,
+            null,
             "no",
             "yes",
             "limited"
         ],
         "button_operated": [
-            NaN,
+            null,
             "yes"
         ],
         "kerb": [
-            NaN,
+            null,
             "lowered"
         ],
         "barrier": [
-            NaN,
+            null,
             "kerb"
         ],
         "access": [
-            NaN,
+            null,
             "no",
             "private",
             "yes",
@@ -885,39 +885,39 @@
             "permit"
         ],
         "lit": [
-            NaN,
+            null,
             "yes",
             "no"
         ],
         "foot": [
-            NaN,
+            null,
             "yes",
             "designated",
             "no"
         ],
         "level": [
-            NaN,
+            null,
             "-1",
             "1"
         ],
         "addr:city": [
-            NaN,
+            null,
             "Curitiba"
         ],
         "addr:housenumber": [
-            NaN,
+            null,
             "701"
         ],
         "addr:street": [
-            NaN,
+            null,
             "Rua Astorga"
         ],
         "addr:suburb": [
-            NaN,
+            null,
             "Sítio Cercado"
         ],
         "name": [
-            NaN,
+            null,
             "Rua Carmelo Rangel",
             "Rua Gaspar Carnilho Júnior",
             "Rua Lápis",
@@ -978,12 +978,12 @@
             "Rua Eurípedes Moreis e Silva"
         ],
         "bus": [
-            NaN,
+            null,
             "no"
         ],
         "tactile_paving": [
             "no",
-            NaN,
+            null,
             "yes"
         ],
         "surface": [
@@ -991,7 +991,7 @@
             "concrete",
             "sett",
             "paving_stones",
-            NaN,
+            null,
             "asphalt",
             "cobblestone",
             "wood",
@@ -1016,7 +1016,7 @@
         ],
         "smoothness": [
             "good",
-            NaN,
+            null,
             "excellent",
             "intermediate",
             "bad",
@@ -1029,161 +1029,161 @@
             "sidewalk"
         ],
         "building": [
-            NaN,
+            null,
             "yes"
         ],
         "covered": [
-            NaN,
+            null,
             "yes"
         ],
         "hgv": [
-            NaN,
+            null,
             "no"
         ],
         "motorcar": [
-            NaN,
+            null,
             "no"
         ],
         "motorcycle": [
-            NaN,
+            null,
             "no"
         ],
         "oneway": [
-            NaN,
+            null,
             "no"
         ],
         "source": [
-            NaN,
+            null,
             "yahoo_imagery",
             "Bing",
             "GPS"
         ],
         "lcn": [
-            NaN,
+            null,
             "yes"
         ],
         "motor_vehicle": [
-            NaN,
+            null,
             "no",
             "yes"
         ],
         "segregated": [
-            NaN,
+            null,
             "yes",
             "no"
         ],
         "horse": [
-            NaN,
+            null,
             "no",
             "permissive",
             "yes"
         ],
         "layer": [
-            NaN,
+            null,
             "1",
             "-1",
             "0"
         ],
         "handrail": [
-            NaN,
+            null,
             "no",
             "yes"
         ],
         "incline": [
-            NaN,
+            null,
             "down",
             "up",
             "yes"
         ],
         "ramp": [
-            NaN,
+            null,
             "no",
             "yes"
         ],
         "step_count": [
-            NaN,
+            null,
             "15",
             "9",
             "11"
         ],
         "lanes": [
-            NaN,
+            null,
             "2",
             "1"
         ],
         "leisure": [
-            NaN,
+            null,
             "park"
         ],
         "tunnel": [
-            NaN,
+            null,
             "yes",
             "building_passage"
         ],
         "cutting": [
-            NaN,
+            null,
             "yes"
         ],
         "embankment": [
-            NaN,
+            null,
             "yes"
         ],
         "dog": [
-            NaN,
+            null,
             "yes"
         ],
         "cycleway": [
-            NaN,
+            null,
             "track"
         ],
         "cycleway:right": [
-            NaN,
+            null,
             "track"
         ],
         "noname": [
-            NaN,
+            null,
             "yes"
         ],
         "amenity": [
-            NaN,
+            null,
             "place_of_worship"
         ],
         "religion": [
-            NaN,
+            null,
             "christian"
         ],
         "opening_hours": [
-            NaN,
+            null,
             "Mo-Fr 08:00-18:00; Sa 10:00-16:00"
         ],
         "alt_name": [
-            NaN,
+            null,
             "Rua Joaquim Augusto Andrade",
             "Rua Carlos Benetti",
             "Rua Eurípedes Morais e Silva"
         ],
         "ramp:wheelchair": [
-            NaN,
+            null,
             "no"
         ],
         "indoor": [
-            NaN,
+            null,
             "yes"
         ],
         "description": [
-            NaN,
+            null,
             "low friction"
         ],
         "paving_stones": [
-            NaN,
+            null,
             "good"
         ],
         "check_date:lit": [
-            NaN,
+            null,
             "2023-08-29"
         ],
         "check_date:surface": [
-            NaN,
+            null,
             "2022-12-10"
         ]
     },
@@ -1197,30 +1197,30 @@
             "zebra",
             "marked",
             "unmarked",
-            NaN,
+            null,
             "traffic_signals",
             "uncontrolled"
         ],
         "lit": [
-            NaN,
+            null,
             "yes",
             "no"
         ],
         "bicycle": [
-            NaN,
+            null,
             "yes",
             "no",
             "designated",
             "dismount"
         ],
         "crossing:markings": [
-            NaN,
+            null,
             "yes",
             "no",
             "zebra"
         ],
         "mapillary": [
-            NaN,
+            null,
             "820843575194518",
             "336765614713898",
             "186526916673300",
@@ -1251,40 +1251,40 @@
             "315313819969205"
         ],
         "survey:date": [
-            NaN,
+            null,
             "2020-02-18",
             "2019-10-09",
             "2019-09-12"
         ],
         "wheelchair": [
-            NaN,
+            null,
             "yes"
         ],
         "traffic_calming": [
             "table",
-            NaN
+            null
         ],
         "button_operated": [
-            NaN,
+            null,
             "yes"
         ],
         "kerb": [
             "lowered",
-            NaN,
+            null,
             "no"
         ],
         "crossing:island": [
-            NaN,
+            null,
             "yes",
             "no"
         ],
         "tactile_paving": [
             "no",
-            NaN,
+            null,
             "yes"
         ],
         "name": [
-            NaN,
+            null,
             "Rua São Francisco",
             "Rua Ivo Leão",
             "Rua General Setembrino de Carvalho",
@@ -1304,25 +1304,25 @@
             "Rua Paula Freitas"
         ],
         "horse": [
-            NaN,
+            null,
             "no"
         ],
         "access": [
-            NaN,
+            null,
             "no",
             "customers",
             "permissive",
             "yes"
         ],
         "smoothness": [
-            NaN,
+            null,
             "excellent",
             "good",
             "intermediate"
         ],
         "surface": [
             "asphalt",
-            NaN,
+            null,
             "paving_stones",
             "sett",
             "wood",
@@ -1333,57 +1333,57 @@
             "concrete:plates"
         ],
         "level": [
-            NaN,
+            null,
             "0"
         ],
         "footway": [
             "crossing"
         ],
         "foot": [
-            NaN,
+            null,
             "permissive",
             "designated",
             "yes",
             "destination"
         ],
         "segregated": [
-            NaN,
+            null,
             "no",
             "yes"
         ],
         "layer": [
-            NaN,
+            null,
             "1",
             "-1"
         ],
         "motor_vehicle": [
-            NaN,
+            null,
             "no",
             "yes"
         ],
         "incline": [
-            NaN,
+            null,
             "up"
         ],
         "alt_name": [
-            NaN,
+            null,
             "Rua Dois",
             "Rua Padre Isais Andrade"
         ],
         "lanes": [
-            NaN,
+            null,
             "2"
         ],
         "oneway": [
-            NaN,
+            null,
             "no"
         ],
         "cycleway": [
-            NaN,
+            null,
             "track"
         ],
         "cycleway:right": [
-            NaN,
+            null,
             "track"
         ]
     },
@@ -1392,18 +1392,18 @@
             "zebra",
             "marked",
             "traffic_signals",
-            NaN,
+            null,
             "uncontrolled",
             "unmarked"
         ],
         "crossing_ref": [
             "zebra",
-            NaN
+            null
         ],
         "highway": [
             "crossing",
             "traffic_signals",
-            NaN,
+            null,
             "bus_stop",
             "footway"
         ],
@@ -1413,7 +1413,7 @@
             "raised",
             "no",
             "rolled",
-            NaN,
+            null,
             "regular",
             "normal",
             "lowered=no",
@@ -1421,36 +1421,36 @@
         ],
         "tactile_paving": [
             "no",
-            NaN,
+            null,
             "yes",
             "contrasted",
             "bad"
         ],
         "traffic_calming": [
             "table",
-            NaN
+            null
         ],
         "traffic_signals": [
-            NaN,
+            null,
             "no"
         ],
         "traffic_signals:direction": [
-            NaN,
+            null,
             "both"
         ],
         "crossing:markings": [
-            NaN,
+            null,
             "yes",
             "no",
             "zebra"
         ],
         "bicycle": [
-            NaN,
+            null,
             "yes",
             "no"
         ],
         "mapillary": [
-            NaN,
+            null,
             "616392826423407",
             "233451338548431",
             "894052207822104",
@@ -1555,7 +1555,7 @@
             "310483987146471"
         ],
         "survey:date": [
-            NaN,
+            null,
             "2019-08-02",
             "2020-07-29",
             "2019-10-17",
@@ -1576,49 +1576,49 @@
             "2019-09-12"
         ],
         "wheelchair": [
-            NaN,
+            null,
             "yes",
             "no",
             "limited"
         ],
         "button_operated": [
-            NaN,
+            null,
             "yes",
             "no"
         ],
         "direction": [
-            NaN,
+            null,
             "both",
             "backward"
         ],
         "barrier": [
-            NaN,
+            null,
             "kerb"
         ],
         "crossing:island": [
-            NaN,
+            null,
             "no",
             "yes"
         ],
         "traffic_signals:sound": [
-            NaN,
+            null,
             "no",
             "yes"
         ],
         "traffic_signals:vibration": [
-            NaN,
+            null,
             "no"
         ],
         "traffic_sign:backward": [
-            NaN,
+            null,
             "BR:R-1"
         ],
         "image": [
-            NaN,
+            null,
             "https://storage11.openstreetcam.org/files/photo/2019/5/2/lth/1436990_b62c8_707.jpg"
         ],
         "surface": [
-            NaN,
+            null,
             "concrete:plates",
             "paving_stones",
             "concrete",
@@ -1629,13 +1629,13 @@
             "unpaved"
         ],
         "kerb:height": [
-            NaN,
+            null,
             "10 cm",
             "1 cm",
             "2 cm"
         ],
         "smoothness": [
-            NaN,
+            null,
             "good",
             "bad",
             "horrible",
@@ -1644,36 +1644,36 @@
             "excellent"
         ],
         "description": [
-            NaN,
+            null,
             "Just a lowered kerb, not an actual ramp"
         ],
         "bin": [
-            NaN,
+            null,
             "no"
         ],
         "departures_board": [
-            NaN,
+            null,
             "no"
         ],
         "passenger_information_display": [
-            NaN,
+            null,
             "no"
         ],
         "shelter": [
-            NaN,
+            null,
             "yes"
         ],
         "footway": [
-            NaN,
+            null,
             "crossing",
             "sidewalk"
         ],
         "landuse": [
-            NaN,
+            null,
             "grass"
         ],
         "lit": [
-            NaN,
+            null,
             "yes"
         ]
     }
