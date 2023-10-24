@@ -1597,8 +1597,8 @@
         ],
         "crossing:island": [
             null,
-            "no",
-            "yes"
+            "yes",
+            "no"
         ],
         "traffic_signals:sound": [
             null,
