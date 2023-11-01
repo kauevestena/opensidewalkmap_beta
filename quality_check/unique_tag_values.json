@@ -1598,14 +1598,14 @@
             "both",
             "backward"
         ],
+        "crossing:island": [
+            null,
+            "no",
+            "yes"
+        ],
         "barrier": [
             null,
             "kerb"
-        ],
-        "crossing:island": [
-            null,
-            "yes",
-            "no"
         ],
         "traffic_signals:sound": [
             null,
