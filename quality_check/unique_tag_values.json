@@ -1332,11 +1332,11 @@
             null,
             "paving_stones",
             "sett",
+            "compacted",
             "wood",
             "metal",
             "paved",
             "concrete",
-            "compacted",
             "concrete:plates"
         ],
         "level": [
