@@ -1,5 +1,7 @@
 # OpenSidewalkMap, <CITYNAME>Curitiba<CITYNAME> node
 
+<!-- TODO: README SHALL BE GENERATED AUTOMATICALLY -->
+
 Main project page:
 
 OSWM is a project intended to be a full-fledged inventory solution for the management of pedestrian network data, using only open data, basically OpenStreetMap data!
