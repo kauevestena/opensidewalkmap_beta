@@ -10,6 +10,8 @@ By *decentered* we mean that each city/region is stored in a separate repository
 
 By *modular* we mean that each node has many "apps", each one intended to accomplish a task in the context of management of pedestrian network data, currently we have 4:
 
+<!-- TODO: GENERATE AUTOMATICALLY THE DESCRIPTION OF THE MODULES  -->
+
 * Webmap: an interactive cartographic representation of the data;
 * Optimized Routing: currently just a Streamlit prototype, in the future shall be a more complete routing engine;
 * Dashboard: featuring charts containing the bigger picture of the data;

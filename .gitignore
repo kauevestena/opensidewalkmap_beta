@@ -177,6 +177,4 @@ cache/
 
 # the tests
 tests/
-
-
-
+tests.py
