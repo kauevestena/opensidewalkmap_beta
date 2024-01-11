@@ -29,6 +29,10 @@ BOUNDING_BOX = (
     -49.1843181999999999  # EASTERNMOST  LONGITUDE
     )
 
+# Set a midpoint for the map:
+MID_LAT = -25.46075
+MID_LGT = -49.26135
+
 
 ### MORE DELICATE ONES: (leave them unchanged by default)
 
