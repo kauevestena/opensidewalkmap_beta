@@ -29,9 +29,15 @@ BOUNDING_BOX = (
     -49.1843181999999999  # EASTERNMOST  LONGITUDE
     )
 
-# Set a midpoint for the map:
+# Set a midpoint for the map AND A Z LEVEL FOR THE INITIAL ZOOM:
 MID_LAT = -25.46075
 MID_LGT = -49.26135
+INITIAL_Z_LEVEL = 19
+
+# MIN AND MAX ZOOM LEVELS FOR TILE GENERATION:
+# (since there's the 100MB file size limit, for big datasets might be better to stay at 19 or even 18)
+TILES_MIN_ZOOM = 12
+TILES_MAX_ZOOM = 20
 
 
 ### MORE DELICATE ONES: (leave them unchanged by default)

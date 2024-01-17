@@ -1,0 +1,12 @@
+osmnx
+altair
+geopandas
+html5lib
+beautifulsoup4
+folium
+pandas
+osm2geojson
+requests
+shapely
+scikit-learn
+pyarrow

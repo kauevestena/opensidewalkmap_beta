@@ -36,8 +36,7 @@ jobs:
           python-version: "3.11"
           cache: 'pip' # caching pip dependencies
 
-      #### main ________________________________________________________________
-
+      #### setup submodules __________________________________________________
       - run: |
           git submodule init
           git submodule update
@@ -48,9 +47,14 @@ jobs:
       #### setup dependencies __________________________________________________
       - run: pip install -r oswm_codebase/requirements.txt
 
+
+      #### main ________________________________________________________________
+
       - run: python oswm_codebase/getting_data.py
       
       - run: python oswm_codebase/filtering_adapting_data.py
+
+      - run: python oswm_codebase/generation/vec_tiles_gen.py
 
       - run: python oswm_codebase/create_webmap.py
 
