@@ -36,7 +36,7 @@ INITIAL_Z_LEVEL = 19
 
 # MIN AND MAX ZOOM LEVELS FOR TILE GENERATION:
 # (since there's the 100MB file size limit, for big datasets might be better to stay at 19 or even 18)
-TILES_MIN_ZOOM = 12
+TILES_MIN_ZOOM = 9
 TILES_MAX_ZOOM = 20
 
 
