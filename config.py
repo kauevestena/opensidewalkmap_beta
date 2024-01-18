@@ -7,7 +7,7 @@
 # Full city name, it may contain special characters, spaces...
 # It can be also the name of a neighborhood if is such a big city or you just want a node for it
 # Sometimes being more specific can help, so if you for example want the city of Salvador (Brazil)
-# you can use 'Salvador, Brazil', since 'Salvador' probably will return "El Salvador", the country
+# you should use "Salvador, Brazil", since just "Salvador" probably will return "El Salvador", the country
 CITY_NAME = 'Curitiba'
 
 # simple name, spaces must be replaced by underscores, no special characters, all in lowercase
