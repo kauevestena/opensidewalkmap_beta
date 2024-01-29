@@ -73,7 +73,8 @@
             "Rua Mariano Torres",
             "Rua Padre Dehon",
             "Rua Dalila Rolim Vargas",
-            "Rua Luíz Leopoldo Landal"
+            "Rua Luíz Leopoldo Landal",
+            "Rua Tenente João Gomes da Silva"
         ],
         "traffic_signals": [
             null,
@@ -8878,7 +8879,8 @@
             "[1840189134, 11497414375]",
             "[9053258484, 11497414390]",
             "[6509637829, 11508633916]",
-            "[8454851454, 11515478474]"
+            "[8454851454, 11515478474]",
+            "[1760536002, 1626760468]"
         ],
         "lanes": [
             null,
