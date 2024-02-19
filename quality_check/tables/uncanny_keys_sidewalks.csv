@@ -1,7 +1,6 @@
 osm_id,key,value,commentary
 29464525,name,Rua Carmelo Rangel,most sidewalks dont have an actual name
 32944187,name,Rua Gaspar Carnilho Júnior,most sidewalks dont have an actual name
-48988570,name,Rua Lápis,most sidewalks dont have an actual name
 74383311,name,Rua Desembargador Otávio do Amaral,most sidewalks dont have an actual name
 106935657,name,Rua Saldanha Marinho,most sidewalks dont have an actual name
 129113040,name,Rua Tereza Delminda da Silva Costa,most sidewalks dont have an actual name
@@ -47,6 +46,7 @@ osm_id,key,value,commentary
 925018576,name,Rua João Argino Nogueira,most sidewalks dont have an actual name
 925054646,name,Rua Eudóxia Zafiez Santos,most sidewalks dont have an actual name
 926101481,name,Rua Joni Francisco Jensen,most sidewalks dont have an actual name
+939307226,name,Rua Antônio de Paula França,most sidewalks dont have an actual name
 949575272,name,Rua Capitão Souza Franco,most sidewalks dont have an actual name
 949575273,name,Alameda Augusto Stellfeld,most sidewalks dont have an actual name
 960593708,traffic_signals,no,may be used for crossings
@@ -73,3 +73,4 @@ osm_id,key,value,commentary
 1218415018,name,Rua Dalila Rolim Vargas,most sidewalks dont have an actual name
 1218415019,name,Rua Luíz Leopoldo Landal,most sidewalks dont have an actual name
 1243751462,name,Rua Tenente João Gomes da Silva,most sidewalks dont have an actual name
+1252092717,name,Rua Bromélias,most sidewalks dont have an actual name
