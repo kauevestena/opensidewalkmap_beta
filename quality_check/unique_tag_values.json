@@ -86,6 +86,10 @@
             "unmarked",
             "uncontrolled"
         ],
+        "button_operated": [
+            null,
+            "yes"
+        ],
         "lit": [
             null,
             "yes",
@@ -963,12 +967,11 @@
             "pebblestone",
             "fine_gravel",
             "concrete:lanes",
+            "grass_paver",
             "porcelain tiles",
             "gravel",
             "stepping_stones",
-            "grass_paver",
             "betão",
-            "unpaved",
             "paver",
             "interlock"
         ],
@@ -992,10 +995,6 @@
         "opening_hours": [
             null,
             "Mo-Fr 08:00-18:00; Sa 10:00-16:00"
-        ],
-        "button_operated": [
-            null,
-            "yes"
         ],
         "addr:housenumber": [
             null,
@@ -8937,7 +8936,8 @@
             null,
             "15",
             "9",
-            "11"
+            "11",
+            "10"
         ],
         "embankment": [
             null,
@@ -9003,6 +9003,10 @@
             "no",
             "yes",
             "zebra"
+        ],
+        "button_operated": [
+            null,
+            "yes"
         ],
         "lit": [
             null,
@@ -9079,8 +9083,8 @@
             "compacted",
             "wood",
             "metal",
-            "paved",
             "concrete",
+            "paved",
             "concrete:plates"
         ],
         "foot": [
@@ -9099,10 +9103,6 @@
         "horse": [
             null,
             "no"
-        ],
-        "button_operated": [
-            null,
-            "yes"
         ],
         "tactile_paving": [
             null,
@@ -11333,6 +11333,11 @@
             "no",
             "zebra"
         ],
+        "button_operated": [
+            null,
+            "yes",
+            "no"
+        ],
         "lit": [
             null,
             "yes"
@@ -11512,11 +11517,6 @@
             "lowered=no",
             "barrier=kerb"
         ],
-        "button_operated": [
-            null,
-            "yes",
-            "no"
-        ],
         "tactile_paving": [
             null,
             "no",
@@ -11551,6 +11551,10 @@
             null,
             "crossing",
             "sidewalk"
+        ],
+        "check_date:kerb": [
+            null,
+            "2024-02-29"
         ],
         "nodes": [
             null,
