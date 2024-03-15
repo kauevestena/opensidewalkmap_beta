@@ -86,6 +86,19 @@
             "unmarked",
             "uncontrolled"
         ],
+        "bicycle": [
+            null,
+            "dismount",
+            "yes",
+            "designated",
+            "no",
+            "permissive"
+        ],
+        "segregated": [
+            null,
+            "yes",
+            "no"
+        ],
         "button_operated": [
             null,
             "yes"
@@ -94,14 +107,6 @@
             null,
             "yes",
             "no"
-        ],
-        "bicycle": [
-            null,
-            "dismount",
-            "yes",
-            "designated",
-            "no",
-            "permissive"
         ],
         "addr:city": [
             null,
@@ -8876,7 +8881,8 @@
             "[6516334415, 6516334414, 6516334418, 6516334413]",
             "[11685363295, 11685363337, 11685363299, 11685363296, 11685363297, 11685363298, 11685363367, 11685363340, 11685363341, 11685363350, 11685363351, 11685363352, 11685363342, 11685363343, 11685377569]",
             "[11685363295, 6551491027, 6551491026, 11685363294]",
-            "[11685377569, 11685363344, 11685363345, 11685363353, 11685363292, 11685377610, 11685363346, 11685363347, 11685363348]"
+            "[11685377569, 11685363344, 11685363345, 11685363353, 11685363292, 11685377610, 11685363346, 11685363347, 11685363348]",
+            "[8822695886, 8822695832]"
         ],
         "lanes": [
             null,
@@ -8908,11 +8914,6 @@
             null,
             "yes",
             "building_passage"
-        ],
-        "segregated": [
-            null,
-            "yes",
-            "no"
         ],
         "hgv": [
             null,
@@ -9006,6 +9007,18 @@
             "yes",
             "zebra"
         ],
+        "bicycle": [
+            "yes",
+            null,
+            "no",
+            "designated",
+            "dismount"
+        ],
+        "segregated": [
+            null,
+            "no",
+            "yes"
+        ],
         "button_operated": [
             null,
             "yes"
@@ -9018,13 +9031,6 @@
         "traffic_calming": [
             null,
             "table"
-        ],
-        "bicycle": [
-            "yes",
-            null,
-            "no",
-            "designated",
-            "dismount"
         ],
         "motor_vehicle": [
             null,
@@ -11295,11 +11301,6 @@
             null,
             "up"
         ],
-        "segregated": [
-            null,
-            "no",
-            "yes"
-        ],
         "lcn": [
             null,
             "yes"
@@ -11342,6 +11343,10 @@
             "no",
             "zebra"
         ],
+        "bicycle": [
+            null,
+            "yes"
+        ],
         "button_operated": [
             null,
             "yes",
@@ -11362,10 +11367,6 @@
         "traffic_calming": [
             null,
             "table"
-        ],
-        "bicycle": [
-            null,
-            "yes"
         ],
         "wheelchair": [
             null,
