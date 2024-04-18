@@ -103,6 +103,7 @@
         "surface",
         "kerb",
         "crossing:island",
+        "crossing:signals",
         "tactile_paving",
         "description",
         "traffic_sign:backward",

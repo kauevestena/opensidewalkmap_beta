@@ -11348,9 +11348,9 @@
             "marked",
             "traffic_signals",
             null,
+            "zebra",
             "uncontrolled",
-            "unmarked",
-            "zebra"
+            "unmarked"
         ],
         "traffic_signals:sound": [
             null,
@@ -11389,7 +11389,8 @@
         ],
         "traffic_calming": [
             null,
-            "table"
+            "table",
+            "hump"
         ],
         "wheelchair": [
             null,
@@ -11549,6 +11550,10 @@
             null,
             "no",
             "yes"
+        ],
+        "crossing:signals": [
+            null,
+            "no"
         ],
         "tactile_paving": [
             null,
