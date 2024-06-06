@@ -29,12 +29,6 @@ jobs:
       # @see https://github.com/actions/checkout
       - uses: actions/checkout@v3
 
-      #### setup-python ________________________________________________________
-      # @see https://github.com/actions/setup-python
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-          cache: 'pip' # caching pip dependencies
 
       #### setup submodules __________________________________________________
       - run: |
@@ -43,6 +37,15 @@ jobs:
           cd oswm_codebase
           git pull -r https://github.com/kauevestena/oswm_codebase
           cd ..
+
+
+      #### setup-python ________________________________________________________
+      # @see https://github.com/actions/setup-python
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: 'pip' # caching pip dependencies
+
 
       #### setup dependencies __________________________________________________
       - run: pip install -r oswm_codebase/requirements.txt
