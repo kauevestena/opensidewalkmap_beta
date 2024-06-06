@@ -21,6 +21,8 @@
          height:100%; width:100%;
          }
       </style>
+
+        <link rel="icon" type="image/x-icon" href="https://kauevestena.github.io/opensidewalkmap/assets/favicon_homepage.png">
    </head>
    <body>
       <div id="map"></div>
@@ -71,7 +73,6 @@
                              type: "vector",
                              url: "pmtiles://" + params['sidewalks_url'],
                              attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-                             // attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
                          },
          
                          "oswm_pmtiles_crossings": {
@@ -79,19 +80,24 @@
                              url: "pmtiles://" + params['crossings_url'],
                              promoteId:"id",
                              attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-                             // attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
                          },
          
          
                          'osm': {
                          type: 'raster',
                          tiles: ['https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'],
-                         // attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                         }
+                         },
+
+                        "boundaries": {
+                            type: "geojson",
+                            data: params['boundaries_url']
+                        },
          
                      },
                      layers: [
-         
+
+
+
                          {
                          id: 'osm-baselayer',
                          source: 'osm',
@@ -119,6 +125,16 @@
                                  ],
                                  "line-width": 3,
                              }
+                         },
+
+                         {
+                         id: 'boundaries',
+                         type: 'line',
+                         source: 'boundaries',
+                         paint: {
+                             'line-color': 'black',
+                             'line-opacity': .3
+                         }
                          },
                          
                          {
@@ -158,7 +174,7 @@
              map.addControl(new maplibregl.FullscreenControl());
              map.addControl(new maplibregl.ScaleControl());
          
-             map.fitBounds([-49.410227,-25.527961,-49.128016,-25.398082]);
+             map.fitBounds(params['bounds']);
              // map.addControl(new LogoControl({compact: false}));
          
              // add hash

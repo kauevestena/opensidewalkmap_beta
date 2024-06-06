@@ -18,5 +18,6 @@
     "main_footways_url": "/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
     "potential_footways_url": "/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
     "informal_footways_url": "/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
-    "pedestrian_areas_url": "/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles"
+    "pedestrian_areas_url": "/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
+    "boundaries_url": "/opensidewalkmap_beta/data/boundaries.geojson"
 }
