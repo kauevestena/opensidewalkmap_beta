@@ -1,0 +1,287 @@
+<!-- url: https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles -->
+<html>
+   <head>
+      <title>OSWM Node Webmap</title>
+      <meta charset="utf-8"/>
+      <!-- <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css">
+         <script src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js"></script> -->
+      <!-- maplibre-gl latest tested working version: 4.3.2 -->
+      <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' />
+      <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script> 
+      <!-- pmtiles -->
+      <script src="https://unpkg.com/pmtiles@3.0.5/dist/pmtiles.js"></script>
+      <!-- legend module -->
+      <link href='https://www.unpkg.com/@watergis/maplibre-gl-legend@latest/dist/maplibre-gl-legend.css' rel='stylesheet' />
+      <script src="https://www.unpkg.com/@watergis/maplibre-gl-legend@latest/dist/maplibre-gl-legend.umd.js"></script>
+      <style>
+         body {
+         margin: 0;
+         }
+         #map {
+         height:100%; width:100%;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="map"></div>
+      <script type="text/javascript">
+
+         // Global Control Variables
+         var hoveredStateId_OSWMProject = null;
+
+        //  var map_bounds = null;
+        //  var map_center = null;
+        //  var map_zoom = null;
+
+         // fetching:
+        //  fetch('./default_params.json')
+        //     .then((response) => response.json())
+        //     .then((json) => {
+        //        map_bounds = json['bounds'];
+        //        map_center = json['center'];
+        //        map_zoom = json['zoom'];
+        //     });
+         
+         
+         // add the PMTiles plugin to the maplibregl global.
+         let protocol = new pmtiles.Protocol();
+         maplibregl.addProtocol("pmtiles",protocol.tile);
+                  
+        //  const p = new pmtiles.PMTiles(PMTILES_URL_SIDEWALKS);
+         
+         // // this is so we share one instance across the JS code and the map renderer
+         // protocol.add(p);
+         
+         // // we first fetch the header so we can get the center lon, lat of the map.
+         // p.getHeader().then(h => {
+
+            fetch('./webmap_params.json')
+            .then((response) => response.json())
+            .then((params) => {
+             const map = new maplibregl.Map(
+                 
+                 {
+                 container: 'map',
+                 zoom:  params['zoom'],
+                 center: params['center'],
+                 style: {
+                     version:8,
+                     sources: {
+                         "oswm_pmtiles_sidewalks": {
+                             type: "vector",
+                             url: "pmtiles://" + params['sidewalks_url'],
+                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+                             // attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+                         },
+         
+                         "oswm_pmtiles_crossings": {
+                             type: "vector",
+                             url: "pmtiles://" + params['crossings_url'],
+                             promoteId:"id",
+                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+                             // attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+                         },
+         
+         
+                         'osm': {
+                         type: 'raster',
+                         tiles: ['https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'],
+                         // attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                         }
+         
+                     },
+                     layers: [
+         
+                         {
+                         id: 'osm-baselayer',
+                         source: 'osm',
+                         type: 'raster',
+                         // below: 'sidewalks' // Add this layer below other map elements (optional)
+                         },
+         
+                         {
+                             "id":"sidewalks",
+                             "source": "oswm_pmtiles_sidewalks",
+                             "source-layer":"sidewalks",
+                             "type": "line",
+                             // 'layout': {
+                             //     // 'line-cap': 'round',
+                             //     // 'line-join': 'round' 
+                             // },
+                             "paint": {
+                                 "line-color": [
+                                     'case',
+                                     ['==', ['get', 'surface'], 'concrete'],
+                                     '#33C9EB', // blue
+                                     ['==', ['get', 'surface'], 'asphalt'],
+                                     '#F7455D', // red
+                                     'gray' // default color
+                                 ],
+                                 "line-width": 3,
+                             }
+                         },
+                         
+                         {
+                             "id":"crossings",
+                             "source": "oswm_pmtiles_crossings",
+                             "source-layer":"crossings",
+                             "type": "line",
+                             'layout': {
+                                 'line-cap': 'round',
+                                 'line-join': 'round' 
+                             },
+                             "paint": {
+                                 "line-color": "steelblue",
+                                 "line-width":     [
+                 'case',
+                 ['boolean', ['feature-state', 'hover'], false],
+                 12,
+                 6
+             ]
+         
+         
+         
+         
+                             }
+                         },
+         
+         
+                     ]
+                 }
+             }
+         
+             );
+
+             
+             // add controls
+             map.addControl(new maplibregl.NavigationControl());
+             map.addControl(new maplibregl.FullscreenControl());
+             map.addControl(new maplibregl.ScaleControl());
+         
+             map.fitBounds([-49.410227,-25.527961,-49.128016,-25.398082]);
+             // map.addControl(new LogoControl({compact: false}));
+         
+             // add hash
+             // map.addControl(new maplibregl.Hash());
+         
+             // add a global attribution:
+             // map.addControl(new maplibregl.AttributionControl({
+             //     'customAttribution': 'data: <a href="https://openstreetmap.org">OpenStreetMap Contributors</a> + <a href="https://kauevestena.github.io/opensidewalkmap/">OSWM project by KauÃª Vestena</a>'
+             // }));
+         
+             // add geolocation
+             map.on('load', function () {
+                 map.addControl(new maplibregl.GeolocateControl({
+                     positionOptions: {
+                     enableHighAccuracy: true
+                     },
+                     trackUserLocation: true
+                 }));
+         
+                 
+         
+         
+                 map.on('click', 'sidewalks', (e) => {
+                 // const coordinates = e.features[0].geometry.coordinates.slice();
+                 const coordinates = e.lngLat.toArray();
+         
+                 const description = e.features[0].properties.surface;
+         
+                 // Ensure that if the map is zoomed out such that multiple
+                 // copies of the feature are visible, the popup appears
+                 // over the copy being pointed to.
+                 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                 }
+         
+                 // const popupLngLat = new maplibregl.LngLat(coordinates[0], coordinates[1]);
+         
+                 new maplibregl.Popup()
+                     .setLngLat(coordinates)
+                     .setHTML(description)
+                     .addTo(map);
+                 });
+         
+                 // Change the cursor to a pointer when the mouse is over one layer.
+                 map.on('mouseenter', 'sidewalks', () => {
+                     map.getCanvas().style.cursor = 'pointer';
+                 });
+         
+                 // map.on('mouseenter', 'crossings', () => {
+                 //     map.getCanvas().style.cursor = 'pointer';
+                 // });
+                 // map.on('mouseleave', 'crossings', () => {
+                 //     map.getCanvas().style.cursor = '';
+                 // });
+         
+                 map.on('mouseleave', 'sidewalks', (
+                 ) => {
+                     map.getCanvas().style.cursor = '';
+         
+                 });
+         
+                 map.on('mousemove', 'crossings', (e) => {
+                 // console.log(hoveredStateId_OSWMProject);
+                 if (e.features.length > 0) {
+                     // Clear previous hover state if any
+                     if (hoveredStateId_OSWMProject) {
+                     map.setFeatureState(
+                         {
+                         source: 'oswm_pmtiles_crossings',
+                         sourceLayer: 'crossings',
+                         id: hoveredStateId_OSWMProject
+                         },
+                         { hover: false }
+                     );
+                     }
+         
+                     // Update hovered state with the current feature
+                     // hoveredStateId_OSWMProject = e.features[0].properties.id;
+                     hoveredStateId_OSWMProject = e.features[0].id;
+                     // console.log(hoveredStateId_OSWMProject);
+                     map.setFeatureState( {
+                         source: 'oswm_pmtiles_crossings',
+                         sourceLayer: 'crossings',
+                         id: hoveredStateId_OSWMProject
+                     },
+                     { hover: true }
+                     );
+                 }
+                 });
+         
+             // When the mouse leaves the state-fill layer, update the feature state of the
+             // previously hovered feature.
+             map.on('mouseleave', 'crossings', () => {
+                 if (hoveredStateId_OSWMProject) {
+                     map.setFeatureState(
+                         {source: 'oswm_pmtiles_crossings', 
+                         sourceLayer: 'crossings',
+                         id: hoveredStateId_OSWMProject},
+                         {hover: false}
+                     );
+                 }
+                 hoveredStateId_OSWMProject = null;
+             });
+         
+         
+             // const targets = {
+             //     Sidewalk : "sidewalks",
+             //     Crossing : "crossings",
+             // };
+             const options = {
+                 showDefault: false,
+                 showCheckbox: true,
+                 onlyRendered: false,
+                 reverseOrder: true
+             };
+                 map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, options), "bottom-left");
+             
+             });
+         
+         });
+         
+         
+         
+      </script>
+   </body>
+</html>
