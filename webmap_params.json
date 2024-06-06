@@ -11,12 +11,12 @@
         -25.465
     ],
     "basemap_url": "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
-    "sidewalks_url": "/data/tiles/sidewalks.pmtiles",
-    "crossings_url": "/data/tiles/crossings.pmtiles",
-    "kerbs_url": "/data/tiles/kerbs.pmtiles",
-    "stairways_url": "/data/tiles/stairways.pmtiles",
-    "main_footways_url": "/data/tiles/main_footways.pmtiles",
-    "potential_footways_url": "/data/tiles/potential_footways.pmtiles",
-    "informal_footways_url": "/data/tiles/informal_footways.pmtiles",
-    "pedestrian_areas_url": "/data/tiles/pedestrian_areas.pmtiles"
+    "sidewalks_url": "/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
+    "crossings_url": "/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
+    "kerbs_url": "/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
+    "stairways_url": "/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
+    "main_footways_url": "/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
+    "potential_footways_url": "/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
+    "informal_footways_url": "/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+    "pedestrian_areas_url": "/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles"
 }
