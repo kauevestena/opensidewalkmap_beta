@@ -9,7 +9,7 @@
       <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' />
       <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script> 
       <!-- pmtiles -->
-      <script src="https://unpkg.com/pmtiles@3.0.5/dist/pmtiles.js"></script>
+      <script src="https://unpkg.com/pmtiles@latest/dist/pmtiles.js"></script>
       <!-- legend module -->
       <link href='https://www.unpkg.com/@watergis/maplibre-gl-legend@latest/dist/maplibre-gl-legend.css' rel='stylesheet' />
       <script src="https://www.unpkg.com/@watergis/maplibre-gl-legend@latest/dist/maplibre-gl-legend.umd.js"></script>
@@ -81,6 +81,53 @@
                              promoteId:"id",
                              attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
                          },
+
+                         "osmw_pmtiles_kerbs": {
+                             type: "vector",
+                             url: "pmtiles://" + params['kerbs_url'],
+                             promoteId:"id",
+                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+                         },
+
+                         "osmw_pmtiles_main_footways": {
+                             type: "vector",
+                             url: "pmtiles://" + params['main_footways_url'],
+                             promoteId:"id",
+                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+
+                         },
+
+                         "osmw_pmtiles_informal_footways": {
+                             type: "vector",
+                             url: "pmtiles://" + params['informal_footways_url'],
+                             promoteId:"id",
+                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+
+                         },
+
+                         "osmw_pmtiles_pedestrian_areas": {
+                             type: "vector",
+                             url: "pmtiles://" + params['pedestrian_areas_url'],
+                             promoteId:"id",
+                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+
+                         },
+
+                         "osmw_pmtiles_stairways": {
+                             type: "vector",
+                             url: "pmtiles://" + params['stairways_url'],
+                             promoteId:"id",
+                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+
+                         },
+
+                         "osmw_pmtiles_potential_footways": {
+                             type: "vector",
+                             url: "pmtiles://" + params['potential_footways_url'],
+                             promoteId:"id",
+                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
+
+                         },
          
          
                          'osm': {
@@ -102,8 +149,30 @@
                          id: 'osm-baselayer',
                          source: 'osm',
                          type: 'raster',
-                         // below: 'sidewalks' // Add this layer below other map elements (optional)
                          },
+
+                         {
+                         "id": 'boundaries',
+                         "type": 'line',
+                         "source": 'boundaries',
+                         "paint": {
+                             'line-color': 'black',
+                             'line-opacity': .3
+                         }
+                         },
+
+                         {
+                            "id" : "pedestrian_areas",
+                            "source": "osmw_pmtiles_pedestrian_areas",
+                            "source-layer":"pedestrian_areas",
+                            "type": "fill",
+                            "paint": {
+                                "fill-color": "blue",
+                                "fill-opacity": 0.5
+                            }
+                         },
+
+
          
                          {
                              "id":"sidewalks",
@@ -127,15 +196,16 @@
                              }
                          },
 
+
                          {
-                         id: 'boundaries',
-                         type: 'line',
-                         source: 'boundaries',
-                         paint: {
-                             'line-color': 'black',
-                             'line-opacity': .3
-                         }
+                         "id":"kerbs",
+                         "source": "osmw_pmtiles_kerbs",
+                         "source-layer":"kerbs",
+                         "type": "circle",
+                         "minzoom": 16,
                          },
+
+
                          
                          {
                              "id":"crossings",
@@ -155,11 +225,54 @@
                  6
              ]
          
-         
-         
-         
-                             }
-                         },
+             }
+            },
+
+                        {
+                            "id": 'main_footways',
+                            "type": 'line',
+                            "source": 'osmw_pmtiles_main_footways',
+                            "source-layer": 'main_footways',
+                            "paint": {
+                                'line-color': 'blue',
+                                'line-width': 2
+                            }
+                        },
+
+                        {
+                         "id": 'potential_footways',
+                         "type": 'line',
+                         "source": 'osmw_pmtiles_potential_footways',
+                         "source-layer": 'potential_footways',
+                         "paint": {
+                             'line-color': 'red',
+                             'line-width': 2
+                         }
+
+                        },
+
+                        {
+                         "id": 'informal_footways',
+                         "type": 'line',
+                         "source": 'osmw_pmtiles_informal_footways',
+                         "source-layer": 'informal_footways',
+                         "paint": {
+                             'line-color': 'orange',
+                             'line-width': 2
+                         }},
+
+
+                         {
+                         "id": 'stairways', 
+                         'type': 'line',
+                          'source': 'osmw_pmtiles_stairways',
+                        "source-layer": 'stairways',
+                        "paint": {
+                            'line-color': 'green',
+                            'line-width': 2
+                        }
+
+                        },
          
          
                      ]
