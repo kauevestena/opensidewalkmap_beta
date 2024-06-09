@@ -48,7 +48,7 @@ TILES_MAX_ZOOM = 20
 # Values must all be set as a list, even if there's a single value!!
 
 # depending on local rules, the other types of footways can differ, so you migh tune the options
-OTHER_FOOTWAY_RULES = {'highway':['footway','steps','living_street','pedestrian','track','path'],'foot':['yes','designated','permissive'],'footway': ['alley','path','yes']}
+OTHER_FOOTWAY_RULES = {'highway':['footway','steps','living_street','pedestrian','track','path'],'foot':['yes','designated','permissive','destination'],'footway': ['alley','path','yes']}
 
 # since we download all features containing the tags of the previous rule-set, if there's another tag hierarchically above, we should exclude those features:
-OTHER_FOOTWAY_EXCLUSION_RULES = {'highway': ['trunk','motorway','primary','secondary','trunk_link','motorway_link','primary_link'],'access':['no','private']}
+OTHER_FOOTWAY_EXCLUSION_RULES = {'highway': ['trunk','motorway','primary','secondary','trunk_link','motorway_link','primary_link'],'access':['no','private'],'foot':['no','use_sidepath','private']}
