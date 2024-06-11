@@ -11,13 +11,13 @@
         -25.465
     ],
     "basemap_url": "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
-    "sidewalks_url": "/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
-    "crossings_url": "/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
-    "kerbs_url": "/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
-    "stairways_url": "/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
-    "main_footways_url": "/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
-    "potential_footways_url": "/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
-    "informal_footways_url": "/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
-    "pedestrian_areas_url": "/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
-    "boundaries_url": "/opensidewalkmap_beta/data/boundaries.geojson"
+    "sidewalks_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
+    "crossings_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
+    "kerbs_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
+    "stairways_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
+    "main_footways_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
+    "potential_footways_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
+    "informal_footways_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+    "pedestrian_areas_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
+    "boundaries_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
 }
