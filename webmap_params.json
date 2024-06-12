@@ -19,5 +19,195 @@
     "potential_footways_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
     "informal_footways_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
     "pedestrian_areas_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
-    "boundaries_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
+    "boundaries_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+    "layers": [
+        {
+            "id": "osm-baselayer",
+            "source": "osm",
+            "type": "raster"
+        },
+        {
+            "id": "boundaries",
+            "type": "line",
+            "source": "boundaries",
+            "paint": {
+                "line-color": "black",
+                "line-opacity": 0.3
+            }
+        },
+        {
+            "id": "pedestrian_areas",
+            "source": "oswm_pmtiles_pedestrian_areas",
+            "source-layer": "pedestrian_areas",
+            "type": "fill",
+            "paint": {
+                "fill-color": "blue",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "sidewalks",
+            "source": "oswm_pmtiles_sidewalks",
+            "source-layer": "sidewalks",
+            "type": "line",
+            "paint": {
+                "line-color": [
+                    "case",
+                    [
+                        "==",
+                        [
+                            "get",
+                            "surface"
+                        ],
+                        "concrete"
+                    ],
+                    "#33C9EB",
+                    [
+                        "==",
+                        [
+                            "get",
+                            "surface"
+                        ],
+                        "asphalt"
+                    ],
+                    "#F7455D",
+                    "gray"
+                ],
+                "line-width": 3
+            }
+        },
+        {
+            "id": "kerbs",
+            "source": "oswm_pmtiles_kerbs",
+            "source-layer": "kerbs",
+            "type": "circle",
+            "minzoom": 16
+        },
+        {
+            "id": "crossings",
+            "source": "oswm_pmtiles_crossings",
+            "source-layer": "crossings",
+            "type": "line",
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round"
+            },
+            "paint": {
+                "line-color": "steelblue",
+                "line-width": [
+                    "case",
+                    [
+                        "boolean",
+                        [
+                            "feature-state",
+                            "hover"
+                        ],
+                        false
+                    ],
+                    12,
+                    6
+                ]
+            }
+        },
+        {
+            "id": "main_footways",
+            "type": "line",
+            "source": "oswm_pmtiles_main_footways",
+            "source-layer": "main_footways",
+            "paint": {
+                "line-color": "blue",
+                "line-width": 2
+            }
+        },
+        {
+            "id": "potential_footways",
+            "type": "line",
+            "source": "oswm_pmtiles_potential_footways",
+            "source-layer": "potential_footways",
+            "paint": {
+                "line-color": "red",
+                "line-width": 2
+            }
+        },
+        {
+            "id": "informal_footways",
+            "type": "line",
+            "source": "oswm_pmtiles_informal_footways",
+            "source-layer": "informal_footways",
+            "paint": {
+                "line-color": "orange",
+                "line-width": 2
+            }
+        },
+        {
+            "id": "stairways",
+            "type": "line",
+            "source": "oswm_pmtiles_stairways",
+            "source-layer": "stairways",
+            "paint": {
+                "line-color": "green",
+                "line-width": 2
+            }
+        }
+    ],
+    "sources": {
+        "oswm_pmtiles_sidewalks": {
+            "type": "vector",
+            "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
+            "promoteId": "id",
+            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+        },
+        "oswm_pmtiles_crossings": {
+            "type": "vector",
+            "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
+            "promoteId": "id",
+            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+        },
+        "oswm_pmtiles_kerbs": {
+            "type": "vector",
+            "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
+            "promoteId": "id",
+            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+        },
+        "oswm_pmtiles_stairways": {
+            "type": "vector",
+            "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
+            "promoteId": "id",
+            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+        },
+        "oswm_pmtiles_main_footways": {
+            "type": "vector",
+            "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
+            "promoteId": "id",
+            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+        },
+        "oswm_pmtiles_potential_footways": {
+            "type": "vector",
+            "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
+            "promoteId": "id",
+            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+        },
+        "oswm_pmtiles_informal_footways": {
+            "type": "vector",
+            "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+            "promoteId": "id",
+            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+        },
+        "oswm_pmtiles_pedestrian_areas": {
+            "type": "vector",
+            "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
+            "promoteId": "id",
+            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+        },
+        "osm": {
+            "type": "raster",
+            "tiles": [
+                "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+            ]
+        },
+        "boundaries": {
+            "type": "geojson",
+            "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
+        }
+    }
 }

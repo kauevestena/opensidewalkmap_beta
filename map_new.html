@@ -60,6 +60,8 @@
             fetch('./webmap_params.json')
             .then((response) => response.json())
             .then((params) => {
+                
+
              const map = new maplibregl.Map(
                  
                  {
@@ -68,214 +70,10 @@
                  center: params['center'],
                  style: {
                      version:8,
-                     sources: {
-                         "oswm_pmtiles_sidewalks": {
-                             type: "vector",
-                             url: "pmtiles://" + params['sidewalks_url'],
-                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-                         },
-         
-                         "oswm_pmtiles_crossings": {
-                             type: "vector",
-                             url: "pmtiles://" + params['crossings_url'],
-                             promoteId:"id",
-                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-                         },
-
-                         "osmw_pmtiles_kerbs": {
-                             type: "vector",
-                             url: "pmtiles://" + params['kerbs_url'],
-                             promoteId:"id",
-                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-                         },
-
-                         "osmw_pmtiles_main_footways": {
-                             type: "vector",
-                             url: "pmtiles://" + params['main_footways_url'],
-                             promoteId:"id",
-                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-
-                         },
-
-                         "osmw_pmtiles_informal_footways": {
-                             type: "vector",
-                             url: "pmtiles://" + params['informal_footways_url'],
-                             promoteId:"id",
-                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-
-                         },
-
-                         "osmw_pmtiles_pedestrian_areas": {
-                             type: "vector",
-                             url: "pmtiles://" + params['pedestrian_areas_url'],
-                             promoteId:"id",
-                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-
-                         },
-
-                         "osmw_pmtiles_stairways": {
-                             type: "vector",
-                             url: "pmtiles://" + params['stairways_url'],
-                             promoteId:"id",
-                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-
-                         },
-
-                         "osmw_pmtiles_potential_footways": {
-                             type: "vector",
-                             url: "pmtiles://" + params['potential_footways_url'],
-                             promoteId:"id",
-                             attribution: 'Â© <a href="https://openstreetmap.org">OpenStreetMap Contributors</a>'
-
-                         },
-         
-         
-                         'osm': {
-                         type: 'raster',
-                         tiles: ['https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'],
-                         },
-
-                        "boundaries": {
-                            type: "geojson",
-                            data: params['boundaries_url']
-                        },
-         
-                     },
-                     layers: [
-
-
-
-                         {
-                         id: 'osm-baselayer',
-                         source: 'osm',
-                         type: 'raster',
-                         },
-
-                         {
-                         "id": 'boundaries',
-                         "type": 'line',
-                         "source": 'boundaries',
-                         "paint": {
-                             'line-color': 'black',
-                             'line-opacity': .3
-                         }
-                         },
-
-                         {
-                            "id" : "pedestrian_areas",
-                            "source": "osmw_pmtiles_pedestrian_areas",
-                            "source-layer":"pedestrian_areas",
-                            "type": "fill",
-                            "paint": {
-                                "fill-color": "blue",
-                                "fill-opacity": 0.5
-                            }
-                         },
-
-
-         
-                         {
-                             "id":"sidewalks",
-                             "source": "oswm_pmtiles_sidewalks",
-                             "source-layer":"sidewalks",
-                             "type": "line",
-                             // 'layout': {
-                             //     // 'line-cap': 'round',
-                             //     // 'line-join': 'round' 
-                             // },
-                             "paint": {
-                                 "line-color": [
-                                     'case',
-                                     ['==', ['get', 'surface'], 'concrete'],
-                                     '#33C9EB', // blue
-                                     ['==', ['get', 'surface'], 'asphalt'],
-                                     '#F7455D', // red
-                                     'gray' // default color
-                                 ],
-                                 "line-width": 3,
-                             }
-                         },
-
-
-                         {
-                         "id":"kerbs",
-                         "source": "osmw_pmtiles_kerbs",
-                         "source-layer":"kerbs",
-                         "type": "circle",
-                         "minzoom": 16,
-                         },
-
-
-                         
-                         {
-                             "id":"crossings",
-                             "source": "oswm_pmtiles_crossings",
-                             "source-layer":"crossings",
-                             "type": "line",
-                             'layout': {
-                                 'line-cap': 'round',
-                                 'line-join': 'round' 
-                             },
-                             "paint": {
-                                 "line-color": "steelblue",
-                                 "line-width":     [
-                 'case',
-                 ['boolean', ['feature-state', 'hover'], false],
-                 12,
-                 6
-             ]
-         
-             }
-            },
-
-                        {
-                            "id": 'main_footways',
-                            "type": 'line',
-                            "source": 'osmw_pmtiles_main_footways',
-                            "source-layer": 'main_footways',
-                            "paint": {
-                                'line-color': 'blue',
-                                'line-width': 2
-                            }
-                        },
-
-                        {
-                         "id": 'potential_footways',
-                         "type": 'line',
-                         "source": 'osmw_pmtiles_potential_footways',
-                         "source-layer": 'potential_footways',
-                         "paint": {
-                             'line-color': 'red',
-                             'line-width': 2
-                         }
-
-                        },
-
-                        {
-                         "id": 'informal_footways',
-                         "type": 'line',
-                         "source": 'osmw_pmtiles_informal_footways',
-                         "source-layer": 'informal_footways',
-                         "paint": {
-                             'line-color': 'orange',
-                             'line-width': 2
-                         }},
-
-
-                         {
-                         "id": 'stairways', 
-                         'type': 'line',
-                          'source': 'osmw_pmtiles_stairways',
-                        "source-layer": 'stairways',
-                        "paint": {
-                            'line-color': 'green',
-                            'line-width': 2
-                        }
-
-                        },
-         
-         
-                     ]
+                     sources: params['sources'],
+                     layers: params['layers'],
+                    //  terrain: params['terrain'],
+                    //  maxPitch: 85
                  }
              }
          
@@ -406,6 +204,14 @@
                  map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, options), "bottom-left");
              
              });
+
+            // // Terrain, someday! (TODO)
+            // //  map.addControl(
+            // //      new maplibregl.TerrainControl({
+            // //         source: 'terrainSource',
+            // //         exaggeration: 1
+            // //     })
+            // //     );
          
          });
          
