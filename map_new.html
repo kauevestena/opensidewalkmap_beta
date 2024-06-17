@@ -18,15 +18,45 @@
          margin: 0;
          }
          #map {
-         height:100%; width:100%;
-         }
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #style-changer {
+            position: absolute;
+            top: 10px;
+            right: 60px; /* Adjusted to avoid collision with the navigation control */
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+            z-index: 1;
+        }
+        #style-selector {
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+        }
+        #style-selector:focus {
+            outline: none;
+            border: none;
+        }
       </style>
 
         <link rel="icon" type="image/x-icon" href="https://kauevestena.github.io/opensidewalkmap/assets/favicon_homepage.png">
    </head>
    <body>
-      <div id="map"></div>
-      <script type="text/javascript">
+       <div id="style-changer">
+           <select id="style-selector"></select>
+        </div>
+        <div id="map"></div>
+        <script type="text/javascript">
 
          // Global Control Variables
          var hoveredStateId_OSWMProject = null;
@@ -104,7 +134,8 @@
                      },
                      trackUserLocation: true
                  }));
-         
+
+                        
                  
          
          
@@ -129,79 +160,74 @@
                      .addTo(map);
                  });
          
-                 // Change the cursor to a pointer when the mouse is over one layer.
-                 map.on('mouseenter', 'sidewalks', () => {
-                     map.getCanvas().style.cursor = 'pointer';
-                 });
+            function setupCursorChange(layerName) {
+                map.on('mouseenter', layerName, () => {
+                    map.getCanvas().style.cursor = 'pointer';
+                });
+
+                map.on('mouseleave', layerName, () => {
+                    map.getCanvas().style.cursor = '';
+                });
+            }
+
+            // Set up cursor change effects for multiple layers
+            setupCursorChange('crossings');
+            setupCursorChange('sidewalks');
          
-                 // map.on('mouseenter', 'crossings', () => {
-                 //     map.getCanvas().style.cursor = 'pointer';
-                 // });
-                 // map.on('mouseleave', 'crossings', () => {
-                 //     map.getCanvas().style.cursor = '';
-                 // });
-         
-                 map.on('mouseleave', 'sidewalks', (
-                 ) => {
-                     map.getCanvas().style.cursor = '';
-         
-                 });
-         
-                 map.on('mousemove', 'crossings', (e) => {
-                 // console.log(hoveredStateId_OSWMProject);
-                 if (e.features.length > 0) {
-                     // Clear previous hover state if any
-                     if (hoveredStateId_OSWMProject) {
-                     map.setFeatureState(
-                         {
-                         source: 'oswm_pmtiles_crossings',
-                         sourceLayer: 'crossings',
-                         id: hoveredStateId_OSWMProject
-                         },
-                         { hover: false }
-                     );
-                     }
-         
-                     // Update hovered state with the current feature
-                     // hoveredStateId_OSWMProject = e.features[0].properties.id;
-                     hoveredStateId_OSWMProject = e.features[0].id;
-                     // console.log(hoveredStateId_OSWMProject);
-                     map.setFeatureState( {
-                         source: 'oswm_pmtiles_crossings',
-                         sourceLayer: 'crossings',
-                         id: hoveredStateId_OSWMProject
-                     },
-                     { hover: true }
-                     );
-                 }
-                 });
-         
-             // When the mouse leaves the state-fill layer, update the feature state of the
-             // previously hovered feature.
-             map.on('mouseleave', 'crossings', () => {
-                 if (hoveredStateId_OSWMProject) {
-                     map.setFeatureState(
-                         {source: 'oswm_pmtiles_crossings', 
-                         sourceLayer: 'crossings',
-                         id: hoveredStateId_OSWMProject},
-                         {hover: false}
-                     );
-                 }
-                 hoveredStateId_OSWMProject = null;
-             });
-         
-         
-             // const targets = {
-             //     Sidewalk : "sidewalks",
-             //     Crossing : "crossings",
-             // };
-             const options = {
+            
+             // Function to set up hover effect for a specific layer
+            function setupHoverEffect(layerName, sourceName, sourceLayerName) {
+                let hoveredStateId = null;
+
+                map.on('mousemove', layerName, (e) => {
+                    if (e.features.length > 0) {
+                        if (hoveredStateId) {
+                            map.setFeatureState(
+                                {
+                                    source: sourceName,
+                                    sourceLayer: sourceLayerName,
+                                    id: hoveredStateId
+                                },
+                                { hover: false }
+                            );
+                        }
+
+                        hoveredStateId = e.features[0].id;
+                        map.setFeatureState(
+                            {
+                                source: sourceName,
+                                sourceLayer: sourceLayerName,
+                                id: hoveredStateId
+                            },
+                            { hover: true }
+                        );
+                    }
+                });
+
+                map.on('mouseleave', layerName, () => {
+                    if (hoveredStateId) {
+                        map.setFeatureState(
+                            {
+                                source: sourceName,
+                                sourceLayer: sourceLayerName,
+                                id: hoveredStateId
+                            },
+                            { hover: false }
+                        );
+                    }
+                    hoveredStateId = null;
+                });
+            }
+
+            setupHoverEffect('crossings', 'oswm_pmtiles_crossings', 'crossings');
+
+             const legend_control_options = {
                  showDefault: false,
                  showCheckbox: true,
                  onlyRendered: false,
                  reverseOrder: true
              };
-                 map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, options), "bottom-left");
+                 map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, legend_control_options), "bottom-left");
              
              });
 
@@ -213,7 +239,25 @@
             // //     })
             // //     );
          
+
+        // // //              // Dynamically populate the dropdown options
+        // // // const styleSelector = document.getElementById('style-selector');
+        // // // Object.keys(styles).forEach(styleKey => {
+        // // //     const option = document.createElement('option');
+        // // //     option.value = styleKey;
+        // // //     option.textContent = styleKey;
+        // // //     styleSelector.appendChild(option);
+        // // // });
+
+        // // // // Listen for style changes
+        // // // styleSelector.addEventListener('change', function (e) {
+        // // //     const style = e.target.value;
+        // // //     map.setStyle(styles[style]);
+        // // // });
+
+        // END of the big "then" statement:
          });
+         
          
          
          
