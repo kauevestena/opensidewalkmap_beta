@@ -41,7 +41,7 @@
             "source-layer": "pedestrian_areas",
             "type": "fill",
             "paint": {
-                "fill-color": "blue",
+                "fill-color": "gray",
                 "fill-opacity": 0.5
             }
         },
@@ -155,49 +155,49 @@
             "type": "vector",
             "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
             "promoteId": "id",
-            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+            "attribution": "Ã‚Â© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
         },
         "oswm_pmtiles_crossings": {
             "type": "vector",
             "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
             "promoteId": "id",
-            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+            "attribution": "Ã‚Â© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
         },
         "oswm_pmtiles_kerbs": {
             "type": "vector",
             "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
             "promoteId": "id",
-            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+            "attribution": "Ã‚Â© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
         },
         "oswm_pmtiles_stairways": {
             "type": "vector",
             "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
             "promoteId": "id",
-            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+            "attribution": "Ã‚Â© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
         },
         "oswm_pmtiles_main_footways": {
             "type": "vector",
             "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
             "promoteId": "id",
-            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+            "attribution": "Ã‚Â© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
         },
         "oswm_pmtiles_potential_footways": {
             "type": "vector",
             "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
             "promoteId": "id",
-            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+            "attribution": "Ã‚Â© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
         },
         "oswm_pmtiles_informal_footways": {
             "type": "vector",
             "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
             "promoteId": "id",
-            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+            "attribution": "Ã‚Â© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
         },
         "oswm_pmtiles_pedestrian_areas": {
             "type": "vector",
             "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
             "promoteId": "id",
-            "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+            "attribution": "Ã‚Â© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
         },
         "osm": {
             "type": "raster",
@@ -219,5 +219,2642 @@
         "potential_footways",
         "informal_footways",
         "pedestrian_areas"
-    ]
+    ],
+    "layer_types": {
+        "fill": [
+            "pedestrian_areas"
+        ],
+        "line": [
+            "sidewalks",
+            "crossings",
+            "stairways",
+            "main_footways",
+            "potential_footways",
+            "informal_footways"
+        ],
+        "circle": [
+            "kerbs"
+        ]
+    },
+    "styles": {
+        "footway_categories": {
+            "version": 8,
+            "sources": {
+                "oswm_pmtiles_sidewalks": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_crossings": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_kerbs": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_stairways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_main_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_potential_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_informal_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_pedestrian_areas": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "osm": {
+                    "type": "raster",
+                    "tiles": [
+                        "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+                    ]
+                },
+                "boundaries": {
+                    "type": "geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
+                }
+            },
+            "layers": [
+                {
+                    "id": "osm-baselayer",
+                    "source": "osm",
+                    "type": "raster"
+                },
+                {
+                    "id": "boundaries",
+                    "type": "line",
+                    "source": "boundaries",
+                    "paint": {
+                        "line-color": "black",
+                        "line-opacity": 0.3
+                    }
+                },
+                {
+                    "id": "pedestrian_areas",
+                    "source": "oswm_pmtiles_pedestrian_areas",
+                    "source-layer": "pedestrian_areas",
+                    "type": "fill",
+                    "paint": {
+                        "fill-color": "steelblue",
+                        "fill-opacity": 0.5
+                    }
+                },
+                {
+                    "id": "sidewalks",
+                    "source": "oswm_pmtiles_sidewalks",
+                    "source-layer": "sidewalks",
+                    "type": "line",
+                    "paint": {
+                        "line-color": "steelblue",
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "crossings",
+                    "source": "oswm_pmtiles_crossings",
+                    "source-layer": "crossings",
+                    "type": "line",
+                    "paint": {
+                        "line-color": "steelblue",
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "stairways",
+                    "source": "oswm_pmtiles_stairways",
+                    "source-layer": "stairways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": "steelblue",
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "main_footways",
+                    "source": "oswm_pmtiles_main_footways",
+                    "source-layer": "main_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": "steelblue",
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "potential_footways",
+                    "source": "oswm_pmtiles_potential_footways",
+                    "source-layer": "potential_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": "steelblue",
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "informal_footways",
+                    "source": "oswm_pmtiles_informal_footways",
+                    "source-layer": "informal_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": "steelblue",
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "kerbs",
+                    "source": "oswm_pmtiles_kerbs",
+                    "source-layer": "kerbs",
+                    "type": "circle",
+                    "minzoom": 16,
+                    "paint": {
+                        "circle-color": "steelblue",
+                        "circle-opacity": 0.8
+                    }
+                }
+            ],
+            "name": "Footway Categories"
+        },
+        "surface": {
+            "version": 8,
+            "sources": {
+                "oswm_pmtiles_sidewalks": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_crossings": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_kerbs": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_stairways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_main_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_potential_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_informal_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_pedestrian_areas": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "osm": {
+                    "type": "raster",
+                    "tiles": [
+                        "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+                    ]
+                },
+                "boundaries": {
+                    "type": "geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
+                }
+            },
+            "layers": [
+                {
+                    "id": "osm-baselayer",
+                    "source": "osm",
+                    "type": "raster"
+                },
+                {
+                    "id": "boundaries",
+                    "type": "line",
+                    "source": "boundaries",
+                    "paint": {
+                        "line-color": "black",
+                        "line-opacity": 0.3
+                    }
+                },
+                {
+                    "id": "pedestrian_areas",
+                    "source": "oswm_pmtiles_pedestrian_areas",
+                    "source-layer": "pedestrian_areas",
+                    "type": "fill",
+                    "paint": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "asphalt"
+                            ],
+                            "#fb8072",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete"
+                            ],
+                            "#80b1d3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete:plates"
+                            ],
+                            "#fccde5",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paving_stones"
+                            ],
+                            "#bebada",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sett"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "cobblestone"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unhewn_cobblestone"
+                            ],
+                            "#ffffb3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ground"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "dirt"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "earth"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sand"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "grass"
+                            ],
+                            "#b3de69",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paved"
+                            ],
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unpaved"
+                            ],
+                            "#d9d9d9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "gravel"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "compacted"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ceramic:tiles"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "wood"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "metal"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            "black"
+                        ],
+                        "fill-opacity": 0.5
+                    }
+                },
+                {
+                    "id": "sidewalks",
+                    "source": "oswm_pmtiles_sidewalks",
+                    "source-layer": "sidewalks",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "asphalt"
+                            ],
+                            "#fb8072",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete"
+                            ],
+                            "#80b1d3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete:plates"
+                            ],
+                            "#fccde5",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paving_stones"
+                            ],
+                            "#bebada",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sett"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "cobblestone"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unhewn_cobblestone"
+                            ],
+                            "#ffffb3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ground"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "dirt"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "earth"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sand"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "grass"
+                            ],
+                            "#b3de69",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paved"
+                            ],
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unpaved"
+                            ],
+                            "#d9d9d9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "gravel"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "compacted"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ceramic:tiles"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "wood"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "metal"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "crossings",
+                    "source": "oswm_pmtiles_crossings",
+                    "source-layer": "crossings",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "asphalt"
+                            ],
+                            "#fb8072",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete"
+                            ],
+                            "#80b1d3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete:plates"
+                            ],
+                            "#fccde5",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paving_stones"
+                            ],
+                            "#bebada",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sett"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "cobblestone"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unhewn_cobblestone"
+                            ],
+                            "#ffffb3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ground"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "dirt"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "earth"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sand"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "grass"
+                            ],
+                            "#b3de69",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paved"
+                            ],
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unpaved"
+                            ],
+                            "#d9d9d9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "gravel"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "compacted"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ceramic:tiles"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "wood"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "metal"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "stairways",
+                    "source": "oswm_pmtiles_stairways",
+                    "source-layer": "stairways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "asphalt"
+                            ],
+                            "#fb8072",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete"
+                            ],
+                            "#80b1d3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete:plates"
+                            ],
+                            "#fccde5",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paving_stones"
+                            ],
+                            "#bebada",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sett"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "cobblestone"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unhewn_cobblestone"
+                            ],
+                            "#ffffb3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ground"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "dirt"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "earth"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sand"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "grass"
+                            ],
+                            "#b3de69",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paved"
+                            ],
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unpaved"
+                            ],
+                            "#d9d9d9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "gravel"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "compacted"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ceramic:tiles"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "wood"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "metal"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "main_footways",
+                    "source": "oswm_pmtiles_main_footways",
+                    "source-layer": "main_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "asphalt"
+                            ],
+                            "#fb8072",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete"
+                            ],
+                            "#80b1d3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete:plates"
+                            ],
+                            "#fccde5",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paving_stones"
+                            ],
+                            "#bebada",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sett"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "cobblestone"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unhewn_cobblestone"
+                            ],
+                            "#ffffb3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ground"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "dirt"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "earth"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sand"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "grass"
+                            ],
+                            "#b3de69",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paved"
+                            ],
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unpaved"
+                            ],
+                            "#d9d9d9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "gravel"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "compacted"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ceramic:tiles"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "wood"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "metal"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "potential_footways",
+                    "source": "oswm_pmtiles_potential_footways",
+                    "source-layer": "potential_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "asphalt"
+                            ],
+                            "#fb8072",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete"
+                            ],
+                            "#80b1d3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete:plates"
+                            ],
+                            "#fccde5",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paving_stones"
+                            ],
+                            "#bebada",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sett"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "cobblestone"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unhewn_cobblestone"
+                            ],
+                            "#ffffb3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ground"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "dirt"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "earth"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sand"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "grass"
+                            ],
+                            "#b3de69",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paved"
+                            ],
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unpaved"
+                            ],
+                            "#d9d9d9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "gravel"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "compacted"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ceramic:tiles"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "wood"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "metal"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "informal_footways",
+                    "source": "oswm_pmtiles_informal_footways",
+                    "source-layer": "informal_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "asphalt"
+                            ],
+                            "#fb8072",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete"
+                            ],
+                            "#80b1d3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete:plates"
+                            ],
+                            "#fccde5",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paving_stones"
+                            ],
+                            "#bebada",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sett"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "cobblestone"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unhewn_cobblestone"
+                            ],
+                            "#ffffb3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ground"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "dirt"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "earth"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sand"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "grass"
+                            ],
+                            "#b3de69",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paved"
+                            ],
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unpaved"
+                            ],
+                            "#d9d9d9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "gravel"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "compacted"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ceramic:tiles"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "wood"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "metal"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "kerbs",
+                    "source": "oswm_pmtiles_kerbs",
+                    "source-layer": "kerbs",
+                    "type": "circle",
+                    "minzoom": 16,
+                    "paint": {
+                        "circle-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "asphalt"
+                            ],
+                            "#fb8072",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete"
+                            ],
+                            "#80b1d3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "concrete:plates"
+                            ],
+                            "#fccde5",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paving_stones"
+                            ],
+                            "#bebada",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sett"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "cobblestone"
+                            ],
+                            "#ffed6f",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unhewn_cobblestone"
+                            ],
+                            "#ffffb3",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ground"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "dirt"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "earth"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "sand"
+                            ],
+                            "#fdb462",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "grass"
+                            ],
+                            "#b3de69",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "paved"
+                            ],
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "unpaved"
+                            ],
+                            "#d9d9d9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "gravel"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "compacted"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "ceramic:tiles"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "wood"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "metal"
+                            ],
+                            "#bc80bd",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "surface"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            "black"
+                        ],
+                        "circle-opacity": 0.8
+                    }
+                }
+            ],
+            "name": "Surface"
+        },
+        "smoothness": {
+            "version": 8,
+            "sources": {
+                "oswm_pmtiles_sidewalks": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_crossings": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_kerbs": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_stairways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_main_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_potential_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_informal_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_pedestrian_areas": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "osm": {
+                    "type": "raster",
+                    "tiles": [
+                        "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+                    ]
+                },
+                "boundaries": {
+                    "type": "geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
+                }
+            },
+            "layers": [
+                {
+                    "id": "osm-baselayer",
+                    "source": "osm",
+                    "type": "raster"
+                },
+                {
+                    "id": "boundaries",
+                    "type": "line",
+                    "source": "boundaries",
+                    "paint": {
+                        "line-color": "black",
+                        "line-opacity": 0.3
+                    }
+                },
+                {
+                    "id": "pedestrian_areas",
+                    "source": "oswm_pmtiles_pedestrian_areas",
+                    "source-layer": "pedestrian_areas",
+                    "type": "fill",
+                    "paint": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "excellent"
+                            ],
+                            "#4575b4",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "good"
+                            ],
+                            "#abd9e9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "intermediate"
+                            ],
+                            "#ffffbf",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "impassable"
+                            ],
+                            "#a50026",
+                            "black"
+                        ],
+                        "fill-opacity": 0.5
+                    }
+                },
+                {
+                    "id": "sidewalks",
+                    "source": "oswm_pmtiles_sidewalks",
+                    "source-layer": "sidewalks",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "excellent"
+                            ],
+                            "#4575b4",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "good"
+                            ],
+                            "#abd9e9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "intermediate"
+                            ],
+                            "#ffffbf",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "impassable"
+                            ],
+                            "#a50026",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "crossings",
+                    "source": "oswm_pmtiles_crossings",
+                    "source-layer": "crossings",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "excellent"
+                            ],
+                            "#4575b4",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "good"
+                            ],
+                            "#abd9e9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "intermediate"
+                            ],
+                            "#ffffbf",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "impassable"
+                            ],
+                            "#a50026",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "stairways",
+                    "source": "oswm_pmtiles_stairways",
+                    "source-layer": "stairways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "excellent"
+                            ],
+                            "#4575b4",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "good"
+                            ],
+                            "#abd9e9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "intermediate"
+                            ],
+                            "#ffffbf",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "impassable"
+                            ],
+                            "#a50026",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "main_footways",
+                    "source": "oswm_pmtiles_main_footways",
+                    "source-layer": "main_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "excellent"
+                            ],
+                            "#4575b4",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "good"
+                            ],
+                            "#abd9e9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "intermediate"
+                            ],
+                            "#ffffbf",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "impassable"
+                            ],
+                            "#a50026",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "potential_footways",
+                    "source": "oswm_pmtiles_potential_footways",
+                    "source-layer": "potential_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "excellent"
+                            ],
+                            "#4575b4",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "good"
+                            ],
+                            "#abd9e9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "intermediate"
+                            ],
+                            "#ffffbf",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "impassable"
+                            ],
+                            "#a50026",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "informal_footways",
+                    "source": "oswm_pmtiles_informal_footways",
+                    "source-layer": "informal_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "excellent"
+                            ],
+                            "#4575b4",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "good"
+                            ],
+                            "#abd9e9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "intermediate"
+                            ],
+                            "#ffffbf",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "impassable"
+                            ],
+                            "#a50026",
+                            "black"
+                        ],
+                        "line-width": 3
+                    }
+                },
+                {
+                    "id": "kerbs",
+                    "source": "oswm_pmtiles_kerbs",
+                    "source-layer": "kerbs",
+                    "type": "circle",
+                    "minzoom": 16,
+                    "paint": {
+                        "circle-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "excellent"
+                            ],
+                            "#4575b4",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "good"
+                            ],
+                            "#abd9e9",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "intermediate"
+                            ],
+                            "#ffffbf",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_bad"
+                            ],
+                            "#fdae61",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "very_horrible"
+                            ],
+                            "#f46d43",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "impassable"
+                            ],
+                            "#a50026",
+                            "black"
+                        ],
+                        "circle-opacity": 0.8
+                    }
+                }
+            ],
+            "name": "Smoothness"
+        }
+    }
 }

@@ -98,13 +98,17 @@
                  container: 'map',
                  zoom:  params['zoom'],
                  center: params['center'],
-                 style: {
-                     version:8,
-                     sources: params['sources'],
-                     layers: params['layers'],
-                    //  terrain: params['terrain'],
-                    //  maxPitch: 85
-                 }
+                 style: 
+                 
+                 params['styles']['footway_categories'],
+                 
+                //  {
+                //      version:8,
+                //      sources: params['sources'],
+                //      layers: params['layers'],
+                //     //  terrain: params['terrain'],
+                //     //  maxPitch: 85
+                //  }
              }
          
              );
@@ -171,8 +175,9 @@
             }
 
             // Set up cursor change effects for multiple layers
-            setupCursorChange('crossings');
-            setupCursorChange('sidewalks');
+            params['data_layers'].forEach(layer => {
+                setupCursorChange(layer);
+            });
          
             
              // Function to set up hover effect for a specific layer
@@ -240,20 +245,21 @@
             // //     );
          
 
-        // // //              // Dynamically populate the dropdown options
-        // // // const styleSelector = document.getElementById('style-selector');
-        // // // Object.keys(styles).forEach(styleKey => {
-        // // //     const option = document.createElement('option');
-        // // //     option.value = styleKey;
-        // // //     option.textContent = styleKey;
-        // // //     styleSelector.appendChild(option);
-        // // // });
+        // Dynamically populate the dropdown options
+        const styleSelector = document.getElementById('style-selector');
+        Object.keys(params['styles']).forEach(styleKey => {
+            const option = document.createElement('option');
+            option.value = styleKey;
+            // option.textContent = params['styles'][styleKey]['name'];
+            option.label = `Style: ${params['styles'][styleKey]['name']}`; // Different label
+            styleSelector.appendChild(option);
+        });
 
-        // // // // Listen for style changes
-        // // // styleSelector.addEventListener('change', function (e) {
-        // // //     const style = e.target.value;
-        // // //     map.setStyle(styles[style]);
-        // // // });
+        // Listen for style changes
+        styleSelector.addEventListener('change', function (e) {
+            const style = e.target.value;
+            map.setStyle(params['styles'][style]);
+        });
 
         // END of the big "then" statement:
          });
