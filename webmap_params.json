@@ -1,9 +1,9 @@
 {
     "bounds": [
-        -49.410227,
-        -25.527961,
-        -49.128016,
-        -25.398082
+        -49.38914,
+        -25.6435043,
+        -49.1843182,
+        -25.3449505
     ],
     "zoom": 15,
     "center": [
@@ -75,27 +75,32 @@
                 "osm": {
                     "type": "raster",
                     "tiles": [
-                        "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
-                    ]
+                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+                    ],
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
             "layers": [
                 {
                     "id": "osm-baselayer",
                     "source": "osm",
-                    "type": "raster"
+                    "type": "raster",
+                    "paint": {
+                        "raster-opacity": 0.9
+                    }
                 },
                 {
                     "id": "boundaries",
                     "type": "line",
                     "source": "boundaries",
                     "paint": {
-                        "line-color": "black",
-                        "line-opacity": 0.3
+                        "line-color": "white",
+                        "line-opacity": 0.4
                     }
                 },
                 {
@@ -105,7 +110,19 @@
                     "type": "fill",
                     "paint": {
                         "fill-color": "steelblue",
-                        "fill-opacity": 0.5
+                        "fill-opacity": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            0.8,
+                            0.5
+                        ]
                     }
                 },
                 {
@@ -115,7 +132,19 @@
                     "type": "line",
                     "paint": {
                         "line-color": "steelblue",
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -125,7 +154,19 @@
                     "type": "line",
                     "paint": {
                         "line-color": "steelblue",
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -135,7 +176,19 @@
                     "type": "line",
                     "paint": {
                         "line-color": "steelblue",
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -145,7 +198,19 @@
                     "type": "line",
                     "paint": {
                         "line-color": "steelblue",
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -155,7 +220,19 @@
                     "type": "line",
                     "paint": {
                         "line-color": "steelblue",
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -165,7 +242,19 @@
                     "type": "line",
                     "paint": {
                         "line-color": "steelblue",
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -176,7 +265,20 @@
                     "minzoom": 17,
                     "paint": {
                         "circle-color": "steelblue",
-                        "circle-opacity": 0.8
+                        "circle-opacity": 0.8,
+                        "circle-radius": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            7,
+                            4
+                        ]
                     }
                 }
             ],
@@ -236,87 +338,32 @@
                 "osm": {
                     "type": "raster",
                     "tiles": [
-                        "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
-                    ]
+                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+                    ],
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
             "layers": [
                 {
                     "id": "osm-baselayer",
                     "source": "osm",
-                    "type": "raster"
+                    "type": "raster",
+                    "paint": {
+                        "raster-opacity": 0.9
+                    }
                 },
                 {
                     "id": "boundaries",
                     "type": "line",
                     "source": "boundaries",
                     "paint": {
-                        "line-color": "black",
-                        "line-opacity": 0.3
-                    }
-                },
-                {
-                    "id": "sidewalks_shadow",
-                    "source": "oswm_pmtiles_sidewalks",
-                    "source-layer": "sidewalks",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "crossings_shadow",
-                    "source": "oswm_pmtiles_crossings",
-                    "source-layer": "crossings",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "stairways_shadow",
-                    "source": "oswm_pmtiles_stairways",
-                    "source-layer": "stairways",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "main_footways_shadow",
-                    "source": "oswm_pmtiles_main_footways",
-                    "source-layer": "main_footways",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "potential_footways_shadow",
-                    "source": "oswm_pmtiles_potential_footways",
-                    "source-layer": "potential_footways",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "informal_footways_shadow",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
+                        "line-color": "white",
+                        "line-opacity": 0.4
                     }
                 },
                 {
@@ -507,9 +554,21 @@
                                 "?"
                             ],
                             "#434343",
-                            "black"
+                            "gray"
                         ],
-                        "fill-opacity": 0.5
+                        "fill-opacity": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            0.8,
+                            0.5
+                        ]
                     }
                 },
                 {
@@ -700,9 +759,21 @@
                                 "?"
                             ],
                             "#434343",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -893,9 +964,21 @@
                                 "?"
                             ],
                             "#434343",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -1086,9 +1169,21 @@
                                 "?"
                             ],
                             "#434343",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -1279,9 +1374,21 @@
                                 "?"
                             ],
                             "#434343",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -1472,9 +1579,21 @@
                                 "?"
                             ],
                             "#434343",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -1665,9 +1784,21 @@
                                 "?"
                             ],
                             "#434343",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -1859,9 +1990,22 @@
                                 "?"
                             ],
                             "#434343",
-                            "black"
+                            "gray"
                         ],
-                        "circle-opacity": 0.8
+                        "circle-opacity": 0.8,
+                        "circle-radius": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            7,
+                            4
+                        ]
                     }
                 }
             ],
@@ -1921,87 +2065,32 @@
                 "osm": {
                     "type": "raster",
                     "tiles": [
-                        "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
-                    ]
+                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+                    ],
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson"
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
             "layers": [
                 {
                     "id": "osm-baselayer",
                     "source": "osm",
-                    "type": "raster"
+                    "type": "raster",
+                    "paint": {
+                        "raster-opacity": 0.9
+                    }
                 },
                 {
                     "id": "boundaries",
                     "type": "line",
                     "source": "boundaries",
                     "paint": {
-                        "line-color": "black",
-                        "line-opacity": 0.3
-                    }
-                },
-                {
-                    "id": "sidewalks_shadow",
-                    "source": "oswm_pmtiles_sidewalks",
-                    "source-layer": "sidewalks",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "crossings_shadow",
-                    "source": "oswm_pmtiles_crossings",
-                    "source-layer": "crossings",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "stairways_shadow",
-                    "source": "oswm_pmtiles_stairways",
-                    "source-layer": "stairways",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "main_footways_shadow",
-                    "source": "oswm_pmtiles_main_footways",
-                    "source-layer": "main_footways",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "potential_footways_shadow",
-                    "source": "oswm_pmtiles_potential_footways",
-                    "source-layer": "potential_footways",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
-                    }
-                },
-                {
-                    "id": "informal_footways_shadow",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
-                    "type": "line",
-                    "paint": {
-                        "line-color": "black",
-                        "line-width": 4
+                        "line-color": "white",
+                        "line-opacity": 0.4
                     }
                 },
                 {
@@ -2093,9 +2182,21 @@
                                 "impassable"
                             ],
                             "#a50026",
-                            "black"
+                            "gray"
                         ],
-                        "fill-opacity": 0.5
+                        "fill-opacity": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            0.8,
+                            0.5
+                        ]
                     }
                 },
                 {
@@ -2187,9 +2288,21 @@
                                 "impassable"
                             ],
                             "#a50026",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -2281,9 +2394,21 @@
                                 "impassable"
                             ],
                             "#a50026",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -2375,9 +2500,21 @@
                                 "impassable"
                             ],
                             "#a50026",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -2469,9 +2606,21 @@
                                 "impassable"
                             ],
                             "#a50026",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -2563,9 +2712,21 @@
                                 "impassable"
                             ],
                             "#a50026",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -2657,9 +2818,21 @@
                                 "impassable"
                             ],
                             "#a50026",
-                            "black"
+                            "gray"
                         ],
-                        "line-width": 3
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
                     }
                 },
                 {
@@ -2752,9 +2925,22 @@
                                 "impassable"
                             ],
                             "#a50026",
-                            "black"
+                            "gray"
                         ],
-                        "circle-opacity": 0.8
+                        "circle-opacity": 0.8,
+                        "circle-radius": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            7,
+                            4
+                        ]
                     }
                 }
             ],

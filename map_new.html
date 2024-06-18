@@ -174,11 +174,7 @@
                 });
             }
 
-            // Set up cursor change effects for multiple layers
-            params['data_layers'].forEach(layer => {
-                setupCursorChange(layer);
-            });
-         
+      
             
              // Function to set up hover effect for a specific layer
             function setupHoverEffect(layerName, sourceName, sourceLayerName) {
@@ -224,7 +220,12 @@
                 });
             }
 
-            setupHoverEffect('crossings', 'oswm_pmtiles_crossings', 'crossings');
+            // Set up cursor change effects for multiple layers
+            params['data_layers'].forEach(layer => {
+                setupCursorChange(layer);
+
+                setupHoverEffect(layer, 'oswm_pmtiles_'+layer, layer);
+            });
 
              const legend_control_options = {
                  showDefault: false,
@@ -232,7 +233,7 @@
                  onlyRendered: false,
                  reverseOrder: true
              };
-                 map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, legend_control_options), "bottom-left");
+                 map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, legend_control_options), "top-right");
              
              });
 
