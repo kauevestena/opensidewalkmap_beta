@@ -51,7 +51,6 @@
         "footway:surface",
         "ramp:wheelchair",
         "check_date:surface",
-        "paving_stones",
         "check_date:lit"
     ],
     "crossings": [
