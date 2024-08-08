@@ -9128,8 +9128,7 @@
             "metal",
             "concrete",
             "paved",
-            "concrete:plates",
-            "asfaltow"
+            "concrete:plates"
         ],
         "foot": [
             null,
