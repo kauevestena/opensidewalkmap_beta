@@ -1,5 +1,11 @@
 {
     "sidewalks": {
+        "source": [
+            null,
+            "yahoo_imagery",
+            "GPS",
+            "Bing"
+        ],
         "highway": [
             "footway",
             null,
@@ -1005,12 +1011,6 @@
         "addr:street": [
             null,
             "Rua Astorga"
-        ],
-        "source": [
-            null,
-            "yahoo_imagery",
-            "GPS",
-            "Bing"
         ],
         "addr:suburb": [
             null,

@@ -1,5 +1,6 @@
 {
     "sidewalks": [
+        "source",
         "highway",
         "bus",
         "name",
@@ -21,7 +22,6 @@
         "opening_hours",
         "addr:housenumber",
         "addr:street",
-        "source",
         "addr:suburb",
         "tactile_paving",
         "description",
