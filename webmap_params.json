@@ -11,6 +11,7 @@
         -25.465
     ],
     "basemap_url": "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+    "node_homepage": "https://kauevestena.github.io/opensidewalkmap_beta/",
     "sidewalks_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
     "crossings_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
     "kerbs_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
@@ -2972,5 +2973,6 @@
         "circle": [
             "kerbs"
         ]
-    }
+    },
+    "node_url": "https://kauevestena.github.io/opensidewalkmap_beta/"
 }
