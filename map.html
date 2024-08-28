@@ -271,6 +271,14 @@
                             const properties = e.features[0].properties;
 
                             // Construct the rich description with a heading
+
+                            /* 
+                                The removed ones:
+
+                                <div><span>Indoor</span><span>:</span><span>${properties.indoor || '?'}</span></div>
+
+                            */
+
                             const description = `
                                 <div class="popup-content">
                                     <div class="popup-heading"><span>Feat.&nbsp;${properties.id}</span><span>:</span><span>${layerName}</span></div>
@@ -279,7 +287,8 @@
                                     <div><span>Width</span><span>:</span><span>${properties.width || '?'}</span></div>
                                     <div><span>Incline</span><span>:</span><span>${properties.incline || '?'}</span></div>
                                     <div><span>Incline&nbsp;(across)</span><span>:</span><span>${properties['incline:across'] || '?'}</span></div>
-                                    <div><span>Indoor</span><span>:</span><span>${properties.indoor || '?'}</span></div>
+                                    <div><span>Tactile Paving</span><span>:</span><span>${properties.tactile_paving || '?'}</span></div>
+                                    <div><span>Wheelchair</span><span>:</span><span>${properties.wheelchair || '?'}</span></div>
                                     <div><span>Lit</span><span>:</span><span>${properties.lit || '?'}</span></div>
                                 </div>
                                 <div class="popup-links">
