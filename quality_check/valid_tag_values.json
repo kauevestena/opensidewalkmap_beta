@@ -21,6 +21,12 @@
             "wood",
             "metal"
         ],
+        "wheelchair": [
+            "no",
+            "limited",
+            "yes",
+            "designated"
+        ],
         "smoothness": [
             "excellent",
             "good",
