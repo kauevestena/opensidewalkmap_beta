@@ -2,7 +2,9 @@
 
 <!-- TODO: README SHALL BE GENERATED AUTOMATICALLY -->
 
-Main project page:
+Main project repository: https://github.com/kauevestena/opensidewalkmap
+
+Codebase Repository: https://github.com/kauevestena/oswm_codebase
 
 OSWM is a project intended to be a full-fledged inventory solution for the management of pedestrian network data, using only open data, basically OpenStreetMap data!
 
