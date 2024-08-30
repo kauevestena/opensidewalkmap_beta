@@ -122,13 +122,31 @@
             position: fixed;
             left: 2px;
             top:  2px;
-            z-index: 99999999999999999;
+            z-index: 999999;
             }
 
         .responsive {
-            max-width: 60%;
+            max-width: 40%;
             height: auto;
         }
+
+        #overlay-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Adjust as needed */
+        }
+
+        #overlay-image img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
     </style>
 
     <link rel="icon" type="image/x-icon"
@@ -151,6 +169,12 @@
         </a>
 
     </div>
+
+
+    <div id="overlay-image" style="display: none;">
+        <img src="https://kauevestena.github.io/opensidewalkmap_beta/oswm_codebase/assets/page_logo.png" alt="Overlay">
+    </div>
+    
 
     
 
@@ -346,7 +370,6 @@
 
                     changeElementAttribute("node_link","href",params['node_url']);
 
-
                     // Function to set up hover effect for a specific layer
                     function setupHoverEffect(layerName, sourceName, sourceLayerName) {
                         let hoveredStateId = null;
@@ -406,7 +429,28 @@
                         onlyRendered: false,
                         reverseOrder: true
                     };
+
                     map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, legend_control_options), "top-right");
+
+                    // const switcherButton = document.querySelector('.maplibregl-legend-switcher');
+                    // console.log(switcherButton);
+                    // const legendList = document.querySelector('.maplibregl-legend-list');
+                    // console.log(legendList);
+                    // const overlayImage = document.getElementById('overlay-image');
+                    // console.log(overlayImage);
+
+                    // switcherButton.addEventListener('click', function() {
+                    //     overlayImage.style.display = 'block';
+                    // });
+
+                    // overlayImage.addEventListener('click', function() {
+                    //     overlayImage.style.display = 'none';
+                    // });
+
+                    // legendList.addEventListener('click', function() {
+                    //     overlayImage.style.display = 'none';
+                    // });
+
 
                 });
 
@@ -435,7 +479,10 @@
                     map.setStyle(params['styles'][style]);
                 });
 
-                // END of the big "then" statement:
+
+
+
+            // END of the big "then" statement:
             });
 
 
