@@ -123,9 +123,11 @@
             left: 2px;
             top:  2px;
             z-index: 999999;
+            z-index: 999999;
             }
 
         .responsive {
+            max-width: 40%;
             max-width: 40%;
             height: auto;
         }
@@ -430,6 +432,7 @@
                         reverseOrder: true
                     };
 
+
                     map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, legend_control_options), "top-right");
 
                     // const switcherButton = document.querySelector('.maplibregl-legend-switcher');
@@ -479,6 +482,10 @@
                     map.setStyle(params['styles'][style]);
                 });
 
+
+
+
+            // END of the big "then" statement:
 
 
 
