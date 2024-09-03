@@ -167,6 +167,10 @@
                             ],
                             6,
                             3
+                        ],
+                        "line-dasharray": [
+                            1,
+                            0.5
                         ]
                     }
                 },
@@ -176,7 +180,7 @@
                     "source-layer": "stairways",
                     "type": "line",
                     "paint": {
-                        "line-color": "steelblue",
+                        "line-color": "#8a7e2f",
                         "line-width": [
                             "case",
                             [
@@ -198,7 +202,7 @@
                     "source-layer": "main_footways",
                     "type": "line",
                     "paint": {
-                        "line-color": "steelblue",
+                        "line-color": "#299077",
                         "line-width": [
                             "case",
                             [
@@ -220,7 +224,7 @@
                     "source-layer": "potential_footways",
                     "type": "line",
                     "paint": {
-                        "line-color": "steelblue",
+                        "line-color": "#9569a4",
                         "line-width": [
                             "case",
                             [
@@ -242,7 +246,7 @@
                     "source-layer": "informal_footways",
                     "type": "line",
                     "paint": {
-                        "line-color": "steelblue",
+                        "line-color": "#b0645a",
                         "line-width": [
                             "case",
                             [
