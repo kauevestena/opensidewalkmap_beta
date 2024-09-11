@@ -3912,6 +3912,1300 @@
             ],
             "name": "Tactile Paving"
         },
+        "lit": {
+            "version": 8,
+            "sources": {
+                "oswm_pmtiles_sidewalks": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_crossings": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_kerbs": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_stairways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_main_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_potential_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_informal_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_pedestrian_areas": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "osm": {
+                    "type": "raster",
+                    "tiles": [
+                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+                    ],
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                },
+                "boundaries": {
+                    "type": "geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                }
+            },
+            "layers": [
+                {
+                    "id": "osm-baselayer",
+                    "source": "osm",
+                    "type": "raster",
+                    "paint": {
+                        "raster-opacity": 0.9
+                    }
+                },
+                {
+                    "id": "boundaries",
+                    "type": "line",
+                    "source": "boundaries",
+                    "paint": {
+                        "line-color": "white",
+                        "line-opacity": 0.4
+                    }
+                },
+                {
+                    "id": "pedestrian_areas",
+                    "source": "oswm_pmtiles_pedestrian_areas",
+                    "source-layer": "pedestrian_areas",
+                    "type": "fill",
+                    "paint": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "yes"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "no"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "disused"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
+                            ],
+                            "#ffff99",
+                            "gray"
+                        ],
+                        "fill-opacity": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            0.8,
+                            0.5
+                        ]
+                    }
+                },
+                {
+                    "id": "sidewalks",
+                    "source": "oswm_pmtiles_sidewalks",
+                    "source-layer": "sidewalks",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "yes"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "no"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "disused"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
+                            ],
+                            "#ffff99",
+                            "gray"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "crossings",
+                    "source": "oswm_pmtiles_crossings",
+                    "source-layer": "crossings",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "yes"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "no"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "disused"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
+                            ],
+                            "#ffff99",
+                            "gray"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "stairways",
+                    "source": "oswm_pmtiles_stairways",
+                    "source-layer": "stairways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "yes"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "no"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "disused"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
+                            ],
+                            "#ffff99",
+                            "gray"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "main_footways",
+                    "source": "oswm_pmtiles_main_footways",
+                    "source-layer": "main_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "yes"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "no"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "disused"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
+                            ],
+                            "#ffff99",
+                            "gray"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "potential_footways",
+                    "source": "oswm_pmtiles_potential_footways",
+                    "source-layer": "potential_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "yes"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "no"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "disused"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
+                            ],
+                            "#ffff99",
+                            "gray"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "informal_footways",
+                    "source": "oswm_pmtiles_informal_footways",
+                    "source-layer": "informal_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "yes"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "no"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "disused"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
+                            ],
+                            "#ffff99",
+                            "gray"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "kerbs",
+                    "source": "oswm_pmtiles_kerbs",
+                    "source-layer": "kerbs",
+                    "type": "circle",
+                    "minzoom": 17,
+                    "paint": {
+                        "circle-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "yes"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "no"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "disused"
+                            ],
+                            "#6a3d9a",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
+                            ],
+                            "#ffff99",
+                            "gray"
+                        ],
+                        "circle-opacity": 0.8,
+                        "circle-radius": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            7,
+                            4
+                        ]
+                    }
+                }
+            ],
+            "name": "Lighting"
+        },
+        "traffic_calming": {
+            "version": 8,
+            "sources": {
+                "oswm_pmtiles_sidewalks": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_crossings": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_kerbs": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/kerbs.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_stairways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/stairways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_main_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_potential_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_informal_footways": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "oswm_pmtiles_pedestrian_areas": {
+                    "type": "vector",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
+                    "promoteId": "id",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                },
+                "osm": {
+                    "type": "raster",
+                    "tiles": [
+                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+                    ],
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                },
+                "boundaries": {
+                    "type": "geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
+                }
+            },
+            "layers": [
+                {
+                    "id": "osm-baselayer",
+                    "source": "osm",
+                    "type": "raster",
+                    "paint": {
+                        "raster-opacity": 0.9
+                    }
+                },
+                {
+                    "id": "boundaries",
+                    "type": "line",
+                    "source": "boundaries",
+                    "paint": {
+                        "line-color": "white",
+                        "line-opacity": 0.4
+                    }
+                },
+                {
+                    "id": "pedestrian_areas",
+                    "source": "oswm_pmtiles_pedestrian_areas",
+                    "source-layer": "pedestrian_areas",
+                    "type": "fill",
+                    "paint": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "table"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "bump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "hump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "?"
+                            ],
+                            "#63636399",
+                            "#63636366"
+                        ],
+                        "fill-opacity": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            0.8,
+                            0.5
+                        ]
+                    }
+                },
+                {
+                    "id": "sidewalks",
+                    "source": "oswm_pmtiles_sidewalks",
+                    "source-layer": "sidewalks",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "table"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "bump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "hump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "?"
+                            ],
+                            "#63636399",
+                            "#63636366"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "crossings",
+                    "source": "oswm_pmtiles_crossings",
+                    "source-layer": "crossings",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "table"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "bump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "hump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "?"
+                            ],
+                            "#63636399",
+                            "#63636366"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "stairways",
+                    "source": "oswm_pmtiles_stairways",
+                    "source-layer": "stairways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "table"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "bump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "hump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "?"
+                            ],
+                            "#63636399",
+                            "#63636366"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "main_footways",
+                    "source": "oswm_pmtiles_main_footways",
+                    "source-layer": "main_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "table"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "bump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "hump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "?"
+                            ],
+                            "#63636399",
+                            "#63636366"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "potential_footways",
+                    "source": "oswm_pmtiles_potential_footways",
+                    "source-layer": "potential_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "table"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "bump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "hump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "?"
+                            ],
+                            "#63636399",
+                            "#63636366"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "informal_footways",
+                    "source": "oswm_pmtiles_informal_footways",
+                    "source-layer": "informal_footways",
+                    "type": "line",
+                    "paint": {
+                        "line-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "table"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "bump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "hump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "?"
+                            ],
+                            "#63636399",
+                            "#63636366"
+                        ],
+                        "line-width": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            6,
+                            3
+                        ]
+                    }
+                },
+                {
+                    "id": "kerbs",
+                    "source": "oswm_pmtiles_kerbs",
+                    "source-layer": "kerbs",
+                    "type": "circle",
+                    "minzoom": 17,
+                    "paint": {
+                        "circle-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "table"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "bump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "hump"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "traffic_calming"
+                                ],
+                                "?"
+                            ],
+                            "#63636399",
+                            "#63636366"
+                        ],
+                        "circle-opacity": 0.8,
+                        "circle-radius": [
+                            "case",
+                            [
+                                "boolean",
+                                [
+                                    "feature-state",
+                                    "hover"
+                                ],
+                                false
+                            ],
+                            7,
+                            4
+                        ]
+                    }
+                }
+            ],
+            "name": "Traffic Calming"
+        },
         "wheelchair": {
             "version": 8,
             "sources": {
@@ -4557,7 +5851,7 @@
                     }
                 }
             ],
-            "name": "Rep. Wheelchair Acc."
+            "name": "wheelchair=* tag"
         }
     },
     "data_layers": [
