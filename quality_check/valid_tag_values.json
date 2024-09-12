@@ -37,6 +37,13 @@
             "very_horrible",
             "impassable"
         ],
+        "lit": [
+            "yes",
+            "automatic",
+            "no",
+            "disused",
+            "24/7"
+        ],
         "tactile_paving": [
             "yes",
             "contrasted",
