@@ -177,3 +177,6 @@ cache/
 # the tests
 tests/
 tests.py
+
+# we shall start logging:
+*.log
