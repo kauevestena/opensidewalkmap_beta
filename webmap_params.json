@@ -2498,15 +2498,6 @@
                                     "get",
                                     "smoothness"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "smoothness"
-                                ],
                                 "excellent"
                             ],
                             "#4575b4",
@@ -2573,6 +2564,15 @@
                                 "impassable"
                             ],
                             "#a50026",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
                             "gray"
                         ],
                         "fill-opacity": [
@@ -2604,15 +2604,6 @@
                                     "get",
                                     "smoothness"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "smoothness"
-                                ],
                                 "excellent"
                             ],
                             "#4575b4",
@@ -2679,6 +2670,15 @@
                                 "impassable"
                             ],
                             "#a50026",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -2710,15 +2710,6 @@
                                     "get",
                                     "smoothness"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "smoothness"
-                                ],
                                 "excellent"
                             ],
                             "#4575b4",
@@ -2785,6 +2776,15 @@
                                 "impassable"
                             ],
                             "#a50026",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -2816,15 +2816,6 @@
                                     "get",
                                     "smoothness"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "smoothness"
-                                ],
                                 "excellent"
                             ],
                             "#4575b4",
@@ -2891,6 +2882,15 @@
                                 "impassable"
                             ],
                             "#a50026",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -2922,15 +2922,6 @@
                                     "get",
                                     "smoothness"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "smoothness"
-                                ],
                                 "excellent"
                             ],
                             "#4575b4",
@@ -2997,6 +2988,15 @@
                                 "impassable"
                             ],
                             "#a50026",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -3028,15 +3028,6 @@
                                     "get",
                                     "smoothness"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "smoothness"
-                                ],
                                 "excellent"
                             ],
                             "#4575b4",
@@ -3103,6 +3094,15 @@
                                 "impassable"
                             ],
                             "#a50026",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -3134,15 +3134,6 @@
                                     "get",
                                     "smoothness"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "smoothness"
-                                ],
                                 "excellent"
                             ],
                             "#4575b4",
@@ -3209,6 +3200,15 @@
                                 "impassable"
                             ],
                             "#a50026",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -3241,15 +3241,6 @@
                                     "get",
                                     "smoothness"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "smoothness"
-                                ],
                                 "excellent"
                             ],
                             "#4575b4",
@@ -3316,6 +3307,15 @@
                                 "impassable"
                             ],
                             "#a50026",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "smoothness"
+                                ],
+                                "?"
+                            ],
+                            "#434343",
                             "gray"
                         ],
                         "circle-opacity": 0.8,
@@ -4008,15 +4008,6 @@
                                     "get",
                                     "lit"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "lit"
-                                ],
                                 "yes"
                             ],
                             "#ffff99",
@@ -4027,6 +4018,15 @@
                                     "lit"
                                 ],
                                 "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
                             ],
                             "#ffff99",
                             [
@@ -4053,9 +4053,9 @@
                                     "get",
                                     "lit"
                                 ],
-                                "24/7"
+                                "?"
                             ],
-                            "#ffff99",
+                            "#434343",
                             "gray"
                         ],
                         "fill-opacity": [
@@ -4087,15 +4087,6 @@
                                     "get",
                                     "lit"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "lit"
-                                ],
                                 "yes"
                             ],
                             "#ffff99",
@@ -4106,6 +4097,15 @@
                                     "lit"
                                 ],
                                 "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
                             ],
                             "#ffff99",
                             [
@@ -4132,9 +4132,9 @@
                                     "get",
                                     "lit"
                                 ],
-                                "24/7"
+                                "?"
                             ],
-                            "#ffff99",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -4166,15 +4166,6 @@
                                     "get",
                                     "lit"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "lit"
-                                ],
                                 "yes"
                             ],
                             "#ffff99",
@@ -4185,6 +4176,15 @@
                                     "lit"
                                 ],
                                 "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
                             ],
                             "#ffff99",
                             [
@@ -4211,9 +4211,9 @@
                                     "get",
                                     "lit"
                                 ],
-                                "24/7"
+                                "?"
                             ],
-                            "#ffff99",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -4245,15 +4245,6 @@
                                     "get",
                                     "lit"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "lit"
-                                ],
                                 "yes"
                             ],
                             "#ffff99",
@@ -4264,6 +4255,15 @@
                                     "lit"
                                 ],
                                 "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
                             ],
                             "#ffff99",
                             [
@@ -4290,9 +4290,9 @@
                                     "get",
                                     "lit"
                                 ],
-                                "24/7"
+                                "?"
                             ],
-                            "#ffff99",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -4324,15 +4324,6 @@
                                     "get",
                                     "lit"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "lit"
-                                ],
                                 "yes"
                             ],
                             "#ffff99",
@@ -4343,6 +4334,15 @@
                                     "lit"
                                 ],
                                 "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
                             ],
                             "#ffff99",
                             [
@@ -4369,9 +4369,9 @@
                                     "get",
                                     "lit"
                                 ],
-                                "24/7"
+                                "?"
                             ],
-                            "#ffff99",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -4403,15 +4403,6 @@
                                     "get",
                                     "lit"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "lit"
-                                ],
                                 "yes"
                             ],
                             "#ffff99",
@@ -4422,6 +4413,15 @@
                                     "lit"
                                 ],
                                 "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
                             ],
                             "#ffff99",
                             [
@@ -4448,9 +4448,9 @@
                                     "get",
                                     "lit"
                                 ],
-                                "24/7"
+                                "?"
                             ],
-                            "#ffff99",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -4482,15 +4482,6 @@
                                     "get",
                                     "lit"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "lit"
-                                ],
                                 "yes"
                             ],
                             "#ffff99",
@@ -4501,6 +4492,15 @@
                                     "lit"
                                 ],
                                 "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
                             ],
                             "#ffff99",
                             [
@@ -4527,9 +4527,9 @@
                                     "get",
                                     "lit"
                                 ],
-                                "24/7"
+                                "?"
                             ],
-                            "#ffff99",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -4562,15 +4562,6 @@
                                     "get",
                                     "lit"
                                 ],
-                                "?"
-                            ],
-                            "#434343",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "lit"
-                                ],
                                 "yes"
                             ],
                             "#ffff99",
@@ -4581,6 +4572,15 @@
                                     "lit"
                                 ],
                                 "automatic"
+                            ],
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "lit"
+                                ],
+                                "24/7"
                             ],
                             "#ffff99",
                             [
@@ -4607,9 +4607,9 @@
                                     "get",
                                     "lit"
                                 ],
-                                "24/7"
+                                "?"
                             ],
-                            "#ffff99",
+                            "#434343",
                             "gray"
                         ],
                         "circle-opacity": 0.8,
@@ -5302,18 +5302,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "?"
+                                "yes"
                             ],
-                            "#434343",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "no"
+                                "designated"
                             ],
-                            "#fc8d59",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
@@ -5329,18 +5329,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "yes"
+                                "no"
                             ],
-                            "#91bfdb",
+                            "#fc8d59",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "designated"
+                                "?"
                             ],
-                            "#91bfdb",
+                            "#434343",
                             "gray"
                         ],
                         "fill-opacity": [
@@ -5372,18 +5372,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "?"
+                                "yes"
                             ],
-                            "#434343",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "no"
+                                "designated"
                             ],
-                            "#fc8d59",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
@@ -5399,18 +5399,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "yes"
+                                "no"
                             ],
-                            "#91bfdb",
+                            "#fc8d59",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "designated"
+                                "?"
                             ],
-                            "#91bfdb",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -5442,18 +5442,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "?"
+                                "yes"
                             ],
-                            "#434343",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "no"
+                                "designated"
                             ],
-                            "#fc8d59",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
@@ -5469,18 +5469,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "yes"
+                                "no"
                             ],
-                            "#91bfdb",
+                            "#fc8d59",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "designated"
+                                "?"
                             ],
-                            "#91bfdb",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -5512,18 +5512,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "?"
+                                "yes"
                             ],
-                            "#434343",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "no"
+                                "designated"
                             ],
-                            "#fc8d59",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
@@ -5539,18 +5539,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "yes"
+                                "no"
                             ],
-                            "#91bfdb",
+                            "#fc8d59",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "designated"
+                                "?"
                             ],
-                            "#91bfdb",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -5582,18 +5582,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "?"
+                                "yes"
                             ],
-                            "#434343",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "no"
+                                "designated"
                             ],
-                            "#fc8d59",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
@@ -5609,18 +5609,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "yes"
+                                "no"
                             ],
-                            "#91bfdb",
+                            "#fc8d59",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "designated"
+                                "?"
                             ],
-                            "#91bfdb",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -5652,18 +5652,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "?"
+                                "yes"
                             ],
-                            "#434343",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "no"
+                                "designated"
                             ],
-                            "#fc8d59",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
@@ -5679,18 +5679,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "yes"
+                                "no"
                             ],
-                            "#91bfdb",
+                            "#fc8d59",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "designated"
+                                "?"
                             ],
-                            "#91bfdb",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -5722,18 +5722,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "?"
+                                "yes"
                             ],
-                            "#434343",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "no"
+                                "designated"
                             ],
-                            "#fc8d59",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
@@ -5749,18 +5749,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "yes"
+                                "no"
                             ],
-                            "#91bfdb",
+                            "#fc8d59",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "designated"
+                                "?"
                             ],
-                            "#91bfdb",
+                            "#434343",
                             "gray"
                         ],
                         "line-width": [
@@ -5793,18 +5793,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "?"
+                                "yes"
                             ],
-                            "#434343",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "no"
+                                "designated"
                             ],
-                            "#fc8d59",
+                            "#91bfdb",
                             [
                                 "==",
                                 [
@@ -5820,18 +5820,18 @@
                                     "get",
                                     "wheelchair"
                                 ],
-                                "yes"
+                                "no"
                             ],
-                            "#91bfdb",
+                            "#fc8d59",
                             [
                                 "==",
                                 [
                                     "get",
                                     "wheelchair"
                                 ],
-                                "designated"
+                                "?"
                             ],
-                            "#91bfdb",
+                            "#434343",
                             "gray"
                         ],
                         "circle-opacity": 0.8,
