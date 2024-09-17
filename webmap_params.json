@@ -429,18 +429,9 @@
                                     "get",
                                     "crossing"
                                 ],
-                                "no"
+                                "traffic_signals"
                             ],
-                            "#e31a1c",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "crossing"
-                                ],
-                                "unmarked"
-                            ],
-                            "#ffff99",
+                            "#1f78b4",
                             [
                                 "==",
                                 [
@@ -474,9 +465,18 @@
                                     "get",
                                     "crossing"
                                 ],
-                                "traffic_signals"
+                                "unmarked"
                             ],
-                            "#1f78b4",
+                            "#ffff99",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "crossing"
+                                ],
+                                "no"
+                            ],
+                            "#e31a1c",
                             [
                                 "==",
                                 [
@@ -606,9 +606,18 @@
                                     "get",
                                     "kerb"
                                 ],
-                                "raised"
+                                "flush"
                             ],
-                            "#000000",
+                            "#ffffff",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "kerb"
+                                ],
+                                "lowered"
+                            ],
+                            "#ffffff",
                             [
                                 "==",
                                 [
@@ -633,18 +642,9 @@
                                     "get",
                                     "kerb"
                                 ],
-                                "lowered"
+                                "raised"
                             ],
-                            "#ffffff",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "kerb"
-                                ],
-                                "flush"
-                            ],
-                            "#ffffff",
+                            "#000000",
                             [
                                 "==",
                                 [
