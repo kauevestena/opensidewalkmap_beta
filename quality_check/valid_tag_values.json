@@ -22,10 +22,10 @@
             "metal"
         ],
         "wheelchair": [
-            "no",
-            "limited",
             "yes",
-            "designated"
+            "designated",
+            "limited",
+            "no"
         ],
         "smoothness": [
             "excellent",
@@ -40,9 +40,9 @@
         "lit": [
             "yes",
             "automatic",
+            "24/7",
             "no",
-            "disused",
-            "24/7"
+            "disused"
         ],
         "tactile_paving": [
             "yes",
@@ -52,11 +52,11 @@
     },
     "kerbs": {
         "kerb": [
-            "raised",
+            "flush",
+            "lowered",
             "rolled",
             "no",
-            "lowered",
-            "flush"
+            "raised"
         ],
         "tactile_paving": [
             "yes",
@@ -66,12 +66,12 @@
     },
     "crossings": {
         "crossing": [
-            "no",
-            "unmarked",
+            "traffic_signals",
             "marked",
             "zebra",
             "uncontrolled",
-            "traffic_signals"
+            "unmarked",
+            "no"
         ],
         "surface": [
             "asphalt",
