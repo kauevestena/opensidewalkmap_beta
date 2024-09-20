@@ -132,15 +132,15 @@
 
         #overlay-image {
             display: none;
-            width: 100%;
-            height: 100%;
             z-index: 0;
         }
-
+        
         #overlay-image img {
             position: absolute;
             top: 50%;
             left: 1%;
+            height: 60%;
+            width: auto;
             transform: translate(0%, -50%);
         }
         
@@ -169,7 +169,7 @@
 
 
     <div id="overlay-image" style="display: none;">
-        <img src="https://kauevestena.github.io/opensidewalkmap_beta/oswm_codebase/assets/page_logo.png" alt="Map Symbols">
+        <img src="https://kauevestena.github.io/opensidewalkmap_beta/oswm_codebase/assets/map_symbols/footway_categories.png" alt="Map Symbols" id="map-symbols-img">
     </div>
     
 
@@ -433,31 +433,31 @@
 
                     // MAP SYMBOLS HANDLING: start
 
-                    // const switcherButton = document.querySelector('.maplibregl-legend-switcher');
-                    // // console.log(switcherButton);
-                    // const legendList = document.querySelector('.maplibregl-legend-list');
-                    // // console.log(legendList);
-                    // const overlayImage = document.getElementById('overlay-image');
-                    // // console.log(overlayImage);
+                    const switcherButton = document.querySelector('.maplibregl-legend-switcher');
+                    // console.log(switcherButton);
+                    const legendList = document.querySelector('.maplibregl-legend-list');
+                    // console.log(legendList);
+                    const overlayImage = document.getElementById('overlay-image');
+                    // console.log(overlayImage);
 
-                    // const mapref = document.getElementById('map');
+                    const mapref = document.getElementById('map');
 
 
-                    // switcherButton.addEventListener('click', function() {
-                    //     overlayImage.style.display = 'block';
-                    // });
+                    switcherButton.addEventListener('click', function() {
+                        overlayImage.style.display = 'block';
+                    });
 
-                    // overlayImage.addEventListener('click', function() {
-                    //     overlayImage.style.display = 'none';
-                    // });
+                    overlayImage.addEventListener('click', function() {
+                        overlayImage.style.display = 'none';
+                    });
 
-                    // legendList.addEventListener('click', function() {
-                    //     overlayImage.style.display = 'none';
-                    // });
+                    legendList.addEventListener('click', function() {
+                        overlayImage.style.display = 'none';
+                    });
 
-                    // mapref.addEventListener("dblclick", function()  {
-                    //     overlayImage.style.display = 'none';
-                    // });
+                    mapref.addEventListener("dblclick", function()  {
+                        overlayImage.style.display = 'none';
+                    });
 
                     // TODO: ability to drag the image around the map
                     // TODO: add key shortcuts
@@ -489,6 +489,14 @@
                 styleSelector.addEventListener('change', function (e) {
                     const style = e.target.value;
                     map.setStyle(params['styles'][style]);
+
+
+                    // modify image overlay
+                    const overlayImage2 = document.getElementById('map-symbols-img');
+                    const legend_url = `https://kauevestena.github.io/opensidewalkmap_beta/oswm_codebase/assets/map_symbols/${style}.png`;
+
+                    overlayImage2.src = `${legend_url}?cb=${Date.now()}`; // to prevent caching
+                    
                 });
 
 
