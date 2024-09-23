@@ -53,21 +53,7 @@ jobs:
 
       #### main ________________________________________________________________
 
-      - run: python oswm_codebase/getting_data.py
-      
-      - run: python oswm_codebase/filtering_adapting_data.py
-
-      - run: python oswm_codebase/generation/vec_tiles_gen.py
-
-      # - run: python oswm_codebase/create_webmap.py
-
-      - run: python oswm_codebase/webmap/create_webmap_new.py
-
-      - run: python oswm_codebase/data_quality/tag_values_checking.py
-
-      - run: python oswm_codebase/data_quality/quality_check_compiling.py
-      
-      - run: python oswm_codebase/statistics_generation.py
+      - run: sh oswm_codebase/runners/daily.sh
   
       #### upload ______________________________________________________________
       # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
