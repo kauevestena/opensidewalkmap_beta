@@ -48,7 +48,7 @@ jobs:
       - run: pip install -r oswm_codebase/requirements.txt
 
       ### main ________________________________________________________________
-      - run: python oswm_codebase/getting_feature_versioning_data.py
+      - run: sh oswm_codebase/runners/weekly.sh
   
       #### upload ______________________________________________________________
       # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
