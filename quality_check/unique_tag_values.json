@@ -8991,6 +8991,10 @@
             "11",
             "10"
         ],
+        "footway:surface": [
+            null,
+            "paving_stones"
+        ],
         "embankment": [
             null,
             "yes"
@@ -8998,10 +9002,6 @@
         "cutting": [
             null,
             "yes"
-        ],
-        "footway:surface": [
-            null,
-            "paving_stones"
         ],
         "ramp:wheelchair": [
             null,
