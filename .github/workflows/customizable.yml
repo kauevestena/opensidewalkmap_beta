@@ -1,0 +1,61 @@
+name: customizable
+
+# this one is for any custom scripts that may be needed in specific situations
+# use it with caution
+
+# Controls when the workflow will run
+on:
+  # # Triggers the workflow on push or pull request events but only for the "main" branch
+  # push:
+  #   branches: ["main"]
+  # pull_request:
+  #   branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  node_setup:
+    runs-on: ubuntu-latest
+    # continue-on-error: true
+    steps:
+      #### actions/checkout ____________________________________________________
+      # @see https://github.com/actions/checkout
+      - uses: actions/checkout@v3
+
+      #### setup-python ________________________________________________________
+      # @see https://github.com/actions/setup-python
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: 'pip' # caching pip dependencies
+
+      #### main ________________________________________________________________
+
+      - run: |
+          git submodule init
+          git submodule update
+          cd oswm_codebase
+          git pull -r https://github.com/kauevestena/oswm_codebase
+          cd ..
+
+      #### setup dependencies __________________________________________________
+      - run: pip install -r requirements.txt
+
+      #### main ________________________________________________________________
+      - run: sh oswm_codebase/runners/custom.sh
+  
+      #### upload ______________________________________________________________
+      # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git pull
+          git add .
+          git commit -m "node setup commit"
+          git push
