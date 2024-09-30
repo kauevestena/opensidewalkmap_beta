@@ -8,8 +8,9 @@
     <div class="topnav" id="stTopnav">
         <a href="https://kauevestena.github.io/opensidewalkmap_beta/" class="active">Home</a>
     <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_smoothness_x_surface.html">Crossings Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_surface.html">Other_footways Charts</a>
 
    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
      <i class="fa fa-bars"></i>
@@ -23,11 +24,11 @@
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_tactile_paving.html">Tactile Paving P.</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_width.html">Width Values</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_incline.html">Incline Values</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_survey_year.html">Year of Survey Image</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_yr_moth_update.html">Year and Month Of Update</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_number_revisions.html">Number Of Revisions</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossing Type</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_surface.html">Crossing Surface</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_smoothness_x_surface.html">Surface x Smoothness</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_survey_year.html">Year of Survey Image</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_yr_moth_update.html">Year and Month Of Update</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_number_revisions.html">Number Of Revisions</a>
 </div>
@@ -44,14 +45,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-f437a28009848e70bb6e6302c4768704"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "n_revs type", "sort": "-x", "type": "quantitative"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_13", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Year and Month Of Update (crossings)", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-f437a28009848e70bb6e6302c4768704": [{"n_revs type": 1, "count": 1160, "percent": "69.71%"}, {"n_revs type": 3, "count": 248, "percent": "14.9%"}, {"n_revs type": 2, "count": 109, "percent": "6.55%"}, {"n_revs type": 4, "count": 97, "percent": "5.83%"}, {"n_revs type": 5, "count": 26, "percent": "1.56%"}, {"n_revs type": 6, "count": 13, "percent": "0.78%"}, {"n_revs type": 7, "count": 6, "percent": "0.36%"}, {"n_revs type": 8, "count": 2, "percent": "0.12%"}, {"n_revs type": 13, "count": 1, "percent": "0.06%"}, {"n_revs type": 9, "count": 1, "percent": "0.06%"}, {"n_revs type": 10, "count": 1, "percent": "0.06%"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-4863ac9b440ea58e034a40683c73b1bb"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "n_revs", "sort": "-y", "type": "quantitative"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_13", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Year and Month Of Update (crossings)", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-4863ac9b440ea58e034a40683c73b1bb": [{"n_revs": 1, "count": 1256, "percent": "64.74%"}, {"n_revs": 3, "count": 264, "percent": "13.61%"}, {"n_revs": 2, "count": 216, "percent": "11.13%"}, {"n_revs": 4, "count": 120, "percent": "6.19%"}, {"n_revs": 5, "count": 42, "percent": "2.16%"}, {"n_revs": 6, "count": 20, "percent": "1.03%"}, {"n_revs": 7, "count": 8, "percent": "0.41%"}, {"n_revs": 8, "count": 7, "percent": "0.36%"}, {"n_revs": 9, "count": 4, "percent": "0.21%"}, {"n_revs": 10, "count": 2, "percent": "0.1%"}, {"n_revs": 14, "count": 1, "percent": "0.05%"}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

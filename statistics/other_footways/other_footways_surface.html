@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+
+    
+    <div class="topnav" id="stTopnav">
+        <a href="https://kauevestena.github.io/opensidewalkmap_beta/" class="active">Home</a>
+    <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_surface.html">Other_footways Charts</a>
+
+   <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
+     <i class="fa fa-bars"></i>
+   </a>
+ </div>
+ 
+ <div class="sidebar">
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Surface x Smoothness</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_surface.html">Surface Type</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness.html">Smoothness Condition</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_tactile_paving.html">Tactile Paving P.</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_width.html">Width Values</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_incline.html">Incline Values</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_yr_moth_update.html">Year and Month Of Update</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_number_revisions.html">Number Of Revisions</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossing Type</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_surface.html">Crossing Surface</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_smoothness_x_surface.html">Surface x Smoothness</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_yr_moth_update.html">Year and Month Of Update</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_number_revisions.html">Number Of Revisions</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Surface x Smoothness</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerb_types.html">Kerb Type</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerb_tactile_paving.html">Tactile Paving Presence</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerb_wheelchair_access.html">Wheelchair Acessibility</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_yr_moth_update.html">Year and Month Of Update</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_number_revisions.html">Number Of Revisions</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_surface.html">Other Footways Surface</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_smoothness_x_surface.html">Surface x Smoothness</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_yr_moth_update.html">Year and Month Of Update</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_number_revisions.html">Number Of Revisions</a>
+</div>
+
+
+
+    <link rel="stylesheet" href="https://kauevestena.github.io/oswm_codebase/assets/styles/stats_styles.css">
+    <script src="https://kauevestena.github.io/oswm_codebase/assets/webscripts/stats_funcs.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <title>OSWM Dashboard</title>
+
+    
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-6335891c2e7d9d6545584d9a1d900125"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "surface", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_20", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "other_footways Surface", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-6335891c2e7d9d6545584d9a1d900125": [{"surface": "asphalt", "count": 1160, "percent": "48.66%"}, {"surface": "sett", "count": 363, "percent": "15.23%"}, {"surface": "concrete", "count": 271, "percent": "11.37%"}, {"surface": "paving_stones", "count": 165, "percent": "6.92%"}, {"surface": "paved", "count": 108, "percent": "4.53%"}, {"surface": "concrete:plates", "count": 64, "percent": "2.68%"}, {"surface": "unpaved", "count": 59, "percent": "2.47%"}, {"surface": "wood", "count": 54, "percent": "2.27%"}, {"surface": "ground", "count": 34, "percent": "1.43%"}, {"surface": "gravel", "count": 26, "percent": "1.09%"}, {"surface": "metal", "count": 20, "percent": "0.84%"}, {"surface": "dirt", "count": 13, "percent": "0.55%"}, {"surface": "grass", "count": 10, "percent": "0.42%"}, {"surface": "cobblestone", "count": 9, "percent": "0.38%"}, {"surface": "rock", "count": 9, "percent": "0.38%"}, {"surface": "fine_gravel", "count": 6, "percent": "0.25%"}, {"surface": "concrete:lanes", "count": 5, "percent": "0.21%"}, {"surface": "compacted", "count": 2, "percent": "0.08%"}, {"surface": "grass_paver", "count": 1, "percent": "0.04%"}, {"surface": "pebblestone", "count": 1, "percent": "0.04%"}, {"surface": "mud", "count": 1, "percent": "0.04%"}, {"surface": "Petit_Pav\u00ea", "count": 1, "percent": "0.04%"}, {"surface": "unhewn_cobblestone", "count": 1, "percent": "0.04%"}, {"surface": "sand", "count": 1, "percent": "0.04%"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
