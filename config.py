@@ -8,26 +8,26 @@
 # It can be also the name of a neighborhood if is such a big city or you just want a node for it
 # Sometimes being more specific can help, so if you for example want the city of Salvador (Brazil)
 # you should use "Salvador, Brazil", since just "Salvador" probably will return "El Salvador", the country
-CITY_NAME = 'Curitiba'
+CITY_NAME = "Curitiba"
 
 # simple name, spaces must be replaced by underscores, no special characters, all in lowercase
-CITY_SHORTNAME = 'curitiba'
+CITY_SHORTNAME = "curitiba"
 
 # username, for adresses
-USERNAME = 'kauevestena'
+USERNAME = "kauevestena"
 
 # repository name, for many weblink references:
-REPO_NAME = 'opensidewalkmap_beta'
+REPO_NAME = "opensidewalkmap_beta"
 
 # BOUNDING BOXES
 # A good tool to find them is: bboxfinder.com
-# # entire city: 
+# # entire city:
 BOUNDING_BOX = (
-    -25.6450101000000004, # SOUTHERNMOST LATITUDE
-    -49.3891399999999976, # WESTERNMOST  LONGITUDE
-    -25.3467008999999983, # NORTHERNMOST LATITUDE
-    -49.1843181999999999  # EASTERNMOST  LONGITUDE
-    )
+    -25.6450101000000004,  # SOUTHERNMOST LATITUDE
+    -49.3891399999999976,  # WESTERNMOST  LONGITUDE
+    -25.3467008999999983,  # NORTHERNMOST LATITUDE
+    -49.1843181999999999,  # EASTERNMOST  LONGITUDE
+)
 
 # Set a midpoint for the map AND A Z LEVEL FOR THE INITIAL ZOOM:
 MID_LAT = -25.46075
@@ -48,7 +48,29 @@ TILES_MAX_ZOOM = 20
 # Values must all be set as a list, even if there's a single value!!
 
 # depending on local rules, the other types of footways can differ, so you migh tune the options
-OTHER_FOOTWAY_RULES = {'highway':['footway','steps','living_street','pedestrian','track','path'],'foot':['yes','designated','permissive','destination'],'footway': ['alley','path','yes']}
+OTHER_FOOTWAY_RULES = {
+    "highway": ["footway", "steps", "living_street", "pedestrian", "track", "path"],
+    "foot": ["yes", "designated", "permissive", "destination"],
+    "footway": ["alley", "path", "yes"],
+    "sidewalk": [
+        "no"
+    ],  # that's mostly for informal footways, complemented by the exclusion rules for footway
+    "sidewalk:both": [
+        "no"
+    ],  # that's mostly for informal footways, complemented by the exclusion rules for footway
+}
 
 # since we download all features containing the tags of the previous rule-set, if there's another tag hierarchically above, we should exclude those features:
-OTHER_FOOTWAY_EXCLUSION_RULES = {'highway': ['trunk','motorway','primary','secondary','trunk_link','motorway_link','primary_link'],'access':['no','private'],'foot':['no','use_sidepath','private']}
+OTHER_FOOTWAY_EXCLUSION_RULES = {
+    "highway": [
+        "trunk",
+        "motorway",
+        "primary",
+        "secondary",
+        "trunk_link",
+        "motorway_link",
+        "primary_link",
+    ],
+    "access": ["no", "private"],
+    "foot": ["no", "use_sidepath", "private"],
+}
