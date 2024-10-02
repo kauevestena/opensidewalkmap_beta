@@ -79,6 +79,12 @@
             "Rua Luíz Leopoldo Landal",
             "Rua Tenente João Gomes da Silva"
         ],
+        "wheelchair": [
+            null,
+            "no",
+            "yes",
+            "limited"
+        ],
         "traffic_signals": [
             null,
             "no"
@@ -119,12 +125,6 @@
             null,
             "no",
             "yes"
-        ],
-        "wheelchair": [
-            null,
-            "no",
-            "yes",
-            "limited"
         ],
         "mapillary": [
             "375371010502718",
@@ -8947,6 +8947,11 @@
             "-1",
             "0"
         ],
+        "tunnel": [
+            null,
+            "yes",
+            "building_passage"
+        ],
         "handrail": [
             null,
             "no",
@@ -8958,10 +8963,9 @@
             "up",
             "yes"
         ],
-        "tunnel": [
+        "cutting": [
             null,
-            "yes",
-            "building_passage"
+            "yes"
         ],
         "hgv": [
             null,
@@ -8996,10 +9000,6 @@
             "paving_stones"
         ],
         "embankment": [
-            null,
-            "yes"
-        ],
-        "cutting": [
             null,
             "yes"
         ],
@@ -9040,6 +9040,10 @@
             "Rua Buenos Aires",
             "Rua Padre Isaias de Andrade",
             "Rua Diogo Mugiatti"
+        ],
+        "wheelchair": [
+            null,
+            "yes"
         ],
         "crossing": [
             "zebra",
@@ -9083,10 +9087,6 @@
         "motor_vehicle": [
             null,
             "no",
-            "yes"
-        ],
-        "wheelchair": [
-            null,
             "yes"
         ],
         "mapillary": [
@@ -11420,6 +11420,12 @@
             null,
             "backward"
         ],
+        "wheelchair": [
+            null,
+            "yes",
+            "no",
+            "limited"
+        ],
         "traffic_signals": [
             null,
             "no"
@@ -11471,12 +11477,6 @@
             null,
             "table",
             "hump"
-        ],
-        "wheelchair": [
-            null,
-            "yes",
-            "no",
-            "limited"
         ],
         "mapillary": [
             null,
