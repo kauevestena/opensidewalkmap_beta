@@ -174,9 +174,10 @@ svg-inkscape/
 osmnx_routing/cache/
 cache/
 
-# the tests
-tests/
-tests.py
-
 # we shall start to log:
 *.log
+
+# development stuff
+.vscode
+tests/
+tests.py
