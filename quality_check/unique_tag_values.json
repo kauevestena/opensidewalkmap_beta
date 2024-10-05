@@ -1,24 +1,24 @@
 {
     "sidewalks": {
         "source": [
-            null,
+            "?",
             "yahoo_imagery",
             "GPS",
             "Bing"
         ],
         "highway": [
             "footway",
-            null,
+            "?",
             "pedestrian",
             "path",
             "steps"
         ],
         "bus": [
-            null,
+            "?",
             "no"
         ],
         "name": [
-            null,
+            "?",
             "Rua Carmelo Rangel",
             "Rua Gaspar Carnilho Júnior",
             "Rua Desembargador Otávio do Amaral",
@@ -80,23 +80,23 @@
             "Rua Tenente João Gomes da Silva"
         ],
         "wheelchair": [
-            null,
+            "?",
             "no",
             "yes",
             "limited"
         ],
         "traffic_signals": [
-            null,
+            "?",
             "no"
         ],
         "crossing": [
-            null,
+            "?",
             "marked",
             "unmarked",
             "uncontrolled"
         ],
         "bicycle": [
-            null,
+            "?",
             "dismount",
             "yes",
             "designated",
@@ -104,32 +104,32 @@
             "permissive"
         ],
         "segregated": [
-            null,
+            "?",
             "no",
             "yes"
         ],
         "button_operated": [
-            null,
+            "?",
             "yes"
         ],
         "lit": [
-            null,
+            "?",
             "yes",
             "no"
         ],
         "addr:city": [
-            null,
+            "?",
             "Curitiba"
         ],
         "motor_vehicle": [
-            null,
+            "?",
             "no",
             "yes"
         ],
         "mapillary": [
             "375371010502718",
             "164768428919042",
-            null,
+            "?",
             "274023951128328",
             "487938892421527",
             "836800840376906",
@@ -943,7 +943,7 @@
         ],
         "survey:date": [
             "2020-02-18",
-            null,
+            "?",
             "2020-03-09",
             "2020-02-17",
             "2020-09-17",
@@ -960,7 +960,7 @@
             "concrete",
             "sett",
             "paving_stones",
-            null,
+            "?",
             "asphalt",
             "cobblestone",
             "dirt",
@@ -984,71 +984,71 @@
             "interlock"
         ],
         "foot": [
-            null,
+            "?",
             "yes",
             "designated"
         ],
         "access": [
-            null,
+            "?",
             "yes",
             "customers",
             "permit"
         ],
         "horse": [
-            null,
+            "?",
             "no",
             "permissive",
             "yes"
         ],
         "opening_hours": [
-            null,
+            "?",
             "Mo-Fr 08:00-18:00; Sa 10:00-16:00"
         ],
         "addr:housenumber": [
-            null,
+            "?",
             "701"
         ],
         "addr:street": [
-            null,
+            "?",
             "Rua Astorga"
         ],
         "addr:suburb": [
-            null,
+            "?",
             "Sítio Cercado"
         ],
         "tactile_paving": [
             "no",
-            null,
+            "?",
             "yes"
         ],
         "description": [
-            null,
+            "?",
             "low friction"
         ],
         "level": [
-            null,
+            "?",
             "-1",
             "1"
         ],
         "leisure": [
-            null,
+            "?",
             "park"
         ],
         "covered": [
-            null,
+            "?",
             "yes"
         ],
         "alt_name": [
-            null,
+            "?",
             "Rua Carlos Benetti"
         ],
         "motorcycle": [
-            null,
+            "?",
             "no"
         ],
         "smoothness": [
             "good",
-            null,
+            "?",
             "excellent",
             "intermediate",
             "bad",
@@ -1058,14 +1058,14 @@
             "very_horrible"
         ],
         "indoor": [
-            null,
+            "?",
             "yes"
         ],
         "footway": [
             "sidewalk"
         ],
         "nodes": [
-            null,
+            "?",
             "[8822646159, 8822646154, 10816463873, 9661920999, 8822646153, 10816463874, 9661921004, 10816447626, 10816463875, 8822646152, 11142355419, 8822646168, 8822646169, 11142355420, 10816447625, 9595481658, 11141800359, 8822646185, 10875976218, 8822646170, 9641925218, 9595449470]",
             "[10816361280, 3986701867]",
             "[1394041998, 271226465, 11205879669, 11205879668, 6202571692, 6202571693, 1394041997]",
@@ -8933,90 +8933,90 @@
             "[12128224029, 12128224031, 12128224030]"
         ],
         "lanes": [
-            null,
+            "?",
             "2",
             "1"
         ],
         "oneway": [
-            null,
+            "?",
             "no"
         ],
         "layer": [
-            null,
+            "?",
             "1",
             "-1",
             "0"
         ],
         "tunnel": [
-            null,
+            "?",
             "yes",
             "building_passage"
         ],
         "handrail": [
-            null,
+            "?",
             "no",
             "yes"
         ],
         "incline": [
-            null,
+            "?",
             "down",
             "up",
             "yes"
         ],
         "cutting": [
-            null,
+            "?",
             "yes"
         ],
         "hgv": [
-            null,
+            "?",
             "no"
         ],
         "motorcar": [
-            null,
+            "?",
             "no"
         ],
         "noname": [
-            null,
+            "?",
             "yes"
         ],
         "lcn": [
-            null,
+            "?",
             "yes"
         ],
         "ramp": [
-            null,
+            "?",
             "no",
             "yes"
         ],
         "step_count": [
-            null,
+            "?",
             "15",
             "9",
             "11",
             "10"
         ],
         "footway:surface": [
-            null,
+            "?",
             "paving_stones"
         ],
         "embankment": [
-            null,
+            "?",
             "yes"
         ],
         "ramp:wheelchair": [
-            null,
+            "?",
             "no"
         ],
         "check_date:surface": [
-            null,
+            "?",
             "2022-12-10"
         ],
         "surface:note": [
-            null,
+            "?",
             "concrete:plates"
         ],
         "check_date:lit": [
-            null,
+            "?",
             "2023-08-29"
         ]
     },
@@ -9028,7 +9028,7 @@
         ],
         "name": [
             "Rua São Francisco",
-            null,
+            "?",
             "Rua Ivo Leão",
             "Rua General Setembrino de Carvalho",
             "Rua 2",
@@ -9042,55 +9042,55 @@
             "Rua Diogo Mugiatti"
         ],
         "wheelchair": [
-            null,
+            "?",
             "yes"
         ],
         "crossing": [
             "zebra",
             "marked",
             "unmarked",
-            null,
+            "?",
             "traffic_signals",
             "uncontrolled"
         ],
         "crossing:markings": [
-            null,
+            "?",
             "no",
             "yes",
             "zebra"
         ],
         "bicycle": [
             "yes",
-            null,
+            "?",
             "no",
             "designated",
             "dismount"
         ],
         "segregated": [
-            null,
+            "?",
             "no",
             "yes"
         ],
         "button_operated": [
-            null,
+            "?",
             "yes"
         ],
         "lit": [
-            null,
+            "?",
             "yes",
             "no"
         ],
         "traffic_calming": [
-            null,
+            "?",
             "table"
         ],
         "motor_vehicle": [
-            null,
+            "?",
             "no",
             "yes"
         ],
         "mapillary": [
-            null,
+            "?",
             "820843575194518",
             "336765614713898",
             "186526916673300",
@@ -9121,13 +9121,13 @@
             "315313819969205"
         ],
         "survey:date": [
-            null,
+            "?",
             "2020-02-18",
             "2019-10-09",
             "2019-09-12"
         ],
         "surface": [
-            null,
+            "?",
             "asphalt",
             "paving_stones",
             "sett",
@@ -9139,39 +9139,39 @@
             "concrete:plates"
         ],
         "foot": [
-            null,
+            "?",
             "permissive",
             "designated",
             "yes",
             "destination"
         ],
         "access": [
-            null,
+            "?",
             "customers",
             "permissive",
             "yes"
         ],
         "horse": [
-            null,
+            "?",
             "no"
         ],
         "crossing:island": [
-            null,
+            "?",
             "yes",
             "no"
         ],
         "tactile_paving": [
-            null,
+            "?",
             "no",
             "yes"
         ],
         "alt_name": [
-            null,
+            "?",
             "Rua Dois",
             "Rua Padre Isais Andrade"
         ],
         "smoothness": [
-            null,
+            "?",
             "excellent",
             "good",
             "intermediate"
@@ -11392,94 +11392,94 @@
             "[12128224013, 12128224044, 12128224042]"
         ],
         "oneway": [
-            null,
+            "?",
             "no"
         ],
         "layer": [
-            null,
+            "?",
             "1",
             "-1"
         ],
         "incline": [
-            null,
+            "?",
             "up"
         ],
         "lcn": [
-            null,
+            "?",
             "yes"
         ]
     },
     "kerbs": {
         "highway": [
             "crossing",
-            null,
+            "?",
             "traffic_signals",
             "footway"
         ],
         "direction": [
-            null,
+            "?",
             "backward"
         ],
         "wheelchair": [
-            null,
+            "?",
             "yes",
             "no",
             "limited"
         ],
         "traffic_signals": [
-            null,
+            "?",
             "no"
         ],
         "crossing": [
             "marked",
             "traffic_signals",
-            null,
+            "?",
             "zebra",
             "uncontrolled",
             "unmarked"
         ],
         "traffic_signals:sound": [
-            null,
+            "?",
             "no"
         ],
         "traffic_signals:vibration": [
-            null,
+            "?",
             "no"
         ],
         "crossing:markings": [
             "yes",
-            null,
+            "?",
             "no",
             "zebra"
         ],
         "bicycle": [
-            null,
+            "?",
             "yes"
         ],
         "button_operated": [
-            null,
+            "?",
             "yes",
             "no"
         ],
         "lit": [
-            null,
+            "?",
             "yes"
         ],
         "barrier": [
-            null,
+            "?",
             "kerb"
         ],
         "crossing_ref": [
-            null,
+            "?",
             "zebra"
         ],
         "traffic_calming": [
-            null,
+            "?",
             "table",
             "hump"
         ],
         "mapillary": [
-            null,
+            "?",
             "616392826423407",
             "233451338548431",
             "894052207822104",
@@ -11584,7 +11584,7 @@
             "310483987146471"
         ],
         "survey:date": [
-            null,
+            "?",
             "2019-08-02",
             "2020-07-29",
             "2019-10-17",
@@ -11606,7 +11606,7 @@
             "2019-09-12"
         ],
         "surface": [
-            null,
+            "?",
             "concrete:plates",
             "paving_stones",
             "concrete",
@@ -11620,7 +11620,7 @@
             "lowered",
             "flush",
             "raised",
-            null,
+            "?",
             "no",
             "rolled",
             "regular",
@@ -11629,37 +11629,37 @@
             "barrier=kerb"
         ],
         "crossing:island": [
-            null,
+            "?",
             "no",
             "yes"
         ],
         "crossing:signals": [
-            null,
+            "?",
             "no"
         ],
         "tactile_paving": [
-            null,
+            "?",
             "no",
             "yes",
             "contrasted",
             "bad"
         ],
         "description": [
-            null,
+            "?",
             "Just a lowered kerb, not an actual ramp"
         ],
         "traffic_sign:backward": [
-            null,
+            "?",
             "BR:R-1"
         ],
         "kerb:height": [
-            null,
+            "?",
             "10 cm",
             "1 cm",
             "2 cm"
         ],
         "smoothness": [
-            null,
+            "?",
             "good",
             "bad",
             "horrible",
@@ -11668,16 +11668,16 @@
             "excellent"
         ],
         "footway": [
-            null,
+            "?",
             "crossing",
             "sidewalk"
         ],
         "check_date:kerb": [
-            null,
+            "?",
             "2024-02-29"
         ],
         "nodes": [
-            null,
+            "?",
             "[4807326711, 11100249814, 2688348297, 11100249815, 6207001395]",
             "[5284706608, 5284706609, 5284706610, 5284706608]",
             "[6207001432, 11100249822, 6172295041, 11100249823, 11095230816]",
@@ -11699,7 +11699,7 @@
             "[11362940541, 11362940540, 11362940539, 11362940538, 11362940537, 11362940536, 11362940535, 11362940534, 11362940533, 11362940532, 11362940531, 11362940530, 11362940529, 11362940528, 11362940527, 11362940526, 11362940525, 11362940524, 11362940523, 11362940522, 11362940521, 11362940520, 11362940519, 11362940541]"
         ],
         "landuse": [
-            null,
+            "?",
             "grass"
         ]
     }
