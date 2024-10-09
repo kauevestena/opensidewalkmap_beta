@@ -42,18 +42,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-<<<<<<< Updated upstream
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-50224dbeac9c3eec7e79a97e2afcf02f"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": {"field": "length(km)", "type": "quantitative"}, "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_4", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Tactile Paving Presence", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-50224dbeac9c3eec7e79a97e2afcf02f": [{"tactile_paving type": "?", "feature count": 6856, "length(km)": 268.4292541918542}, {"tactile_paving type": "no", "feature count": 997, "length(km)": 31.040444390574766}, {"tactile_paving type": "yes", "feature count": 10, "length(km)": 0.31815644283459676}]}};
-=======
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-caeadce09adea749bcbf0991742e39c8"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": {"field": "length(km)", "type": "quantitative"}, "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_4", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Tactile Paving Presence", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-caeadce09adea749bcbf0991742e39c8": [{"tactile_paving type": "?", "feature count": 6856, "length(km)": 268.425833140901}, {"tactile_paving type": "no", "feature count": 997, "length(km)": 31.040444390574773}, {"tactile_paving type": "yes", "feature count": 10, "length(km)": 0.31815644283459676}]}};
->>>>>>> Stashed changes
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-7adb161d826d9100731b232c623dd225"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": {"field": "length(km)", "type": "quantitative"}, "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_4", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Tactile Paving Presence", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-7adb161d826d9100731b232c623dd225": [{"tactile_paving type": "?", "feature count": 6857, "length(km)": 268.621503613799}, {"tactile_paving type": "no", "feature count": 997, "length(km)": 31.040444390574766}, {"tactile_paving type": "yes", "feature count": 10, "length(km)": 0.31815644283459676}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

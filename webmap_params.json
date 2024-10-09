@@ -6346,7 +6346,7 @@
                     }
                 }
             ],
-            "name": "DQ - Data Age (Y)"
+            "name": "DQ - Update Age (Y)"
         },
         "n_revs": {
             "version": 8,
