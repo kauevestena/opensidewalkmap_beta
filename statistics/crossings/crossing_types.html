@@ -10,7 +10,7 @@
     <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other_footways Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other Footways Charts</a>
 
    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
      <i class="fa fa-bars"></i>
@@ -19,10 +19,10 @@
  
  <div class="sidebar">
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossing Type</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_surface.html">Crossing Surface</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_surface.html">Surface Type</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_smoothness_x_surface.html">Surface x Smoothness</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_yr_moth_update.html">Year and Month Of Update</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_number_revisions.html">Number Of Revisions</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_age.html">Update Age</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossings_n_revs.html">Number of Revisions</a>
 </div>
 
 
@@ -37,14 +37,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-21614de90c2422f47f062765da9b9998"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "crossing", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_9", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Crossing Type", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-21614de90c2422f47f062765da9b9998": [{"crossing": "?", "count": 998, "percent": "50.97%"}, {"crossing": "unmarked", "count": 688, "percent": "35.14%"}, {"crossing": "marked", "count": 108, "percent": "5.52%"}, {"crossing": "traffic_signals", "count": 83, "percent": "4.24%"}, {"crossing": "uncontrolled", "count": 69, "percent": "3.52%"}, {"crossing": "zebra", "count": 12, "percent": "0.61%"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-21614de90c2422f47f062765da9b9998"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "crossing", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_7", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Crossing Type", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-21614de90c2422f47f062765da9b9998": [{"crossing": "?", "count": 998, "percent": "50.97%"}, {"crossing": "unmarked", "count": 688, "percent": "35.14%"}, {"crossing": "marked", "count": 108, "percent": "5.52%"}, {"crossing": "traffic_signals", "count": 83, "percent": "4.24%"}, {"crossing": "uncontrolled", "count": 69, "percent": "3.52%"}, {"crossing": "zebra", "count": 12, "percent": "0.61%"}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

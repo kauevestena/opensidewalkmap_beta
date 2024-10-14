@@ -10,7 +10,7 @@
     <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other_footways Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other Footways Charts</a>
 
    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
      <i class="fa fa-bars"></i>
@@ -26,6 +26,7 @@
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_incline.html">Incline Values</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_age.html">Sidewalks Age</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_length.html">Sidewalks Length (km)</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_n_revs.html">Number of Revisions</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_yr_moth_update.html">Year and Month Of Update</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_number_revisions.html">Number Of Revisions</a>
 </div>
@@ -42,14 +43,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-e2a84ff7829b72c886b255025e760005"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "n_revs", "sort": "-y", "type": "quantitative"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_8", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Year and Month Of Update (Sidewalks)", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-e2a84ff7829b72c886b255025e760005": [{"n_revs": 1, "count": 5611, "percent": "71.36%"}, {"n_revs": 2, "count": 767, "percent": "9.75%"}, {"n_revs": 4, "count": 566, "percent": "7.2%"}, {"n_revs": 3, "count": 563, "percent": "7.16%"}, {"n_revs": 5, "count": 179, "percent": "2.28%"}, {"n_revs": 6, "count": 64, "percent": "0.81%"}, {"n_revs": 7, "count": 48, "percent": "0.61%"}, {"n_revs": 8, "count": 28, "percent": "0.36%"}, {"n_revs": 9, "count": 19, "percent": "0.24%"}, {"n_revs": 11, "count": 7, "percent": "0.09%"}, {"n_revs": 10, "count": 5, "percent": "0.06%"}, {"n_revs": 13, "count": 2, "percent": "0.03%"}, {"n_revs": 67, "count": 1, "percent": "0.01%"}, {"n_revs": 12, "count": 1, "percent": "0.01%"}, {"n_revs": 20, "count": 1, "percent": "0.01%"}, {"n_revs": 27, "count": 1, "percent": "0.01%"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-e2a84ff7829b72c886b255025e760005"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "n_revs", "sort": "-y", "type": "quantitative"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_8", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Number of Revisions (Sidewalks)", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-e2a84ff7829b72c886b255025e760005": [{"n_revs": 1, "count": 5611, "percent": "71.36%"}, {"n_revs": 2, "count": 767, "percent": "9.75%"}, {"n_revs": 4, "count": 566, "percent": "7.2%"}, {"n_revs": 3, "count": 563, "percent": "7.16%"}, {"n_revs": 5, "count": 179, "percent": "2.28%"}, {"n_revs": 6, "count": 64, "percent": "0.81%"}, {"n_revs": 7, "count": 48, "percent": "0.61%"}, {"n_revs": 8, "count": 28, "percent": "0.36%"}, {"n_revs": 9, "count": 19, "percent": "0.24%"}, {"n_revs": 11, "count": 7, "percent": "0.09%"}, {"n_revs": 10, "count": 5, "percent": "0.06%"}, {"n_revs": 13, "count": 2, "percent": "0.03%"}, {"n_revs": 67, "count": 1, "percent": "0.01%"}, {"n_revs": 12, "count": 1, "percent": "0.01%"}, {"n_revs": 20, "count": 1, "percent": "0.01%"}, {"n_revs": 27, "count": 1, "percent": "0.01%"}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

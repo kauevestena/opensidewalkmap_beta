@@ -10,7 +10,7 @@
     <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other_footways Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other Footways Charts</a>
 
    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
      <i class="fa fa-bars"></i>
@@ -24,10 +24,9 @@
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_tactile_paving.html">Tactile Paving P.</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_width.html">Width Values</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_incline.html">Incline Values</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_age.html">Sidewalks Age</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_age.html">Update Age</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_length.html">Sidewalks Length (km)</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_yr_moth_update.html">Year and Month Of Update</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_number_revisions.html">Number Of Revisions</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_n_revs.html">Number of Revisions</a>
 </div>
 
 
@@ -42,14 +41,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-6994dba33766649a54ec597431c0db74"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": {"field": "length(km)", "type": "quantitative"}, "x": {"field": "smoothness type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_3", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Smoothness Condition", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-6994dba33766649a54ec597431c0db74": [{"smoothness type": "?", "feature count": 6595, "length(km)": 262.1118055877636}, {"smoothness type": "bad", "feature count": 202, "length(km)": 4.888305107064057}, {"smoothness type": "excellent", "feature count": 125, "length(km)": 4.618268937303478}, {"smoothness type": "good", "feature count": 532, "length(km)": 17.629792466039053}, {"smoothness type": "horrible", "feature count": 4, "length(km)": 0.0826631821806614}, {"smoothness type": "impassable", "feature count": 4, "length(km)": 0.13028396605245757}, {"smoothness type": "intermediate", "feature count": 391, "length(km)": 11.186277272551479}, {"smoothness type": "very_bad", "feature count": 20, "length(km)": 0.6059131830369366}, {"smoothness type": "very_horrible", "feature count": 6, "length(km)": 0.236517099699315}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-d51f9ce0b3fd2dbb019dd32852030b0c"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "smoothness type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "smoothness type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_3", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Smoothness Condition", "transform": [{"filter": "include_filter_out_opt || datum['smoothness type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-d51f9ce0b3fd2dbb019dd32852030b0c": [{"smoothness type": "?", "feature count": 6595, "length(km)": 262.11180558776425}, {"smoothness type": "bad", "feature count": 202, "length(km)": 4.8883051070644274}, {"smoothness type": "excellent", "feature count": 125, "length(km)": 4.618268937303478}, {"smoothness type": "good", "feature count": 532, "length(km)": 17.62979246603865}, {"smoothness type": "horrible", "feature count": 4, "length(km)": 0.0826631821806614}, {"smoothness type": "impassable", "feature count": 4, "length(km)": 0.13028396605245757}, {"smoothness type": "intermediate", "feature count": 391, "length(km)": 11.186277272551479}, {"smoothness type": "very_bad", "feature count": 20, "length(km)": 0.6059131830369366}, {"smoothness type": "very_horrible", "feature count": 6, "length(km)": 0.236517099699315}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
