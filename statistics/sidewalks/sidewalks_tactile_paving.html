@@ -25,7 +25,7 @@
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_width.html">Width Values</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_incline.html">Incline Values</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_age.html">Update Age</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_length.html">Sidewalks Length (km)</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_length.html">Length (km)</a>
   <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_n_revs.html">Number of Revisions</a>
 </div>
 
@@ -41,14 +41,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-b587a3b74456230ff1407f7327e847e1"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "tactile_paving type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_4", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Tactile Paving Presence", "transform": [{"filter": "include_filter_out_opt || datum['tactile_paving type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-b587a3b74456230ff1407f7327e847e1": [{"tactile_paving type": "?", "feature count": 6872, "length(km)": 270.1312259682821}, {"tactile_paving type": "no", "feature count": 997, "length(km)": 31.040444390574397}, {"tactile_paving type": "yes", "feature count": 10, "length(km)": 0.31815644283459676}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-aca6f2670fb2b2a1667156e1841a58b1"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "tactile_paving type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_4", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Tactile Paving Presence", "transform": [{"filter": "include_filter_out_opt || datum['tactile_paving type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-aca6f2670fb2b2a1667156e1841a58b1": [{"tactile_paving type": "?", "feature count": 6872, "length(km)": 270.1312259682823}, {"tactile_paving type": "no", "feature count": 997, "length(km)": 31.040444390574773}, {"tactile_paving type": "yes", "feature count": 10, "length(km)": 0.31815644283459676}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
