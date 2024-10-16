@@ -39,14 +39,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-eaabbb6056f82cf3abed0da886b31bca"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "wheelchair", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_13", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Kerb Wheelchair Acessibility", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-eaabbb6056f82cf3abed0da886b31bca": [{"wheelchair": "?", "count": 2417, "percent": "88.18%"}, {"wheelchair": "no", "count": 171, "percent": "6.24%"}, {"wheelchair": "yes", "count": 119, "percent": "4.34%"}, {"wheelchair": "limited", "count": 34, "percent": "1.24%"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-eaabbb6056f82cf3abed0da886b31bca"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "wheelchair", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_13", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Kerb Wheelchair Acessibility", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-eaabbb6056f82cf3abed0da886b31bca": [{"wheelchair": "?", "count": 2417, "percent": "88.18%"}, {"wheelchair": "no", "count": 171, "percent": "6.24%"}, {"wheelchair": "yes", "count": 119, "percent": "4.34%"}, {"wheelchair": "limited", "count": 34, "percent": "1.24%"}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
