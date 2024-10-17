@@ -11,6 +11,7 @@
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other Footways Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_surface.html">All Data Charts</a>
 
    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
      <i class="fa fa-bars"></i>
@@ -33,20 +34,22 @@
     <script src="https://kauevestena.github.io/oswm_codebase/assets/webscripts/stats_funcs.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
+
     <title>OSWM Dashboard</title>
+
+    <link rel="icon" type="image/x-icon" href="https://kauevestena.github.io/oswm_codebase/assets/homepage/favicon_homepage.png">
 
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-a8a0de1e79611f2d3a55eb8e1d345c5f"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "surface type", "type": "nominal"}, {"field": "count", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "surface type", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_14", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Kerbs Surface Type", "transform": [{"filter": "include_filter_out_opt || datum['surface type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-a8a0de1e79611f2d3a55eb8e1d345c5f": [{"surface type": "?", "feature count": 2668, "count": 2668}, {"surface type": "asphalt", "feature count": 1, "count": 1}, {"surface type": "concrete", "feature count": 18, "count": 18}, {"surface type": "concrete:plates", "feature count": 29, "count": 29}, {"surface type": "grass", "feature count": 1, "count": 1}, {"surface type": "paver", "feature count": 1, "count": 1}, {"surface type": "paving_stones", "feature count": 20, "count": 20}, {"surface type": "sett", "feature count": 2, "count": 2}, {"surface type": "unpaved", "feature count": 1, "count": 1}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-a8a0de1e79611f2d3a55eb8e1d345c5f"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "surface type", "type": "nominal"}, {"field": "count", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "surface type", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_14", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Kerbs Surface Type", "transform": [{"filter": "include_filter_out_opt || datum['surface type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-a8a0de1e79611f2d3a55eb8e1d345c5f": [{"surface type": "?", "feature count": 2668, "count": 2668}, {"surface type": "asphalt", "feature count": 1, "count": 1}, {"surface type": "concrete", "feature count": 18, "count": 18}, {"surface type": "concrete:plates", "feature count": 29, "count": 29}, {"surface type": "grass", "feature count": 1, "count": 1}, {"surface type": "paver", "feature count": 1, "count": 1}, {"surface type": "paving_stones", "feature count": 20, "count": 20}, {"surface type": "sett", "feature count": 2, "count": 2}, {"surface type": "unpaved", "feature count": 1, "count": 1}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

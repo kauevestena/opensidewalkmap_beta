@@ -19,13 +19,9 @@
  </div>
  
  <div class="sidebar">
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Surface x Smoothness</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerb_types.html">Kerb Type</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerb_tactile_paving.html">Tactile Paving Presence</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerb_wheelchair_access.html">Wheelchair Acessibility</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_surface.html">Surface Type</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_age.html">Update Age</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_n_revs.html">Number of Revisions</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_surface.html">Surface Type</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_smoothness.html">Smoothness Condition</a>
+  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_tactile_paving.html">Tactile Paving Presence</a>
 </div>
 
 
@@ -49,7 +45,7 @@
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-f40e0dd127e032afd38c9e979c31fa43"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "tactile_paving", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_12", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Kerb Tactile Paving Presence", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-f40e0dd127e032afd38c9e979c31fa43": [{"tactile_paving": "?", "count": 2491, "percent": "90.88%"}, {"tactile_paving": "no", "count": 213, "percent": "7.77%"}, {"tactile_paving": "yes", "count": 25, "percent": "0.91%"}, {"tactile_paving": "contrasted", "count": 11, "percent": "0.4%"}, {"tactile_paving": "bad", "count": 1, "percent": "0.04%"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-8dc12a1d84d1e77bf03f4eabfb8e0135"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "smoothness type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "smoothness type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_20", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "All-Category Smoothness Condition", "transform": [{"filter": "include_filter_out_opt || datum['smoothness type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-8dc12a1d84d1e77bf03f4eabfb8e0135": [{"smoothness type": "?", "feature count": 17630, "length(km)": 861.6241041657295}, {"smoothness type": "bad", "feature count": 210, "length(km)": 5.068524008491275}, {"smoothness type": "excellent", "feature count": 206, "length(km)": 6.917029111723541}, {"smoothness type": "good", "feature count": 661, "length(km)": 23.03315318846913}, {"smoothness type": "horrible", "feature count": 8, "length(km)": 0.28693121889078016}, {"smoothness type": "impassable", "feature count": 5, "length(km)": 0.13874211790245888}, {"smoothness type": "intermediate", "feature count": 467, "length(km)": 13.172054028274419}, {"smoothness type": "very_bad", "feature count": 24, "length(km)": 0.6059131830369366}, {"smoothness type": "very_horrible", "feature count": 7, "length(km)": 0.931894907995328}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
