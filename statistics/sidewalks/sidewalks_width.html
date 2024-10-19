@@ -6,12 +6,12 @@
 
     
     <div class="topnav" id="stTopnav">
-        <a href="https://kauevestena.github.io/opensidewalkmap_beta/" class="active">Home</a>
+        <a href="https://kauevestena.github.io/opensidewalkmap_beta/" class="active">Go to Node Home</a>
     <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other Footways Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_surface.html">All Data Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_category.html">All Data Charts</a>
 
    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
      <i class="fa fa-bars"></i>
@@ -44,14 +44,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-b2efea4e4cfb9a536daa7b1ddf09cffb"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "width type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "width type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_5", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Width Values", "transform": [{"filter": "include_filter_out_opt || datum['width type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-b2efea4e4cfb9a536daa7b1ddf09cffb": [{"width type": "0.8", "feature count": 1, "length(km)": 0.004287511488544878}, {"width type": "1", "feature count": 5, "length(km)": 1.4039969158108718}, {"width type": "1.20", "feature count": 1, "length(km)": 0.17524476456709107}, {"width type": "1.30", "feature count": 1, "length(km)": 0.003770674719877537}, {"width type": "1.5", "feature count": 5, "length(km)": 0.6265423382000412}, {"width type": "2", "feature count": 20, "length(km)": 1.2533199006694142}, {"width type": "2.5", "feature count": 11, "length(km)": 0.8314156676944593}, {"width type": "2m", "feature count": 1, "length(km)": 0.0478753721751693}, {"width type": "3", "feature count": 24, "length(km)": 0.7701969577815123}, {"width type": "36", "feature count": 1, "length(km)": 0.04874631583200189}, {"width type": "4", "feature count": 1, "length(km)": 0.023269306188529803}, {"width type": "?", "feature count": 7819, "length(km)": 297.5464848875685}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-e47d95dead1d30ac086886aa4f80d7a0"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "width type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "width type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_5", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Width Values", "transform": [{"filter": "include_filter_out_opt || datum['width type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-e47d95dead1d30ac086886aa4f80d7a0": [{"width type": "0.8", "feature count": 1, "length(km)": 0.004287511488544878}, {"width type": "1", "feature count": 5, "length(km)": 1.4039969158108718}, {"width type": "1.20", "feature count": 1, "length(km)": 0.17524476456709107}, {"width type": "1.30", "feature count": 1, "length(km)": 0.003770674719877537}, {"width type": "1.5", "feature count": 5, "length(km)": 0.6265423382000412}, {"width type": "2", "feature count": 20, "length(km)": 1.2533199006694142}, {"width type": "2.5", "feature count": 11, "length(km)": 0.8314156676944593}, {"width type": "2m", "feature count": 1, "length(km)": 0.0478753721751693}, {"width type": "3", "feature count": 24, "length(km)": 0.7701969577815123}, {"width type": "36", "feature count": 1, "length(km)": 0.04874631583200189}, {"width type": "4", "feature count": 1, "length(km)": 0.023269306188529803}, {"width type": "?", "feature count": 7819, "length(km)": 297.54648488756857}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
@@ -68,5 +68,6 @@
     })(vegaEmbed);
 
   </script>
+<h4 style="padding-left: 14%;font-weight: normal;font-family: sans-serif;"> - Explanation: This chart allows you to visualize the different <a href='https://wiki.openstreetmap.org/wiki/Key:width'>width</a> values of the sidewalks. </h4>
 </body>
 </html>

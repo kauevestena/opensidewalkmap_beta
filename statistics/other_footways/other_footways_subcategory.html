@@ -6,12 +6,12 @@
 
     
     <div class="topnav" id="stTopnav">
-        <a href="https://kauevestena.github.io/opensidewalkmap_beta/" class="active">Home</a>
+        <a href="https://kauevestena.github.io/opensidewalkmap_beta/" class="active">Go to Node Home</a>
     <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
 <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other Footways Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_surface.html">All Data Charts</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_category.html">All Data Charts</a>
 
    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
      <i class="fa fa-bars"></i>
@@ -42,14 +42,14 @@
     
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.17.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-515d17f9e3896ea4930cdd4ce2680706"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "oswm_footway type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "oswm_footway type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_15", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sub-category (Layer)", "transform": [{"filter": "include_filter_out_opt || datum['oswm_footway type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-515d17f9e3896ea4930cdd4ce2680706": [{"oswm_footway type": "informal_footways", "feature count": 180, "length(km)": 32.45945723072036}, {"oswm_footway type": "main_footways", "feature count": 5305, "length(km)": 425.6019501729198}, {"oswm_footway type": "pedestrian_areas", "feature count": 49, "length(km)": 19.8143499463349}, {"oswm_footway type": "potential_footways", "feature count": 741, "length(km)": 100.00082363560861}, {"oswm_footway type": "stairways", "feature count": 315, "length(km)": 4.639557590552573}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-d30e068706bb51b23df4401b6746d5c0"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "oswm_footway type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "oswm_footway type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_15", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sub-category (Layer)", "transform": [{"filter": "include_filter_out_opt || datum['oswm_footway type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.17.0.json", "datasets": {"data-d30e068706bb51b23df4401b6746d5c0": [{"oswm_footway type": "informal_footways", "feature count": 180, "length(km)": 32.45945723072023}, {"oswm_footway type": "main_footways", "feature count": 5305, "length(km)": 425.60195017291943}, {"oswm_footway type": "pedestrian_areas", "feature count": 49, "length(km)": 19.8143499463349}, {"oswm_footway type": "potential_footways", "feature count": 741, "length(km)": 100.00082363560861}, {"oswm_footway type": "stairways", "feature count": 315, "length(km)": 4.639557590552573}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
@@ -66,5 +66,6 @@
     })(vegaEmbed);
 
   </script>
+<h4 style="padding-left: 14%;font-weight: normal;font-family: sans-serif;"> - Explanation: This chart allows you to visualize the different types (layer) of the other footways. </h4>
 </body>
 </html>
