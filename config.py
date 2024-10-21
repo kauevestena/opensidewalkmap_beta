@@ -1,7 +1,16 @@
 """
   setup the variables for your city/territory:
 
-  all of them are mandatory!!
+  all of them are mandatory (do not remove any)!!
+
+  This file may be outated, the most recent template is available here:
+
+  https://github.com/kauevestena/oswm_codebase/blob/main/other/templates/config.py
+
+  you can reset the template by running (from node rootfolder): 
+
+  sh oswm_codebase/other/templates/copy_config.sh
+
 """
 
 # Full city name, it may contain special characters, spaces...
@@ -40,7 +49,7 @@ TILES_MIN_ZOOM = 9
 TILES_MAX_ZOOM = 20
 
 
-### MORE DELICATE ONES: (leave them unchanged by default)
+###  THE MORE DELICATE ONES: (leave them unchanged by default, unless you know what you are doing!)
 
 # TAGS FOR ADDITIONAL FOOTWAYS
 # you can check the reason behind those default ones at: https://kauevestena.github.io/opensidewalkmap/information/other_footways.html
@@ -73,4 +82,22 @@ OTHER_FOOTWAY_EXCLUSION_RULES = {
     ],
     "access": ["no", "private"],
     "foot": ["no", "use_sidepath", "private"],
+}
+
+# # The layer definitions for the other footways:
+## WARNING: don't change the layer names or the order of the layers.
+# You may change only the definitions in terms of the tags you want to use.
+# The employed tags shall be a subset of the ones in OTHER_FOOTWAY_RULES
+# any inclusion that might be on OTHER_FOOTWAY_EXCLUSION_RULES will be simply ignored
+
+other_footways_subcatecories = {
+    "stairways": {"highway": ["steps"]},
+    "main_footways": {
+        "highway": ["footway", "living_street", "pedestrian"],
+        "foot": ["designated"],
+        "footway": ["alley", "path", "yes"],
+    },
+    "potential_footways": {"highway": ["path", "track"]},
+    "informal_footways_layername": {"foot": ["yes", "permissive"]},
+    "pedestrian_areas": {},  # defined only by geometry type (Polygon,Multipolygon)
 }
