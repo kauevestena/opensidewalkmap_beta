@@ -61,9 +61,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -241,12 +241,12 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
-                        "line-color": "#b0645a",
+                        "line-color": "steelblue",
                         "line-width": [
                             "case",
                             [
@@ -328,9 +328,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -570,9 +570,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": "#63636380",
@@ -714,9 +714,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -1988,9 +1988,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": [
@@ -2441,9 +2441,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -3121,9 +3121,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": [
@@ -3376,9 +3376,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -3786,9 +3786,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": [
@@ -3951,9 +3951,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -4469,9 +4469,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": [
@@ -4670,9 +4670,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -5080,9 +5080,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": [
@@ -5245,9 +5245,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -5709,9 +5709,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": [
@@ -5892,9 +5892,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -6242,9 +6242,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": [
@@ -6387,9 +6387,9 @@
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
-                "oswm_pmtiles_informal_footways": {
+                "oswm_pmtiles_informal_footways_layername": {
                     "type": "vector",
-                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
+                    "url": "pmtiles://https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles",
                     "promoteId": "id",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 },
@@ -6749,9 +6749,9 @@
                     }
                 },
                 {
-                    "id": "informal_footways",
-                    "source": "oswm_pmtiles_informal_footways",
-                    "source-layer": "informal_footways",
+                    "id": "informal_footways_layername",
+                    "source": "oswm_pmtiles_informal_footways_layername",
+                    "source-layer": "informal_footways_layername",
                     "type": "line",
                     "paint": {
                         "line-color": [
@@ -6867,7 +6867,7 @@
         "stairways",
         "main_footways",
         "potential_footways",
-        "informal_footways",
+        "informal_footways_layername",
         "pedestrian_areas"
     ],
     "layer_types": {
@@ -6880,11 +6880,12 @@
             "stairways",
             "main_footways",
             "potential_footways",
-            "informal_footways"
+            "informal_footways_layername"
         ],
         "circle": [
             "kerbs"
         ]
     },
-    "node_url": "https://kauevestena.github.io/opensidewalkmap_beta/"
+    "node_url": "https://kauevestena.github.io/opensidewalkmap_beta/",
+    "informal_footways_layername_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways_layername.pmtiles"
 }
