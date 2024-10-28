@@ -1,4 +1,4 @@
-osm_id,key,value,commentary
-8842953120,ANY (check at feature link),lowered=no,The '=' character is used ONLY in textual representation of tags to separate the key from the value
-1070027466,ANY (check at feature link),barrier=kerb,The '=' character is used ONLY in textual representation of tags to separate the key from the value
-1070027467,ANY (check at feature link),barrier=kerb,The '=' character is used ONLY in textual representation of tags to separate the key from the value
+osm_id,key,value,commentary
+8842953120,ANY (check at feature link),lowered=no,The '=' character is used ONLY in textual representation of tags to separate the key from the value
+1070027466,ANY (check at feature link),barrier=kerb,The '=' character is used ONLY in textual representation of tags to separate the key from the value
+1070027467,ANY (check at feature link),barrier=kerb,The '=' character is used ONLY in textual representation of tags to separate the key from the value

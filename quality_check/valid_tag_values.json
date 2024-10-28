@@ -109,5 +109,56 @@
             "bump",
             "hump"
         ]
+    },
+    "other_footways": {
+        "surface": [
+            "asphalt",
+            "concrete",
+            "concrete:plates",
+            "paving_stones",
+            "sett",
+            "cobblestone",
+            "unhewn_cobblestone",
+            "ground",
+            "dirt",
+            "earth",
+            "sand",
+            "grass",
+            "paved",
+            "unpaved",
+            "gravel",
+            "compacted",
+            "ceramic:tiles",
+            "wood",
+            "metal"
+        ],
+        "wheelchair": [
+            "yes",
+            "designated",
+            "limited",
+            "no"
+        ],
+        "smoothness": [
+            "excellent",
+            "good",
+            "intermediate",
+            "bad",
+            "very_bad",
+            "horrible",
+            "very_horrible",
+            "impassable"
+        ],
+        "lit": [
+            "yes",
+            "automatic",
+            "24/7",
+            "no",
+            "disused"
+        ],
+        "tactile_paving": [
+            "yes",
+            "contrasted",
+            "no"
+        ]
     }
 }
