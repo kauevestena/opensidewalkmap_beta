@@ -8,7 +8,6 @@
     ],
     "other_footways": [
         "railway:start_date",
-        "check_date:handrail",
-        "ways"
+        "check_date:handrail"
     ]
 }
