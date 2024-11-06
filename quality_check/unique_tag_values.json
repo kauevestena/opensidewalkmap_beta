@@ -2021,7 +2021,6 @@
             "Ciclovia Marechal Floriano Peixoto",
             "Rua José Rissato",
             "Avenida Nossa Senhora da Penha",
-            "Estrada da Ribeira",
             "Acesso a escola",
             "Rua Júlio Vicente Roda",
             "Galeria Ritz",
@@ -2240,7 +2239,6 @@
             "limited"
         ],
         "ref": [
-            "BR-476",
             "PR-415"
         ],
         "noexit": [
@@ -2659,9 +2657,6 @@
         "motorcar": [
             "no"
         ],
-        "IBGE:CD_ADMINIS": [
-            "federal"
-        ],
         "noname": [
             "yes"
         ],
@@ -2731,7 +2726,6 @@
         "construction": [
             "secondary",
             "trunk_link",
-            "primary",
             "residential",
             "bridge"
         ],
