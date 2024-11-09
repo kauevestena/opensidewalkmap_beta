@@ -1342,6 +1342,9 @@
         "lit": [
             "yes"
         ],
+        "crossing:signals": [
+            "no"
+        ],
         "mapillary": [
             "616392826423407",
             "233451338548431",
@@ -1491,9 +1494,6 @@
         "crossing:island": [
             "no",
             "yes"
-        ],
-        "crossing:signals": [
-            "no"
         ],
         "tactile_paving": [
             "no",
