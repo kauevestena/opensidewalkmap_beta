@@ -1478,7 +1478,8 @@
             "paver",
             "asphalt",
             "grass",
-            "unpaved"
+            "unpaved",
+            "cobblestone"
         ],
         "kerb": [
             "lowered",
@@ -1560,10 +1561,10 @@
             "cycleway",
             "living_street",
             "path",
+            "construction",
             "secondary_link",
             "unclassified",
             "track",
-            "construction",
             "corridor",
             "tertiary_link"
         ],
@@ -1610,6 +1611,7 @@
             "Rua Newton França Bittencourt",
             "Rua Vereador Oswaldo Nascimento Bittencourt",
             "Rua Joaquim Caetano da Silva",
+            "Avenida Presidente Arthur da Silva Bernardes",
             "Rua João Bettega",
             "Rua Jorge Gomes Rosa",
             "Rua Afonso Pedri",
@@ -1626,6 +1628,7 @@
             "Rua Comendador Araújo",
             "Rua Evaristo da Veiga",
             "Rua Ana Aparecida Lopos Canet",
+            "Rua Bortolo Gusso",
             "Avenida Comendador Franco",
             "Trilha Barigui",
             "Marginal Linha Verde",
@@ -2095,6 +2098,7 @@
             "Rua Joaquim Bertholdi",
             "Acesso Bom Freio",
             "Parque linear Ribeirão dos Padilhas",
+            "Jardinete Alice Alves da Cruz e Oliveira",
             "Rua João Bientinez",
             "Rua Germânia",
             "Rua Goiabas",
@@ -2649,6 +2653,7 @@
         ],
         "check_date": [
             "2022-01-10",
+            "2024-11-07",
             "2021-12-23"
         ],
         "hgv": [
@@ -2656,6 +2661,15 @@
         ],
         "motorcar": [
             "no"
+        ],
+        "construction": [
+            "primary",
+            "secondary",
+            "trunk_link",
+            "primary_link",
+            "residential",
+            "bridge",
+            "tertiary"
         ],
         "noname": [
             "yes"
@@ -2722,12 +2736,6 @@
         ],
         "hazard": [
             "school_zone"
-        ],
-        "construction": [
-            "secondary",
-            "trunk_link",
-            "residential",
-            "bridge"
         ],
         "narrow": [
             "yes"
