@@ -1,12 +1,17 @@
 {
     "sidewalks": [
+        "element",
         "check_date:lit"
     ],
-    "crossings": [],
+    "crossings": [
+        "element"
+    ],
     "kerbs": [
+        "element",
         "check_date:kerb"
     ],
     "other_footways": [
+        "element",
         "railway:start_date",
         "check_date:handrail"
     ]
