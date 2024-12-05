@@ -1905,7 +1905,6 @@
             "Ciclovia Parque São Lourenço - Passeio Público",
             "Galeria Suíssa",
             "Galeria Andrade",
-            "Arcadas de São Francisco",
             "Rua Almirante Tamandaré",
             "Rua Camões",
             "Rua Alferes Poli",
@@ -2454,7 +2453,6 @@
         ],
         "covered": [
             "yes",
-            "arcade",
             "no"
         ],
         "level": [
