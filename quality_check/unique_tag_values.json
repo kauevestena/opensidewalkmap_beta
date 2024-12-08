@@ -2112,7 +2112,6 @@
             "Rua Campina da Lagoa",
             "Rua da Cidadania Pinheirinho",
             "Rua Henrique Mehl",
-            "Casa Paulo Cristiano Moro e Valeska",
             "Rua Presidente Carlos Cavalcanti",
             "Rua Ivo Otto",
             "Desembarque",
@@ -2345,8 +2344,7 @@
             "30",
             "500",
             "3090",
-            "60",
-            "344 B"
+            "60"
         ],
         "addr:street": [
             "Rua Carlos Benato",
@@ -2354,15 +2352,10 @@
             "Rua Marechal Deodoro",
             "Rua Candido Lopes",
             "Avenida República Argentina",
-            "Rua Desembargador Benvindo Valente",
-            "Rua Capitão Ernesto dos Anjos Barbosa"
-        ],
-        "addr:postcode": [
-            "81020320"
+            "Rua Desembargador Benvindo Valente"
         ],
         "addr:suburb": [
-            "Campo Comprido",
-            "Novo Mundo"
+            "Campo Comprido"
         ],
         "tactile_paving": [
             "no"
@@ -2440,8 +2433,7 @@
             "abandoned"
         ],
         "height": [
-            "2",
-            "4"
+            "2"
         ],
         "description": [
             "Acesso Condominio Flex Accanto"
@@ -2803,20 +2795,11 @@
         "ford": [
             "seasonal"
         ],
-        "landuse": [
-            "residential"
-        ],
         "sport": [
             "running"
         ],
         "cycleway:left": [
             "lane"
-        ],
-        "building": [
-            "house"
-        ],
-        "building:levels": [
-            "2"
         ],
         "cycleway:width": [
             "2"
