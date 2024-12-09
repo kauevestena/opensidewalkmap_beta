@@ -245,8 +245,6 @@ osm_id,key,value,commentary
 129002792,element,way,no wiki page for this key
 129002854,element,way,no wiki page for this key
 129015198,element,way,no wiki page for this key
-129015278,element,way,no wiki page for this key
-129015288,element,way,no wiki page for this key
 129130237,element,way,no wiki page for this key
 129142035,element,way,no wiki page for this key
 129346769,element,way,no wiki page for this key
@@ -1807,7 +1805,6 @@ osm_id,key,value,commentary
 438399328,element,way,no wiki page for this key
 438399731,element,way,no wiki page for this key
 438613311,element,way,no wiki page for this key
-438798331,element,way,no wiki page for this key
 438861638,element,way,no wiki page for this key
 438861640,element,way,no wiki page for this key
 439143603,element,way,no wiki page for this key
@@ -3043,7 +3040,6 @@ osm_id,key,value,commentary
 700194493,element,way,no wiki page for this key
 700242128,element,way,no wiki page for this key
 700867523,element,way,no wiki page for this key
-700921342,element,way,no wiki page for this key
 700944000,element,way,no wiki page for this key
 701095847,element,way,no wiki page for this key
 701107034,element,way,no wiki page for this key
@@ -3536,7 +3532,6 @@ osm_id,key,value,commentary
 924797616,element,way,no wiki page for this key
 924797617,element,way,no wiki page for this key
 926084799,element,way,no wiki page for this key
-926105401,element,way,no wiki page for this key
 926152966,element,way,no wiki page for this key
 926152967,element,way,no wiki page for this key
 926568195,element,way,no wiki page for this key
@@ -3592,11 +3587,6 @@ osm_id,key,value,commentary
 932873266,element,way,no wiki page for this key
 933117447,element,way,no wiki page for this key
 933117448,element,way,no wiki page for this key
-933146375,element,way,no wiki page for this key
-933146376,element,way,no wiki page for this key
-933146377,element,way,no wiki page for this key
-933146379,element,way,no wiki page for this key
-933146380,element,way,no wiki page for this key
 933153818,element,way,no wiki page for this key
 933255668,element,way,no wiki page for this key
 933277039,element,way,no wiki page for this key
@@ -6638,7 +6628,6 @@ osm_id,key,value,commentary
 1322283900,element,way,no wiki page for this key
 1322283901,element,way,no wiki page for this key
 1322283902,element,way,no wiki page for this key
-1322900620,element,way,no wiki page for this key
 1323416635,element,way,no wiki page for this key
 1323416636,element,way,no wiki page for this key
 1323416637,element,way,no wiki page for this key
