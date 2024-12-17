@@ -1,6 +1,5 @@
 {
     "sidewalks": [
-        "element",
         "highway",
         "traffic_signals",
         "crossing",
@@ -57,7 +56,6 @@
         "check_date:lit"
     ],
     "crossings": [
-        "element",
         "highway",
         "crossing",
         "crossing:markings",
@@ -89,7 +87,6 @@
         "lcn"
     ],
     "kerbs": [
-        "element",
         "highway",
         "traffic_signals",
         "crossing",
@@ -123,7 +120,6 @@
         "landuse"
     ],
     "other_footways": [
-        "element",
         "highway",
         "maxspeed",
         "crossing",

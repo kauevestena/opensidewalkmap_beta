@@ -1,9 +1,5 @@
 {
     "sidewalks": {
-        "element": [
-            "node",
-            "way"
-        ],
         "highway": [
             "footway",
             "pedestrian",
@@ -1124,9 +1120,6 @@
         ]
     },
     "crossings": {
-        "element": [
-            "way"
-        ],
         "highway": [
             "footway",
             "steps",
@@ -1292,10 +1285,6 @@
         ]
     },
     "kerbs": {
-        "element": [
-            "node",
-            "way"
-        ],
         "highway": [
             "crossing",
             "traffic_signals",
@@ -1550,11 +1539,6 @@
         ]
     },
     "other_footways": {
-        "element": [
-            "node",
-            "relation",
-            "way"
-        ],
         "highway": [
             "pedestrian",
             "service",
