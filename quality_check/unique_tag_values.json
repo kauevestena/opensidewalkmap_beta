@@ -2630,8 +2630,7 @@
             "trunk_link",
             "primary_link",
             "residential",
-            "bridge",
-            "tertiary"
+            "bridge"
         ],
         "noname": [
             "yes"
