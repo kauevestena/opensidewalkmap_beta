@@ -2021,7 +2021,6 @@
             "Rua Coração de Maria",
             "Rua Luiz Antônio Biazzetto",
             "Rua Henrique Coelho Neto",
-            "Rua Germano Demuth",
             "INTERDITADO",
             "Rua Valdívia",
             "Condomínio Leduc",
@@ -2695,6 +2694,14 @@
         "hazard": [
             "school_zone"
         ],
+        "cycleway": [
+            "shared",
+            "track",
+            "lane",
+            "crossing",
+            "shared_lane",
+            "yes"
+        ],
         "man_made": [
             "Pedestrian_Bridge",
             "pier"
@@ -2718,14 +2725,6 @@
             "yes"
         ],
         "handrail:right": [
-            "yes"
-        ],
-        "cycleway": [
-            "track",
-            "lane",
-            "crossing",
-            "shared",
-            "shared_lane",
             "yes"
         ],
         "embankment": [
