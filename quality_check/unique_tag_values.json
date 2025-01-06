@@ -1620,8 +1620,8 @@
         "motor_vehicle": [
             "yes",
             "private",
-            "no",
             "permit",
+            "no",
             "designated",
             "permissive",
             "destination"
@@ -2282,8 +2282,8 @@
         ],
         "foot": [
             "yes",
-            "permissive",
             "designated",
+            "permissive",
             "destination",
             "permit"
         ],
