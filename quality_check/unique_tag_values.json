@@ -57,7 +57,6 @@
             "Rua Engenheiro Teodoro Sampaio",
             "Alameda Júlia da Costa",
             "Rua Padre Agostinho",
-            "Avenida Cândido Hartmann",
             "Avenida Nossa Senhora da Penha",
             "Avenida Visconde de Guarapuava",
             "Galeria Guimarães & Cia",
@@ -1172,6 +1171,7 @@
             "Rua Silveira Peixoto",
             "Rua Pasteur",
             "Rua Buenos Aires",
+            "Avenida Cândido Hartmann",
             "Rua Padre Isaias de Andrade",
             "Rua Diogo Mugiatti"
         ],
@@ -1785,7 +1785,6 @@
             "Rua Engenheiro Rômulo Gutierrez",
             "Rua Wolfgang Mozart",
             "Rua Gastão Câmara",
-            "Rua Capitão Souza Franco",
             "Rua Emílio de Menezes",
             "Rua Professora Rosa Saporski",
             "Condomínio Alfredo Andersen",
@@ -2264,7 +2263,8 @@
             "Caminho do campo",
             "Rua Engenheiro Leão Sounis",
             "Rua Miguel Caluf",
-            "Rua Frederico Guilherme Virmond"
+            "Rua Frederico Guilherme Virmond",
+            "Avenida Cândido Hartmann"
         ],
         "wheelchair": [
             "yes",
@@ -2696,7 +2696,6 @@
         ],
         "cycleway": [
             "shared",
-            "track",
             "lane",
             "crossing",
             "shared_lane",
@@ -2774,7 +2773,8 @@
             "running"
         ],
         "cycleway:left": [
-            "lane"
+            "lane",
+            "shared_lane"
         ],
         "cycleway:width": [
             "2"
