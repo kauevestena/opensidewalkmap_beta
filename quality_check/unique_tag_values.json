@@ -931,6 +931,33 @@
             "2019-10-09",
             "2019-09-12"
         ],
+        "surface": [
+            "concrete:plates",
+            "concrete",
+            "sett",
+            "paving_stones",
+            "asphalt",
+            "cobblestone",
+            "dirt",
+            "wood",
+            "paved",
+            "Petit_Pavê",
+            "rock",
+            "ground",
+            "grass",
+            "compacted",
+            "earth",
+            "pebblestone",
+            "fine_gravel",
+            "concrete:lanes",
+            "grass_paver",
+            "porcelain tiles",
+            "gravel",
+            "stepping_stones",
+            "betão",
+            "paver",
+            "interlock"
+        ],
         "foot": [
             "yes",
             "designated"
@@ -971,33 +998,6 @@
         ],
         "motorcycle": [
             "no"
-        ],
-        "surface": [
-            "concrete:plates",
-            "concrete",
-            "sett",
-            "paving_stones",
-            "asphalt",
-            "cobblestone",
-            "dirt",
-            "wood",
-            "paved",
-            "Petit_Pavê",
-            "rock",
-            "ground",
-            "grass",
-            "compacted",
-            "earth",
-            "pebblestone",
-            "fine_gravel",
-            "concrete:lanes",
-            "grass_paver",
-            "porcelain tiles",
-            "gravel",
-            "stepping_stones",
-            "betão",
-            "paver",
-            "interlock"
         ],
         "smoothness": [
             "good",
@@ -1213,6 +1213,17 @@
             "2019-10-09",
             "2019-09-12"
         ],
+        "surface": [
+            "asphalt",
+            "paving_stones",
+            "sett",
+            "compacted",
+            "wood",
+            "metal",
+            "concrete",
+            "paved",
+            "concrete:plates"
+        ],
         "foot": [
             "permissive",
             "designated",
@@ -1234,17 +1245,6 @@
         "tactile_paving": [
             "no",
             "yes"
-        ],
-        "surface": [
-            "asphalt",
-            "paving_stones",
-            "sett",
-            "compacted",
-            "wood",
-            "metal",
-            "concrete",
-            "paved",
-            "concrete:plates"
         ],
         "smoothness": [
             "excellent",
@@ -1464,6 +1464,17 @@
             "2019-11-29",
             "2019-09-12"
         ],
+        "surface": [
+            "concrete:plates",
+            "paving_stones",
+            "concrete",
+            "sett",
+            "paver",
+            "asphalt",
+            "grass",
+            "unpaved",
+            "cobblestone"
+        ],
         "kerb": [
             "lowered",
             "flush",
@@ -1496,17 +1507,6 @@
         ],
         "source:geometry": [
             "Mapillary 2019-04-27"
-        ],
-        "surface": [
-            "concrete:plates",
-            "paving_stones",
-            "concrete",
-            "sett",
-            "paver",
-            "asphalt",
-            "grass",
-            "unpaved",
-            "cobblestone"
         ],
         "kerb:height": [
             "10 cm",
@@ -2264,7 +2264,9 @@
             "Rua Engenheiro Leão Sounis",
             "Rua Miguel Caluf",
             "Rua Frederico Guilherme Virmond",
-            "Avenida Cândido Hartmann"
+            "Avenida Cândido Hartmann",
+            "Rua João Sguário",
+            "Avenida Henry Ford"
         ],
         "wheelchair": [
             "yes",
@@ -2279,6 +2281,32 @@
         "survey:date": [
             "2019-07-29",
             "2020-02-18"
+        ],
+        "surface": [
+            "paved",
+            "paving_stones",
+            "gravel",
+            "sett",
+            "cobblestone",
+            "asphalt",
+            "metal",
+            "concrete:plates",
+            "concrete",
+            "wood",
+            "unpaved",
+            "rock",
+            "ground",
+            "dirt",
+            "grass_paver",
+            "fine_gravel",
+            "grass",
+            "pebblestone",
+            "concrete:lanes",
+            "mud",
+            "Petit_Pavê",
+            "compacted",
+            "unhewn_cobblestone",
+            "sand"
         ],
         "foot": [
             "yes",
@@ -2365,32 +2393,6 @@
         "operator": [
             "Universidade Federal do Paraná",
             "Rumo S/A"
-        ],
-        "surface": [
-            "paved",
-            "paving_stones",
-            "gravel",
-            "sett",
-            "cobblestone",
-            "asphalt",
-            "metal",
-            "concrete:plates",
-            "concrete",
-            "wood",
-            "unpaved",
-            "rock",
-            "ground",
-            "dirt",
-            "grass_paver",
-            "fine_gravel",
-            "grass",
-            "pebblestone",
-            "concrete:lanes",
-            "mud",
-            "Petit_Pavê",
-            "compacted",
-            "unhewn_cobblestone",
-            "sand"
         ],
         "smoothness": [
             "excellent",
