@@ -1863,6 +1863,7 @@
             "Cortina Dampezzo Condomínio",
             "Condomínio Village Mikaela",
             "Monte Bianco Condomínio",
+            "Paysage Curityba Condomínio Parque",
             "Bella Itália Condomínio",
             "Wolf Condomínio",
             "Residencial Giardino di Firenze",
@@ -1914,7 +1915,6 @@
             "Avenida Edgard Stellfeld",
             "Rua Frei Orlando",
             "Condomínio Paysage Di Padova",
-            "Paysage Evergreen Condomínio",
             "Condomínio Montechiaro",
             "Rua Antônio Frederico Kurten",
             "Rua Lourenço Pinto",
@@ -2037,6 +2037,7 @@
             "Rua Coronel Luiz José dos Santos",
             "Rua William Booth",
             "Condomínio Porta das Águas",
+            "Paysage Evergreen Condomínio",
             "Conjunto Residencial Petrópolis",
             "Rua Flávio Dallegrave",
             "Trilha do Zôo",
@@ -2264,7 +2265,6 @@
             "Rua Engenheiro Leão Sounis",
             "Rua Miguel Caluf",
             "Rua Frederico Guilherme Virmond",
-            "Avenida Cândido Hartmann",
             "Rua João Sguário",
             "Avenida Henry Ford"
         ],
@@ -2775,8 +2775,7 @@
             "running"
         ],
         "cycleway:left": [
-            "lane",
-            "shared_lane"
+            "lane"
         ],
         "cycleway:width": [
             "2"
