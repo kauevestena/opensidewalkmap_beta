@@ -1698,6 +1698,7 @@
             "Condomínio Parque das Amoreiras",
             "Rua Engenheiro Lourival Maciel",
             "Rua Izidoro Wosch",
+            "Praça da Ucrânia",
             "Palladio Condominium",
             "Villagio Castel Maggiore",
             "Condomínio Castel Vicenza",
@@ -2027,7 +2028,6 @@
             "Acesso João Afonso",
             "Rua República Islâmica do Irã",
             "Residencial Vila Paradiso",
-            "Residencial Vilagio D'Oro",
             "Rua Coronel Luiz José dos Santos",
             "Rua William Booth",
             "Condomínio Porta das Águas",
@@ -2260,7 +2260,10 @@
             "Rua Bortolo Gusso",
             "Rua Frederico Guilherme Virmond",
             "Rua João Sguário",
-            "Avenida Henry Ford"
+            "Avenida Henry Ford",
+            "Residencial Vilagio D'Oro",
+            "Residencial Fênix",
+            "Conjunto Residencial Petrópolis"
         ],
         "wheelchair": [
             "yes",
