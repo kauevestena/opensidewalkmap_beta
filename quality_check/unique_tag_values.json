@@ -1338,7 +1338,8 @@
             "limited"
         ],
         "crossing:signals": [
-            "no"
+            "no",
+            "yes"
         ],
         "mapillary": [
             "616392826423407",
