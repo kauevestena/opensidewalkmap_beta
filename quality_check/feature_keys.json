@@ -53,6 +53,7 @@
         "embankment",
         "ramp:wheelchair",
         "check_date:surface",
+        "check_date:smoothness",
         "check_date:lit"
     ],
     "crossings": [
@@ -84,7 +85,8 @@
         "bridge",
         "layer",
         "incline",
-        "lcn"
+        "lcn",
+        "check_date:smoothness"
     ],
     "kerbs": [
         "highway",
