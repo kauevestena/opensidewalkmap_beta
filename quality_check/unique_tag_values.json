@@ -2009,6 +2009,7 @@
             "Condomínio Las Brisas",
             "Acesso condomínio",
             "Rua Agostinho Zaniolo",
+            "Rua Bocaiúva",
             "Condomínio Verona",
             "Rua Juvenal Negrello",
             "Rua Luzia dos Santos Silveira",
@@ -2753,6 +2754,10 @@
         "tracktype": [
             "grade4"
         ],
+        "note": [
+            "Theres a difference between IBGE data (Rua Bocayúva) and OSM data (Rua Bocaiúva).",
+            "trecho invadido"
+        ],
         "mtb:scale:imba": [
             "2"
         ],
@@ -2787,9 +2792,6 @@
         ],
         "sidewalk:both": [
             "no"
-        ],
-        "note": [
-            "trecho invadido"
         ],
         "ramp:wheelchair": [
             "separate",
