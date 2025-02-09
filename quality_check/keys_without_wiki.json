@@ -1,8 +1,11 @@
 {
     "sidewalks": [
+        "check_date:smoothness",
         "check_date:lit"
     ],
-    "crossings": [],
+    "crossings": [
+        "check_date:smoothness"
+    ],
     "kerbs": [
         "check_date:kerb"
     ],
