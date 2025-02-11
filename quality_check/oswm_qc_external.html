@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+
+<!-- thx, w3schools, this page was made following their tutorial!! -->
+
+<html lang="en">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+   
+
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+    body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+}
+
+details {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+summary {
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    /* Removes default marker */
+    text-align: center;
+    /* Center align header text */
+    position: relative;
+    /* For positioning the plus/minus sign */
+}
+
+/* Hide default marker in WebKit browsers */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Insert a plus sign to the left of the header text */
+summary::before {
+    content: '+';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Change plus sign to minus sign when the section is open */
+details[open] summary::before {
+    content: '-';
+}
+
+.content {
+    padding: 12px;
+    border-top: 1px solid #ccc;
+}
+</style>
+
+
+
+<script>
+    function topnav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+}
+    
+</script>
+	
+
+<title>OSWM DQ: Ext. Providers</title>
+
+<link rel="icon" type="image/x-icon" href="https://kauevestena.github.io/oswm_codebase/assets/homepage/favicon_homepage.png">
+
+</head>
+
+<body>
+
+
+    
+    <div class="topnav" id="myTopnav">
+        <a href="https://kauevestena.github.io/opensidewalkmap_beta/">Go to Node Home</a>
+<a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/oswm_qc_main.html">OSWM DQ Main</a>
+<a class="active" href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/oswm_qc_external.html">External Providers</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="topnav()">
+            <i class="fa fa-bars"></i>
+         </a>
+        
+    </div>
+    
+
+<h1>OpenSidewalkMap DQ: External Providers</h1>
+
+<p> Page in progress... </p>
+
+
+
+    <!--- Osmose content-->
+    
+    <details>
+        <summary>Osmose</summary>
+        <div class="content">
+            
+    TBD
+    
+        </div>
+    </details>
+    
+
+    
+
+    <!--- OSMI content-->
+    
+    <details>
+        <summary>OSMI</summary>
+        <div class="content">
+            
+    TBD
+    
+        </div>
+    </details>
+    
+
+    
+
+</body>
+</html> 
+
