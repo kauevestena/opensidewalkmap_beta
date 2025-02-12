@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="../oswm_codebase/assets/styles/accordion.css">
 
 
+    <link rel="stylesheet" href="../oswm_codebase/assets/styles/table_styles.css">
+    
+
 
     <script src="../oswm_codebase/assets/js_functions/topbar.js"></script>
 	
@@ -76,13 +79,44 @@
             <a href="https://wiki.openstreetmap.org/wiki/OSM_Inspector">
                 OSM Inspector.
             </a>
-
-            We curated some themes that can be correlated to Pedestrian data, but some may include highways, bridges, etc.
+            A visualization tool containing detections for potential errors in OSM features.
+            We curated some themes that can be correlated to Pedestrian data, but some may include highways, bridges, etc. You can navigate through the following themes:
         </p>
-
         
-    <button><a href="https://tools.geofabrik.de/osmi/?view=geometry&zoom=12&baselayer=Geofabrik Topo&lat=-25.477893509855093&lon=-49.28803740075671&opacity=0.5">Geometry Theme</a></button>
-    
+        <table>
+            <tr>
+                <th>Theme (link)</th>
+                <th>Description</th>
+            </tr>
+
+            
+            <tr>
+                <td><a href="https://tools.geofabrik.de/osmi/?view=highways&zoom=12&baselayer=Geofabrik Topo&lat=-25.477893509855093&lon=-49.28803740075671&opacity=0.5&overlays=unknown_way%2Cunknown_node">Highways Theme</a></td>
+                <td>Detections related to highways, we kept only the ones with unknown tags, like nodes improperly tagged as footways</td>
+            </tr>
+        
+            <tr>
+                <td><a href="https://tools.geofabrik.de/osmi/?view=geometry&zoom=12&baselayer=Geofabrik Topo&lat=-25.477893509855093&lon=-49.28803740075671&opacity=0.5&overlays=">Geometry Theme</a></td>
+                <td>Detections related to geometry, many detections pertains roads</td>
+            </tr>
+        
+            <tr>
+                <td><a href="https://tools.geofabrik.de/osmi/?view=routing&zoom=12&baselayer=Geofabrik Topo&lat=-25.477893509855093&lon=-49.28803740075671&opacity=0.5&overlays=duplicated_edges%2Cduplicated_edges%2Cduplicated_edges_areas%2Cislands_all">Routing Theme</a></td>
+                <td>Detections related to routing, we kept only duplicated edges (in general) and non car/bike islands. Keep in mind that some 'islands' are meant to be as such.</td>
+            </tr>
+        
+            <tr>
+                <td><a href="https://tools.geofabrik.de/osmi/?view=tagging&zoom=12&baselayer=Geofabrik Topo&lat=-25.477893509855093&lon=-49.28803740075671&opacity=0.5&overlays=">Tagging Theme</a></td>
+                <td>Detections related to tagging, can regard any kind of feature</td>
+            </tr>
+        
+            <tr>
+                <td><a href="https://tools.geofabrik.de/osmi/?view=areas&zoom=12&baselayer=Geofabrik Topo&lat=-25.477893509855093&lon=-49.28803740075671&opacity=0.5&overlays=">Area Theme</a></td>
+                <td>Can hold detections about Pedestrian Areas, but most aren't about them</td>
+            </tr>
+        
+            
+        </table>
     
         </div>
     </details>
