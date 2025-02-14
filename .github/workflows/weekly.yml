@@ -41,7 +41,7 @@ jobs:
       # @see https://github.com/actions/setup-python
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.x"
           cache: 'pip' # caching pip dependencies
 
       #### setup dependencies __________________________________________________
