@@ -2344,9 +2344,6 @@
             "Mo-Sa 07:00-19:00",
             "Mo-Fr 08:00-18:00"
         ],
-        "direction": [
-            "up"
-        ],
         "crossing:island": [
             "yes",
             "no"
