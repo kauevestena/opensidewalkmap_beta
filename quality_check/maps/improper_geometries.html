@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a573b250e88fd8f71c7421017112bed5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a573b250e88fd8f71c7421017112bed5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a573b250e88fd8f71c7421017112bed5 = L.map(
+                "map_a573b250e88fd8f71c7421017112bed5",
+                {
+                    center: [-25.477893509855093, -49.28803740075671],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3b2a00e7ebb018f4a64fd29e025ef8b2 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3b2a00e7ebb018f4a64fd29e025ef8b2.addTo(map_a573b250e88fd8f71c7421017112bed5);
+        
+    
+            var marker_cluster_4c6437f421eca474b24e4b2589c97ae6 = L.markerClusterGroup(
+                {
+}
+            );
+            marker_cluster_4c6437f421eca474b24e4b2589c97ae6.options.iconCreateFunction =
+                function(cluster) {
+        return L.divIcon({
+        html: '<b>' + cluster.getChildCount() + '</b>',
+        className: 'marker-cluster marker-cluster-large',
+        iconSize: new L.Point(20, 20)
+        });
+    };
+        
+    
+            var marker_4e2fb76dbacca8d144d128701e5c8a9a = L.marker(
+                [-25.4571619, -49.2387682],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_fded8e902dd5cf63f0f9837d23745e20 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ede78a5dc580690ceafdb407537528fe = $(`<div id="html_ede78a5dc580690ceafdb407537528fe" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/node/9780133036">Access on OSM (9780133036)</a></div>`)[0];
+                popup_fded8e902dd5cf63f0f9837d23745e20.setContent(html_ede78a5dc580690ceafdb407537528fe);
+            
+        
+
+        marker_4e2fb76dbacca8d144d128701e5c8a9a.bindPopup(popup_fded8e902dd5cf63f0f9837d23745e20)
+        ;
+
+        
+    
+    
+            var marker_c39e3fb7bb8f93f241b62bb9791b9ba8 = L.marker(
+                [-25.4576805, -49.233274],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_255f4c7ece76985aee4ca3a5eb333687 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_040c3511cda23ec93fed404254903e9d = $(`<div id="html_040c3511cda23ec93fed404254903e9d" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/node/9823403602">Access on OSM (9823403602)</a></div>`)[0];
+                popup_255f4c7ece76985aee4ca3a5eb333687.setContent(html_040c3511cda23ec93fed404254903e9d);
+            
+        
+
+        marker_c39e3fb7bb8f93f241b62bb9791b9ba8.bindPopup(popup_255f4c7ece76985aee4ca3a5eb333687)
+        ;
+
+        
+    
+    
+            var marker_b32863d77094837ddaf363ae38b3b18a = L.marker(
+                [-25.4160556, -49.240186119935814],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_a37ad48ab8eb4ad141daa097a476375d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7410ad510744a94a056b97b991021d80 = $(`<div id="html_7410ad510744a94a056b97b991021d80" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/369444924">Access on OSM (369444924)</a></div>`)[0];
+                popup_a37ad48ab8eb4ad141daa097a476375d.setContent(html_7410ad510744a94a056b97b991021d80);
+            
+        
+
+        marker_b32863d77094837ddaf363ae38b3b18a.bindPopup(popup_a37ad48ab8eb4ad141daa097a476375d)
+        ;
+
+        
+    
+    
+            var marker_5ca11b2307e9d5eed810b6098f990ea5 = L.marker(
+                [-25.4550893, -49.229789],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_ae1fb3b9bfe4cc6d0fc6680cffbc2cc0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b84390e83b1e7ec33a7aa02aeb922aa = $(`<div id="html_5b84390e83b1e7ec33a7aa02aeb922aa" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/953197237">Access on OSM (953197237)</a></div>`)[0];
+                popup_ae1fb3b9bfe4cc6d0fc6680cffbc2cc0.setContent(html_5b84390e83b1e7ec33a7aa02aeb922aa);
+            
+        
+
+        marker_5ca11b2307e9d5eed810b6098f990ea5.bindPopup(popup_ae1fb3b9bfe4cc6d0fc6680cffbc2cc0)
+        ;
+
+        
+    
+    
+            var marker_198c147f38791bbe398f191e23b35409 = L.marker(
+                [-25.455861, -49.2310985],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_0ee003bf82ff5de44d730faf5484b7c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51ceb18af9c913a3be71d05f1a30c7e6 = $(`<div id="html_51ceb18af9c913a3be71d05f1a30c7e6" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/955490104">Access on OSM (955490104)</a></div>`)[0];
+                popup_0ee003bf82ff5de44d730faf5484b7c8.setContent(html_51ceb18af9c913a3be71d05f1a30c7e6);
+            
+        
+
+        marker_198c147f38791bbe398f191e23b35409.bindPopup(popup_0ee003bf82ff5de44d730faf5484b7c8)
+        ;
+
+        
+    
+    
+            var marker_2aecb363ac68ab382006df4b64027dbc = L.marker(
+                [-25.4552556, -49.2308486],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_b346ae56b9d642c95e6b1b83ee42cf88 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e15af3ec0e4e8af695d6413a4b75333 = $(`<div id="html_4e15af3ec0e4e8af695d6413a4b75333" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/955508034">Access on OSM (955508034)</a></div>`)[0];
+                popup_b346ae56b9d642c95e6b1b83ee42cf88.setContent(html_4e15af3ec0e4e8af695d6413a4b75333);
+            
+        
+
+        marker_2aecb363ac68ab382006df4b64027dbc.bindPopup(popup_b346ae56b9d642c95e6b1b83ee42cf88)
+        ;
+
+        
+    
+    
+            var marker_333e09d0618d13d2adebe01be9a7cc4c = L.marker(
+                [-25.4560996, -49.2303399],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_b139b9e5745f39153ee3d58011d36598 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c91ba023283fa2b8762994648c62fa9 = $(`<div id="html_2c91ba023283fa2b8762994648c62fa9" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/955508035">Access on OSM (955508035)</a></div>`)[0];
+                popup_b139b9e5745f39153ee3d58011d36598.setContent(html_2c91ba023283fa2b8762994648c62fa9);
+            
+        
+
+        marker_333e09d0618d13d2adebe01be9a7cc4c.bindPopup(popup_b139b9e5745f39153ee3d58011d36598)
+        ;
+
+        
+    
+    
+            var marker_dcdc675777f8356791ecedb443a48132 = L.marker(
+                [-25.4547871, -49.230586],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_5280575e1c2329d80a26eb42dfe16f01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1bd9eb9660bbb5a10b930680741231d = $(`<div id="html_d1bd9eb9660bbb5a10b930680741231d" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/957980150">Access on OSM (957980150)</a></div>`)[0];
+                popup_5280575e1c2329d80a26eb42dfe16f01.setContent(html_d1bd9eb9660bbb5a10b930680741231d);
+            
+        
+
+        marker_dcdc675777f8356791ecedb443a48132.bindPopup(popup_5280575e1c2329d80a26eb42dfe16f01)
+        ;
+
+        
+    
+    
+            var marker_6978e5914c729cba3d28710d2b7197b0 = L.marker(
+                [-25.4557058, -49.2314511],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_20dfdfc08ad950de812e3389ee3684d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a55ff5a0c135f38d618dc127e1c69557 = $(`<div id="html_a55ff5a0c135f38d618dc127e1c69557" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/1070027468">Access on OSM (1070027468)</a></div>`)[0];
+                popup_20dfdfc08ad950de812e3389ee3684d7.setContent(html_a55ff5a0c135f38d618dc127e1c69557);
+            
+        
+
+        marker_6978e5914c729cba3d28710d2b7197b0.bindPopup(popup_20dfdfc08ad950de812e3389ee3684d7)
+        ;
+
+        
+    
+    
+            var marker_f37a262288c8abdf34c98e1ed1728c87 = L.marker(
+                [-25.4419201, -49.2198173],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_ca61e9e6a6710b64c22ef55e78cac9b0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_db60c4deb9c5cb25ba007cf142a4f529 = $(`<div id="html_db60c4deb9c5cb25ba007cf142a4f529" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/1070738461">Access on OSM (1070738461)</a></div>`)[0];
+                popup_ca61e9e6a6710b64c22ef55e78cac9b0.setContent(html_db60c4deb9c5cb25ba007cf142a4f529);
+            
+        
+
+        marker_f37a262288c8abdf34c98e1ed1728c87.bindPopup(popup_ca61e9e6a6710b64c22ef55e78cac9b0)
+        ;
+
+        
+    
+    
+            var marker_9937fe8df34cb71bdf9ba9d076870447 = L.marker(
+                [-25.4575313, -49.2384378],
+                {
+}
+            ).addTo(marker_cluster_4c6437f421eca474b24e4b2589c97ae6);
+        
+    
+        var popup_e353c359d6d23a539ac32c1dd502b35f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7526168314a51057d00237e7582ef06a = $(`<div id="html_7526168314a51057d00237e7582ef06a" style="width: 100.0%; height: 100.0%;">categories: {'improper_geometries'} <br> </a href="https://www.openstreetmap.org/way/1074627503">Access on OSM (1074627503)</a></div>`)[0];
+                popup_e353c359d6d23a539ac32c1dd502b35f.setContent(html_7526168314a51057d00237e7582ef06a);
+            
+        
+
+        marker_9937fe8df34cb71bdf9ba9d076870447.bindPopup(popup_e353c359d6d23a539ac32c1dd502b35f)
+        ;
+
+        
+    
+    
+            marker_cluster_4c6437f421eca474b24e4b2589c97ae6.addTo(map_a573b250e88fd8f71c7421017112bed5);
+        
+</script>
+</html>
