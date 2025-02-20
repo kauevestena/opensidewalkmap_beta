@@ -1,16 +1,16 @@
-osm_id,key,value,commentary
-24775977,name,Rua São Francisco,most crossings have no name
-106928168,name,Rua Ivo Leão,most crossings have no name
-121846072,name,Rua General Setembrino de Carvalho,most crossings have no name
-696233930,name,Rua 2,most crossings have no name
-715060923,name,Rua Engenheiro Alberto Monteiro de Carvalho,most crossings have no name
-731579566,name,Rua Bruno Filgueira,most crossings have no name
-731579567,name,Rua Padre Ildefonso,most crossings have no name
-731579568,name,Rua Silveira Peixoto,most crossings have no name
-731579569,name,Rua Pasteur,most crossings have no name
-731579570,name,Rua Buenos Aires,most crossings have no name
-744726677,name,Avenida Cândido Hartmann,most crossings have no name
-759294592,name,Rua Padre Isaias de Andrade,most crossings have no name
-763039967,name,Rua Diogo Mugiatti,most crossings have no name
-1049505888,name,Rua Pasteur,most crossings have no name
-1156759437,name,Avenida Cândido Hartmann,most crossings have no name
+osm_id,feat_type,key,value,commentary
+24775977,way,name,Rua São Francisco,most crossings have no name
+106928168,way,name,Rua Ivo Leão,most crossings have no name
+121846072,way,name,Rua General Setembrino de Carvalho,most crossings have no name
+696233930,way,name,Rua 2,most crossings have no name
+715060923,way,name,Rua Engenheiro Alberto Monteiro de Carvalho,most crossings have no name
+731579566,way,name,Rua Bruno Filgueira,most crossings have no name
+731579567,way,name,Rua Padre Ildefonso,most crossings have no name
+731579568,way,name,Rua Silveira Peixoto,most crossings have no name
+731579569,way,name,Rua Pasteur,most crossings have no name
+731579570,way,name,Rua Buenos Aires,most crossings have no name
+744726677,way,name,Avenida Cândido Hartmann,most crossings have no name
+759294592,way,name,Rua Padre Isaias de Andrade,most crossings have no name
+763039967,way,name,Rua Diogo Mugiatti,most crossings have no name
+1049505888,way,name,Rua Pasteur,most crossings have no name
+1156759437,way,name,Avenida Cândido Hartmann,most crossings have no name

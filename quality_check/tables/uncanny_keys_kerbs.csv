@@ -1,9 +1,9 @@
-osm_id,key,value,commentary
-1395984082,button_operated,yes,"it may be referring to the crossing, may be OK"
-3507819516,button_operated,no,"it may be referring to the crossing, may be OK"
-4604865119,button_operated,yes,"it may be referring to the crossing, may be OK"
-6336344925,button_operated,yes,"it may be referring to the crossing, may be OK"
-6336344931,button_operated,yes,"it may be referring to the crossing, may be OK"
-6336344932,button_operated,yes,"it may be referring to the crossing, may be OK"
-7052469464,button_operated,yes,"it may be referring to the crossing, may be OK"
-12395490254,button_operated,yes,"it may be referring to the crossing, may be OK"
+osm_id,feat_type,key,value,commentary
+1395984082,node,button_operated,yes,"it may be referring to the crossing, may be OK"
+3507819516,node,button_operated,no,"it may be referring to the crossing, may be OK"
+4604865119,node,button_operated,yes,"it may be referring to the crossing, may be OK"
+6336344925,node,button_operated,yes,"it may be referring to the crossing, may be OK"
+6336344931,node,button_operated,yes,"it may be referring to the crossing, may be OK"
+6336344932,node,button_operated,yes,"it may be referring to the crossing, may be OK"
+7052469464,node,button_operated,yes,"it may be referring to the crossing, may be OK"
+12395490254,node,button_operated,yes,"it may be referring to the crossing, may be OK"

@@ -1,5 +1,5 @@
-osm_id,key,value,commentary
-9780133036,not appliable,not appliable,Sidewalks are meant to be lines
-9823403602,not appliable,not appliable,Sidewalks are meant to be lines
-369444924,not appliable,not appliable,Sidewalks are meant to be lines
-422430196,not appliable,not appliable,Sidewalks are meant to be lines
+osm_id,feat_type,key,value,commentary
+9780133036,way,not appliable,not appliable,Sidewalks are meant to be lines
+9823403602,way,not appliable,not appliable,Sidewalks are meant to be lines
+369444924,node,not appliable,not appliable,Sidewalks are meant to be lines
+422430196,node,not appliable,not appliable,Sidewalks are meant to be lines
