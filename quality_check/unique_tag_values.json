@@ -1656,7 +1656,6 @@
             "Rua Raphael Papa",
             "Rua José Domakoski",
             "Moradias do Bosque Condomínio Horizontal",
-            "Rua Via Firenze",
             "Rua Via Vicenza",
             "Rua Reverendo Raul Rodrigues de Castro",
             "Rua Doutor Goulin",
@@ -2270,7 +2269,8 @@
             "Avenida Henry Ford",
             "Residencial Vilagio D'Oro",
             "Residencial Fênix",
-            "Conjunto Residencial Petrópolis"
+            "Conjunto Residencial Petrópolis",
+            "Rua Via Firenze"
         ],
         "wheelchair": [
             "yes",
