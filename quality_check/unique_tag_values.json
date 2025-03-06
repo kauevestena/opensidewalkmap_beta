@@ -956,7 +956,8 @@
             "stepping_stones",
             "betão",
             "paver",
-            "interlock"
+            "interlock",
+            "unhewn_cobblestone"
         ],
         "foot": [
             "yes",
