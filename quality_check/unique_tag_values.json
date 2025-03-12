@@ -2068,7 +2068,6 @@
             "Rua Júlio Vicente Roda",
             "Galeria Ritz",
             "Travessia Perigosa",
-            "Lumini Condomínio",
             "Harmony Village Condominium",
             "Travessa Oliveira Bello",
             "Rua Euclides Bandeira",
@@ -2271,7 +2270,8 @@
             "Residencial Vilagio D'Oro",
             "Residencial Fênix",
             "Conjunto Residencial Petrópolis",
-            "Rua Via Firenze"
+            "Rua Via Firenze",
+            "Lumini Condomínio"
         ],
         "wheelchair": [
             "yes",
