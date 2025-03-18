@@ -2564,9 +2564,9 @@
             "aqueduct"
         ],
         "layer": [
+            "-1",
             "2",
             "1",
-            "-1",
             "-3",
             "3"
         ],
@@ -2712,7 +2712,8 @@
             "yes"
         ],
         "indoor": [
-            "yes"
+            "yes",
+            "footway"
         ],
         "historic": [
             "railway"
