@@ -54,6 +54,7 @@
             "Rua Monsenhor Celso",
             "Rua Ozório Duque Estrada",
             "Praça Emirados Árabes Unidos",
+            "Rua Assma Karam Geara",
             "Rua Engenheiro Teodoro Sampaio",
             "Alameda Júlia da Costa",
             "Rua Padre Agostinho",
@@ -1154,9 +1155,6 @@
         "button_operated": [
             "yes"
         ],
-        "traffic_calming": [
-            "table"
-        ],
         "lit": [
             "yes",
             "no"
@@ -1228,6 +1226,9 @@
             "concrete",
             "paved",
             "concrete:plates"
+        ],
+        "traffic_calming": [
+            "table"
         ],
         "foot": [
             "permissive",
@@ -1331,10 +1332,6 @@
         ],
         "crossing_ref": [
             "zebra"
-        ],
-        "traffic_calming": [
-            "table",
-            "hump"
         ],
         "lit": [
             "yes"
@@ -1484,6 +1481,10 @@
             "unpaved",
             "cobblestone"
         ],
+        "traffic_calming": [
+            "table",
+            "hump"
+        ],
         "kerb": [
             "lowered",
             "flush",
@@ -1610,9 +1611,6 @@
         ],
         "crossing_ref": [
             "zebra"
-        ],
-        "traffic_calming": [
-            "table"
         ],
         "lit": [
             "yes",
@@ -2241,7 +2239,6 @@
             "Rua Rosamélia de Oliveira",
             "Rua Mário Zanlorenzi",
             "Rua Desembargador Otávio do Amaral",
-            "Rua Professora Ephigênia do Rego Barros",
             "Rua Plácida Thomazi Zanoto",
             "Rua Fanny Bertoldi",
             "Le Refuge Condomínio",
@@ -2313,6 +2310,9 @@
             "compacted",
             "unhewn_cobblestone",
             "sand"
+        ],
+        "traffic_calming": [
+            "table"
         ],
         "foot": [
             "yes",
@@ -2612,6 +2612,7 @@
         "check_date": [
             "2022-01-10",
             "2024-11-07",
+            "2025-03-19",
             "2021-12-23"
         ],
         "leisure": [
