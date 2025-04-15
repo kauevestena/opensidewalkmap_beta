@@ -2110,7 +2110,6 @@
             "Condomínio Burgel 2",
             "Rua Juarez Campos Matesich",
             "Rua Comandante Orlando Gescon",
-            "Rua Comendador Jacques Van Erven",
             "Rua Zeila Moura dos Santos",
             "Rua General Polli Coelho",
             "Acesso Ulisses/Baldur",
@@ -2753,8 +2752,7 @@
             "grade4"
         ],
         "note": [
-            "Theres a difference between IBGE data (Rua Bocayúva) and OSM data (Rua Bocaiúva).",
-            "trecho invadido"
+            "Theres a difference between IBGE data (Rua Bocayúva) and OSM data (Rua Bocaiúva)."
         ],
         "mtb:scale:imba": [
             "2"
