@@ -1634,12 +1634,13 @@
             "destination"
         ],
         "name": [
+            "Condomínio Montreux Village",
             "North York Ecoville Residencial",
             "Portão 1",
             "Praça Garibaldi",
             "Praça Carlos Gomes",
             "Largo da Ordem",
-            "Jardim Ambiental 7 de Setembro",
+            "Jardim Ambiental Sete de Setembro",
             "Praça Zacarias",
             "Rua XV de Novembro",
             "Rua Sanito Rocha",
@@ -1735,6 +1736,7 @@
             "Veredas Barigui",
             "Condomínio Cabana dos Lobos I",
             "Montreux Village",
+            "Golin",
             "Condomínio Santo Inácio",
             "Residencial Barigui",
             "Residencial do Parque",
@@ -2268,7 +2270,8 @@
             "Conjunto Residencial Petrópolis",
             "Rua Via Firenze",
             "Lumini Condomínio",
-            "Rua Madre Maria dos Anjos"
+            "Rua Madre Maria dos Anjos",
+            "Destro"
         ],
         "wheelchair": [
             "yes",
@@ -2348,6 +2351,7 @@
             "no"
         ],
         "addr:housenumber": [
+            "1323",
             "215",
             "225",
             "30",
@@ -2356,12 +2360,16 @@
             "60"
         ],
         "addr:street": [
+            "Rua Tobias de Macedo Junior;Rua Tobias de Macedo Júnior",
             "Rua Carlos Benato",
             "Rua Pedro Nicco",
             "Rua Marechal Deodoro",
             "Rua Candido Lopes",
             "Avenida República Argentina",
             "Rua Desembargador Benvindo Valente"
+        ],
+        "locked": [
+            "yes"
         ],
         "addr:suburb": [
             "Campo Comprido"

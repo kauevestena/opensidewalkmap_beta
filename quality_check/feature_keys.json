@@ -150,6 +150,7 @@
         "crossing:island",
         "addr:housenumber",
         "addr:street",
+        "locked",
         "addr:suburb",
         "tactile_paving",
         "source",
