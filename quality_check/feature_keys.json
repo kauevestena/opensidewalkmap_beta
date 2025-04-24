@@ -229,6 +229,7 @@
         "check_date:handrail",
         "driving_side",
         "ford",
+        "informal",
         "sport",
         "cycleway:left",
         "cycleway:width",
@@ -238,7 +239,6 @@
         "bridge:structure",
         "maxspeed:type",
         "check_date:surface",
-        "informal",
         "type"
     ]
 }
