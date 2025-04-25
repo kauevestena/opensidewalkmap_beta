@@ -2785,10 +2785,6 @@
         "ford": [
             "seasonal"
         ],
-        "informal": [
-            "yes",
-            "no"
-        ],
         "sport": [
             "running"
         ],
@@ -2817,6 +2813,10 @@
         "check_date:surface": [
             "2023-05-26",
             "2024-03-01"
+        ],
+        "informal": [
+            "yes",
+            "no"
         ],
         "type": [
             "multipolygon"
