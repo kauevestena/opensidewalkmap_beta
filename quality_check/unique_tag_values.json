@@ -2185,7 +2185,6 @@
             "Rua Richard Wagner",
             "Rua Buruti",
             "Rua Bertolo Gava",
-            "Avenida República Argentina",
             "Rua Curupis",
             "Rua Curupaitis",
             "Rua Silveira Peixoto",
@@ -2618,8 +2617,8 @@
         "check_date": [
             "2022-01-10",
             "2024-11-07",
-            "2025-03-19",
-            "2021-12-23"
+            "2025-01-10",
+            "2025-03-19"
         ],
         "leisure": [
             "park",
@@ -2754,6 +2753,9 @@
         ],
         "tunnel:name": [
             "Galeria Júlio Moreira"
+        ],
+        "opening_date": [
+            "2025-02-28"
         ],
         "tracktype": [
             "grade4"
