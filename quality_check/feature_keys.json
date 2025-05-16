@@ -193,6 +193,7 @@
         "leisure",
         "hgv",
         "motorcar",
+        "maxspeed:type",
         "construction",
         "noname",
         "lcn",
@@ -237,7 +238,6 @@
         "ramp:wheelchair",
         "floating",
         "bridge:structure",
-        "maxspeed:type",
         "check_date:surface",
         "informal",
         "type"

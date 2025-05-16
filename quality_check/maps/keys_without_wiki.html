@@ -3,14 +3,6 @@
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -25,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_9498b11b1c072654e084f488c18defab {
+                #map_20bd38076fc4c9707fa34e01035c0c7f {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -34,19 +26,42 @@
                 }
                 .leaflet-container { font-size: 1rem; }
             </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
         
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_9498b11b1c072654e084f488c18defab" ></div>
+            <div class="folium-map" id="map_20bd38076fc4c9707fa34e01035c0c7f" ></div>
         
 </body>
 <script>
     
     
-            var map_9498b11b1c072654e084f488c18defab = L.map(
-                "map_9498b11b1c072654e084f488c18defab",
+            var map_20bd38076fc4c9707fa34e01035c0c7f = L.map(
+                "map_20bd38076fc4c9707fa34e01035c0c7f",
                 {
                     center: [-25.477893509855093, -49.28803740075671],
                     crs: L.CRS.EPSG3857,
@@ -63,7 +78,7 @@
 
         
     
-            var tile_layer_9bedd83ee0a12635787b10c686020e3e = L.tileLayer(
+            var tile_layer_6ea56af8b77588c9ec5dce0dc9ad2894 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -80,7 +95,7 @@
             );
         
     
-            tile_layer_9bedd83ee0a12635787b10c686020e3e.addTo(map_9498b11b1c072654e084f488c18defab);
+            tile_layer_6ea56af8b77588c9ec5dce0dc9ad2894.addTo(map_20bd38076fc4c9707fa34e01035c0c7f);
         
 </script>
 </html>

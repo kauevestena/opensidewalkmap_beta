@@ -1660,6 +1660,9 @@
             "Rua Doutor Goulin",
             "Rua Carlos Benetti",
             "Rua Mamoré",
+            "Rua Rolf Mertens",
+            "Rua Professor Milton Carneiro",
+            "Rua Maria Ballin Baroni",
             "Rua Doutor Roberto Barrozo",
             "Travessa Antônio Costa",
             "Rua Newton França Bittencourt",
@@ -1794,6 +1797,7 @@
             "Rua Gastão Câmara",
             "Rua Emílio de Menezes",
             "Rua Professora Rosa Saporski",
+            "Rua Valentin Trevisan",
             "Condomínio Alfredo Andersen",
             "Trilha de João e Maria",
             "Residencial Theodoro de Bona",
@@ -2114,6 +2118,7 @@
             "Rua Zeila Moura dos Santos",
             "Rua General Polli Coelho",
             "Acesso Ulisses/Baldur",
+            "Rua Desembargador José Pacheco Júnior",
             "Rua Engenheiro Alberto Monteiro de Carvalho",
             "Trilha 27º BLOG",
             "Rua Aníbal Goulart Maia Filho",
@@ -2415,7 +2420,6 @@
             "both",
             "no",
             "right",
-            "none",
             "left"
         ],
         "railway": [
@@ -2478,6 +2482,7 @@
         "alt_name": [
             "Jardim Ambiental Sete de Setembro",
             "Rua Quinze de Novembro;Rua 15 de Novembro",
+            "Rua Rolfe Mertens",
             "Rua Cruz Machado",
             "Rua 31 de Março - Vila Militar",
             "Rua Anna Aparecida Lopes Canet",
@@ -2631,6 +2636,10 @@
         ],
         "motorcar": [
             "no"
+        ],
+        "maxspeed:type": [
+            "BR:urban",
+            "sign"
         ],
         "construction": [
             "primary",
@@ -2809,9 +2818,6 @@
         ],
         "bridge:structure": [
             "beam"
-        ],
-        "maxspeed:type": [
-            "sign"
         ],
         "check_date:surface": [
             "2023-05-26",
