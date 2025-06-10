@@ -28,7 +28,8 @@ USERNAME = "kauevestena"
 # repository name, for many weblink references:
 REPO_NAME = "opensidewalkmap_beta"
 
-# BOUNDING BOXES
+# BOUNDING BOX:
+# by now is mostly a fallback method, if the API fails to download the city polygon using CITY_NAME
 # A good tool to find them is: bboxfinder.com
 # # entire city:
 BOUNDING_BOX = (
@@ -98,6 +99,6 @@ other_footways_subcatecories = {
         "footway": ["alley", "path", "yes"],
     },
     "potential_footways": {"highway": ["path", "track"]},
-    "informal_footways_layername": {"foot": ["yes", "permissive"]},
+    "informal_footways": {"foot": ["yes", "permissive"]},
     "pedestrian_areas": {},  # defined only by geometry type (Polygon,Multipolygon)
 }
