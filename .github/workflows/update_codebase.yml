@@ -1,15 +1,13 @@
-name: 'Auto‑Update Submodules'
+name: Update Submodule to Latest Main
 
 on:
-  push:
-    branches: ['main']
   workflow_dispatch:
 
 jobs:
   update-submodule:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout the repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -17,22 +15,17 @@ jobs:
           fetch-depth: 0
 
       - name: Sync submodule config
-        run: |
-          git submodule sync --recursive
+        run: git submodule sync --recursive
 
       - name: Update submodule to latest main
-        run: |
-          git submodule update --remote --merge oswm_codebase
+        run: git submodule update --remote --merge oswm_codebase
 
-      - name: Stage and commit changes
+      - name: Commit and push update
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add oswm_codebase
-          git diff --cached --quiet || git commit -m "ci: update oswm_codebase submodule to latest main"
-
-      - name: Push submodule update
-        run: |
-          git push origin HEAD:${{ github.ref }}
+          git diff --cached --quiet || git commit -m "ci: update oswm_codebase to latest main"
+          git push origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
