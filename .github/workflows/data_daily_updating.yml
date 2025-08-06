@@ -27,18 +27,15 @@ jobs:
     steps:
       #### actions/checkout ____________________________________________________
       # @see https://github.com/actions/checkout
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          submodules: false
+          submodules: 'recursive'
 
-
-      #### setup submodules __________________________________________________
-      - name: Update submodule
-        run: |
-          git config --file=.gitmodules submodule.oswm_codebase.url https://github.com/kauevestena/oswm_codebase.git
-          git submodule sync
-          git submodule update --init --remote --recursive
-
+      - run: |
+          cd oswm_codebase
+          git fetch origin
+          git reset --hard origin/main
+          cd ..
 
 
       #### setup-python ________________________________________________________
