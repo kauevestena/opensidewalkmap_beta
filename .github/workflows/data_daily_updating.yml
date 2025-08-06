@@ -32,12 +32,9 @@ jobs:
 
       #### setup submodules __________________________________________________
       - run: |
-          git submodule sync --recursive
-          git submodule update --init --recursive     
-          cd oswm_codebase
-          git fetch origin
-          git reset --hard origin/main
-          cd ..
+          git submodule deinit -f oswm_codebase
+          rm -rf oswm_codebase
+          git submodule add --force --branch main --name oswm_codebase https://github.com/kauevestena/oswm_codebase.git oswm_codebase
 
 
       #### setup-python ________________________________________________________
