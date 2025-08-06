@@ -1,31 +1,31 @@
-name: Update Submodule to Latest Main
+name: Update oswm_codebase sub-module
 
-on:
+on:            # manual trigger only
   workflow_dispatch:
 
 jobs:
-  update-submodule:
+  bump-submodule:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repository
+      - name: Checkout without submodules
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          submodules: recursive
           fetch-depth: 0
+          submodules: false
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Sync submodule config
-        run: git submodule sync --recursive
-
-      - name: Update submodule to latest main
-        run: git submodule update --remote --merge oswm_codebase
-
-      - name: Commit and push update
+      - name: Initialise sub-module and bump to tip of main
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git submodule sync --recursive
+          git submodule update --init oswm_codebase
+          cd oswm_codebase
+          git fetch origin
+          git checkout -B main origin/main   # always land on branch
+          cd ..
           git add oswm_codebase
-          git diff --cached --quiet || git commit -m "ci: update oswm_codebase to latest main"
-          git push origin HEAD:main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git diff --cached --quiet || {
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "ci: bump oswm_codebase to latest origin/main ($(date +%Y-%m-%d))"
+            git push --recurse-submodules=on-demand
+          }
