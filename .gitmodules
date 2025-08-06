@@ -1,6 +1,7 @@
 # to initialize it properly:
 # git submodule init
 # git submodule update
-[submodule "oswm_codebase"] 
-  path = oswm_codebase 
-  url = https://github.com/kauevestena/oswm_codebase
+[submodule "oswm_codebase"]
+  path = oswm_codebase
+  url = https://github.com/kauevestena/oswm_codebase.git
+  branch = main   # optional, if tracking branch
