@@ -11,11 +11,21 @@ jobs:
   fix_submodules:
     runs-on: ubuntu-latest
     steps:
+      #### Free up disk space ________________________________________________
+      - name: Free up disk space
+        run: |
+          sudo apt-get clean
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/lib/android
+          docker system prune -af || true
+          sudo du -h -d1 / | sort -hr | head -20
+      
       #### Checkout without submodules first __________________________________
       - uses: actions/checkout@v4
         with:
           submodules: false
-          fetch-depth: 0  # Get full history to help with submodule issues
+          fetch-depth: 1  # Shallow clone to save space
       
       #### Fix submodules ______________________________________________________
       - name: Fix submodule references
@@ -72,10 +82,17 @@ jobs:
       #### Verify the fix ______________________________________________________
       - name: Verify submodule is working
         run: |
-          echo "Testing submodule checkout from scratch..."
-          cd /tmp
-          git clone --recurse-submodules https://github.com/kauevestena/opensidewalkmap_beta.git test_repo
-          cd test_repo
-          echo "Submodule status in fresh clone:"
+          echo "Verifying submodule locally..."
           git submodule status
-          echo "✓ Submodule verification complete"
+          
+          # Check if submodule directory exists and has content
+          if [ -d "oswm_codebase" ] && [ "$(ls -A oswm_codebase)" ]; then
+            echo "✓ Submodule directory exists and has content"
+            echo "Submodule HEAD commit:"
+            cd oswm_codebase
+            git log --oneline -1
+            echo "✓ Submodule verification complete"
+          else
+            echo "✗ Submodule verification failed"
+            exit 1
+          fi
