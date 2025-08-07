@@ -1,0 +1,81 @@
+name: fix_submodules
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix_submodules:
+    runs-on: ubuntu-latest
+    steps:
+      #### Checkout without submodules first __________________________________
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          fetch-depth: 0  # Get full history to help with submodule issues
+      
+      #### Fix submodules ______________________________________________________
+      - name: Fix submodule references
+        run: |
+          echo "Current submodule status:"
+          git submodule status || echo "Submodule status failed"
+          
+          echo "Attempting to fix submodules..."
+          
+          # Method 1: Try normal submodule update
+          if git submodule update --init --recursive --force; then
+            echo "✓ Normal submodule update succeeded"
+          else
+            echo "✗ Normal update failed, trying to reset submodule..."
+            
+            # Method 2: Deinitialize and re-add submodule
+            git submodule deinit -f oswm_codebase || echo "Deinit failed (might not exist)"
+            rm -rf .git/modules/oswm_codebase || echo "Module cleanup failed"
+            rm -rf oswm_codebase || echo "Directory cleanup failed"
+            
+            # Re-add the submodule pointing to main
+            git submodule add -f https://github.com/kauevestena/oswm_codebase.git oswm_codebase
+            
+            # Initialize and update
+            git submodule update --init --recursive
+          fi
+          
+          # Ensure submodule is on main branch
+          cd oswm_codebase
+          git fetch origin
+          git checkout main
+          git pull origin main
+          cd ..
+          
+          echo "Final submodule status:"
+          git submodule status
+      
+      #### Commit the fix ______________________________________________________
+      - name: Commit submodule fix
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          
+          # Check if there are changes to commit
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git add .gitmodules oswm_codebase
+            git commit -m "Fix submodule reference to point to current main branch"
+            git push
+            echo "✓ Submodule fix committed and pushed"
+          fi
+      
+      #### Verify the fix ______________________________________________________
+      - name: Verify submodule is working
+        run: |
+          echo "Testing submodule checkout from scratch..."
+          cd /tmp
+          git clone --recurse-submodules https://github.com/kauevestena/opensidewalkmap_beta.git test_repo
+          cd test_repo
+          echo "Submodule status in fresh clone:"
+          git submodule status
+          echo "✓ Submodule verification complete"
