@@ -4,4 +4,4 @@
 [submodule "oswm_codebase"]
 	path = oswm_codebase
 	url = https://github.com/kauevestena/oswm_codebase.git
-  branch = main   # optional, if tracking branch
+	branch = main
