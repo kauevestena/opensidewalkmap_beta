@@ -9,6 +9,7 @@ osm_id,feat_type,key,value,commentary
 1394053635,node,crossing,zebra,"It's inappropriate for Kerbs, it's for crossings"
 1395984082,node,crossing,marked,"It's inappropriate for Kerbs, it's for crossings"
 1802228562,node,crossing,uncontrolled,"It's inappropriate for Kerbs, it's for crossings"
+1991377345,node,crossing,traffic_signals,"It's inappropriate for Kerbs, it's for crossings"
 2331647911,node,crossing,traffic_signals,"It's inappropriate for Kerbs, it's for crossings"
 2331647914,node,crossing,uncontrolled,"It's inappropriate for Kerbs, it's for crossings"
 2385144841,node,crossing,uncontrolled,"It's inappropriate for Kerbs, it's for crossings"

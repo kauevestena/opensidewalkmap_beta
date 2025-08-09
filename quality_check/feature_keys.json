@@ -222,7 +222,6 @@
         "tunnel:name",
         "opening_date",
         "tracktype",
-        "note",
         "mtb:scale:imba",
         "sac_scale",
         "location",

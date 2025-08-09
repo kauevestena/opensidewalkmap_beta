@@ -2010,7 +2010,6 @@
             "Condomínio Las Brisas",
             "Acesso condomínio",
             "Rua Agostinho Zaniolo",
-            "Rua Bocaiúva",
             "Condomínio Verona",
             "Rua Juvenal Negrello",
             "Rua Luzia dos Santos Silveira",
@@ -2618,7 +2617,6 @@
         "check_date": [
             "2022-01-10",
             "2025-01-10",
-            "2025-03-19",
             "2025-02-08"
         ],
         "leisure": [
@@ -2762,9 +2760,6 @@
         ],
         "tracktype": [
             "grade4"
-        ],
-        "note": [
-            "Theres a difference between IBGE data (Rua Bocayúva) and OSM data (Rua Bocaiúva)."
         ],
         "mtb:scale:imba": [
             "2"
