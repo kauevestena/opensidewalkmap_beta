@@ -1,81 +1,59 @@
 name: data_daily_updating
-# Controls when the workflow will run
+
 on:
-  # # Triggers the workflow on push or pull request events but only for the "main" branch
-  # push:
-  #   branches: ["main"]
-  # pull_request:
-  #   branches: ["main"]
   schedule:
-    # run 4h30min every day
-    - cron: "30 7 * * *"  # Fixed cron syntax
-  # Allows you to run this workflow manually from the Actions tab
+    # Runs every day at 07:30 UTC (04:30 in America/Sao_Paulo during BRT; 03:30 during BRST)
+    - cron: "30 7 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+
+concurrency:
+  # Prevent overlapping daily runs from stepping on each other
+  group: data_daily_updating
+  cancel-in-progress: false
+
+env:
+  TZ: America/Sao_Paulo
 
 jobs:
   data_daily_updating:
     runs-on: ubuntu-latest
-    # continue-on-error: true
     steps:
-      #### actions/checkout ____________________________________________________
-      # @see https://github.com/actions/checkout
+      # Checkout the latest commit on main and let it pull submodules properly
       - uses: actions/checkout@v4
         with:
-          submodules: false  # Don't fetch submodules initially
-      
-      #### Handle submodule manually for better error handling _________________
-      - name: Initialize and update submodules
-        run: |
-          git submodule init
-          # Try to update submodule, if it fails, clone fresh
-          if ! git submodule update --recursive; then
-            echo "Submodule update failed, trying to fix..."
-            git submodule deinit -f oswm_codebase
-            rm -rf .git/modules/oswm_codebase
-            git rm -f oswm_codebase
-            git submodule add https://github.com/kauevestena/oswm_codebase.git oswm_codebase
-            git submodule update --init --recursive
-          fi
-      
-      - name: Update submodule to latest main
-        run: |
-          cd oswm_codebase
-          git fetch origin
-          git reset --hard origin/main
-          cd ..
-      
-      #### setup-python ________________________________________________________
-      # @see https://github.com/actions/setup-python
+          ref: main               # ensure the run uses HEAD of main
+          fetch-depth: 0          # full history avoids submodule/rewritten history issues
+          submodules: recursive   # fetch submodules correctly
+
+      # (Optional but harmless) mark workspace safe for any git ops later
+      - name: Mark repo as safe for Git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      # Set up Python with built-in pip cache (fast installs on repeats)
       - uses: actions/setup-python@v4
         with:
           python-version: "3.x"
-          cache: 'pip' # caching pip dependencies
-      
-      #### setup dependencies __________________________________________________
-      - run: pip install -r oswm_codebase/requirements.txt
-      
-      #### main ________________________________________________________________
-      - run: sh oswm_codebase/runners/daily.sh
-  
-      #### upload ______________________________________________________________
-      # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
-      - name: Commit and push changes
+          cache: pip
+          cache-dependency-path: oswm_codebase/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r oswm_codebase/requirements.txt
+
+      - name: Run daily job
+        run: sh oswm_codebase/runners/daily.sh
+
+      - name: Commit and push changes (if any)
         run: |
-          DATETIME="$(TZ=":America/Sao_Paulo" date +"%Y-%m-%d")"
-          COMMIT_MESSAGE="data updating at $DATETIME"
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git pull
-          git add .
-          # Only commit if there are changes
-          if ! git diff --staged --quiet; then
-            git commit -m "$COMMIT_MESSAGE"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          DATETIME="$(date +'%Y-%m-%d' --date='TZ=\"America/Sao_Paulo\"')"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "data updating at $DATETIME"
             git push
           else
-            echo "No changes to commit"
+            echo "No changes to commit."
           fi
