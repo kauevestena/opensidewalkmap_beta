@@ -136,19 +136,23 @@
             z-index: 0;
         }
         
-        #overlay-image img {
+        #overlay-image iframe {
             position: absolute;
             top: 50%;
             left: 1%;
             height: 60%;
-            width: auto;
+            width: 300px;
             transform: translate(0%, -50%);
+            border: none;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
     </style>
 
     <link rel="icon" type="image/x-icon"
-        href="https://kauevestena.github.io/opensidewalkmap/assets/favicon_homepage.png">
+        href="oswm_codebase/assets/favicon_homepage.png">
 </head>
 
 <body>
@@ -159,7 +163,7 @@
 
         <a href="https://kauevestena.github.io/opensidewalkmap_beta/" id="node_link">
             <img 
-            src="https://kauevestena.github.io/opensidewalkmap_beta/oswm_codebase/assets/page_logo.png" 
+            src="oswm_codebase/assets/page_logo.png" 
             alt="OSWM Page Logo"  
             title="Click for more OSWM Node's Resources!!" 
             class="logo_img responsive" 
@@ -170,7 +174,7 @@
 
 
     <div id="overlay-image" style="display: none;">
-        <img src="https://kauevestena.github.io/opensidewalkmap_beta/oswm_codebase/assets/map_symbols/footway_categories.png" alt="Map Symbols" id="map-symbols-img">
+        <iframe src="oswm_codebase/assets/map_symbols/footway_categories.html" alt="Map Symbols" id="map-symbols-img"></iframe>
     </div>
     
 
@@ -493,9 +497,9 @@
                     map.setStyle(params['styles'][style]);
 
 
-                    // modify image overlay
+                    // modify iframe overlay
                     const overlayImage2 = document.getElementById('map-symbols-img');
-                    const legend_url = `https://kauevestena.github.io/opensidewalkmap_beta/oswm_codebase/assets/map_symbols/${style}.png`;
+                    const legend_url = `oswm_codebase/assets/map_symbols/${style}.html`;
 
                     overlayImage2.src = `${legend_url}?cb=${Date.now()}`; // to prevent caching
                     
