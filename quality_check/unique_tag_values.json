@@ -1690,6 +1690,7 @@
             "Rua Vadeco Suit",
             "Rua Canal Belém",
             "Ciclovia Parque Bacacheri",
+            "Rua Capitão Zeppin",
             "Rua Presidente Rodrigo Otávio",
             "Avenida Sete de Setembro",
             "Rua Doutor Claudino dos Santos",
@@ -2273,7 +2274,9 @@
             "Lumini Condomínio",
             "Rua Madre Maria dos Anjos",
             "Destro",
-            "Rua Dante Honório"
+            "Rua Dante Honório",
+            "Rua Cônego Januário da Cunha Barbosa",
+            "Rua Engenheiro Costa Barros"
         ],
         "wheelchair": [
             "yes",
@@ -2390,6 +2393,9 @@
         "bus": [
             "no",
             "designated|designated"
+        ],
+        "public_transport": [
+            "stop_position"
         ],
         "maxwidth": [
             "1"
@@ -2616,6 +2622,7 @@
         ],
         "check_date": [
             "2022-01-10",
+            "2025-08-13",
             "2025-01-10",
             "2025-02-08"
         ],
@@ -2703,7 +2710,8 @@
             "secondary",
             "trunk_link",
             "residential",
-            "bridge"
+            "bridge",
+            "tertiary"
         ],
         "cycleway": [
             "shared",

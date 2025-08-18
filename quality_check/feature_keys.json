@@ -155,6 +155,7 @@
         "tactile_paving",
         "source",
         "bus",
+        "public_transport",
         "maxwidth",
         "side",
         "motorcycle",
