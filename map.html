@@ -140,11 +140,14 @@
             position: absolute;
             top: 50%;
             left: 1%;
-            height: 60%;
-            width: 300px;
+            height: auto; /* let JS set exact height to content */
+            max-height: 70vh; /* clamp to viewport */
+            width: 20vw;
+            max-width: 320px;
+            min-width: 250px;
             transform: translate(0%, -50%);
             border: none;
-            background: white;
+            background: transparent;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
@@ -446,11 +449,39 @@
                     const overlayImage = document.getElementById('overlay-image');
                     // console.log(overlayImage);
 
+                    // helper to resize the legend iframe to its content
+                    const legendIframe = document.getElementById('map-symbols-img');
+                    function resizeLegendIframe() {
+                        if (!legendIframe) return;
+                        try {
+                            const doc = legendIframe.contentDocument || legendIframe.contentWindow?.document;
+                            if (!doc) return;
+                            // Measure content size
+                            const body = doc.body;
+                            const html = doc.documentElement;
+                            // Prefer the visible height (client/offset) to respect child's own max-height
+                            const visibleHeight = Math.max(
+                                body.clientHeight,
+                                html.clientHeight,
+                                body.offsetHeight,
+                                html.offsetHeight
+                            );
+                            // Clamp height to 70vh (matches CSS max-height)
+                            const maxH = Math.floor(window.innerHeight * 0.7);
+                            const newH = Math.min(visibleHeight, maxH);
+                            legendIframe.style.height = newH + 'px';
+                        } catch (e) {
+                            // silently ignore cross-origin errors (shouldn't happen for same-origin files)
+                        }
+                    }
+
                     const mapref = document.getElementById('map');
 
 
                     switcherButton.addEventListener('click', function() {
                         overlayImage.style.display = 'block';
+                        // queue resize after it becomes visible
+                        setTimeout(resizeLegendIframe, 50);
                     });
 
                     overlayImage.addEventListener('click', function() {
@@ -464,6 +495,14 @@
                     mapref.addEventListener("dblclick", function()  {
                         overlayImage.style.display = 'none';
                     });
+
+                    // Resize when iframe finishes loading new legend
+                    if (legendIframe) {
+                        legendIframe.addEventListener('load', resizeLegendIframe);
+                    }
+
+                    // Resize on viewport changes
+                    window.addEventListener('resize', resizeLegendIframe);
 
                     // TODO: ability to drag the image around the map
                     // TODO: add key shortcuts
@@ -502,6 +541,8 @@
                     const legend_url = `oswm_codebase/assets/map_symbols/${style}.html`;
 
                     overlayImage2.src = `${legend_url}?cb=${Date.now()}`; // to prevent caching
+                    // resize after source change (load handler will also run)
+                    setTimeout(resizeLegendIframe, 100);
                     
                 });
 
