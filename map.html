@@ -142,9 +142,9 @@
             left: 1%;
             height: auto; /* let JS set exact height to content */
             max-height: 70vh; /* clamp to viewport */
-            width: 20vw;
-            max-width: 320px;
-            min-width: 250px;
+            width: auto; /* width will be set by JS to fit content */
+            max-width: 360px; /* safety cap; slightly larger to avoid ellipsis */
+            min-width: 150px; /* avoid too narrow */
             transform: translate(0%, -50%);
             border: none;
             background: transparent;
@@ -457,20 +457,41 @@
                         try {
                             const doc = legendIframe.contentDocument || legendIframe.contentWindow?.document;
                             if (!doc) return;
-                // Measure content height from body only to avoid feedback loops
-                const body = doc.body;
-                            // Reset iframe height to auto before measuring to avoid compounding
+                            // Measure content size from body only to avoid feedback loops
+                            const body = doc.body;
+
+                            // Reset iframe dimensions before measuring to avoid compounding
                             legendIframe.style.height = 'auto';
+                            legendIframe.style.width = 'auto';
+
+                            // Temporarily let child's body size to its max-content width so we can measure natural width
+                            const prevBodyWidth = body.style.width;
+                            body.style.width = 'max-content';
+
+                            const contentWidth = body.scrollWidth;
                             const contentHeight = body.offsetHeight; // visible height (respects child's own layout)
-                            if (!contentHeight) {
+
+                            if (!contentWidth || !contentHeight) {
                                 // Try again shortly if content not ready/visible
+                                // restore body width before retry
+                                body.style.width = prevBodyWidth;
                                 setTimeout(resizeLegendIframe, 50);
                                 return;
                             }
-                // Clamp height to 70vh (matches CSS max-height)
+
+                            // Clamp dimensions
+                            const minW = 150;
+                            const maxW = 360; // keep consistent with CSS cap
+                            const tolerance = 12; // small extra width to avoid edge-case ellipsis
+                            const newW = Math.min(Math.max(contentWidth + tolerance, minW), maxW);
+                            legendIframe.style.width = newW + 'px';
+
                             const maxH = Math.floor(window.innerHeight * 0.7);
-                const newH = Math.min(contentHeight, maxH);
+                            const newH = Math.min(contentHeight, maxH);
                             legendIframe.style.height = newH + 'px';
+
+                            // restore body width
+                            body.style.width = prevBodyWidth;
                         } catch (e) {
                             // silently ignore cross-origin errors (shouldn't happen for same-origin files)
                         }
