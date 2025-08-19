@@ -499,7 +499,26 @@
 
                     // Resize when iframe finishes loading new legend
                     if (legendIframe) {
-                        legendIframe.addEventListener('load', resizeLegendIframe);
+                        legendIframe.addEventListener('load', function() {
+                            resizeLegendIframe();
+                            // attach a click listener inside the legend so clicks suppress the overlay
+                            try {
+                                const doc = legendIframe.contentDocument || legendIframe.contentWindow?.document;
+                                if (doc && doc.body) {
+                                    // remove previous handler if any
+                                    if (doc._oswm_legend_click_handler) {
+                                        doc.body.removeEventListener('click', doc._oswm_legend_click_handler);
+                                    }
+                                    doc._oswm_legend_click_handler = function (e) {
+                                        // hide parent overlay
+                                        overlayImage.style.display = 'none';
+                                    };
+                                    doc.body.addEventListener('click', doc._oswm_legend_click_handler);
+                                }
+                            } catch (e) {
+                                // ignore cross-origin or readiness errors
+                            }
+                        });
                     }
 
                     // Resize on viewport changes
