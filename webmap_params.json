@@ -377,7 +377,7 @@
                     "source-layer": "pedestrian_areas",
                     "type": "fill",
                     "paint": {
-                        "fill-color": "#63636380",
+                        "fill-color": "steelblue",
                         "fill-opacity": [
                             "case",
                             [
@@ -399,7 +399,7 @@
                     "source-layer": "sidewalks",
                     "type": "line",
                     "paint": {
-                        "line-color": "#63636380",
+                        "line-color": "steelblue",
                         "line-width": [
                             "case",
                             [
@@ -421,73 +421,7 @@
                     "source-layer": "crossings",
                     "type": "line",
                     "paint": {
-                        "line-color": [
-                            "case",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "crossing"
-                                ],
-                                "traffic_signals"
-                            ],
-                            "#1f78b4",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "crossing"
-                                ],
-                                "marked"
-                            ],
-                            "#a6cee3",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "crossing"
-                                ],
-                                "zebra"
-                            ],
-                            "#a6cee3",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "crossing"
-                                ],
-                                "uncontrolled"
-                            ],
-                            "#a6cee3",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "crossing"
-                                ],
-                                "unmarked"
-                            ],
-                            "#ffff99",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "crossing"
-                                ],
-                                "no"
-                            ],
-                            "#e31a1c",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "crossing"
-                                ],
-                                "?"
-                            ],
-                            "gray",
-                            "gray"
-                        ],
+                        "line-color": "#63636380",
                         "line-width": [
                             "case",
                             [
@@ -509,7 +443,7 @@
                     "source-layer": "stairways",
                     "type": "line",
                     "paint": {
-                        "line-color": "#63636380",
+                        "line-color": "steelblue",
                         "line-width": [
                             "case",
                             [
@@ -531,7 +465,7 @@
                     "source-layer": "main_footways",
                     "type": "line",
                     "paint": {
-                        "line-color": "#63636380",
+                        "line-color": "steelblue",
                         "line-width": [
                             "case",
                             [
@@ -553,7 +487,7 @@
                     "source-layer": "potential_footways",
                     "type": "line",
                     "paint": {
-                        "line-color": "#63636380",
+                        "line-color": "steelblue",
                         "line-width": [
                             "case",
                             [
@@ -575,7 +509,7 @@
                     "source-layer": "informal_footways",
                     "type": "line",
                     "paint": {
-                        "line-color": "#63636380",
+                        "line-color": "steelblue",
                         "line-width": [
                             "case",
                             [
@@ -598,64 +532,7 @@
                     "type": "circle",
                     "minzoom": 17,
                     "paint": {
-                        "circle-color": [
-                            "case",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "kerb"
-                                ],
-                                "flush"
-                            ],
-                            "#ffffff",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "kerb"
-                                ],
-                                "lowered"
-                            ],
-                            "#ffffff",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "kerb"
-                                ],
-                                "rolled"
-                            ],
-                            "#808080",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "kerb"
-                                ],
-                                "no"
-                            ],
-                            "#bebebe",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "kerb"
-                                ],
-                                "raised"
-                            ],
-                            "#000000",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "kerb"
-                                ],
-                                "?"
-                            ],
-                            "#d9d9d9",
-                            "gray"
-                        ],
+                        "circle-color": "#63636380",
                         "circle-opacity": 0.8,
                         "circle-radius": [
                             "case",
