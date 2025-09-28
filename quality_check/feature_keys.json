@@ -238,6 +238,7 @@
         "bridge:structure",
         "check_date:surface",
         "informal",
+        "car",
         "type"
     ]
 }

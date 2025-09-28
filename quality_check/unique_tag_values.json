@@ -1948,8 +1948,6 @@
             "Conjunto Residencial Iguaçu V",
             "Condomínio Residencial José Ferroni",
             "Residencial Morada Verde",
-            "Residencial Bella Cittá",
-            "Condomínio Spazio Carlotte",
             "Rua José Staback",
             "Rua Assis Alves de Souza",
             "Rua Alphonse Daudet",
@@ -2043,7 +2041,6 @@
             "Condomínio Porta das Águas",
             "Rua Flávio Dallegrave",
             "Trilha do Zôo",
-            "Condomínio Spazio Castelli",
             "Boulevard Club Condominium",
             "Condomínio Residencial Guaporé III",
             "Condomínio Residencial Guaporé IV",
@@ -2080,7 +2077,6 @@
             "Acesso Rua Paulo Chaves",
             "Acesso R. Theophilo Mansur",
             "Rua Lápis",
-            "Espaço de Convivência",
             "Rua Martha Cruz Lima Ratton",
             "Trilha Entorno Parque Centenário da Imigração Japonesa",
             "Trilha Entorno Parque Centenário Imigração Japonesa",
@@ -2819,6 +2815,9 @@
         "informal": [
             "yes",
             "no"
+        ],
+        "car": [
+            "yes"
         ],
         "type": [
             "multipolygon"
