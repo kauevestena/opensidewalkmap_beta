@@ -1496,12 +1496,12 @@
             "lowered=no",
             "barrier=kerb"
         ],
-        "direction": [
-            "backward"
-        ],
         "crossing:island": [
             "no",
             "yes"
+        ],
+        "direction": [
+            "backward"
         ],
         "tactile_paving": [
             "no",
