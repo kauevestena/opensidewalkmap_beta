@@ -1336,6 +1336,12 @@
         "lit": [
             "yes"
         ],
+        "addr:city": [
+            "Curitiba"
+        ],
+        "name": [
+            "Residencial Cidade Nova II"
+        ],
         "wheelchair": [
             "yes",
             "no",
@@ -1503,6 +1509,15 @@
         "direction": [
             "backward"
         ],
+        "addr:housenumber": [
+            "195"
+        ],
+        "addr:street": [
+            "Rua Anna Dinarowski Sobczyk"
+        ],
+        "addr:postcode": [
+            "81280430"
+        ],
         "tactile_paving": [
             "no",
             "yes",
@@ -1545,7 +1560,11 @@
             "2024-02-29"
         ],
         "landuse": [
-            "grass"
+            "grass",
+            "residential"
+        ],
+        "residential": [
+            "condominium"
         ]
     },
     "other_footways": {

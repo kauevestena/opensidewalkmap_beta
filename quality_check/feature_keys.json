@@ -100,6 +100,8 @@
         "barrier",
         "crossing_ref",
         "lit",
+        "addr:city",
+        "name",
         "wheelchair",
         "crossing:signals",
         "mapillary",
@@ -109,6 +111,9 @@
         "kerb",
         "crossing:island",
         "direction",
+        "addr:housenumber",
+        "addr:street",
+        "addr:postcode",
         "tactile_paving",
         "side",
         "traffic_sign:backward",
@@ -119,7 +124,8 @@
         "description",
         "footway",
         "check_date:kerb",
-        "landuse"
+        "landuse",
+        "residential"
     ],
     "other_footways": [
         "highway",

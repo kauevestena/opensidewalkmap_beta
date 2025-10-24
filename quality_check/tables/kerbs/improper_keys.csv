@@ -96,3 +96,4 @@ osm_id,feat_type,key,value,commentary
 659241105,way,crossing,zebra,"It's inappropriate for Kerbs, it's for crossings"
 953199745,way,crossing,unmarked,"It's inappropriate for Kerbs, it's for crossings"
 1195429846,way,crossing,uncontrolled,"It's inappropriate for Kerbs, it's for crossings"
+1221520922,way,name,Residencial Cidade Nova II,most kerbs have no name
