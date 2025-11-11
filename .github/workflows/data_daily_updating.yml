@@ -28,6 +28,12 @@ jobs:
           fetch-depth: 0          # full history avoids submodule/rewritten history issues
           submodules: recursive   # fetch submodules correctly
 
+      # Install GDAL system dependencies so packages like pyogrio can build
+      - name: Install GDAL system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gdal-bin libgdal-dev
+
       # (Optional but harmless) mark workspace safe for any git ops later
       - name: Mark repo as safe for Git
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
