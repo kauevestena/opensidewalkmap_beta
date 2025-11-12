@@ -45,8 +45,17 @@ jobs:
           cache: pip
           cache-dependency-path: oswm_codebase/requirements.txt
 
+      - name: Free up disk space
+        run: |
+          sudo apt clean
+          docker system prune -af || true
+          sudo rm -rf /usr/local/lib/android || true
+          sudo rm -rf /opt/ghc || true
+          sudo rm -rf /usr/share/dotnet || true
+          rm -rf ~/.cache/pip || true
+
       - name: Install dependencies
-        run: pip install -r oswm_codebase/requirements.txt
+        run: pip install --no-cache-dir -r oswm_codebase/requirements.txt
 
       - name: Run daily job
         run: sh oswm_codebase/runners/daily.sh
