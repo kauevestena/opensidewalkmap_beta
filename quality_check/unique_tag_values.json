@@ -1105,6 +1105,9 @@
         "footway:surface": [
             "paving_stones"
         ],
+        "check_date:surface": [
+            "2022-12-10"
+        ],
         "indoor": [
             "yes"
         ],
@@ -1113,9 +1116,6 @@
         ],
         "ramp:wheelchair": [
             "no"
-        ],
-        "check_date:surface": [
-            "2022-12-10"
         ],
         "check_date:smoothness": [
             "2025-02-05"
@@ -1930,6 +1930,7 @@
             "Villagio Maschio",
             "La Vilette Condomínio",
             "Rua Gerônimo Muraro",
+            "Rua Euclides Bandeira",
             "Rua General Aristides Athaýde Júnior",
             "Rua Ceará",
             "Rua Conselheiro Carrão",
@@ -2089,7 +2090,6 @@
             "Travessia Perigosa",
             "Harmony Village Condominium",
             "Travessa Oliveira Bello",
-            "Rua Euclides Bandeira",
             "Residencial Escorsin",
             "Rua Roberto Ramon Orta Viacava",
             "Acesso Odalvo Therézio da Rocha",
@@ -2441,7 +2441,8 @@
             "both",
             "no",
             "right",
-            "left"
+            "left",
+            "yes"
         ],
         "railway": [
             "abandoned"
@@ -2706,6 +2707,15 @@
             "wood",
             "concrete"
         ],
+        "check_date:surface": [
+            "2025-11-11",
+            "2023-05-26",
+            "2025-09-17",
+            "2024-03-01"
+        ],
+        "cycleway:width": [
+            "2"
+        ],
         "official_name": [
             "Praça do Redentor"
         ],
@@ -2790,6 +2800,10 @@
         "sac_scale": [
             "hiking"
         ],
+        "sidewalk:both": [
+            "separate",
+            "no"
+        ],
         "location": [
             "indoor"
         ],
@@ -2813,11 +2827,8 @@
         "cycleway:left": [
             "lane"
         ],
-        "cycleway:width": [
-            "2"
-        ],
-        "sidewalk:both": [
-            "no"
+        "check_date:footway:surface": [
+            "2025-11-11"
         ],
         "ramp:wheelchair": [
             "separate",
@@ -2828,11 +2839,6 @@
         ],
         "bridge:structure": [
             "beam"
-        ],
-        "check_date:surface": [
-            "2023-05-26",
-            "2025-09-17",
-            "2024-03-01"
         ],
         "informal": [
             "yes",

@@ -44,15 +44,15 @@
     
   <meta charset="UTF-8">
   
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-7afa8369e7034d66d8500708a395aae9"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "tactile_paving type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_22", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "All-Category Tactile Paving Presence", "transform": [{"filter": "include_filter_out_opt || datum['tactile_paving type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-7afa8369e7034d66d8500708a395aae9": [{"tactile_paving type": "?", "feature count": 18458, "length(km)": 903.8292889306559}, {"tactile_paving type": "bad", "feature count": 1, "length(km)": 0.0}, {"tactile_paving type": "contrasted", "feature count": 11, "length(km)": 0.0}, {"tactile_paving type": "no", "feature count": 1252, "length(km)": 31.78520933199968}, {"tactile_paving type": "yes", "feature count": 35, "length(km)": 0.31815644283459676}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-ac83728b558e8bb48ee9cef52be6c55f"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "tactile_paving type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "tactile_paving type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "All-Category Tactile Paving Presence", "transform": [{"filter": "include_filter_out_opt || datum['tactile_paving type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-ac83728b558e8bb48ee9cef52be6c55f": [{"tactile_paving type": "?", "feature count": 18492, "length(km)": 905.8419760609008}, {"tactile_paving type": "bad", "feature count": 1, "length(km)": 0.0}, {"tactile_paving type": "contrasted", "feature count": 11, "length(km)": 0.0}, {"tactile_paving type": "no", "feature count": 1252, "length(km)": 31.785209329312615}, {"tactile_paving type": "yes", "feature count": 35, "length(km)": 0.31815644283459676}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

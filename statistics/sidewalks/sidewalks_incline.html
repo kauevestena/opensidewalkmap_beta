@@ -44,15 +44,15 @@
     
   <meta charset="UTF-8">
   
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-f30419d13dc5ae108b3888fb0f908d9a"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "incline type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "incline type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_6", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Incline Values", "transform": [{"filter": "include_filter_out_opt || datum['incline type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-f30419d13dc5ae108b3888fb0f908d9a": [{"incline type": "?", "feature count": 7945, "length(km)": 306.35019354988054}, {"incline type": "down", "feature count": 3, "length(km)": 0.25660824910384794}, {"incline type": "up", "feature count": 5, "length(km)": 0.14381616421775528}, {"incline type": "yes", "feature count": 2, "length(km)": 0.00547928169343366}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-3c0e8dbb0cb7402ab5c9bb72c4d417ad"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "feature count", "type": "quantitative"}, "tooltip": [{"field": "incline type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "incline type", "sort": "-y", "type": "nominal"}, "y": {"field": "length(km)", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Sidewalks Incline Values", "transform": [{"filter": "include_filter_out_opt || datum['incline type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-3c0e8dbb0cb7402ab5c9bb72c4d417ad": [{"incline type": "?", "feature count": 7945, "length(km)": 306.3549471844785}, {"incline type": "down", "feature count": 3, "length(km)": 0.25660824910384794}, {"incline type": "up", "feature count": 5, "length(km)": 0.14381616421775528}, {"incline type": "yes", "feature count": 2, "length(km)": 0.00547928169343366}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
