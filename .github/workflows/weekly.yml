@@ -37,6 +37,12 @@ jobs:
           git pull -r https://github.com/kauevestena/oswm_codebase
           cd ..
 
+      #### Install system dependencies (GDAL) __________________________________
+      - name: Install system dependencies (GDAL)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gdal-bin libgdal-dev
+
       #### setup-python ________________________________________________________
       # @see https://github.com/actions/setup-python
       - uses: actions/setup-python@v4
