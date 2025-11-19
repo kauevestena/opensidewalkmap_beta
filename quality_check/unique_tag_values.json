@@ -432,7 +432,6 @@
             "1687760238101584",
             "4370746172956741",
             "2872571236315403",
-            "964203311081481",
             "845648726038757",
             "2982881221947491",
             "329365258537900",
@@ -1247,6 +1246,8 @@
             "compacted",
             "wood",
             "metal",
+            "grass",
+            "unpaved",
             "paved",
             "concrete:plates"
         ],
@@ -1520,6 +1521,7 @@
             "raised",
             "no",
             "rolled",
+            "unknown",
             "regular",
             "normal",
             "lowered=no",
@@ -1563,8 +1565,8 @@
         ],
         "smoothness": [
             "good",
-            "bad",
             "horrible",
+            "bad",
             "very_bad",
             "intermediate",
             "excellent"
@@ -1585,6 +1587,9 @@
         "landuse": [
             "grass",
             "residential"
+        ],
+        "two_sided": [
+            "yes"
         ],
         "residential": [
             "condominium"

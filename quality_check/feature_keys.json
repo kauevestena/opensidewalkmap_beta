@@ -125,6 +125,7 @@
         "footway",
         "check_date:kerb",
         "landuse",
+        "two_sided",
         "residential"
     ],
     "other_footways": [
