@@ -2,6 +2,7 @@ osm_id,feat_type,key,value,commentary
 688533022,way,opening_hours,Mo-Fr 08:00-18:00; Sa 10:00-16:00,"if it has opening hours it may be a private pathway, not a sidewalk"
 700028118,way,crossing,marked,"It's inappropriate for Sidewalks, probably mistakenly tagged"
 953199308,way,crossing,unmarked,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+953199919,way,crossing,unmarked,"It's inappropriate for Sidewalks, probably mistakenly tagged"
 960593708,way,crossing,unmarked,"It's inappropriate for Sidewalks, probably mistakenly tagged"
 960925946,way,crossing,unmarked,"It's inappropriate for Sidewalks, probably mistakenly tagged"
 978849016,way,crossing,marked,"It's inappropriate for Sidewalks, probably mistakenly tagged"

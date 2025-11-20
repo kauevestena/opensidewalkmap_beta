@@ -3,6 +3,7 @@
         "highway",
         "traffic_signals",
         "crossing",
+        "crossing:markings",
         "bicycle",
         "segregated",
         "button_operated",
