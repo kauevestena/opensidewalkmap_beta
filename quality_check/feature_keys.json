@@ -54,6 +54,7 @@
         "indoor",
         "embankment",
         "ramp:wheelchair",
+        "note",
         "check_date:smoothness",
         "check_date:lit"
     ],

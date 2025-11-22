@@ -89,7 +89,6 @@
             "Rua Cláudio Chatagnier",
             "Rua Comendador Antônio Domingues de Barros",
             "Praça Tiradentes",
-            "Rua Amazonas de Souza Azevedo",
             "Travessa Nestor de Castro",
             "Rua Moysés Marcondes",
             "Rua Alfaiate Alfredo Antônio Müller",
@@ -1140,6 +1139,9 @@
         "ramp:wheelchair": [
             "no"
         ],
+        "note": [
+            "é na verdade uma ciclovia compartilhada, mas a construção do viaduto interrompe e não tem saída"
+        ],
         "check_date:smoothness": [
             "2025-02-05"
         ],
@@ -1408,7 +1410,6 @@
             "501643240957781",
             "235485061667035",
             "157551396356937",
-            "862090991353985",
             "440255293604731",
             "906620736583022",
             "385015129481937",
@@ -2741,6 +2742,7 @@
         "check_date:surface": [
             "2025-11-11",
             "2023-05-26",
+            "2025-11-21",
             "2025-09-17",
             "2024-03-01"
         ],
@@ -2768,8 +2770,8 @@
         "construction": [
             "secondary",
             "trunk_link",
-            "residential",
             "bridge",
+            "residential",
             "tertiary"
         ],
         "cycleway": [
