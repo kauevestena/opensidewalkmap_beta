@@ -53,6 +53,7 @@ jobs:
           sudo rm -rf /opt/ghc || true
           sudo rm -rf /usr/share/dotnet || true
           rm -rf ~/.cache/pip || true
+          mkdir -p ~/.cache/pip
 
       - name: Install dependencies
         run: pip install --no-cache-dir -r oswm_codebase/requirements.txt
