@@ -960,7 +960,8 @@
             "interlock",
             "unhewn_cobblestone",
             "sand",
-            "grass_scrub"
+            "grass_scrub",
+            "unpaved"
         ],
         "foot": [
             "yes",
