@@ -1620,7 +1620,8 @@
             "60",
             "20",
             "10",
-            "30"
+            "30",
+            "80"
         ],
         "crossing": [
             "uncontrolled",
@@ -1650,7 +1651,8 @@
             "yes"
         ],
         "ref": [
-            "PR-415"
+            "PR-415",
+            "PR-418"
         ],
         "barrier": [
             "lift_gate",
@@ -2321,7 +2323,8 @@
             "Rua Cônego Januário da Cunha Barbosa",
             "Rua Engenheiro Costa Barros",
             "Acesso CEL Ver. João Derosso - Xaim",
-            "Passarela de Acesso ao CEL Xaxim"
+            "Passarela de Acesso ao CEL Xaxim",
+            "Rodovia Vereador Admar Bertolli"
         ],
         "wheelchair": [
             "yes",
@@ -2589,7 +2592,8 @@
             "Rua Liberato Evangelista do Prado",
             "Rua Rubens Orlando Brunor",
             "Rua Três",
-            "Travessa Vinte e Um de Novembro;Travessa 21 de Novembro"
+            "Travessa Vinte e Um de Novembro;Travessa 21 de Novembro",
+            "Rodoanel Contorno Norte;Rodovia Contorno Norte de Curitiba"
         ],
         "old_name": [
             "Rua das Flores",
@@ -2767,7 +2771,8 @@
             "trunk_link",
             "bridge",
             "residential",
-            "tertiary"
+            "tertiary",
+            "trunk"
         ],
         "cycleway": [
             "shared",
