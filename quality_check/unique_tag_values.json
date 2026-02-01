@@ -1609,8 +1609,8 @@
             "path",
             "secondary_link",
             "unclassified",
-            "track",
             "construction",
+            "track",
             "corridor",
             "tertiary_link"
         ],
@@ -1726,6 +1726,7 @@
             "Ciclovia Batel Parque Barigui",
             "Rua Isaac Guelmann",
             "Trilha do Bosque do Papa",
+            "Rua Alcino Guanabara",
             "Rua Ivo Leão",
             "Rua Trinta e Um de Março - Vila Militar",
             "Rua Natálio Scuissiato",
@@ -2324,7 +2325,9 @@
             "Rua Engenheiro Costa Barros",
             "Acesso CEL Ver. João Derosso - Xaim",
             "Passarela de Acesso ao CEL Xaxim",
-            "Rodovia Vereador Admar Bertolli"
+            "Rodovia Vereador Admar Bertolli",
+            "Rua Paulo Kissula",
+            "Rua Doutor Júlio César Ribeiro de Souza"
         ],
         "wheelchair": [
             "yes",
@@ -2751,6 +2754,14 @@
         "official_name": [
             "Praça do Redentor"
         ],
+        "construction": [
+            "secondary",
+            "trunk_link",
+            "bridge",
+            "residential",
+            "tertiary",
+            "trunk"
+        ],
         "destination:backward": [
             "Acesso Parque Barigui"
         ],
@@ -2765,14 +2776,6 @@
         ],
         "hazard": [
             "school_zone"
-        ],
-        "construction": [
-            "secondary",
-            "trunk_link",
-            "bridge",
-            "residential",
-            "tertiary",
-            "trunk"
         ],
         "cycleway": [
             "shared",
