@@ -179,5 +179,4 @@ cache/
 
 # development stuff
 .vscode
-tests/
-tests.py
+
