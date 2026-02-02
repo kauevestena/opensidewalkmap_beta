@@ -2529,7 +2529,8 @@
         ],
         "oneway": [
             "yes",
-            "no"
+            "no",
+            "-1"
         ],
         "psv": [
             "designated|designated"
