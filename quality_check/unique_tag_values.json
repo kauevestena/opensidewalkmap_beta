@@ -2124,6 +2124,7 @@
             "Residencial Escorsin",
             "Rua Roberto Ramon Orta Viacava",
             "Acesso Odalvo Therézio da Rocha",
+            "Rua Rodrigo Faiçal Zeni",
             "Rua da Cidadania Santa Felicidade",
             "Acesso Rua Paulo Chaves",
             "Acesso R. Theophilo Mansur",
@@ -2859,6 +2860,10 @@
             "seasonal",
             "stepping_stones"
         ],
+        "informal": [
+            "yes",
+            "no"
+        ],
         "sport": [
             "running"
         ],
@@ -2877,10 +2882,6 @@
         ],
         "bridge:structure": [
             "beam"
-        ],
-        "informal": [
-            "yes",
-            "no"
         ],
         "car": [
             "yes"

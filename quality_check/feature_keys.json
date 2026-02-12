@@ -241,13 +241,13 @@
         "check_date:handrail",
         "driving_side",
         "ford",
+        "informal",
         "sport",
         "cycleway:left",
         "check_date:footway:surface",
         "ramp:wheelchair",
         "floating",
         "bridge:structure",
-        "informal",
         "car",
         "type"
     ]
