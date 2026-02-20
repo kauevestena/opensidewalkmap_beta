@@ -1617,10 +1617,10 @@
         "maxspeed": [
             "40",
             "50",
+            "30",
             "60",
             "20",
             "10",
-            "30",
             "80"
         ],
         "crossing": [
@@ -1720,6 +1720,7 @@
             "Rua Joaquim Caetano da Silva",
             "Rua João Bettega",
             "Rua Jorge Gomes Rosa",
+            "Rua Pedro Ivo",
             "Rua Afonso Pedri",
             "Rua Mato Grosso",
             "Rua Alagoas",
@@ -1896,6 +1897,7 @@
             "Rua Aracaju",
             "Rua Doutor Nelson José Correa",
             "Rua Edith Barcelos Schramm",
+            "Rua Jackson Figueiredo",
             "Rua Atílio Bório",
             "Entrada CCAA",
             "Entrada Restaurante Limoreiro",
@@ -2106,7 +2108,6 @@
             "Rua Henrique Gregório Machado",
             "Rua Gabriel Corisco Domingues",
             "Rua Engenheiro Ademar Munhoz",
-            "Rua Pedro Ivo",
             "Rua Kellers",
             "Rua Crescência Bertholdi",
             "Atalho do Posto de Saúde",
@@ -2443,6 +2444,7 @@
             "IPPUC"
         ],
         "bus": [
+            "yes",
             "no",
             "designated|designated"
         ],
@@ -2532,9 +2534,6 @@
             "yes",
             "no",
             "-1"
-        ],
-        "psv": [
-            "designated|designated"
         ],
         "alt_name": [
             "Jardim Ambiental Sete de Setembro",
