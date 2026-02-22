@@ -1740,7 +1740,7 @@
             "Trilha Barigui",
             "Marginal Linha Verde",
             "Rua Vadeco Suit",
-            "Rua Canal Belém",
+            "Avenida Canal Belém",
             "Ciclovia Parque Bacacheri",
             "Rua Capitão Zeppin",
             "Rua Presidente Rodrigo Otávio",
@@ -2329,7 +2329,8 @@
             "Passarela de Acesso ao CEL Xaxim",
             "Rodovia Vereador Admar Bertolli",
             "Rua Paulo Kissula",
-            "Rua Doutor Júlio César Ribeiro de Souza"
+            "Rua Doutor Júlio César Ribeiro de Souza",
+            "Acesso Neno Grande"
         ],
         "wheelchair": [
             "yes",
@@ -2884,6 +2885,9 @@
         ],
         "car": [
             "yes"
+        ],
+        "fixme": [
+            "Checar se é aqui mesmo o acesso"
         ],
         "type": [
             "multipolygon"
