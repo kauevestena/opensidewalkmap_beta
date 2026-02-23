@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   # Prevent overlapping daily runs from stepping on each other
@@ -59,9 +60,50 @@ jobs:
         run: pip install --no-cache-dir -r oswm_codebase/requirements.txt
 
       - name: Run daily job
+        id: daily_job
+        continue-on-error: true
         run: sh oswm_codebase/runners/daily.sh
 
+      - name: Validate generated tiles
+        id: validate_tiles
+        continue-on-error: true
+        run: |
+          echo "=== PMTiles file sizes ==="
+          ls -la data/tiles/*.pmtiles 2>/dev/null || echo "No PMTiles files found!"
+          echo ""
+
+          VALIDATION_FAILED=0
+
+          # Fail if any core layer tile is missing or suspiciously small
+          for layer in sidewalks crossings kerbs; do
+            FILE="data/tiles/${layer}.pmtiles"
+            if [ ! -f "$FILE" ]; then
+              echo "MISSING: ${FILE}"
+              VALIDATION_FAILED=1
+            else
+              SIZE=$(stat -c%s "$FILE" 2>/dev/null || echo 0)
+              if [ "$SIZE" -lt 1024 ]; then
+                echo "TOO SMALL: ${FILE} (${SIZE} bytes)"
+                VALIDATION_FAILED=1
+              else
+                echo "OK: ${FILE} (${SIZE} bytes)"
+              fi
+            fi
+          done
+
+          # Check tile generation report if present
+          REPORT="data/tiles/tile_generation_report.json"
+          if [ -f "$REPORT" ]; then
+            echo ""
+            echo "=== Tile Generation Report ==="
+            cat "$REPORT"
+            python3 oswm_codebase/other/auxiliary_scripts/validate_tiles.py || VALIDATION_FAILED=1
+          fi
+
+          exit $VALIDATION_FAILED
+
       - name: Commit and push changes (if any)
+        if: steps.daily_job.outcome == 'success' && steps.validate_tiles.outcome == 'success'
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
@@ -73,3 +115,16 @@ jobs:
           else
             echo "No changes to commit."
           fi
+
+      - name: Create failure issue
+        if: steps.daily_job.outcome == 'failure' || steps.validate_tiles.outcome == 'failure'
+        uses: actions/github-script@v7
+        env:
+          DAILY_JOB_OUTCOME: ${{ steps.daily_job.outcome }}
+          VALIDATE_TILES_OUTCOME: ${{ steps.validate_tiles.outcome }}
+        with:
+          script-path: oswm_codebase/other/auxiliary_scripts/create_failure_issue.js
+
+      - name: Fail the workflow if pipeline or validation failed
+        if: steps.daily_job.outcome == 'failure' || steps.validate_tiles.outcome == 'failure'
+        run: exit 1

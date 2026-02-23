@@ -56,16 +56,44 @@ jobs:
       - run: pip install -r oswm_codebase/requirements.txt
 
       ### main ________________________________________________________________
-      - run: sh oswm_codebase/runners/weekly.sh
+      - name: Run weekly job
+        id: weekly_job
+        continue-on-error: true
+        run: sh oswm_codebase/runners/weekly.sh
   
       #### upload ______________________________________________________________
       # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
-      - run: |
+      - name: Commit and push changes (if any)
+        if: steps.weekly_job.outcome == 'success'
+        run: |
           DATETIME="$(TZ=":America/Sao_Paulo" date +"%Y-%m-%d")"
           COMMIT_MESSAGE="weekly updates at $DATETIME"
           git config user.name github-actions
           git config user.email github-actions@github.com
           git pull
           git add .
-          git commit -m "$COMMIT_MESSAGE"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "$COMMIT_MESSAGE"
+            git push
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Create failure issue
+        if: steps.weekly_job.outcome == 'failure'
+        uses: actions/github-script@v7
+        env:
+          WEEKLY_JOB_OUTCOME: ${{ steps.weekly_job.outcome }}
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Weekly workflow failed on ${new Date().toISOString().slice(0,10)}`,
+              body: `The weekly update job failed.\n\n- **weekly_job**: ${process.env.WEEKLY_JOB_OUTCOME}\n\n[View run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`,
+              labels: ['bug']
+            });
+
+      - name: Fail the workflow if weekly job failed
+        if: steps.weekly_job.outcome == 'failure'
+        run: exit 1
