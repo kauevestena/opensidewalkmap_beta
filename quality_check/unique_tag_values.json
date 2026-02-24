@@ -2447,7 +2447,7 @@
         "bus": [
             "yes",
             "no",
-            "designated|designated"
+            "designated"
         ],
         "public_transport": [
             "stop_position"
