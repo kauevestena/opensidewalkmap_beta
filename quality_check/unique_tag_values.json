@@ -1817,7 +1817,7 @@
             "Condominio Villagio di Garda",
             "Jardim Vergínia VI",
             "Rua Armando Lobo Alvim",
-            "Travessa Jorje Cuquel",
+            "Travessa Jorge Cuquel",
             "Rua Pedro Haj Mussi",
             "Rua General de Brigada Carlos Castor de Menezes",
             "Rua Ezequiel Honório Vialle",
@@ -2330,7 +2330,9 @@
             "Rodovia Vereador Admar Bertolli",
             "Rua Paulo Kissula",
             "Rua Doutor Júlio César Ribeiro de Souza",
-            "Acesso Neno Grande"
+            "Acesso Neno Grande",
+            "Rua Thadeu Opolski",
+            "Acesso Senador Amaury Silva"
         ],
         "wheelchair": [
             "yes",
