@@ -99,7 +99,7 @@
             "Rua Bruno Filgueira",
             "Rua Padre Dehon",
             "Rua Dalila Rolim Vargas",
-            "Rua Luíz Leopoldo Landal",
+            "Rua Luiz Leopoldo Landal",
             "Rua Tenente João Gomes da Silva"
         ],
         "wheelchair": [
@@ -1723,7 +1723,6 @@
             "Rua Pedro Ivo",
             "Rua Afonso Pedri",
             "Rua Mato Grosso",
-            "Rua Alagoas",
             "Ciclovia Batel Parque Barigui",
             "Rua Isaac Guelmann",
             "Trilha do Bosque do Papa",
@@ -2113,6 +2112,7 @@
             "Atalho do Posto de Saúde",
             "Rua Senador Alencar Guimarães",
             "Rua Alberto Potier",
+            "Rua Canal Belém",
             "Ciclovia Marechal Floriano Peixoto",
             "Rua José Rissato",
             "Avenida Nossa Senhora da Penha",
@@ -2734,10 +2734,6 @@
             "19",
             "10"
         ],
-        "vehicle": [
-            "private",
-            "no"
-        ],
         "cycleway:surface": [
             "asphalt",
             "wood",
@@ -2867,6 +2863,9 @@
         ],
         "informal": [
             "yes",
+            "no"
+        ],
+        "vehicle": [
             "no"
         ],
         "sport": [
