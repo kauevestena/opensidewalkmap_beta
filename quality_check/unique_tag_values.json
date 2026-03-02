@@ -1651,7 +1651,6 @@
             "yes"
         ],
         "ref": [
-            "PR-415",
             "PR-418"
         ],
         "barrier": [
@@ -1785,7 +1784,7 @@
             "Parque das Cerejeiras Condomínio",
             "Rua Doutor Albino Farracha de Castro",
             "Rua Dídimo Cercal da Silva",
-            "Rua Tadeo Morozowicz",
+            "Rua Tadeu Morozowicz",
             "Veredas Barigui",
             "Condomínio Cabana dos Lobos I",
             "Montreux Village",
@@ -2311,7 +2310,7 @@
             "Caminho do campo",
             "Rua Engenheiro Leão Sounis",
             "Rua Miguel Caluf",
-            "Rua Bortolo Gusso",
+            "Rua Bôrtolo Gusso",
             "Rua Frederico Guilherme Virmond",
             "Avenida Henry Ford",
             "Residencial Vilagio D'Oro",
@@ -2332,7 +2331,13 @@
             "Rua Doutor Júlio César Ribeiro de Souza",
             "Acesso Neno Grande",
             "Rua Thadeu Opolski",
-            "Acesso Senador Amaury Silva"
+            "Acesso Senador Amaury Silva",
+            "Rua Maria Josephina Monteiro Franco",
+            "Acesso Nadir Freza",
+            "Acesso Oziel Domingos de Oliveira",
+            "Travessa ND",
+            "Travessa Logradouro Não Denominado",
+            "Travessa Raul Ribeiro Baptista"
         ],
         "wheelchair": [
             "yes",
@@ -2549,6 +2554,7 @@
             "Rua Zulmira Bacila",
             "Avenida 7 de Setembro",
             "Rua Clementina de Paula Ferreira",
+            "Rua Tadeo Morozowicz",
             "Jardim Verginia 5;Jardim Verginia Cinco",
             "Jardim Verginia 9;Jadim Verginia Nove",
             "Jardim Verginia 10;Jadim Verginia Dez",
@@ -2759,7 +2765,6 @@
         ],
         "construction": [
             "secondary",
-            "trunk_link",
             "bridge",
             "residential",
             "tertiary",
@@ -2769,8 +2774,7 @@
             "Acesso Parque Barigui"
         ],
         "junction": [
-            "roundabout",
-            "circular"
+            "roundabout"
         ],
         "service": [
             "parking_aisle",
@@ -2891,7 +2895,9 @@
             "yes"
         ],
         "fixme": [
-            "Checar se é aqui mesmo o acesso"
+            "Checar se é aqui mesmo o acesso",
+            "ND de Nâo Denominada. Obter nome real e atualizar também os endereços anexos",
+            "Obter nome real e atualizar também os endereços anexos"
         ],
         "type": [
             "multipolygon"
