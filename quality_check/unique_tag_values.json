@@ -2210,6 +2210,7 @@
             "Largo 1",
             "Largo 2",
             "Largo 3",
+            "Rua Rio dos Padilhas",
             "Rua General Luiz Carlos Pereira Tourinho",
             "Rua Guilherme Nizer",
             "Rua Humberto Negrello",
@@ -2582,6 +2583,7 @@
             "Condomínio Parque das Pedras Dois; Condomínio Parque das Pedras 2",
             "Rua Edson Campos Matersich; Rua Edson Campos Mastersich",
             "Rua B",
+            "Rua Paulo Júlio Reksidler",
             "Conjunto Residencial Cotolengo Dois; Conjunto Residencial Cotolengo 2",
             "Rua José Mansur",
             "Rua Claudino dos Santos",
@@ -2599,6 +2601,7 @@
             "Largo Um",
             "Largo Dois",
             "Largo Três",
+            "Rua Ribeirão dos Padilhas",
             "Avenida Bortolo Gava;Rua Bertolo Gava",
             "Rua Um",
             "Avenida 7 de Setembro; Rua 7 de Setembro; Rua Sete de Setembro",
@@ -2890,6 +2893,9 @@
         ],
         "bridge:structure": [
             "beam"
+        ],
+        "source:alt_name": [
+            "CNEFE 2022 / IBGE"
         ],
         "car": [
             "yes"

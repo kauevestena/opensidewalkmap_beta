@@ -248,6 +248,7 @@
         "ramp:wheelchair",
         "floating",
         "bridge:structure",
+        "source:alt_name",
         "car",
         "fixme",
         "type"
