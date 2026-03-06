@@ -1355,11 +1355,11 @@
             "yes",
             "no"
         ],
-        "barrier": [
-            "kerb"
-        ],
         "crossing_ref": [
             "zebra"
+        ],
+        "barrier": [
+            "kerb"
         ],
         "lit": [
             "yes"
@@ -1650,6 +1650,9 @@
         "button_operated": [
             "yes"
         ],
+        "crossing_ref": [
+            "zebra"
+        ],
         "ref": [
             "PR-418"
         ],
@@ -1657,9 +1660,6 @@
             "lift_gate",
             "gate",
             "turnstile"
-        ],
-        "crossing_ref": [
-            "zebra"
         ],
         "lit": [
             "yes",
@@ -2634,7 +2634,8 @@
             "merge_to_left",
             "through",
             "through|right",
-            "through;left|through|through"
+            "through;left|through|through",
+            "left|through;left|through"
         ],
         "bridge": [
             "yes",
