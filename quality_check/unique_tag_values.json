@@ -1358,6 +1358,10 @@
         "crossing_ref": [
             "zebra"
         ],
+        "crossing:signals": [
+            "yes",
+            "no"
+        ],
         "barrier": [
             "kerb"
         ],
@@ -1374,10 +1378,6 @@
             "yes",
             "no",
             "limited"
-        ],
-        "crossing:signals": [
-            "yes",
-            "no"
         ],
         "mapillary": [
             "616392826423407",
@@ -1754,6 +1754,7 @@
             "Rua Monte Hermon",
             "Rua José Afonso Cordeiro",
             "Rua Cambé",
+            "Rua da Cidadania CIC",
             "Condomínio Parque das Amoreiras",
             "Rua Engenheiro Lourival Maciel",
             "Rua Izidoro Wosch",
