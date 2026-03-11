@@ -2701,7 +2701,8 @@
             "no"
         ],
         "motorcar": [
-            "no"
+            "no",
+            "yes"
         ],
         "maxspeed:type": [
             "BR:urban",
@@ -2898,9 +2899,6 @@
         ],
         "source:alt_name": [
             "CNEFE 2022 / IBGE"
-        ],
-        "car": [
-            "yes"
         ],
         "fixme": [
             "Checar se é aqui mesmo o acesso",
