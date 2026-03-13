@@ -2,7 +2,6 @@
     "sidewalks": {
         "highway": [
             "footway",
-            "pedestrian",
             "path",
             "steps"
         ],
@@ -63,7 +62,6 @@
             "Rua Padre Agostinho",
             "Avenida Nossa Senhora da Penha",
             "Avenida Visconde de Guarapuava",
-            "Galeria Guimarães & Cia",
             "Rua da Cidadania Boa Vista",
             "Rua Tenente-Coronel Vilagrán Cabrita",
             "Rua Fernandes de Barros",
@@ -976,9 +974,6 @@
             "no",
             "permissive",
             "yes"
-        ],
-        "opening_hours": [
-            "Mo-Fr 08:00-18:00; Sa 10:00-16:00"
         ],
         "addr:housenumber": [
             "701"
@@ -2141,6 +2136,7 @@
             "Rua da Cidadania Pinheirinho",
             "Rua Henrique Mehl",
             "Rua Presidente Carlos Cavalcanti",
+            "Galeria Guimarães & Cia",
             "Rua Ivo Otto",
             "Desembarque",
             "Embarque Interestadual",
@@ -2410,7 +2406,8 @@
             "Mo-Fr 06:40-00:00; Sa 06:40-23:00; Su 06:40-20:00",
             "Tu-Su 06:00-20:00; Mo off",
             "Mo-Sa 07:00-19:00",
-            "Mo-Fr 08:00-18:00"
+            "Mo-Fr 08:00-18:00",
+            "Mo-Fr 08:00-18:00; Sa 10:00-16:00"
         ],
         "crossing:island": [
             "yes",
