@@ -2325,7 +2325,6 @@
             "Passarela de Acesso ao CEL Xaxim",
             "Rodovia Vereador Admar Bertolli",
             "Rua Paulo Kissula",
-            "Rua Doutor Júlio César Ribeiro de Souza",
             "Acesso Neno Grande",
             "Rua Thadeu Opolski",
             "Acesso Senador Amaury Silva",
@@ -2334,7 +2333,8 @@
             "Acesso Oziel Domingos de Oliveira",
             "Travessa ND",
             "Travessa Logradouro Não Denominado",
-            "Travessa Raul Ribeiro Baptista"
+            "Travessa Raul Ribeiro Baptista",
+            "Rua Roma"
         ],
         "wheelchair": [
             "yes",
@@ -2631,8 +2631,7 @@
             "merge_to_left",
             "through",
             "through|right",
-            "through;left|through|through",
-            "left|through;left|through"
+            "through;left|through|through"
         ],
         "bridge": [
             "yes",
@@ -2650,6 +2649,7 @@
         ],
         "destination": [
             "Retorno",
+            "Rua Paraíba",
             "Acesso CEASA"
         ],
         "area": [
@@ -2685,6 +2685,7 @@
         ],
         "check_date": [
             "2022-01-10",
+            "2026-03-19",
             "2025-08-13",
             "2025-01-10",
             "2025-02-08"
