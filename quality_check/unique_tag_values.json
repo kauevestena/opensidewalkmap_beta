@@ -1075,8 +1075,7 @@
         ],
         "layer": [
             "1",
-            "-1",
-            "0"
+            "-1"
         ],
         "tunnel": [
             "yes",
@@ -2334,7 +2333,8 @@
             "Travessa ND",
             "Travessa Logradouro Não Denominado",
             "Travessa Raul Ribeiro Baptista",
-            "Rua Roma"
+            "Rua Roma",
+            "Rua Eduardo Polak"
         ],
         "wheelchair": [
             "yes",
