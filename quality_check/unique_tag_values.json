@@ -1551,7 +1551,7 @@
         "traffic_sign:backward": [
             "BR:R-1"
         ],
-        "source:geometry": [
+        "source:position": [
             "Mapillary 2019-04-27"
         ],
         "kerb:height": [

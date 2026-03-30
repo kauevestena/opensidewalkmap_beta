@@ -118,7 +118,7 @@
         "tactile_paving",
         "side",
         "traffic_sign:backward",
-        "source:geometry",
+        "source:position",
         "kerb:height",
         "smoothness",
         "sidewalk",
