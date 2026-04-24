@@ -236,7 +236,6 @@
         "location",
         "stairs",
         "check_date:handrail",
-        "driving_side",
         "ford",
         "informal",
         "vehicle",
@@ -247,6 +246,7 @@
         "floating",
         "bridge:structure",
         "source:alt_name",
+        "driving_side",
         "fixme",
         "type"
     ]

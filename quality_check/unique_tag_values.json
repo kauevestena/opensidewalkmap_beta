@@ -2858,9 +2858,6 @@
             "2022-07-16",
             "2024-02-29"
         ],
-        "driving_side": [
-            "left"
-        ],
         "ford": [
             "seasonal",
             "stepping_stones"
@@ -2893,6 +2890,9 @@
         ],
         "source:alt_name": [
             "CNEFE 2022 / IBGE"
+        ],
+        "driving_side": [
+            "left"
         ],
         "fixme": [
             "Checar se é aqui mesmo o acesso",
