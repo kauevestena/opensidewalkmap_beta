@@ -98,7 +98,8 @@
             "Rua Padre Dehon",
             "Rua Dalila Rolim Vargas",
             "Rua Luiz Leopoldo Landal",
-            "Rua Tenente João Gomes da Silva"
+            "Rua Tenente João Gomes da Silva",
+            "Avenida Canal Belém (Marginal Leste)"
         ],
         "wheelchair": [
             "no",
@@ -1068,7 +1069,8 @@
             "no"
         ],
         "alt_name": [
-            "Rua Carlos Benetti"
+            "Rua Carlos Benetti",
+            "Rua Canal Belém (Marginal Leste)"
         ],
         "bridge": [
             "yes"
@@ -1170,8 +1172,8 @@
             "dismount"
         ],
         "segregated": [
-            "yes",
-            "no"
+            "no",
+            "yes"
         ],
         "button_operated": [
             "yes"
@@ -1734,7 +1736,7 @@
             "Trilha Barigui",
             "Marginal Linha Verde",
             "Rua Vadeco Suit",
-            "Avenida Canal Belém",
+            "Avenida Canal Belém (Marginal Leste)",
             "Ciclovia Parque Bacacheri",
             "Rua Capitão Zeppin",
             "Rua Presidente Rodrigo Otávio",
@@ -1855,7 +1857,6 @@
             "Residencial Filadélfia",
             "Condomínio João Turin",
             "Condomínio Arthur Nísio",
-            "Residencial Simão Brante",
             "Rua Guilherme Mehl",
             "Rua João Winter",
             "Rua José de Souza",
@@ -2002,6 +2003,7 @@
             "Condomínio Residencial Pio Lanteri",
             "Condomínio Primavera",
             "Condomínio Residencial Ouro Preto",
+            "Rua Luiz Carlos Muller",
             "Condomínio Residencial Santa Bárbara",
             "Condomínio Residencial Colina das Araucárias",
             "Residencial Sagres",
@@ -2084,7 +2086,6 @@
             "Rua João Aguida",
             "Acesso João Afonso",
             "Rua República Islâmica do Irã",
-            "Residencial Vila Paradiso",
             "Rua Coronel Luiz José dos Santos",
             "Rua William Booth",
             "Condomínio Porta das Águas",
@@ -2108,7 +2109,6 @@
             "Atalho do Posto de Saúde",
             "Rua Senador Alencar Guimarães",
             "Rua Alberto Potier",
-            "Rua Canal Belém",
             "Ciclovia Marechal Floriano Peixoto",
             "Rua José Rissato",
             "Avenida Nossa Senhora da Penha",
@@ -2267,6 +2267,7 @@
             "Rua Maria Cristina Gaudêncio",
             "Rua Francisco Juglair",
             "Condomínio Vila Unika",
+            "Avenida Canal Belém (Marginal Oeste)",
             "Rua Professor José Nogueira dos Santos",
             "Rua Leonil Dolores Nakamura",
             "Rua Joaquim Chagas Lima",
@@ -2312,7 +2313,6 @@
             "Rua Bôrtolo Gusso",
             "Rua Frederico Guilherme Virmond",
             "Avenida Henry Ford",
-            "Residencial Vilagio D'Oro",
             "Residencial Fênix",
             "Conjunto Residencial Petrópolis",
             "Rua Capitão Tenente Maris de Barros",
@@ -2336,7 +2336,9 @@
             "Travessa Logradouro Não Denominado",
             "Travessa Raul Ribeiro Baptista",
             "Rua Roma",
-            "Rua Eduardo Polak"
+            "Rua Eduardo Polak",
+            "Rua Cândido Rodeiro Esteves",
+            "Rua Zulmira Bacila"
         ],
         "wheelchair": [
             "yes",
@@ -2549,7 +2551,7 @@
             "Rua 31 de Março - Vila Militar",
             "Rua Anna Aparecida Lopes Canet",
             "Avenida Comendador Franco - Pista Lateral",
-            "Rua Zulmira Bacila",
+            "Rua Canal Belém (Marginal Leste)",
             "Avenida 7 de Setembro",
             "Rua Clementina de Paula Ferreira",
             "Rua Tadeo Morozowicz",
@@ -2602,6 +2604,7 @@
             "Avenida Bortolo Gava;Rua Bertolo Gava",
             "Rua Um",
             "Avenida 7 de Setembro; Rua 7 de Setembro; Rua Sete de Setembro",
+            "Rua Canal Belém (Marginal Oeste)",
             "Rua Liberato Evangelista do Prado",
             "Rua Rubens Orlando Brunor",
             "Rua Três",
