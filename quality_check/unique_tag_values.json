@@ -1691,7 +1691,6 @@
             "Praça Zacarias",
             "Rua XV de Novembro",
             "Rua Sanito Rocha",
-            "Rua do Herval",
             "Rua José Bonifácio",
             "Rua Mateus Leme",
             "Rua João Marchesini",
@@ -1895,6 +1894,7 @@
             "Rua Edith Barcelos Schramm",
             "Rua Jackson Figueiredo",
             "Rua Atílio Bório",
+            "Rua do Herval",
             "Entrada CCAA",
             "Entrada Restaurante Limoreiro",
             "Acesso para pedesTrês",
@@ -1945,7 +1945,6 @@
             "Ciclovia Parque São Lourenço - Passeio Público",
             "Galeria Suíssa",
             "Galeria Andrade",
-            "Rua Almirante Tamandaré",
             "Rua Camões",
             "Rua Alferes Poli",
             "Rua Professor Plácido e Silva",
@@ -2338,7 +2337,8 @@
             "Rua Roma",
             "Rua Eduardo Polak",
             "Rua Cândido Rodeiro Esteves",
-            "Rua Zulmira Bacila"
+            "Rua Zulmira Bacila",
+            "Rua Almirante Tamandaré"
         ],
         "wheelchair": [
             "yes",
@@ -2534,8 +2534,8 @@
             "0.9"
         ],
         "lanes": [
-            "1",
             "2",
+            "1",
             "3"
         ],
         "oneway": [
@@ -2628,14 +2628,6 @@
         "postal_code": [
             "80050-380"
         ],
-        "turn:lanes": [
-            "right",
-            "through|through|through;right",
-            "merge_to_left",
-            "through",
-            "through|right",
-            "through;left|through|through"
-        ],
         "bridge": [
             "yes",
             "boardwalk",
@@ -2654,6 +2646,14 @@
             "Retorno",
             "Rua Paraíba",
             "Acesso CEASA"
+        ],
+        "turn:lanes": [
+            "right",
+            "through|through|through;right",
+            "merge_to_left",
+            "through",
+            "through|right",
+            "through;left|through|through"
         ],
         "tunnel": [
             "yes",
