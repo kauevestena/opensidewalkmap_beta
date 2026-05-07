@@ -50,6 +50,10 @@
             "Rua São Miguel Febres Cordeiro",
             "Rua São Brás",
             "Rua Henrique Itiberê da Cunha",
+            "Rua Edgard de Alencar Guimarães",
+            "Rua Dona Emma Hecke de Castro",
+            "Rua Doutor Othon Accioly Rodrigues da Costa",
+            "Rua Jornalista Paulino de Almeida",
             "Rua Mem de Sá",
             "Alameda Princesa Izabel",
             "Rua Schiller",
@@ -99,7 +103,10 @@
             "Rua Dalila Rolim Vargas",
             "Rua Luiz Leopoldo Landal",
             "Rua Tenente João Gomes da Silva",
-            "Avenida Canal Belém (Marginal Leste)"
+            "Avenida Canal Belém (Marginal Leste)",
+            "Rua Dídimo Agapito da Veiga",
+            "Rua Betty de Souza Paula Halila",
+            "Rua Ângelo João Gottardi"
         ],
         "wheelchair": [
             "no",
@@ -1652,12 +1659,14 @@
             "zebra"
         ],
         "ref": [
+            "BR-277",
             "PR-418"
         ],
         "barrier": [
             "lift_gate",
             "gate",
-            "turnstile"
+            "turnstile",
+            "block"
         ],
         "lit": [
             "yes",
@@ -1727,7 +1736,6 @@
             "Rua Trinta e Um de Março - Vila Militar",
             "Rua Natálio Scuissiato",
             "Rua João Antônio Prosdócimo",
-            "Rua Rosa Mehl",
             "Rua Comendador Araújo",
             "Rua Evaristo da Veiga",
             "Rua Ana Aparecida Lopos Canet",
@@ -1900,11 +1908,9 @@
             "Acesso para pedesTrês",
             "Rua Antônio Ferreira",
             "Marginal da Linha Verde",
-            "Rua Genipapo",
             "Rua Doutora Kelly Christie Balinazo",
             "Rua Otávio Francisco Dias",
             "Rua Andréa de Paula Soares Guimarães",
-            "Condomínio Mosel Ville",
             "Travessa Graciosa",
             "Rua José Mazepa",
             "Rua Evilázio Augusto Bley",
@@ -1931,7 +1937,6 @@
             "Paysage Golden Hill Condomínio",
             "Condomínio Vilaggio D Itália",
             "Rua Vitório Foggiato",
-            "Rua Araçás",
             "Rua Frei Tarcísio Mastena",
             "Villa Imperiali",
             "Rua Pedro Charneski",
@@ -1999,15 +2004,8 @@
             "Rua José Staback",
             "Rua Assis Alves de Souza",
             "Rua Alphonse Daudet",
-            "Condomínio Residencial Pio Lanteri",
-            "Condomínio Primavera",
-            "Condomínio Residencial Ouro Preto",
             "Rua Luiz Carlos Muller",
-            "Condomínio Residencial Santa Bárbara",
-            "Condomínio Residencial Colina das Araucárias",
-            "Residencial Sagres",
-            "Residencial Boulevard Excellence",
-            "Residencial Boulevard",
+            "Rua Rosa Mehl",
             "Rua Belarmina Soares Sampaio",
             "Rua Ottília Maria Carlota Frank",
             "Residencial Spazio Castel di Bettega",
@@ -2057,7 +2055,6 @@
             "Residencial Tanguá",
             "Condomínio Las Brisas",
             "Acesso Anita/Flávio Dallegrave",
-            "Acesso condomínio",
             "Rua Agostinho Zaniolo",
             "Condomínio Verona",
             "Rua Juvenal Negrello",
@@ -2134,7 +2131,6 @@
             "Rua da Cidadania do Carmo",
             "Rua Campina da Lagoa",
             "Rua da Cidadania Pinheirinho",
-            "Rua Henrique Mehl",
             "Rua Presidente Carlos Cavalcanti",
             "Galeria Guimarães & Cia",
             "Rua Ivo Otto",
@@ -2312,8 +2308,6 @@
             "Rua Bôrtolo Gusso",
             "Rua Frederico Guilherme Virmond",
             "Avenida Henry Ford",
-            "Residencial Fênix",
-            "Conjunto Residencial Petrópolis",
             "Rua Capitão Tenente Maris de Barros",
             "Rua Via Firenze",
             "Lumini Condomínio",
@@ -2338,7 +2332,8 @@
             "Rua Eduardo Polak",
             "Rua Cândido Rodeiro Esteves",
             "Rua Zulmira Bacila",
-            "Rua Almirante Tamandaré"
+            "Rua Almirante Tamandaré",
+            "Praça Irmã Tereza"
         ],
         "wheelchair": [
             "yes",
@@ -2535,8 +2530,7 @@
         ],
         "lanes": [
             "2",
-            "1",
-            "3"
+            "1"
         ],
         "oneway": [
             "yes",
@@ -2649,11 +2643,9 @@
         ],
         "turn:lanes": [
             "right",
-            "through|through|through;right",
             "merge_to_left",
             "through",
-            "through|right",
-            "through;left|through|through"
+            "through|right"
         ],
         "tunnel": [
             "yes",
