@@ -9,7 +9,6 @@ osm_id,feat_type,key,value,commentary
 230003157,way,crossing,marked,should use the tag 'crossing=uncontrolled' 
 231092796,way,crossing,marked,should use the tag 'crossing=uncontrolled' 
 473856869,way,crossing,marked,should use the tag 'crossing=uncontrolled' 
-488431774,way,crossing,marked,should use the tag 'crossing=uncontrolled' 
 488431775,way,crossing,marked,should use the tag 'crossing=uncontrolled' 
 490865261,way,crossing,zebra,should use the tag 'crossing=uncontrolled' 
 490865263,way,crossing,zebra,should use the tag 'crossing=uncontrolled' 
