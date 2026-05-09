@@ -1282,8 +1282,7 @@
             "no"
         ],
         "tactile_paving": [
-            "no",
-            "yes"
+            "no"
         ],
         "smoothness": [
             "excellent",
@@ -2070,7 +2069,6 @@
             "Rua Coração de Maria",
             "Rua Luiz Antônio Biazzetto",
             "Rua Henrique Coelho Neto",
-            "INTERDITADO",
             "Rua Valdívia",
             "Condomínio Leduc",
             "Boulevard Tanguá",
@@ -2285,6 +2283,7 @@
             "Rua Desembargador Otávio do Amaral",
             "Rua Plácida Thomazi Zanoto",
             "Rua Fanny Bertoldi",
+            "INTERDITADO",
             "Le Refuge Condomínio",
             "Rua Pedro Foltran",
             "Largo Coronel Enéas",
@@ -2293,6 +2292,7 @@
             "Rua Elýsio Simões",
             "Rua 3",
             "Rua Theodoro Javorski",
+            "Rua José V. Pinheiro de Proença",
             "Rua Professor João Kochaki",
             "Rua Sant'Ana",
             "Rua General Setembrino de Carvalho",
@@ -2318,7 +2318,6 @@
             "Acesso CEL Ver. João Derosso - Xaim",
             "Passarela de Acesso ao CEL Xaxim",
             "Rodovia Vereador Admar Bertolli",
-            "Rua Paulo Kissula",
             "Acesso Neno Grande",
             "Rua Thadeu Opolski",
             "Acesso Senador Amaury Silva",
@@ -2762,8 +2761,7 @@
             "secondary",
             "bridge",
             "residential",
-            "trunk",
-            "tertiary"
+            "trunk"
         ],
         "destination:backward": [
             "Acesso Parque Barigui"
