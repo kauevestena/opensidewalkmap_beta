@@ -1610,10 +1610,10 @@
             "tertiary",
             "cycleway",
             "living_street",
+            "construction",
             "path",
             "secondary_link",
             "unclassified",
-            "construction",
             "track",
             "corridor",
             "tertiary_link"
@@ -1659,7 +1659,8 @@
         ],
         "ref": [
             "BR-277",
-            "PR-418"
+            "PR-418",
+            "PR-415"
         ],
         "barrier": [
             "lift_gate",
@@ -1710,6 +1711,7 @@
             "Moradias do Bosque Condomínio Horizontal",
             "Rua Via Vicenza",
             "Rua Reverendo Raul Rodrigues de Castro",
+            "Avenida Victor Ferreira do Amaral",
             "Rua Doutor Goulin",
             "Rua Carlos Benetti",
             "Rua Mamoré",
@@ -1740,7 +1742,7 @@
             "Rua Ana Aparecida Lopos Canet",
             "Avenida Comendador Franco",
             "Trilha Barigui",
-            "Marginal Linha Verde",
+            "Linha Verde",
             "Rua Vadeco Suit",
             "Avenida Canal Belém (Marginal Leste)",
             "Ciclovia Parque Bacacheri",
@@ -1906,7 +1908,6 @@
             "Entrada Restaurante Limoreiro",
             "Acesso para pedesTrês",
             "Rua Antônio Ferreira",
-            "Marginal da Linha Verde",
             "Rua Doutora Kelly Christie Balinazo",
             "Rua Otávio Francisco Dias",
             "Rua Andréa de Paula Soares Guimarães",
@@ -2318,6 +2319,7 @@
             "Acesso CEL Ver. João Derosso - Xaim",
             "Passarela de Acesso ao CEL Xaxim",
             "Rodovia Vereador Admar Bertolli",
+            "Rodovia João Leopoldo Jacomel",
             "Acesso Neno Grande",
             "Rua Thadeu Opolski",
             "Acesso Senador Amaury Silva",
@@ -2332,7 +2334,9 @@
             "Rua Cândido Rodeiro Esteves",
             "Rua Zulmira Bacila",
             "Rua Almirante Tamandaré",
-            "Praça Irmã Tereza"
+            "Praça Irmã Tereza",
+            "Rua Paulo Kissula",
+            "Rua Brasílio de Lara"
         ],
         "wheelchair": [
             "yes",
@@ -2529,7 +2533,8 @@
         ],
         "lanes": [
             "2",
-            "1"
+            "1",
+            "3"
         ],
         "oneway": [
             "yes",
@@ -2539,6 +2544,7 @@
         "alt_name": [
             "Jardim Ambiental Sete de Setembro",
             "Rua Quinze de Novembro;Rua 15 de Novembro",
+            "Rodovia Deputado João Leopoldo Jacomel",
             "Rua Rolfe Mertens",
             "Rua Cruz Machado",
             "Rua 31 de Março - Vila Militar",
@@ -2644,7 +2650,8 @@
             "right",
             "merge_to_left",
             "through",
-            "through|right"
+            "through|right",
+            "through;right"
         ],
         "tunnel": [
             "yes",
@@ -2691,6 +2698,13 @@
         "motorcar": [
             "no",
             "yes"
+        ],
+        "construction": [
+            "trunk",
+            "secondary",
+            "bridge",
+            "residential",
+            "tertiary"
         ],
         "maxspeed:type": [
             "BR:urban",
@@ -2757,12 +2771,6 @@
         "official_name": [
             "Praça do Redentor"
         ],
-        "construction": [
-            "secondary",
-            "bridge",
-            "residential",
-            "trunk"
-        ],
         "destination:backward": [
             "Acesso Parque Barigui"
         ],
@@ -2776,6 +2784,9 @@
         ],
         "hazard": [
             "school_zone"
+        ],
+        "loc_name": [
+            "Linha Verde (via local)"
         ],
         "cycleway": [
             "shared",
@@ -2868,6 +2879,9 @@
         "cycleway:left": [
             "lane"
         ],
+        "oneway:bicycle": [
+            "no"
+        ],
         "check_date:footway:surface": [
             "2025-11-11"
         ],
@@ -2880,6 +2894,9 @@
         ],
         "bridge:structure": [
             "beam"
+        ],
+        "note": [
+            "Vias em construção; material baseado no mapa disponibilizado pela UTAG em seu portal (Obras Novo Inter 2 - Lote 4)"
         ],
         "source:alt_name": [
             "CNEFE 2022 / IBGE"
