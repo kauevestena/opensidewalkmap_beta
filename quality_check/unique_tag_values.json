@@ -2650,8 +2650,7 @@
             "right",
             "merge_to_left",
             "through",
-            "through|right",
-            "through;right"
+            "through|right"
         ],
         "tunnel": [
             "yes",
