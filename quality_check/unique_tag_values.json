@@ -55,6 +55,7 @@
             "Rua Doutor Othon Accioly Rodrigues da Costa",
             "Rua Jornalista Paulino de Almeida",
             "Rua Mem de Sá",
+            "Rua Dinorá Cardoso de Lima",
             "Alameda Princesa Izabel",
             "Rua Schiller",
             "Rua Monsenhor Celso",
@@ -64,6 +65,7 @@
             "Rua Engenheiro Teodoro Sampaio",
             "Alameda Júlia da Costa",
             "Rua Padre Agostinho",
+            "Rua Senador Nereu Ramos",
             "Avenida Nossa Senhora da Penha",
             "Avenida Visconde de Guarapuava",
             "Rua da Cidadania Boa Vista",
@@ -114,8 +116,6 @@
             "limited"
         ],
         "mapillary": [
-            "375371010502718",
-            "164768428919042",
             "274023951128328",
             "487938892421527",
             "836800840376906",
@@ -925,8 +925,8 @@
             "335197051294972"
         ],
         "survey:date": [
-            "2020-02-18",
             "2020-03-09",
+            "2020-02-18",
             "2020-02-17",
             "2020-09-17",
             "2020-02-21",
@@ -938,13 +938,13 @@
             "2019-09-12"
         ],
         "surface": [
-            "concrete:plates",
-            "concrete",
             "sett",
             "paving_stones",
             "asphalt",
             "cobblestone",
+            "concrete",
             "dirt",
+            "concrete:plates",
             "wood",
             "paved",
             "Petit_Pavê",
@@ -1008,9 +1008,9 @@
             "no"
         ],
         "smoothness": [
-            "good",
             "excellent",
             "intermediate",
+            "good",
             "bad",
             "very_bad",
             "impassable",
@@ -1024,9 +1024,6 @@
         ],
         "description": [
             "low friction"
-        ],
-        "footway": [
-            "sidewalk"
         ],
         "covered": [
             "yes"
@@ -1078,6 +1075,9 @@
         "alt_name": [
             "Rua Carlos Benetti",
             "Rua Canal Belém (Marginal Leste)"
+        ],
+        "footway": [
+            "sidewalk"
         ],
         "bridge": [
             "yes"
@@ -1292,9 +1292,6 @@
         "sidewalk": [
             "both"
         ],
-        "footway": [
-            "crossing"
-        ],
         "width": [
             "1",
             "1.5",
@@ -1307,6 +1304,9 @@
         "alt_name": [
             "Rua Dois",
             "Rua Padre Isais Andrade"
+        ],
+        "footway": [
+            "crossing"
         ],
         "bridge": [
             "yes"
@@ -1330,6 +1330,9 @@
             "crossing",
             "traffic_signals",
             "footway"
+        ],
+        "direction": [
+            "backward"
         ],
         "traffic_signals": [
             "no"
@@ -1536,9 +1539,6 @@
             "no",
             "yes"
         ],
-        "direction": [
-            "backward"
-        ],
         "addr:housenumber": [
             "195"
         ],
@@ -1582,12 +1582,12 @@
         "description": [
             "Just a lowered kerb, not an actual ramp"
         ],
+        "check_date:kerb": [
+            "2024-02-29"
+        ],
         "footway": [
             "crossing",
             "sidewalk"
-        ],
-        "check_date:kerb": [
-            "2024-02-29"
         ],
         "landuse": [
             "grass",
@@ -1747,6 +1747,7 @@
             "Avenida Canal Belém (Marginal Leste)",
             "Ciclovia Parque Bacacheri",
             "Rua Capitão Zeppin",
+            "Rua João Negrão",
             "Rua Presidente Rodrigo Otávio",
             "Avenida Sete de Setembro",
             "Rua Doutor Claudino dos Santos",
@@ -1835,6 +1836,16 @@
             "Rua Tenente Waldomiro Bohatch",
             "Rua Pedro Horokoski",
             "Rua Jair Fernandes de Araújo",
+            "Rua Anna Friebe",
+            "Rua Pedro Costa Cunha",
+            "Rua Arnoldo Ravanelo",
+            "Rua Dorival Almir Zagonel",
+            "Rua Manoel Freire",
+            "Rua Antônio Cândido Ferreira",
+            "Rua Doutor Alberto Franco Ferreira da Costa",
+            "Rua Arthur Otto Suckow",
+            "Rua Irineu Adami",
+            "Rua Josefina Zanier",
             "Rua Marco Polo",
             "Rua Leony Azeredo Rocha",
             "Rua Maria Augusta da Silva",
@@ -2060,6 +2071,7 @@
             "Rua Juvenal Negrello",
             "Rua Luzia dos Santos Silveira",
             "Rua Arthur Leal",
+            "Rua Maestro Idílio Donatti",
             "Passarela Parque do Bugio",
             "Rua Paulo Júlio Recksidler",
             "Rua Professor Arthur Virmond de Lacerda",
@@ -2125,6 +2137,7 @@
             "Trilha Entorno Parque Centenário da Imigração Japonesa",
             "Trilha Entorno Parque Centenário Imigração Japonesa",
             "Rua José Antônio Nichele",
+            "Rua Osiris de Brito",
             "Rua Dirceu Simões de Medeiros",
             "Rua José Lirio da Silva",
             "Rua da Cidadania do Carmo",
@@ -2336,7 +2349,8 @@
             "Rua Almirante Tamandaré",
             "Praça Irmã Tereza",
             "Rua Paulo Kissula",
-            "Rua Brasílio de Lara"
+            "Rua Brasílio de Lara",
+            "Rua Rui Ferraz de Carvalho"
         ],
         "wheelchair": [
             "yes",
@@ -2481,8 +2495,8 @@
         ],
         "sidewalk": [
             "both",
-            "no",
             "right",
+            "no",
             "left",
             "yes"
         ],
@@ -2494,10 +2508,6 @@
         ],
         "description": [
             "Acesso Condominio Flex Accanto"
-        ],
-        "footway": [
-            "traffic_island",
-            "access_aisle"
         ],
         "covered": [
             "yes",
@@ -2560,6 +2570,9 @@
             "Jardim Verginia 7;Jardim Verginia Sete",
             "Rua Anna Bendett",
             "Jardim Verginia 6;Jardim Verginia Seis",
+            "Rua Ana Friebe",
+            "Rua Angelo Ferro",
+            "Rua Artur Otto Suckow",
             "Beco Um; Beco 1",
             "Rua José Henrique J Sikorski; Rua Henrique José Sikorski",
             "Rua Juracy Nadalin;Rua São Joaquim;Rua Juraci Nadalin",
@@ -2581,6 +2594,7 @@
             "Condomínio Parque das Pedras Dois; Condomínio Parque das Pedras 2",
             "Rua Edson Campos Matersich; Rua Edson Campos Mastersich",
             "Rua B",
+            "Rua Maestro Ilídio Donatti",
             "Rua Paulo Júlio Reksidler",
             "Conjunto Residencial Cotolengo Dois; Conjunto Residencial Cotolengo 2",
             "Rua José Mansur",
@@ -2627,6 +2641,10 @@
         "postal_code": [
             "80050-380"
         ],
+        "footway": [
+            "traffic_island",
+            "access_aisle"
+        ],
         "bridge": [
             "yes",
             "boardwalk",
@@ -2648,6 +2666,7 @@
         ],
         "turn:lanes": [
             "right",
+            "left",
             "merge_to_left",
             "through",
             "through|right"
@@ -2823,9 +2842,6 @@
         "embankment": [
             "yes"
         ],
-        "bridge:name": [
-            "Viaduto Marechal Floriano Peixoto"
-        ],
         "maxweight:signed": [
             "no"
         ],
@@ -2833,6 +2849,9 @@
             "good",
             "intermediate",
             "excellent"
+        ],
+        "bridge:name": [
+            "Viaduto Marechal Floriano Peixoto"
         ],
         "tunnel:name": [
             "Galeria Júlio Moreira"
