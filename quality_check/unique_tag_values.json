@@ -45,6 +45,7 @@
             "Rua Carmelo Rangel",
             "Rua Gaspar Carrilho Júnior",
             "Rua Desembargador Otávio do Amaral",
+            "Rua Deputado Leoberto Leal",
             "Rua Saldanha Marinho",
             "Rua Tereza Delminda da Silva Costa",
             "Rua São Miguel Febres Cordeiro",
@@ -108,7 +109,8 @@
             "Avenida Canal Belém (Marginal Leste)",
             "Rua Dídimo Agapito da Veiga",
             "Rua Betty de Souza Paula Halila",
-            "Rua Ângelo João Gottardi"
+            "Rua Ângelo João Gottardi",
+            "Rua Almeida Júnior"
         ],
         "wheelchair": [
             "no",
