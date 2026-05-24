@@ -1731,7 +1731,6 @@
             "Rua Afonso Pedri",
             "Rua Mato Grosso",
             "Ciclovia Batel Parque Barigui",
-            "Rua Isaac Guelmann",
             "Trilha do Bosque do Papa",
             "Praça Tiradentes",
             "Rua Alcino Guanabara",
@@ -1919,7 +1918,6 @@
             "Rua do Herval",
             "Entrada CCAA",
             "Entrada Restaurante Limoreiro",
-            "Acesso para pedesTrês",
             "Rua Antônio Ferreira",
             "Rua Doutora Kelly Christie Balinazo",
             "Rua Otávio Francisco Dias",
@@ -2352,7 +2350,8 @@
             "Praça Irmã Tereza",
             "Rua Paulo Kissula",
             "Rua Brasílio de Lara",
-            "Rua Rui Ferraz de Carvalho"
+            "Rua Rui Ferraz de Carvalho",
+            "Rua Magdalena Taborda Ribas"
         ],
         "wheelchair": [
             "yes",
