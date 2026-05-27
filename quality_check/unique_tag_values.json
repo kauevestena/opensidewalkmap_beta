@@ -1980,8 +1980,6 @@
             "Rua Conselheiro Carrão",
             "Rua Simão Bolívar",
             "Rua Dias da Rocha Filho",
-            "Condomínio Poiana Maggiore",
-            "Condomínio Três Marias",
             "Condomínio Campo Dei Fiori",
             "Famiglia Stival Residenziale",
             "Condomínio Villaggio Campo Felice",
@@ -2316,7 +2314,6 @@
             "Avenida Henry Ford",
             "Rua Capitão Tenente Maris de Barros",
             "Rua Via Firenze",
-            "Lumini Condomínio",
             "Rua Madre Maria dos Anjos",
             "Destro",
             "Rua Dante Honório",
@@ -2329,11 +2326,6 @@
             "Rua Thadeu Opolski",
             "Acesso Senador Amaury Silva",
             "Rua Maria Josephina Monteiro Franco",
-            "Acesso Nadir Freza",
-            "Acesso Oziel Domingos de Oliveira",
-            "Travessa ND",
-            "Travessa Logradouro Não Denominado",
-            "Travessa Raul Ribeiro Baptista",
             "Rua Roma",
             "Rua Eduardo Polak",
             "Rua Cândido Rodeiro Esteves",
@@ -2579,7 +2571,6 @@
             "Rua José Culpi",
             "Rua Enrico Caruso",
             "Praça do Gaúcho",
-            "Condominio 3 Marias",
             "Rua Aluizio Franca",
             "Rua Condomínio 1;Rua Condomínio Um",
             "Rua Condomínio 2;Rua Condomínio Dois",
@@ -2916,9 +2907,7 @@
             "left"
         ],
         "fixme": [
-            "Checar se é aqui mesmo o acesso",
-            "ND de Nâo Denominada. Obter nome real e atualizar também os endereços anexos",
-            "Obter nome real e atualizar também os endereços anexos"
+            "Checar se é aqui mesmo o acesso"
         ],
         "type": [
             "multipolygon"
