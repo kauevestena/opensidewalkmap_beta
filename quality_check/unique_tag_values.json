@@ -2057,7 +2057,6 @@
             "Houston Residence",
             "Caesar Residence",
             "Residencial Tanguá",
-            "Condomínio Las Brisas",
             "Acesso Anita/Flávio Dallegrave",
             "Rua Agostinho Zaniolo",
             "Condomínio Verona",
@@ -2336,7 +2335,8 @@
             "Rua Brasílio de Lara",
             "Rua Rui Ferraz de Carvalho",
             "Rua Magdalena Taborda Ribas",
-            "Rua Olga de Araújo Espíndola"
+            "Rua Olga de Araújo Espíndola",
+            "Condomínio Las Brisas"
         ],
         "wheelchair": [
             "yes",
@@ -2372,7 +2372,6 @@
             "grass",
             "pebblestone",
             "concrete:lanes",
-            "mud",
             "Petit_Pavê",
             "compacted",
             "unhewn_cobblestone"
