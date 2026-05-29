@@ -1919,7 +1919,6 @@
             "Entrada CCAA",
             "Entrada Restaurante Limoreiro",
             "Rua Antônio Ferreira",
-            "Rua Doutora Kelly Christie Balinazo",
             "Rua Otávio Francisco Dias",
             "Rua Andréa de Paula Soares Guimarães",
             "Travessa Graciosa",
@@ -2154,7 +2153,6 @@
             "Rua Antero de Quental",
             "Rua Dois",
             "Rua Dom José Marello",
-            "Viela da Favela",
             "Condomínio Burgel 2",
             "Rua Juarez Campos Matesich",
             "Rua Comandante Orlando Gescon",
@@ -2336,7 +2334,8 @@
             "Rua Rui Ferraz de Carvalho",
             "Rua Magdalena Taborda Ribas",
             "Rua Olga de Araújo Espíndola",
-            "Condomínio Las Brisas"
+            "Condomínio Las Brisas",
+            "Rua Eugênio Parolin"
         ],
         "wheelchair": [
             "yes",
