@@ -1,5 +1,11 @@
 osm_id,feat_type,key,value,commentary
+46736210,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
 543881321,way,surface,Petit_Pavê,"unlisted at accepted/known values, probably wrong/misspelled"
+543883295,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
+543883296,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
+543883298,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
+543883299,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
+543884010,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
 544002453,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
 958628466,way,surface,pebblestone,"unlisted at accepted/known values, probably wrong/misspelled"
 961136437,way,surface,fine_gravel,"unlisted at accepted/known values, probably wrong/misspelled"
@@ -43,3 +49,6 @@ osm_id,feat_type,key,value,commentary
 1193601314,way,surface,grass_paver,"unlisted at accepted/known values, probably wrong/misspelled"
 1222266163,way,surface,interlock,"unlisted at accepted/known values, probably wrong/misspelled"
 1451493621,way,surface,grass_scrub,"unlisted at accepted/known values, probably wrong/misspelled"
+1526205759,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
+1526205760,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
+1526205761,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"

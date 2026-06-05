@@ -1,5 +1,4 @@
 osm_id,feat_type,key,value,commentary
-46736210,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
 163037404,way,surface,grass_paver,"unlisted at accepted/known values, probably wrong/misspelled"
 163664242,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
 237848875,way,surface,fine_gravel,"unlisted at accepted/known values, probably wrong/misspelled"
@@ -9,12 +8,7 @@ osm_id,feat_type,key,value,commentary
 262476539,way,surface,pebblestone,"unlisted at accepted/known values, probably wrong/misspelled"
 386052076,way,surface,concrete:lanes,"unlisted at accepted/known values, probably wrong/misspelled"
 543881320,way,surface,Petit_Pavê,"unlisted at accepted/known values, probably wrong/misspelled"
-543883295,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
-543883296,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
 543883297,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
-543883298,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
-543883299,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
-543884010,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
 543902345,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
 744513319,way,surface,concrete:lanes,"unlisted at accepted/known values, probably wrong/misspelled"
 918119219,way,surface,fine_gravel,"unlisted at accepted/known values, probably wrong/misspelled"
@@ -29,3 +23,4 @@ osm_id,feat_type,key,value,commentary
 1414348045,way,surface,fine_gravel,"unlisted at accepted/known values, probably wrong/misspelled"
 1414348046,way,surface,fine_gravel,"unlisted at accepted/known values, probably wrong/misspelled"
 1414348047,way,surface,fine_gravel,"unlisted at accepted/known values, probably wrong/misspelled"
+1526205762,way,surface,rock,"unlisted at accepted/known values, probably wrong/misspelled"
