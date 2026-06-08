@@ -1817,7 +1817,6 @@
             "Condomínio Fortezza di Capri",
             "Jardim Vergínia VII",
             "Rua Alceu Dorigo",
-            "Rua Ana Bendett",
             "Rua Verônica Szeremeta",
             "Condomínio Residencial Castel Vergínia",
             "Rua Leão Sallum",
@@ -2112,7 +2111,6 @@
             "Rua José Rissato",
             "Avenida Nossa Senhora da Penha",
             "Acesso a escola",
-            "Rua Júlio Vicente Roda",
             "Galeria Ritz",
             "Travessia Perigosa",
             "Harmony Village Condominium",
@@ -2130,7 +2128,6 @@
             "Rua José Antônio Nichele",
             "Rua Osiris de Brito",
             "Rua Dirceu Simões de Medeiros",
-            "Rua José Lirio da Silva",
             "Rua da Cidadania do Carmo",
             "Rua Campina da Lagoa",
             "Rua da Cidadania Pinheirinho",
@@ -2229,7 +2226,6 @@
             "Rua Beethoven",
             "Rua Richard Wagner",
             "Rua Buruti",
-            "Rua Bortolo Gava",
             "Rua Curupis",
             "Rua Curupaitis",
             "Rua Silveira Peixoto",
@@ -2552,7 +2548,6 @@
             "Jardim Verginia 9;Jadim Verginia Nove",
             "Jardim Verginia 10;Jadim Verginia Dez",
             "Jardim Verginia 7;Jardim Verginia Sete",
-            "Rua Anna Bendett",
             "Jardim Verginia 6;Jardim Verginia Seis",
             "Rua Ana Friebe",
             "Rua Angelo Ferro",
@@ -2596,7 +2591,6 @@
             "Largo Dois",
             "Largo Três",
             "Rua Ribeirão dos Padilhas",
-            "Avenida Bortolo Gava;Rua Bertolo Gava",
             "Rua Um",
             "Avenida 7 de Setembro; Rua 7 de Setembro; Rua Sete de Setembro",
             "Rua Canal Belém (Marginal Oeste)",
@@ -2861,13 +2855,13 @@
             "2022-07-16",
             "2024-02-29"
         ],
-        "ford": [
-            "seasonal",
-            "stepping_stones"
-        ],
         "informal": [
             "yes",
             "no"
+        ],
+        "ford": [
+            "seasonal",
+            "stepping_stones"
         ],
         "vehicle": [
             "no"
