@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<OGRVRTDataSource>
+    <OGRVRTLayer name="sidewalks">
+        <SrcDataSource relativeToVRT="1">../sidewalks_raw.parquet</SrcDataSource>
+        <SrcLayer>sidewalks_raw</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="crossings">
+        <SrcDataSource relativeToVRT="1">../crossings_raw.parquet</SrcDataSource>
+        <SrcLayer>crossings_raw</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="kerbs">
+        <SrcDataSource relativeToVRT="1">../kerbs_raw.parquet</SrcDataSource>
+        <SrcLayer>kerbs_raw</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="other_footways">
+        <SrcDataSource relativeToVRT="1">../other_footways_raw.parquet</SrcDataSource>
+        <SrcLayer>other_footways_raw</SrcLayer>
+    </OGRVRTLayer>
+</OGRVRTDataSource>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<OGRVRTDataSource>
+    <OGRVRTLayer name="sidewalks">
+        <SrcDataSource relativeToVRT="1">../tiles/sidewalks.pmtiles</SrcDataSource>
+        <SrcLayer>sidewalks</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="crossings">
+        <SrcDataSource relativeToVRT="1">../tiles/crossings.pmtiles</SrcDataSource>
+        <SrcLayer>crossings</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="kerbs">
+        <SrcDataSource relativeToVRT="1">../tiles/kerbs.pmtiles</SrcDataSource>
+        <SrcLayer>kerbs</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="stairways">
+        <SrcDataSource relativeToVRT="1">../tiles/stairways.pmtiles</SrcDataSource>
+        <SrcLayer>stairways</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="main_footways">
+        <SrcDataSource relativeToVRT="1">../tiles/main_footways.pmtiles</SrcDataSource>
+        <SrcLayer>main_footways</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="potential_footways">
+        <SrcDataSource relativeToVRT="1">../tiles/potential_footways.pmtiles</SrcDataSource>
+        <SrcLayer>potential_footways</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="informal_footways">
+        <SrcDataSource relativeToVRT="1">../tiles/informal_footways.pmtiles</SrcDataSource>
+        <SrcLayer>informal_footways</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="pedestrian_areas">
+        <SrcDataSource relativeToVRT="1">../tiles/pedestrian_areas.pmtiles</SrcDataSource>
+        <SrcLayer>pedestrian_areas</SrcLayer>
+    </OGRVRTLayer>
+</OGRVRTDataSource>
