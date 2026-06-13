@@ -20,7 +20,7 @@
     "potential_footways_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
     "informal_footways_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
     "pedestrian_areas_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/pedestrian_areas.pmtiles",
-    "boundaries_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+    "boundaries_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
     "styles": {
         "footway_categories": {
             "version": 8,
@@ -82,7 +82,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -349,7 +349,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -612,7 +612,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -2339,7 +2339,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -3274,7 +3274,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -3849,7 +3849,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -4568,7 +4568,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -5143,7 +5143,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -5790,7 +5790,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
@@ -6285,7 +6285,7 @@
                 },
                 "boundaries": {
                     "type": "geojson",
-                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries.geojson",
+                    "data": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson",
                     "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>"
                 }
             },
