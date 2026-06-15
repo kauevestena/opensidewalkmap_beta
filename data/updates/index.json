@@ -1,0 +1,9 @@
+{
+    "folder": "data/updates",
+    "files": [
+        "registry.json"
+    ],
+    "subfolders": [
+        "versioning"
+    ]
+}

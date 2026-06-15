@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSWM Serverless API | Curitiba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #00f2fe;
+            --primary-glow: rgba(0, 242, 254, 0.15);
+            --secondary: #4facfe;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --sidebar-width: 340px;
+            --accent-success: #10b981;
+            --accent-error: #ef4444;
+            --accent-purple: #8b5cf6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Glow effects */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -10%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .header-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-section img {
+            height: 38px;
+            width: auto;
+        }
+
+        .logo-section h1 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1.15rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border-color: var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: #0f172a;
+            font-weight: 600;
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0, 242, 254, 0.25);
+        }
+
+        /* Deliverables Sticky Bar */
+        .deliverables-tabs-bar {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            width: 100%;
+            position: sticky;
+            top: 72px;
+            z-index: 90;
+        }
+
+        .tabs-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .deliverable-tab {
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+            user-select: none;
+        }
+
+        .deliverable-tab:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .deliverable-tab.active {
+            color: var(--primary);
+            background: rgba(0, 242, 254, 0.05);
+            border-color: rgba(0, 242, 254, 0.2);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.08);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            flex-grow: 1;
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Left Sidebar - Endpoints list */
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .glass-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-card h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .base-url-box {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.6rem 0.8rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.82rem;
+            word-break: break-all;
+            color: var(--primary);
+        }
+
+        .endpoint-selector-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        /* Scrollbar styles */
+        .endpoint-selector-group::-webkit-scrollbar,
+        .code-pre::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .endpoint-selector-group::-webkit-scrollbar-thumb,
+        .code-pre::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .endpoint-selector-group::-webkit-scrollbar-thumb:hover,
+        .code-pre::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .category-block h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+            border-left: 2px solid var(--secondary);
+            padding-left: 0.5rem;
+        }
+
+        .endpoint-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .endpoint-item {
+            display: flex;
+            flex-direction: column;
+            padding: 0.65rem 0.85rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .endpoint-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .endpoint-item.active {
+            background: rgba(0, 242, 254, 0.06);
+            border-color: rgba(0, 242, 254, 0.25);
+            box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.05);
+        }
+
+        .endpoint-item .path {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-main);
+            word-break: break-all;
+        }
+
+        .endpoint-item.active .path {
+            color: var(--primary);
+        }
+
+        .endpoint-item .meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.35rem;
+        }
+
+        .badge {
+            font-size: 0.72rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-get {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-success);
+        }
+
+        .badge-format {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+        }
+
+        /* Right Content Area */
+        .main-content {
+            flex-grow: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Playground Panel */
+        .playground-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .playground-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1rem;
+        }
+
+        .playground-title-desc h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .playground-title-desc p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .request-url-bar {
+            display: flex;
+            gap: 0.75rem;
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 0.5rem;
+            align-items: center;
+        }
+
+        .method-tag {
+            font-family: 'Fira Code', monospace;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--accent-success);
+            padding-left: 0.5rem;
+        }
+
+        .request-url-input {
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        /* Response Viewer */
+        .response-viewer {
+            background: #0b0f19;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+            overflow: hidden;
+        }
+
+        .response-header-bar {
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid var(--card-border);
+            padding: 0.65rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .response-status {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-dot.idle { background: var(--text-muted); }
+        .status-dot.loading { background: var(--primary); animation: pulse 1s infinite alternate; }
+        .status-dot.success { background: var(--accent-success); }
+        .status-dot.error { background: var(--accent-error); }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .response-body {
+            flex-grow: 1;
+            overflow: auto;
+            position: relative;
+        }
+
+        .code-pre {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            margin: 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.82rem;
+            color: #38bdf8;
+            overflow: auto;
+            white-space: pre;
+        }
+
+        .placeholder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .spinner {
+            display: none;
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(0, 242, 254, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -15px;
+            margin-left: -15px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Code Snippet Tabs */
+        .snippets-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .tab-headers {
+            display: flex;
+            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 1rem;
+            gap: 1.5rem;
+        }
+
+        .tab-header {
+            padding: 0.5rem 0.2rem 0.75rem 0.2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        .tab-header:hover {
+            color: var(--text-main);
+        }
+
+        .tab-header.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .tab-header.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .snippet-box {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #090d16;
+            border: 1px solid var(--card-border);
+        }
+
+        .snippet-box pre {
+            padding: 1.25rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.82rem;
+            color: #cbd5e1;
+            overflow-x: auto;
+            margin: 0;
+        }
+
+        .btn-copy {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.35rem 0.6rem;
+            font-size: 0.72rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-copy:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
+            background: rgba(15, 23, 42, 0.4);
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .deliverables-tabs-bar {
+                top: 0;
+                position: relative;
+            }
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="https://kauevestena.github.io/oswm_codebase/assets/homepage/project_logo_100px.png" alt="OSWM Logo">
+                <h1>OpenSidewalkMap API <span style="font-weight: 300; opacity: 0.8; color: var(--text-main)">| Curitiba</span></h1>
+            </div>
+            <div class="nav-buttons">
+                <a href="../../../index.html" class="btn btn-secondary">Node Home</a>
+                <a href="../../../map.html" class="btn btn-primary">Open Webmap</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="deliverables-tabs-bar">
+        <div class="tabs-container">
+            <div class="deliverable-tab active" onclick="switchDeliverable('map_data')" id="tab-map_data">Map Data</div>
+            <div class="deliverable-tab" onclick="switchDeliverable('data_quality')" id="tab-data_quality">Data Quality</div>
+            <div class="deliverable-tab" onclick="switchDeliverable('vega_specs')" id="tab-vega_specs">Vega Chart Specs</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="glass-panel info-card">
+                <h2>Serverless API Details</h2>
+                <p>OSWM exposes processed city datasets as static files hosted on GitHub Pages. Any standard HTTP client can access these files directly.</p>
+                <div class="base-url-box" id="base-url-display"></div>
+            </div>
+
+            <div class="glass-panel" style="flex-grow: 1;">
+                <h2 style="font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600;">API Endpoints</h2>
+                <div class="endpoint-selector-group" id="endpoint-list-container">
+                    <!-- Dynamic endpoints will load here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Panel -->
+        <div class="main-content">
+            <!-- Playground -->
+            <div class="glass-panel playground-panel">
+                <div class="playground-header">
+                    <div class="playground-title-desc">
+                        <h2 id="pl-title">Select an Endpoint</h2>
+                        <p id="pl-desc">Select an API endpoint from the sidebar list to inspect properties, read code examples, and perform playground requests.</p>
+                    </div>
+                    <div>
+                        <span class="badge badge-format" id="pl-format-badge">JSON</span>
+                    </div>
+                </div>
+
+                <div class="request-url-bar">
+                    <span class="method-tag">GET</span>
+                    <input type="text" class="request-url-input" id="request-url-input" readonly>
+                    <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;" onclick="copyRequestUrl()">Copy URL</button>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-primary" id="btn-try" onclick="executePlaygroundRequest()">Try It Out</button>
+                    <button class="btn btn-secondary" id="btn-dl" onclick="downloadEndpointFile()">Download File</button>
+                </div>
+
+                <!-- Response Viewer -->
+                <div class="response-viewer">
+                    <div class="response-header-bar">
+                        <span>Response Body</span>
+                        <div class="response-status">
+                            <span class="status-dot idle" id="status-dot"></span>
+                            <span id="status-text">No request sent</span>
+                        </div>
+                    </div>
+                    <div class="response-body">
+                        <div class="spinner" id="spinner"></div>
+                        <div class="placeholder-text" id="placeholder-text">Click "Try It Out" to send a request to the serverless endpoint.</div>
+                        <pre class="code-pre" id="response-pre" style="display: none;"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code snippets -->
+            <div class="glass-panel snippets-card">
+                <h3>Request Snippet Examples</h3>
+                <div class="tab-headers">
+                    <div class="tab-header active" onclick="switchSnippetTab('tab-js')">JavaScript</div>
+                    <div class="tab-header" onclick="switchSnippetTab('tab-python')">Python</div>
+                    <div class="tab-header" onclick="switchSnippetTab('tab-gdal')">GDAL/OGR</div>
+                    <div class="tab-header" onclick="switchSnippetTab('tab-curl')">cURL</div>
+                </div>
+
+                <!-- JS Tab -->
+                <div class="tab-content active" id="tab-js">
+                    <div class="snippet-box">
+                        <button class="btn-copy" onclick="copySnippet('code-js')">Copy</button>
+                        <pre id="code-js">fetch('https://...')
+  .then(response => response.json())
+  .then(data => console.log(data));</pre>
+                    </div>
+                </div>
+
+                <!-- Python Tab -->
+                <div class="tab-content" id="tab-python">
+                    <div class="snippet-box">
+                        <button class="btn-copy" onclick="copySnippet('code-py')">Copy</button>
+                        <pre id="code-py">import requests
+
+url = "https://..."
+response = requests.get(url)
+data = response.json()
+print(data)</pre>
+                    </div>
+                </div>
+
+                <!-- GDAL Tab -->
+                <div class="tab-content" id="tab-gdal">
+                    <div class="snippet-box">
+                        <button class="btn-copy" onclick="copySnippet('code-gdal')">Copy</button>
+                        <pre id="code-gdal">ogrinfo -ro -al "/vsicurl/https://..."</pre>
+                    </div>
+                </div>
+
+                <!-- cURL Tab -->
+                <div class="tab-content" id="tab-curl">
+                    <div class="snippet-box">
+                        <button class="btn-copy" onclick="copySnippet('code-curl')">Copy</button>
+                        <pre id="code-curl">curl -L -X GET "https://..."</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>OpenSidewalkMap Node Curitiba. Developed by <a href="https://github.com/kauevestena" target="_blank">Kauê Vestena</a>.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.7;">Powered by static serverless architectures.</p>
+    </footer>
+
+    <script>
+        // API Base configuration
+        const USERNAME = "kauevestena";
+        const REPO_NAME = "opensidewalkmap_beta";
+        const baseUrl = "https://kauevestena.github.io/opensidewalkmap_beta/";
+        
+        document.getElementById('base-url-display').textContent = baseUrl;
+
+        // Endpoints configuration parsed from Python
+        const endpoints = [
+  {
+    "category": "API Index",
+    "path": "data/index.json",
+    "format": "JSON",
+    "description": "Returns the list of all available directories and files under the Map Data deliverable.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "API Index",
+    "path": "quality_check/index.json",
+    "format": "JSON",
+    "description": "Returns the list of all available directories and files under the Data Quality check report deliverable.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "API Index",
+    "path": "statistics_specs/index.json",
+    "format": "JSON",
+    "description": "Returns the list of all available directories and files under the Vega Chart Specs visualization deliverable.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Boundaries & Config",
+    "path": "data/boundaries/infos.json",
+    "format": "JSON",
+    "description": "Metadata properties of the study area (name, source, importance, bounds, etc.).",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Boundaries & Config",
+    "path": "data/boundaries/polygon.geojson",
+    "format": "GeoJSON",
+    "description": "Polygon geometry of the study/mapping area boundaries (study boundaries).",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Boundaries & Config",
+    "path": "data/boundaries/polygon.parquet",
+    "format": "GeoParquet",
+    "description": "Map data asset file: polygon.parquet",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Boundaries & Config",
+    "path": "webmap_params.json",
+    "format": "JSON",
+    "description": "Full configuration for the webmap, including center coordinates, initial zoom level, layers, MapLibre GL styles, and configurations.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Crossings Charts",
+    "path": "statistics_specs/crossings/crossing_surface.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Crossing Surface metrics for crossings layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Crossings Charts",
+    "path": "statistics_specs/crossings/crossing_types.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Crossing Types metrics for crossings layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Crossings Charts",
+    "path": "statistics_specs/crossings/crossings_age.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Crossings Age metrics for crossings layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Crossings Charts",
+    "path": "statistics_specs/crossings/crossings_length.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Crossings Length metrics for crossings layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Crossings Charts",
+    "path": "statistics_specs/crossings/crossings_n_revs.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Crossings N Revs metrics for crossings layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Crossings Charts",
+    "path": "statistics_specs/crossings/crossings_smoothness_x_surface.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Crossings Smoothness X Surface metrics for crossings layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Data Aging & Versioning",
+    "path": "data/updates/registry.json",
+    "format": "JSON",
+    "description": "Timestamps recording when different steps of the pipeline last successfully executed.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Data Aging & Versioning",
+    "path": "data/updates/versioning/crossings_versioning.json",
+    "format": "JSON",
+    "description": "Detailed age tracking metrics for crossing features.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Data Aging & Versioning",
+    "path": "data/updates/versioning/kerbs_versioning.json",
+    "format": "JSON",
+    "description": "Detailed age tracking metrics for kerb features.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Data Aging & Versioning",
+    "path": "data/updates/versioning/other_footways_versioning.json",
+    "format": "JSON",
+    "description": "Detailed age tracking metrics for other footways layers.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Data Aging & Versioning",
+    "path": "data/updates/versioning/sidewalks_versioning.json",
+    "format": "JSON",
+    "description": "Detailed modification dates, changeset stats, and age metrics for sidewalks.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "GDAL VRT Descriptors",
+    "path": "data/vrts/data.vrt",
+    "format": "XML/VRT",
+    "description": "GDAL Virtual Format file linking all processed parquet files together.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_age.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data Age metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_category.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data Category metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_lit.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data Lit metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_n_revs.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data N Revs metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_smoothness.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data Smoothness metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_surface.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data Surface metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_tactile_paving.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data Tactile Paving metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_traffic_calming.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data Traffic Calming metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Charts",
+    "path": "statistics_specs/all_data/all_data_wheelchair_tag.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising All Data Wheelchair Tag metrics for all_data layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Global Quality Metrics",
+    "path": "quality_check/categories.json",
+    "format": "JSON",
+    "description": "List of quality check category descriptions and metadata.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Global Quality Metrics",
+    "path": "quality_check/feature_keys.json",
+    "format": "JSON",
+    "description": "Summary of tag keys present in the database.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Global Quality Metrics",
+    "path": "quality_check/keys_without_wiki.json",
+    "format": "JSON",
+    "description": "List of tag keys missing documentation in the OSM Wiki.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Global Quality Metrics",
+    "path": "quality_check/unique_tag_values.json",
+    "format": "JSON",
+    "description": "Unique tag keys and values found across all downloaded features.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Global Quality Metrics",
+    "path": "quality_check/valid_tag_values.json",
+    "format": "JSON",
+    "description": "Predefined list of OSM tag values considered valid by OSWM quality checks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/crossings/disjointed_geometries.json",
+    "format": "JSON",
+    "description": "Validation check results (Disjointed Geometries) for crossings in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/crossings/improper_geometries.json",
+    "format": "JSON",
+    "description": "Validation check results (Improper Geometries) for crossings in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/crossings/improper_keys.json",
+    "format": "JSON",
+    "description": "Validation check results (Improper Keys) for crossings in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/crossings/invalid_characters.json",
+    "format": "JSON",
+    "description": "Validation check results (Invalid Characters) for crossings in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/crossings/keys_without_wiki.json",
+    "format": "JSON",
+    "description": "Validation check results (Keys Without Wiki) for crossings in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/crossings/replaceable_values.json",
+    "format": "JSON",
+    "description": "Validation check results (Replaceable Values) for crossings in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/crossings/uncanny_keys.json",
+    "format": "JSON",
+    "description": "Validation check results (Uncanny Keys) for crossings in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/crossings/wrong_mispelled_or_unlisted_values.json",
+    "format": "JSON",
+    "description": "Validation check results (Wrong Mispelled Or Unlisted Values) for crossings in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/kerbs/disjointed_geometries.json",
+    "format": "JSON",
+    "description": "Validation check results (Disjointed Geometries) for kerbs in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/kerbs/improper_geometries.json",
+    "format": "JSON",
+    "description": "Validation check results (Improper Geometries) for kerbs in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/kerbs/improper_keys.json",
+    "format": "JSON",
+    "description": "Validation check results (Improper Keys) for kerbs in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/kerbs/invalid_characters.json",
+    "format": "JSON",
+    "description": "Validation check results (Invalid Characters) for kerbs in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/kerbs/keys_without_wiki.json",
+    "format": "JSON",
+    "description": "Validation check results (Keys Without Wiki) for kerbs in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/kerbs/replaceable_values.json",
+    "format": "JSON",
+    "description": "Validation check results (Replaceable Values) for kerbs in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/kerbs/uncanny_keys.json",
+    "format": "JSON",
+    "description": "Validation check results (Uncanny Keys) for kerbs in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/kerbs/wrong_mispelled_or_unlisted_values.json",
+    "format": "JSON",
+    "description": "Validation check results (Wrong Mispelled Or Unlisted Values) for kerbs in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/other_footways/disjointed_geometries.json",
+    "format": "JSON",
+    "description": "Validation check results (Disjointed Geometries) for other_footways in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/other_footways/improper_geometries.json",
+    "format": "JSON",
+    "description": "Validation check results (Improper Geometries) for other_footways in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/other_footways/improper_keys.json",
+    "format": "JSON",
+    "description": "Validation check results (Improper Keys) for other_footways in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/other_footways/invalid_characters.json",
+    "format": "JSON",
+    "description": "Validation check results (Invalid Characters) for other_footways in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/other_footways/keys_without_wiki.json",
+    "format": "JSON",
+    "description": "Validation check results (Keys Without Wiki) for other_footways in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/other_footways/replaceable_values.json",
+    "format": "JSON",
+    "description": "Validation check results (Replaceable Values) for other_footways in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/other_footways/uncanny_keys.json",
+    "format": "JSON",
+    "description": "Validation check results (Uncanny Keys) for other_footways in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/other_footways/wrong_mispelled_or_unlisted_values.json",
+    "format": "JSON",
+    "description": "Validation check results (Wrong Mispelled Or Unlisted Values) for other_footways in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/sidewalks/disjointed_geometries.json",
+    "format": "JSON",
+    "description": "Validation check results (Disjointed Geometries) for sidewalks in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/sidewalks/improper_geometries.json",
+    "format": "JSON",
+    "description": "Validation check results (Improper Geometries) for sidewalks in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/sidewalks/improper_keys.json",
+    "format": "JSON",
+    "description": "Validation check results (Improper Keys) for sidewalks in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/sidewalks/invalid_characters.json",
+    "format": "JSON",
+    "description": "Validation check results (Invalid Characters) for sidewalks in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/sidewalks/keys_without_wiki.json",
+    "format": "JSON",
+    "description": "Validation check results (Keys Without Wiki) for sidewalks in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/sidewalks/replaceable_values.json",
+    "format": "JSON",
+    "description": "Validation check results (Replaceable Values) for sidewalks in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/sidewalks/uncanny_keys.json",
+    "format": "JSON",
+    "description": "Validation check results (Uncanny Keys) for sidewalks in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "JSON Quality Checks",
+    "path": "quality_check/json/sidewalks/wrong_mispelled_or_unlisted_values.json",
+    "format": "JSON",
+    "description": "Validation check results (Wrong Mispelled Or Unlisted Values) for sidewalks in JSON format.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Kerbs Charts",
+    "path": "statistics_specs/kerbs/kerb_tactile_paving.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Kerb Tactile Paving metrics for kerbs layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Kerbs Charts",
+    "path": "statistics_specs/kerbs/kerb_types.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Kerb Types metrics for kerbs layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Kerbs Charts",
+    "path": "statistics_specs/kerbs/kerb_wheelchair_access.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Kerb Wheelchair Access metrics for kerbs layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Kerbs Charts",
+    "path": "statistics_specs/kerbs/kerbs_age.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Kerbs Age metrics for kerbs layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Kerbs Charts",
+    "path": "statistics_specs/kerbs/kerbs_n_revs.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Kerbs N Revs metrics for kerbs layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Kerbs Charts",
+    "path": "statistics_specs/kerbs/kerbs_surface.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Kerbs Surface metrics for kerbs layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Kerbs Charts",
+    "path": "statistics_specs/kerbs/kerbs_x_paving_x_wheelchair.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Kerbs X Paving X Wheelchair metrics for kerbs layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Map Data Assets",
+    "path": "data/data_quality/disjointed/crossings_disjointed.parquet",
+    "format": "GeoParquet",
+    "description": "Map data asset file: crossings_disjointed.parquet",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Map Data Assets",
+    "path": "data/data_quality/disjointed/kerbs_disjointed.parquet",
+    "format": "GeoParquet",
+    "description": "Map data asset file: kerbs_disjointed.parquet",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Map Data Assets",
+    "path": "data/data_quality/improper_geoms/crossings_improper_geoms.parquet",
+    "format": "GeoParquet",
+    "description": "Map data asset file: crossings_improper_geoms.parquet",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Map Data Assets",
+    "path": "data/data_quality/improper_geoms/kerbs_improper_geoms.parquet",
+    "format": "GeoParquet",
+    "description": "Map data asset file: kerbs_improper_geoms.parquet",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Map Data Assets",
+    "path": "data/data_quality/improper_geoms/sidewalks_improper_geoms.parquet",
+    "format": "GeoParquet",
+    "description": "Map data asset file: sidewalks_improper_geoms.parquet",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Other Footways Charts",
+    "path": "statistics_specs/other_footways/other_footways_age.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Other Footways Age metrics for other_footways layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Other Footways Charts",
+    "path": "statistics_specs/other_footways/other_footways_length.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Other Footways Length metrics for other_footways layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Other Footways Charts",
+    "path": "statistics_specs/other_footways/other_footways_n_revs.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Other Footways N Revs metrics for other_footways layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Other Footways Charts",
+    "path": "statistics_specs/other_footways/other_footways_smoothness.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Other Footways Smoothness metrics for other_footways layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Other Footways Charts",
+    "path": "statistics_specs/other_footways/other_footways_smoothness_x_surface.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Other Footways Smoothness X Surface metrics for other_footways layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Other Footways Charts",
+    "path": "statistics_specs/other_footways/other_footways_subcategory.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Other Footways Subcategory metrics for other_footways layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Other Footways Charts",
+    "path": "statistics_specs/other_footways/other_footways_surface.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Other Footways Surface metrics for other_footways layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/crossings.parquet",
+    "format": "GeoParquet",
+    "description": "Processed pedestrian road crossings in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/kerbs.parquet",
+    "format": "GeoParquet",
+    "description": "Processed kerb access points at crossings in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/other_footways.parquet",
+    "format": "GeoParquet",
+    "description": "Processed other footway features in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/other_footways/informal_footways.parquet",
+    "format": "GeoParquet",
+    "description": "Processed informal footways sublayer in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/other_footways/main_footways.parquet",
+    "format": "GeoParquet",
+    "description": "Processed main footways sublayer in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/other_footways/pedestrian_areas.parquet",
+    "format": "GeoParquet",
+    "description": "Processed pedestrian areas sublayer in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/other_footways/potential_footways.parquet",
+    "format": "GeoParquet",
+    "description": "Processed potential footways sublayer in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/other_footways/stairways.parquet",
+    "format": "GeoParquet",
+    "description": "Processed stairways sublayer in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/sidewalks.parquet",
+    "format": "GeoParquet",
+    "description": "Processed and filtered sidewalks in GeoParquet format. Juxtaposed to roads.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/raw/crossings.parquet",
+    "format": "GeoParquet",
+    "description": "Raw crossings dataset directly from OSM (unfiltered) in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/raw/kerbs.parquet",
+    "format": "GeoParquet",
+    "description": "Raw kerbs dataset directly from OSM (unfiltered) in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/raw/other_footways.parquet",
+    "format": "GeoParquet",
+    "description": "Raw other footways dataset directly from OSM (unfiltered) in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/raw/sidewalks.parquet",
+    "format": "GeoParquet",
+    "description": "Raw sidewalks dataset directly from OSM (unfiltered) in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/vrts/data_raw.vrt",
+    "format": "XML/VRT",
+    "description": "GDAL Virtual Format file linking all raw parquet files together.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Routing & Demos",
+    "path": "data/routing/demo.geojson",
+    "format": "GeoJSON",
+    "description": "GeoJSON routing network sample containing intersections and road segments for demo routing.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_age.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks Age metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_incline.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks Incline metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_length.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks Length metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_n_revs.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks N Revs metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_smoothness.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks Smoothness metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_smoothness_x_surface.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks Smoothness X Surface metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_surface.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks Surface metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_tactile_paving.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks Tactile Paving metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Sidewalks Charts",
+    "path": "statistics_specs/sidewalks/sidewalks_width.json",
+    "format": "JSON",
+    "description": "Vega-Lite JSON chart specification visualising Sidewalks Width metrics for sidewalks layer.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/crossings/disjointed_geometries.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Disjointed Geometries.Csv) for crossings.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/crossings/improper_geometries.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Improper Geometries.Csv) for crossings.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/crossings/improper_keys.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Improper Keys.Csv) for crossings.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/crossings/invalid_characters.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Invalid Characters.Csv) for crossings.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/crossings/keys_without_wiki.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Keys Without Wiki.Csv) for crossings.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/crossings/replaceable_values.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Replaceable Values.Csv) for crossings.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/crossings/uncanny_keys.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Uncanny Keys.Csv) for crossings.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/crossings/wrong_mispelled_or_unlisted_values.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Wrong Mispelled Or Unlisted Values.Csv) for crossings.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/kerbs/disjointed_geometries.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Disjointed Geometries.Csv) for kerbs.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/kerbs/improper_geometries.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Improper Geometries.Csv) for kerbs.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/kerbs/improper_keys.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Improper Keys.Csv) for kerbs.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/kerbs/invalid_characters.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Invalid Characters.Csv) for kerbs.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/kerbs/keys_without_wiki.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Keys Without Wiki.Csv) for kerbs.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/kerbs/replaceable_values.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Replaceable Values.Csv) for kerbs.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/kerbs/uncanny_keys.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Uncanny Keys.Csv) for kerbs.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/kerbs/wrong_mispelled_or_unlisted_values.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Wrong Mispelled Or Unlisted Values.Csv) for kerbs.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/other_footways/disjointed_geometries.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Disjointed Geometries.Csv) for other_footways.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/other_footways/improper_geometries.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Improper Geometries.Csv) for other_footways.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/other_footways/improper_keys.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Improper Keys.Csv) for other_footways.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/other_footways/invalid_characters.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Invalid Characters.Csv) for other_footways.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/other_footways/keys_without_wiki.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Keys Without Wiki.Csv) for other_footways.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/other_footways/replaceable_values.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Replaceable Values.Csv) for other_footways.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/other_footways/uncanny_keys.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Uncanny Keys.Csv) for other_footways.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/other_footways/wrong_mispelled_or_unlisted_values.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Wrong Mispelled Or Unlisted Values.Csv) for other_footways.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/sidewalks/disjointed_geometries.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Disjointed Geometries.Csv) for sidewalks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/sidewalks/improper_geometries.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Improper Geometries.Csv) for sidewalks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/sidewalks/improper_keys.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Improper Keys.Csv) for sidewalks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/sidewalks/invalid_characters.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Invalid Characters.Csv) for sidewalks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/sidewalks/keys_without_wiki.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Keys Without Wiki.Csv) for sidewalks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/sidewalks/replaceable_values.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Replaceable Values.Csv) for sidewalks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/sidewalks/uncanny_keys.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Uncanny Keys.Csv) for sidewalks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Table Quality Checks",
+    "path": "quality_check/tables/sidewalks/wrong_mispelled_or_unlisted_values.csv",
+    "format": "JSON",
+    "description": "Tabular validation report (Wrong Mispelled Or Unlisted Values.Csv) for sidewalks.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/crossings.pmtiles",
+    "format": "PMTiles",
+    "description": "Vector tile package containing processed crossings.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/informal_footways.pmtiles",
+    "format": "PMTiles",
+    "description": "Vector tile package containing informal footways.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/kerbs.pmtiles",
+    "format": "PMTiles",
+    "description": "Vector tile package containing processed kerbs.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/main_footways.pmtiles",
+    "format": "PMTiles",
+    "description": "Vector tile package containing main footways.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/pedestrian_areas.pmtiles",
+    "format": "PMTiles",
+    "description": "Vector tile package containing pedestrian areas.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/potential_footways.pmtiles",
+    "format": "PMTiles",
+    "description": "Vector tile package containing potential footways.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/sidewalks.pmtiles",
+    "format": "PMTiles",
+    "description": "Vector tile package containing processed sidewalks for web rendering.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/stairways.pmtiles",
+    "format": "PMTiles",
+    "description": "Vector tile package containing stairways.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/tiles/tile_generation_report.json",
+    "format": "JSON",
+    "description": "Map data asset file: tile_generation_report.json",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/vrts/tiles.vrt",
+    "format": "XML/VRT",
+    "description": "GDAL Virtual Format file referencing tile-oriented datasets.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/boundaries/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'boundaries' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/data_quality/disjointed/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'data_quality/disjointed' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/data_quality/improper_geoms/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'data_quality/improper_geoms' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/data_quality/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'data_quality' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/processed/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'processed' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/processed/other_footways/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'processed/other_footways' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/raw/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'raw' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/routing/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'routing' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/tiles/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'tiles' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/updates/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'updates' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/updates/versioning/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'updates/versioning' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/vrts/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'vrts' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/json/crossings/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'json/crossings' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/json/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'json' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/json/kerbs/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'json/kerbs' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/json/other_footways/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'json/other_footways' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/json/sidewalks/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'json/sidewalks' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/tables/crossings/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'tables/crossings' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/tables/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'tables' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/tables/kerbs/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'tables/kerbs' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/tables/other_footways/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'tables/other_footways' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/tables/sidewalks/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'tables/sidewalks' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "statistics_specs/all_data/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'all_data' folder.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "statistics_specs/crossings/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'crossings' folder.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "statistics_specs/kerbs/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'kerbs' folder.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "statistics_specs/other_footways/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'other_footways' folder.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "statistics_specs/sidewalks/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'sidewalks' folder.",
+    "playground": true,
+    "deliverable": "vega_specs"
+  }
+];
+
+        let selectedEndpoint = null;
+        let currentDeliverable = 'map_data';
+
+        function switchDeliverable(delivId) {
+            currentDeliverable = delivId;
+            
+            // Update tab buttons style
+            document.querySelectorAll('.deliverable-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + delivId).classList.add('active');
+
+            // Render endpoints list
+            renderEndpoints();
+
+            // Auto select the first endpoint
+            const filtered = endpoints.filter(ep => ep.deliverable === currentDeliverable);
+            if (filtered.length > 0) {
+                setTimeout(() => {
+                    const firstItem = document.querySelector('.endpoint-item');
+                    if (firstItem) {
+                        firstItem.click();
+                    }
+                }, 50);
+            } else {
+                resetPlayground();
+            }
+        }
+
+        // Render endpoints listing grouped by categories
+        function renderEndpoints() {
+            const container = document.getElementById('endpoint-list-container');
+            container.innerHTML = '';
+
+            const filtered = endpoints.filter(ep => ep.deliverable === currentDeliverable);
+
+            // Group by category
+            const categories = {};
+            filtered.forEach(ep => {
+                if (!categories[ep.category]) {
+                    categories[ep.category] = [];
+                }
+                categories[ep.category].push(ep);
+            });
+
+            // Create DOM elements
+            for (const catName in categories) {
+                const catBlock = document.createElement('div');
+                catBlock.className = 'category-block';
+                
+                const h3 = document.createElement('h3');
+                h3.textContent = catName;
+                catBlock.appendChild(h3);
+
+                const listDiv = document.createElement('div');
+                listDiv.className = 'endpoint-list';
+
+                categories[catName].forEach(ep => {
+                    const item = document.createElement('div');
+                    item.className = 'endpoint-item';
+                    item.onclick = () => selectEndpoint(ep, item);
+
+                    const pathSpan = document.createElement('span');
+                    pathSpan.className = 'path';
+                    pathSpan.textContent = '/' + ep.path;
+
+                    const metaRow = document.createElement('div');
+                    metaRow.className = 'meta-row';
+
+                    const method = document.createElement('span');
+                    method.className = 'badge badge-get';
+                    method.textContent = 'GET';
+
+                    const format = document.createElement('span');
+                    format.className = 'badge badge-format';
+                    format.textContent = ep.format;
+
+                    metaRow.appendChild(method);
+                    metaRow.appendChild(format);
+                    item.appendChild(pathSpan);
+                    item.appendChild(metaRow);
+
+                    listDiv.appendChild(item);
+                });
+
+                catBlock.appendChild(listDiv);
+                container.appendChild(catBlock);
+            }
+        }
+
+        // Handle Endpoint Selection
+        function selectEndpoint(ep, element) {
+            // Remove active classes
+            document.querySelectorAll('.endpoint-item').forEach(el => el.classList.remove('active'));
+            
+            // Set active class
+            element.classList.add('active');
+            selectedEndpoint = ep;
+
+            // Update details
+            document.getElementById('pl-title').textContent = '/' + ep.path;
+            document.getElementById('pl-desc').textContent = ep.description;
+            document.getElementById('pl-format-badge').textContent = ep.format;
+
+            const fullUrl = baseUrl + ep.path;
+            document.getElementById('request-url-input').value = fullUrl;
+
+            // Reset playground response window
+            resetPlayground();
+
+            // Toggle try/download buttons based on playability
+            const btnTry = document.getElementById('btn-try');
+            if (ep.playground) {
+                btnTry.disabled = false;
+                btnTry.style.opacity = '1';
+                btnTry.style.cursor = 'pointer';
+            } else {
+                btnTry.disabled = true;
+                btnTry.style.opacity = '0.5';
+                btnTry.style.cursor = 'not-allowed';
+            }
+
+            // Update code snippets
+            updateSnippets(fullUrl, ep.format);
+        }
+
+        function resetPlayground() {
+            document.getElementById('response-pre').style.display = 'none';
+            document.getElementById('placeholder-text').style.display = 'block';
+            document.getElementById('placeholder-text').textContent = 'Click "Try It Out" to send a request to the serverless endpoint.';
+            document.getElementById('spinner').style.display = 'none';
+            
+            const dot = document.getElementById('status-dot');
+            dot.className = 'status-dot idle';
+            document.getElementById('status-text').textContent = 'No request sent';
+        }
+
+        // Execute playground AJAX request
+        async function executePlaygroundRequest() {
+            if (!selectedEndpoint) return;
+
+            const requestUrl = document.getElementById('request-url-input').value;
+            
+            // Adjust URL to relative path if running locally to avoid CORS / missing files issues
+            let fetchUrl = requestUrl;
+            const isLocal = window.location.protocol === 'file:' || 
+                            window.location.hostname === 'localhost' || 
+                            window.location.hostname === '127.0.0.1';
+
+            if (isLocal && requestUrl.startsWith(baseUrl)) {
+                // API page is located inside hub/acquisition/API/index.html
+                // So relative paths to data files are three directories up
+                fetchUrl = '../../../' + selectedEndpoint.path;
+            }
+
+            // Update states
+            document.getElementById('placeholder-text').style.display = 'none';
+            document.getElementById('response-pre').style.display = 'none';
+            document.getElementById('spinner').style.display = 'block';
+            
+            const dot = document.getElementById('status-dot');
+            dot.className = 'status-dot loading';
+            document.getElementById('status-text').textContent = 'Fetching data...';
+
+            try {
+                const response = await fetch(fetchUrl);
+                document.getElementById('spinner').style.display = 'none';
+                
+                if (response.ok) {
+                    dot.className = 'status-dot success';
+                    document.getElementById('status-text').textContent = response.status + ' ' + response.statusText;
+                    
+                    const contentType = response.headers.get('content-type');
+                    
+                    let dataText = '';
+                    if (selectedEndpoint.format === 'JSON' || selectedEndpoint.format === 'GeoJSON') {
+                        const json = await response.json();
+                        dataText = JSON.stringify(json, null, 2);
+                    } else {
+                        dataText = await response.text();
+                    }
+
+                    const pre = document.getElementById('response-pre');
+                    pre.style.display = 'block';
+                    pre.textContent = dataText;
+                } else {
+                    dot.className = 'status-dot error';
+                    document.getElementById('status-text').textContent = response.status + ' ' + response.statusText;
+                    
+                    const pre = document.getElementById('response-pre');
+                    pre.style.display = 'block';
+                    pre.textContent = 'Error details: Request returned a non-200 status code.\n\nURL Attempted: ' + fetchUrl + '\nHTTP Status: ' + response.status + ' - ' + response.statusText;
+                }
+            } catch (err) {
+                document.getElementById('spinner').style.display = 'none';
+                dot.className = 'status-dot error';
+                document.getElementById('status-text').textContent = 'Network Error';
+                
+                const pre = document.getElementById('response-pre');
+                pre.style.display = 'block';
+                pre.textContent = 'Fetch Failed: ' + err.message + '\n\nThis could be due to a CORS policy restriction or because the file does not exist locally yet. If running locally, make sure to generate the data folder contents.';
+            }
+        }
+
+        function downloadEndpointFile() {
+            if (!selectedEndpoint) return;
+            const requestUrl = document.getElementById('request-url-input').value;
+            window.open(requestUrl, '_blank');
+        }
+
+        function copyRequestUrl() {
+            const input = document.getElementById('request-url-input');
+            if (input.value) {
+                navigator.clipboard.writeText(input.value);
+                alert('Copied request URL to clipboard!');
+            }
+        }
+
+        function updateSnippets(url, format) {
+            // JS
+            let jsCode = 'fetch(\'' + url + '\')\n  .then(response => response.json())\n  .then(data => console.log(data));';
+            if (format === 'PMTiles') {
+                jsCode = '// Read vector tiles efficiently in JS\nimport { PMTiles } from \'pmtiles\';\n\nconst tilesUrl = \'' + url + '\';\nconst p = new PMTiles(tilesUrl);\n// Add to maplibre or leaflet...';
+            } else if (format === 'GeoParquet') {
+                jsCode = '// Reading GeoParquet in JS requires specialized libraries like @loaders.gl/parquet\n// See: https://loaders.gl/docs/specifications/category-gis';
+            }
+            document.getElementById('code-js').textContent = jsCode;
+
+            // Python
+            let pyCode = 'import requests\n\nurl = "' + url + '"\nresponse = requests.get(url)\ndata = response.json()\nprint(data)';
+            if (format === 'GeoParquet') {
+                pyCode = 'import geopandas as gpd\n\n# Open GeoParquet directly via HTTP/s URL\nurl = "' + url + '"\ngdf = gpd.read_parquet(url)\nprint(gdf.head())';
+            } else if (format === 'GeoJSON') {
+                pyCode = 'import geopandas as gpd\n\n# Open GeoJSON directly via HTTP/s URL\nurl = "' + url + '"\ngdf = gpd.read_file(url)\nprint(gdf.head())';
+            } else if (format === 'PMTiles') {
+                pyCode = 'from pmtiles.reader import Reader\nimport urllib.request\n\n# Read pmtiles headers\nurl = "' + url + '"\n# Open stream and read...';
+            }
+            document.getElementById('code-py').textContent = pyCode;
+
+            // GDAL
+            let gdalCode = 'ogrinfo -ro -al "/vsicurl/' + url + '"';
+            if (format === 'PMTiles') {
+                gdalCode = '# GDAL support for PMTiles starting from version 3.8.0\nogrinfo -ro -al "/vsipmtiles/vsicurl/' + url + '"';
+            }
+            document.getElementById('code-gdal').textContent = gdalCode;
+
+            // cURL
+            const curlCode = 'curl -L -X GET "' + url + '"';
+            document.getElementById('code-curl').textContent = curlCode;
+        }
+
+        function switchSnippetTab(tabId) {
+            document.querySelectorAll('.tab-header').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+
+            const activeTabHeader = Array.from(document.querySelectorAll('.tab-header')).find(el => el.getAttribute('onclick').includes(tabId));
+            if (activeTabHeader) activeTabHeader.classList.add('active');
+
+            const tabContent = document.getElementById(tabId);
+            if (tabContent) tabContent.classList.add('active');
+        }
+
+        function copySnippet(elementId) {
+            const code = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(code);
+            alert('Code snippet copied to clipboard!');
+        }
+
+        // Initialize Page
+        switchDeliverable('map_data');
+    </script>
+</body>
+</html>

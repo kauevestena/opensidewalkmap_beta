@@ -1,0 +1,15 @@
+{
+    "folder": "statistics_specs/sidewalks",
+    "files": [
+        "sidewalks_age.json",
+        "sidewalks_incline.json",
+        "sidewalks_length.json",
+        "sidewalks_n_revs.json",
+        "sidewalks_smoothness.json",
+        "sidewalks_smoothness_x_surface.json",
+        "sidewalks_surface.json",
+        "sidewalks_tactile_paving.json",
+        "sidewalks_width.json"
+    ],
+    "subfolders": []
+}

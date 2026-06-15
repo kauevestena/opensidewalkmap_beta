@@ -1,0 +1,10 @@
+{
+    "folder": "quality_check/tables",
+    "files": [],
+    "subfolders": [
+        "crossings",
+        "kerbs",
+        "other_footways",
+        "sidewalks"
+    ]
+}

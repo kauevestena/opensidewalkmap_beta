@@ -1,0 +1,109 @@
+{
+    "node_name": "Curitiba",
+    "username": "kauevestena",
+    "repository": "opensidewalkmap_beta",
+    "base_url": "https://kauevestena.github.io/opensidewalkmap_beta/",
+    "description": "Serverless API data index for OSWM node: Curitiba",
+    "folders": {
+        "boundaries": {
+            "description": "Polygon boundary and metadata about the study area.",
+            "path": "data/boundaries",
+            "files": [
+                "index.json",
+                "infos.json",
+                "polygon.geojson",
+                "polygon.parquet"
+            ]
+        },
+        "processed": {
+            "description": "Cleaned, filtered, and structured pedestrian network layers in GeoParquet format.",
+            "path": "data/processed",
+            "files": [
+                "crossings.parquet",
+                "index.json",
+                "kerbs.parquet",
+                "other_footways.parquet",
+                "other_footways/index.json",
+                "other_footways/informal_footways.parquet",
+                "other_footways/main_footways.parquet",
+                "other_footways/pedestrian_areas.parquet",
+                "other_footways/potential_footways.parquet",
+                "other_footways/stairways.parquet",
+                "sidewalks.parquet"
+            ]
+        },
+        "raw": {
+            "description": "Raw, unfiltered pedestrian network datasets downloaded directly from OpenStreetMap.",
+            "path": "data/raw",
+            "files": [
+                "crossings.parquet",
+                "index.json",
+                "kerbs.parquet",
+                "other_footways.parquet",
+                "sidewalks.parquet"
+            ]
+        },
+        "tiles": {
+            "description": "Pedestrian network layers packaged as vector tiles in PMTiles format.",
+            "path": "data/tiles",
+            "files": [
+                "crossings.pmtiles",
+                "index.json",
+                "informal_footways.pmtiles",
+                "kerbs.pmtiles",
+                "main_footways.pmtiles",
+                "pedestrian_areas.pmtiles",
+                "potential_footways.pmtiles",
+                "sidewalks.pmtiles",
+                "stairways.pmtiles",
+                "tile_generation_report.json"
+            ]
+        },
+        "updates": {
+            "description": "Data update logs, registry status, and historical version tracking.",
+            "path": "data/updates",
+            "files": [
+                "index.html",
+                "index.json",
+                "registry.json",
+                "versioning/crossings_versioning.json",
+                "versioning/index.json",
+                "versioning/kerbs_versioning.json",
+                "versioning/other_footways_versioning.json",
+                "versioning/sidewalks_versioning.json"
+            ]
+        },
+        "vrts": {
+            "description": "GDAL Vector Virtual Dataset (VRT) descriptors for direct GIS integrations.",
+            "path": "data/vrts",
+            "files": [
+                "data.vrt",
+                "data_raw.vrt",
+                "index.json",
+                "tiles.vrt"
+            ]
+        },
+        "data_quality": {
+            "description": "Spatial parquet layers highlighting topological and tagging inconsistencies.",
+            "path": "data/data_quality",
+            "files": [
+                "disjointed/crossings_disjointed.parquet",
+                "disjointed/index.json",
+                "disjointed/kerbs_disjointed.parquet",
+                "improper_geoms/crossings_improper_geoms.parquet",
+                "improper_geoms/index.json",
+                "improper_geoms/kerbs_improper_geoms.parquet",
+                "improper_geoms/sidewalks_improper_geoms.parquet",
+                "index.json"
+            ]
+        },
+        "routing": {
+            "description": "Routing files, network properties, and routing demo data.",
+            "path": "data/routing",
+            "files": [
+                "demo.geojson",
+                "index.json"
+            ]
+        }
+    }
+}

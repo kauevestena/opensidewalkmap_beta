@@ -1,0 +1,14 @@
+{
+    "folder": "quality_check",
+    "files": [
+        "categories.json",
+        "feature_keys.json",
+        "keys_without_wiki.json",
+        "unique_tag_values.json",
+        "valid_tag_values.json"
+    ],
+    "subfolders": [
+        "json",
+        "tables"
+    ]
+}

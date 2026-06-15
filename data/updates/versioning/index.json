@@ -1,0 +1,10 @@
+{
+    "folder": "data/updates/versioning",
+    "files": [
+        "crossings_versioning.json",
+        "kerbs_versioning.json",
+        "other_footways_versioning.json",
+        "sidewalks_versioning.json"
+    ],
+    "subfolders": []
+}

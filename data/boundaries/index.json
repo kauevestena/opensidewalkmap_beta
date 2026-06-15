@@ -1,0 +1,9 @@
+{
+    "folder": "data/boundaries",
+    "files": [
+        "infos.json",
+        "polygon.geojson",
+        "polygon.parquet"
+    ],
+    "subfolders": []
+}

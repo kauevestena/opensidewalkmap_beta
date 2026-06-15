@@ -1,0 +1,15 @@
+{
+    "folder": "statistics_specs/all_data",
+    "files": [
+        "all_data_age.json",
+        "all_data_category.json",
+        "all_data_lit.json",
+        "all_data_n_revs.json",
+        "all_data_smoothness.json",
+        "all_data_surface.json",
+        "all_data_tactile_paving.json",
+        "all_data_traffic_calming.json",
+        "all_data_wheelchair_tag.json"
+    ],
+    "subfolders": []
+}

@@ -1,0 +1,9 @@
+{
+    "folder": "data/vrts",
+    "files": [
+        "data.vrt",
+        "data_raw.vrt",
+        "tiles.vrt"
+    ],
+    "subfolders": []
+}

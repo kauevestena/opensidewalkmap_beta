@@ -1,0 +1,14 @@
+{
+    "folder": "quality_check/tables/kerbs",
+    "files": [
+        "disjointed_geometries.csv",
+        "improper_geometries.csv",
+        "improper_keys.csv",
+        "invalid_characters.csv",
+        "keys_without_wiki.csv",
+        "replaceable_values.csv",
+        "uncanny_keys.csv",
+        "wrong_mispelled_or_unlisted_values.csv"
+    ],
+    "subfolders": []
+}

@@ -1,0 +1,14 @@
+{
+    "folder": "quality_check/json/kerbs",
+    "files": [
+        "disjointed_geometries.json",
+        "improper_geometries.json",
+        "improper_keys.json",
+        "invalid_characters.json",
+        "keys_without_wiki.json",
+        "replaceable_values.json",
+        "uncanny_keys.json",
+        "wrong_mispelled_or_unlisted_values.json"
+    ],
+    "subfolders": []
+}
