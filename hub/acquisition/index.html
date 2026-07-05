@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSWM Data Acquisition | Curitiba</title>
+    <meta name="description" content="Pedestrian-data project discovery dashboard for OSWM node: Curitiba">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255,255,255,0.08);
+            --primary: #00f2fe;
+            --primary-glow: rgba(0,242,254,0.15);
+            --secondary: #4facfe;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-success: #10b981;
+            --accent-warning: #f59e0b;
+            --accent-error: #ef4444;
+            --accent-purple: #8b5cf6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%; left: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(0,242,254,0.12) 0%, transparent 70%);
+            z-index: -1; pointer-events: none;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -10%; right: -10%;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
+            z-index: -1; pointer-events: none;
+        }
+        header {
+            background: rgba(15,23,42,0.6);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.25rem 2rem;
+        }
+        .header-inner {
+            max-width: 1400px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .header-inner h1 {
+            font-size: 1.4rem; font-weight: 600;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .header-inner .timestamp {
+            font-size: 0.85rem; color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+        }
+        .container {
+            max-width: 1400px; margin: 2rem auto; padding: 0 2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem; margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px rgba(0,0,0,0.3);
+        }
+        .stat-card .label {
+            font-size: 0.82rem; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.4rem;
+        }
+        .stat-card .value {
+            font-size: 2rem; font-weight: 700;
+        }
+        .stat-card .value.primary { color: var(--primary); }
+        .stat-card .value.purple { color: var(--accent-purple); }
+        .stat-card .value.success { color: var(--accent-success); }
+
+        .panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+        .panel h2 {
+            font-size: 1.15rem; font-weight: 600; margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+
+        /* Service status badges */
+        .svc-badges {
+            display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;
+        }
+        .svc-badge {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.4rem 0.9rem; border-radius: 8px;
+            font-size: 0.85rem; font-weight: 500;
+            border: 1px solid var(--card-border);
+            background: rgba(255,255,255,0.03);
+        }
+        .svc-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+        }
+        .svc-dot.ok { background: var(--accent-success); box-shadow: 0 0 6px var(--accent-success); }
+        .svc-dot.offline { background: var(--accent-error); box-shadow: 0 0 6px var(--accent-error); }
+        .svc-dot.error { background: var(--accent-warning); box-shadow: 0 0 6px var(--accent-warning); }
+
+        /* Search + filters */
+        .controls {
+            display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;
+        }
+        .search-box {
+            flex: 1; min-width: 200px;
+            background: rgba(15,23,42,0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 8px; padding: 0.6rem 1rem;
+            color: var(--text-main); font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem; outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-box:focus { border-color: rgba(0,242,254,0.4); }
+        .filter-select {
+            background: rgba(15,23,42,0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 8px; padding: 0.6rem 1rem;
+            color: var(--text-main); font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem; outline: none; cursor: pointer;
+        }
+
+        /* Projects table */
+        .projects-table {
+            width: 100%; border-collapse: collapse;
+        }
+        .projects-table th {
+            text-align: left; padding: 0.75rem 1rem;
+            font-size: 0.78rem; text-transform: uppercase;
+            letter-spacing: 0.8px; color: var(--text-muted);
+            border-bottom: 1px solid var(--card-border);
+            cursor: pointer; user-select: none;
+        }
+        .projects-table th:hover { color: var(--primary); }
+        .projects-table td {
+            padding: 0.75rem 1rem; font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            vertical-align: top;
+        }
+        .projects-table tr {
+            transition: background 0.15s;
+        }
+        .projects-table tr:hover {
+            background: rgba(0,242,254,0.03);
+        }
+        .project-title a {
+            color: var(--primary); text-decoration: none; font-weight: 500;
+            transition: color 0.2s;
+        }
+        .project-title a:hover { color: var(--secondary); }
+        .project-desc {
+            font-size: 0.82rem; color: var(--text-muted);
+            max-width: 400px; overflow: hidden;
+            text-overflow: ellipsis; white-space: nowrap;
+        }
+        .kw-tag {
+            display: inline-block;
+            padding: 0.1rem 0.45rem; margin: 0.1rem;
+            border-radius: 4px; font-size: 0.72rem; font-weight: 600;
+            background: rgba(0,242,254,0.1); color: var(--primary);
+        }
+        .status-tag {
+            padding: 0.15rem 0.5rem; border-radius: 4px;
+            font-size: 0.75rem; font-weight: 600;
+        }
+        .status-tag.active { background: rgba(16,185,129,0.15); color: var(--accent-success); }
+        .status-tag.other { background: rgba(255,255,255,0.08); color: var(--text-muted); }
+
+        .empty-state {
+            text-align: center; padding: 3rem 1rem;
+            color: var(--text-muted);
+        }
+        .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .projects-table { font-size: 0.82rem; }
+            .projects-table td, .projects-table th { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1>&#x1F6B6; OSWM Data Acquisition &mdash; Curitiba</h1>
+            <span class="timestamp">2026-07-05 03:25 UTC</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats-grid" id="stats-grid"></div>
+
+        <div class="panel">
+            <h2>&#x1F4E1; Service Status</h2>
+            <div class="svc-badges" id="svc-badges"></div>
+        </div>
+
+        <div class="panel">
+            <h2>&#x1F4CB; Discovered Projects</h2>
+            <div class="controls">
+                <input class="search-box" id="search" type="text" placeholder="Filter projects by title or keyword&#x2026;">
+                <select class="filter-select" id="svc-filter">
+                    <option value="all">All Services</option>
+                </select>
+            </div>
+            <div id="table-container"></div>
+        </div>
+    </div>
+
+<script>
+const PROJECTS = [
+  {
+    "id": 55609,
+    "title": "BRA - Sidewalk Should be Crossing",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/55609",
+    "status": "Ready",
+    "description": "This challenge identifies potential\npedestrian crosswalks that have been incorrectly labeled as sidewalks.\nWe assess the length of each sidewalk. If a sidewalk is notably short and\ncontains a single intermediate node marked as a 'crossing', it is highly\nlikely that the sidewalk is a crossing.\n\nWhen we discover a sidewalk that should be classified as a crosswalk, we flag\nit as a task in Map Roulette.\n\nHuman review of these tasks is crucial because there are numerous locations\nwhere the crosswalk is not clearly defined. A combination of human review and\nstreet-side photos is necessary for accurate mapping of the crossing.\n\nWhen you are directed to the editor to make modifications, you may need to\nzoom in to identify the issue. We recommend using the '+' button to zoom in,\nas the area of interest will be centered on the map.\n",
+    "matched_keywords": [
+      "sidewalk"
+    ]
+  },
+  {
+    "id": 44466,
+    "title": "BRA - Suspicious Sidewalk Tags",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/44466",
+    "status": "Ready",
+    "description": "This challenge identifies major high-speed, multi-lane roads with the 'sidewalk=\\*' tag. We want to review the sidewalk tag for accuracy. If the tag is not accurate, please edit it accordingly.\n### How to map:\n- If the sidewalk is mapped separately from the road, use 'sidewalk:\\*=separate'\n- If the sidewalk is not mapped separately from the road, use 'sidewalk:\\*'\n- If the sidewalk does not exist, use 'sidewalk=no'\n- For more complex examples, like 'sidewalk:left=no' + 'sidewalk:right=separate', [please review the examples under 'Separate Mapped Sidewalks.'](https://wiki.openstreetmap.org/wiki/Key:sidewalk#Separately_mapped_sidewalks)\n### Roads are flagged if they meet one of these criteria:\n- highway=motorway\n- High max speed\n- High total lane count\nFor example, a motorway has the tag 'sidewalk=right,' but the sidewalk is actually on the left and mapped separately from the road. Simply update the tag to 'sidewalk:left=separate.'\nSee the [wiki on 'sidewalk=\\*' for guidance.](https://wiki.openstreetmap.org/wiki/Key:sidewalk)\n",
+    "matched_keywords": [
+      "sidewalk"
+    ]
+  }
+];
+const SERVICE_STATUS = {
+  "Tasking Manager": {
+    "status": "error",
+    "instances": {
+      "https://tasks.hotosm.org/": "partial",
+      "https://tasks.teachosm.org/": "partial",
+      "https://tasks.mapwith.ai/": "partial"
+    }
+  },
+  "Pic4Review": {
+    "status": "online (no search API)",
+    "instances": {
+      "https://pic4review.pavie.info/#/": "online (no search API)"
+    }
+  },
+  "MapRoulette": {
+    "status": "ok",
+    "instances": {
+      "https://maproulette.org/": "ok"
+    }
+  }
+};
+
+function init() {
+    renderStats();
+    renderServiceBadges();
+    populateServiceFilter();
+    renderTable(PROJECTS);
+
+    document.getElementById('search').addEventListener('input', applyFilters);
+    document.getElementById('svc-filter').addEventListener('change', applyFilters);
+}
+
+function renderStats() {
+    const grid = document.getElementById('stats-grid');
+    const services = new Set(PROJECTS.map(p => p.service));
+    const kws = new Set(PROJECTS.flatMap(p => p.matched_keywords || []));
+
+    const cards = [
+        { label: 'Total Projects', value: PROJECTS.length, cls: 'primary' },
+        { label: 'Services Queried', value: Object.keys(SERVICE_STATUS).length, cls: 'purple' },
+        { label: 'Unique Keywords', value: kws.size, cls: 'success' },
+        { label: 'Active Services', value: services.size, cls: 'primary' },
+    ];
+
+    grid.innerHTML = cards.map(c => `
+        <div class="stat-card">
+            <div class="label">${c.label}</div>
+            <div class="value ${c.cls}">${c.value}</div>
+        </div>
+    `).join('');
+}
+
+function renderServiceBadges() {
+    const container = document.getElementById('svc-badges');
+    container.innerHTML = Object.entries(SERVICE_STATUS).map(([name, info]) => {
+        const status = info.status || 'error';
+        let dotCls, label;
+        if (status === 'ok') { dotCls = 'ok'; label = ''; }
+        else if (status === 'offline') { dotCls = 'offline'; label = '(offline server)'; }
+        else if (status.includes('online')) { dotCls = 'ok'; label = '(no search API)'; }
+        else { dotCls = 'error'; label = `(${status})`; }
+        return `<div class="svc-badge"><span class="svc-dot ${dotCls}"></span>${name} ${label}</div>`;
+    }).join('');
+}
+
+function populateServiceFilter() {
+    const sel = document.getElementById('svc-filter');
+    const svcs = [...new Set(PROJECTS.map(p => p.service))];
+    svcs.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s; opt.textContent = s;
+        sel.appendChild(opt);
+    });
+}
+
+function applyFilters() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const svc = document.getElementById('svc-filter').value;
+    let filtered = PROJECTS;
+    if (svc !== 'all') filtered = filtered.filter(p => p.service === svc);
+    if (q) filtered = filtered.filter(p =>
+        (p.title || '').toLowerCase().includes(q) ||
+        (p.matched_keywords || []).some(k => k.toLowerCase().includes(q)) ||
+        (p.description || '').toLowerCase().includes(q)
+    );
+    renderTable(filtered);
+}
+
+function renderTable(projects) {
+    const c = document.getElementById('table-container');
+    if (!projects.length) {
+        c.innerHTML = '<div class="empty-state"><div class="icon">\uD83D\uDD0D</div><p>No projects found matching your criteria.</p></div>';
+        return;
+    }
+    const activeStatuses = new Set(['ready', 'published', 'active', 'building', 'partially loaded']);
+    let html = `<table class="projects-table">
+        <thead><tr>
+            <th>Title</th><th>Service</th><th>Status</th><th>Keywords</th><th>Description</th>
+        </tr></thead><tbody>`;
+    projects.forEach(p => {
+        const isActive = activeStatuses.has((p.status || '').toLowerCase());
+        const statusCls = isActive ? 'active' : 'other';
+        const kws = (p.matched_keywords || []).map(k => `<span class="kw-tag">${k}</span>`).join('');
+        html += `<tr>
+            <td class="project-title"><a href="${p.url}" target="_blank" rel="noopener">${p.title || 'Untitled'}</a></td>
+            <td>${p.service}</td>
+            <td><span class="status-tag ${statusCls}">${p.status || 'N/A'}</span></td>
+            <td>${kws}</td>
+            <td class="project-desc" title="${(p.description || '').replace(/"/g, '&quot;')}">${p.description || ''}</td>
+        </tr>`;
+    });
+    html += '</tbody></table>';
+    c.innerHTML = html;
+}
+
+init();
+</script>
+</body>
+</html>

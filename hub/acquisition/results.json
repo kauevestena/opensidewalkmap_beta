@@ -1,0 +1,70 @@
+{
+  "node_name": "Curitiba",
+  "generated_at": "2026-07-05T03:25:13Z",
+  "bbox": [
+    -25.6435043,
+    -49.38914,
+    -25.3449505,
+    -49.1843182
+  ],
+  "keywords_used": [
+    "oswm",
+    "OpenSidewalkMap",
+    "sidewalk",
+    "pedestrian"
+  ],
+  "services_queried": [
+    "Tasking Manager",
+    "Pic4Review",
+    "MapRoulette"
+  ],
+  "service_status": {
+    "Tasking Manager": {
+      "status": "error",
+      "instances": {
+        "https://tasks.hotosm.org/": "partial",
+        "https://tasks.teachosm.org/": "partial",
+        "https://tasks.mapwith.ai/": "partial"
+      }
+    },
+    "Pic4Review": {
+      "status": "online (no search API)",
+      "instances": {
+        "https://pic4review.pavie.info/#/": "online (no search API)"
+      }
+    },
+    "MapRoulette": {
+      "status": "ok",
+      "instances": {
+        "https://maproulette.org/": "ok"
+      }
+    }
+  },
+  "total_projects_found": 2,
+  "projects": [
+    {
+      "id": 55609,
+      "title": "BRA - Sidewalk Should be Crossing",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/55609",
+      "status": "Ready",
+      "description": "This challenge identifies potential\npedestrian crosswalks that have been incorrectly labeled as sidewalks.\nWe assess the length of each sidewalk. If a sidewalk is notably short and\ncontains a single intermediate node marked as a 'crossing', it is highly\nlikely that the sidewalk is a crossing.\n\nWhen we discover a sidewalk that should be classified as a crosswalk, we flag\nit as a task in Map Roulette.\n\nHuman review of these tasks is crucial because there are numerous locations\nwhere the crosswalk is not clearly defined. A combination of human review and\nstreet-side photos is necessary for accurate mapping of the crossing.\n\nWhen you are directed to the editor to make modifications, you may need to\nzoom in to identify the issue. We recommend using the '+' button to zoom in,\nas the area of interest will be centered on the map.\n",
+      "matched_keywords": [
+        "sidewalk"
+      ]
+    },
+    {
+      "id": 44466,
+      "title": "BRA - Suspicious Sidewalk Tags",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/44466",
+      "status": "Ready",
+      "description": "This challenge identifies major high-speed, multi-lane roads with the 'sidewalk=\\*' tag. We want to review the sidewalk tag for accuracy. If the tag is not accurate, please edit it accordingly.\n### How to map:\n- If the sidewalk is mapped separately from the road, use 'sidewalk:\\*=separate'\n- If the sidewalk is not mapped separately from the road, use 'sidewalk:\\*'\n- If the sidewalk does not exist, use 'sidewalk=no'\n- For more complex examples, like 'sidewalk:left=no' + 'sidewalk:right=separate', [please review the examples under 'Separate Mapped Sidewalks.'](https://wiki.openstreetmap.org/wiki/Key:sidewalk#Separately_mapped_sidewalks)\n### Roads are flagged if they meet one of these criteria:\n- highway=motorway\n- High max speed\n- High total lane count\nFor example, a motorway has the tag 'sidewalk=right,' but the sidewalk is actually on the left and mapped separately from the road. Simply update the tag to 'sidewalk:left=separate.'\nSee the [wiki on 'sidewalk=\\*' for guidance.](https://wiki.openstreetmap.org/wiki/Key:sidewalk)\n",
+      "matched_keywords": [
+        "sidewalk"
+      ]
+    }
+  ]
+}
