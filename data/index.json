@@ -65,6 +65,7 @@
             "files": [
                 "index.html",
                 "index.json",
+                "pipeline_failures.txt",
                 "registry.json",
                 "versioning/crossings_versioning.json",
                 "versioning/index.json",

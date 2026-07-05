@@ -1,0 +1,3 @@
+pytest==8.2.2
+pytest-mock==3.14.0
+responses==0.25.0

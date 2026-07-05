@@ -1,6 +1,7 @@
 {
     "folder": "data/updates",
     "files": [
+        "pipeline_failures.txt",
         "registry.json"
     ],
     "subfolders": [
