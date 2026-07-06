@@ -45,15 +45,15 @@
     
   <meta charset="UTF-8">
   
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-7f11d9e40f7e6cc05ac91669d7205ebe"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "crossing", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_7", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Crossing Type", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-7f11d9e40f7e6cc05ac91669d7205ebe": [{"crossing": "?", "count": 1040, "percent": "49.98%"}, {"crossing": "unmarked", "count": 712, "percent": "34.21%"}, {"crossing": "marked", "count": 121, "percent": "5.81%"}, {"crossing": "traffic_signals", "count": 100, "percent": "4.81%"}, {"crossing": "uncontrolled", "count": 92, "percent": "4.42%"}, {"crossing": "zebra", "count": 13, "percent": "0.62%"}, {"crossing": "no", "count": 3, "percent": "0.14%"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-5e0a17a413fee5ed227b519c684bd37f"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "percent", "type": "nominal"}], "x": {"field": "crossing", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "Crossing Type", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-5e0a17a413fee5ed227b519c684bd37f": [{"crossing": "?", "count": 1040, "percent": "49.62%"}, {"crossing": "unmarked", "count": 712, "percent": "33.97%"}, {"crossing": "marked", "count": 122, "percent": "5.82%"}, {"crossing": "uncontrolled", "count": 106, "percent": "5.06%"}, {"crossing": "traffic_signals", "count": 100, "percent": "4.77%"}, {"crossing": "zebra", "count": 13, "percent": "0.62%"}, {"crossing": "no", "count": 3, "percent": "0.14%"}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

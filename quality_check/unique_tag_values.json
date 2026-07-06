@@ -1963,7 +1963,6 @@
             "Rua Alferes Poli",
             "Rua Professor Plácido e Silva",
             "Rua Dom Pedro I",
-            "Rua Ozório Duque Estrada",
             "Rua Paraguassu",
             "Condominio Residencial Villaggio Gran Paradiso",
             "Residencial Montese",
@@ -2858,6 +2857,9 @@
         "ford": [
             "seasonal",
             "stepping_stones"
+        ],
+        "tracktype": [
+            "grade4"
         ],
         "vehicle": [
             "no"
