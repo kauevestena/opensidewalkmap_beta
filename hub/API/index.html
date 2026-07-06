@@ -2388,9 +2388,9 @@ print(data)</pre>
                             window.location.hostname === '127.0.0.1';
 
             if (isLocal && requestUrl.startsWith(baseUrl)) {
-                // API page is located inside hub/acquisition/API/index.html
-                // So relative paths to data files are three directories up
-                fetchUrl = '../../../' + selectedEndpoint.path;
+                // API page is located inside hub/API/index.html
+                // So relative paths to data files are two directories up
+                fetchUrl = '../../' + selectedEndpoint.path;
             }
 
             // Update states
