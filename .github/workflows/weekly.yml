@@ -27,16 +27,11 @@ jobs:
     steps:
       #### actions/checkout ____________________________________________________
       # @see https://github.com/actions/checkout
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
-          submodules: false
-
-      #### setup submodules _____________________________________________________
-      - name: Setup submodules
-        run: |
-          rm -rf oswm_codebase
-          git clone --depth 1 --branch main https://github.com/kauevestena/oswm_codebase.git oswm_codebase
+          ref: main               # ensure the run uses HEAD of main
+          fetch-depth: 1          # shallow clone to save disk space
+          submodules: recursive   # fetch submodules correctly
 
       #### Install system dependencies (GDAL) __________________________________
       - name: Install system dependencies (GDAL)
@@ -69,8 +64,7 @@ jobs:
           COMMIT_MESSAGE="weekly updates at $DATETIME"
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git pull
-          git add .
+          git add -A
           if ! git diff --cached --quiet; then
             git commit -m "$COMMIT_MESSAGE"
             git push
