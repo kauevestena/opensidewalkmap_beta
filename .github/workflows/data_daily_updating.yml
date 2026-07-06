@@ -23,6 +23,9 @@ env:
 jobs:
   data_daily_updating:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       # Checkout the latest commit on main and let it pull submodules properly
       - uses: actions/checkout@v4
