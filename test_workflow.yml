@@ -1,9 +1,0 @@
-name: test
-on: push
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        environment: github-pages
-        uses: actions/deploy-pages@v4
