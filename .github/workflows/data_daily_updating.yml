@@ -9,6 +9,8 @@ on:
 permissions:
   contents: write
   issues: write
+  pages: write
+  id-token: write
 
 concurrency:
   # Prevent overlapping daily runs from stepping on each other
@@ -116,7 +118,23 @@ jobs:
             echo "No changes to commit."
           fi
 
+      - name: Setup Pages
+        if: steps.daily_job.outcome == 'success' && steps.validate_tiles.outcome == 'success'
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        if: steps.daily_job.outcome == 'success' && steps.validate_tiles.outcome == 'success'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        if: steps.daily_job.outcome == 'success' && steps.validate_tiles.outcome == 'success'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
       - name: Create failure issue
+
         if: steps.daily_job.outcome == 'failure' || steps.validate_tiles.outcome == 'failure'
         uses: actions/github-script@v7
         env:

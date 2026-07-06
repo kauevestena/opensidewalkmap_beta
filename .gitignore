@@ -177,6 +177,9 @@ cache/
 # we shall start to log:
 *.log
 
+# Routing demo data (deployed as GitHub Pages artifact only, no need for change tracking)
+data/routing/demo.geojson
+
 # development stuff
 .vscode
 tests/
