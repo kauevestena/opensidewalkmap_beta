@@ -136,9 +136,39 @@
         .svc-dot.offline { background: var(--accent-error); box-shadow: 0 0 6px var(--accent-error); }
         .svc-dot.error { background: var(--accent-warning); box-shadow: 0 0 6px var(--accent-warning); }
 
+        /* Tabs */
+        .tabs {
+            display: flex; gap: 0; margin-bottom: 0;
+            border-bottom: 2px solid var(--card-border);
+        }
+        .tab-btn {
+            padding: 0.7rem 1.4rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem; font-weight: 500;
+            color: var(--text-muted);
+            background: none; border: none; cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .tab-btn:hover { color: var(--text-main); }
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .tab-btn .tab-count {
+            display: inline-block;
+            margin-left: 0.4rem;
+            padding: 0.05rem 0.4rem;
+            border-radius: 10px;
+            font-size: 0.72rem; font-weight: 600;
+            background: rgba(0,242,254,0.12); color: var(--primary);
+        }
+
         /* Search + filters */
         .controls {
             display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;
+            margin-top: 1rem;
         }
         .search-box {
             flex: 1; min-width: 200px;
@@ -150,13 +180,6 @@
             transition: border-color 0.2s;
         }
         .search-box:focus { border-color: rgba(0,242,254,0.4); }
-        .filter-select {
-            background: rgba(15,23,42,0.5);
-            border: 1px solid var(--card-border);
-            border-radius: 8px; padding: 0.6rem 1rem;
-            color: var(--text-main); font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem; outline: none; cursor: pointer;
-        }
 
         /* Projects table */
         .projects-table {
@@ -209,12 +232,17 @@
             color: var(--text-muted);
         }
         .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
+        .instance-label {
+            font-size: 0.75rem; color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+        }
 
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .projects-table { font-size: 0.82rem; }
             .projects-table td, .projects-table th { padding: 0.5rem; }
+            .tabs { overflow-x: auto; }
         }
     </style>
 </head>
@@ -222,7 +250,7 @@
     <header>
         <div class="header-inner">
             <h1>&#x1F6B6; OSWM Data Acquisition &mdash; Curitiba</h1>
-            <span class="timestamp">2026-07-05 17:57 UTC</span>
+            <span class="timestamp">2026-07-07 21:59 UTC</span>
         </div>
     </header>
 
@@ -236,11 +264,9 @@
 
         <div class="panel">
             <h2>&#x1F4CB; Discovered Projects</h2>
+            <div class="tabs" id="service-tabs"></div>
             <div class="controls">
                 <input class="search-box" id="search" type="text" placeholder="Filter projects by title or keyword&#x2026;">
-                <select class="filter-select" id="svc-filter">
-                    <option value="all">All Services</option>
-                </select>
             </div>
             <div id="table-container"></div>
         </div>
@@ -248,6 +274,58 @@
 
 <script>
 const PROJECTS = [
+  {
+    "id": 1330,
+    "title": "Mapeamento de Acessibilidade - Jardim das Americas",
+    "service": "Tasking Manager",
+    "instance": "https://tasks.teachosm.org/",
+    "url": "https://tasks.teachosm.org/projects/1330",
+    "status": "Published",
+    "description": "Slides de apoio em: \nhttps://rebrand.ly/mapealivre_apres_acess_curso3 ",
+    "country": [
+      "Brazil"
+    ],
+    "matched_keywords": [
+      "acessibilidade"
+    ]
+  },
+  {
+    "id": 55730,
+    "title": "BRA - Untagged Crossing Ways",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/55730",
+    "status": "Ready",
+    "description": "This challenge is all about finding\ncrossing ways that are missing a crossing tag. A crossing tag tells us\nwhether the crossing is marked or unmarked. For example, if the crossing\nis a zebra crossing, the crossing tag would be zebra - thats my\nfavorite kind of crossing!\n\nIts important to tag crossing ways with a crossing tag so that other\nmap users know what type of crossing it is and what markings to expect.\nThat way, they can stay safe and cross the road safely.\n\nThis challenge will help us identify crossing ways that are missing a\ncrossing tag so that we can fix them. We are going to use satellite\nimagery to see if we can tell whether the crossing is marked or unmarked.\nIf we can, we will add a crossing tag to the crossing way.\n\nBut if we can not tell from the satellite imagery whether the crossing is\nmarked or unmarked, we will leave the crossing way untagged. Its better\nto leave a crossing way untagged than to add a wrong crossing tag.\n\nSo, if you are up for a challenge, join us in our quest to make all crossing\nways safe and accessible for everyone. Crikey, its going to be a beaut!\n",
+    "matched_keywords": [
+      "crossing"
+    ]
+  },
+  {
+    "id": 55637,
+    "title": "BRA - Cycleway Missing Foot Tags",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/55637",
+    "status": "Ready",
+    "description": "This challenge identifies all cycleways that are missing\ninformation about access permission for pedestrians. Mappers are asked to add a foot tag to the\ncycleway to clearly identify whether foot traffic is allowed on the cycleway. Please see [Examples\nfrom the highway=cycleway wiki page](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway#Examples)\nto learn more about how to add a foot tag to the cycleway.\n",
+    "matched_keywords": [
+      "pedestrian"
+    ]
+  },
+  {
+    "id": 55627,
+    "title": "BRA - Conflicting Crossing Tags",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/55627",
+    "status": "Ready",
+    "description": "This challenge is all about finding\ncrossing ways that have conflicting crossing tags. That means that either\nthe crossing tag and crossing:markings tag do not agree with each other or\nperhaps the footway tag is inconsistent with the highway tag.\n\nFor example, if the crossing tag is set to zebra, but the crossing:markings\ntag is set to unmarked, that means that the crossing is tagged as both\nmarked and unmarked. Thats no good - have you ever seen a zebra with no\nmarkings?!?!\n\nThis challenge will help us identify crossing ways that have conflicting\ncrossing tags so that we can fix them. We are going to use satellite imagery\nto see if we can tell whether the crossing is marked or unmarked. If we can,\nwe will change the crossing tag and crossing:markings tag so that they match.\n\nBut if we can not tell from the satellite imagery whether the crossing is\nmarked or unmarked, we will leave the crossing tag and crossing:markings tag\nas they are. Its better to leave a tag blank than to add a wrong tag.\n\nRemember, its important to tag crossing ways correctly so that other map\nusers know what type of crossing it is and what markings to expect. That\nway, they can stay safe and cross the road safely.\n\nSo, if you are up for a challenge, join us in our quest to make all crossing\nways safe and accessible for everyone. Crikey, its going to be a beaut!\n",
+    "matched_keywords": [
+      "crossing",
+      "footway"
+    ]
+  },
   {
     "id": 55609,
     "title": "BRA - Sidewalk Should be Crossing",
@@ -257,7 +335,61 @@ const PROJECTS = [
     "status": "Ready",
     "description": "This challenge identifies potential\npedestrian crosswalks that have been incorrectly labeled as sidewalks.\nWe assess the length of each sidewalk. If a sidewalk is notably short and\ncontains a single intermediate node marked as a 'crossing', it is highly\nlikely that the sidewalk is a crossing.\n\nWhen we discover a sidewalk that should be classified as a crosswalk, we flag\nit as a task in Map Roulette.\n\nHuman review of these tasks is crucial because there are numerous locations\nwhere the crosswalk is not clearly defined. A combination of human review and\nstreet-side photos is necessary for accurate mapping of the crossing.\n\nWhen you are directed to the editor to make modifications, you may need to\nzoom in to identify the issue. We recommend using the '+' button to zoom in,\nas the area of interest will be centered on the map.\n",
     "matched_keywords": [
-      "sidewalk"
+      "pedestrian",
+      "sidewalk",
+      "walk",
+      "crossing"
+    ]
+  },
+  {
+    "id": 55594,
+    "title": "BRA - Suspicious Unmarked Crossing Ways",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/55594",
+    "status": "Ready",
+    "description": "\nThe goal of this challenge is to identify and improve the mapping of unmarked crossings on busy or high-traffic roads.\nUnmarked crossings can be dangerous for pedestrians and other non-motorized road users, as they may not be easily visible to drivers.\nBy identifying and improving the mapping of these crossings, we can help make our streets safer and more accessible for everyone.\nTask Description:\nFor this challenge, we will be focusing on ways that are tagged as crossing=unmarked and cross busy or potentially high traffic roads.\nYour task is to verify that these crossings exist and are accurately mapped in OpenStreetMap. If the crossing does not exist or is not accurately mapped, please make the necessary changes to the map.\nTo complete this challenge, verify that an actual crossing exists as represented by the OSM feature and that it is accurately tagged.\nIf the crossing does not exist or is not accurately mapped, make the necessary changes to the map.\n- If the crossing exists (there are curb cuts or other indications) and there are no markings, you may leave the crossing as is.\n- If the crossing exists and is indicated by different surface types, change the crossing tag to crossing=marked and add a crossing:markings=surface tag.\n- If the crossing exists and is marked, change the crossing tag to marked, uncontrolled, or traffic_signals as appropriate.\n- If no formal crossing exists but it looks like a place where people cross the road, change the crossing tag to crossing=informal and change the highway tag to something other than crossing. This helps distinguish between unmarked official crossings and informal crossings.\n- If a crossing does not exist and would be dangerous for pedestrians to cross at this location, delete the crossing.\n\nBy completing tasks in this challenge, you will be helping to make OpenStreetMap more accurate and useful for pedestrians and other non-motorized road users. Good luck!\n",
+    "matched_keywords": [
+      "pedestrian",
+      "crossing"
+    ]
+  },
+  {
+    "id": 55576,
+    "title": "BRA - Residential Road Foot No tags",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/55576",
+    "status": "Ready",
+    "description": "\nThis challenge focuses on reviewing and correcting the usage of foot=no tags on residential roads in OSM.\nMappers should aim to verify if the foot=no tag is correctly used, reserving it for cases where access on\nfoot or by pedestrians is prohibited (private roads) or obviously dangerous for foot traffic (like when a residential road meets a divided highway)\nIf not valid, update the sidewalk:both tag instead or use sidewalk:left/right when appropriate.\nAerial and street-level imagery are recommended to assist in verifying these tags accurately.\nYour contributions will enhance the quality of OSM data and support various applications relying on this information.\n",
+    "matched_keywords": [
+      "pedestrian",
+      "sidewalk",
+      "walk"
+    ]
+  },
+  {
+    "id": 50066,
+    "title": "Brazil - Fix Invalid Intersections",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/50066",
+    "status": "Ready",
+    "description": "\nThis challenge is designed to help mappers\nresolve highway intersection issues. The tasks included in this challenge\nfeature intersecting highways at equivalent layers, but without a shared node\nat the intersection. When two highways intersect at the same layer, it usually\nindicates that they are routable, meaning cars or pedestrians can travel from\none way to the other. However, if the two ways don't share a node at the\nintersection, it can be difficult for routing software or human mappers to\ndetermine whether the intersection is truly routable. The mapper's task is to\ndetermine whether the two highways are on the same layer, and tag them\naccordingly. In some cases, two intersecting highways may cross over each\nother at different layers. For these situations, it's important to tag the\nhighways with the appropriate layer, taking into account that tunnels and\nbridges have implied layers of -1 and 1 respectively. If the two ways are on\nthe same layer and should be routable then adding an intersection node to\nboth ways is appropriate.\n",
+    "matched_keywords": [
+      "pedestrian"
+    ]
+  },
+  {
+    "id": 41451,
+    "title": "BRA - Unattached Crossing Nodes",
+    "service": "MapRoulette",
+    "instance": "https://maproulette.org/",
+    "url": "https://maproulette.org/browse/challenges/41451",
+    "status": "Ready",
+    "description": "This challenge identifies crossing nodes\nnot connected to a highway.\n\nNodes with ,  and  should always\nbe at the intersection of two roads.\n",
+    "matched_keywords": [
+      "crossing"
     ]
   },
   {
@@ -269,17 +401,18 @@ const PROJECTS = [
     "status": "Ready",
     "description": "This challenge identifies major high-speed, multi-lane roads with the 'sidewalk=\\*' tag. We want to review the sidewalk tag for accuracy. If the tag is not accurate, please edit it accordingly.\n### How to map:\n- If the sidewalk is mapped separately from the road, use 'sidewalk:\\*=separate'\n- If the sidewalk is not mapped separately from the road, use 'sidewalk:\\*'\n- If the sidewalk does not exist, use 'sidewalk=no'\n- For more complex examples, like 'sidewalk:left=no' + 'sidewalk:right=separate', [please review the examples under 'Separate Mapped Sidewalks.'](https://wiki.openstreetmap.org/wiki/Key:sidewalk#Separately_mapped_sidewalks)\n### Roads are flagged if they meet one of these criteria:\n- highway=motorway\n- High max speed\n- High total lane count\nFor example, a motorway has the tag 'sidewalk=right,' but the sidewalk is actually on the left and mapped separately from the road. Simply update the tag to 'sidewalk:left=separate.'\nSee the [wiki on 'sidewalk=\\*' for guidance.](https://wiki.openstreetmap.org/wiki/Key:sidewalk)\n",
     "matched_keywords": [
-      "sidewalk"
+      "sidewalk",
+      "walk"
     ]
   }
 ];
 const SERVICE_STATUS = {
   "Tasking Manager": {
-    "status": "error",
+    "status": "ok",
     "instances": {
-      "https://tasks.hotosm.org/": "partial",
-      "https://tasks.teachosm.org/": "partial",
-      "https://tasks.mapwith.ai/": "partial"
+      "https://tasks.hotosm.org/": "ok",
+      "https://tasks.teachosm.org/": "ok",
+      "https://tasks.mapwith.ai/": "ok"
     }
   },
   "Pic4Review": {
@@ -296,14 +429,15 @@ const SERVICE_STATUS = {
   }
 };
 
+let activeTab = 'all';
+
 function init() {
     renderStats();
     renderServiceBadges();
-    populateServiceFilter();
-    renderTable(PROJECTS);
+    renderTabs();
+    applyFilters();
 
     document.getElementById('search').addEventListener('input', applyFilters);
-    document.getElementById('svc-filter').addEventListener('change', applyFilters);
 }
 
 function renderStats() {
@@ -339,21 +473,33 @@ function renderServiceBadges() {
     }).join('');
 }
 
-function populateServiceFilter() {
-    const sel = document.getElementById('svc-filter');
-    const svcs = [...new Set(PROJECTS.map(p => p.service))];
-    svcs.forEach(s => {
-        const opt = document.createElement('option');
-        opt.value = s; opt.textContent = s;
-        sel.appendChild(opt);
+function renderTabs() {
+    const tabsEl = document.getElementById('service-tabs');
+    const serviceCounts = {};
+    PROJECTS.forEach(p => {
+        const svc = p.service || 'Unknown';
+        serviceCounts[svc] = (serviceCounts[svc] || 0) + 1;
     });
+
+    let html = `<button class="tab-btn active" data-svc="all" onclick="switchTab('all')">All <span class="tab-count">${PROJECTS.length}</span></button>`;
+    Object.entries(serviceCounts).forEach(([svc, count]) => {
+        html += `<button class="tab-btn" data-svc="${svc}" onclick="switchTab('${svc}')">${svc} <span class="tab-count">${count}</span></button>`;
+    });
+    tabsEl.innerHTML = html;
+}
+
+function switchTab(svc) {
+    activeTab = svc;
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.svc === svc);
+    });
+    applyFilters();
 }
 
 function applyFilters() {
     const q = document.getElementById('search').value.toLowerCase();
-    const svc = document.getElementById('svc-filter').value;
     let filtered = PROJECTS;
-    if (svc !== 'all') filtered = filtered.filter(p => p.service === svc);
+    if (activeTab !== 'all') filtered = filtered.filter(p => p.service === activeTab);
     if (q) filtered = filtered.filter(p =>
         (p.title || '').toLowerCase().includes(q) ||
         (p.matched_keywords || []).some(k => k.toLowerCase().includes(q)) ||
@@ -371,15 +517,16 @@ function renderTable(projects) {
     const activeStatuses = new Set(['ready', 'published', 'active', 'building', 'partially loaded']);
     let html = `<table class="projects-table">
         <thead><tr>
-            <th>Title</th><th>Service</th><th>Status</th><th>Keywords</th><th>Description</th>
+            <th>Title</th><th>Instance</th><th>Status</th><th>Keywords</th><th>Description</th>
         </tr></thead><tbody>`;
     projects.forEach(p => {
         const isActive = activeStatuses.has((p.status || '').toLowerCase());
         const statusCls = isActive ? 'active' : 'other';
         const kws = (p.matched_keywords || []).map(k => `<span class="kw-tag">${k}</span>`).join('');
+        const instanceHost = (p.instance || '').replace(/^https?:\/\//, '').replace(/\/$/, '');
         html += `<tr>
             <td class="project-title"><a href="${p.url}" target="_blank" rel="noopener">${p.title || 'Untitled'}</a></td>
-            <td>${p.service}</td>
+            <td><span class="instance-label">${instanceHost}</span></td>
             <td><span class="status-tag ${statusCls}">${p.status || 'N/A'}</span></td>
             <td>${kws}</td>
             <td class="project-desc" title="${(p.description || '').replace(/"/g, '&quot;')}">${p.description || ''}</td>

@@ -1,6 +1,6 @@
 {
   "node_name": "Curitiba",
-  "generated_at": "2026-07-05T17:57:31Z",
+  "generated_at": "2026-07-07T21:59:56Z",
   "bbox": [
     -25.6435043,
     -49.38914,
@@ -10,7 +10,7 @@
   "keywords_used": [
     "oswm",
     "OpenSidewalkMap",
-    "sidewalk",
+    "accessibility",
     "pedestrian"
   ],
   "services_queried": [
@@ -20,11 +20,11 @@
   ],
   "service_status": {
     "Tasking Manager": {
-      "status": "error",
+      "status": "ok",
       "instances": {
-        "https://tasks.hotosm.org/": "partial",
-        "https://tasks.teachosm.org/": "partial",
-        "https://tasks.mapwith.ai/": "partial"
+        "https://tasks.hotosm.org/": "ok",
+        "https://tasks.teachosm.org/": "ok",
+        "https://tasks.mapwith.ai/": "ok"
       }
     },
     "Pic4Review": {
@@ -40,8 +40,60 @@
       }
     }
   },
-  "total_projects_found": 2,
+  "total_projects_found": 10,
   "projects": [
+    {
+      "id": 1330,
+      "title": "Mapeamento de Acessibilidade - Jardim das Americas",
+      "service": "Tasking Manager",
+      "instance": "https://tasks.teachosm.org/",
+      "url": "https://tasks.teachosm.org/projects/1330",
+      "status": "Published",
+      "description": "Slides de apoio em: \nhttps://rebrand.ly/mapealivre_apres_acess_curso3 ",
+      "country": [
+        "Brazil"
+      ],
+      "matched_keywords": [
+        "acessibilidade"
+      ]
+    },
+    {
+      "id": 55730,
+      "title": "BRA - Untagged Crossing Ways",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/55730",
+      "status": "Ready",
+      "description": "This challenge is all about finding\ncrossing ways that are missing a crossing tag. A crossing tag tells us\nwhether the crossing is marked or unmarked. For example, if the crossing\nis a zebra crossing, the crossing tag would be zebra - thats my\nfavorite kind of crossing!\n\nIts important to tag crossing ways with a crossing tag so that other\nmap users know what type of crossing it is and what markings to expect.\nThat way, they can stay safe and cross the road safely.\n\nThis challenge will help us identify crossing ways that are missing a\ncrossing tag so that we can fix them. We are going to use satellite\nimagery to see if we can tell whether the crossing is marked or unmarked.\nIf we can, we will add a crossing tag to the crossing way.\n\nBut if we can not tell from the satellite imagery whether the crossing is\nmarked or unmarked, we will leave the crossing way untagged. Its better\nto leave a crossing way untagged than to add a wrong crossing tag.\n\nSo, if you are up for a challenge, join us in our quest to make all crossing\nways safe and accessible for everyone. Crikey, its going to be a beaut!\n",
+      "matched_keywords": [
+        "crossing"
+      ]
+    },
+    {
+      "id": 55637,
+      "title": "BRA - Cycleway Missing Foot Tags",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/55637",
+      "status": "Ready",
+      "description": "This challenge identifies all cycleways that are missing\ninformation about access permission for pedestrians. Mappers are asked to add a foot tag to the\ncycleway to clearly identify whether foot traffic is allowed on the cycleway. Please see [Examples\nfrom the highway=cycleway wiki page](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway#Examples)\nto learn more about how to add a foot tag to the cycleway.\n",
+      "matched_keywords": [
+        "pedestrian"
+      ]
+    },
+    {
+      "id": 55627,
+      "title": "BRA - Conflicting Crossing Tags",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/55627",
+      "status": "Ready",
+      "description": "This challenge is all about finding\ncrossing ways that have conflicting crossing tags. That means that either\nthe crossing tag and crossing:markings tag do not agree with each other or\nperhaps the footway tag is inconsistent with the highway tag.\n\nFor example, if the crossing tag is set to zebra, but the crossing:markings\ntag is set to unmarked, that means that the crossing is tagged as both\nmarked and unmarked. Thats no good - have you ever seen a zebra with no\nmarkings?!?!\n\nThis challenge will help us identify crossing ways that have conflicting\ncrossing tags so that we can fix them. We are going to use satellite imagery\nto see if we can tell whether the crossing is marked or unmarked. If we can,\nwe will change the crossing tag and crossing:markings tag so that they match.\n\nBut if we can not tell from the satellite imagery whether the crossing is\nmarked or unmarked, we will leave the crossing tag and crossing:markings tag\nas they are. Its better to leave a tag blank than to add a wrong tag.\n\nRemember, its important to tag crossing ways correctly so that other map\nusers know what type of crossing it is and what markings to expect. That\nway, they can stay safe and cross the road safely.\n\nSo, if you are up for a challenge, join us in our quest to make all crossing\nways safe and accessible for everyone. Crikey, its going to be a beaut!\n",
+      "matched_keywords": [
+        "crossing",
+        "footway"
+      ]
+    },
     {
       "id": 55609,
       "title": "BRA - Sidewalk Should be Crossing",
@@ -51,7 +103,61 @@
       "status": "Ready",
       "description": "This challenge identifies potential\npedestrian crosswalks that have been incorrectly labeled as sidewalks.\nWe assess the length of each sidewalk. If a sidewalk is notably short and\ncontains a single intermediate node marked as a 'crossing', it is highly\nlikely that the sidewalk is a crossing.\n\nWhen we discover a sidewalk that should be classified as a crosswalk, we flag\nit as a task in Map Roulette.\n\nHuman review of these tasks is crucial because there are numerous locations\nwhere the crosswalk is not clearly defined. A combination of human review and\nstreet-side photos is necessary for accurate mapping of the crossing.\n\nWhen you are directed to the editor to make modifications, you may need to\nzoom in to identify the issue. We recommend using the '+' button to zoom in,\nas the area of interest will be centered on the map.\n",
       "matched_keywords": [
-        "sidewalk"
+        "pedestrian",
+        "sidewalk",
+        "walk",
+        "crossing"
+      ]
+    },
+    {
+      "id": 55594,
+      "title": "BRA - Suspicious Unmarked Crossing Ways",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/55594",
+      "status": "Ready",
+      "description": "\nThe goal of this challenge is to identify and improve the mapping of unmarked crossings on busy or high-traffic roads.\nUnmarked crossings can be dangerous for pedestrians and other non-motorized road users, as they may not be easily visible to drivers.\nBy identifying and improving the mapping of these crossings, we can help make our streets safer and more accessible for everyone.\nTask Description:\nFor this challenge, we will be focusing on ways that are tagged as crossing=unmarked and cross busy or potentially high traffic roads.\nYour task is to verify that these crossings exist and are accurately mapped in OpenStreetMap. If the crossing does not exist or is not accurately mapped, please make the necessary changes to the map.\nTo complete this challenge, verify that an actual crossing exists as represented by the OSM feature and that it is accurately tagged.\nIf the crossing does not exist or is not accurately mapped, make the necessary changes to the map.\n- If the crossing exists (there are curb cuts or other indications) and there are no markings, you may leave the crossing as is.\n- If the crossing exists and is indicated by different surface types, change the crossing tag to crossing=marked and add a crossing:markings=surface tag.\n- If the crossing exists and is marked, change the crossing tag to marked, uncontrolled, or traffic_signals as appropriate.\n- If no formal crossing exists but it looks like a place where people cross the road, change the crossing tag to crossing=informal and change the highway tag to something other than crossing. This helps distinguish between unmarked official crossings and informal crossings.\n- If a crossing does not exist and would be dangerous for pedestrians to cross at this location, delete the crossing.\n\nBy completing tasks in this challenge, you will be helping to make OpenStreetMap more accurate and useful for pedestrians and other non-motorized road users. Good luck!\n",
+      "matched_keywords": [
+        "pedestrian",
+        "crossing"
+      ]
+    },
+    {
+      "id": 55576,
+      "title": "BRA - Residential Road Foot No tags",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/55576",
+      "status": "Ready",
+      "description": "\nThis challenge focuses on reviewing and correcting the usage of foot=no tags on residential roads in OSM.\nMappers should aim to verify if the foot=no tag is correctly used, reserving it for cases where access on\nfoot or by pedestrians is prohibited (private roads) or obviously dangerous for foot traffic (like when a residential road meets a divided highway)\nIf not valid, update the sidewalk:both tag instead or use sidewalk:left/right when appropriate.\nAerial and street-level imagery are recommended to assist in verifying these tags accurately.\nYour contributions will enhance the quality of OSM data and support various applications relying on this information.\n",
+      "matched_keywords": [
+        "pedestrian",
+        "sidewalk",
+        "walk"
+      ]
+    },
+    {
+      "id": 50066,
+      "title": "Brazil - Fix Invalid Intersections",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/50066",
+      "status": "Ready",
+      "description": "\nThis challenge is designed to help mappers\nresolve highway intersection issues. The tasks included in this challenge\nfeature intersecting highways at equivalent layers, but without a shared node\nat the intersection. When two highways intersect at the same layer, it usually\nindicates that they are routable, meaning cars or pedestrians can travel from\none way to the other. However, if the two ways don't share a node at the\nintersection, it can be difficult for routing software or human mappers to\ndetermine whether the intersection is truly routable. The mapper's task is to\ndetermine whether the two highways are on the same layer, and tag them\naccordingly. In some cases, two intersecting highways may cross over each\nother at different layers. For these situations, it's important to tag the\nhighways with the appropriate layer, taking into account that tunnels and\nbridges have implied layers of -1 and 1 respectively. If the two ways are on\nthe same layer and should be routable then adding an intersection node to\nboth ways is appropriate.\n",
+      "matched_keywords": [
+        "pedestrian"
+      ]
+    },
+    {
+      "id": 41451,
+      "title": "BRA - Unattached Crossing Nodes",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/browse/challenges/41451",
+      "status": "Ready",
+      "description": "This challenge identifies crossing nodes\nnot connected to a highway.\n\nNodes with ,  and  should always\nbe at the intersection of two roads.\n",
+      "matched_keywords": [
+        "crossing"
       ]
     },
     {
@@ -63,7 +169,8 @@
       "status": "Ready",
       "description": "This challenge identifies major high-speed, multi-lane roads with the 'sidewalk=\\*' tag. We want to review the sidewalk tag for accuracy. If the tag is not accurate, please edit it accordingly.\n### How to map:\n- If the sidewalk is mapped separately from the road, use 'sidewalk:\\*=separate'\n- If the sidewalk is not mapped separately from the road, use 'sidewalk:\\*'\n- If the sidewalk does not exist, use 'sidewalk=no'\n- For more complex examples, like 'sidewalk:left=no' + 'sidewalk:right=separate', [please review the examples under 'Separate Mapped Sidewalks.'](https://wiki.openstreetmap.org/wiki/Key:sidewalk#Separately_mapped_sidewalks)\n### Roads are flagged if they meet one of these criteria:\n- highway=motorway\n- High max speed\n- High total lane count\nFor example, a motorway has the tag 'sidewalk=right,' but the sidewalk is actually on the left and mapped separately from the road. Simply update the tag to 'sidewalk:left=separate.'\nSee the [wiki on 'sidewalk=\\*' for guidance.](https://wiki.openstreetmap.org/wiki/Key:sidewalk)\n",
       "matched_keywords": [
-        "sidewalk"
+        "sidewalk",
+        "walk"
       ]
     }
   ]
