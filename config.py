@@ -80,6 +80,7 @@ OTHER_FOOTWAY_EXCLUSION_RULES = {
         "trunk_link",
         "motorway_link",
         "primary_link",
+        "secondary_link",
     ],
     "access": ["no", "private"],
     "foot": ["no", "use_sidepath", "private"],
