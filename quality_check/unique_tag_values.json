@@ -1615,7 +1615,6 @@
             "living_street",
             "construction",
             "path",
-            "secondary_link",
             "unclassified",
             "track",
             "corridor",
@@ -1661,7 +1660,6 @@
             "zebra"
         ],
         "ref": [
-            "BR-277",
             "PR-418",
             "PR-415"
         ],
@@ -2631,13 +2629,10 @@
             "3"
         ],
         "destination": [
-            "Retorno",
-            "Rua Paraíba",
             "Acesso CEASA"
         ],
         "turn:lanes": [
             "right",
-            "left",
             "merge_to_left",
             "through",
             "through|right"
