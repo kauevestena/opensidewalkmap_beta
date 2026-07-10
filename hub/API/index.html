@@ -924,6 +924,14 @@ print(data)</pre>
   },
   {
     "category": "Data Aging & Versioning",
+    "path": "data/updates/changeset_cache.json",
+    "format": "JSON",
+    "description": "Cached metadata for OSM changesets (user, comment, created_at, closed_at) to avoid redundant OSM API hits.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Data Aging & Versioning",
     "path": "data/updates/registry.json",
     "format": "JSON",
     "description": "Timestamps recording when different steps of the pipeline last successfully executed.",
@@ -959,6 +967,22 @@ print(data)</pre>
     "path": "data/updates/versioning/sidewalks_versioning.json",
     "format": "JSON",
     "description": "Detailed modification dates, changeset stats, and age metrics for sidewalks.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Data Aging & Versioning",
+    "path": "data/updates/watcher_history.json",
+    "format": "JSON",
+    "description": "Historical log of daily OSM contribution counts (additions, modifications, deletions) for each layer over the last 120 days.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Data Aging & Versioning",
+    "path": "data/updates/yesterday.json",
+    "format": "JSON",
+    "description": "List of OSM changesets touching OSWM interest features that occurred yesterday.",
     "playground": true,
     "deliverable": "map_data"
   },

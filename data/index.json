@@ -63,6 +63,7 @@
             "description": "Data update logs, registry status, and historical version tracking.",
             "path": "data/updates",
             "files": [
+                "changeset_cache.json",
                 "index.html",
                 "index.json",
                 "registry.json",
@@ -70,7 +71,9 @@
                 "versioning/index.json",
                 "versioning/kerbs_versioning.json",
                 "versioning/other_footways_versioning.json",
-                "versioning/sidewalks_versioning.json"
+                "versioning/sidewalks_versioning.json",
+                "watcher_history.json",
+                "yesterday.json"
             ]
         },
         "vrts": {

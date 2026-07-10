@@ -1,7 +1,10 @@
 {
     "folder": "data/updates",
     "files": [
-        "registry.json"
+        "changeset_cache.json",
+        "registry.json",
+        "watcher_history.json",
+        "yesterday.json"
     ],
     "subfolders": [
         "versioning"

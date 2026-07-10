@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSWM Watcher Dashboard | Curitiba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn {
+            padding: 0.5rem 1.15rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            transition: all 0.2s ease;
+        }
+        .btn:hover { background: rgba(255, 255, 255, 0.1); }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: #0f172a;
+            border: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .glass-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .status-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .status-card h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+        .status-card .status-value { font-size: 1.25rem; font-weight: 600; }
+        .status-true { color: #f87171; } /* Needs update -> Red */
+        .status-false { color: #34d399; } /* Up to date -> Green */
+        .status-none { color: #fbbf24; } /* Unknown -> Yellow */
+        
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+        }
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .tab-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border-color: var(--secondary);
+        }
+        
+        #chart-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 1rem;
+        }
+        .header-actions { display: flex; gap: 1rem; }
+
+        /* Collapsible Changeset Panels & Tables styling */
+        .collapsible-header {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .collapsible-header::-webkit-details-marker {
+            display: none;
+        }
+        .collapsible-header::after {
+            content: '▼';
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+        }
+        details[open] .collapsible-header::after {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            padding: 1rem;
+            border: 1px solid var(--card-border);
+            border-top: none;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            background: rgba(15, 23, 42, 0.2);
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        th {
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .link-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .link-group a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .link-group a:hover {
+            text-decoration: underline;
+        }
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .badge-add { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+        .badge-mod { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        .badge-del { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .comment-text {
+            max-width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-muted);
+        }
+        .comment-text:hover {
+            white-space: normal;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OSWM Watcher Dashboard | Curitiba</h1>
+        <div class="header-actions">
+            <a href="../../index.html" class="btn">Node Home</a>
+            <a href="feed.xml" class="btn btn-primary">Daily RSS</a>
+            <a href="changesets.xml" class="btn btn-primary">Changeset RSS</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="glass-panel">
+            <h2>Current Status</h2>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Last Checked: 10/07/2026 12:27:06</p>
+            <div class="status-grid">
+                    <div class="status-card">
+                    <h3>sidewalks</h3>
+                    <div class="status-value status-false">Up to date</div>
+                </div>
+                <div class="status-card">
+                    <h3>crossings</h3>
+                    <div class="status-value status-false">Up to date</div>
+                </div>
+                <div class="status-card">
+                    <h3>kerbs</h3>
+                    <div class="status-value status-false">Up to date</div>
+                </div>
+                <div class="status-card">
+                    <h3>other_footways</h3>
+                    <div class="status-value status-false">Up to date</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-panel">
+            <h2>Daily Contributions (Last 120 Days)</h2>
+            <div class="tabs" id="chart-tabs">
+                <button class="tab-btn active" onclick="updateChart('Total', this)">Total</button>
+                <button class="tab-btn" onclick="updateChart('sidewalks', this)">sidewalks</button>
+                <button class="tab-btn" onclick="updateChart('crossings', this)">crossings</button>
+                <button class="tab-btn" onclick="updateChart('kerbs', this)">kerbs</button>
+                <button class="tab-btn" onclick="updateChart('other_footways', this)">other_footways</button>
+            </div>
+            <div id="chart-container"></div>
+        </div>
+
+        <div class="glass-panel">
+            <h2>Changeset Activity & Vandalism Watch</h2>
+            <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                Monitor individual OSM changesets touching OSWM interest features to identify potential vandalism.
+            </p>
+            
+            <details>
+                <summary class="collapsible-header">
+                    <span style="font-weight: 500; font-size: 1.1rem;">Yesterday's Changesets</span>
+                </summary>
+                <div class="collapsible-content">
+                    <p style='color: var(--text-muted); padding: 0.5rem 0;'>No changesets affecting OSWM features yesterday.</p>
+                </div>
+            </details>
+            
+            <div style="margin-top: 2rem;">
+                <h3 style="font-weight: 500; font-size: 1.1rem; margin-bottom: 1rem;">Top 5 Deletions (Last 120 Days)</h3>
+                
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Changeset ID</th>
+                        <th>User</th>
+                        <th>Comment</th>
+                        <th>Date</th>
+                        <th>Changes</th>
+                        <th>OSWM Deletions</th>
+                        <th>Links</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td><code>182321412</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/Vinicius Moraes" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">Vinicius Moraes</a></td>
+                    <td><div class="comment-text" title="Atualização de supermercado e vias de condomínios residenciais">Atualização de supermercado e vias de condomínios residenciais</div></td>
+                    <td>2026-05-07</td>
+                    <td>195</td>
+                    <td><span class="badge badge-del" style="font-size: 0.85rem; padding: 0.3rem 0.6rem;">-130 deletions</span></td>
+                    <td>
+                        <div class="link-group">
+                            <a href="https://www.openstreetmap.org/changeset/182321412" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/182321412" target="_blank">OSMCha</a>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><code>179147848</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/ftrebien" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">ftrebien</a></td>
+                    <td><div class="comment-text" title="foot=no onde as calçadas foram mapeadas separadamente">foot=no onde as calçadas foram mapeadas separadamente</div></td>
+                    <td>2026-02-27</td>
+                    <td>38</td>
+                    <td><span class="badge badge-del" style="font-size: 0.85rem; padding: 0.3rem 0.6rem;">-34 deletions</span></td>
+                    <td>
+                        <div class="link-group">
+                            <a href="https://www.openstreetmap.org/changeset/179147848" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/179147848" target="_blank">OSMCha</a>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><code>182142041</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/Vinicius Moraes" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">Vinicius Moraes</a></td>
+                    <td><div class="comment-text" title="Ajuste de nome arredor do Canal Belém; atualização de dados e correções gerais nos arredores">Ajuste de nome arredor do Canal Belém; atualização de dados e correções gerais nos arredores</div></td>
+                    <td>2026-05-03</td>
+                    <td>543</td>
+                    <td><span class="badge badge-del" style="font-size: 0.85rem; padding: 0.3rem 0.6rem;">-31 deletions</span></td>
+                    <td>
+                        <div class="link-group">
+                            <a href="https://www.openstreetmap.org/changeset/182142041" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/182142041" target="_blank">OSMCha</a>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><code>183232534</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/Victor 2015" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">Victor 2015</a></td>
+                    <td><div class="comment-text" title="Atualizações e correções">Atualizações e correções</div></td>
+                    <td>2026-05-26</td>
+                    <td>538</td>
+                    <td><span class="badge badge-del" style="font-size: 0.85rem; padding: 0.3rem 0.6rem;">-24 deletions</span></td>
+                    <td>
+                        <div class="link-group">
+                            <a href="https://www.openstreetmap.org/changeset/183232534" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/183232534" target="_blank">OSMCha</a>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><code>183235387</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/Victor 2015" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">Victor 2015</a></td>
+                    <td><div class="comment-text" title="Atualizações e correções">Atualizações e correções</div></td>
+                    <td>2026-05-27</td>
+                    <td>439</td>
+                    <td><span class="badge badge-del" style="font-size: 0.85rem; padding: 0.3rem 0.6rem;">-18 deletions</span></td>
+                    <td>
+                        <div class="link-group">
+                            <a href="https://www.openstreetmap.org/changeset/183235387" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/183235387" target="_blank">OSMCha</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chartData = {
+  'Total': [{ date: '2026-02-19', 'Additions': 6, 'Modifications': 31, 'Deletions': 2 },{ date: '2026-02-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-21', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-02-22', 'Additions': 1, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-02-23', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-02-24', 'Additions': 0, 'Modifications': 35, 'Deletions': 0 },{ date: '2026-02-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-26', 'Additions': 4, 'Modifications': 29, 'Deletions': 1 },{ date: '2026-02-27', 'Additions': 2, 'Modifications': 15, 'Deletions': 36 },{ date: '2026-02-28', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-01', 'Additions': 6, 'Modifications': 12, 'Deletions': 6 },{ date: '2026-03-02', 'Additions': 0, 'Modifications': 13, 'Deletions': 6 },{ date: '2026-03-03', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-05', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-03-06', 'Additions': 1, 'Modifications': 5, 'Deletions': 0 },{ date: '2026-03-07', 'Additions': 0, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-03-08', 'Additions': 13, 'Modifications': 22, 'Deletions': 5 },{ date: '2026-03-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-10', 'Additions': 10, 'Modifications': 58, 'Deletions': 1 },{ date: '2026-03-11', 'Additions': 3, 'Modifications': 3, 'Deletions': 4 },{ date: '2026-03-12', 'Additions': 0, 'Modifications': 3, 'Deletions': 1 },{ date: '2026-03-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-18', 'Additions': 5, 'Modifications': 0, 'Deletions': 6 },{ date: '2026-03-19', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-20', 'Additions': 67, 'Modifications': 39, 'Deletions': 6 },{ date: '2026-03-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-22', 'Additions': 12, 'Modifications': 30, 'Deletions': 3 },{ date: '2026-03-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-26', 'Additions': 17, 'Modifications': 16, 'Deletions': 4 },{ date: '2026-03-27', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-29', 'Additions': 7, 'Modifications': 15, 'Deletions': 3 },{ date: '2026-03-30', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-31', 'Additions': 0, 'Modifications': 2, 'Deletions': 2 },{ date: '2026-04-01', 'Additions': 1, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-03', 'Additions': 1, 'Modifications': 11, 'Deletions': 0 },{ date: '2026-04-04', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-08', 'Additions': 0, 'Modifications': 11, 'Deletions': 0 },{ date: '2026-04-09', 'Additions': 0, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-04-10', 'Additions': 0, 'Modifications': 18, 'Deletions': 0 },{ date: '2026-04-11', 'Additions': 33, 'Modifications': 34, 'Deletions': 2 },{ date: '2026-04-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-13', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-04-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-15', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-16', 'Additions': 2, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-04-17', 'Additions': 0, 'Modifications': 23, 'Deletions': 0 },{ date: '2026-04-18', 'Additions': 3, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-04-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-20', 'Additions': 0, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-04-21', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-22', 'Additions': 1, 'Modifications': 5, 'Deletions': 0 },{ date: '2026-04-23', 'Additions': 0, 'Modifications': 4, 'Deletions': 2 },{ date: '2026-04-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-28', 'Additions': 73, 'Modifications': 15, 'Deletions': 2 },{ date: '2026-04-29', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-30', 'Additions': 0, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-05-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-03', 'Additions': 13, 'Modifications': 16, 'Deletions': 32 },{ date: '2026-05-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-05', 'Additions': 4, 'Modifications': 7, 'Deletions': 7 },{ date: '2026-05-06', 'Additions': 6, 'Modifications': 22, 'Deletions': 2 },{ date: '2026-05-07', 'Additions': 32, 'Modifications': 15, 'Deletions': 141 },{ date: '2026-05-08', 'Additions': 7, 'Modifications': 22, 'Deletions': 3 },{ date: '2026-05-09', 'Additions': 17, 'Modifications': 51, 'Deletions': 10 },{ date: '2026-05-10', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-11', 'Additions': 16, 'Modifications': 105, 'Deletions': 1 },{ date: '2026-05-12', 'Additions': 0, 'Modifications': 4, 'Deletions': 5 },{ date: '2026-05-13', 'Additions': 16, 'Modifications': 18, 'Deletions': 2 },{ date: '2026-05-14', 'Additions': 7, 'Modifications': 21, 'Deletions': 4 },{ date: '2026-05-15', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-16', 'Additions': 1, 'Modifications': 7, 'Deletions': 1 },{ date: '2026-05-17', 'Additions': 3, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-18', 'Additions': 2, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-19', 'Additions': 1, 'Modifications': 4, 'Deletions': 1 },{ date: '2026-05-20', 'Additions': 1, 'Modifications': 7, 'Deletions': 10 },{ date: '2026-05-21', 'Additions': 0, 'Modifications': 3, 'Deletions': 2 },{ date: '2026-05-22', 'Additions': 3, 'Modifications': 20, 'Deletions': 6 },{ date: '2026-05-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-24', 'Additions': 4, 'Modifications': 29, 'Deletions': 9 },{ date: '2026-05-25', 'Additions': 1, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-26', 'Additions': 1, 'Modifications': 16, 'Deletions': 34 },{ date: '2026-05-27', 'Additions': 1, 'Modifications': 6, 'Deletions': 18 },{ date: '2026-05-28', 'Additions': 25, 'Modifications': 19, 'Deletions': 13 },{ date: '2026-05-29', 'Additions': 4, 'Modifications': 90, 'Deletions': 2 },{ date: '2026-05-30', 'Additions': 6, 'Modifications': 68, 'Deletions': 0 },{ date: '2026-05-31', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-01', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-06-02', 'Additions': 73, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-06-03', 'Additions': 9, 'Modifications': 13, 'Deletions': 6 },{ date: '2026-06-04', 'Additions': 58, 'Modifications': 36, 'Deletions': 12 },{ date: '2026-06-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-07', 'Additions': 38, 'Modifications': 32, 'Deletions': 30 },{ date: '2026-06-08', 'Additions': 0, 'Modifications': 2, 'Deletions': 1 },{ date: '2026-06-09', 'Additions': 0, 'Modifications': 4, 'Deletions': 8 },{ date: '2026-06-10', 'Additions': 6, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-06-11', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-14', 'Additions': 6, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-17', 'Additions': 1, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-06-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 }],
+  'sidewalks': [{ date: '2026-02-19', 'Additions': 1, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-02-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-22', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-26', 'Additions': 0, 'Modifications': 8, 'Deletions': 0 },{ date: '2026-02-27', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-02-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-01', 'Additions': 0, 'Modifications': 3, 'Deletions': 3 },{ date: '2026-03-02', 'Additions': 0, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-03-03', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-08', 'Additions': 0, 'Modifications': 1, 'Deletions': 1 },{ date: '2026-03-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-10', 'Additions': 2, 'Modifications': 15, 'Deletions': 0 },{ date: '2026-03-11', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 1 },{ date: '2026-03-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-20', 'Additions': 3, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-03-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-22', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-26', 'Additions': 8, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-03-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-29', 'Additions': 2, 'Modifications': 6, 'Deletions': 1 },{ date: '2026-03-30', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-31', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-03', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-08', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-10', 'Additions': 0, 'Modifications': 6, 'Deletions': 0 },{ date: '2026-04-11', 'Additions': 10, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-04-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-17', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-20', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-22', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-28', 'Additions': 3, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-29', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-30', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-03', 'Additions': 3, 'Modifications': 0, 'Deletions': 1 },{ date: '2026-05-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-05', 'Additions': 1, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-07', 'Additions': 15, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-05-08', 'Additions': 3, 'Modifications': 9, 'Deletions': 0 },{ date: '2026-05-09', 'Additions': 2, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-10', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-11', 'Additions': 7, 'Modifications': 17, 'Deletions': 0 },{ date: '2026-05-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-13', 'Additions': 7, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-14', 'Additions': 1, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 2 },{ date: '2026-05-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-22', 'Additions': 2, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-24', 'Additions': 1, 'Modifications': 6, 'Deletions': 0 },{ date: '2026-05-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-26', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-29', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-30', 'Additions': 0, 'Modifications': 5, 'Deletions': 0 },{ date: '2026-05-31', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-02', 'Additions': 18, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-03', 'Additions': 2, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-04', 'Additions': 20, 'Modifications': 7, 'Deletions': 4 },{ date: '2026-06-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-07', 'Additions': 18, 'Modifications': 10, 'Deletions': 4 },{ date: '2026-06-08', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-06-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-10', 'Additions': 2, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-11', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-14', 'Additions': 3, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 }],
+  'crossings': [{ date: '2026-02-19', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-02-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-22', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-26', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-02-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-02', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-03-03', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-07', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-03-08', 'Additions': 0, 'Modifications': 4, 'Deletions': 1 },{ date: '2026-03-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-10', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-11', 'Additions': 1, 'Modifications': 0, 'Deletions': 1 },{ date: '2026-03-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-20', 'Additions': 29, 'Modifications': 6, 'Deletions': 0 },{ date: '2026-03-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-22', 'Additions': 5, 'Modifications': 8, 'Deletions': 0 },{ date: '2026-03-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-29', 'Additions': 1, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-30', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-31', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-03', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-08', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-10', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-11', 'Additions': 1, 'Modifications': 5, 'Deletions': 1 },{ date: '2026-04-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-17', 'Additions': 0, 'Modifications': 9, 'Deletions': 0 },{ date: '2026-04-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-22', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-28', 'Additions': 5, 'Modifications': 2, 'Deletions': 1 },{ date: '2026-04-29', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-30', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-03', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-06', 'Additions': 0, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-05-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-08', 'Additions': 0, 'Modifications': 0, 'Deletions': 1 },{ date: '2026-05-09', 'Additions': 0, 'Modifications': 4, 'Deletions': 2 },{ date: '2026-05-10', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-11', 'Additions': 1, 'Modifications': 5, 'Deletions': 0 },{ date: '2026-05-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-13', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-14', 'Additions': 2, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-22', 'Additions': 0, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-24', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-26', 'Additions': 0, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-05-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-29', 'Additions': 0, 'Modifications': 33, 'Deletions': 0 },{ date: '2026-05-30', 'Additions': 0, 'Modifications': 15, 'Deletions': 0 },{ date: '2026-05-31', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-02', 'Additions': 19, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-03', 'Additions': 1, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-06-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-07', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-06-08', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-10', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-11', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 }],
+  'kerbs': [{ date: '2026-02-19', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-02-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-22', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-03', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-08', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-10', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-03-11', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-22', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-29', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-03-30', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-31', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-03', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-08', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-10', 'Additions': 0, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-04-11', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-17', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-04-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-22', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-29', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-30', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-03', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-06', 'Additions': 6, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-08', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-10', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-11', 'Additions': 0, 'Modifications': 5, 'Deletions': 0 },{ date: '2026-05-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 1 },{ date: '2026-05-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 1 },{ date: '2026-05-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-22', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-05-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-29', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-30', 'Additions': 0, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-31', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-03', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-08', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-10', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-11', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 }],
+  'other_footways': [{ date: '2026-02-19', 'Additions': 4, 'Modifications': 26, 'Deletions': 2 },{ date: '2026-02-20', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-21', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-02-22', 'Additions': 1, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-02-23', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-02-24', 'Additions': 0, 'Modifications': 35, 'Deletions': 0 },{ date: '2026-02-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-02-26', 'Additions': 4, 'Modifications': 19, 'Deletions': 1 },{ date: '2026-02-27', 'Additions': 2, 'Modifications': 14, 'Deletions': 36 },{ date: '2026-02-28', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-01', 'Additions': 6, 'Modifications': 9, 'Deletions': 3 },{ date: '2026-03-02', 'Additions': 0, 'Modifications': 8, 'Deletions': 6 },{ date: '2026-03-03', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-05', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-03-06', 'Additions': 1, 'Modifications': 5, 'Deletions': 0 },{ date: '2026-03-07', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-08', 'Additions': 13, 'Modifications': 17, 'Deletions': 3 },{ date: '2026-03-09', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-10', 'Additions': 7, 'Modifications': 40, 'Deletions': 1 },{ date: '2026-03-11', 'Additions': 2, 'Modifications': 3, 'Deletions': 3 },{ date: '2026-03-12', 'Additions': 0, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-03-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-17', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-18', 'Additions': 5, 'Modifications': 0, 'Deletions': 6 },{ date: '2026-03-19', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-20', 'Additions': 35, 'Modifications': 32, 'Deletions': 6 },{ date: '2026-03-21', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-22', 'Additions': 7, 'Modifications': 22, 'Deletions': 3 },{ date: '2026-03-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-26', 'Additions': 9, 'Modifications': 15, 'Deletions': 4 },{ date: '2026-03-27', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-03-28', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-29', 'Additions': 4, 'Modifications': 8, 'Deletions': 2 },{ date: '2026-03-30', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-03-31', 'Additions': 0, 'Modifications': 2, 'Deletions': 2 },{ date: '2026-04-01', 'Additions': 1, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-03', 'Additions': 1, 'Modifications': 11, 'Deletions': 0 },{ date: '2026-04-04', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-07', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-08', 'Additions': 0, 'Modifications': 11, 'Deletions': 0 },{ date: '2026-04-09', 'Additions': 0, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-04-10', 'Additions': 0, 'Modifications': 7, 'Deletions': 0 },{ date: '2026-04-11', 'Additions': 22, 'Modifications': 25, 'Deletions': 1 },{ date: '2026-04-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-13', 'Additions': 1, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-04-14', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-15', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-16', 'Additions': 2, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-04-17', 'Additions': 0, 'Modifications': 11, 'Deletions': 0 },{ date: '2026-04-18', 'Additions': 3, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-04-19', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-20', 'Additions': 0, 'Modifications': 2, 'Deletions': 0 },{ date: '2026-04-21', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-04-22', 'Additions': 1, 'Modifications': 5, 'Deletions': 0 },{ date: '2026-04-23', 'Additions': 0, 'Modifications': 4, 'Deletions': 2 },{ date: '2026-04-24', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-25', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-26', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-27', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-28', 'Additions': 65, 'Modifications': 13, 'Deletions': 1 },{ date: '2026-04-29', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-04-30', 'Additions': 0, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-05-01', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-02', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-03', 'Additions': 10, 'Modifications': 15, 'Deletions': 31 },{ date: '2026-05-04', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-05', 'Additions': 3, 'Modifications': 6, 'Deletions': 7 },{ date: '2026-05-06', 'Additions': 0, 'Modifications': 18, 'Deletions': 2 },{ date: '2026-05-07', 'Additions': 17, 'Modifications': 13, 'Deletions': 141 },{ date: '2026-05-08', 'Additions': 4, 'Modifications': 13, 'Deletions': 2 },{ date: '2026-05-09', 'Additions': 15, 'Modifications': 46, 'Deletions': 8 },{ date: '2026-05-10', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-11', 'Additions': 8, 'Modifications': 78, 'Deletions': 1 },{ date: '2026-05-12', 'Additions': 0, 'Modifications': 4, 'Deletions': 5 },{ date: '2026-05-13', 'Additions': 9, 'Modifications': 16, 'Deletions': 2 },{ date: '2026-05-14', 'Additions': 4, 'Modifications': 17, 'Deletions': 3 },{ date: '2026-05-15', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-05-16', 'Additions': 1, 'Modifications': 7, 'Deletions': 1 },{ date: '2026-05-17', 'Additions': 3, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-18', 'Additions': 2, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-19', 'Additions': 1, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-05-20', 'Additions': 1, 'Modifications': 7, 'Deletions': 8 },{ date: '2026-05-21', 'Additions': 0, 'Modifications': 3, 'Deletions': 2 },{ date: '2026-05-22', 'Additions': 1, 'Modifications': 14, 'Deletions': 6 },{ date: '2026-05-23', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-05-24', 'Additions': 3, 'Modifications': 22, 'Deletions': 9 },{ date: '2026-05-25', 'Additions': 1, 'Modifications': 3, 'Deletions': 0 },{ date: '2026-05-26', 'Additions': 1, 'Modifications': 11, 'Deletions': 34 },{ date: '2026-05-27', 'Additions': 1, 'Modifications': 6, 'Deletions': 18 },{ date: '2026-05-28', 'Additions': 25, 'Modifications': 19, 'Deletions': 13 },{ date: '2026-05-29', 'Additions': 4, 'Modifications': 56, 'Deletions': 2 },{ date: '2026-05-30', 'Additions': 6, 'Modifications': 45, 'Deletions': 0 },{ date: '2026-05-31', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-01', 'Additions': 0, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-06-02', 'Additions': 36, 'Modifications': 4, 'Deletions': 0 },{ date: '2026-06-03', 'Additions': 6, 'Modifications': 9, 'Deletions': 6 },{ date: '2026-06-04', 'Additions': 38, 'Modifications': 29, 'Deletions': 8 },{ date: '2026-06-05', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-06', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-07', 'Additions': 20, 'Modifications': 21, 'Deletions': 26 },{ date: '2026-06-08', 'Additions': 0, 'Modifications': 1, 'Deletions': 1 },{ date: '2026-06-09', 'Additions': 0, 'Modifications': 4, 'Deletions': 8 },{ date: '2026-06-10', 'Additions': 4, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-06-11', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-12', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-13', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-14', 'Additions': 3, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-15', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-16', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 },{ date: '2026-06-17', 'Additions': 1, 'Modifications': 1, 'Deletions': 0 },{ date: '2026-06-18', 'Additions': 0, 'Modifications': 0, 'Deletions': 0 }],
+};
+        
+        const chartDom = document.getElementById('chart-container');
+        const myChart = echarts.init(chartDom, 'dark', { renderer: 'svg' });
+        
+        function updateChart(tabName, btnElement) {
+            // Update active class
+            if (btnElement) {
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                btnElement.classList.add('active');
+            }
+            
+            const data = chartData[tabName];
+            
+            const option = {
+                backgroundColor: 'transparent',
+                tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+                legend: { data: ['Additions', 'Modifications', 'Deletions'], textStyle: { color: '#94a3b8' } },
+                grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                xAxis: [{ type: 'category', data: data.map(item => item.date) }],
+                yAxis: [{ type: 'value' }],
+                series: [
+                    {
+                        name: 'Additions',
+                        type: 'bar',
+                        stack: 'total',
+                        itemStyle: { color: '#10b981' },
+                        emphasis: { focus: 'series' },
+                        data: data.map(item => item['Additions'])
+                    },
+                    {
+                        name: 'Modifications',
+                        type: 'bar',
+                        stack: 'total',
+                        itemStyle: { color: '#f59e0b' },
+                        emphasis: { focus: 'series' },
+                        data: data.map(item => item['Modifications'])
+                    },
+                    {
+                        name: 'Deletions',
+                        type: 'bar',
+                        stack: 'total',
+                        itemStyle: { color: '#ef4444' },
+                        emphasis: { focus: 'series' },
+                        data: data.map(item => item['Deletions'])
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        }
+        
+        // Initial render
+        updateChart('Total', document.querySelector('.tab-btn.active'));
+        
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>
