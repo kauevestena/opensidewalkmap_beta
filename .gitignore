@@ -183,4 +183,5 @@ data/routing/demo.geojson
 # development stuff
 .vscode
 tests/
-tests.py
+tests.pyscratch/
+scratch
