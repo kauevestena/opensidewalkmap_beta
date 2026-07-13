@@ -5,82 +5,92 @@
         <!DOCTYPE html>
         <html lang="en">
         <head>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"> 
 
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/font_styles.css">
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/font_styles.css">
+    
+        
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/table_styles.css">
     
 
         <title>OSWM DQT s improper_keys</title>
-
-        
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/table_styles.css">
-    
+        <link rel="icon" type="image/x-icon" href="../../../oswm_codebase/assets/favicon_homepage.png">
 
         </head>
         <body>
         
-        <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta/">OSWM</a> Data Quality Tool: sidewalks improper_keys</h1>
+        <main class="dq-container">
+            <div style="text-align: left; margin-bottom: 1rem;">
+                <a href="../../oswm_qc_main.html" style="display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,242,254,0.3); color: #00f2fe; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.2s;">← Back to DQ Main</a>
+            </div>
+            
+            <h1 style="color: #f8fafc; font-size: 2rem; margin-bottom: 0.5rem;"><img src="../../../oswm_codebase/assets/homepage/project_logo.png" alt="OSWM Logo" style="height: 1.5em; vertical-align: middle; margin-right: 15px;"><a href="../../../index.html" style="color: #00f2fe; text-decoration: none;">OSWM</a> Data Quality Tool</h1>
+            <h2 style="color: #94a3b8; font-size: 1.2rem; font-weight: 400; margin-top: 0; margin-bottom: 2rem;">sidewalks / <span style="color: #f8fafc; font-weight: 600;">improper_keys</span></h2>
+            
+            
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
+            <a href="../../tables/sidewalks/improper_keys.csv" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">↓ Download Raw .CSV</a>
+            <a href="../../json/sidewalks/improper_keys.json" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">&#123;&#125; Access Raw .JSON</a>
+            <a href="../../maps/sidewalks/improper_keys.html" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid #10b981; color: #10b981; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">🗺 Open Map View</a>
+        </div>
+    
+            
+    <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem;">
+        <h4 style="margin-top: 0; color: #00f2fe; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center;">Overpass Query <button onclick="navigator.clipboard.writeText(document.getElementById('op-query-text').value); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);" style="background: rgba(0, 242, 254, 0.2); border: 1px solid #00f2fe; color: #00f2fe; border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: background 0.2s;">Copy</button></h4>
+        <textarea id="op-query-text" readonly style="width: 100%; height: 80px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #cbd5e1; font-family: 'Fira Code', monospace; font-size: 0.85rem; padding: 10px; resize: none; overflow-y: auto;">(
+  way(700028118,953199308,953199919,960593708,960925946,978849016,978849017,1020215059,1020215060,1030798526,1030798527,1042657758,1051403033,1051403034,1051403036,1051403038,1051403039,1051403770,1051403775,1051406147,1051406481,1161235432,1161235433,1511981941,1511981942,1511981943,1511981944);
+);
+out meta;</textarea>
+    </div>
+    
 
-        <h2>About: Keys that (almost certainly) shouldn't be used at that feature type</h2>
-        <h2>Type: keys</h2>
-        <h2>  
-        
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/tables/sidewalks/improper_keys.csv"> You can also download the raw .csv table </a>
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/json/sidewalks/improper_keys.json"> You can also access the raw .json </a>
+            <table style="margin-bottom: 2rem;">
+            <tr>
+    <th>OSM ID (link)</th>
+    <th>Open in iD editor</th>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Commentary</th>
+    </tr><tr><td><a href=https://www.openstreetmap.org/way/700028118>700028118</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=700028118#map=20/-25.471425/-49.2591294" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 700028118</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/953199308>953199308</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=953199308#map=20/-25.464657/-49.2331889" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953199308</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/953199919>953199919</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=953199919#map=20/-25.4629039/-49.2313416" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953199919</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/960593708>960593708</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=960593708#map=20/-25.4627434/-49.2284478" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 960593708</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/960925946>960925946</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=960925946#map=20/-25.4585046/-49.2221927" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 960925946</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/978849016>978849016</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=978849016#map=20/-25.471299/-49.2591646" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 978849016</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/978849017>978849017</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=978849017#map=20/-25.4710833/-49.2592249" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 978849017</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1020215059>1020215059</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1020215059#map=20/-25.4302632/-49.2723027" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1020215059</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1020215060>1020215060</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1020215060#map=20/-25.4302632/-49.2723027" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1020215060</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1030798526>1030798526</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1030798526#map=20/-25.4487827/-49.2878863" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1030798526</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1030798527>1030798527</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1030798527#map=20/-25.4479055/-49.2877219" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1030798527</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1042657758>1042657758</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1042657758#map=20/-25.4456158/-49.2352643" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1042657758</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051403033>1051403033</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051403033#map=20/-25.4549251/-49.2339664" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051403033</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051403034>1051403034</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051403034#map=20/-25.4548564/-49.2337618" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051403034</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051403036>1051403036</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051403036#map=20/-25.4547306/-49.2338769" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051403036</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051403038>1051403038</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051403038#map=20/-25.4547776/-49.2339711" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051403038</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051403039>1051403039</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051403039#map=20/-25.4558936/-49.2345396" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051403039</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051403770>1051403770</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051403770#map=20/-25.4468204/-49.2333507" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051403770</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051403775>1051403775</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051403775#map=20/-25.4487028/-49.232838" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051403775</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051406147>1051406147</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051406147#map=20/-25.4492283/-49.2345664" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051406147</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051406481>1051406481</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051406481#map=20/-25.4495831/-49.2336763" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051406481</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1161235432>1161235432</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1161235432#map=20/-25.4356811/-49.306169" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1161235432</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1161235433>1161235433</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1161235433#map=20/-25.4357169/-49.3064336" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1161235433</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1511981941>1511981941</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1511981941#map=20/-25.4580912/-49.2495177" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1511981941</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1511981942>1511981942</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1511981942#map=20/-25.4590534/-49.2497552" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1511981942</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1511981943>1511981943</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1511981943#map=20/-25.4589876/-49.2499715" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1511981943</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1511981944>1511981944</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1511981944#map=20/-25.4590303/-49.2498313" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1511981944</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
 
-        </h2>
+            </table>
 
-
-
-
-        <table>
-
-        <tr>
-    <th><b>OSM ID (link)</b></th>
-    <th><b>key</b></th>
-    <th><b>value</b></th>
-    <th><b>commentary</b></th>
-    </tr><tr><td><a href=https://www.openstreetmap.org/way/700028118>700028118</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/953199308>953199308</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/953199919>953199919</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/960593708>960593708</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/960925946>960925946</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/978849016>978849016</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/978849017>978849017</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1020215059>1020215059</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1020215060>1020215060</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1030798526>1030798526</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1030798527>1030798527</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1042657758>1042657758</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051403033>1051403033</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051403034>1051403034</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051403036>1051403036</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051403038>1051403038</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051403039>1051403039</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051403770>1051403770</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051403775>1051403775</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051406147>1051406147</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051406481>1051406481</a></td><td>crossing</td><td>unmarked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1161235432>1161235432</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1161235433>1161235433</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1511981941>1511981941</a></td><td>crossing</td><td>marked</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1511981942>1511981942</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1511981943>1511981943</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1511981944>1511981944</a></td><td>crossing</td><td>uncontrolled</td><td>It's inappropriate for Sidewalks, probably mistakenly tagged</td></tr>
-
-
-        </table>
-
-        
-
-
-        </table>
-
-
+            <div style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p style="margin: 0 0 10px 0; font-size: 1rem; color: #f8fafc;"><b>About:</b> <span style="color: #cbd5e1;">Keys that (almost certainly) shouldn't be used at that feature type</span></p>
+                <p style="margin: 0; font-size: 1rem; color: #f8fafc;"><b>Type:</b> <span style="color: #cbd5e1;">keys</span></p>
+            </div>
+        </main>
 
         </body>
         </html>   

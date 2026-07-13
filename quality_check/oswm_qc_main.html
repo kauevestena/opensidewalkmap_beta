@@ -9,14 +9,14 @@
     <html lang="en">
     <head>
 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="../oswm_codebase/assets/styles/font_styles.css">
     
@@ -27,35 +27,18 @@
 
     <link rel="stylesheet" href="../oswm_codebase/assets/styles/topnav_styles.css">
 
-    <style>
+    <title>OSWM DQ Home</title>
 
-    h3 {
-        font-size :  16px;
-        text-align: left;
-        text-align: left;
+    <link rel="icon" type="image/x-icon" href="../oswm_codebase/assets/favicon_homepage.png">
 
-
-    }
-
-    h2 {
-        font-size :  25px;
-
-    }
-
-    h1 {
-        text-align:center;
-        font-size :  30px;
-    }
-
-
-    </style>
-
+    </head>
+    <body>
     
     
     <div class="topnav" id="myTopnav">
-        <a href="https://kauevestena.github.io/opensidewalkmap_beta/">Go to Node Home</a>
-<a class="active" href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/oswm_qc_main.html">OSWM DQ Main</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/oswm_qc_external.html">External Providers</a>
+        <a href="../index.html">Go to Node Home</a>
+<a class="active" href="oswm_qc_main.html">OSWM DQ Main</a>
+<a href="oswm_qc_external.html">External Providers</a>
 
         <a href="javascript:void(0);" class="icon" onclick="topnav()">
             <i class="fa fa-bars"></i>
@@ -63,33 +46,30 @@
         
     </div>
     
-
     
     <script src="../oswm_codebase/assets/js_functions/topbar.js"></script>
 
 
+    <main class="dq-container">
+        <h1><img src="../oswm_codebase/assets/homepage/project_logo.png" alt="OSWM Logo" style="height: 1.5em; vertical-align: middle; margin-right: 15px;">OpenSidewalkMap Data Quality Tool</h1>
 
-    <title>OSWM DQ Home</title>
+        <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            <h3 style="margin-top: 0; color: #00f2fe;">Interactive QA Webmap</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;">Explore all generated detections clustered on a map.</p>
+            <a href="map.html" style="display: inline-block; background: linear-gradient(to right, #00f2fe, #4facfe); color: #0f172a; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: transform 0.2s;">Open Quality Assurance Map</a>
+        </div>
 
-    <link rel="icon" type="image/x-icon" href="https://kauevestena.github.io/oswm_codebase/assets/homepage/favicon_homepage.png">
+        <p>
+        This Section is dedicated to find errors in the Features of interest in the Context of OSWM project.<br>
+        In some cases it's a clear mistake, but it can be just a mispelling or an uncommon value<br><br>
 
-    </head>
-    <body>
+        currently, there are the categories presented at the table,<br> each one with the number of occurrences that are item-wise detailed at each link<br>
+        <a href="https://github.com/kauevestena/oswm_codebase/issues">you can post suggestions at repo "issues" section</a>
+        </p>
 
-    <h1>OpenSidewalkMap Data Quality Tool</h1>
+        <table>
 
-    <p>
-    This Section is dedicated to find errors in the Features of interest in the Context of OSWM project.<br>
-    In some cases it's a clear mistake, but it can be just a mispelling or an uncommon value<br><br>
-
-    currently, there are the categories presented at the table,<br> each one with the number of occurrences that are item-wise detailed at each link<br>
-    <a href="https://kauevestena.github.io/opensidewalkmap_beta/issues">you can post suggestions at repo "issues" section</a>
-
-    </p>
-
-    <table>
-
-    
+        
 
         <tr>
         <th><b>Category</b></th>
@@ -101,28 +81,26 @@
     
         </tr>
 
-    <tr><td>improper_keys</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/sidewalks/improper_keys.html"> 27 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/crossings/improper_keys.html"> 17 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/kerbs/improper_keys.html"> 96 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/other_footways/improper_keys.html"> 0 </a> </td></tr>
-<tr><td>uncanny_keys</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/sidewalks/uncanny_keys.html"> 1 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/crossings/uncanny_keys.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/kerbs/uncanny_keys.html"> 9 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/other_footways/uncanny_keys.html"> 0 </a> </td></tr>
-<tr><td>keys_without_wiki</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/sidewalks/keys_without_wiki.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/crossings/keys_without_wiki.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/kerbs/keys_without_wiki.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/other_footways/keys_without_wiki.html"> 0 </a> </td></tr>
-<tr><td>replaceable_values</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/sidewalks/replaceable_values.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/crossings/replaceable_values.html"> 259 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/kerbs/replaceable_values.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/other_footways/replaceable_values.html"> 0 </a> </td></tr>
-<tr><td>wrong_mispelled_or_unlisted_values</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/sidewalks/wrong_mispelled_or_unlisted_values.html"> 52 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/crossings/wrong_mispelled_or_unlisted_values.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/kerbs/wrong_mispelled_or_unlisted_values.html"> 16 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/other_footways/wrong_mispelled_or_unlisted_values.html"> 25 </a> </td></tr>
-<tr><td>invalid_characters</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/sidewalks/invalid_characters.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/crossings/invalid_characters.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/kerbs/invalid_characters.html"> 3 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/other_footways/invalid_characters.html"> 0 </a> </td></tr>
-<tr><td>disjointed_geometries</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/sidewalks/disjointed_geometries.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/crossings/disjointed_geometries.html"> 347 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/kerbs/disjointed_geometries.html"> 186 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/other_footways/disjointed_geometries.html"> 0 </a> </td></tr>
-<tr><td>improper_geometries</td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/sidewalks/improper_geometries.html"> 2 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/crossings/improper_geometries.html"> 0 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/kerbs/improper_geometries.html"> 34 </a> </td><td>  <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/pages/other_footways/improper_geometries.html"> 0 </a> </td></tr>
+    <tr><td>improper_keys</td><td>  <a href="pages/sidewalks/improper_keys.html"> 27 </a> </td><td>  <a href="pages/crossings/improper_keys.html"> 17 </a> </td><td>  <a href="pages/kerbs/improper_keys.html"> 104 </a> </td><td>  <a href="pages/other_footways/improper_keys.html"> 0 </a> </td></tr>
+<tr><td>uncanny_keys</td><td>  <a href="pages/sidewalks/uncanny_keys.html"> 81 </a> </td><td>  <a href="pages/crossings/uncanny_keys.html"> 0 </a> </td><td>  <a href="pages/kerbs/uncanny_keys.html"> 9 </a> </td><td>  <a href="pages/other_footways/uncanny_keys.html"> 0 </a> </td></tr>
+<tr><td>keys_without_wiki</td><td>  <a href="pages/sidewalks/keys_without_wiki.html"> 0 </a> </td><td>  <a href="pages/crossings/keys_without_wiki.html"> 0 </a> </td><td>  <a href="pages/kerbs/keys_without_wiki.html"> 0 </a> </td><td>  <a href="pages/other_footways/keys_without_wiki.html"> 0 </a> </td></tr>
+<tr><td>replaceable_values</td><td>  <a href="pages/sidewalks/replaceable_values.html"> 0 </a> </td><td>  <a href="pages/crossings/replaceable_values.html"> 259 </a> </td><td>  <a href="pages/kerbs/replaceable_values.html"> 0 </a> </td><td>  <a href="pages/other_footways/replaceable_values.html"> 0 </a> </td></tr>
+<tr><td>wrong_mispelled_or_unlisted_values</td><td>  <a href="pages/sidewalks/wrong_mispelled_or_unlisted_values.html"> 52 </a> </td><td>  <a href="pages/crossings/wrong_mispelled_or_unlisted_values.html"> 0 </a> </td><td>  <a href="pages/kerbs/wrong_mispelled_or_unlisted_values.html"> 16 </a> </td><td>  <a href="pages/other_footways/wrong_mispelled_or_unlisted_values.html"> 25 </a> </td></tr>
+<tr><td>invalid_characters</td><td>  <a href="pages/sidewalks/invalid_characters.html"> 0 </a> </td><td>  <a href="pages/crossings/invalid_characters.html"> 0 </a> </td><td>  <a href="pages/kerbs/invalid_characters.html"> 3 </a> </td><td>  <a href="pages/other_footways/invalid_characters.html"> 0 </a> </td></tr>
+<tr><td>disjointed_geometries</td><td>  <a href="pages/sidewalks/disjointed_geometries.html"> 0 </a> </td><td>  <a href="pages/crossings/disjointed_geometries.html"> 347 </a> </td><td>  <a href="pages/kerbs/disjointed_geometries.html"> 186 </a> </td><td>  <a href="pages/other_footways/disjointed_geometries.html"> 0 </a> </td></tr>
+<tr><td>improper_geometries</td><td>  <a href="pages/sidewalks/improper_geometries.html"> 2 </a> </td><td>  <a href="pages/crossings/improper_geometries.html"> 0 </a> </td><td>  <a href="pages/kerbs/improper_geometries.html"> 34 </a> </td><td>  <a href="pages/other_footways/improper_geometries.html"> 0 </a> </td></tr>
+<tr><td><b>Totals:</b></td><td><b>162</b></td><td><b>623</b></td><td><b>352</b></td><td><b>25</b></td></tr>\n
 
+        </table>
 
+        <p style="font-size: 0.9em">
+        The information here can be <b>outdated</b><br>
+        <a href="../updating_infos.html">here you can check the last update and read more about this</a>
+        </p>
 
-    </table>
+        <h2>Explaining Each category: </h2>
 
-    <p>
-    The information here can be <b>outdated</b><br>
-    <a href="https://kauevestena.github.io/opensidewalkmap_beta/data/updates/index.html">here you can check the last update and read more about this</a>
-    <br>
-    </p>
-
-    <h2>Explaining Each category: </h2>
-
-    
+        
     <h3>
 
     improper_keys : Keys that (almost certainly) shouldn't be used at that feature type<br>
@@ -134,9 +112,7 @@ invalid_characters : characters that should not be in the value or in the key<br
 disjointed_geometries : Features with geometries that are not connected to others, i.e. disjointed. This is generally a special matter of concern for crossings, kerbs and sidewalks<br>
 improper_geometries : Features with geometries (more specifically geometry types) that are incompatible with the main tags<br>
 </h3>
-
-
+    </main>
     </body>
     </html> 
-
     

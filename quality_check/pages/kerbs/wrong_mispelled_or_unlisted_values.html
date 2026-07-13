@@ -5,71 +5,82 @@
         <!DOCTYPE html>
         <html lang="en">
         <head>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"> 
 
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/font_styles.css">
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/font_styles.css">
+    
+        
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/table_styles.css">
     
 
         <title>OSWM DQT k wrong_mispelled_or_unlisted_values</title>
-
-        
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/table_styles.css">
-    
+        <link rel="icon" type="image/x-icon" href="../../../oswm_codebase/assets/favicon_homepage.png">
 
         </head>
         <body>
         
-        <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta/">OSWM</a> Data Quality Tool: kerbs wrong_mispelled_or_unlisted_values</h1>
+        <main class="dq-container">
+            <div style="text-align: left; margin-bottom: 1rem;">
+                <a href="../../oswm_qc_main.html" style="display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,242,254,0.3); color: #00f2fe; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.2s;">← Back to DQ Main</a>
+            </div>
+            
+            <h1 style="color: #f8fafc; font-size: 2rem; margin-bottom: 0.5rem;"><img src="../../../oswm_codebase/assets/homepage/project_logo.png" alt="OSWM Logo" style="height: 1.5em; vertical-align: middle; margin-right: 15px;"><a href="../../../index.html" style="color: #00f2fe; text-decoration: none;">OSWM</a> Data Quality Tool</h1>
+            <h2 style="color: #94a3b8; font-size: 1.2rem; font-weight: 400; margin-top: 0; margin-bottom: 2rem;">kerbs / <span style="color: #f8fafc; font-weight: 600;">wrong_mispelled_or_unlisted_values</span></h2>
+            
+            
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
+            <a href="../../tables/kerbs/wrong_mispelled_or_unlisted_values.csv" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">↓ Download Raw .CSV</a>
+            <a href="../../json/kerbs/wrong_mispelled_or_unlisted_values.json" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">&#123;&#125; Access Raw .JSON</a>
+            <a href="../../maps/kerbs/wrong_mispelled_or_unlisted_values.html" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid #10b981; color: #10b981; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">🗺 Open Map View</a>
+        </div>
+    
+            
+    <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem;">
+        <h4 style="margin-top: 0; color: #00f2fe; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center;">Overpass Query <button onclick="navigator.clipboard.writeText(document.getElementById('op-query-text').value); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);" style="background: rgba(0, 242, 254, 0.2); border: 1px solid #00f2fe; color: #00f2fe; border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: background 0.2s;">Copy</button></h4>
+        <textarea id="op-query-text" readonly style="width: 100%; height: 80px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #cbd5e1; font-family: 'Fira Code', monospace; font-size: 0.85rem; padding: 10px; resize: none; overflow-y: auto;">(
+  node(8836180562,8837121682,8837121685,8837121687,8837125829,8837125831,8837125868,8837125870,8842953120,8846406967,8869854125,8890907326,8891106244,8891106246);
+  way(1070027466,1070027467);
+);
+out meta;</textarea>
+    </div>
+    
 
-        <h2>About: Values that are probably wrong, but they may be mispelled or just unlisted</h2>
-        <h2>Type: values</h2>
-        <h2>  
-        
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/tables/kerbs/wrong_mispelled_or_unlisted_values.csv"> You can also download the raw .csv table </a>
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/json/kerbs/wrong_mispelled_or_unlisted_values.json"> You can also access the raw .json </a>
+            <table style="margin-bottom: 2rem;">
+            <tr>
+    <th>OSM ID (link)</th>
+    <th>Open in iD editor</th>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Commentary</th>
+    </tr><tr><td><a href=https://www.openstreetmap.org/node/8836180562>8836180562</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8836180562#map=20/-25.4650273/-49.2207065" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8836180562</a></td><td>kerb</td><td>unknown</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8837121682>8837121682</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8837121682#map=20/-25.4713792/-49.226934" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8837121682</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8837121685>8837121685</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8837121685#map=20/-25.4705296/-49.2275257" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8837121685</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8837121687>8837121687</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8837121687#map=20/-25.4705032/-49.2274784" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8837121687</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8837125829>8837125829</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8837125829#map=20/-25.4720881/-49.2278984" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8837125829</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8837125831>8837125831</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8837125831#map=20/-25.4720312/-49.2279444" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8837125831</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8837125868>8837125868</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8837125868#map=20/-25.4714918/-49.2269136" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8837125868</a></td><td>kerb</td><td>normal</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8837125870>8837125870</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8837125870#map=20/-25.4714407/-49.226949" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8837125870</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8842953120>8842953120</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8842953120#map=20/-25.4576368/-49.2331557" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8842953120</a></td><td>kerb</td><td>lowered=no</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8846406967>8846406967</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8846406967#map=20/-25.4616133/-49.2271065" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8846406967</a></td><td>tactile_paving</td><td>bad</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8869854125>8869854125</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8869854125#map=20/-25.4734469/-49.2268177" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8869854125</a></td><td>kerb</td><td>normal</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8890907326>8890907326</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8890907326#map=20/-25.4719258/-49.2277719" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8890907326</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8891106244>8891106244</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8891106244#map=20/-25.4730311/-49.2256205" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8891106244</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/8891106246>8891106246</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=8891106246#map=20/-25.4730632/-49.2256929" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 8891106246</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1070027466>1070027466</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1070027466#map=20/-25.4551751/-49.2329039" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1070027466</a></td><td>kerb</td><td>barrier=kerb</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1070027467>1070027467</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1070027467#map=20/-25.4553908/-49.232292" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1070027467</a></td><td>kerb</td><td>barrier=kerb</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
 
-        </h2>
+            </table>
 
-
-
-
-        <table>
-
-        <tr>
-    <th><b>OSM ID (link)</b></th>
-    <th><b>key</b></th>
-    <th><b>value</b></th>
-    <th><b>commentary</b></th>
-    </tr><tr><td><a href=https://www.openstreetmap.org/node/8836180562>8836180562</a></td><td>kerb</td><td>unknown</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8837121682>8837121682</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8837121685>8837121685</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8837121687>8837121687</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8837125829>8837125829</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8837125831>8837125831</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8837125868>8837125868</a></td><td>kerb</td><td>normal</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8837125870>8837125870</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8842953120>8842953120</a></td><td>kerb</td><td>lowered=no</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8846406967>8846406967</a></td><td>tactile_paving</td><td>bad</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8869854125>8869854125</a></td><td>kerb</td><td>normal</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8890907326>8890907326</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8891106244>8891106244</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/8891106246>8891106246</a></td><td>kerb</td><td>regular</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1070027466>1070027466</a></td><td>kerb</td><td>barrier=kerb</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1070027467>1070027467</a></td><td>kerb</td><td>barrier=kerb</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-
-
-        </table>
-
-        
-
-
-        </table>
-
-
+            <div style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p style="margin: 0 0 10px 0; font-size: 1rem; color: #f8fafc;"><b>About:</b> <span style="color: #cbd5e1;">Values that are probably wrong, but they may be mispelled or just unlisted</span></p>
+                <p style="margin: 0; font-size: 1rem; color: #f8fafc;"><b>Type:</b> <span style="color: #cbd5e1;">values</span></p>
+            </div>
+        </main>
 
         </body>
         </html>   

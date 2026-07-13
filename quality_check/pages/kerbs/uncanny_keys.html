@@ -5,64 +5,74 @@
         <!DOCTYPE html>
         <html lang="en">
         <head>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"> 
 
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/font_styles.css">
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/font_styles.css">
+    
+        
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/table_styles.css">
     
 
         <title>OSWM DQT k uncanny_keys</title>
-
-        
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/table_styles.css">
-    
+        <link rel="icon" type="image/x-icon" href="../../../oswm_codebase/assets/favicon_homepage.png">
 
         </head>
         <body>
         
-        <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta/">OSWM</a> Data Quality Tool: kerbs uncanny_keys</h1>
+        <main class="dq-container">
+            <div style="text-align: left; margin-bottom: 1rem;">
+                <a href="../../oswm_qc_main.html" style="display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,242,254,0.3); color: #00f2fe; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.2s;">← Back to DQ Main</a>
+            </div>
+            
+            <h1 style="color: #f8fafc; font-size: 2rem; margin-bottom: 0.5rem;"><img src="../../../oswm_codebase/assets/homepage/project_logo.png" alt="OSWM Logo" style="height: 1.5em; vertical-align: middle; margin-right: 15px;"><a href="../../../index.html" style="color: #00f2fe; text-decoration: none;">OSWM</a> Data Quality Tool</h1>
+            <h2 style="color: #94a3b8; font-size: 1.2rem; font-weight: 400; margin-top: 0; margin-bottom: 2rem;">kerbs / <span style="color: #f8fafc; font-weight: 600;">uncanny_keys</span></h2>
+            
+            
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
+            <a href="../../tables/kerbs/uncanny_keys.csv" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">↓ Download Raw .CSV</a>
+            <a href="../../json/kerbs/uncanny_keys.json" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">&#123;&#125; Access Raw .JSON</a>
+            <a href="../../maps/kerbs/uncanny_keys.html" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid #10b981; color: #10b981; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">🗺 Open Map View</a>
+        </div>
+    
+            
+    <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem;">
+        <h4 style="margin-top: 0; color: #00f2fe; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center;">Overpass Query <button onclick="navigator.clipboard.writeText(document.getElementById('op-query-text').value); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);" style="background: rgba(0, 242, 254, 0.2); border: 1px solid #00f2fe; color: #00f2fe; border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: background 0.2s;">Copy</button></h4>
+        <textarea id="op-query-text" readonly style="width: 100%; height: 80px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #cbd5e1; font-family: 'Fira Code', monospace; font-size: 0.85rem; padding: 10px; resize: none; overflow-y: auto;">(
+  node(1395984082,1991377345,3507819516,4491511700,4604865119,6336344925,6336344931,7052469464,12395490254);
+);
+out meta;</textarea>
+    </div>
+    
 
-        <h2>About: Keys that may be OK in some specific situations, but may be a mistake</h2>
-        <h2>Type: keys</h2>
-        <h2>  
-        
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/tables/kerbs/uncanny_keys.csv"> You can also download the raw .csv table </a>
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/json/kerbs/uncanny_keys.json"> You can also access the raw .json </a>
+            <table style="margin-bottom: 2rem;">
+            <tr>
+    <th>OSM ID (link)</th>
+    <th>Open in iD editor</th>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Commentary</th>
+    </tr><tr><td><a href=https://www.openstreetmap.org/node/1395984082>1395984082</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1395984082#map=20/-25.4094994/-49.2206057" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1395984082</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1991377345>1991377345</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1991377345#map=20/-25.4354866/-49.2570713" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1991377345</a></td><td>button_operated</td><td>no</td><td>it may be referring to the crossing, may be OK</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/3507819516>3507819516</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=3507819516#map=20/-25.4912716/-49.2148955" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 3507819516</a></td><td>button_operated</td><td>no</td><td>it may be referring to the crossing, may be OK</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/4491511700>4491511700</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=4491511700#map=20/-25.4358865/-49.2600805" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 4491511700</a></td><td>button_operated</td><td>no</td><td>it may be referring to the crossing, may be OK</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/4604865119>4604865119</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=4604865119#map=20/-25.4557155/-49.2313455" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 4604865119</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/6336344925>6336344925</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=6336344925#map=20/-25.410211/-49.2208392" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 6336344925</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/6336344931>6336344931</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=6336344931#map=20/-25.4101989/-49.2207147" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 6336344931</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/7052469464>7052469464</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=7052469464#map=20/-25.4095836/-49.2204371" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 7052469464</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/12395490254>12395490254</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=12395490254#map=20/-25.4711227/-49.2172882" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 12395490254</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
 
-        </h2>
+            </table>
 
-
-
-
-        <table>
-
-        <tr>
-    <th><b>OSM ID (link)</b></th>
-    <th><b>key</b></th>
-    <th><b>value</b></th>
-    <th><b>commentary</b></th>
-    </tr><tr><td><a href=https://www.openstreetmap.org/node/1395984082>1395984082</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1991377345>1991377345</a></td><td>button_operated</td><td>no</td><td>it may be referring to the crossing, may be OK</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/3507819516>3507819516</a></td><td>button_operated</td><td>no</td><td>it may be referring to the crossing, may be OK</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/4491511700>4491511700</a></td><td>button_operated</td><td>no</td><td>it may be referring to the crossing, may be OK</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/4604865119>4604865119</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/6336344925>6336344925</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/6336344931>6336344931</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/7052469464>7052469464</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/12395490254>12395490254</a></td><td>button_operated</td><td>yes</td><td>it may be referring to the crossing, may be OK</td></tr>
-
-
-        </table>
-
-        
-
-
-        </table>
-
-
+            <div style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p style="margin: 0 0 10px 0; font-size: 1rem; color: #f8fafc;"><b>About:</b> <span style="color: #cbd5e1;">Keys that may be OK in some specific situations, but may be a mistake</span></p>
+                <p style="margin: 0; font-size: 1rem; color: #f8fafc;"><b>Type:</b> <span style="color: #cbd5e1;">keys</span></p>
+            </div>
+        </main>
 
         </body>
         </html>   

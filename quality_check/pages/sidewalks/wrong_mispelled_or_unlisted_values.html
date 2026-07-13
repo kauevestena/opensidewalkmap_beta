@@ -5,107 +5,117 @@
         <!DOCTYPE html>
         <html lang="en">
         <head>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"> 
 
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/font_styles.css">
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/font_styles.css">
+    
+        
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/table_styles.css">
     
 
         <title>OSWM DQT s wrong_mispelled_or_unlisted_values</title>
-
-        
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/table_styles.css">
-    
+        <link rel="icon" type="image/x-icon" href="../../../oswm_codebase/assets/favicon_homepage.png">
 
         </head>
         <body>
         
-        <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta/">OSWM</a> Data Quality Tool: sidewalks wrong_mispelled_or_unlisted_values</h1>
+        <main class="dq-container">
+            <div style="text-align: left; margin-bottom: 1rem;">
+                <a href="../../oswm_qc_main.html" style="display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,242,254,0.3); color: #00f2fe; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.2s;">← Back to DQ Main</a>
+            </div>
+            
+            <h1 style="color: #f8fafc; font-size: 2rem; margin-bottom: 0.5rem;"><img src="../../../oswm_codebase/assets/homepage/project_logo.png" alt="OSWM Logo" style="height: 1.5em; vertical-align: middle; margin-right: 15px;"><a href="../../../index.html" style="color: #00f2fe; text-decoration: none;">OSWM</a> Data Quality Tool</h1>
+            <h2 style="color: #94a3b8; font-size: 1.2rem; font-weight: 400; margin-top: 0; margin-bottom: 2rem;">sidewalks / <span style="color: #f8fafc; font-weight: 600;">wrong_mispelled_or_unlisted_values</span></h2>
+            
+            
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
+            <a href="../../tables/sidewalks/wrong_mispelled_or_unlisted_values.csv" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">↓ Download Raw .CSV</a>
+            <a href="../../json/sidewalks/wrong_mispelled_or_unlisted_values.json" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">&#123;&#125; Access Raw .JSON</a>
+            <a href="../../maps/sidewalks/wrong_mispelled_or_unlisted_values.html" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid #10b981; color: #10b981; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">🗺 Open Map View</a>
+        </div>
+    
+            
+    <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem;">
+        <h4 style="margin-top: 0; color: #00f2fe; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center;">Overpass Query <button onclick="navigator.clipboard.writeText(document.getElementById('op-query-text').value); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);" style="background: rgba(0, 242, 254, 0.2); border: 1px solid #00f2fe; color: #00f2fe; border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: background 0.2s;">Copy</button></h4>
+        <textarea id="op-query-text" readonly style="width: 100%; height: 80px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #cbd5e1; font-family: 'Fira Code', monospace; font-size: 0.85rem; padding: 10px; resize: none; overflow-y: auto;">(
+  way(46736210,543881321,543883295,543883296,543883298,543883299,544002453,958628466,961136437,961136442,985652905,985652906,985652907,1042695846,1051403775,1064650923,1065936128,1065936130,1065936131,1065936133,1065936135,1065936139,1065936141,1068081323,1068081328,1069598569,1069598585,1069598587,1069598589,1069598591,1069598593,1069598595,1069794093,1069794097,1069794101,1069794102,1069794103,1069794106,1069800457,1069800458,1069804009,1069804010,1070404336,1070687538,1120692118,1193601313,1193601314,1222266163,1451493621,1526205759,1526205760,1526205761);
+);
+out meta;</textarea>
+    </div>
+    
 
-        <h2>About: Values that are probably wrong, but they may be mispelled or just unlisted</h2>
-        <h2>Type: values</h2>
-        <h2>  
-        
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/tables/sidewalks/wrong_mispelled_or_unlisted_values.csv"> You can also download the raw .csv table </a>
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/json/sidewalks/wrong_mispelled_or_unlisted_values.json"> You can also access the raw .json </a>
+            <table style="margin-bottom: 2rem;">
+            <tr>
+    <th>OSM ID (link)</th>
+    <th>Open in iD editor</th>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Commentary</th>
+    </tr><tr><td><a href=https://www.openstreetmap.org/way/46736210>46736210</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=46736210#map=20/-25.4022753/-49.3049969" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 46736210</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/543881321>543881321</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=543881321#map=20/-25.3916207/-49.3061048" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 543881321</a></td><td>surface</td><td>Petit_Pavê</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/543883295>543883295</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=543883295#map=20/-25.4023564/-49.3049699" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 543883295</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/543883296>543883296</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=543883296#map=20/-25.4023049/-49.3048125" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 543883296</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/543883298>543883298</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=543883298#map=20/-25.4021545/-49.3047308" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 543883298</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/543883299>543883299</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=543883299#map=20/-25.4021286/-49.3045898" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 543883299</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/544002453>544002453</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=544002453#map=20/-25.4268893/-49.3085092" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 544002453</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/958628466>958628466</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=958628466#map=20/-25.4718268/-49.2297208" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 958628466</a></td><td>surface</td><td>pebblestone</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/961136437>961136437</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=961136437#map=20/-25.4732828/-49.2261717" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 961136437</a></td><td>surface</td><td>fine_gravel</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/961136442>961136442</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=961136442#map=20/-25.4733839/-49.2267462" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 961136442</a></td><td>surface</td><td>fine_gravel</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/985652905>985652905</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=985652905#map=20/-25.4618267/-49.2318607" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 985652905</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/985652906>985652906</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=985652906#map=20/-25.4618267/-49.2318607" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 985652906</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/985652907>985652907</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=985652907#map=20/-25.4614105/-49.2316339" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 985652907</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1042695846>1042695846</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1042695846#map=20/-25.454137/-49.2335346" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1042695846</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1051403775>1051403775</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1051403775#map=20/-25.4487028/-49.232838" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1051403775</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1064650923>1064650923</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1064650923#map=20/-25.4549853/-49.2232996" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1064650923</a></td><td>surface</td><td>porcelain tiles</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1065936128>1065936128</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1065936128#map=20/-25.4542452/-49.2262463" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1065936128</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1065936130>1065936130</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1065936130#map=20/-25.4541643/-49.225993" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1065936130</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1065936131>1065936131</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1065936131#map=20/-25.45402/-49.2258215" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1065936131</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1065936133>1065936133</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1065936133#map=20/-25.4541486/-49.2262261" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1065936133</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1065936135>1065936135</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1065936135#map=20/-25.4542521/-49.2265586" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1065936135</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1065936139>1065936139</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1065936139#map=20/-25.4536479/-49.2265884" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1065936139</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1065936141>1065936141</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1065936141#map=20/-25.4537285/-49.2268383" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1065936141</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1068081323>1068081323</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1068081323#map=20/-25.4593874/-49.2396591" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1068081323</a></td><td>surface</td><td>fine_gravel</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1068081328>1068081328</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1068081328#map=20/-25.4588575/-49.2399569" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1068081328</a></td><td>surface</td><td>fine_gravel</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069598569>1069598569</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069598569#map=20/-25.4554036/-49.2251339" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069598569</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069598585>1069598585</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069598585#map=20/-25.4544977/-49.2257285" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069598585</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069598587>1069598587</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069598587#map=20/-25.4545987/-49.2254527" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069598587</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069598589>1069598589</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069598589#map=20/-25.4548033/-49.2253723" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069598589</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069598591>1069598591</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069598591#map=20/-25.4549147/-49.2253268" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069598591</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069598593>1069598593</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069598593#map=20/-25.4550953/-49.225256" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069598593</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069598595>1069598595</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069598595#map=20/-25.4558543/-49.2250085" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069598595</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069794093>1069794093</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069794093#map=20/-25.45639/-49.2262655" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069794093</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069794097>1069794097</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069794097#map=20/-25.4559487/-49.2268035" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069794097</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069794101>1069794101</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069794101#map=20/-25.4553169/-49.226492" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069794101</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069794102>1069794102</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069794102#map=20/-25.4553632/-49.2263065" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069794102</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069794103>1069794103</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069794103#map=20/-25.4555782/-49.2262285" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069794103</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069794106>1069794106</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069794106#map=20/-25.4559432/-49.2260705" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069794106</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069800457>1069800457</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069800457#map=20/-25.4546948/-49.2431452" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069800457</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069800458>1069800458</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069800458#map=20/-25.4543926/-49.24351" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069800458</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069804009>1069804009</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069804009#map=20/-25.4546445/-49.2429006" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069804009</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1069804010>1069804010</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1069804010#map=20/-25.4551678/-49.2429435" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1069804010</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1070404336>1070404336</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1070404336#map=20/-25.4591934/-49.2378888" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1070404336</a></td><td>surface</td><td>betão</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1070687538>1070687538</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1070687538#map=20/-25.4543445/-49.2419374" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1070687538</a></td><td>surface</td><td>paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1120692118>1120692118</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1120692118#map=20/-25.45287/-49.2780014" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1120692118</a></td><td>surface</td><td>pebblestone</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1193601313>1193601313</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1193601313#map=20/-25.4542902/-49.242612" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1193601313</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1193601314>1193601314</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1193601314#map=20/-25.4544403/-49.2425055" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1193601314</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1222266163>1222266163</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1222266163#map=20/-25.4282033/-49.2426985" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1222266163</a></td><td>surface</td><td>interlock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1451493621>1451493621</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1451493621#map=20/-25.4674002/-49.2204968" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1451493621</a></td><td>surface</td><td>grass_scrub</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1526205759>1526205759</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1526205759#map=20/-25.4021545/-49.3047308" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1526205759</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1526205760>1526205760</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1526205760#map=20/-25.4020489/-49.3046256" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1526205760</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
+<tr><td><a href=https://www.openstreetmap.org/way/1526205761>1526205761</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&way=1526205761#map=20/-25.4023534/-49.3049239" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1526205761</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
 
-        </h2>
+            </table>
 
-
-
-
-        <table>
-
-        <tr>
-    <th><b>OSM ID (link)</b></th>
-    <th><b>key</b></th>
-    <th><b>value</b></th>
-    <th><b>commentary</b></th>
-    </tr><tr><td><a href=https://www.openstreetmap.org/way/46736210>46736210</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/543881321>543881321</a></td><td>surface</td><td>Petit_Pavê</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/543883295>543883295</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/543883296>543883296</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/543883298>543883298</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/543883299>543883299</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/544002453>544002453</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/958628466>958628466</a></td><td>surface</td><td>pebblestone</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/961136437>961136437</a></td><td>surface</td><td>fine_gravel</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/961136442>961136442</a></td><td>surface</td><td>fine_gravel</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/985652905>985652905</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/985652906>985652906</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/985652907>985652907</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1042695846>1042695846</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1051403775>1051403775</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1064650923>1064650923</a></td><td>surface</td><td>porcelain tiles</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1065936128>1065936128</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1065936130>1065936130</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1065936131>1065936131</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1065936133>1065936133</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1065936135>1065936135</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1065936139>1065936139</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1065936141>1065936141</a></td><td>surface</td><td>stepping_stones</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1068081323>1068081323</a></td><td>surface</td><td>fine_gravel</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1068081328>1068081328</a></td><td>surface</td><td>fine_gravel</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069598569>1069598569</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069598585>1069598585</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069598587>1069598587</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069598589>1069598589</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069598591>1069598591</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069598593>1069598593</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069598595>1069598595</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069794093>1069794093</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069794097>1069794097</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069794101>1069794101</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069794102>1069794102</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069794103>1069794103</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069794106>1069794106</a></td><td>surface</td><td>concrete:lanes</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069800457>1069800457</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069800458>1069800458</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069804009>1069804009</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1069804010>1069804010</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1070404336>1070404336</a></td><td>surface</td><td>betão</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1070687538>1070687538</a></td><td>surface</td><td>paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1120692118>1120692118</a></td><td>surface</td><td>pebblestone</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1193601313>1193601313</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1193601314>1193601314</a></td><td>surface</td><td>grass_paver</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1222266163>1222266163</a></td><td>surface</td><td>interlock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1451493621>1451493621</a></td><td>surface</td><td>grass_scrub</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1526205759>1526205759</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1526205760>1526205760</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-<tr><td><a href=https://www.openstreetmap.org/way/1526205761>1526205761</a></td><td>surface</td><td>rock</td><td>unlisted at accepted/known values, probably wrong/misspelled</td></tr>
-
-
-        </table>
-
-        
-
-
-        </table>
-
-
+            <div style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p style="margin: 0 0 10px 0; font-size: 1rem; color: #f8fafc;"><b>About:</b> <span style="color: #cbd5e1;">Values that are probably wrong, but they may be mispelled or just unlisted</span></p>
+                <p style="margin: 0; font-size: 1rem; color: #f8fafc;"><b>Type:</b> <span style="color: #cbd5e1;">values</span></p>
+            </div>
+        </main>
 
         </body>
         </html>   

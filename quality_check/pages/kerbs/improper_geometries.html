@@ -5,89 +5,99 @@
         <!DOCTYPE html>
         <html lang="en">
         <head>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"> 
 
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/font_styles.css">
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/font_styles.css">
+    
+        
+    <link rel="stylesheet" href="../../../oswm_codebase/assets/styles/table_styles.css">
     
 
         <title>OSWM DQT k improper_geometries</title>
-
-        
-    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/table_styles.css">
-    
+        <link rel="icon" type="image/x-icon" href="../../../oswm_codebase/assets/favicon_homepage.png">
 
         </head>
         <body>
         
-        <h1><a href="https://kauevestena.github.io/opensidewalkmap_beta/">OSWM</a> Data Quality Tool: kerbs improper_geometries</h1>
+        <main class="dq-container">
+            <div style="text-align: left; margin-bottom: 1rem;">
+                <a href="../../oswm_qc_main.html" style="display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,242,254,0.3); color: #00f2fe; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.2s;">← Back to DQ Main</a>
+            </div>
+            
+            <h1 style="color: #f8fafc; font-size: 2rem; margin-bottom: 0.5rem;"><img src="../../../oswm_codebase/assets/homepage/project_logo.png" alt="OSWM Logo" style="height: 1.5em; vertical-align: middle; margin-right: 15px;"><a href="../../../index.html" style="color: #00f2fe; text-decoration: none;">OSWM</a> Data Quality Tool</h1>
+            <h2 style="color: #94a3b8; font-size: 1.2rem; font-weight: 400; margin-top: 0; margin-bottom: 2rem;">kerbs / <span style="color: #f8fafc; font-weight: 600;">improper_geometries</span></h2>
+            
+            
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 20px;">
+            <a href="../../tables/kerbs/improper_geometries.csv" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">↓ Download Raw .CSV</a>
+            <a href="../../json/kerbs/improper_geometries.json" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(0, 242, 254, 0.3); color: #00f2fe; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">&#123;&#125; Access Raw .JSON</a>
+            <a href="../../maps/kerbs/improper_geometries.html" style="display: inline-block; background: rgba(30, 41, 59, 0.7); border: 1px solid #10b981; color: #10b981; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; backdrop-filter: blur(8px);">🗺 Open Map View</a>
+        </div>
+    
+            
+    <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem;">
+        <h4 style="margin-top: 0; color: #00f2fe; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center;">Overpass Query <button onclick="navigator.clipboard.writeText(document.getElementById('op-query-text').value); this.innerText='Copied!'; setTimeout(()=>this.innerText='Copy', 2000);" style="background: rgba(0, 242, 254, 0.2); border: 1px solid #00f2fe; color: #00f2fe; border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: background 0.2s;">Copy</button></h4>
+        <textarea id="op-query-text" readonly style="width: 100%; height: 80px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #cbd5e1; font-family: 'Fira Code', monospace; font-size: 0.85rem; padding: 10px; resize: none; overflow-y: auto;">(
+  node(659241105,953197237,953199306,953199745,953199911,953199912,953199914,953202347,954648475,954648500,954648504,954761092,955077700,955077705,955077706,955490104,955508034,955508035,957980150,960112717,960112720,1070027466,1070027467,1070027468,1070738461,1074627503,1195429846,1451745534,1451759231,1531778593,1531778594,1531778595,1531778596,1531778597);
+);
+out meta;</textarea>
+    </div>
+    
 
-        <h2>About: Features with geometries (more specifically geometry types) that are incompatible with the main tags</h2>
-        <h2>Type: geometries</h2>
-        <h2>  
-        
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/tables/kerbs/improper_geometries.csv"> You can also download the raw .csv table </a>
-            <a href="https://kauevestena.github.io/opensidewalkmap_beta/quality_check/json/kerbs/improper_geometries.json"> You can also access the raw .json </a>
+            <table style="margin-bottom: 2rem;">
+            <tr>
+    <th>OSM ID (link)</th>
+    <th>Open in iD editor</th>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Commentary</th>
+    </tr><tr><td><a href=https://www.openstreetmap.org/node/659241105>659241105</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=659241105#map=20/-25.4348806/-49.2725855" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 659241105</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/953197237>953197237</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=953197237#map=20/-25.4550893/-49.229789" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953197237</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/953199306>953199306</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=953199306#map=20/-25.4615926/-49.2328303" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953199306</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/953199745>953199745</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=953199745#map=20/-25.4640043/-49.2263994" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953199745</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/953199911>953199911</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=953199911#map=20/-25.4623816/-49.2321987" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953199911</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/953199912>953199912</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=953199912#map=20/-25.4623636/-49.232033" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953199912</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/953199914>953199914</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=953199914#map=20/-25.4628867/-49.2314885" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953199914</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/953202347>953202347</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=953202347#map=20/-25.4699888/-49.2278175" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 953202347</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/954648475>954648475</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=954648475#map=20/-25.4643691/-49.2217453" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 954648475</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/954648500>954648500</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=954648500#map=20/-25.465088/-49.2214302" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 954648500</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/954648504>954648504</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=954648504#map=20/-25.4649916/-49.2207216" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 954648504</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/954761092>954761092</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=954761092#map=20/-25.4710832/-49.2286294" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 954761092</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/955077700>955077700</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=955077700#map=20/-25.4660147/-49.2254653" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 955077700</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/955077705>955077705</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=955077705#map=20/-25.4665714/-49.2247873" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 955077705</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/955077706>955077706</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=955077706#map=20/-25.4657766/-49.2250084" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 955077706</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/955490104>955490104</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=955490104#map=20/-25.455861/-49.2310985" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 955490104</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/955508034>955508034</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=955508034#map=20/-25.4552556/-49.2308486" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 955508034</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/955508035>955508035</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=955508035#map=20/-25.4560996/-49.2303399" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 955508035</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/957980150>957980150</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=957980150#map=20/-25.4547871/-49.230586" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 957980150</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/960112717>960112717</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=960112717#map=20/-25.4673391/-49.2297254" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 960112717</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/960112720>960112720</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=960112720#map=20/-25.4674389/-49.2298925" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 960112720</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1070027466>1070027466</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1070027466#map=20/-25.4551751/-49.2329039" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1070027466</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1070027467>1070027467</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1070027467#map=20/-25.4553908/-49.232292" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1070027467</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1070027468>1070027468</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1070027468#map=20/-25.4557058/-49.2314511" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1070027468</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1070738461>1070738461</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1070738461#map=20/-25.4419201/-49.2198173" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1070738461</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1074627503>1074627503</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1074627503#map=20/-25.4575313/-49.2384378" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1074627503</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1195429846>1195429846</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1195429846#map=20/-25.4347295/-49.2726582" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1195429846</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1451745534>1451745534</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1451745534#map=20/-25.4621356/-49.2308434" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1451745534</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1451759231>1451759231</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1451759231#map=20/-25.4657678/-49.2251351" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1451759231</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1531778593>1531778593</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1531778593#map=20/-25.4810649/-49.2477485" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1531778593</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1531778594>1531778594</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1531778594#map=20/-25.4811589/-49.2477043" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1531778594</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1531778595>1531778595</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1531778595#map=20/-25.4828856/-49.2468459" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1531778595</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1531778596>1531778596</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1531778596#map=20/-25.4828012/-49.2468505" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1531778596</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
+<tr><td><a href=https://www.openstreetmap.org/node/1531778597>1531778597</a></td><td><a href="https://www.openstreetmap.org/edit?editor=id&node=1531778597#map=20/-25.4829825/-49.2467973" target="_blank" style="color: #8b5cf6; text-decoration: underline; font-weight: 500;">✎ 1531778597</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
 
-        </h2>
+            </table>
 
-
-
-
-        <table>
-
-        <tr>
-    <th><b>OSM ID (link)</b></th>
-    <th><b>key</b></th>
-    <th><b>value</b></th>
-    <th><b>commentary</b></th>
-    </tr><tr><td><a href=https://www.openstreetmap.org/node/659241105>659241105</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/953197237>953197237</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/953199306>953199306</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/953199745>953199745</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/953199911>953199911</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/953199912>953199912</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/953199914>953199914</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/953202347>953202347</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/954648475>954648475</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/954648500>954648500</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/954648504>954648504</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/954761092>954761092</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/955077700>955077700</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/955077705>955077705</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/955077706>955077706</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/955490104>955490104</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/955508034>955508034</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/955508035>955508035</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/957980150>957980150</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/960112717>960112717</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/960112720>960112720</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1070027466>1070027466</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1070027467>1070027467</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1070027468>1070027468</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1070738461>1070738461</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1074627503>1074627503</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1195429846>1195429846</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1451745534>1451745534</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1451759231>1451759231</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1531778593>1531778593</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1531778594>1531778594</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1531778595>1531778595</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1531778596>1531778596</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-<tr><td><a href=https://www.openstreetmap.org/node/1531778597>1531778597</a></td><td>not appliable</td><td>not appliable</td><td>kerbs are mostly points, but in few places people map also the whole 'kerb line' </td></tr>
-
-
-        </table>
-
-        
-
-
-        </table>
-
-
+            <div style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <p style="margin: 0 0 10px 0; font-size: 1rem; color: #f8fafc;"><b>About:</b> <span style="color: #cbd5e1;">Features with geometries (more specifically geometry types) that are incompatible with the main tags</span></p>
+                <p style="margin: 0; font-size: 1rem; color: #f8fafc;"><b>Type:</b> <span style="color: #cbd5e1;">geometries</span></p>
+            </div>
+        </main>
 
         </body>
         </html>   
