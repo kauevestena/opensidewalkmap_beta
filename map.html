@@ -13,6 +13,7 @@
     <!-- maplibre-gl latest tested working version: 4.3.2 -->
     <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' />
     <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
+    <link rel="stylesheet" href="oswm_codebase/assets/styles/webmap_snapshot.css" />
     <!-- pmtiles -->
     <script src="https://unpkg.com/pmtiles@latest/dist/pmtiles.js"></script>
     <!-- legend module -->
@@ -222,6 +223,10 @@
         fetch('./webmap_params.json')
             .then((response) => response.json())
             .then((params) => {
+
+                // Assigned after the initial style load; kept in this outer scope
+                // so style switching can request a legend resize safely.
+                let resizeLegendIframe = () => {};
 
 
                 const map = new maplibregl.Map(
@@ -456,7 +461,7 @@
 
                     // helper to resize the legend iframe to its content
                     const legendIframe = document.getElementById('map-symbols-img');
-                    function resizeLegendIframe() {
+                    resizeLegendIframe = function() {
                         if (!legendIframe) return;
                         try {
                             const doc = legendIframe.contentDocument || legendIframe.contentWindow?.document;
@@ -499,7 +504,7 @@
                         } catch (e) {
                             // silently ignore cross-origin errors (shouldn't happen for same-origin files)
                         }
-                    }
+                    };
 
                     const mapref = document.getElementById('map');
 
@@ -590,6 +595,15 @@
                     setTimeout(resizeLegendIframe, 100);
                     
                 });
+
+                import('./oswm_codebase/webmap/snapshot/snapshot_control.js')
+                    .then(({ installSnapshotControl }) => {
+                        installSnapshotControl(map, params, {
+                            position: 'top-right',
+                            getActiveStyleKey: () => styleSelector.value || 'footway_categories'
+                        });
+                    })
+                    .catch((error) => console.error('Snapshot control could not be loaded:', error));
 
 
 
