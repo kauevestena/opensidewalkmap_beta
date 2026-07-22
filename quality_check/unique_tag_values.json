@@ -1887,6 +1887,7 @@
             "Rua Monsenhor Celso",
             "Rua Francisco Raphael Di Lascio",
             "Condomínio Residencial Umbará",
+            "Rua Flamarion Gonçalves do Nascimento",
             "Rua Doutor Oswaldo Vieira",
             "Rua Deputado Chafic Curi",
             "Rua Ernesto Biscardi",
@@ -2438,9 +2439,7 @@
             "IPPUC"
         ],
         "bus": [
-            "yes",
-            "no",
-            "designated"
+            "no"
         ],
         "public_transport": [
             "stop_position"
@@ -2697,6 +2696,9 @@
         "noname": [
             "yes"
         ],
+        "bus:lanes": [
+            "yes|designated"
+        ],
         "taxi": [
             "designated"
         ],
@@ -2805,6 +2807,10 @@
         "handrail:right": [
             "yes"
         ],
+        "tracktype": [
+            "grade5",
+            "grade4"
+        ],
         "embankment": [
             "yes"
         ],
@@ -2853,9 +2859,6 @@
         "ford": [
             "seasonal",
             "stepping_stones"
-        ],
-        "tracktype": [
-            "grade4"
         ],
         "vehicle": [
             "no"

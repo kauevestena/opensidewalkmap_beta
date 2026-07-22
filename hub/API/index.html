@@ -1076,6 +1076,14 @@ print(data)</pre>
   },
   {
     "category": "Global Quality Metrics",
+    "path": "quality_check/completeness/data.json",
+    "format": "JSON",
+    "description": "Data quality asset file: data.json",
+    "playground": true,
+    "deliverable": "data_quality"
+  },
+  {
+    "category": "Global Quality Metrics",
     "path": "quality_check/feature_keys.json",
     "format": "JSON",
     "description": "Summary of tag keys present in the database.",
@@ -1459,6 +1467,14 @@ print(data)</pre>
     "deliverable": "map_data"
   },
   {
+    "category": "Map Data Assets",
+    "path": "data/snapshots/node_summary.json",
+    "format": "JSON",
+    "description": "Map data asset file: node_summary.json",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
     "category": "Other Footways Charts",
     "path": "statistics_specs/other_footways/other_footways_age.json",
     "format": "JSON",
@@ -1575,6 +1591,14 @@ print(data)</pre>
     "path": "data/processed/other_footways/stairways.parquet",
     "format": "GeoParquet",
     "description": "Processed stairways sublayer in GeoParquet format.",
+    "playground": false,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Pedestrian Data (Parquet)",
+    "path": "data/processed/roads_for_completeness.parquet",
+    "format": "GeoParquet",
+    "description": "Map data asset file: roads_for_completeness.parquet",
     "playground": false,
     "deliverable": "map_data"
   },
@@ -2108,6 +2132,14 @@ print(data)</pre>
   },
   {
     "category": "Folder Indexes",
+    "path": "data/snapshots/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'snapshots' folder.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
     "path": "data/tiles/index.json",
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'tiles' folder.",
@@ -2137,6 +2169,14 @@ print(data)</pre>
     "description": "Folder-level data index describing files and subdirectories available inside the 'vrts' folder.",
     "playground": true,
     "deliverable": "map_data"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "quality_check/completeness/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'completeness' folder.",
+    "playground": true,
+    "deliverable": "data_quality"
   },
   {
     "category": "Folder Indexes",

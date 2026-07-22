@@ -29,6 +29,7 @@
                 "other_footways/pedestrian_areas.parquet",
                 "other_footways/potential_footways.parquet",
                 "other_footways/stairways.parquet",
+                "roads_for_completeness.parquet",
                 "sidewalks.parquet"
             ]
         },
