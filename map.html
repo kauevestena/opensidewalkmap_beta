@@ -8,18 +8,11 @@
 <head>
     <title>OSWM Node Webmap</title>
     <meta charset="utf-8" />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css">
-         <script src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js"></script> -->
-    <!-- maplibre-gl v5 -->
-    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css' />
-    <script src='https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js'></script>
+    <!-- maplibre-gl v6 (ESM-only) -->
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css" />
     <link rel="stylesheet" href="oswm_codebase/assets/styles/webmap_snapshot.css" />
-    <!-- pmtiles -->
-    <script src="https://unpkg.com/pmtiles@latest/dist/pmtiles.js"></script>
-    <!-- legend module -->
-    <link href='https://www.unpkg.com/@watergis/maplibre-gl-legend@latest/dist/maplibre-gl-legend.css'
-        rel='stylesheet' />
-    <script src="https://www.unpkg.com/@watergis/maplibre-gl-legend@latest/dist/maplibre-gl-legend.umd.js"></script>
+    <!-- OSWM native legend control -->
+    <link rel="stylesheet" href="oswm_codebase/assets/styles/oswm_legend_control.css" />
     <style>
         body {
             margin: 0;
@@ -42,6 +35,22 @@
             border: 1px solid rgba(0, 0, 0, 0.15);
             border-radius: 4px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+            z-index: 1;
+        }
+
+        #oswm-symbology-panel {
+            position: absolute;
+            top: 50%;
+            left: 1%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 10px 14px;
+            max-width: 360px;
+            max-height: 70vh;
+            overflow-y: auto;
+            display: none;
             z-index: 1;
         }
 
@@ -136,27 +145,7 @@
             height: auto;
         }
 
-        #overlay-image {
-            display: none;
-            z-index: 0;
-        }
-        
-        #overlay-image iframe {
-            position: absolute;
-            top: 50%;
-            left: 1%;
-            height: auto; /* let JS set exact height to content */
-            max-height: 70vh; /* clamp to viewport */
-            width: auto; /* width will be set by JS to fit content */
-            max-width: 360px; /* safety cap; slightly larger to avoid ellipsis */
-            min-width: 150px; /* avoid too narrow */
-            transform: translate(0%, -50%);
-            border: none;
-            background: transparent;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            overflow: hidden; /* avoid internal iframe scrollbars */
-        }
+
         
     </style>
 
@@ -181,35 +170,21 @@
 
     </div>
 
+        <!-- Detached legend (map symbols) panel -->
+    <div id="oswm-symbology-panel" class="oswm-legend-symbology"></div>
 
-    <div id="overlay-image" style="display: none;">
-        <iframe src="oswm_codebase/assets/map_symbols/footway_categories.html" alt="Map Symbols" id="map-symbols-img"></iframe>
-    </div>
-    
+    <script type="module">
 
-    
+        import * as maplibregl from 'https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.mjs';
+        import { Protocol as PmtilesProtocol } from 'https://cdn.jsdelivr.net/npm/pmtiles@4/+esm';
+        import { OswmLegendControl } from './oswm_codebase/webmap/oswm_legend_control.js';
 
-    <script type="text/javascript">
 
         // Global Control Variables
         var hoveredStateId_OSWMProject = null;
 
-        //  var map_bounds = null;
-        //  var map_center = null;
-        //  var map_zoom = null;
-
-        // fetching:
-        //  fetch('./default_params.json')
-        //     .then((response) => response.json())
-        //     .then((json) => {
-        //        map_bounds = json['bounds'];
-        //        map_center = json['center'];
-        //        map_zoom = json['zoom'];
-        //     });
-
-
         // add the PMTiles plugin to the maplibregl global.
-        let protocol = new pmtiles.Protocol();
+        let protocol = new PmtilesProtocol();
         maplibregl.addProtocol("pmtiles", protocol.tile);
 
         //  const p = new pmtiles.PMTiles(PMTILES_URL_SIDEWALKS);
@@ -224,9 +199,6 @@
             .then((response) => response.json())
             .then((params) => {
 
-                // Assigned after the initial style load; kept in this outer scope
-                // so style switching can request a legend resize safely.
-                let resizeLegendIframe = () => {};
 
 
                 const map = new maplibregl.Map(
@@ -249,6 +221,8 @@
                     }
 
                 );
+
+                let legendControl; // Declared here so the style selector event listener can access it
 
                 const homePosition = {
                 center: [144, -37],
@@ -439,125 +413,18 @@
                         setupPopup(layer);
                     });
 
-                    const legend_control_options = {
-                        showDefault: false,
-                        showCheckbox: true,
-                        onlyRendered: false,
-                        reverseOrder: true,
-                        title: 'Layer Legend'
-                    };
+                    // Initial legend fragments setup
+                    const symbologyPanel = document.getElementById('oswm-symbology-panel');
+                    symbologyPanel.innerHTML = params.legend_fragments['footway_categories'] || '';
 
-                    map.addControl(new MaplibreLegendControl.MaplibreLegendControl({}, legend_control_options), "top-right");
-
-
-                    // MAP SYMBOLS HANDLING: start
-
-                    const switcherButton = document.querySelector('.maplibregl-legend-switcher');
-                    // console.log(switcherButton);
-                    const legendList = document.querySelector('.maplibregl-legend-list');
-                    // console.log(legendList);
-                    const overlayImage = document.getElementById('overlay-image');
-                    // console.log(overlayImage);
-
-                    // helper to resize the legend iframe to its content
-                    const legendIframe = document.getElementById('map-symbols-img');
-                    resizeLegendIframe = function() {
-                        if (!legendIframe) return;
-                        try {
-                            const doc = legendIframe.contentDocument || legendIframe.contentWindow?.document;
-                            if (!doc) return;
-                            // Measure content size from body only to avoid feedback loops
-                            const body = doc.body;
-
-                            // Reset iframe dimensions before measuring to avoid compounding
-                            legendIframe.style.height = 'auto';
-                            legendIframe.style.width = 'auto';
-
-                            // Temporarily let child's body size to its max-content width so we can measure natural width
-                            const prevBodyWidth = body.style.width;
-                            body.style.width = 'max-content';
-
-                            const contentWidth = body.scrollWidth;
-                            const contentHeight = body.offsetHeight; // visible height (respects child's own layout)
-
-                            if (!contentWidth || !contentHeight) {
-                                // Try again shortly if content not ready/visible
-                                // restore body width before retry
-                                body.style.width = prevBodyWidth;
-                                setTimeout(resizeLegendIframe, 50);
-                                return;
-                            }
-
-                            // Clamp dimensions
-                            const minW = 150;
-                            const maxW = 360; // keep consistent with CSS cap
-                            const tolerance = 12; // small extra width to avoid edge-case ellipsis
-                            const newW = Math.min(Math.max(contentWidth + tolerance, minW), maxW);
-                            legendIframe.style.width = newW + 'px';
-
-                            const maxH = Math.floor(window.innerHeight * 0.7);
-                            const newH = Math.min(contentHeight, maxH);
-                            legendIframe.style.height = newH + 'px';
-
-                            // restore body width
-                            body.style.width = prevBodyWidth;
-                        } catch (e) {
-                            // silently ignore cross-origin errors (shouldn't happen for same-origin files)
+                    // OSWM native legend control (now just Layers)
+                    legendControl = new OswmLegendControl(params, { 
+                        initialStyle: 'footway_categories',
+                        onToggle: (isExpanded) => {
+                            symbologyPanel.style.display = isExpanded ? 'block' : 'none';
                         }
-                    };
-
-                    const mapref = document.getElementById('map');
-
-
-                    switcherButton.addEventListener('click', function() {
-                        overlayImage.style.display = 'block';
-                        // queue resize after it becomes visible
-                        setTimeout(resizeLegendIframe, 50);
                     });
-
-                    overlayImage.addEventListener('click', function() {
-                        overlayImage.style.display = 'none';
-                    });
-
-                    legendList.addEventListener('click', function() {
-                        overlayImage.style.display = 'none';
-                    });
-
-                    mapref.addEventListener("dblclick", function()  {
-                        overlayImage.style.display = 'none';
-                    });
-
-                    // Resize when iframe finishes loading new legend
-                    if (legendIframe) {
-                        legendIframe.addEventListener('load', function() {
-                            resizeLegendIframe();
-                            // attach a click listener inside the legend so clicks suppress the overlay
-                            try {
-                                const doc = legendIframe.contentDocument || legendIframe.contentWindow?.document;
-                                if (doc && doc.body) {
-                                    // remove previous handler if any
-                                    if (doc._oswm_legend_click_handler) {
-                                        doc.body.removeEventListener('click', doc._oswm_legend_click_handler);
-                                    }
-                                    doc._oswm_legend_click_handler = function (e) {
-                                        // hide parent overlay
-                                        overlayImage.style.display = 'none';
-                                    };
-                                    doc.body.addEventListener('click', doc._oswm_legend_click_handler);
-                                }
-                            } catch (e) {
-                                // ignore cross-origin or readiness errors
-                            }
-                        });
-                    }
-
-                    // Resize on viewport changes
-                    window.addEventListener('resize', resizeLegendIframe);
-
-                    // TODO: ability to drag the image around the map
-                    // TODO: add key shortcuts
-
-                    // MAP SYMBOLS HANDLING: end
+                    map.addControl(legendControl, 'top-right');
 
                 });
 
@@ -584,16 +451,15 @@
                 styleSelector.addEventListener('change', function (e) {
                     const style = e.target.value;
                     map.setStyle(params['styles'][style]);
-
-
-                    // modify iframe overlay
-                    const overlayImage2 = document.getElementById('map-symbols-img');
-                    const legend_url = `oswm_codebase/assets/map_symbols/${style}.html`;
-
-                    overlayImage2.src = `${legend_url}?cb=${Date.now()}`; // to prevent caching
-                    // resize after source change (load handler will also run)
-                    setTimeout(resizeLegendIframe, 100);
+                    if (legendControl) {
+                        legendControl.setActiveStyle(style);
+                    }
                     
+                    // Update detached legend symbology
+                    const symbologyPanel = document.getElementById('oswm-symbology-panel');
+                    if (symbologyPanel && params.legend_fragments[style]) {
+                        symbologyPanel.innerHTML = params.legend_fragments[style];
+                    }
                 });
 
                 import('./oswm_codebase/webmap/snapshot/snapshot_control.js')
