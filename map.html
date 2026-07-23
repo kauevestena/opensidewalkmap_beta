@@ -10,9 +10,9 @@
     <meta charset="utf-8" />
     <!-- <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css">
          <script src="https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js"></script> -->
-    <!-- maplibre-gl latest tested working version: 4.3.2 -->
-    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' />
-    <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
+    <!-- maplibre-gl latest v5: 5.x -->
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js'></script>
     <link rel="stylesheet" href="oswm_codebase/assets/styles/webmap_snapshot.css" />
     <!-- pmtiles -->
     <script src="https://unpkg.com/pmtiles@latest/dist/pmtiles.js"></script>
@@ -285,7 +285,7 @@
                 // map.addControl(new LogoControl({compact: false}));
 
                 // add hash
-                map.addControl(new maplibregl.Hash());
+                new maplibregl.Hash().addTo(map);
 
                 // add a global attribution:
                 // map.addControl(new maplibregl.AttributionControl({
