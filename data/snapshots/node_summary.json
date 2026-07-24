@@ -1,12 +1,12 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-07-22T08:19:01.574163+00:00",
+    "generated_at": "2026-07-24T08:50:39.246723+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
-            "total": 20058,
-            "known": 20058,
+            "total": 20060,
+            "known": 20060,
             "unknown": 0,
             "unknownPercent": 0.0,
             "knownCategoryCount": 8,
@@ -14,7 +14,7 @@
                 {
                     "value": "sidewalks",
                     "count": 8133,
-                    "percent": 40.55,
+                    "percent": 40.54,
                     "color": "steelblue"
                 },
                 {
@@ -49,8 +49,8 @@
                 },
                 {
                     "value": "informal_footways",
-                    "count": 197,
-                    "percent": 0.98,
+                    "count": 199,
+                    "percent": 0.99,
                     "color": "#b0645a"
                 },
                 {
@@ -63,13 +63,13 @@
             "dominant": {
                 "value": "sidewalks",
                 "count": 8133,
-                "percent": 40.55,
+                "percent": 40.54,
                 "color": "steelblue"
             },
-            "shannonEntropy": 1.49127,
-            "effectiveDiversity": 4.442735,
-            "lengthFeatureCount": 17156,
-            "totalLengthKm": 911.006698,
+            "shannonEntropy": 1.491582,
+            "effectiveDiversity": 4.44412,
+            "lengthFeatureCount": 17158,
+            "totalLengthKm": 911.484183,
             "unknownLengthKm": 0.0,
             "lengthKmByCategory": {
                 "sidewalks": 319.868746,
@@ -78,7 +78,7 @@
                 "crossings": 24.515383,
                 "potential_footways": 98.18326,
                 "stairways": 5.128643,
-                "informal_footways": 35.004646,
+                "informal_footways": 35.48213,
                 "pedestrian_areas": 0.0
             },
             "id": "footway_categories",
@@ -771,15 +771,15 @@
         },
         "age": {
             "kind": "numeric",
-            "total": 20058,
+            "total": 20060,
             "known": 20052,
-            "unknown": 6,
-            "unknownPercent": 0.03,
+            "unknown": 8,
+            "unknownPercent": 0.04,
             "invalid": 0,
-            "min": 0.013689,
-            "max": 18.603696,
-            "mean": 3.490782,
-            "median": 3.613963,
+            "min": 0.019165,
+            "max": 18.609172,
+            "mean": 3.496258,
+            "median": 3.619439,
             "bins": [
                 {
                     "label": "0–<2",
@@ -792,21 +792,21 @@
                     "label": "2–<4",
                     "lower": 2.0,
                     "upper": 4.0,
-                    "count": 13436,
+                    "count": 13427,
                     "color": "#35b779"
                 },
                 {
                     "label": "4–<6",
                     "lower": 4.0,
                     "upper": 6.0,
-                    "count": 2239,
+                    "count": 2238,
                     "color": "#21918c"
                 },
                 {
                     "label": "6–<8",
                     "lower": 6.0,
                     "upper": 8.0,
-                    "count": 650,
+                    "count": 660,
                     "color": "#31688e"
                 },
                 {
@@ -851,10 +851,10 @@
         },
         "n_revs": {
             "kind": "numeric",
-            "total": 20058,
+            "total": 20060,
             "known": 20052,
-            "unknown": 6,
-            "unknownPercent": 0.03,
+            "unknown": 8,
+            "unknownPercent": 0.04,
             "invalid": 0,
             "min": 1.0,
             "max": 67.0,
