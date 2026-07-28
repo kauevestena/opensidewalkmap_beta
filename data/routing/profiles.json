@@ -1,0 +1,141 @@
+{
+  "distance_profile_id": "distance",
+  "profiles": {
+    "blind": {
+      "cost": {
+        "event_penalties_m": {
+          "crossing": 25,
+          "footway": 0,
+          "sidewalk": 0,
+          "stairs": 10
+        },
+        "grade_multipliers": [
+          {
+            "min_grade": 90,
+            "multiplier": 1.0
+          },
+          {
+            "min_grade": 75,
+            "multiplier": 1.15
+          },
+          {
+            "min_grade": 60,
+            "multiplier": 1.45
+          },
+          {
+            "min_grade": 40,
+            "multiplier": 2.2
+          },
+          {
+            "min_grade": 20,
+            "multiplier": 4.5
+          },
+          {
+            "min_grade": 1,
+            "multiplier": 8.0
+          }
+        ]
+      },
+      "description": "Prioritizes detectable transitions, tactile information, controlled crossings and predictable walking surfaces.",
+      "label": "Blind or low vision",
+      "property_prefix": "blind",
+      "provisional": true,
+      "routing_mode": "accessibility_grade",
+      "speed_kmh": 4.0
+    },
+    "distance": {
+      "description": "Minimizes geometric walking distance without applying accessibility grades, barriers or event penalties.",
+      "label": "Shortest distance",
+      "provisional": false,
+      "routing_mode": "distance",
+      "speed_kmh": 5.0
+    },
+    "elderly": {
+      "cost": {
+        "event_penalties_m": {
+          "crossing": 22,
+          "footway": 0,
+          "sidewalk": 0,
+          "stairs": 45
+        },
+        "grade_multipliers": [
+          {
+            "min_grade": 90,
+            "multiplier": 1.0
+          },
+          {
+            "min_grade": 75,
+            "multiplier": 1.2
+          },
+          {
+            "min_grade": 60,
+            "multiplier": 1.65
+          },
+          {
+            "min_grade": 40,
+            "multiplier": 2.6
+          },
+          {
+            "min_grade": 20,
+            "multiplier": 5.5
+          },
+          {
+            "min_grade": 1,
+            "multiplier": 11.0
+          }
+        ]
+      },
+      "description": "Prioritizes stable, smooth routes with gentle slopes, adequate width and safer road crossings.",
+      "label": "Elderly pedestrian",
+      "property_prefix": "elderly",
+      "provisional": true,
+      "routing_mode": "accessibility_grade",
+      "speed_kmh": 3.2
+    },
+    "wheelchair": {
+      "cost": {
+        "event_penalties_m": {
+          "crossing": 15,
+          "footway": 0,
+          "sidewalk": 0,
+          "stairs": null
+        },
+        "grade_multipliers": [
+          {
+            "min_grade": 90,
+            "multiplier": 1.0
+          },
+          {
+            "min_grade": 75,
+            "multiplier": 1.2
+          },
+          {
+            "min_grade": 60,
+            "multiplier": 1.6
+          },
+          {
+            "min_grade": 40,
+            "multiplier": 2.5
+          },
+          {
+            "min_grade": 20,
+            "multiplier": 5.0
+          },
+          {
+            "min_grade": 1,
+            "multiplier": 10.0
+          }
+        ]
+      },
+      "description": "Prioritizes continuous, smooth, sufficiently wide routes with manageable longitudinal and cross slopes.",
+      "label": "Wheelchair",
+      "property_prefix": "wheelchair",
+      "provisional": true,
+      "routing_mode": "accessibility_grade",
+      "speed_kmh": 3.5
+    }
+  },
+  "ruleset_hash": "90797572d833bc88",
+  "ruleset_version": "1.1.0",
+  "schema_version": 2
+}
