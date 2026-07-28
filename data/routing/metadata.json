@@ -2,32 +2,32 @@
   "edge_kind_counts": {
     "crossing": 2096,
     "footway": 6620,
-    "sidewalk": 8133,
+    "sidewalk": 8134,
     "stairs": 366
   },
   "elevation_provider_fingerprint": "afc75b33782b6cd5",
-  "feature_count": 17215,
-  "generated_at": "2026-07-28T14:27:36.126494+00:00",
+  "feature_count": 17216,
+  "generated_at": "2026-07-30T08:21:53.503827+00:00",
   "profile_audit": {
     "blind": {
       "grade_bands": {
         "0": 139,
         "1-19": 0,
         "20-39": 1963,
-        "40-59": 13871,
+        "40-59": 13872,
         "60-79": 1233,
         "80-100": 9
       },
       "maximum_grade": 87,
-      "mean_grade": 46.65,
+      "mean_grade": 46.66,
       "minimum_grade": 0,
       "most_common_limiting_factors": {
         "barrier": 5,
         "crossing": 19,
         "incline": 35,
         "lighting": 103,
-        "smoothness": 3302,
-        "surface": 10495,
+        "smoothness": 3309,
+        "surface": 10489,
         "tactile_paving": 2077,
         "width": 1179
       }
@@ -36,7 +36,7 @@
       "grade_bands": {
         "0": 8,
         "1-19": 576,
-        "20-39": 1593,
+        "20-39": 1594,
         "40-59": 15014,
         "60-79": 24,
         "80-100": 0
@@ -47,10 +47,10 @@
       "most_common_limiting_factors": {
         "barrier": 5,
         "crossing": 1562,
-        "incline": 36,
+        "incline": 37,
         "kerb": 494,
-        "smoothness": 2805,
-        "surface": 11364,
+        "smoothness": 2812,
+        "surface": 11357,
         "width": 949
       }
     },
@@ -58,8 +58,8 @@
       "grade_bands": {
         "0": 606,
         "1-19": 7,
-        "20-39": 12251,
-        "40-59": 4346,
+        "20-39": 12242,
+        "40-59": 4356,
         "60-79": 5,
         "80-100": 0
       },
@@ -69,10 +69,10 @@
       "most_common_limiting_factors": {
         "barrier": 403,
         "crossing": 593,
-        "incline": 36,
+        "incline": 37,
         "kerb": 1307,
-        "smoothness": 2756,
-        "surface": 11139,
+        "smoothness": 2763,
+        "surface": 11132,
         "width": 981
       }
     }
@@ -81,8 +81,9 @@
   "ruleset_version": "1.1.0",
   "schema_version": 1,
   "slope_source_counts": {
+    "copernicus_glo30": 4,
     "direct_osm_numeric": 13,
-    "missing": 17202
+    "missing": 17199
   },
   "warnings": [
     "Profile rules are provisional and require participatory calibration.",

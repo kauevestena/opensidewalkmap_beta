@@ -36,14 +36,14 @@
 
 
 
-    <link rel="stylesheet" href="https://kauevestena.github.io/oswm_codebase/assets/styles/stats_styles.css">
-    <script src="https://kauevestena.github.io/oswm_codebase/assets/webscripts/stats_funcs.js"></script>
+    <link rel="stylesheet" href="../../oswm_codebase/assets/styles/stats_styles.css">
+    <script src="../../oswm_codebase/assets/webscripts/stats_funcs.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <title>OSWM Dashboard</title>
 
-    <link rel="icon" type="image/x-icon" href="https://kauevestena.github.io/oswm_codebase/assets/homepage/favicon_homepage.png">
+    <link rel="icon" type="image/x-icon" href="../../oswm_codebase/assets/branding/favicon_homepage.png">
 
     
   <meta charset="UTF-8">
@@ -56,7 +56,7 @@
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-6d070456d6973bbd1fee52f1326d832c"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "length(km)", "type": "quantitative"}, "tooltip": [{"field": "wheelchair type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "wheelchair type", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "All-Category Traffic wheelchair=* tag", "transform": [{"filter": "include_filter_out_opt || datum['wheelchair type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-6d070456d6973bbd1fee52f1326d832c": [{"wheelchair type": "?", "length(km)": 932.0234742910063, "feature count": 19582, "count": 19582}, {"wheelchair type": "limited", "length(km)": 0.48293841810655347, "feature count": 61, "count": 61}, {"wheelchair type": "no", "length(km)": 1.5984387379705793, "feature count": 207, "count": 207}, {"wheelchair type": "yes", "length(km)": 5.652019276447331, "feature count": 268, "count": 268}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-a6bb9edbdcdac6c468aa61e6baaa4aa2"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "length(km)", "type": "quantitative"}, "tooltip": [{"field": "feature count", "type": "quantitative"}, {"field": "length(km)", "type": "quantitative"}, {"field": "wheelchair type", "type": "nominal"}], "x": {"field": "wheelchair type", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "All-Category Traffic wheelchair=* tag", "transform": [{"filter": "include_filter_out_opt || datum['wheelchair type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-a6bb9edbdcdac6c468aa61e6baaa4aa2": [{"wheelchair type": "?", "length(km)": 931.5785963045056, "feature count": 19582, "count": 19582}, {"wheelchair type": "limited", "length(km)": 0.48293841810655347, "feature count": 61, "count": 61}, {"wheelchair type": "no", "length(km)": 1.5984387379705793, "feature count": 207, "count": 207}, {"wheelchair type": "yes", "length(km)": 5.652019276447331, "feature count": 268, "count": 268}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){

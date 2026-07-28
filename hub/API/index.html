@@ -674,7 +674,7 @@
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <img src="https://kauevestena.github.io/oswm_codebase/assets/homepage/project_logo_100px.png" alt="OSWM Logo">
+                <img src="../../oswm_codebase/assets/branding/logos/project_logo_100px.png" alt="OSWM Logo">
                 <h1>OpenSidewalkMap API <span style="font-weight: 300; opacity: 0.8; color: var(--text-main)">| Curitiba</span></h1>
             </div>
             <div class="nav-buttons">
@@ -1654,7 +1654,31 @@ print(data)</pre>
     "category": "Routing & Demos",
     "path": "data/routing/demo.geojson",
     "format": "GeoJSON",
-    "description": "GeoJSON routing network sample containing intersections and road segments for demo routing.",
+    "description": "Transitional GeoJSON routing network with compact, directional accessibility grades.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Routing & Demos",
+    "path": "data/routing/metadata.json",
+    "format": "JSON",
+    "description": "Routing ruleset provenance, slope-source counts, warnings, and generated grade distributions.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Routing & Demos",
+    "path": "data/routing/profiles.json",
+    "format": "JSON",
+    "description": "Browser-safe distance/accessibility routing modes, labels, speeds, grade-to-cost multipliers, and event penalties.",
+    "playground": true,
+    "deliverable": "map_data"
+  },
+  {
+    "category": "Routing & Demos",
+    "path": "data/routing/slope_cache.json",
+    "format": "JSON",
+    "description": "Reusable derived longitudinal slope estimates keyed by edge geometry and provider configuration.",
     "playground": true,
     "deliverable": "map_data"
   },

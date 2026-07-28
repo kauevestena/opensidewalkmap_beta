@@ -1,6 +1,6 @@
 {
   "node_name": "Curitiba",
-  "generated_at": "2026-07-28T19:40:42Z",
+  "generated_at": "2026-07-30T08:17:48Z",
   "bbox": [
     -25.6435043,
     -49.38914,
@@ -55,6 +55,12 @@
       ],
       "matched_keywords": [
         "acessibilidade"
+      ],
+      "bbox": [
+        -49.243118,
+        -25.472648,
+        -49.215111,
+        -25.44371
       ]
     },
     {
@@ -78,6 +84,33 @@
       "url": "https://maproulette.org/admin/project/46111/challenge/55906",
       "status": "Ready",
       "description": "mapping the surface attributes for sidewalks in curitiba for pedestrian displacement #oswm opensidewalkmap accessibility",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.362632372,
+              -25.56372005
+            ],
+            [
+              -49.362632372,
+              -25.348218985
+            ],
+            [
+              -49.199414897,
+              -25.348218985
+            ],
+            [
+              -49.199414897,
+              -25.56372005
+            ],
+            [
+              -49.362632372,
+              -25.56372005
+            ]
+          ]
+        ]
+      },
       "matched_keywords": [
         "oswm",
         "OpenSidewalkMap",

@@ -1,7 +1,10 @@
 {
     "folder": "data/routing",
     "files": [
-        "demo.geojson"
+        "demo.geojson",
+        "metadata.json",
+        "profiles.json",
+        "slope_cache.json"
     ],
     "subfolders": []
 }

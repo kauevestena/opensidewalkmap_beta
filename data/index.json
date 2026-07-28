@@ -106,7 +106,10 @@
             "path": "data/routing",
             "files": [
                 "demo.geojson",
-                "index.json"
+                "index.json",
+                "metadata.json",
+                "profiles.json",
+                "slope_cache.json"
             ]
         }
     }

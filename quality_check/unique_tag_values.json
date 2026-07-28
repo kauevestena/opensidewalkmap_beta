@@ -924,6 +924,12 @@
             "580047602934112",
             "743836806277142",
             "961892404564312",
+            "737137515443382",
+            "1256978999158133",
+            "24032565529694283",
+            "724114100120004",
+            "1061211385466189",
+            "4891765434381851",
             "335197051294972"
         ],
         "survey:date": [
@@ -937,7 +943,8 @@
             "2021-01-29",
             "2021-06-01",
             "2019-10-09",
-            "2019-09-12"
+            "2019-09-12",
+            "2025-06-07"
         ],
         "surface": [
             "sett",
@@ -1731,7 +1738,6 @@
             "Ciclovia Batel Parque Barigui",
             "Trilha do Bosque do Papa",
             "Praça Tiradentes",
-            "Rua Alcino Guanabara",
             "Rua Ivo Leão",
             "Rua Trinta e Um de Março - Vila Militar",
             "Rua Natálio Scuissiato",
@@ -2063,6 +2069,7 @@
             "Rua Paulo Júlio Recksidler",
             "Rua Professor Arthur Virmond de Lacerda",
             "Rua Manoel Lorenso da Rosa",
+            "Rua Alcino Guanabara",
             "Condomínio Residencial São Francisco",
             "Spazio Chardonnay",
             "Conjunto Residencial Cotolengo II",
@@ -2663,9 +2670,9 @@
         ],
         "check_date": [
             "2022-01-10",
-            "2026-03-19",
             "2025-08-13",
             "2025-01-10",
+            "2026-03-19",
             "2025-02-08"
         ],
         "leisure": [
