@@ -1,0 +1,31 @@
+name: Update oswm_codebase sub-module
+
+on:            # manual trigger only
+  workflow_dispatch:
+
+jobs:
+  bump-submodule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout without submodules
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Initialise sub-module and bump to tip of main
+        run: |
+          git submodule sync --recursive
+          git submodule update --init oswm_codebase
+          cd oswm_codebase
+          git fetch origin
+          git checkout -B main origin/main   # always land on branch
+          cd ..
+          git add oswm_codebase
+          git diff --cached --quiet || {
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "ci: bump oswm_codebase to latest origin/main ($(date +%Y-%m-%d))"
+            git push --recurse-submodules=on-demand
+          }

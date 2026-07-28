@@ -1,0 +1,12 @@
+{
+    "folder": "statistics_specs/crossings",
+    "files": [
+        "crossing_surface.json",
+        "crossing_types.json",
+        "crossings_age.json",
+        "crossings_length.json",
+        "crossings_n_revs.json",
+        "crossings_smoothness_x_surface.json"
+    ],
+    "subfolders": []
+}

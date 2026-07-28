@@ -1,0 +1,10 @@
+{
+    "improper_keys": "Keys that (almost certainly) shouldn't be used at that feature type",
+    "uncanny_keys": "Keys that may be OK in some specific situations, but may be a mistake",
+    "keys_without_wiki": "Keys that may be wrong, because there's no wiki article for it",
+    "replaceable_values": "values that are not wrong, but there's a better  option that is in the commentary",
+    "wrong_mispelled_or_unlisted_values": "Values that are probably wrong, but they may be mispelled or just unlisted",
+    "invalid_characters": "characters that should not be in the value or in the key",
+    "disjointed_geometries": "Features with geometries that are not connected to others, i.e. disjointed. This is generally a special matter of concern for crossings, kerbs and sidewalks",
+    "improper_geometries": "Features with geometries (more specifically geometry types) that are incompatible with the main tags"
+}

@@ -1,0 +1,11 @@
+{
+    "folder": "statistics_specs",
+    "files": [],
+    "subfolders": [
+        "all_data",
+        "crossings",
+        "kerbs",
+        "other_footways",
+        "sidewalks"
+    ]
+}
