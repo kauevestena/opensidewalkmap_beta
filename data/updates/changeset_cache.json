@@ -1,0 +1,52 @@
+{
+    "182321412": {
+        "id": 182321412,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "created_at": "2026-05-07T05:21:54Z",
+        "closed_at": "2026-05-07T05:21:56Z",
+        "changes_count": 195,
+        "comment": "Atualização de supermercado e vias de condomínios residenciais",
+        "created_by": "JOSM/1.5 (19555 pt_BR)"
+    },
+    "179147848": {
+        "id": 179147848,
+        "user": "ftrebien",
+        "uid": 401472,
+        "created_at": "2026-02-27T20:04:51Z",
+        "closed_at": "2026-02-27T20:04:53Z",
+        "changes_count": 38,
+        "comment": "foot=no onde as calçadas foram mapeadas separadamente",
+        "created_by": "JOSM/1.5 (19369 Debian en_GB)"
+    },
+    "182142041": {
+        "id": 182142041,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "created_at": "2026-05-03T04:42:55Z",
+        "closed_at": "2026-05-03T04:42:58Z",
+        "changes_count": 543,
+        "comment": "Ajuste de nome arredor do Canal Belém; atualização de dados e correções gerais nos arredores",
+        "created_by": "JOSM/1.5 (19555 pt_BR)"
+    },
+    "183232534": {
+        "id": 183232534,
+        "user": "Victor 2015",
+        "uid": 2622158,
+        "created_at": "2026-05-26T23:48:46Z",
+        "closed_at": "2026-05-26T23:48:49Z",
+        "changes_count": 538,
+        "comment": "Atualizações e correções",
+        "created_by": "iD 2.40.0"
+    },
+    "183235387": {
+        "id": 183235387,
+        "user": "Victor 2015",
+        "uid": 2622158,
+        "created_at": "2026-05-27T03:04:48Z",
+        "closed_at": "2026-05-27T03:04:50Z",
+        "changes_count": 439,
+        "comment": "Atualizações e correções",
+        "created_by": "iD 2.40.0"
+    }
+}

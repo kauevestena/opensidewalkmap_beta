@@ -1,0 +1,8 @@
+{
+    "folder": "data/data_quality",
+    "files": [],
+    "subfolders": [
+        "disjointed",
+        "improper_geoms"
+    ]
+}

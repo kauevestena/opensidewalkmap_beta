@@ -1,0 +1,15 @@
+{
+    "folder": "data/tiles",
+    "files": [
+        "crossings.pmtiles",
+        "informal_footways.pmtiles",
+        "kerbs.pmtiles",
+        "main_footways.pmtiles",
+        "pedestrian_areas.pmtiles",
+        "potential_footways.pmtiles",
+        "sidewalks.pmtiles",
+        "stairways.pmtiles",
+        "tile_generation_report.json"
+    ],
+    "subfolders": []
+}

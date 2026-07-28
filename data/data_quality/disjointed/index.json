@@ -1,0 +1,8 @@
+{
+    "folder": "data/data_quality/disjointed",
+    "files": [
+        "crossings_disjointed.parquet",
+        "kerbs_disjointed.parquet"
+    ],
+    "subfolders": []
+}

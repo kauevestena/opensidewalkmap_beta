@@ -1,0 +1,11 @@
+{
+    "folder": "data/processed/other_footways",
+    "files": [
+        "informal_footways.parquet",
+        "main_footways.parquet",
+        "pedestrian_areas.parquet",
+        "potential_footways.parquet",
+        "stairways.parquet"
+    ],
+    "subfolders": []
+}
