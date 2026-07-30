@@ -111,6 +111,23 @@
                 "profiles.json",
                 "slope_cache.json"
             ]
+        },
+        "hazard_analysis": {
+            "description": "Profile-specific pedestrian hazard evidence and global terrain-difficulty overlays.",
+            "path": "data/hazard_analysis",
+            "files": [
+                "features_blind.geojson",
+                "features_elderly.geojson",
+                "features_pedestrian.geojson",
+                "features_wheelchair.geojson",
+                "metadata.json",
+                "profiles.json",
+                "terrain.json",
+                "terrain_blind.png",
+                "terrain_elderly.png",
+                "terrain_pedestrian.png",
+                "terrain_wheelchair.png"
+            ]
         }
     }
 }

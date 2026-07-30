@@ -179,6 +179,13 @@ cache/
 
 # Routing demo data (deployed as GitHub Pages artifact only, no need for change tracking)
 data/routing/demo.geojson
+data/routing/.*.tmp.*
+
+# Hazard geometry and raster images are generated before Pages deployment.
+# Keep only their compact metadata and API indexes under version control.
+data/hazard_analysis/features_*.geojson
+data/hazard_analysis/terrain_*.png
+data/hazard_analysis/.*.tmp.*
 
 # development stuff
 .vscode

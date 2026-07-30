@@ -1,0 +1,82 @@
+{
+  "available": true,
+  "bounds": [
+    -49.3869938,
+    -25.6427063,
+    -49.1886809,
+    -25.3473833
+  ],
+  "coordinates": [
+    [
+      -49.3869938,
+      -25.3473833
+    ],
+    [
+      -49.1886809,
+      -25.3473833
+    ],
+    [
+      -49.1886809,
+      -25.6427063
+    ],
+    [
+      -49.3869938,
+      -25.6427063
+    ]
+  ],
+  "cross_slope_included": false,
+  "description": "Contextual unsigned slope potential derived from a global digital surface model. It is not a measurement of sidewalk or cross slope.",
+  "directionality": "unsigned contextual potential",
+  "generated_at": "2026-07-30T16:07:22.050608+00:00",
+  "height": 1063,
+  "license": "Copernicus DEM free licence",
+  "license_url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+  "profiles": {
+    "blind": {
+      "path": "data/hazard_analysis/terrain_blind.png",
+      "thresholds_percent": [
+        5.0,
+        8.33,
+        12.5,
+        20.0
+      ]
+    },
+    "elderly": {
+      "path": "data/hazard_analysis/terrain_elderly.png",
+      "thresholds_percent": [
+        2.0,
+        5.0,
+        8.33,
+        12.5
+      ]
+    },
+    "pedestrian": {
+      "path": "data/hazard_analysis/terrain_pedestrian.png",
+      "thresholds_percent": [
+        5.0,
+        8.33,
+        12.5,
+        20.0
+      ]
+    },
+    "wheelchair": {
+      "path": "data/hazard_analysis/terrain_wheelchair.png",
+      "thresholds_percent": [
+        2.0,
+        5.0,
+        8.33,
+        12.5
+      ]
+    }
+  },
+  "provider_failures": [],
+  "resolution_m": 30,
+  "schema_version": 1,
+  "smoothing_sigma_pixels": 3.0,
+  "source_attribution": "Produced using Copernicus WorldDEM-30 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018 provided under COPERNICUS by the European Union and ESA; all rights reserved.",
+  "source_name": "copernicus_glo30",
+  "source_title": "Copernicus DEM GLO-30 Public (2021)",
+  "source_url": "https://registry.opendata.aws/copernicus-dem/",
+  "title": "Terrain difficulty potential",
+  "width": 714
+}
