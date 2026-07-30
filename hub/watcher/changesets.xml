@@ -4,70 +4,22 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Thu, 30 Jul 2026 08:16:08 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 08:22:49 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 186595287 by robram2004 (0 additions, 14 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/186595287</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 186595287&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/robram2004&quot;&gt;robram2004&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; resolução de problemas apontados pelo sistema&lt;/p&gt;
+        <title>[Activity] OSM Changeset 186628320 by Jakub Trojan (0 additions, 7 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/186628320</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 186628320&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Jakub Trojan&quot;&gt;Jakub Trojan&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Missing Surface Materials (Agua Verde)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 14&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 7&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/186595287&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/186595287&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/186628320&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/186628320&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 29 Jul 2026 16:27:45 GMT</pubDate>
-        <guid isPermaLink="false">activity_186595287</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 186581927 by robram2004 (9 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/186581927</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 186581927&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/robram2004&quot;&gt;robram2004&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Estradas na regiao de Araucaria Pr&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 9&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/186581927&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/186581927&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 29 Jul 2026 12:31:12 GMT</pubDate>
-        <guid isPermaLink="false">activity_186581927</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 186596172 by TallebudgeraValley (2 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/186596172</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 186596172&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/TallebudgeraValley&quot;&gt;TallebudgeraValley&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Created highway near Rua Alcino Guanabara #adt&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 2&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/186596172&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/186596172&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 29 Jul 2026 16:44:16 GMT</pubDate>
-        <guid isPermaLink="false">activity_186596172</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 186584158 by O Bicho Geográfico (1 additions, 0 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/186584158</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 186584158&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/O Bicho Geográfico&quot;&gt;O Bicho Geográfico&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Curitiba&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/186584158&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/186584158&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 29 Jul 2026 13:12:38 GMT</pubDate>
-        <guid isPermaLink="false">activity_186584158</guid>
+        <pubDate>Thu, 30 Jul 2026 07:47:03 GMT</pubDate>
+        <guid isPermaLink="false">activity_186628320</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>

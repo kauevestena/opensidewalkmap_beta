@@ -1,46 +1,13 @@
 [
     {
-        "id": 186595287,
-        "user": "robram2004",
-        "uid": 1849985,
-        "comment": "resolução de problemas apontados pelo sistema",
-        "created_at": "2026-07-29T16:27:45Z",
-        "changes_count": 297,
+        "id": 186628320,
+        "user": "Jakub Trojan",
+        "uid": 273212,
+        "comment": "Missing Surface Materials (Agua Verde)",
+        "created_at": "2026-07-30T07:47:03Z",
+        "changes_count": 7,
         "additions": 0,
-        "modifications": 14,
-        "deletions": 0
-    },
-    {
-        "id": 186581927,
-        "user": "robram2004",
-        "uid": 1849985,
-        "comment": "Estradas na regiao de Araucaria Pr",
-        "created_at": "2026-07-29T12:31:12Z",
-        "changes_count": 569,
-        "additions": 9,
-        "modifications": 1,
-        "deletions": 0
-    },
-    {
-        "id": 186596172,
-        "user": "TallebudgeraValley",
-        "uid": 24223240,
-        "comment": "Created highway near Rua Alcino Guanabara #adt",
-        "created_at": "2026-07-29T16:44:16Z",
-        "changes_count": 16,
-        "additions": 2,
-        "modifications": 2,
-        "deletions": 0
-    },
-    {
-        "id": 186584158,
-        "user": "O Bicho Geográfico",
-        "uid": 1705348,
-        "comment": "Curitiba",
-        "created_at": "2026-07-29T13:12:38Z",
-        "changes_count": 2,
-        "additions": 1,
-        "modifications": 0,
+        "modifications": 7,
         "deletions": 0
     }
 ]

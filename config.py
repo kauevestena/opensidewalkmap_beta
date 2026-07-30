@@ -103,3 +103,45 @@ other_footways_subcatecories = {
     "informal_footways": {"foot": ["yes", "permissive"]},
     "pedestrian_areas": {},  # defined only by geometry type (Polygon,Multipolygon)
 }
+
+
+# GLOBAL ELEVATION SOURCES
+#
+# Numeric OSM incline=* remains authoritative. Otherwise the routing and
+# hazard modules use the public Copernicus DEM Cloud Optimized GeoTIFFs hosted
+# by the AWS Open Data Registry. GLO-30 is preferred; GLO-90 guarantees global
+# land coverage where a public 30 m tile is unavailable. Both are digital
+# surface models, so derived values describe terrain context rather than a
+# surveyed sidewalk or cross slope.
+ELEVATION_CONFIG = {
+    "enabled": True,
+    "providers": [
+        {
+            "type": "copernicus_glo30",
+            "role": "global_primary",
+            "priority": 20,
+            "cache_dir": ".cache/oswm/elevation/copernicus_glo30",
+            "minimum_baseline_m": 45,
+            "sample_count": 7,
+            "max_abs_slope_percent": 40,
+        },
+        {
+            "type": "copernicus_glo90",
+            "role": "global_coverage_fallback",
+            "priority": 10,
+            "cache_dir": ".cache/oswm/elevation/copernicus_glo90",
+            "minimum_baseline_m": 135,
+            "sample_count": 7,
+            "max_abs_slope_percent": 40,
+        },
+    ],
+    "request_timeout_seconds": 120,
+}
+
+HAZARD_TERRAIN_CONFIG = {
+    "enabled": True,
+    "max_dimension": 1600,
+    # Suppress building-scale noise in the global surface model so the layer
+    # communicates broad terrain context.
+    "smoothing_sigma_pixels": 3.0,
+}
