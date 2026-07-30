@@ -4,6 +4,7 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +12,17 @@
     <meta name="description" content="Pedestrian-data project discovery dashboard for OSWM node: Curitiba">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css" />
     <style>
         :root {
             --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             --card-bg: rgba(30, 41, 59, 0.7);
-            --card-border: rgba(255,255,255,0.08);
+            --card-border: rgba(255, 255, 255, 0.08);
             --primary: #00f2fe;
-            --primary-glow: rgba(0,242,254,0.15);
+            --primary-glow: rgba(0, 242, 254, 0.15);
             --secondary: #4facfe;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -28,7 +31,13 @@
             --accent-error: #ef4444;
             --accent-purple: #8b5cf6;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Outfit', sans-serif;
             background: var(--bg-gradient);
@@ -36,74 +45,113 @@
             min-height: 100vh;
             line-height: 1.6;
         }
+
         body::before {
             content: '';
             position: fixed;
-            top: -20%; left: -10%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(0,242,254,0.12) 0%, transparent 70%);
-            z-index: -1; pointer-events: none;
+            top: -20%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
         }
+
         body::after {
             content: '';
             position: fixed;
-            bottom: -10%; right: -10%;
-            width: 700px; height: 700px;
-            background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%);
-            z-index: -1; pointer-events: none;
+            bottom: -10%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
         }
+
         header {
-            background: rgba(15,23,42,0.6);
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--card-border);
             padding: 1.25rem 2rem;
         }
+
         .header-inner {
-            max-width: 1400px; margin: 0 auto;
-            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
         .header-inner h1 {
-            font-size: 1.4rem; font-weight: 600;
+            font-size: 1.4rem;
+            font-weight: 600;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .header-inner .timestamp {
-            font-size: 0.85rem; color: var(--text-muted);
+            font-size: 0.85rem;
+            color: var(--text-muted);
             font-family: 'Fira Code', monospace;
         }
+
         .container {
-            max-width: 1400px; margin: 2rem auto; padding: 0 2rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
         }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.25rem; margin-bottom: 2rem;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
         }
+
         .stat-card {
             background: var(--card-bg);
             backdrop-filter: blur(16px);
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .stat-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 14px 36px rgba(0,0,0,0.3);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
         }
+
         .stat-card .label {
-            font-size: 0.82rem; text-transform: uppercase;
-            letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.4rem;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
         }
+
         .stat-card .value {
-            font-size: 2rem; font-weight: 700;
+            font-size: 2rem;
+            font-weight: 700;
         }
-        .stat-card .value.primary { color: var(--primary); }
-        .stat-card .value.purple { color: var(--accent-purple); }
-        .stat-card .value.success { color: var(--accent-success); }
+
+        .stat-card .value.primary {
+            color: var(--primary);
+        }
+
+        .stat-card .value.purple {
+            color: var(--accent-purple);
+        }
+
+        .stat-card .value.success {
+            color: var(--accent-success);
+        }
 
         .panel {
             background: var(--card-bg);
@@ -111,76 +159,128 @@
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             margin-bottom: 2rem;
         }
+
         .panel h2 {
-            font-size: 1.15rem; font-weight: 600; margin-bottom: 1rem;
-            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         /* Service status badges */
         .svc-badges {
-            display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
+
         .svc-badge {
-            display: inline-flex; align-items: center; gap: 0.4rem;
-            padding: 0.4rem 0.9rem; border-radius: 8px;
-            font-size: 0.85rem; font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
             border: 1px solid var(--card-border);
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
         }
+
         .svc-dot {
-            width: 8px; height: 8px; border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
         }
-        .svc-dot.ok { background: var(--accent-success); box-shadow: 0 0 6px var(--accent-success); }
-        .svc-dot.offline { background: var(--accent-error); box-shadow: 0 0 6px var(--accent-error); }
-        .svc-dot.error { background: var(--accent-warning); box-shadow: 0 0 6px var(--accent-warning); }
+
+        .svc-dot.ok {
+            background: var(--accent-success);
+            box-shadow: 0 0 6px var(--accent-success);
+        }
+
+        .svc-dot.offline {
+            background: var(--accent-error);
+            box-shadow: 0 0 6px var(--accent-error);
+        }
+
+        .svc-dot.error {
+            background: var(--accent-warning);
+            box-shadow: 0 0 6px var(--accent-warning);
+        }
 
         /* Tabs */
         .tabs {
-            display: flex; gap: 0; margin-bottom: 0;
+            display: flex;
+            gap: 0;
+            margin-bottom: 0;
             border-bottom: 2px solid var(--card-border);
         }
+
         .tab-btn {
             padding: 0.7rem 1.4rem;
             font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem; font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 500;
             color: var(--text-muted);
-            background: none; border: none; cursor: pointer;
+            background: none;
+            border: none;
+            cursor: pointer;
             border-bottom: 2px solid transparent;
             margin-bottom: -2px;
             transition: color 0.2s, border-color 0.2s;
         }
-        .tab-btn:hover { color: var(--text-main); }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+        }
+
         .tab-btn.active {
             color: var(--primary);
             border-bottom-color: var(--primary);
         }
+
         .tab-btn .tab-count {
             display: inline-block;
             margin-left: 0.4rem;
             padding: 0.05rem 0.4rem;
             border-radius: 10px;
-            font-size: 0.72rem; font-weight: 600;
-            background: rgba(0,242,254,0.12); color: var(--primary);
+            font-size: 0.72rem;
+            font-weight: 600;
+            background: rgba(0, 242, 254, 0.12);
+            color: var(--primary);
         }
 
         /* Search + filters */
         .controls {
-            display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
             margin-top: 1rem;
         }
+
         .search-box {
-            flex: 1; min-width: 200px;
-            background: rgba(15,23,42,0.5);
+            flex: 1;
+            min-width: 200px;
+            background: rgba(15, 23, 42, 0.5);
             border: 1px solid var(--card-border);
-            border-radius: 8px; padding: 0.6rem 1rem;
-            color: var(--text-main); font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem; outline: none;
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
             transition: border-color 0.2s;
         }
-        .search-box:focus { border-color: rgba(0,242,254,0.4); }
+
+        .search-box:focus {
+            border-color: rgba(0, 242, 254, 0.4);
+        }
 
         /* View Toggle Group */
         .view-btn.active {
@@ -191,57 +291,103 @@
 
         /* Projects table */
         .projects-table {
-            width: 100%; border-collapse: collapse;
+            width: 100%;
+            border-collapse: collapse;
         }
+
         .projects-table th {
-            text-align: left; padding: 0.75rem 1rem;
-            font-size: 0.78rem; text-transform: uppercase;
-            letter-spacing: 0.8px; color: var(--text-muted);
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
             border-bottom: 1px solid var(--card-border);
-            cursor: pointer; user-select: none;
+            cursor: pointer;
+            user-select: none;
         }
-        .projects-table th:hover { color: var(--primary); }
+
+        .projects-table th:hover {
+            color: var(--primary);
+        }
+
         .projects-table td {
-            padding: 0.75rem 1rem; font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             vertical-align: top;
         }
+
         .projects-table tr {
             transition: background 0.15s;
         }
+
         .projects-table tr:hover {
-            background: rgba(0,242,254,0.03);
+            background: rgba(0, 242, 254, 0.03);
         }
+
         .project-title a {
-            color: var(--primary); text-decoration: none; font-weight: 500;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
             transition: color 0.2s;
         }
-        .project-title a:hover { color: var(--secondary); }
-        .project-desc {
-            font-size: 0.82rem; color: var(--text-muted);
-            max-width: 400px; overflow: hidden;
-            text-overflow: ellipsis; white-space: nowrap;
+
+        .project-title a:hover {
+            color: var(--secondary);
         }
+
+        .project-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            max-width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
         .kw-tag {
             display: inline-block;
-            padding: 0.1rem 0.45rem; margin: 0.1rem;
-            border-radius: 4px; font-size: 0.72rem; font-weight: 600;
-            background: rgba(0,242,254,0.1); color: var(--primary);
+            padding: 0.1rem 0.45rem;
+            margin: 0.1rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--primary);
         }
-        .status-tag {
-            padding: 0.15rem 0.5rem; border-radius: 4px;
-            font-size: 0.75rem; font-weight: 600;
-        }
-        .status-tag.active { background: rgba(16,185,129,0.15); color: var(--accent-success); }
-        .status-tag.other { background: rgba(255,255,255,0.08); color: var(--text-muted); }
 
-        .empty-state {
-            text-align: center; padding: 3rem 1rem;
+        .status-tag {
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-tag.active {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-success);
+        }
+
+        .status-tag.other {
+            background: rgba(255, 255, 255, 0.08);
             color: var(--text-muted);
         }
-        .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
         .instance-label {
-            font-size: 0.75rem; color: var(--text-muted);
+            font-size: 0.75rem;
+            color: var(--text-muted);
             font-family: 'Fira Code', monospace;
         }
 
@@ -258,22 +404,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 2px solid #fff;
             cursor: pointer;
             transition: transform 0.2s ease;
         }
+
         .marker-pin:hover {
             transform: rotate(-45deg) scale(1.1);
         }
+
         .marker-pin::after {
             content: '';
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             position: absolute;
         }
+
         .marker-icon {
             transform: rotate(45deg);
             font-size: 16px;
@@ -282,9 +431,18 @@
             align-items: center;
             justify-content: center;
         }
-        .marker-tm { background: #e04c3f; }
-        .marker-mr { background: #10b981; }
-        .marker-p4r { background: #8b5cf6; }
+
+        .marker-tm {
+            background: #e04c3f;
+        }
+
+        .marker-mr {
+            background: #10b981;
+        }
+
+        .marker-p4r {
+            background: #8b5cf6;
+        }
 
         /* Popup overrides */
         .maplibregl-popup-content {
@@ -292,13 +450,26 @@
             color: #0f172a !important;
             border-radius: 12px !important;
             padding: 12px 16px !important;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
-            border: 1px solid rgba(0,0,0,0.1) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
         }
-        .maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: #ffffff !important; }
-        .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: #ffffff !important; }
-        .maplibregl-popup-anchor-left .maplibregl-popup-tip { border-right-color: #ffffff !important; }
-        .maplibregl-popup-anchor-right .maplibregl-popup-tip { border-left-color: #ffffff !important; }
+
+        .maplibregl-popup-anchor-top .maplibregl-popup-tip {
+            border-bottom-color: #ffffff !important;
+        }
+
+        .maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+            border-top-color: #ffffff !important;
+        }
+
+        .maplibregl-popup-anchor-left .maplibregl-popup-tip {
+            border-right-color: #ffffff !important;
+        }
+
+        .maplibregl-popup-anchor-right .maplibregl-popup-tip {
+            border-left-color: #ffffff !important;
+        }
+
         .maplibregl-popup-close-button {
             color: #94a3b8 !important;
             font-size: 16px !important;
@@ -308,19 +479,35 @@
         }
 
         @media (max-width: 768px) {
-            .container { padding: 0 1rem; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .projects-table { font-size: 0.82rem; }
-            .projects-table td, .projects-table th { padding: 0.5rem; }
-            .tabs { overflow-x: auto; }
+            .container {
+                padding: 0 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-table {
+                font-size: 0.82rem;
+            }
+
+            .projects-table td,
+            .projects-table th {
+                padding: 0.5rem;
+            }
+
+            .tabs {
+                overflow-x: auto;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-inner">
             <h1>&#x1F6B6; OSWM Data Acquisition &mdash; Curitiba</h1>
-            <span class="timestamp">2026-07-30 08:17 UTC</span>
+            <span class="timestamp">2026-07-28 23:15 UTC</span>
         </div>
     </header>
 
@@ -329,23 +516,31 @@
 
         <!-- Discovered Projects Panel (First) -->
         <div class="panel">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
                 <h2 style="margin-bottom: 0;">&#x1F4CB; Discovered Projects</h2>
-                <div class="view-toggle" style="display: flex; background: rgba(15,23,42,0.4); border: 1px solid var(--card-border); border-radius: 8px; padding: 2px;">
-                    <button class="view-btn active" id="btn-list-view" onclick="switchView('list')" style="background: none; border: none; padding: 0.4rem 1rem; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: all 0.2s;">📋 List View</button>
-                    <button class="view-btn" id="btn-map-view" onclick="switchView('map')" style="background: none; border: none; padding: 0.4rem 1rem; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: all 0.2s;">🗺️ Map View</button>
+                <div class="view-toggle"
+                    style="display: flex; background: rgba(15,23,42,0.4); border: 1px solid var(--card-border); border-radius: 8px; padding: 2px;">
+                    <button class="view-btn active" id="btn-list-view" onclick="switchView('list')"
+                        style="background: none; border: none; padding: 0.4rem 1rem; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: all 0.2s;">📋
+                        List View</button>
+                    <button class="view-btn" id="btn-map-view" onclick="switchView('map')"
+                        style="background: none; border: none; padding: 0.4rem 1rem; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: all 0.2s;">🗺️
+                        Map View</button>
                 </div>
             </div>
-            
+
             <div class="tabs" id="service-tabs"></div>
-            
+
             <div class="controls">
-                <input class="search-box" id="search" type="text" placeholder="Filter projects by title or keyword&#x2026;">
+                <input class="search-box" id="search" type="text"
+                    placeholder="Filter projects by title or keyword&#x2026;">
             </div>
-            
+
             <div id="table-container"></div>
-            
-            <div id="map-view-container" style="display: none; height: 500px; border-radius: 12px; overflow: hidden; margin-top: 1rem; border: 1px solid var(--card-border); position: relative;">
+
+            <div id="map-view-container"
+                style="display: none; height: 500px; border-radius: 12px; overflow: hidden; margin-top: 1rem; border: 1px solid var(--card-border); position: relative;">
                 <div id="map" style="width: 100%; height: 100%;"></div>
             </div>
         </div>
@@ -357,410 +552,410 @@
         </div>
     </div>
 
-<script type="module">
-import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.mjs';
+    <script type="module">
+        import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.mjs';
 
-const PROJECTS = [
-  {
-    "id": 1330,
-    "title": "Mapeamento de Acessibilidade - Jardim das Americas",
-    "service": "Tasking Manager",
-    "instance": "https://tasks.teachosm.org/",
-    "url": "https://tasks.teachosm.org/projects/1330",
-    "status": "Published",
-    "description": "Slides de apoio em: \nhttps://rebrand.ly/mapealivre_apres_acess_curso3 ",
-    "country": [
-      "Brazil"
-    ],
-    "matched_keywords": [
-      "acessibilidade"
-    ],
-    "bbox": [
-      -49.243118,
-      -25.472648,
-      -49.215111,
-      -25.44371
-    ]
-  },
-  {
-    "id": "2820",
-    "title": "accessibility - Missing Surface Materials",
-    "service": "Pic4Review",
-    "instance": "https://pic4review.pavie.info/#/",
-    "url": "https://pic4review.pavie.info/#/mission/2820",
-    "status": "online",
-    "description": "We're filling up the remaining surface=* tags, mainly for accessibility and oswm",
-    "matched_keywords": [
-      "oswm",
-      "accessibility"
-    ]
-  },
-  {
-    "id": 55906,
-    "title": "sidewalks without surface=* tag ( for accessibility )",
-    "service": "MapRoulette",
-    "instance": "https://maproulette.org/",
-    "url": "https://maproulette.org/admin/project/46111/challenge/55906",
-    "status": "Ready",
-    "description": "mapping the surface attributes for sidewalks in curitiba for pedestrian displacement #oswm opensidewalkmap accessibility",
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [
-            -49.362632372,
-            -25.56372005
-          ],
-          [
-            -49.362632372,
-            -25.348218985
-          ],
-          [
-            -49.199414897,
-            -25.348218985
-          ],
-          [
-            -49.199414897,
-            -25.56372005
-          ],
-          [
-            -49.362632372,
-            -25.56372005
-          ]
-        ]
-      ]
-    },
-    "matched_keywords": [
-      "oswm",
-      "OpenSidewalkMap",
-      "accessibility",
-      "pedestrian",
-      "sidewalk",
-      "walk"
-    ]
-  }
-];
-const SERVICE_STATUS = {
-  "Tasking Manager": {
-    "status": "ok",
-    "instances": {
-      "https://tasks.hotosm.org/": "ok",
-      "https://tasks.teachosm.org/": "ok",
-      "https://tasks.mapwith.ai/": "ok"
-    }
-  },
-  "Pic4Review": {
-    "status": "ok",
-    "instances": {
-      "https://pic4review.pavie.info/#/": "ok"
-    }
-  },
-  "MapRoulette": {
-    "status": "ok",
-    "instances": {
-      "https://maproulette.org/": "ok"
-    }
-  }
-};
-const BBOX = [
-  -25.6435043,
-  -49.38914,
-  -25.3449505,
-  -49.1843182
-];
+        const PROJECTS = [
+            {
+                "id": 1330,
+                "title": "Mapeamento de Acessibilidade - Jardim das Americas",
+                "service": "Tasking Manager",
+                "instance": "https://tasks.teachosm.org/",
+                "url": "https://tasks.teachosm.org/projects/1330",
+                "status": "Published",
+                "description": "Slides de apoio em: \nhttps://rebrand.ly/mapealivre_apres_acess_curso3 ",
+                "country": [
+                    "Brazil"
+                ],
+                "matched_keywords": [
+                    "acessibilidade"
+                ],
+                "bbox": [
+                    -49.243118,
+                    -25.472648,
+                    -49.215111,
+                    -25.44371
+                ]
+            },
+            {
+                "id": "2820",
+                "title": "accessibility - Missing Surface Materials",
+                "service": "Pic4Review",
+                "instance": "https://pic4review.pavie.info/#/",
+                "url": "https://pic4review.pavie.info/#/mission/2820",
+                "status": "online",
+                "description": "We're filling up the remaining surface=* tags, mainly for accessibility and oswm",
+                "matched_keywords": [
+                    "oswm",
+                    "accessibility"
+                ]
+            },
+            {
+                "id": 55906,
+                "title": "sidewalks without surface=* tag ( for accessibility )",
+                "service": "MapRoulette",
+                "instance": "https://maproulette.org/",
+                "url": "https://maproulette.org/admin/project/46111/challenge/55906",
+                "status": "Ready",
+                "description": "mapping the surface attributes for sidewalks in curitiba for pedestrian displacement #oswm opensidewalkmap accessibility",
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                        [
+                            [
+                                -49.362632372,
+                                -25.56372005
+                            ],
+                            [
+                                -49.362632372,
+                                -25.348218985
+                            ],
+                            [
+                                -49.199414897,
+                                -25.348218985
+                            ],
+                            [
+                                -49.199414897,
+                                -25.56372005
+                            ],
+                            [
+                                -49.362632372,
+                                -25.56372005
+                            ]
+                        ]
+                    ]
+                },
+                "matched_keywords": [
+                    "oswm",
+                    "OpenSidewalkMap",
+                    "accessibility",
+                    "pedestrian",
+                    "sidewalk",
+                    "walk"
+                ]
+            }
+        ];
+        const SERVICE_STATUS = {
+            "Tasking Manager": {
+                "status": "ok",
+                "instances": {
+                    "https://tasks.hotosm.org/": "ok",
+                    "https://tasks.teachosm.org/": "ok",
+                    "https://tasks.mapwith.ai/": "ok"
+                }
+            },
+            "Pic4Review": {
+                "status": "ok",
+                "instances": {
+                    "https://pic4review.pavie.info/#/": "ok"
+                }
+            },
+            "MapRoulette": {
+                "status": "ok",
+                "instances": {
+                    "https://maproulette.org/": "ok"
+                }
+            }
+        };
+        const BBOX = [
+            -25.6435043,
+            -49.38914,
+            -25.3449505,
+            -49.1843182
+        ];
 
-let activeTab = 'all';
-let mapInitialized = false;
-let mapObj = null;
-let mapMarkers = [];
+        let activeTab = 'all';
+        let mapInitialized = false;
+        let mapObj = null;
+        let mapMarkers = [];
 
-function init() {
-    renderStats();
-    renderServiceBadges();
-    renderTabs();
-    applyFilters();
+        function init() {
+            renderStats();
+            renderServiceBadges();
+            renderTabs();
+            applyFilters();
 
-    document.getElementById('search').addEventListener('input', applyFilters);
-}
+            document.getElementById('search').addEventListener('input', applyFilters);
+        }
 
-function renderStats() {
-    const grid = document.getElementById('stats-grid');
-    const services = new Set(PROJECTS.map(p => p.service));
-    const kws = new Set(PROJECTS.flatMap(p => p.matched_keywords || []));
+        function renderStats() {
+            const grid = document.getElementById('stats-grid');
+            const services = new Set(PROJECTS.map(p => p.service));
+            const kws = new Set(PROJECTS.flatMap(p => p.matched_keywords || []));
 
-    const cards = [
-        { label: 'Total Projects', value: PROJECTS.length, cls: 'primary' },
-        { label: 'Services Queried', value: Object.keys(SERVICE_STATUS).length, cls: 'purple' },
-        { label: 'Unique Keywords', value: kws.size, cls: 'success' },
-        { label: 'Active Services', value: services.size, cls: 'primary' },
-    ];
+            const cards = [
+                { label: 'Total Projects', value: PROJECTS.length, cls: 'primary' },
+                { label: 'Services Queried', value: Object.keys(SERVICE_STATUS).length, cls: 'purple' },
+                { label: 'Unique Keywords', value: kws.size, cls: 'success' },
+                { label: 'Active Services', value: services.size, cls: 'primary' },
+            ];
 
-    grid.innerHTML = cards.map(c => `
+            grid.innerHTML = cards.map(c => `
         <div class="stat-card">
             <div class="label">${c.label}</div>
             <div class="value ${c.cls}">${c.value}</div>
         </div>
     `).join('');
-}
+        }
 
-function renderServiceBadges() {
-    const container = document.getElementById('svc-badges');
-    container.innerHTML = Object.entries(SERVICE_STATUS).map(([name, info]) => {
-        const status = info.status || 'error';
-        let dotCls, label;
-        if (status === 'ok') { dotCls = 'ok'; label = ''; }
-        else if (status === 'offline') { dotCls = 'offline'; label = '(offline server)'; }
-        else if (status.includes('online')) { dotCls = 'ok'; label = '(no search API)'; }
-        else { dotCls = 'error'; label = `(${status})`; }
-        return `<div class="svc-badge"><span class="svc-dot ${dotCls}"></span>${name} ${label}</div>`;
-    }).join('');
-}
+        function renderServiceBadges() {
+            const container = document.getElementById('svc-badges');
+            container.innerHTML = Object.entries(SERVICE_STATUS).map(([name, info]) => {
+                const status = info.status || 'error';
+                let dotCls, label;
+                if (status === 'ok') { dotCls = 'ok'; label = ''; }
+                else if (status === 'offline') { dotCls = 'offline'; label = '(offline server)'; }
+                else if (status.includes('online')) { dotCls = 'ok'; label = '(no search API)'; }
+                else { dotCls = 'error'; label = `(${status})`; }
+                return `<div class="svc-badge"><span class="svc-dot ${dotCls}"></span>${name} ${label}</div>`;
+            }).join('');
+        }
 
-function renderTabs() {
-    const tabsEl = document.getElementById('service-tabs');
-    const serviceCounts = {};
-    PROJECTS.forEach(p => {
-        const svc = p.service || 'Unknown';
-        serviceCounts[svc] = (serviceCounts[svc] || 0) + 1;
-    });
+        function renderTabs() {
+            const tabsEl = document.getElementById('service-tabs');
+            const serviceCounts = {};
+            PROJECTS.forEach(p => {
+                const svc = p.service || 'Unknown';
+                serviceCounts[svc] = (serviceCounts[svc] || 0) + 1;
+            });
 
-    let html = `<button class="tab-btn active" data-svc="all" onclick="switchTab('all')">All <span class="tab-count">${PROJECTS.length}</span></button>`;
-    Object.entries(serviceCounts).forEach(([svc, count]) => {
-        html += `<button class="tab-btn" data-svc="${svc}" onclick="switchTab('${svc}')">${svc} <span class="tab-count">${count}</span></button>`;
-    });
-    tabsEl.innerHTML = html;
-}
+            let html = `<button class="tab-btn active" data-svc="all" onclick="switchTab('all')">All <span class="tab-count">${PROJECTS.length}</span></button>`;
+            Object.entries(serviceCounts).forEach(([svc, count]) => {
+                html += `<button class="tab-btn" data-svc="${svc}" onclick="switchTab('${svc}')">${svc} <span class="tab-count">${count}</span></button>`;
+            });
+            tabsEl.innerHTML = html;
+        }
 
-function switchTab(svc) {
-    activeTab = svc;
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.svc === svc);
-    });
-    applyFilters();
-}
+        function switchTab(svc) {
+            activeTab = svc;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.svc === svc);
+            });
+            applyFilters();
+        }
 
-function applyFilters() {
-    const q = document.getElementById('search').value.toLowerCase();
-    let filtered = PROJECTS;
-    if (activeTab !== 'all') filtered = filtered.filter(p => p.service === activeTab);
-    if (q) filtered = filtered.filter(p =>
-        (p.title || '').toLowerCase().includes(q) ||
-        (p.matched_keywords || []).some(k => k.toLowerCase().includes(q)) ||
-        (p.description || '').toLowerCase().includes(q)
-    );
-    renderTable(filtered);
-    if (mapInitialized) {
-        updateMapElements(filtered);
-    }
-}
+        function applyFilters() {
+            const q = document.getElementById('search').value.toLowerCase();
+            let filtered = PROJECTS;
+            if (activeTab !== 'all') filtered = filtered.filter(p => p.service === activeTab);
+            if (q) filtered = filtered.filter(p =>
+                (p.title || '').toLowerCase().includes(q) ||
+                (p.matched_keywords || []).some(k => k.toLowerCase().includes(q)) ||
+                (p.description || '').toLowerCase().includes(q)
+            );
+            renderTable(filtered);
+            if (mapInitialized) {
+                updateMapElements(filtered);
+            }
+        }
 
-function renderTable(projects) {
-    const c = document.getElementById('table-container');
-    if (!projects.length) {
-        c.innerHTML = '<div class="empty-state"><div class="icon">\uD83D\uDD0D</div><p>No projects found matching your criteria.</p></div>';
-        return;
-    }
-    const activeStatuses = new Set(['ready', 'published', 'active', 'building', 'partially loaded']);
-    let html = `<table class="projects-table">
+        function renderTable(projects) {
+            const c = document.getElementById('table-container');
+            if (!projects.length) {
+                c.innerHTML = '<div class="empty-state"><div class="icon">\uD83D\uDD0D</div><p>No projects found matching your criteria.</p></div>';
+                return;
+            }
+            const activeStatuses = new Set(['ready', 'published', 'active', 'building', 'partially loaded']);
+            let html = `<table class="projects-table">
         <thead><tr>
             <th>Title</th><th>Instance</th><th>Status</th><th>Keywords</th><th>Description</th>
         </tr></thead><tbody>`;
-    projects.forEach(p => {
-        const isActive = activeStatuses.has((p.status || '').toLowerCase());
-        const statusCls = isActive ? 'active' : 'other';
-        const kws = (p.matched_keywords || []).map(k => `<span class="kw-tag">${k}</span>`).join('');
-        const instanceHost = (p.instance || '').replace(/^https?:\/\//, '').replace(/\/$/, '');
-        html += `<tr>
+            projects.forEach(p => {
+                const isActive = activeStatuses.has((p.status || '').toLowerCase());
+                const statusCls = isActive ? 'active' : 'other';
+                const kws = (p.matched_keywords || []).map(k => `<span class="kw-tag">${k}</span>`).join('');
+                const instanceHost = (p.instance || '').replace(/^https?:\/\//, '').replace(/\/$/, '');
+                html += `<tr>
             <td class="project-title"><a href="${p.url}" target="_blank" rel="noopener">${p.title || 'Untitled'}</a></td>
             <td><span class="instance-label">${instanceHost}</span></td>
             <td><span class="status-tag ${statusCls}">${p.status || 'N/A'}</span></td>
             <td>${kws}</td>
             <td class="project-desc" title="${(p.description || '').replace(/"/g, '&quot;')}">${p.description || ''}</td>
         </tr>`;
-    });
-    html += '</tbody></table>';
-    c.innerHTML = html;
-}
-
-function switchView(view) {
-    const listBtn = document.getElementById('btn-list-view');
-    const mapBtn = document.getElementById('btn-map-view');
-    const tableContainer = document.getElementById('table-container');
-    const mapContainer = document.getElementById('map-view-container');
-    
-    if (view === 'map') {
-        listBtn.classList.remove('active');
-        mapBtn.classList.add('active');
-        tableContainer.style.display = 'none';
-        mapContainer.style.display = 'block';
-        
-        if (!mapInitialized) {
-            initMap();
-        } else {
-            mapObj.resize();
-            applyFilters();
-        }
-    } else {
-        listBtn.classList.add('active');
-        mapBtn.classList.remove('active');
-        tableContainer.style.display = 'block';
-        mapContainer.style.display = 'none';
-    }
-}
-
-function initMap() {
-    mapInitialized = true;
-    
-    // BBOX format: [south, west, north, east]
-    // MapLibre bounds format: [west, south, east, north]
-    const bounds = [BBOX[1], BBOX[0], BBOX[3], BBOX[2]];
-    
-    mapObj = new maplibregl.Map({
-        container: 'map',
-        style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
-        bounds: bounds,
-        fitBoundsOptions: { padding: 40 }
-    });
-    
-    mapObj.on('load', () => {
-        mapObj.addControl(new maplibregl.NavigationControl());
-        
-        // Add boundary source and layer
-        mapObj.addSource('boundaries', {
-            type: 'geojson',
-            data: '../../data/boundaries/polygon.geojson'
-        });
-        
-        mapObj.addLayer({
-            id: 'boundary-layer',
-            type: 'line',
-            source: 'boundaries',
-            paint: {
-                'line-color': '#00f2fe',
-                'line-width': 1.5,
-                'line-opacity': 0.6,
-                'line-dasharray': [4, 4]
-            }
-        });
-        
-        mapObj.addSource('project-geometries', {
-            type: 'geojson',
-            data: { type: 'FeatureCollection', features: [] }
-        });
-        
-        mapObj.addLayer({
-            id: 'project-fills',
-            type: 'fill',
-            source: 'project-geometries',
-            paint: {
-                'fill-color': [
-                    'match', ['get', 'service'],
-                    'Tasking Manager', '#e04c3f',
-                    'MapRoulette', '#10b981',
-                    'Pic4Review', '#8b5cf6',
-                    '#4682b4'
-                ],
-                'fill-opacity': 0.15
-            }
-        });
-        
-        mapObj.addLayer({
-            id: 'project-borders',
-            type: 'line',
-            source: 'project-geometries',
-            paint: {
-                'line-color': [
-                    'match', ['get', 'service'],
-                    'Tasking Manager', '#e04c3f',
-                    'MapRoulette', '#10b981',
-                    'Pic4Review', '#8b5cf6',
-                    '#4682b4'
-                ],
-                'line-width': 2,
-                'line-dasharray': [2, 2]
-            }
-        });
-        
-        applyFilters();
-    });
-}
-
-function getCentroid(project) {
-    if (project.geometry) {
-        const geom = project.geometry;
-        if (geom.type === 'Point') {
-            return geom.coordinates;
-        } else if (geom.type === 'Polygon') {
-            const coords = geom.coordinates[0];
-            let sumX = 0, sumY = 0;
-            coords.forEach(pt => {
-                sumX += pt[0];
-                sumY += pt[1];
             });
-            return [sumX / coords.length, sumY / coords.length];
+            html += '</tbody></table>';
+            c.innerHTML = html;
         }
-    } else if (project.bbox) {
-        const b = project.bbox;
-        return [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2];
-    }
-    return null;
-}
 
-function updateMapElements(filteredProjects) {
-    if (!mapObj || !mapObj.getSource('project-geometries')) return;
-    
-    // Clear existing markers
-    mapMarkers.forEach(m => m.remove());
-    mapMarkers = [];
-    
-    const features = [];
-    
-    filteredProjects.forEach(p => {
-        let geom = null;
-        if (p.geometry) {
-            geom = p.geometry;
-        } else if (p.bbox) {
-            // bbox is [west, south, east, north]
-            const b = p.bbox;
-            geom = {
-                type: 'Polygon',
-                coordinates: [[
-                    [b[0], b[1]],
-                    [b[0], b[3]],
-                    [b[2], b[3]],
-                    [b[2], b[1]],
-                    [b[0], b[1]]
-                ]]
-            };
+        function switchView(view) {
+            const listBtn = document.getElementById('btn-list-view');
+            const mapBtn = document.getElementById('btn-map-view');
+            const tableContainer = document.getElementById('table-container');
+            const mapContainer = document.getElementById('map-view-container');
+
+            if (view === 'map') {
+                listBtn.classList.remove('active');
+                mapBtn.classList.add('active');
+                tableContainer.style.display = 'none';
+                mapContainer.style.display = 'block';
+
+                if (!mapInitialized) {
+                    initMap();
+                } else {
+                    mapObj.resize();
+                    applyFilters();
+                }
+            } else {
+                listBtn.classList.add('active');
+                mapBtn.classList.remove('active');
+                tableContainer.style.display = 'block';
+                mapContainer.style.display = 'none';
+            }
         }
-        
-        if (geom) {
-            features.push({
-                type: 'Feature',
-                properties: { service: p.service, id: p.id, title: p.title },
-                geometry: geom
+
+        function initMap() {
+            mapInitialized = true;
+
+            // BBOX format: [south, west, north, east]
+            // MapLibre bounds format: [west, south, east, north]
+            const bounds = [BBOX[1], BBOX[0], BBOX[3], BBOX[2]];
+
+            mapObj = new maplibregl.Map({
+                container: 'map',
+                style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+                bounds: bounds,
+                fitBoundsOptions: { padding: 40 }
+            });
+
+            mapObj.on('load', () => {
+                mapObj.addControl(new maplibregl.NavigationControl());
+
+                // Add boundary source and layer
+                mapObj.addSource('boundaries', {
+                    type: 'geojson',
+                    data: '../../data/boundaries/polygon.geojson'
+                });
+
+                mapObj.addLayer({
+                    id: 'boundary-layer',
+                    type: 'line',
+                    source: 'boundaries',
+                    paint: {
+                        'line-color': '#00f2fe',
+                        'line-width': 1.5,
+                        'line-opacity': 0.6,
+                        'line-dasharray': [4, 4]
+                    }
+                });
+
+                mapObj.addSource('project-geometries', {
+                    type: 'geojson',
+                    data: { type: 'FeatureCollection', features: [] }
+                });
+
+                mapObj.addLayer({
+                    id: 'project-fills',
+                    type: 'fill',
+                    source: 'project-geometries',
+                    paint: {
+                        'fill-color': [
+                            'match', ['get', 'service'],
+                            'Tasking Manager', '#e04c3f',
+                            'MapRoulette', '#10b981',
+                            'Pic4Review', '#8b5cf6',
+                            '#4682b4'
+                        ],
+                        'fill-opacity': 0.15
+                    }
+                });
+
+                mapObj.addLayer({
+                    id: 'project-borders',
+                    type: 'line',
+                    source: 'project-geometries',
+                    paint: {
+                        'line-color': [
+                            'match', ['get', 'service'],
+                            'Tasking Manager', '#e04c3f',
+                            'MapRoulette', '#10b981',
+                            'Pic4Review', '#8b5cf6',
+                            '#4682b4'
+                        ],
+                        'line-width': 2,
+                        'line-dasharray': [2, 2]
+                    }
+                });
+
+                applyFilters();
             });
         }
-        
-        const centroid = getCentroid(p);
-        if (centroid) {
-            const el = document.createElement('div');
-            el.className = 'marker-pin';
-            
-            let markerCls = 'marker-tm';
-            let iconText = '🗺️';
-            if (p.service === 'MapRoulette') {
-                markerCls = 'marker-mr';
-                iconText = '🧩';
-            } else if (p.service === 'Pic4Review') {
-                markerCls = 'marker-p4r';
-                iconText = '📷';
+
+        function getCentroid(project) {
+            if (project.geometry) {
+                const geom = project.geometry;
+                if (geom.type === 'Point') {
+                    return geom.coordinates;
+                } else if (geom.type === 'Polygon') {
+                    const coords = geom.coordinates[0];
+                    let sumX = 0, sumY = 0;
+                    coords.forEach(pt => {
+                        sumX += pt[0];
+                        sumY += pt[1];
+                    });
+                    return [sumX / coords.length, sumY / coords.length];
+                }
+            } else if (project.bbox) {
+                const b = project.bbox;
+                return [(b[0] + b[2]) / 2, (b[1] + b[3]) / 2];
             }
-            
-            el.classList.add(markerCls);
-            el.innerHTML = `<span class="marker-icon">${iconText}</span>`;
-            
-            const popupHtml = `
+            return null;
+        }
+
+        function updateMapElements(filteredProjects) {
+            if (!mapObj || !mapObj.getSource('project-geometries')) return;
+
+            // Clear existing markers
+            mapMarkers.forEach(m => m.remove());
+            mapMarkers = [];
+
+            const features = [];
+
+            filteredProjects.forEach(p => {
+                let geom = null;
+                if (p.geometry) {
+                    geom = p.geometry;
+                } else if (p.bbox) {
+                    // bbox is [west, south, east, north]
+                    const b = p.bbox;
+                    geom = {
+                        type: 'Polygon',
+                        coordinates: [[
+                            [b[0], b[1]],
+                            [b[0], b[3]],
+                            [b[2], b[3]],
+                            [b[2], b[1]],
+                            [b[0], b[1]]
+                        ]]
+                    };
+                }
+
+                if (geom) {
+                    features.push({
+                        type: 'Feature',
+                        properties: { service: p.service, id: p.id, title: p.title },
+                        geometry: geom
+                    });
+                }
+
+                const centroid = getCentroid(p);
+                if (centroid) {
+                    const el = document.createElement('div');
+                    el.className = 'marker-pin';
+
+                    let markerCls = 'marker-tm';
+                    let iconText = '🗺️';
+                    if (p.service === 'MapRoulette') {
+                        markerCls = 'marker-mr';
+                        iconText = '🧩';
+                    } else if (p.service === 'Pic4Review') {
+                        markerCls = 'marker-p4r';
+                        iconText = '📷';
+                    }
+
+                    el.classList.add(markerCls);
+                    el.innerHTML = `<span class="marker-icon">${iconText}</span>`;
+
+                    const popupHtml = `
                 <div style="color: #0f172a; padding: 0.5rem; font-family: 'Outfit', sans-serif; min-width: 200px;">
                     <h3 style="margin: 0 0 0.25rem 0; font-size: 0.95rem; font-weight: 600; color: #1e293b;">${p.title || 'Untitled'}</h3>
                     <div style="font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: #64748b; margin-bottom: 0.5rem;">
@@ -774,27 +969,28 @@ function updateMapElements(filteredProjects) {
                     </a>
                 </div>
             `;
-            const popup = new maplibregl.Popup({ offset: 15 }).setHTML(popupHtml);
-            
-            const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
-                .setLngLat(centroid)
-                .setPopup(popup)
-                .addTo(mapObj);
-                
-            mapMarkers.push(marker);
+                    const popup = new maplibregl.Popup({ offset: 15 }).setHTML(popupHtml);
+
+                    const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+                        .setLngLat(centroid)
+                        .setPopup(popup)
+                        .addTo(mapObj);
+
+                    mapMarkers.push(marker);
+                }
+            });
+
+            mapObj.getSource('project-geometries').setData({
+                type: 'FeatureCollection',
+                features: features
+            });
         }
-    });
-    
-    mapObj.getSource('project-geometries').setData({
-        type: 'FeatureCollection',
-        features: features
-    });
-}
 
-init();
+        init();
 
-window.switchTab = switchTab;
-window.switchView = switchView;
-</script>
+        window.switchTab = switchTab;
+        window.switchView = switchView;
+    </script>
 </body>
+
 </html>
