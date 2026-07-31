@@ -1,0 +1,891 @@
+[
+  {
+    "category": "barrier",
+    "condition": {
+      "field": "highway",
+      "operator": "equals",
+      "value": "steps"
+    },
+    "confidence": 95,
+    "description": "Steps interrupt step-free movement.",
+    "effects": {
+      "blind": {
+        "impact": "Level change requires care",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "High effort and fall risk",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Additional effort",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Step-free passage blocked",
+        "severity": 4,
+        "traversability": "impassable"
+      }
+    },
+    "id": "barrier_steps"
+  },
+  {
+    "category": "barrier",
+    "condition": {
+      "field": "wheelchair",
+      "operator": "equals",
+      "value": "no"
+    },
+    "confidence": 95,
+    "description": "OSM explicitly marks wheelchair access as unavailable.",
+    "effects": {
+      "wheelchair": {
+        "impact": "Wheelchair access explicitly blocked",
+        "severity": 4,
+        "traversability": "impassable"
+      }
+    },
+    "id": "barrier_wheelchair_no"
+  },
+  {
+    "category": "barrier",
+    "condition": {
+      "field": "smoothness",
+      "operator": "equals",
+      "value": "impassable"
+    },
+    "confidence": 95,
+    "description": "OSM explicitly describes the surface as impassable.",
+    "effects": {
+      "blind": {
+        "impact": "Passage explicitly impassable",
+        "severity": 4,
+        "traversability": "impassable"
+      },
+      "elderly": {
+        "impact": "Passage explicitly impassable",
+        "severity": 4,
+        "traversability": "impassable"
+      },
+      "pedestrian": {
+        "impact": "Passage explicitly impassable",
+        "severity": 4,
+        "traversability": "impassable"
+      },
+      "wheelchair": {
+        "impact": "Passage explicitly impassable",
+        "severity": 4,
+        "traversability": "impassable"
+      }
+    },
+    "id": "surface_impassable"
+  },
+  {
+    "applies_to": [
+      "crossing"
+    ],
+    "category": "kerb",
+    "condition": {
+      "field": "associated_kerbs",
+      "operator": "contains",
+      "value": "raised"
+    },
+    "confidence": 90,
+    "description": "A raised kerb is associated with the crossing.",
+    "effects": {
+      "elderly": {
+        "impact": "Trip and fall hazard",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Abrupt level change",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Kerb blocks independent passage",
+        "severity": 4,
+        "traversability": "impassable"
+      }
+    },
+    "id": "kerb_raised"
+  },
+  {
+    "applies_to": [
+      "crossing"
+    ],
+    "category": "kerb",
+    "condition": {
+      "field": "associated_kerbs",
+      "operator": "contains",
+      "value": "yes"
+    },
+    "confidence": 70,
+    "description": "A kerb is mapped without a traversable kerb type.",
+    "effects": {
+      "elderly": {
+        "impact": "Potential abrupt level change",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Kerb traversability uncertain",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "kerb_ambiguous_yes"
+  },
+  {
+    "applies_to": [
+      "crossing"
+    ],
+    "category": "kerb",
+    "condition": {
+      "field": "associated_kerbs",
+      "operator": "contains",
+      "value": "rolled"
+    },
+    "confidence": 85,
+    "description": "A rolled kerb can still require substantial effort.",
+    "effects": {
+      "blind": {
+        "impact": "Weakly defined transition",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Unstable transition",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Difficult rolling transition",
+        "severity": 2,
+        "traversability": "passable"
+      }
+    },
+    "id": "kerb_rolled"
+  },
+  {
+    "applies_to": [
+      "crossing"
+    ],
+    "category": "tactile_orientation",
+    "condition": {
+      "field": "associated_transition_states",
+      "kerb": "flush",
+      "operator": "transition_pair",
+      "tactile_paving": "no"
+    },
+    "confidence": 95,
+    "description": "A flush kerb is explicitly paired with absent tactile paving.",
+    "effects": {
+      "blind": {
+        "impact": "Street boundary may be undetectable",
+        "severity": 4,
+        "traversability": "passable_with_extreme_risk"
+      },
+      "elderly": {
+        "impact": "Transition lacks tactile cue",
+        "severity": 1,
+        "traversability": "passable"
+      }
+    },
+    "id": "flush_without_tactile"
+  },
+  {
+    "applies_to": [
+      "crossing"
+    ],
+    "category": "tactile_orientation",
+    "condition": {
+      "field": "associated_transition_states",
+      "kerb": "lowered",
+      "operator": "transition_pair",
+      "tactile_paving": "no"
+    },
+    "confidence": 90,
+    "description": "A lowered kerb is explicitly paired with absent tactile paving.",
+    "effects": {
+      "blind": {
+        "impact": "Street boundary has weak tactile detection",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "lowered_without_tactile"
+  },
+  {
+    "applies_to": [
+      "crossing"
+    ],
+    "category": "tactile_orientation",
+    "condition": {
+      "field": "associated_tactile_paving",
+      "operator": "contains",
+      "value": "no"
+    },
+    "confidence": 90,
+    "description": "Tactile paving is explicitly absent at the crossing.",
+    "effects": {
+      "blind": {
+        "impact": "No mapped tactile warning at street transition",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "crossing_tactile_no"
+  },
+  {
+    "applies_to": [
+      "crossing"
+    ],
+    "category": "tactile_orientation",
+    "condition": {
+      "field": "uniform_transition_surface",
+      "operator": "equals",
+      "value": true
+    },
+    "confidence": 45,
+    "description": "Crossing, kerb and adjacent sidewalk share one explicitly mapped surface; this is a low-confidence detectability proxy.",
+    "effects": {
+      "blind": {
+        "impact": "Material transition may be difficult to detect",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "uniform_transition_surface"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "smoothness",
+      "operator": "equals",
+      "value": "very_horrible"
+    },
+    "confidence": 90,
+    "description": "Very horrible smoothness indicates an extreme unevenness.",
+    "effects": {
+      "blind": {
+        "impact": "Severe trip and orientation hazard",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Extreme fall risk",
+        "severity": 4,
+        "traversability": "passable_with_extreme_risk"
+      },
+      "pedestrian": {
+        "impact": "Extreme unevenness",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Independent rolling may be impossible",
+        "severity": 4,
+        "traversability": "impassable"
+      }
+    },
+    "id": "smoothness_very_horrible"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "smoothness",
+      "operator": "equals",
+      "value": "horrible"
+    },
+    "confidence": 90,
+    "description": "Horrible smoothness indicates severe unevenness.",
+    "effects": {
+      "blind": {
+        "impact": "Severe trip hazard",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "High fall risk",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Severe unevenness",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Rolling may be effectively blocked",
+        "severity": 4,
+        "traversability": "impassable"
+      }
+    },
+    "id": "smoothness_horrible"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "smoothness",
+      "operator": "equals",
+      "value": "very_bad"
+    },
+    "confidence": 90,
+    "description": "Very bad smoothness creates substantial mobility difficulty.",
+    "effects": {
+      "blind": {
+        "impact": "Substantial trip hazard",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "High instability",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Substantial unevenness",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Very difficult rolling surface",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "smoothness_very_bad"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "smoothness",
+      "operator": "equals",
+      "value": "bad"
+    },
+    "confidence": 90,
+    "description": "Bad smoothness creates a meaningful mobility penalty.",
+    "effects": {
+      "blind": {
+        "impact": "Trip hazard",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Instability and fall risk",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Uneven walking surface",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Difficult rolling surface",
+        "severity": 2,
+        "traversability": "passable"
+      }
+    },
+    "id": "smoothness_bad"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "surface",
+      "operator": "equals",
+      "value": "sand"
+    },
+    "confidence": 55,
+    "description": "Surface material is a provisional mobility proxy.",
+    "effects": {
+      "blind": {
+        "impact": "Unstable surface",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "High instability",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Loose surface",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Wheels may become immobilized",
+        "severity": 4,
+        "traversability": "impassable"
+      }
+    },
+    "id": "surface_sand"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "surface",
+      "operator": "equals",
+      "value": "grass"
+    },
+    "confidence": 55,
+    "description": "Surface material is a provisional mobility proxy.",
+    "effects": {
+      "blind": {
+        "impact": "Variable surface",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Unstable footing",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Variable natural surface",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "High rolling resistance",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "surface_grass"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "surface",
+      "operator": "in",
+      "value": [
+        "ground",
+        "earth",
+        "dirt",
+        "unpaved"
+      ]
+    },
+    "confidence": 55,
+    "description": "Surface material is a provisional mobility proxy.",
+    "effects": {
+      "blind": {
+        "impact": "Irregular surface",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Unstable footing",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Weather-sensitive surface",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "High or variable rolling resistance",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "surface_ground_earth_dirt"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "surface",
+      "operator": "equals",
+      "value": "gravel"
+    },
+    "confidence": 55,
+    "description": "Surface material is a provisional mobility proxy.",
+    "effects": {
+      "blind": {
+        "impact": "Loose aggregate",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Unstable footing",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Loose aggregate",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Difficult rolling surface",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "surface_gravel"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "surface",
+      "operator": "in",
+      "value": [
+        "cobblestone",
+        "unhewn_cobblestone",
+        "sett"
+      ]
+    },
+    "confidence": 55,
+    "description": "Surface material is a provisional mobility proxy.",
+    "effects": {
+      "blind": {
+        "impact": "Irregular trip-prone surface",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Trip and instability hazard",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Uneven joints",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Difficult vibration-heavy rolling",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "surface_cobble_sett"
+  },
+  {
+    "category": "surface",
+    "condition": {
+      "field": "surface",
+      "operator": "in",
+      "value": [
+        "compacted",
+        "fine_gravel"
+      ]
+    },
+    "confidence": 50,
+    "description": "Surface material is a provisional mobility proxy.",
+    "effects": {
+      "elderly": {
+        "impact": "Potentially loose footing",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Increased rolling resistance",
+        "severity": 2,
+        "traversability": "passable"
+      }
+    },
+    "id": "surface_compacted_fine_gravel"
+  },
+  {
+    "category": "cross_slope",
+    "condition": {
+      "field": "cross_slope_percent",
+      "operator": "abs_gt",
+      "value": 5
+    },
+    "confidence": 95,
+    "description": "Explicit cross slope exceeds 5%.",
+    "effects": {
+      "blind": {
+        "impact": "Strong lateral imbalance",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "High fall risk",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Strong lateral imbalance",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "High tip or drift risk",
+        "severity": 4,
+        "traversability": "passable_with_extreme_risk"
+      }
+    },
+    "id": "cross_slope_over_5"
+  },
+  {
+    "category": "cross_slope",
+    "condition": {
+      "field": "cross_slope_percent",
+      "max_inclusive": 5,
+      "min_exclusive": 3,
+      "operator": "abs_range"
+    },
+    "confidence": 95,
+    "description": "Explicit cross slope is greater than 3% and at most 5%.",
+    "effects": {
+      "blind": {
+        "impact": "Lateral imbalance",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Instability",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Lateral imbalance",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Substantial drift or tip risk",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "cross_slope_3_to_5"
+  },
+  {
+    "category": "cross_slope",
+    "condition": {
+      "field": "cross_slope_percent",
+      "max_inclusive": 3,
+      "min_exclusive": 2,
+      "operator": "abs_range"
+    },
+    "confidence": 95,
+    "description": "Explicit cross slope is greater than 2% and at most 3%.",
+    "effects": {
+      "elderly": {
+        "impact": "Mild lateral instability",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Noticeable lateral effort",
+        "severity": 2,
+        "traversability": "passable"
+      }
+    },
+    "id": "cross_slope_2_to_3"
+  },
+  {
+    "category": "longitudinal_slope",
+    "condition": {
+      "field": "directional_incline_percent",
+      "operator": "gt",
+      "value": 12.5
+    },
+    "confidence": 80,
+    "description": "Travel direction rises by more than 12.5%.",
+    "directional": true,
+    "effects": {
+      "blind": {
+        "impact": "Extreme climbing effort",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Extreme exertion and fall risk",
+        "severity": 4,
+        "traversability": "passable_with_extreme_risk"
+      },
+      "pedestrian": {
+        "impact": "Extreme climbing effort",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Independent ascent may be impossible",
+        "severity": 4,
+        "traversability": "impassable"
+      }
+    },
+    "id": "uphill_over_12_5"
+  },
+  {
+    "category": "longitudinal_slope",
+    "condition": {
+      "field": "directional_incline_percent",
+      "max_inclusive": 12.5,
+      "min_exclusive": 8.33,
+      "operator": "range"
+    },
+    "confidence": 80,
+    "description": "Travel direction rises by more than 8.33% and at most 12.5%.",
+    "directional": true,
+    "effects": {
+      "blind": {
+        "impact": "High climbing effort",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "High exertion",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "High climbing effort",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Very difficult ascent",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "uphill_8_33_to_12_5"
+  },
+  {
+    "category": "longitudinal_slope",
+    "condition": {
+      "field": "directional_incline_percent",
+      "max_inclusive": 8.33,
+      "min_exclusive": 5,
+      "operator": "range"
+    },
+    "confidence": 80,
+    "description": "Travel direction rises by more than 5% and at most 8.33%.",
+    "directional": true,
+    "effects": {
+      "elderly": {
+        "impact": "Increased exertion",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Increased climbing effort",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Difficult ascent",
+        "severity": 2,
+        "traversability": "passable"
+      }
+    },
+    "id": "uphill_5_to_8_33"
+  },
+  {
+    "category": "longitudinal_slope",
+    "condition": {
+      "field": "directional_incline_percent",
+      "operator": "lt",
+      "value": -12.5
+    },
+    "confidence": 80,
+    "description": "Travel direction descends by more than 12.5%.",
+    "directional": true,
+    "effects": {
+      "blind": {
+        "impact": "Extreme descent hazard",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Extreme fall risk",
+        "severity": 4,
+        "traversability": "passable_with_extreme_risk"
+      },
+      "pedestrian": {
+        "impact": "Extreme braking and fall risk",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Loss-of-control risk",
+        "severity": 4,
+        "traversability": "passable_with_extreme_risk"
+      }
+    },
+    "id": "downhill_over_12_5"
+  },
+  {
+    "category": "longitudinal_slope",
+    "condition": {
+      "field": "directional_incline_percent",
+      "max_abs_inclusive": 12.5,
+      "min_abs_exclusive": 8.33,
+      "operator": "negative_range"
+    },
+    "confidence": 80,
+    "description": "Travel direction descends by more than 8.33% and at most 12.5%.",
+    "directional": true,
+    "effects": {
+      "blind": {
+        "impact": "Steep descent hazard",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "High fall risk",
+        "severity": 3,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "High braking effort",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Substantial loss-of-control risk",
+        "severity": 3,
+        "traversability": "passable"
+      }
+    },
+    "id": "downhill_8_33_to_12_5"
+  },
+  {
+    "category": "longitudinal_slope",
+    "condition": {
+      "field": "directional_incline_percent",
+      "max_abs_inclusive": 8.33,
+      "min_abs_exclusive": 5,
+      "operator": "negative_range"
+    },
+    "confidence": 80,
+    "description": "Travel direction descends by more than 5% and at most 8.33%.",
+    "directional": true,
+    "effects": {
+      "blind": {
+        "impact": "Increased descent care",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "elderly": {
+        "impact": "Increased fall risk",
+        "severity": 2,
+        "traversability": "passable"
+      },
+      "pedestrian": {
+        "impact": "Increased braking effort",
+        "severity": 1,
+        "traversability": "passable"
+      },
+      "wheelchair": {
+        "impact": "Difficult controlled descent",
+        "severity": 2,
+        "traversability": "passable"
+      }
+    },
+    "id": "downhill_5_to_8_33"
+  }
+]

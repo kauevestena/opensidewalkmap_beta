@@ -1,0 +1,21 @@
+{
+  "pedestrian": {
+    "status": "ok"
+  },
+  "wheelchair": {
+    "status": "error",
+    "reason": "ogr2ogr failed (exit 1): ERROR 1: Unable to open existing output datasource `data/hazard_analysis/hazard.mbtiles'."
+  },
+  "blind": {
+    "status": "error",
+    "reason": "ogr2ogr failed (exit 1): ERROR 1: Unable to open existing output datasource `data/hazard_analysis/hazard.mbtiles'."
+  },
+  "elderly": {
+    "status": "error",
+    "reason": "ogr2ogr failed (exit 1): ERROR 1: Unable to open existing output datasource `data/hazard_analysis/hazard.mbtiles'."
+  },
+  "_output": {
+    "status": "ok",
+    "filesize": 44261283
+  }
+}

@@ -6,110 +6,110 @@
     "stairs": 366
   },
   "feature_count": 17216,
-  "generated_at": "2026-07-31T08:29:18.121731+00:00",
+  "generated_at": "2026-07-31T17:53:22.799787+00:00",
   "profile_audit": {
     "blind": {
       "most_common_decisive_rules": {
-        "barrier_steps": 312,
+        "barrier_steps": 369,
         "crossing_tactile_no": 123,
-        "downhill_5_to_8_33": 2082,
-        "downhill_8_33_to_12_5": 1116,
-        "downhill_over_12_5": 684,
-        "smoothness_bad": 217,
-        "surface_cobble_sett": 869,
-        "surface_grass": 39,
-        "surface_gravel": 31,
-        "surface_ground_earth_dirt": 108
+        "lowered_without_tactile": 24,
+        "smoothness_bad": 220,
+        "smoothness_horrible": 8,
+        "smoothness_very_bad": 22,
+        "surface_cobble_sett": 922,
+        "surface_grass": 43,
+        "surface_gravel": 37,
+        "surface_ground_earth_dirt": 116
       },
       "severity_counts": {
-        "0": 11731,
-        "1": 2246,
-        "2": 2404,
-        "3": 822,
+        "0": 15415,
+        "1": 197,
+        "2": 1453,
+        "3": 138,
         "4": 13
       },
       "status_counts": {
-        "hazard_detected": 5485,
-        "insufficient_data": 10960,
-        "no_detected_hazard": 771
+        "hazard_detected": 1801,
+        "insufficient_data": 15322,
+        "no_detected_hazard": 93
       }
     },
     "elderly": {
       "most_common_decisive_rules": {
-        "barrier_steps": 312,
-        "downhill_5_to_8_33": 1096,
-        "downhill_8_33_to_12_5": 569,
-        "downhill_over_12_5": 329,
-        "kerb_raised": 193,
-        "smoothness_bad": 208,
-        "surface_cobble_sett": 780,
-        "uphill_5_to_8_33": 1132,
-        "uphill_8_33_to_12_5": 616,
-        "uphill_over_12_5": 355
+        "barrier_steps": 369,
+        "kerb_raised": 200,
+        "smoothness_bad": 220,
+        "smoothness_horrible": 8,
+        "smoothness_very_bad": 22,
+        "surface_cobble_sett": 892,
+        "surface_compacted_fine_gravel": 23,
+        "surface_grass": 86,
+        "surface_gravel": 37,
+        "surface_ground_earth_dirt": 122
       },
       "severity_counts": {
-        "0": 11671,
-        "1": 16,
-        "2": 3170,
-        "3": 1663,
-        "4": 696
+        "0": 15315,
+        "1": 29,
+        "2": 1255,
+        "3": 605,
+        "4": 12
       },
       "status_counts": {
-        "hazard_detected": 5545,
-        "insufficient_data": 10902,
-        "no_detected_hazard": 769
+        "hazard_detected": 1901,
+        "insufficient_data": 15221,
+        "no_detected_hazard": 94
       }
     },
     "pedestrian": {
       "most_common_decisive_rules": {
-        "barrier_steps": 264,
-        "downhill_5_to_8_33": 1134,
-        "downhill_8_33_to_12_5": 569,
-        "downhill_over_12_5": 329,
-        "kerb_raised": 183,
-        "smoothness_bad": 208,
-        "surface_cobble_sett": 801,
-        "uphill_5_to_8_33": 1166,
-        "uphill_8_33_to_12_5": 616,
-        "uphill_over_12_5": 355
+        "barrier_steps": 369,
+        "kerb_raised": 200,
+        "smoothness_bad": 220,
+        "smoothness_horrible": 8,
+        "smoothness_very_bad": 22,
+        "smoothness_very_horrible": 7,
+        "surface_cobble_sett": 919,
+        "surface_grass": 86,
+        "surface_gravel": 37,
+        "surface_ground_earth_dirt": 123
       },
       "severity_counts": {
-        "0": 11689,
-        "1": 3615,
-        "2": 1216,
-        "3": 691,
+        "0": 15346,
+        "1": 1822,
+        "2": 36,
+        "3": 7,
         "4": 5
       },
       "status_counts": {
-        "hazard_detected": 5527,
-        "insufficient_data": 10916,
-        "no_detected_hazard": 773
+        "hazard_detected": 1870,
+        "insufficient_data": 15252,
+        "no_detected_hazard": 94
       }
     },
     "wheelchair": {
       "most_common_decisive_rules": {
         "barrier_steps": 369,
-        "downhill_5_to_8_33": 1018,
-        "downhill_8_33_to_12_5": 542,
+        "barrier_wheelchair_no": 29,
         "kerb_raised": 200,
-        "smoothness_bad": 110,
-        "surface_cobble_sett": 844,
-        "surface_ground_earth_dirt": 120,
-        "uphill_5_to_8_33": 1052,
-        "uphill_8_33_to_12_5": 583,
-        "uphill_over_12_5": 658
+        "smoothness_bad": 114,
+        "smoothness_very_bad": 20,
+        "surface_cobble_sett": 892,
+        "surface_compacted_fine_gravel": 28,
+        "surface_grass": 85,
+        "surface_gravel": 37,
+        "surface_ground_earth_dirt": 121
       },
       "severity_counts": {
-        "0": 11666,
+        "0": 15308,
         "1": 0,
-        "2": 2173,
-        "3": 2142,
-        "4": 1235
+        "2": 139,
+        "3": 1152,
+        "4": 617
       },
       "status_counts": {
-        "hazard_detected": 5550,
-        "insufficient_data": 10903,
-        "no_detected_hazard": 763
+        "hazard_detected": 1908,
+        "insufficient_data": 15218,
+        "no_detected_hazard": 90
       }
     }
   },
@@ -117,9 +117,8 @@
   "ruleset_version": "0.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 17201,
-    "copernicus_glo90": 2,
-    "direct_osm_numeric": 13
+    "direct_osm_numeric": 13,
+    "missing": 17203
   },
   "warnings": [
     "Hazard rules are provisional and require participatory calibration.",

@@ -687,6 +687,7 @@
     <div class="deliverables-tabs-bar">
         <div class="tabs-container">
             <div class="deliverable-tab active" onclick="switchDeliverable('map_data')" id="tab-map_data">Map Data</div>
+            <div class="deliverable-tab" onclick="switchDeliverable('hazard_analysis')" id="tab-hazard_analysis">Hazard Analysis</div>
             <div class="deliverable-tab" onclick="switchDeliverable('data_quality')" id="tab-data_quality">Data Quality</div>
             <div class="deliverable-tab" onclick="switchDeliverable('vega_specs')" id="tab-vega_specs">Vega Chart Specs</div>
         </div>
@@ -862,7 +863,7 @@ print(data)</pre>
     "category": "Boundaries & Config",
     "path": "data/boundaries/polygon.parquet",
     "format": "GeoParquet",
-    "description": "Map data asset file: polygon.parquet",
+    "description": "Asset file: polygon.parquet",
     "playground": false,
     "deliverable": "map_data"
   },
@@ -921,6 +922,70 @@ print(data)</pre>
     "description": "Vega-Lite JSON chart specification visualising Crossings Smoothness X Surface metrics for crossings layer.",
     "playground": true,
     "deliverable": "vega_specs"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_blind.geojson",
+    "format": "GeoJSON",
+    "description": "Asset file: features_blind.geojson",
+    "playground": true,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_blind.parquet",
+    "format": "GeoParquet",
+    "description": "Asset file: features_blind.parquet",
+    "playground": false,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_elderly.geojson",
+    "format": "GeoJSON",
+    "description": "Asset file: features_elderly.geojson",
+    "playground": true,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_elderly.parquet",
+    "format": "GeoParquet",
+    "description": "Asset file: features_elderly.parquet",
+    "playground": false,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_pedestrian.geojson",
+    "format": "GeoJSON",
+    "description": "Asset file: features_pedestrian.geojson",
+    "playground": true,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_pedestrian.parquet",
+    "format": "GeoParquet",
+    "description": "Asset file: features_pedestrian.parquet",
+    "playground": false,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_wheelchair.geojson",
+    "format": "GeoJSON",
+    "description": "Asset file: features_wheelchair.geojson",
+    "playground": true,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_wheelchair.parquet",
+    "format": "GeoParquet",
+    "description": "Asset file: features_wheelchair.parquet",
+    "playground": false,
+    "deliverable": "hazard_analysis"
   },
   {
     "category": "Data Aging & Versioning",
@@ -1113,6 +1178,14 @@ print(data)</pre>
     "description": "Predefined list of OSM tag values considered valid by OSWM quality checks.",
     "playground": true,
     "deliverable": "data_quality"
+  },
+  {
+    "category": "Hazard Assets",
+    "path": "data/hazard_analysis/tile_generation_report.json",
+    "format": "JSON",
+    "description": "Asset file: tile_generation_report.json",
+    "playground": true,
+    "deliverable": "hazard_analysis"
   },
   {
     "category": "JSON Quality Checks",
@@ -1430,7 +1503,7 @@ print(data)</pre>
     "category": "Map Data Assets",
     "path": "data/data_quality/disjointed/crossings_disjointed.parquet",
     "format": "GeoParquet",
-    "description": "Map data asset file: crossings_disjointed.parquet",
+    "description": "Asset file: crossings_disjointed.parquet",
     "playground": false,
     "deliverable": "map_data"
   },
@@ -1438,7 +1511,7 @@ print(data)</pre>
     "category": "Map Data Assets",
     "path": "data/data_quality/disjointed/kerbs_disjointed.parquet",
     "format": "GeoParquet",
-    "description": "Map data asset file: kerbs_disjointed.parquet",
+    "description": "Asset file: kerbs_disjointed.parquet",
     "playground": false,
     "deliverable": "map_data"
   },
@@ -1446,7 +1519,7 @@ print(data)</pre>
     "category": "Map Data Assets",
     "path": "data/data_quality/improper_geoms/crossings_improper_geoms.parquet",
     "format": "GeoParquet",
-    "description": "Map data asset file: crossings_improper_geoms.parquet",
+    "description": "Asset file: crossings_improper_geoms.parquet",
     "playground": false,
     "deliverable": "map_data"
   },
@@ -1454,7 +1527,7 @@ print(data)</pre>
     "category": "Map Data Assets",
     "path": "data/data_quality/improper_geoms/kerbs_improper_geoms.parquet",
     "format": "GeoParquet",
-    "description": "Map data asset file: kerbs_improper_geoms.parquet",
+    "description": "Asset file: kerbs_improper_geoms.parquet",
     "playground": false,
     "deliverable": "map_data"
   },
@@ -1462,7 +1535,7 @@ print(data)</pre>
     "category": "Map Data Assets",
     "path": "data/data_quality/improper_geoms/sidewalks_improper_geoms.parquet",
     "format": "GeoParquet",
-    "description": "Map data asset file: sidewalks_improper_geoms.parquet",
+    "description": "Asset file: sidewalks_improper_geoms.parquet",
     "playground": false,
     "deliverable": "map_data"
   },
@@ -1470,7 +1543,7 @@ print(data)</pre>
     "category": "Map Data Assets",
     "path": "data/snapshots/node_summary.json",
     "format": "JSON",
-    "description": "Map data asset file: node_summary.json",
+    "description": "Asset file: node_summary.json",
     "playground": true,
     "deliverable": "map_data"
   },
@@ -1598,7 +1671,7 @@ print(data)</pre>
     "category": "Pedestrian Data (Parquet)",
     "path": "data/processed/roads_for_completeness.parquet",
     "format": "GeoParquet",
-    "description": "Map data asset file: roads_for_completeness.parquet",
+    "description": "Asset file: roads_for_completeness.parquet",
     "playground": false,
     "deliverable": "map_data"
   },
@@ -1651,94 +1724,6 @@ print(data)</pre>
     "deliverable": "map_data"
   },
   {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/features_blind.geojson",
-    "format": "GeoJSON",
-    "description": "Blind/low-vision-profile hazard screening with directional evidence and category severities.",
-    "playground": true,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/features_elderly.geojson",
-    "format": "GeoJSON",
-    "description": "Older/reduced-mobility-profile hazard screening with directional evidence and category severities.",
-    "playground": true,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/features_pedestrian.geojson",
-    "format": "GeoJSON",
-    "description": "Pedestrian-profile hazard screening with directional evidence and category severities.",
-    "playground": true,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/features_wheelchair.geojson",
-    "format": "GeoJSON",
-    "description": "Wheelchair-profile hazard screening with directional evidence and category severities.",
-    "playground": true,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/metadata.json",
-    "format": "JSON",
-    "description": "Hazard generation audit, evidence caveats, severity counts, and elevation-source provenance.",
-    "playground": true,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/profiles.json",
-    "format": "JSON",
-    "description": "Browser-safe hazard profiles, severity levels, categories, explanations, effects, and ruleset provenance.",
-    "playground": true,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/terrain.json",
-    "format": "JSON",
-    "description": "Terrain overlay bounds, profile thresholds, global AWS DEM attribution, and availability status.",
-    "playground": true,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/terrain_blind.png",
-    "format": "PNG",
-    "description": "Transparent blind/low-vision terrain-difficulty overlay derived from the configured global AWS DEM.",
-    "playground": false,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/terrain_elderly.png",
-    "format": "PNG",
-    "description": "Transparent older/reduced-mobility terrain-difficulty overlay derived from the configured global AWS DEM.",
-    "playground": false,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/terrain_pedestrian.png",
-    "format": "PNG",
-    "description": "Transparent pedestrian terrain-difficulty overlay derived from the configured global AWS DEM.",
-    "playground": false,
-    "deliverable": "map_data"
-  },
-  {
-    "category": "Pedestrian Hazard Analysis",
-    "path": "data/hazard_analysis/terrain_wheelchair.png",
-    "format": "PNG",
-    "description": "Transparent wheelchair terrain-difficulty overlay derived from the configured global AWS DEM.",
-    "playground": false,
-    "deliverable": "map_data"
-  },
-  {
     "category": "Routing & Demos",
     "path": "data/routing/demo.geojson",
     "format": "GeoJSON",
@@ -1769,6 +1754,38 @@ print(data)</pre>
     "description": "Reusable derived longitudinal slope estimates keyed by edge geometry and provider configuration.",
     "playground": true,
     "deliverable": "map_data"
+  },
+  {
+    "category": "Rules & Configuration",
+    "path": "data/hazard_analysis/metadata.json",
+    "format": "JSON",
+    "description": "Asset file: metadata.json",
+    "playground": true,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Rules & Configuration",
+    "path": "data/hazard_analysis/profiles.json",
+    "format": "JSON",
+    "description": "Asset file: profiles.json",
+    "playground": true,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Rules & Configuration",
+    "path": "data/hazard_analysis/rules.json",
+    "format": "JSON",
+    "description": "Asset file: rules.json",
+    "playground": true,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Rules & Configuration",
+    "path": "data/hazard_analysis/terrain.json",
+    "format": "JSON",
+    "description": "Asset file: terrain.json",
+    "playground": true,
+    "deliverable": "hazard_analysis"
   },
   {
     "category": "Sidewalks Charts",
@@ -2166,7 +2183,7 @@ print(data)</pre>
     "category": "Vector Tiles (PMTiles)",
     "path": "data/tiles/tile_generation_report.json",
     "format": "JSON",
-    "description": "Map data asset file: tile_generation_report.json",
+    "description": "Asset file: tile_generation_report.json",
     "playground": true,
     "deliverable": "map_data"
   },
@@ -2177,6 +2194,46 @@ print(data)</pre>
     "description": "GDAL Virtual Format file referencing tile-oriented datasets.",
     "playground": true,
     "deliverable": "map_data"
+  },
+  {
+    "category": "Web Maps & Assets",
+    "path": "data/hazard_analysis/hazard.pmtiles",
+    "format": "PMTiles",
+    "description": "Asset file: hazard.pmtiles",
+    "playground": false,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Web Maps & Assets",
+    "path": "data/hazard_analysis/terrain_blind.png",
+    "format": "PNG",
+    "description": "Asset file: terrain_blind.png",
+    "playground": false,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Web Maps & Assets",
+    "path": "data/hazard_analysis/terrain_elderly.png",
+    "format": "PNG",
+    "description": "Asset file: terrain_elderly.png",
+    "playground": false,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Web Maps & Assets",
+    "path": "data/hazard_analysis/terrain_pedestrian.png",
+    "format": "PNG",
+    "description": "Asset file: terrain_pedestrian.png",
+    "playground": false,
+    "deliverable": "hazard_analysis"
+  },
+  {
+    "category": "Web Maps & Assets",
+    "path": "data/hazard_analysis/terrain_wheelchair.png",
+    "format": "PNG",
+    "description": "Asset file: terrain_wheelchair.png",
+    "playground": false,
+    "deliverable": "hazard_analysis"
   },
   {
     "category": "Folder Indexes",
@@ -2216,7 +2273,7 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'hazard_analysis' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "hazard_analysis"
   },
   {
     "category": "Folder Indexes",
