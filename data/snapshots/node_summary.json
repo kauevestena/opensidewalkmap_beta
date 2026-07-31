@@ -1,12 +1,12 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-07-31T08:26:48.969040+00:00",
+    "generated_at": "2026-08-01T08:21:20.475254+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
-            "total": 20061,
-            "known": 20061,
+            "total": 20064,
+            "known": 20064,
             "unknown": 0,
             "unknownPercent": 0.0,
             "knownCategoryCount": 8,
@@ -14,13 +14,13 @@
                 {
                     "value": "sidewalks",
                     "count": 8134,
-                    "percent": 40.55,
+                    "percent": 40.54,
                     "color": "steelblue"
                 },
                 {
                     "value": "main_footways",
-                    "count": 5620,
-                    "percent": 28.01,
+                    "count": 5623,
+                    "percent": 28.03,
                     "color": "#299077"
                 },
                 {
@@ -63,17 +63,17 @@
             "dominant": {
                 "value": "sidewalks",
                 "count": 8134,
-                "percent": 40.55,
+                "percent": 40.54,
                 "color": "steelblue"
             },
-            "shannonEntropy": 1.491487,
-            "effectiveDiversity": 4.443697,
-            "lengthFeatureCount": 17159,
-            "totalLengthKm": 911.394268,
+            "shannonEntropy": 1.491454,
+            "effectiveDiversity": 4.443551,
+            "lengthFeatureCount": 17162,
+            "totalLengthKm": 911.666074,
             "unknownLengthKm": 0.0,
             "lengthKmByCategory": {
                 "sidewalks": 320.223709,
-                "main_footways": 428.306021,
+                "main_footways": 428.577827,
                 "kerbs": 0.0,
                 "crossings": 24.515383,
                 "potential_footways": 98.24485,
@@ -771,15 +771,15 @@
         },
         "age": {
             "kind": "numeric",
-            "total": 20061,
+            "total": 20064,
             "known": 20059,
-            "unknown": 2,
-            "unknownPercent": 0.01,
+            "unknown": 5,
+            "unknownPercent": 0.02,
             "invalid": 0,
-            "min": 0.021903,
-            "max": 18.628337,
-            "mean": 3.513993,
-            "median": 3.638604,
+            "min": 0.024641,
+            "max": 18.631075,
+            "mean": 3.516731,
+            "median": 3.641342,
             "bins": [
                 {
                     "label": "0–<2",
@@ -851,10 +851,10 @@
         },
         "n_revs": {
             "kind": "numeric",
-            "total": 20061,
+            "total": 20064,
             "known": 20059,
-            "unknown": 2,
-            "unknownPercent": 0.01,
+            "unknown": 5,
+            "unknownPercent": 0.02,
             "invalid": 0,
             "min": 1.0,
             "max": 67.0,

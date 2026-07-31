@@ -1,20 +1,20 @@
 {
   "edge_kind_counts": {
     "crossing": 2096,
-    "footway": 6620,
+    "footway": 6623,
     "sidewalk": 8134,
     "stairs": 366
   },
   "elevation_provider_fingerprint": "a4a4bc7ab35d623e",
-  "feature_count": 17216,
-  "generated_at": "2026-07-31T20:45:48.162224+00:00",
+  "feature_count": 17219,
+  "generated_at": "2026-08-01T08:23:19.449929+00:00",
   "profile_audit": {
     "blind": {
       "grade_bands": {
         "0": 139,
         "1-19": 0,
         "20-39": 1963,
-        "40-59": 13872,
+        "40-59": 13875,
         "60-79": 1233,
         "80-100": 9
       },
@@ -27,7 +27,7 @@
         "incline": 35,
         "lighting": 103,
         "smoothness": 3309,
-        "surface": 10489,
+        "surface": 10492,
         "tactile_paving": 2077,
         "width": 1179
       }
@@ -37,7 +37,7 @@
         "0": 8,
         "1-19": 576,
         "20-39": 1593,
-        "40-59": 15015,
+        "40-59": 15018,
         "60-79": 24,
         "80-100": 0
       },
@@ -50,7 +50,7 @@
         "incline": 36,
         "kerb": 494,
         "smoothness": 2812,
-        "surface": 11358,
+        "surface": 11361,
         "width": 949
       }
     },
@@ -59,7 +59,7 @@
         "0": 606,
         "1-19": 7,
         "20-39": 12245,
-        "40-59": 4353,
+        "40-59": 4356,
         "60-79": 5,
         "80-100": 0
       },
@@ -72,7 +72,7 @@
         "incline": 36,
         "kerb": 1307,
         "smoothness": 2763,
-        "surface": 11133,
+        "surface": 11136,
         "width": 981
       }
     }
@@ -81,6 +81,7 @@
   "ruleset_version": "1.1.0",
   "schema_version": 1,
   "slope_source_counts": {
+    "copernicus_glo30": 3,
     "direct_osm_numeric": 13,
     "missing": 17203
   },

@@ -1,13 +1,24 @@
 [
     {
-        "id": 186628320,
-        "user": "Jakub Trojan",
-        "uid": 273212,
-        "comment": "Missing Surface Materials (Agua Verde)",
-        "created_at": "2026-07-30T07:47:03Z",
-        "changes_count": 7,
+        "id": 186700748,
+        "user": "TallebudgeraValley",
+        "uid": 24223240,
+        "comment": "Created footway near Estrada de Santa Cândida #adt",
+        "created_at": "2026-07-31T11:40:18Z",
+        "changes_count": 24,
+        "additions": 4,
+        "modifications": 0,
+        "deletions": 0
+    },
+    {
+        "id": 186724105,
+        "user": "Darigaf",
+        "uid": 19590814,
+        "comment": "Adicionado nova rua emiliano perneta.",
+        "created_at": "2026-07-31T18:53:50Z",
+        "changes_count": 19,
         "additions": 0,
-        "modifications": 7,
+        "modifications": 2,
         "deletions": 0
     }
 ]

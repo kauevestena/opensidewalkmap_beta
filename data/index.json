@@ -125,6 +125,7 @@
                 "features_wheelchair.geojson",
                 "features_wheelchair.parquet",
                 "hazard.pmtiles",
+                "hazard_layers.vrt",
                 "index.json",
                 "metadata.json",
                 "profiles.json",
