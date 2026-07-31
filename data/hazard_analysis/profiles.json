@@ -776,7 +776,7 @@
   "schema_version": 1,
   "severity_levels": {
     "0": {
-      "color": "#4daf4a",
+      "color": "#ffffff",
       "description": "No rule matched the available evidence.",
       "label": "No detected hazard"
     },
