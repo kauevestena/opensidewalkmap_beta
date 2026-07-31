@@ -10,6 +10,7 @@
         "features_wheelchair.geojson",
         "features_wheelchair.parquet",
         "hazard.pmtiles",
+        "hazard_layers.vrt",
         "metadata.json",
         "profiles.json",
         "rules.json",

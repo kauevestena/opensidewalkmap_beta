@@ -10,32 +10,38 @@
 
     
     <div class="topnav" id="stTopnav">
-        <a href="https://kauevestena.github.io/opensidewalkmap_beta/" class="active">Go to Node Home</a>
-    <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/crossings/crossing_types.html">Crossings Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/other_footways/other_footways_subcategory.html">Other Footways Charts</a>
-<a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_category.html">All Data Charts</a>
+        <a href="../../" class="active">Go to Node Home</a>
+    <a href="../../statistics/sidewalks/sidewalks_smoothness_x_surface.html">Sidewalks Charts</a>
+<a href="../../statistics/crossings/crossing_types.html">Crossings Charts</a>
+<a href="../../statistics/kerbs/kerbs_x_paving_x_wheelchair.html">Kerbs Charts</a>
+<a href="../../statistics/other_footways/other_footways_subcategory.html">Other Footways Charts</a>
+<a href="../../statistics/all_data/all_data_category.html">All Data Charts</a>
 
+   <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">
+     <i id="themeIcon" class="fa fa-moon-o"></i>
+   </button>
    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()">
      <i class="fa fa-bars"></i>
    </a>
  </div>
  
  <div class="sidebar">
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_category.html">Layer Feature Count</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_surface.html">Surface Type</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_smoothness.html">Smoothness Condition</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_tactile_paving.html">Tactile Paving Presence</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_lit.html">Lighting Status</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_traffic_calming.html">Traffic Calming Status</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_wheelchair_tag.html">wheelchair=*</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_age.html">Update Age</a>
-  <a href="https://kauevestena.github.io/opensidewalkmap_beta/statistics/all_data/all_data_n_revs.html">Number of Revisions</a>
+  <a href="../../statistics/all_data/all_data_category.html">Layer Feature Count</a>
+  <a href="../../statistics/all_data/all_data_surface.html">Surface Type</a>
+  <a href="../../statistics/all_data/all_data_smoothness.html">Smoothness Condition</a>
+  <a href="../../statistics/all_data/all_data_tactile_paving.html">Tactile Paving Presence</a>
+  <a href="../../statistics/all_data/all_data_lit.html">Lighting Status</a>
+  <a href="../../statistics/all_data/all_data_traffic_calming.html">Traffic Calming Status</a>
+  <a href="../../statistics/all_data/all_data_wheelchair_tag.html">wheelchair=*</a>
+  <a href="../../statistics/all_data/all_data_age.html">Update Age</a>
+  <a href="../../statistics/all_data/all_data_n_revs.html">Number of Revisions</a>
 </div>
 
 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../oswm_codebase/assets/styles/stats_styles.css">
     <script src="../../oswm_codebase/assets/webscripts/stats_funcs.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -56,7 +62,7 @@
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-3cc2a358b80bfc1c195d687f0cdbc107"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "length(km)", "type": "quantitative"}, "tooltip": [{"field": "length(km)", "type": "quantitative"}, {"field": "traffic_calming type", "type": "nominal"}, {"field": "feature count", "type": "quantitative"}], "x": {"field": "traffic_calming type", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "All-Category Traffic Calming Presence", "transform": [{"filter": "include_filter_out_opt || datum['traffic_calming type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-3cc2a358b80bfc1c195d687f0cdbc107": [{"traffic_calming type": "?", "length(km)": 618.8695713064805, "feature count": 11964, "count": 11964}, {"traffic_calming type": "hump", "length(km)": 0.0, "feature count": 1, "count": 1}, {"traffic_calming type": "table", "length(km)": 0.21871232509874378, "feature count": 19, "count": 19}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 24}}, "data": {"name": "data-57f3479f7ba6275bf5e29397d72e4811"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "length(km)", "type": "quantitative"}, "tooltip": [{"field": "feature count", "type": "quantitative"}, {"field": "traffic_calming type", "type": "nominal"}, {"field": "length(km)", "type": "quantitative"}], "x": {"field": "traffic_calming type", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "height": 300, "params": [{"name": "include_filter_out_opt", "bind": {"input": "checkbox", "name": "Include \"?\" (Unknown)"}, "value": true}, {"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "All-Category Traffic Calming Presence", "transform": [{"filter": "include_filter_out_opt || datum['traffic_calming type'] != '?'"}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-57f3479f7ba6275bf5e29397d72e4811": [{"traffic_calming type": "?", "length(km)": 619.1413775215752, "feature count": 11967, "count": 11967}, {"traffic_calming type": "hump", "length(km)": 0.0, "feature count": 1, "count": 1}, {"traffic_calming type": "table", "length(km)": 0.21871232509874378, "feature count": 19, "count": 19}]}};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
@@ -73,6 +79,6 @@
     })(vegaEmbed);
 
   </script>
-<h4 style="padding-left: 14%;font-weight: normal;font-family: sans-serif;"> - Explanation: This chart allows you to visualize the reported presence of <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_calming'>Traffic Calming</a> in the whole data. </h4>
+<div style="padding: 1.5rem 14%;"><h4 style="font-weight: 500;">Explanation:</h4><p style="color: var(--text-muted);">This chart allows you to visualize the reported presence of <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_calming'>Traffic Calming</a> in the whole data.</p></div>
 </body>
 </html>

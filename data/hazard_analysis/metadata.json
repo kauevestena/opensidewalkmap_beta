@@ -1,12 +1,12 @@
 {
   "edge_kind_counts": {
     "crossing": 2096,
-    "footway": 6620,
+    "footway": 6623,
     "sidewalk": 8134,
     "stairs": 366
   },
-  "feature_count": 17216,
-  "generated_at": "2026-07-31T20:46:28.655911+00:00",
+  "feature_count": 17219,
+  "generated_at": "2026-08-02T08:21:47.159770+00:00",
   "profile_audit": {
     "blind": {
       "most_common_decisive_rules": {
@@ -22,7 +22,7 @@
         "surface_ground_earth_dirt": 116
       },
       "severity_counts": {
-        "0": 15415,
+        "0": 15418,
         "1": 197,
         "2": 1453,
         "3": 138,
@@ -30,7 +30,7 @@
       },
       "status_counts": {
         "hazard_detected": 1801,
-        "insufficient_data": 15322,
+        "insufficient_data": 15325,
         "no_detected_hazard": 93
       }
     },
@@ -48,7 +48,7 @@
         "surface_ground_earth_dirt": 122
       },
       "severity_counts": {
-        "0": 15315,
+        "0": 15318,
         "1": 29,
         "2": 1255,
         "3": 605,
@@ -56,7 +56,7 @@
       },
       "status_counts": {
         "hazard_detected": 1901,
-        "insufficient_data": 15221,
+        "insufficient_data": 15224,
         "no_detected_hazard": 94
       }
     },
@@ -74,7 +74,7 @@
         "surface_ground_earth_dirt": 123
       },
       "severity_counts": {
-        "0": 15346,
+        "0": 15349,
         "1": 1822,
         "2": 36,
         "3": 7,
@@ -82,7 +82,7 @@
       },
       "status_counts": {
         "hazard_detected": 1870,
-        "insufficient_data": 15252,
+        "insufficient_data": 15255,
         "no_detected_hazard": 94
       }
     },
@@ -100,7 +100,7 @@
         "surface_ground_earth_dirt": 121
       },
       "severity_counts": {
-        "0": 15308,
+        "0": 15311,
         "1": 0,
         "2": 139,
         "3": 1152,
@@ -108,7 +108,7 @@
       },
       "status_counts": {
         "hazard_detected": 1908,
-        "insufficient_data": 15218,
+        "insufficient_data": 15221,
         "no_detected_hazard": 90
       }
     }
@@ -117,6 +117,7 @@
   "ruleset_version": "0.1.0",
   "schema_version": 1,
   "slope_source_counts": {
+    "copernicus_glo30": 3,
     "direct_osm_numeric": 13,
     "missing": 17203
   },
