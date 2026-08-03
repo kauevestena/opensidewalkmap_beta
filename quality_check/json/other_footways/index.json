@@ -1,11 +1,14 @@
 {
     "folder": "quality_check/json/other_footways",
     "files": [
+        "crossings_lacking_kerbs.json",
         "disjointed_geometries.json",
         "improper_geometries.json",
         "improper_keys.json",
         "invalid_characters.json",
+        "kerb_on_top_of_non_crossing.json",
         "keys_without_wiki.json",
+        "older_than_five_years.json",
         "replaceable_values.json",
         "uncanny_keys.json",
         "wrong_mispelled_or_unlisted_values.json"

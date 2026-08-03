@@ -1,11 +1,14 @@
 {
     "folder": "quality_check/tables/kerbs",
     "files": [
+        "crossings_lacking_kerbs.csv",
         "disjointed_geometries.csv",
         "improper_geometries.csv",
         "improper_keys.csv",
         "invalid_characters.csv",
+        "kerb_on_top_of_non_crossing.csv",
         "keys_without_wiki.csv",
+        "older_than_five_years.csv",
         "replaceable_values.csv",
         "uncanny_keys.csv",
         "wrong_mispelled_or_unlisted_values.csv"
