@@ -6891,11 +6891,12 @@
         "schema_version": 1,
         "node_name": "Curitiba",
         "summary_url": "data/snapshots/node_summary.json",
-        "default_scope": "viewport",
+        "default_scope": "snapshot",
         "themes": {
             "footway_categories": {
                 "id": "footway_categories",
                 "kind": "categorical",
+                "chart": "bar",
                 "label": "Footway Categories",
                 "attribute": "__layer__",
                 "layers": [
@@ -6908,6 +6909,7 @@
                     "informal_footways",
                     "pedestrian_areas"
                 ],
+                "measure": "count",
                 "colors": {
                     "sidewalks": "steelblue",
                     "crossings": "steelblue",
@@ -6925,16 +6927,19 @@
             "crossings_and_kerbs": {
                 "id": "crossings_and_kerbs",
                 "kind": "multi",
+                "chart": "multi",
                 "label": "Crossings and Kerbs",
                 "panels": [
                     {
                         "id": "crossings",
                         "kind": "categorical",
+                        "chart": "bar",
                         "label": "Crossings",
                         "attribute": "crossing",
                         "layers": [
                             "crossings"
                         ],
+                        "measure": "length",
                         "colors": {
                             "traffic_signals": "#1f78b4",
                             "marked": "#a6cee3",
@@ -6951,11 +6956,13 @@
                     {
                         "id": "kerbs",
                         "kind": "categorical",
+                        "chart": "bar",
                         "label": "Kerbs",
                         "attribute": "kerb",
                         "layers": [
                             "kerbs"
                         ],
+                        "measure": "count",
                         "colors": {
                             "flush": "#ffffff",
                             "lowered": "#ffffff",
@@ -6973,11 +6980,13 @@
             "surface": {
                 "id": "surface",
                 "kind": "categorical",
+                "chart": "bar",
                 "label": "Surface",
                 "attribute": "surface",
                 "layers": [
                     "sidewalks"
                 ],
+                "measure": "length",
                 "colors": {
                     "asphalt": "#fb8072",
                     "concrete": "#80b1d3",
@@ -7007,11 +7016,13 @@
             "smoothness": {
                 "id": "smoothness",
                 "kind": "categorical",
+                "chart": "bar",
                 "label": "Smoothness",
                 "attribute": "smoothness",
                 "layers": [
                     "sidewalks"
                 ],
+                "measure": "length",
                 "colors": {
                     "excellent": "#4575b4",
                     "good": "#abd9e9",
@@ -7030,11 +7041,13 @@
             "tactile_paving": {
                 "id": "tactile_paving",
                 "kind": "categorical",
+                "chart": "bar",
                 "label": "Tactile Paving",
                 "attribute": "tactile_paving",
                 "layers": [
                     "sidewalks"
                 ],
+                "measure": "length",
                 "colors": {
                     "yes": "#6146d0",
                     "contrasted": "#6146d0",
@@ -7048,11 +7061,13 @@
             "lit": {
                 "id": "lit",
                 "kind": "categorical",
+                "chart": "bar",
                 "label": "Lighting",
                 "attribute": "lit",
                 "layers": [
                     "sidewalks"
                 ],
+                "measure": "length",
                 "colors": {
                     "yes": "#ffff99",
                     "automatic": "#ffff99",
@@ -7068,11 +7083,13 @@
             "traffic_calming": {
                 "id": "traffic_calming",
                 "kind": "categorical",
+                "chart": "bar",
                 "label": "Traffic Calming",
                 "attribute": "traffic_calming",
                 "layers": [
                     "crossings"
                 ],
+                "measure": "length",
                 "colors": {
                     "table": "#ffff99",
                     "bump": "#ffff99",
@@ -7086,11 +7103,13 @@
             "wheelchair": {
                 "id": "wheelchair",
                 "kind": "categorical",
+                "chart": "bar",
                 "label": "wheelchair=* tag",
                 "attribute": "wheelchair",
                 "layers": [
                     "sidewalks"
                 ],
+                "measure": "length",
                 "colors": {
                     "yes": "#91bfdb",
                     "designated": "#91bfdb",
@@ -7105,6 +7124,7 @@
             "age": {
                 "id": "age",
                 "kind": "numeric",
+                "chart": "histogram",
                 "label": "DQ - Update Age (Y)",
                 "attribute": "age",
                 "layers": [
@@ -7117,6 +7137,7 @@
                     "informal_footways",
                     "pedestrian_areas"
                 ],
+                "measure": "count",
                 "breaks": [
                     0.0,
                     2.0,
@@ -7144,6 +7165,7 @@
             "n_revs": {
                 "id": "n_revs",
                 "kind": "numeric",
+                "chart": "histogram",
                 "label": "DQ - N. of Revs.",
                 "attribute": "n_revs",
                 "layers": [
@@ -7156,6 +7178,327 @@
                     "informal_footways",
                     "pedestrian_areas"
                 ],
+                "measure": "count",
+                "breaks": [
+                    0.0,
+                    5.0,
+                    10.0,
+                    15.0,
+                    20.0,
+                    25.0,
+                    30.0
+                ],
+                "colors": [
+                    "#1d1147",
+                    "#51127c",
+                    "#832681",
+                    "#b73779",
+                    "#e75263",
+                    "#fc8961",
+                    "#fec488"
+                ],
+                "unknown_value": "?",
+                "unknown_color": "#636363",
+                "invalid": {
+                    "operator": "<",
+                    "threshold": 0.0,
+                    "color": "#808080"
+                }
+            }
+        }
+    },
+    "theme_charts": {
+        "schema_version": 1,
+        "node_name": "Curitiba",
+        "summary_url": "data/snapshots/node_summary.json",
+        "default_scope": "snapshot",
+        "themes": {
+            "footway_categories": {
+                "id": "footway_categories",
+                "kind": "categorical",
+                "chart": "bar",
+                "label": "Footway Categories",
+                "attribute": "__layer__",
+                "layers": [
+                    "sidewalks",
+                    "crossings",
+                    "kerbs",
+                    "stairways",
+                    "main_footways",
+                    "potential_footways",
+                    "informal_footways",
+                    "pedestrian_areas"
+                ],
+                "measure": "count",
+                "colors": {
+                    "sidewalks": "steelblue",
+                    "crossings": "steelblue",
+                    "kerbs": "steelblue",
+                    "stairways": "#8a7e2f",
+                    "main_footways": "#299077",
+                    "potential_footways": "#9569a4",
+                    "informal_footways": "#b0645a",
+                    "pedestrian_areas": "steelblue"
+                },
+                "unknown_value": "?",
+                "unknown_color": "#636363",
+                "other_color": "steelblue"
+            },
+            "crossings_and_kerbs": {
+                "id": "crossings_and_kerbs",
+                "kind": "multi",
+                "chart": "multi",
+                "label": "Crossings and Kerbs",
+                "panels": [
+                    {
+                        "id": "crossings",
+                        "kind": "categorical",
+                        "chart": "bar",
+                        "label": "Crossings",
+                        "attribute": "crossing",
+                        "layers": [
+                            "crossings"
+                        ],
+                        "measure": "length",
+                        "colors": {
+                            "traffic_signals": "#1f78b4",
+                            "marked": "#a6cee3",
+                            "zebra": "#a6cee3",
+                            "uncontrolled": "#a6cee3",
+                            "unmarked": "#ffff99",
+                            "no": "#e31a1c",
+                            "?": "gray"
+                        },
+                        "unknown_value": "?",
+                        "unknown_color": "gray",
+                        "other_color": "gray"
+                    },
+                    {
+                        "id": "kerbs",
+                        "kind": "categorical",
+                        "chart": "bar",
+                        "label": "Kerbs",
+                        "attribute": "kerb",
+                        "layers": [
+                            "kerbs"
+                        ],
+                        "measure": "count",
+                        "colors": {
+                            "flush": "#ffffff",
+                            "lowered": "#ffffff",
+                            "rolled": "#808080",
+                            "no": "#bebebe",
+                            "raised": "#000000",
+                            "?": "#d9d9d9"
+                        },
+                        "unknown_value": "?",
+                        "unknown_color": "#d9d9d9",
+                        "other_color": "gray"
+                    }
+                ]
+            },
+            "surface": {
+                "id": "surface",
+                "kind": "categorical",
+                "chart": "bar",
+                "label": "Surface",
+                "attribute": "surface",
+                "layers": [
+                    "sidewalks"
+                ],
+                "measure": "length",
+                "colors": {
+                    "asphalt": "#fb8072",
+                    "concrete": "#80b1d3",
+                    "concrete:plates": "#fccde5",
+                    "paving_stones": "#bebada",
+                    "sett": "#ffed6f",
+                    "cobblestone": "#ffed6f",
+                    "unhewn_cobblestone": "#ffffb3",
+                    "ground": "#fdb462",
+                    "dirt": "#fdb462",
+                    "earth": "#fdb462",
+                    "sand": "#fdb462",
+                    "grass": "#b3de69",
+                    "paved": "#ffffff",
+                    "unpaved": "#d9d9d9",
+                    "gravel": "#bc80bd",
+                    "compacted": "#bc80bd",
+                    "ceramic:tiles": "#bc80bd",
+                    "wood": "#bc80bd",
+                    "metal": "#bc80bd",
+                    "?": "#434343"
+                },
+                "unknown_value": "?",
+                "unknown_color": "#434343",
+                "other_color": "gray"
+            },
+            "smoothness": {
+                "id": "smoothness",
+                "kind": "categorical",
+                "chart": "bar",
+                "label": "Smoothness",
+                "attribute": "smoothness",
+                "layers": [
+                    "sidewalks"
+                ],
+                "measure": "length",
+                "colors": {
+                    "excellent": "#4575b4",
+                    "good": "#abd9e9",
+                    "intermediate": "#ffffbf",
+                    "bad": "#fdae61",
+                    "very_bad": "#fdae61",
+                    "horrible": "#f46d43",
+                    "very_horrible": "#f46d43",
+                    "impassable": "#a50026",
+                    "?": "#434343"
+                },
+                "unknown_value": "?",
+                "unknown_color": "#434343",
+                "other_color": "gray"
+            },
+            "tactile_paving": {
+                "id": "tactile_paving",
+                "kind": "categorical",
+                "chart": "bar",
+                "label": "Tactile Paving",
+                "attribute": "tactile_paving",
+                "layers": [
+                    "sidewalks"
+                ],
+                "measure": "length",
+                "colors": {
+                    "yes": "#6146d0",
+                    "contrasted": "#6146d0",
+                    "no": "#bd1006",
+                    "?": "#717171"
+                },
+                "unknown_value": "?",
+                "unknown_color": "#717171",
+                "other_color": "gray"
+            },
+            "lit": {
+                "id": "lit",
+                "kind": "categorical",
+                "chart": "bar",
+                "label": "Lighting",
+                "attribute": "lit",
+                "layers": [
+                    "sidewalks"
+                ],
+                "measure": "length",
+                "colors": {
+                    "yes": "#ffff99",
+                    "automatic": "#ffff99",
+                    "24/7": "#ffff99",
+                    "no": "#6a3d9a",
+                    "disused": "#6a3d9a",
+                    "?": "#434343"
+                },
+                "unknown_value": "?",
+                "unknown_color": "#434343",
+                "other_color": "gray"
+            },
+            "traffic_calming": {
+                "id": "traffic_calming",
+                "kind": "categorical",
+                "chart": "bar",
+                "label": "Traffic Calming",
+                "attribute": "traffic_calming",
+                "layers": [
+                    "crossings"
+                ],
+                "measure": "length",
+                "colors": {
+                    "table": "#ffff99",
+                    "bump": "#ffff99",
+                    "hump": "#ffff99",
+                    "?": "#63636399"
+                },
+                "unknown_value": "?",
+                "unknown_color": "#63636399",
+                "other_color": "#63636366"
+            },
+            "wheelchair": {
+                "id": "wheelchair",
+                "kind": "categorical",
+                "chart": "bar",
+                "label": "wheelchair=* tag",
+                "attribute": "wheelchair",
+                "layers": [
+                    "sidewalks"
+                ],
+                "measure": "length",
+                "colors": {
+                    "yes": "#91bfdb",
+                    "designated": "#91bfdb",
+                    "limited": "#ffffbf",
+                    "no": "#fc8d59",
+                    "?": "#434343"
+                },
+                "unknown_value": "?",
+                "unknown_color": "#434343",
+                "other_color": "gray"
+            },
+            "age": {
+                "id": "age",
+                "kind": "numeric",
+                "chart": "histogram",
+                "label": "DQ - Update Age (Y)",
+                "attribute": "age",
+                "layers": [
+                    "sidewalks",
+                    "crossings",
+                    "kerbs",
+                    "stairways",
+                    "main_footways",
+                    "potential_footways",
+                    "informal_footways",
+                    "pedestrian_areas"
+                ],
+                "measure": "count",
+                "breaks": [
+                    0.0,
+                    2.0,
+                    4.0,
+                    6.0,
+                    8.0,
+                    10.0
+                ],
+                "colors": [
+                    "#90d743",
+                    "#35b779",
+                    "#21918c",
+                    "#31688e",
+                    "#443983",
+                    "#440154"
+                ],
+                "unknown_value": "?",
+                "unknown_color": "#636363",
+                "invalid": {
+                    "operator": "<",
+                    "threshold": 0.0,
+                    "color": "#808080"
+                }
+            },
+            "n_revs": {
+                "id": "n_revs",
+                "kind": "numeric",
+                "chart": "histogram",
+                "label": "DQ - N. of Revs.",
+                "attribute": "n_revs",
+                "layers": [
+                    "sidewalks",
+                    "crossings",
+                    "kerbs",
+                    "stairways",
+                    "main_footways",
+                    "potential_footways",
+                    "informal_footways",
+                    "pedestrian_areas"
+                ],
+                "measure": "count",
                 "breaks": [
                     0.0,
                     5.0,
