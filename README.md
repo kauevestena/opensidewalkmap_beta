@@ -1,4 +1,4 @@
-# OpenSidewalkMap, <CITYNAME>Curitiba<CITYNAME> node
+# OpenSidewalkMap, <CITYNAME>Milan, Italy<CITYNAME> node
 
 <!-- TODO: README SHALL BE GENERATED AUTOMATICALLY -->
 

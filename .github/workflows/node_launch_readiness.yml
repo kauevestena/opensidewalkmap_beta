@@ -1,0 +1,213 @@
+name: node_launch_readiness
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: node-launch-readiness-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  cold_start:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'agent/milan-global-launch-readiness'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      PYTHONUNBUFFERED: "1"
+      TZ: Europe/Rome
+
+    steps:
+      - name: Check out the selected test branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+          submodules: recursive
+
+      - name: Guard against a main-branch run
+        env:
+          TEST_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
+        run: |
+          if [ "$TEST_REF" = "main" ]; then
+            echo "Launch stress tests must run on an isolated branch."
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: oswm_codebase/requirements.txt
+
+      - name: Install geospatial system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gdal-bin libgdal-dev
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r oswm_codebase/requirements.txt pytest
+          python -m pip check
+
+      - name: Create report directory
+        run: mkdir -p launch-readiness
+
+      - name: Audit inherited template state
+        id: inherited_audit
+        continue-on-error: true
+        run: |
+          python scripts/audit_node_readiness.py \
+            --json launch-readiness/inherited-audit.json \
+            --markdown launch-readiness/inherited-audit.md
+
+      - name: Run Python tests
+        id: python_tests
+        continue-on-error: true
+        run: |
+          set -eo pipefail
+          {
+            python -m unittest scripts/test_node_readiness_tools.py -v
+            PYTHONPATH=oswm_codebase python -m pytest oswm_codebase/tests -q
+          } 2>&1 | tee launch-readiness/python-tests.log
+
+      - name: Run JavaScript module tests
+        id: javascript_tests
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          node --test \
+            oswm_codebase/webmap/theme_charts/theme_charts.test.mjs \
+            oswm_codebase/webmap/snapshot/snapshot_stats.test.mjs \
+            2>&1 | tee launch-readiness/javascript-tests.log
+
+      - name: Remove inherited generated outputs
+        run: |
+          python scripts/reset_node_outputs.py --apply \
+            | tee launch-readiness/reset-report.json
+
+      - name: Patch node source identity
+        run: python oswm_codebase/patch_readme_homepage.py
+
+      - name: Plant obsolete-output sentinels
+        run: |
+          mkdir -p statistics data/tiles
+          printf 'obsolete launch probe\n' > statistics/obsolete_launch_probe.html
+          printf 'obsolete launch probe\n' > data/tiles/obsolete_launch_probe.pmtiles
+
+      - name: Run a timed Milan cold start
+        id: cold_start
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          /usr/bin/time -v -o launch-readiness/cold-start-resources.txt \
+            timeout 150m sh oswm_codebase/runners/daily.sh \
+            2>&1 | tee launch-readiness/cold-start.log
+
+      - name: Validate generated tiles
+        id: tile_validation
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python oswm_codebase/other/auxiliary_scripts/validate_tiles.py \
+            2>&1 | tee launch-readiness/tile-validation.log
+
+      - name: Check stale-output reconciliation
+        id: stale_outputs
+        continue-on-error: true
+        run: |
+          : > launch-readiness/stale-output-check.log
+          failed=0
+          for path in \
+            statistics/obsolete_launch_probe.html \
+            data/tiles/obsolete_launch_probe.pmtiles; do
+            if [ -e "$path" ]; then
+              echo "DANGLING: $path" | tee -a launch-readiness/stale-output-check.log
+              failed=1
+            else
+              echo "REMOVED: $path" | tee -a launch-readiness/stale-output-check.log
+            fi
+          done
+          exit "$failed"
+
+      - name: Audit cold-start products
+        id: final_audit
+        continue-on-error: true
+        run: |
+          python scripts/audit_node_readiness.py --require-generated \
+            --json launch-readiness/final-audit.json \
+            --markdown launch-readiness/final-audit.md
+
+      - name: Record checkout footprint
+        if: always()
+        run: |
+          git status --short > launch-readiness/git-status.txt
+          {
+            du -sh .git oswm_codebase data quality_check statistics statistics_specs hub
+            du -sh --exclude=.git --exclude=oswm_codebase .
+          } > launch-readiness/footprint.txt 2>&1 || true
+          cat launch-readiness/footprint.txt
+
+      - name: Summarize the launch gate
+        if: always()
+        env:
+          INHERITED_AUDIT: ${{ steps.inherited_audit.outcome }}
+          PYTHON_TESTS: ${{ steps.python_tests.outcome }}
+          JAVASCRIPT_TESTS: ${{ steps.javascript_tests.outcome }}
+          COLD_START: ${{ steps.cold_start.outcome }}
+          TILE_VALIDATION: ${{ steps.tile_validation.outcome }}
+          STALE_OUTPUTS: ${{ steps.stale_outputs.outcome }}
+          FINAL_AUDIT: ${{ steps.final_audit.outcome }}
+        run: |
+          {
+            echo "# OSWM node launch-readiness"
+            echo
+            echo "| Gate | Outcome |"
+            echo "|---|---|"
+            echo "| Inherited-state audit | $INHERITED_AUDIT |"
+            echo "| Python tests | $PYTHON_TESTS |"
+            echo "| JavaScript tests | $JAVASCRIPT_TESTS |"
+            echo "| Milan cold start | $COLD_START |"
+            echo "| Tile validation | $TILE_VALIDATION |"
+            echo "| Stale-output reconciliation | $STALE_OUTPUTS |"
+            echo "| Final audit | $FINAL_AUDIT |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload readiness evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-launch-readiness-${{ github.run_id }}
+          path: launch-readiness/
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Enforce the launch gate
+        if: always()
+        env:
+          PYTHON_TESTS: ${{ steps.python_tests.outcome }}
+          JAVASCRIPT_TESTS: ${{ steps.javascript_tests.outcome }}
+          COLD_START: ${{ steps.cold_start.outcome }}
+          TILE_VALIDATION: ${{ steps.tile_validation.outcome }}
+          STALE_OUTPUTS: ${{ steps.stale_outputs.outcome }}
+          FINAL_AUDIT: ${{ steps.final_audit.outcome }}
+        run: |
+          for outcome in \
+            "$PYTHON_TESTS" \
+            "$JAVASCRIPT_TESTS" \
+            "$COLD_START" \
+            "$TILE_VALIDATION" \
+            "$STALE_OUTPUTS" \
+            "$FINAL_AUDIT"; do
+            if [ "$outcome" != "success" ]; then
+              echo "Launch gate failed; inspect the uploaded readiness evidence."
+              exit 1
+            fi
+          done
