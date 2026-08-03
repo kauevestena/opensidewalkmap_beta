@@ -1,24 +1,35 @@
 [
     {
-        "id": 186758796,
-        "user": "Davileci",
-        "uid": 8123953,
-        "comment": "Restore images from Wayback Machine",
-        "created_at": "2026-08-01T11:47:35Z",
-        "changes_count": 721,
+        "id": 186896577,
+        "user": "fluffycupcakes",
+        "uid": 23132852,
+        "comment": "Missing Surface Materials (Agua Verde)",
+        "created_at": "2026-08-03T23:58:14Z",
+        "changes_count": 9,
         "additions": 0,
-        "modifications": 32,
+        "modifications": 9,
         "deletions": 0
     },
     {
-        "id": 186766298,
-        "user": "Secouss",
-        "uid": 1055909,
-        "comment": "Missing Surface Materials (Agua Verde)",
-        "created_at": "2026-08-01T14:35:49Z",
-        "changes_count": 2,
+        "id": 186935634,
+        "user": "luisgustavo1968",
+        "uid": 701711,
+        "comment": "Atualização conversão proibida",
+        "created_at": "2026-08-04T16:42:21Z",
+        "changes_count": 13,
+        "additions": 1,
+        "modifications": 1,
+        "deletions": 0
+    },
+    {
+        "id": 186917174,
+        "user": "MountWanniassa",
+        "uid": 24223258,
+        "comment": "Added access tags near Avenida das Torres #adt",
+        "created_at": "2026-08-04T10:53:07Z",
+        "changes_count": 19,
         "additions": 0,
-        "modifications": 2,
+        "modifications": 1,
         "deletions": 0
     }
 ]

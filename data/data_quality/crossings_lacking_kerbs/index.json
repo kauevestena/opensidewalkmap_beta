@@ -1,0 +1,7 @@
+{
+    "folder": "data/data_quality/crossings_lacking_kerbs",
+    "files": [
+        "crossings_lacking_kerbs.parquet"
+    ],
+    "subfolders": []
+}

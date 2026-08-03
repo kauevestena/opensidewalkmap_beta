@@ -1,0 +1,7 @@
+{
+    "folder": "data/data_quality/kerb_on_top_of_non_crossing",
+    "files": [
+        "kerbs_no_crossing.parquet"
+    ],
+    "subfolders": []
+}

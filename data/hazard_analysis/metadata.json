@@ -1,12 +1,12 @@
 {
   "edge_kind_counts": {
     "crossing": 2096,
-    "footway": 6623,
+    "footway": 6628,
     "sidewalk": 8134,
     "stairs": 366
   },
-  "feature_count": 17219,
-  "generated_at": "2026-08-02T08:21:47.159770+00:00",
+  "feature_count": 17224,
+  "generated_at": "2026-08-05T08:25:44.627565+00:00",
   "profile_audit": {
     "blind": {
       "most_common_decisive_rules": {
@@ -23,13 +23,13 @@
       },
       "severity_counts": {
         "0": 15418,
-        "1": 197,
-        "2": 1453,
+        "1": 200,
+        "2": 1455,
         "3": 138,
         "4": 13
       },
       "status_counts": {
-        "hazard_detected": 1801,
+        "hazard_detected": 1806,
         "insufficient_data": 15325,
         "no_detected_hazard": 93
       }
@@ -50,12 +50,12 @@
       "severity_counts": {
         "0": 15318,
         "1": 29,
-        "2": 1255,
-        "3": 605,
+        "2": 1258,
+        "3": 607,
         "4": 12
       },
       "status_counts": {
-        "hazard_detected": 1901,
+        "hazard_detected": 1906,
         "insufficient_data": 15224,
         "no_detected_hazard": 94
       }
@@ -75,13 +75,13 @@
       },
       "severity_counts": {
         "0": 15349,
-        "1": 1822,
-        "2": 36,
+        "1": 1825,
+        "2": 38,
         "3": 7,
         "4": 5
       },
       "status_counts": {
-        "hazard_detected": 1870,
+        "hazard_detected": 1875,
         "insufficient_data": 15255,
         "no_detected_hazard": 94
       }
@@ -102,12 +102,12 @@
       "severity_counts": {
         "0": 15311,
         "1": 0,
-        "2": 139,
-        "3": 1152,
+        "2": 142,
+        "3": 1154,
         "4": 617
       },
       "status_counts": {
-        "hazard_detected": 1908,
+        "hazard_detected": 1913,
         "insufficient_data": 15221,
         "no_detected_hazard": 90
       }
@@ -117,9 +117,9 @@
   "ruleset_version": "0.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 3,
+    "copernicus_glo30": 12,
     "direct_osm_numeric": 13,
-    "missing": 17203
+    "missing": 17199
   },
   "warnings": [
     "Hazard rules are provisional and require participatory calibration.",
