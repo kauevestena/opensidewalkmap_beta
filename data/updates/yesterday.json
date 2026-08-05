@@ -1,33 +1,11 @@
 [
     {
-        "id": 186896577,
-        "user": "fluffycupcakes",
-        "uid": 23132852,
-        "comment": "Missing Surface Materials (Agua Verde)",
-        "created_at": "2026-08-03T23:58:14Z",
-        "changes_count": 9,
-        "additions": 0,
-        "modifications": 9,
-        "deletions": 0
-    },
-    {
-        "id": 186935634,
-        "user": "luisgustavo1968",
-        "uid": 701711,
-        "comment": "Atualização conversão proibida",
-        "created_at": "2026-08-04T16:42:21Z",
-        "changes_count": 13,
-        "additions": 1,
-        "modifications": 1,
-        "deletions": 0
-    },
-    {
-        "id": 186917174,
-        "user": "MountWanniassa",
-        "uid": 24223258,
-        "comment": "Added access tags near Avenida das Torres #adt",
-        "created_at": "2026-08-04T10:53:07Z",
-        "changes_count": 19,
+        "id": 187151614,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Liberação de alça de retorno do Complexo do Tarumã; criação de prédios e área do DNIT Paraná",
+        "created_at": "2026-08-08T20:13:28Z",
+        "changes_count": 164,
         "additions": 0,
         "modifications": 1,
         "deletions": 0

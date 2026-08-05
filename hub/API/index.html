@@ -169,6 +169,7 @@
             padding: 0.5rem 2rem;
             display: flex;
             gap: 1rem;
+            overflow-x: auto;
         }
 
         .deliverable-tab {
@@ -181,6 +182,8 @@
             transition: all 0.2s ease;
             border: 1px solid transparent;
             user-select: none;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .deliverable-tab:hover {
@@ -687,6 +690,7 @@
     <div class="deliverables-tabs-bar">
         <div class="tabs-container">
             <div class="deliverable-tab active" onclick="switchDeliverable('map_data')" id="tab-map_data">Map Data</div>
+            <div class="deliverable-tab" onclick="switchDeliverable('metadata')" id="tab-metadata">Metadata</div>
             <div class="deliverable-tab" onclick="switchDeliverable('hazard_analysis')" id="tab-hazard_analysis">Hazard Analysis</div>
             <div class="deliverable-tab" onclick="switchDeliverable('data_quality')" id="tab-data_quality">Data Quality</div>
             <div class="deliverable-tab" onclick="switchDeliverable('vega_specs')" id="tab-vega_specs">Vega Chart Specs</div>
@@ -698,7 +702,7 @@
         <div class="sidebar">
             <div class="glass-panel info-card">
                 <h2>Serverless API Details</h2>
-                <p>OSWM exposes processed city datasets as static files hosted on GitHub Pages. Any standard HTTP client can access these files directly.</p>
+                <p>OSWM exposes processed city datasets and their ISO-aligned JSON metadata as static files hosted on GitHub Pages. Every data endpoint links to its metadata record.</p>
                 <div class="base-url-box" id="base-url-display"></div>
             </div>
 
@@ -733,6 +737,7 @@
                 <div style="display: flex; gap: 1rem;">
                     <button class="btn btn-primary" id="btn-try" onclick="executePlaygroundRequest()">Try It Out</button>
                     <button class="btn btn-secondary" id="btn-dl" onclick="downloadEndpointFile()">Download File</button>
+                    <a class="btn btn-secondary" id="btn-metadata" href="#" target="_blank" rel="noopener" style="display: none;">View Metadata</a>
                 </div>
 
                 <!-- Response Viewer -->
@@ -825,7 +830,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Returns the list of all available directories and files under the Map Data deliverable.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/index.json"
   },
   {
     "category": "API Index",
@@ -833,7 +839,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Returns the list of all available directories and files under the Data Quality check report deliverable.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "API Index",
@@ -841,7 +848,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Returns the list of all available directories and files under the Vega Chart Specs visualization deliverable.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Boundaries & Config",
@@ -849,7 +857,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Metadata properties of the study area (name, source, importance, bounds, etc.).",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/boundaries/infos.json.metadata.json"
   },
   {
     "category": "Boundaries & Config",
@@ -857,7 +866,8 @@ print(data)</pre>
     "format": "GeoJSON",
     "description": "Polygon geometry of the study/mapping area boundaries (study boundaries).",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/boundaries/polygon.geojson.metadata.json"
   },
   {
     "category": "Boundaries & Config",
@@ -865,7 +875,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: polygon.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/boundaries/polygon.parquet.metadata.json"
   },
   {
     "category": "Boundaries & Config",
@@ -873,7 +884,179 @@ print(data)</pre>
     "format": "JSON",
     "description": "Full configuration for the webmap, including center coordinates, initial zoom level, layers, MapLibre GL styles, and configurations.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": null
+  },
+  {
+    "category": "Boundaries Metadata",
+    "path": "metadata/boundaries/infos.json.metadata.json",
+    "format": "JSON",
+    "description": "Boundary geometry and descriptive information for the node coverage area. This record describes the JSON distribution at data/boundaries/infos.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Boundaries Metadata",
+    "path": "metadata/boundaries/polygon.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Boundary geometry and descriptive information for the node coverage area. This record describes the GeoJSON distribution at data/boundaries/polygon.geojson.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Boundaries Metadata",
+    "path": "metadata/boundaries/polygon.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Boundary geometry and descriptive information for the node coverage area. This record describes the GeoParquet distribution at data/boundaries/polygon.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/boundaries/index.json",
+    "format": "JSON",
+    "description": "Boundary geometry and descriptive information for the node coverage area. This collection mirrors data/boundaries without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/data_quality/crossings_lacking_kerbs/index.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This collection mirrors data/data_quality/crossings_lacking_kerbs without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/data_quality/disjointed/index.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This collection mirrors data/data_quality/disjointed without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/data_quality/improper_geoms/index.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This collection mirrors data/data_quality/improper_geoms without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/data_quality/index.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This collection mirrors data/data_quality without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/data_quality/kerb_on_top_of_non_crossing/index.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This collection mirrors data/data_quality/kerb_on_top_of_non_crossing without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/hazard_analysis/index.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This collection mirrors data/hazard_analysis without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/processed/index.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This collection mirrors data/processed without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/processed/other_footways/index.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This collection mirrors data/processed/other_footways without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/raw/index.json",
+    "format": "JSON",
+    "description": "Unfiltered pedestrian-network extracts acquired for the configured node area. This collection mirrors data/raw without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/routing/index.json",
+    "format": "JSON",
+    "description": "Routing network, profiles, grades, and generation provenance for pedestrian routing. This collection mirrors data/routing without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/snapshots/index.json",
+    "format": "JSON",
+    "description": "Precomputed summaries used by OSWM web-map charts and printable snapshots. This collection mirrors data/snapshots without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/tiles/index.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This collection mirrors data/tiles without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/updates/index.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This collection mirrors data/updates without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/updates/versioning/index.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This collection mirrors data/updates/versioning without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/vrts/index.json",
+    "format": "JSON",
+    "description": "GDAL VRT descriptors that group and expose OSWM datasets. This collection mirrors data/vrts without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "Crossings Charts",
@@ -881,7 +1064,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Crossing Surface metrics for crossings layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Crossings Charts",
@@ -889,7 +1073,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Crossing Types metrics for crossings layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Crossings Charts",
@@ -897,7 +1082,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Crossings Age metrics for crossings layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Crossings Charts",
@@ -905,7 +1091,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Crossings Length metrics for crossings layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Crossings Charts",
@@ -913,7 +1100,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Crossings N Revs metrics for crossings layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Crossings Charts",
@@ -921,7 +1109,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Crossings Smoothness X Surface metrics for crossings layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -929,7 +1118,8 @@ print(data)</pre>
     "format": "GeoJSON",
     "description": "Asset file: features_blind.geojson",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_blind.geojson.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -937,7 +1127,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: features_blind.parquet",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_blind.parquet.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -945,7 +1136,8 @@ print(data)</pre>
     "format": "GeoJSON",
     "description": "Asset file: features_elderly.geojson",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_elderly.geojson.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -953,7 +1145,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: features_elderly.parquet",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_elderly.parquet.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -961,7 +1154,8 @@ print(data)</pre>
     "format": "GeoJSON",
     "description": "Asset file: features_pedestrian.geojson",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_pedestrian.geojson.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -969,7 +1163,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: features_pedestrian.parquet",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_pedestrian.parquet.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -977,7 +1172,8 @@ print(data)</pre>
     "format": "GeoJSON",
     "description": "Asset file: features_wheelchair.geojson",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_wheelchair.geojson.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -985,7 +1181,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: features_wheelchair.parquet",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_wheelchair.parquet.metadata.json"
   },
   {
     "category": "Data Aging & Versioning",
@@ -993,7 +1190,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Cached metadata for OSM changesets (user, comment, created_at, closed_at) to avoid redundant OSM API hits.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/changeset_cache.json.metadata.json"
   },
   {
     "category": "Data Aging & Versioning",
@@ -1001,7 +1199,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Timestamps recording when different steps of the pipeline last successfully executed.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/registry.json.metadata.json"
   },
   {
     "category": "Data Aging & Versioning",
@@ -1009,7 +1208,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Detailed age tracking metrics for crossing features.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/versioning/crossings_versioning.json.metadata.json"
   },
   {
     "category": "Data Aging & Versioning",
@@ -1017,7 +1217,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Detailed age tracking metrics for kerb features.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/versioning/kerbs_versioning.json.metadata.json"
   },
   {
     "category": "Data Aging & Versioning",
@@ -1025,7 +1226,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Detailed age tracking metrics for other footways layers.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/versioning/other_footways_versioning.json.metadata.json"
   },
   {
     "category": "Data Aging & Versioning",
@@ -1033,7 +1235,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Detailed modification dates, changeset stats, and age metrics for sidewalks.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/versioning/sidewalks_versioning.json.metadata.json"
   },
   {
     "category": "Data Aging & Versioning",
@@ -1041,7 +1244,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Historical log of daily OSM contribution counts (additions, modifications, deletions) for each layer over the last 120 days.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/watcher_history.json.metadata.json"
   },
   {
     "category": "Data Aging & Versioning",
@@ -1049,7 +1253,71 @@ print(data)</pre>
     "format": "JSON",
     "description": "List of OSM changesets touching OSWM interest features that occurred yesterday.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/yesterday.json.metadata.json"
+  },
+  {
+    "category": "Data Quality Metadata",
+    "path": "metadata/data_quality/crossings_lacking_kerbs/crossings_lacking_kerbs.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This record describes the GeoParquet distribution at data/data_quality/crossings_lacking_kerbs/crossings_lacking_kerbs.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Data Quality Metadata",
+    "path": "metadata/data_quality/disjointed/crossings_disjointed.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This record describes the GeoParquet distribution at data/data_quality/disjointed/crossings_disjointed.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Data Quality Metadata",
+    "path": "metadata/data_quality/disjointed/kerbs_disjointed.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This record describes the GeoParquet distribution at data/data_quality/disjointed/kerbs_disjointed.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Data Quality Metadata",
+    "path": "metadata/data_quality/improper_geoms/crossings_improper_geoms.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This record describes the GeoParquet distribution at data/data_quality/improper_geoms/crossings_improper_geoms.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Data Quality Metadata",
+    "path": "metadata/data_quality/improper_geoms/kerbs_improper_geoms.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This record describes the GeoParquet distribution at data/data_quality/improper_geoms/kerbs_improper_geoms.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Data Quality Metadata",
+    "path": "metadata/data_quality/improper_geoms/sidewalks_improper_geoms.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This record describes the GeoParquet distribution at data/data_quality/improper_geoms/sidewalks_improper_geoms.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Data Quality Metadata",
+    "path": "metadata/data_quality/kerb_on_top_of_non_crossing/kerbs_no_crossing.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Spatial outputs identifying potential topology, geometry, or tagging inconsistencies. This record describes the GeoParquet distribution at data/data_quality/kerb_on_top_of_non_crossing/kerbs_no_crossing.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "GDAL VRT Descriptors",
@@ -1057,7 +1325,8 @@ print(data)</pre>
     "format": "XML/VRT",
     "description": "GDAL Virtual Format file linking all processed parquet files together.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/vrts/data.vrt.metadata.json"
   },
   {
     "category": "Global Charts",
@@ -1065,7 +1334,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data Age metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Charts",
@@ -1073,7 +1343,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data Category metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Charts",
@@ -1081,7 +1352,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data Lit metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Charts",
@@ -1089,7 +1361,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data N Revs metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Charts",
@@ -1097,7 +1370,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data Smoothness metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Charts",
@@ -1105,7 +1379,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data Surface metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Charts",
@@ -1113,7 +1388,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data Tactile Paving metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Charts",
@@ -1121,7 +1397,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data Traffic Calming metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Charts",
@@ -1129,7 +1406,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising All Data Wheelchair Tag metrics for all_data layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Global Quality Metrics",
@@ -1137,7 +1415,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "List of quality check category descriptions and metadata.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Global Quality Metrics",
@@ -1145,7 +1424,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Data quality asset file: data.json",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Global Quality Metrics",
@@ -1153,7 +1433,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Summary of tag keys present in the database.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Global Quality Metrics",
@@ -1161,7 +1442,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "List of tag keys missing documentation in the OSM Wiki.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Global Quality Metrics",
@@ -1169,7 +1451,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Unique tag keys and values found across all downloaded features.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Global Quality Metrics",
@@ -1177,7 +1460,179 @@ print(data)</pre>
     "format": "JSON",
     "description": "Predefined list of OSM tag values considered valid by OSWM quality checks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_blind.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_blind.geojson.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_blind.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoParquet distribution at data/hazard_analysis/features_blind.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_elderly.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_elderly.geojson.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_elderly.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoParquet distribution at data/hazard_analysis/features_elderly.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_pedestrian.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_pedestrian.geojson.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_pedestrian.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoParquet distribution at data/hazard_analysis/features_pedestrian.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_wheelchair.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_wheelchair.geojson.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_wheelchair.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoParquet distribution at data/hazard_analysis/features_wheelchair.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/hazard.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the PMTiles distribution at data/hazard_analysis/hazard.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/hazard_layers.vrt.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GDAL VRT distribution at data/hazard_analysis/hazard_layers.vrt.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/metadata.json.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the JSON distribution at data/hazard_analysis/metadata.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/profiles.json.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the JSON distribution at data/hazard_analysis/profiles.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/rules.json.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the JSON distribution at data/hazard_analysis/rules.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/terrain.json.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the JSON distribution at data/hazard_analysis/terrain.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/terrain_blind.png.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the PNG distribution at data/hazard_analysis/terrain_blind.png.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/terrain_elderly.png.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the PNG distribution at data/hazard_analysis/terrain_elderly.png.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/terrain_pedestrian.png.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the PNG distribution at data/hazard_analysis/terrain_pedestrian.png.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/terrain_wheelchair.png.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the PNG distribution at data/hazard_analysis/terrain_wheelchair.png.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/tile_generation_report.json.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the JSON distribution at data/hazard_analysis/tile_generation_report.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "Hazard Assets",
@@ -1185,7 +1640,8 @@ print(data)</pre>
     "format": "XML/VRT",
     "description": "Asset file: hazard_layers.vrt",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/hazard_layers.vrt.metadata.json"
   },
   {
     "category": "Hazard Assets",
@@ -1193,7 +1649,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Asset file: tile_generation_report.json",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/tile_generation_report.json.metadata.json"
   },
   {
     "category": "JSON Quality Checks",
@@ -1201,7 +1658,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Crossings Lacking Kerbs) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1209,7 +1667,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Disjointed Geometries) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1217,7 +1676,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Improper Geometries) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1225,7 +1685,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Improper Keys) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1233,7 +1694,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Invalid Characters) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1241,7 +1703,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Kerb On Top Of Non Crossing) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1249,7 +1712,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Keys Without Wiki) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1257,7 +1721,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Older Than Five Years) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1265,7 +1730,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Replaceable Values) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1273,7 +1739,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Uncanny Keys) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1281,7 +1748,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Wrong Mispelled Or Unlisted Values) for crossings in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1289,7 +1757,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Crossings Lacking Kerbs) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1297,7 +1766,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Disjointed Geometries) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1305,7 +1775,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Improper Geometries) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1313,7 +1784,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Improper Keys) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1321,7 +1793,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Invalid Characters) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1329,7 +1802,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Kerb On Top Of Non Crossing) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1337,7 +1811,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Keys Without Wiki) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1345,7 +1820,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Older Than Five Years) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1353,7 +1829,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Replaceable Values) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1361,7 +1838,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Uncanny Keys) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1369,7 +1847,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Wrong Mispelled Or Unlisted Values) for kerbs in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1377,7 +1856,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Crossings Lacking Kerbs) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1385,7 +1865,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Disjointed Geometries) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1393,7 +1874,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Improper Geometries) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1401,7 +1883,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Improper Keys) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1409,7 +1892,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Invalid Characters) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1417,7 +1901,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Kerb On Top Of Non Crossing) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1425,7 +1910,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Keys Without Wiki) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1433,7 +1919,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Older Than Five Years) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1441,7 +1928,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Replaceable Values) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1449,7 +1937,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Uncanny Keys) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1457,7 +1946,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Wrong Mispelled Or Unlisted Values) for other_footways in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1465,7 +1955,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Crossings Lacking Kerbs) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1473,7 +1964,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Disjointed Geometries) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1481,7 +1973,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Improper Geometries) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1489,7 +1982,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Improper Keys) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1497,7 +1991,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Invalid Characters) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1505,7 +2000,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Kerb On Top Of Non Crossing) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1513,7 +2009,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Keys Without Wiki) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1521,7 +2018,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Older Than Five Years) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1529,7 +2027,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Replaceable Values) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1537,7 +2036,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Uncanny Keys) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "JSON Quality Checks",
@@ -1545,7 +2045,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Validation check results (Wrong Mispelled Or Unlisted Values) for sidewalks in JSON format.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Kerbs Charts",
@@ -1553,7 +2054,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Kerb Tactile Paving metrics for kerbs layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Kerbs Charts",
@@ -1561,7 +2063,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Kerb Types metrics for kerbs layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Kerbs Charts",
@@ -1569,7 +2072,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Kerb Wheelchair Access metrics for kerbs layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Kerbs Charts",
@@ -1577,7 +2081,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Kerbs Age metrics for kerbs layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Kerbs Charts",
@@ -1585,7 +2090,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Kerbs N Revs metrics for kerbs layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Kerbs Charts",
@@ -1593,7 +2099,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Kerbs Surface metrics for kerbs layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Kerbs Charts",
@@ -1601,7 +2108,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Kerbs X Paving X Wheelchair metrics for kerbs layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Map Data Assets",
@@ -1609,7 +2117,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: crossings_lacking_kerbs.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/crossings_lacking_kerbs/crossings_lacking_kerbs.parquet.metadata.json"
   },
   {
     "category": "Map Data Assets",
@@ -1617,7 +2126,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: crossings_disjointed.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/disjointed/crossings_disjointed.parquet.metadata.json"
   },
   {
     "category": "Map Data Assets",
@@ -1625,7 +2135,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: kerbs_disjointed.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/disjointed/kerbs_disjointed.parquet.metadata.json"
   },
   {
     "category": "Map Data Assets",
@@ -1633,7 +2144,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: crossings_improper_geoms.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/improper_geoms/crossings_improper_geoms.parquet.metadata.json"
   },
   {
     "category": "Map Data Assets",
@@ -1641,7 +2153,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: kerbs_improper_geoms.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/improper_geoms/kerbs_improper_geoms.parquet.metadata.json"
   },
   {
     "category": "Map Data Assets",
@@ -1649,7 +2162,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: sidewalks_improper_geoms.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/improper_geoms/sidewalks_improper_geoms.parquet.metadata.json"
   },
   {
     "category": "Map Data Assets",
@@ -1657,7 +2171,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: kerbs_no_crossing.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/kerb_on_top_of_non_crossing/kerbs_no_crossing.parquet.metadata.json"
   },
   {
     "category": "Map Data Assets",
@@ -1665,7 +2180,17 @@ print(data)</pre>
     "format": "JSON",
     "description": "Asset file: node_summary.json",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/snapshots/node_summary.json.metadata.json"
+  },
+  {
+    "category": "Metadata Catalogue",
+    "path": "metadata/index.json",
+    "format": "JSON",
+    "description": "Published data products provided by this OSWM node. This collection mirrors data without changing the source data directory.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "Other Footways Charts",
@@ -1673,7 +2198,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Other Footways Age metrics for other_footways layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Other Footways Charts",
@@ -1681,7 +2207,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Other Footways Length metrics for other_footways layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Other Footways Charts",
@@ -1689,7 +2216,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Other Footways N Revs metrics for other_footways layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Other Footways Charts",
@@ -1697,7 +2225,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Other Footways Smoothness metrics for other_footways layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Other Footways Charts",
@@ -1705,7 +2234,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Other Footways Smoothness X Surface metrics for other_footways layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Other Footways Charts",
@@ -1713,7 +2243,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Other Footways Subcategory metrics for other_footways layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Other Footways Charts",
@@ -1721,7 +2252,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Other Footways Surface metrics for other_footways layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1729,7 +2261,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed pedestrian road crossings in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/crossings.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1737,7 +2270,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed kerb access points at crossings in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/kerbs.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1745,7 +2279,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed other footway features in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/other_footways.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1753,7 +2288,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed informal footways sublayer in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/other_footways/informal_footways.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1761,7 +2297,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed main footways sublayer in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/other_footways/main_footways.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1769,7 +2306,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed pedestrian areas sublayer in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/other_footways/pedestrian_areas.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1777,7 +2315,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed potential footways sublayer in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/other_footways/potential_footways.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1785,7 +2324,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed stairways sublayer in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/other_footways/stairways.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1793,7 +2333,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Asset file: roads_for_completeness.parquet",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/roads_for_completeness.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1801,7 +2342,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Processed and filtered sidewalks in GeoParquet format. Juxtaposed to roads.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/sidewalks.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1809,7 +2351,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Raw crossings dataset directly from OSM (unfiltered) in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/raw/crossings.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1817,7 +2360,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Raw kerbs dataset directly from OSM (unfiltered) in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/raw/kerbs.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1825,7 +2369,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Raw other footways dataset directly from OSM (unfiltered) in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/raw/other_footways.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1833,7 +2378,8 @@ print(data)</pre>
     "format": "GeoParquet",
     "description": "Raw sidewalks dataset directly from OSM (unfiltered) in GeoParquet format.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/raw/sidewalks.parquet.metadata.json"
   },
   {
     "category": "Pedestrian Data (Parquet)",
@@ -1841,7 +2387,134 @@ print(data)</pre>
     "format": "XML/VRT",
     "description": "GDAL Virtual Format file linking all raw parquet files together.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/vrts/data_raw.vrt.metadata.json"
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/crossings.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/crossings.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/kerbs.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/kerbs.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/other_footways.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/other_footways.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/other_footways/informal_footways.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/other_footways/informal_footways.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/other_footways/main_footways.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/other_footways/main_footways.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/other_footways/pedestrian_areas.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/other_footways/pedestrian_areas.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/other_footways/potential_footways.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/other_footways/potential_footways.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/other_footways/stairways.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/other_footways/stairways.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/roads_for_completeness.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/roads_for_completeness.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Processed Metadata",
+    "path": "metadata/processed/sidewalks.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/sidewalks.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Raw Metadata",
+    "path": "metadata/raw/crossings.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Unfiltered pedestrian-network extracts acquired for the configured node area. This record describes the GeoParquet distribution at data/raw/crossings.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Raw Metadata",
+    "path": "metadata/raw/kerbs.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Unfiltered pedestrian-network extracts acquired for the configured node area. This record describes the GeoParquet distribution at data/raw/kerbs.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Raw Metadata",
+    "path": "metadata/raw/other_footways.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Unfiltered pedestrian-network extracts acquired for the configured node area. This record describes the GeoParquet distribution at data/raw/other_footways.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Raw Metadata",
+    "path": "metadata/raw/sidewalks.parquet.metadata.json",
+    "format": "JSON",
+    "description": "Unfiltered pedestrian-network extracts acquired for the configured node area. This record describes the GeoParquet distribution at data/raw/sidewalks.parquet.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "Routing & Demos",
@@ -1849,7 +2522,8 @@ print(data)</pre>
     "format": "GeoJSON",
     "description": "Transitional GeoJSON routing network with compact, directional accessibility grades.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/routing/demo.geojson.metadata.json"
   },
   {
     "category": "Routing & Demos",
@@ -1857,7 +2531,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Routing ruleset provenance, slope-source counts, warnings, and generated grade distributions.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/routing/metadata.json.metadata.json"
   },
   {
     "category": "Routing & Demos",
@@ -1865,7 +2540,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Browser-safe distance/accessibility routing modes, labels, speeds, grade-to-cost multipliers, and event penalties.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/routing/profiles.json.metadata.json"
   },
   {
     "category": "Routing & Demos",
@@ -1873,7 +2549,44 @@ print(data)</pre>
     "format": "JSON",
     "description": "Reusable derived longitudinal slope estimates keyed by edge geometry and provider configuration.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/routing/slope_cache.json.metadata.json"
+  },
+  {
+    "category": "Routing Metadata",
+    "path": "metadata/routing/demo.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Routing network, profiles, grades, and generation provenance for pedestrian routing. This record describes the GeoJSON distribution at data/routing/demo.geojson.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Routing Metadata",
+    "path": "metadata/routing/metadata.json.metadata.json",
+    "format": "JSON",
+    "description": "Routing network, profiles, grades, and generation provenance for pedestrian routing. This record describes the JSON distribution at data/routing/metadata.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Routing Metadata",
+    "path": "metadata/routing/profiles.json.metadata.json",
+    "format": "JSON",
+    "description": "Routing network, profiles, grades, and generation provenance for pedestrian routing. This record describes the JSON distribution at data/routing/profiles.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Routing Metadata",
+    "path": "metadata/routing/slope_cache.json.metadata.json",
+    "format": "JSON",
+    "description": "Routing network, profiles, grades, and generation provenance for pedestrian routing. This record describes the JSON distribution at data/routing/slope_cache.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "Rules & Configuration",
@@ -1881,7 +2594,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Asset file: metadata.json",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/metadata.json.metadata.json"
   },
   {
     "category": "Rules & Configuration",
@@ -1889,7 +2603,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Asset file: profiles.json",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/profiles.json.metadata.json"
   },
   {
     "category": "Rules & Configuration",
@@ -1897,7 +2612,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Asset file: rules.json",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/rules.json.metadata.json"
   },
   {
     "category": "Rules & Configuration",
@@ -1905,7 +2621,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Asset file: terrain.json",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/terrain.json.metadata.json"
   },
   {
     "category": "Sidewalks Charts",
@@ -1913,7 +2630,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks Age metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Sidewalks Charts",
@@ -1921,7 +2639,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks Incline metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Sidewalks Charts",
@@ -1929,7 +2648,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks Length metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Sidewalks Charts",
@@ -1937,7 +2657,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks N Revs metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Sidewalks Charts",
@@ -1945,7 +2666,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks Smoothness metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Sidewalks Charts",
@@ -1953,7 +2675,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks Smoothness X Surface metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Sidewalks Charts",
@@ -1961,7 +2684,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks Surface metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Sidewalks Charts",
@@ -1969,7 +2693,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks Tactile Paving metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Sidewalks Charts",
@@ -1977,7 +2702,17 @@ print(data)</pre>
     "format": "JSON",
     "description": "Vega-Lite JSON chart specification visualising Sidewalks Width metrics for sidewalks layer.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
+  },
+  {
+    "category": "Snapshots Metadata",
+    "path": "metadata/snapshots/node_summary.json.metadata.json",
+    "format": "JSON",
+    "description": "Precomputed summaries used by OSWM web-map charts and printable snapshots. This record describes the JSON distribution at data/snapshots/node_summary.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -1985,7 +2720,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Crossings Lacking Kerbs.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -1993,7 +2729,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Disjointed Geometries.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2001,7 +2738,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Improper Geometries.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2009,7 +2747,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Improper Keys.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2017,7 +2756,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Invalid Characters.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2025,7 +2765,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Kerb On Top Of Non Crossing.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2033,7 +2774,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Keys Without Wiki.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2041,7 +2783,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Older Than Five Years.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2049,7 +2792,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Replaceable Values.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2057,7 +2801,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Uncanny Keys.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2065,7 +2810,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Wrong Mispelled Or Unlisted Values.Csv) for crossings.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2073,7 +2819,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Crossings Lacking Kerbs.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2081,7 +2828,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Disjointed Geometries.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2089,7 +2837,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Improper Geometries.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2097,7 +2846,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Improper Keys.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2105,7 +2855,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Invalid Characters.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2113,7 +2864,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Kerb On Top Of Non Crossing.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2121,7 +2873,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Keys Without Wiki.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2129,7 +2882,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Older Than Five Years.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2137,7 +2891,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Replaceable Values.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2145,7 +2900,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Uncanny Keys.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2153,7 +2909,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Wrong Mispelled Or Unlisted Values.Csv) for kerbs.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2161,7 +2918,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Crossings Lacking Kerbs.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2169,7 +2927,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Disjointed Geometries.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2177,7 +2936,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Improper Geometries.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2185,7 +2945,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Improper Keys.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2193,7 +2954,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Invalid Characters.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2201,7 +2963,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Kerb On Top Of Non Crossing.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2209,7 +2972,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Keys Without Wiki.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2217,7 +2981,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Older Than Five Years.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2225,7 +2990,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Replaceable Values.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2233,7 +2999,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Uncanny Keys.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2241,7 +3008,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Wrong Mispelled Or Unlisted Values.Csv) for other_footways.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2249,7 +3017,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Crossings Lacking Kerbs.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2257,7 +3026,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Disjointed Geometries.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2265,7 +3035,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Improper Geometries.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2273,7 +3044,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Improper Keys.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2281,7 +3053,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Invalid Characters.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2289,7 +3062,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Kerb On Top Of Non Crossing.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2297,7 +3071,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Keys Without Wiki.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2305,7 +3080,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Older Than Five Years.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2313,7 +3089,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Replaceable Values.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2321,7 +3098,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Uncanny Keys.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Table Quality Checks",
@@ -2329,7 +3107,170 @@ print(data)</pre>
     "format": "JSON",
     "description": "Tabular validation report (Wrong Mispelled Or Unlisted Values.Csv) for sidewalks.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/crossings.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the PMTiles distribution at data/tiles/crossings.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/informal_footways.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the PMTiles distribution at data/tiles/informal_footways.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/kerbs.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the PMTiles distribution at data/tiles/kerbs.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/main_footways.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the PMTiles distribution at data/tiles/main_footways.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/pedestrian_areas.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the PMTiles distribution at data/tiles/pedestrian_areas.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/potential_footways.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the PMTiles distribution at data/tiles/potential_footways.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/sidewalks.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the PMTiles distribution at data/tiles/sidewalks.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/stairways.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the PMTiles distribution at data/tiles/stairways.pmtiles.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Tiles Metadata",
+    "path": "metadata/tiles/tile_generation_report.json.metadata.json",
+    "format": "JSON",
+    "description": "PMTiles packages generated for efficient static web-map delivery. This record describes the JSON distribution at data/tiles/tile_generation_report.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/changeset_cache.json.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the JSON distribution at data/updates/changeset_cache.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/index.html.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the HTML distribution at data/updates/index.html.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/registry.json.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the JSON distribution at data/updates/registry.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/versioning/crossings_versioning.json.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the JSON distribution at data/updates/versioning/crossings_versioning.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/versioning/kerbs_versioning.json.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the JSON distribution at data/updates/versioning/kerbs_versioning.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/versioning/other_footways_versioning.json.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the JSON distribution at data/updates/versioning/other_footways_versioning.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/versioning/sidewalks_versioning.json.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the JSON distribution at data/updates/versioning/sidewalks_versioning.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/watcher_history.json.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the JSON distribution at data/updates/watcher_history.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Updates Metadata",
+    "path": "metadata/updates/yesterday.json.metadata.json",
+    "format": "JSON",
+    "description": "Refresh status, OSM changeset monitoring, and feature-version history. This record describes the JSON distribution at data/updates/yesterday.json.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2337,7 +3278,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Vector tile package containing processed crossings.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/crossings.pmtiles.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2345,7 +3287,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Vector tile package containing informal footways.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/informal_footways.pmtiles.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2353,7 +3296,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Vector tile package containing processed kerbs.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/kerbs.pmtiles.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2361,7 +3305,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Vector tile package containing main footways.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/main_footways.pmtiles.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2369,7 +3314,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Vector tile package containing pedestrian areas.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/pedestrian_areas.pmtiles.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2377,7 +3323,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Vector tile package containing potential footways.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/potential_footways.pmtiles.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2385,7 +3332,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Vector tile package containing processed sidewalks for web rendering.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/sidewalks.pmtiles.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2393,7 +3341,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Vector tile package containing stairways.",
     "playground": false,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/stairways.pmtiles.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2401,7 +3350,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Asset file: tile_generation_report.json",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/tile_generation_report.json.metadata.json"
   },
   {
     "category": "Vector Tiles (PMTiles)",
@@ -2409,7 +3359,35 @@ print(data)</pre>
     "format": "XML/VRT",
     "description": "GDAL Virtual Format file referencing tile-oriented datasets.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/vrts/tiles.vrt.metadata.json"
+  },
+  {
+    "category": "Vrts Metadata",
+    "path": "metadata/vrts/data.vrt.metadata.json",
+    "format": "JSON",
+    "description": "GDAL VRT descriptors that group and expose OSWM datasets. This record describes the GDAL VRT distribution at data/vrts/data.vrt.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Vrts Metadata",
+    "path": "metadata/vrts/data_raw.vrt.metadata.json",
+    "format": "JSON",
+    "description": "GDAL VRT descriptors that group and expose OSWM datasets. This record describes the GDAL VRT distribution at data/vrts/data_raw.vrt.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Vrts Metadata",
+    "path": "metadata/vrts/tiles.vrt.metadata.json",
+    "format": "JSON",
+    "description": "GDAL VRT descriptors that group and expose OSWM datasets. This record describes the GDAL VRT distribution at data/vrts/tiles.vrt.",
+    "playground": true,
+    "deliverable": "metadata",
+    "metadata_path": null
   },
   {
     "category": "Web Maps & Assets",
@@ -2417,7 +3395,8 @@ print(data)</pre>
     "format": "PMTiles",
     "description": "Asset file: hazard.pmtiles",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/hazard.pmtiles.metadata.json"
   },
   {
     "category": "Web Maps & Assets",
@@ -2425,7 +3404,8 @@ print(data)</pre>
     "format": "PNG",
     "description": "Asset file: terrain_blind.png",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/terrain_blind.png.metadata.json"
   },
   {
     "category": "Web Maps & Assets",
@@ -2433,7 +3413,8 @@ print(data)</pre>
     "format": "PNG",
     "description": "Asset file: terrain_elderly.png",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/terrain_elderly.png.metadata.json"
   },
   {
     "category": "Web Maps & Assets",
@@ -2441,7 +3422,8 @@ print(data)</pre>
     "format": "PNG",
     "description": "Asset file: terrain_pedestrian.png",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/terrain_pedestrian.png.metadata.json"
   },
   {
     "category": "Web Maps & Assets",
@@ -2449,7 +3431,8 @@ print(data)</pre>
     "format": "PNG",
     "description": "Asset file: terrain_wheelchair.png",
     "playground": false,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/terrain_wheelchair.png.metadata.json"
   },
   {
     "category": "Folder Indexes",
@@ -2457,7 +3440,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'boundaries' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/boundaries/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2465,7 +3449,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'data_quality/crossings_lacking_kerbs' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/crossings_lacking_kerbs/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2473,7 +3458,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'data_quality/disjointed' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/disjointed/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2481,7 +3467,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'data_quality/improper_geoms' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/improper_geoms/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2489,7 +3476,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'data_quality' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2497,7 +3485,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'data_quality/kerb_on_top_of_non_crossing' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/data_quality/kerb_on_top_of_non_crossing/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2505,7 +3494,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'hazard_analysis' folder.",
     "playground": true,
-    "deliverable": "hazard_analysis"
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2513,7 +3503,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'processed' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2521,7 +3512,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'processed/other_footways' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/processed/other_footways/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2529,7 +3521,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'raw' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/raw/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2537,7 +3530,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'routing' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/routing/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2545,7 +3539,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'snapshots' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/snapshots/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2553,7 +3548,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'tiles' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/tiles/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2561,7 +3557,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'updates' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2569,7 +3566,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'updates/versioning' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/updates/versioning/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2577,7 +3575,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'vrts' folder.",
     "playground": true,
-    "deliverable": "map_data"
+    "deliverable": "map_data",
+    "metadata_path": "metadata/vrts/index.json"
   },
   {
     "category": "Folder Indexes",
@@ -2585,7 +3584,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'completeness' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2593,7 +3593,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'json/crossings' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2601,7 +3602,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'json' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2609,7 +3611,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'json/kerbs' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2617,7 +3620,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'json/other_footways' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2625,7 +3629,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'json/sidewalks' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2633,7 +3638,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'tables/crossings' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2641,7 +3647,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'tables' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2649,7 +3656,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'tables/kerbs' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2657,7 +3665,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'tables/other_footways' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2665,7 +3674,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'tables/sidewalks' folder.",
     "playground": true,
-    "deliverable": "data_quality"
+    "deliverable": "data_quality",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2673,7 +3683,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'all_data' folder.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2681,7 +3692,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'crossings' folder.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2689,7 +3701,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'kerbs' folder.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2697,7 +3710,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'other_footways' folder.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   },
   {
     "category": "Folder Indexes",
@@ -2705,7 +3719,8 @@ print(data)</pre>
     "format": "JSON",
     "description": "Folder-level data index describing files and subdirectories available inside the 'sidewalks' folder.",
     "playground": true,
-    "deliverable": "vega_specs"
+    "deliverable": "vega_specs",
+    "metadata_path": null
   }
 ];
 
@@ -2817,6 +3832,15 @@ print(data)</pre>
 
             const fullUrl = baseUrl + ep.path;
             document.getElementById('request-url-input').value = fullUrl;
+
+            const metadataButton = document.getElementById('btn-metadata');
+            if (ep.metadata_path) {
+                metadataButton.href = baseUrl + ep.metadata_path;
+                metadataButton.style.display = 'inline-flex';
+            } else {
+                metadataButton.removeAttribute('href');
+                metadataButton.style.display = 'none';
+            }
 
             // Reset playground response window
             resetPlayground();

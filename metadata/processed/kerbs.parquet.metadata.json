@@ -1,0 +1,143 @@
+{
+  "$schema": "https://raw.githubusercontent.com/kauevestena/oswm_codebase/main/metadata/schemas/oswm-metadata.schema.json",
+  "metadata_profile": {
+    "name": "OSWM Metadata Profile",
+    "version": "1.0.0",
+    "encoding": "application/json",
+    "alignment": "conceptual",
+    "domain": "geographic",
+    "aligned_with": [
+      {
+        "name": "ISO 15836-1:2017",
+        "role": "cross-domain resource description",
+        "url": "https://www.iso.org/standard/71339.html"
+      },
+      {
+        "name": "ISO 19115-1:2014",
+        "role": "geographic metadata fundamentals",
+        "url": "https://www.iso.org/standard/53798.html"
+      },
+      {
+        "name": "ISO 19115-2:2019",
+        "role": "acquisition and processing lineage",
+        "url": "https://www.iso.org/standard/67039.html"
+      },
+      {
+        "name": "ISO 19157-1:2023",
+        "role": "geographic data quality reporting",
+        "url": "https://www.iso.org/standard/78900.html"
+      },
+      {
+        "name": "ISO 19110:2016",
+        "role": "feature catalogue concepts where applicable",
+        "url": "https://www.iso.org/standard/57303.html"
+      }
+    ],
+    "conformance_note": "This is an OSWM JSON application profile. Geographic ISO concepts are applied only to geographic or mixed resources; the profile does not claim conformance to the ISO 19115-3 XML encoding."
+  },
+  "identifier": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/kerbs.parquet.metadata.json",
+  "resource_type": "dataset",
+  "title": "Curitiba — Kerbs",
+  "abstract": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/kerbs.parquet.",
+  "language": "en",
+  "responsible_parties": [
+    {
+      "name": "kauevestena",
+      "role": "pointOfContact",
+      "url": "https://github.com/kauevestena"
+    },
+    {
+      "name": "OpenSidewalkMap",
+      "role": "publisher",
+      "url": "https://github.com/kauevestena/opensidewalkmap_beta"
+    }
+  ],
+  "spatial": {
+    "scope": "node_coverage",
+    "bbox": [
+      -49.38914,
+      -25.6435043,
+      -49.1843182,
+      -25.3449505
+    ],
+    "bbox_order": [
+      "west",
+      "south",
+      "east",
+      "north"
+    ],
+    "reference_system": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
+    "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
+  },
+  "temporal": {
+    "updated": "2026-08-09T05:11:55-03:00",
+    "node_registry": {
+      "Data Fetching": "09/08/2026 05:09:38",
+      "Data Pre-Processing": "09/08/2026 05:09:43",
+      "Webmap Generation": "28/08/2024 07:33:01",
+      "Statistical Charts": "09/08/2026 05:11:55",
+      "Wiki check for keys": "02/08/2026 08:58:41",
+      "Data Quality Tool": "09/08/2026 05:11:42",
+      "Versioning Data": "26/07/2026 08:56:31",
+      "Completeness Analysis": "17/07/2026 21:42:02",
+      "Completeness Analysis (Alt)": "17/07/2026 13:23:15"
+    }
+  },
+  "lineage": {
+    "process_description": "Derived from the node's raw OpenStreetMap extracts using OSWM filtering and normalization rules.",
+    "sources": [
+      "OpenStreetMap",
+      "data/raw"
+    ]
+  },
+  "quality": {
+    "scope": "resource",
+    "standard": "ISO 19157-1:2023",
+    "statement": "The record reports provenance and technical integrity. It does not assert a universal fitness-for-use threshold.",
+    "related_report": "https://kauevestena.github.io/opensidewalkmap_beta/quality_check/index.json"
+  },
+  "rights": {
+    "statement": "Licensing and attribution follow the upstream sources and the specific distribution being described."
+  },
+  "metadata_generation": {
+    "generator": "oswm_codebase.metadata.metadata_generation",
+    "profile_version": "1.0.0",
+    "generated_at": "2026-08-09T05:11:55-03:00",
+    "code": {
+      "repository": "https://github.com/kauevestena/oswm_codebase",
+      "commit": "42d1f4fe32942a27423bc028fef0341a2627139b",
+      "commit_date": "2026-08-05T18:24:38-03:00"
+    },
+    "source_root": "data",
+    "deterministic": true
+  },
+  "distribution": {
+    "resource_path": "data/processed/kerbs.parquet",
+    "access_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/kerbs.parquet",
+    "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/kerbs.parquet",
+    "media_type": "application/vnd.apache.parquet",
+    "format": "GeoParquet",
+    "byte_size": 106028,
+    "checksum": {
+      "algorithm": "SHA-256",
+      "value": "67769faf8123dc341f8b5d74724adc6c4077df2fa3d294c755e00e03c70c7ec2"
+    }
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/kerbs.parquet.metadata.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "describes",
+      "href": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/kerbs.parquet",
+      "type": "application/vnd.apache.parquet"
+    },
+    {
+      "rel": "collection",
+      "href": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/index.json",
+      "type": "application/json"
+    }
+  ]
+}
