@@ -6,7 +6,7 @@
     "stairs": 366
   },
   "feature_count": 17224,
-  "generated_at": "2026-08-05T08:25:44.627565+00:00",
+  "generated_at": "2026-08-08T08:14:03.664561+00:00",
   "profile_audit": {
     "blind": {
       "most_common_decisive_rules": {
@@ -22,15 +22,15 @@
         "surface_ground_earth_dirt": 116
       },
       "severity_counts": {
-        "0": 15418,
-        "1": 200,
+        "0": 15416,
+        "1": 202,
         "2": 1455,
         "3": 138,
         "4": 13
       },
       "status_counts": {
-        "hazard_detected": 1806,
-        "insufficient_data": 15325,
+        "hazard_detected": 1808,
+        "insufficient_data": 15323,
         "no_detected_hazard": 93
       }
     },
@@ -48,15 +48,15 @@
         "surface_ground_earth_dirt": 122
       },
       "severity_counts": {
-        "0": 15318,
+        "0": 15316,
         "1": 29,
-        "2": 1258,
+        "2": 1260,
         "3": 607,
         "4": 12
       },
       "status_counts": {
-        "hazard_detected": 1906,
-        "insufficient_data": 15224,
+        "hazard_detected": 1908,
+        "insufficient_data": 15222,
         "no_detected_hazard": 94
       }
     },
@@ -74,15 +74,15 @@
         "surface_ground_earth_dirt": 123
       },
       "severity_counts": {
-        "0": 15349,
-        "1": 1825,
+        "0": 15347,
+        "1": 1827,
         "2": 38,
         "3": 7,
         "4": 5
       },
       "status_counts": {
-        "hazard_detected": 1875,
-        "insufficient_data": 15255,
+        "hazard_detected": 1877,
+        "insufficient_data": 15253,
         "no_detected_hazard": 94
       }
     },
@@ -100,15 +100,15 @@
         "surface_ground_earth_dirt": 121
       },
       "severity_counts": {
-        "0": 15311,
+        "0": 15309,
         "1": 0,
-        "2": 142,
+        "2": 144,
         "3": 1154,
         "4": 617
       },
       "status_counts": {
-        "hazard_detected": 1913,
-        "insufficient_data": 15221,
+        "hazard_detected": 1915,
+        "insufficient_data": 15219,
         "no_detected_hazard": 90
       }
     }
@@ -117,9 +117,9 @@
   "ruleset_version": "0.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 12,
+    "copernicus_glo30": 14,
     "direct_osm_numeric": 13,
-    "missing": 17199
+    "missing": 17197
   },
   "warnings": [
     "Hazard rules are provisional and require participatory calibration.",

@@ -27,7 +27,7 @@
   "cross_slope_included": false,
   "description": "Contextual unsigned slope potential derived from a global digital surface model. It is not a measurement of sidewalk or cross slope.",
   "directionality": "unsigned contextual potential",
-  "generated_at": "2026-08-05T08:25:44.627080+00:00",
+  "generated_at": "2026-08-08T08:14:03.664144+00:00",
   "height": 1063,
   "license": "Copernicus DEM free licence",
   "license_url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
