@@ -1,32 +1,21 @@
 #!/usr/bin/env python3
-"""Remove generated products inherited from an OSWM template checkout.
-
-The command is intentionally dry-run by default.  It preserves the homepage
-and README source markers used by ``patch_readme_homepage.py`` and never touches
-Git metadata, ``config.py``, or the ``oswm_codebase`` submodule.
-"""
+"""Dry-run-first wrapper around the core OSWM node-initialization contract."""
 
 from __future__ import annotations
 
 import argparse
 import json
-import shutil
+import sys
 from pathlib import Path
 
+NODE_ROOT = Path(__file__).resolve().parents[1]
+if str(NODE_ROOT) not in sys.path:
+    sys.path.insert(0, str(NODE_ROOT))
 
-GENERATED_DIRECTORIES = (
-    "data",
-    "hub",
-    "quality_check",
-    "statistics",
-    "statistics_specs",
-)
-
-GENERATED_FILES = (
-    "map.html",
-    "webmap_params.json",
-    "run_log.txt",
-    "run_log_full.txt",
+from oswm_codebase.node_outputs import (
+    INITIALIZATION_RESET_PATHS,
+    reset_initialization,
+    validate_node_root,
 )
 
 
@@ -35,15 +24,9 @@ def repository_root() -> Path:
 
 
 def validate_root(root: Path) -> None:
-    required = (root / ".git", root / "config.py", root / "oswm_codebase")
-    missing = [str(path) for path in required if not path.exists()]
-    if missing:
-        raise RuntimeError(
-            "Refusing to reset a directory that is not an OSWM node checkout: "
-            + ", ".join(missing)
-        )
-    if root == Path(root.anchor):
-        raise RuntimeError("Refusing to operate on a filesystem root")
+    validate_node_root(root)
+    if not (root / ".git").exists():
+        raise RuntimeError("Refusing to reset a directory without Git metadata")
 
 
 def path_size(path: Path) -> int:
@@ -58,28 +41,18 @@ def path_size(path: Path) -> int:
 
 def reset(root: Path, *, apply: bool) -> dict[str, object]:
     validate_root(root)
-    targets = [root / value for value in (*GENERATED_DIRECTORIES, *GENERATED_FILES)]
+    targets = [root / relative for relative in INITIALIZATION_RESET_PATHS]
     existing = [path for path in targets if path.exists() or path.is_symlink()]
     removed_bytes = sum(path_size(path) for path in existing)
-
-    if apply:
-        for path in existing:
-            if path.is_dir() and not path.is_symlink():
-                shutil.rmtree(path)
-            else:
-                path.unlink()
-
-        updates = root / "data" / "updates"
-        updates.mkdir(parents=True, exist_ok=True)
-        (updates / "registry.json").write_text("{}\n", encoding="utf-8")
-
+    core_report = reset_initialization(root, apply=apply)
     return {
-        "mode": "apply" if apply else "dry-run",
+        "mode": core_report["mode"],
         "root": str(root),
         "target_count": len(existing),
         "bytes": removed_bytes,
-        "paths": [str(path.relative_to(root)) for path in existing],
+        "paths": core_report["paths"],
         "preserved": ["README.md", "index.html", "config.py", "oswm_codebase"],
+        "contract": "oswm_codebase/node_outputs.py",
     }
 
 

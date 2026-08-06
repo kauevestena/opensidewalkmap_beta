@@ -1,259 +1,207 @@
-# OSWM Milan and Global Launch Readiness
+# OSWM Milan pilot and global-launch readiness
 
-## Status
+## Decision
 
-**Current verdict: not ready for a many-node global launch.**
+The repository infrastructure now passes the local launch-readiness gate and
+is suitable for a **controlled, read-only Milan cold-start pilot**. It is not
+yet evidence for a many-node global launch: Milan still needs a successful
+hosted cold start, an idempotent no-change rerun, and a controlled incremental
+update.
 
-The codebase is mature enough for a controlled Milan pilot, but the pilot must
-first prove a clean cold start, a no-change rerun, and an incremental update.
-The repository automation also has blocking history, setup, deployment, and
-timezone problems that should be fixed before nodes are deployed at scale.
+This is an isolated branch of `opensidewalkmap_beta`, intended to become the
+source for a dedicated Milan repository. It deliberately contains no generated
+Milan products and should not be merged into the Curitiba reference node as a
+city-identity change.
 
-This branch is deliberately a clean-room Milan node. Generated products copied
-from the Curitiba template were removed instead of being used as incremental
-state.
-
-## Milan node configuration
+## Reproducible configuration
 
 - City: `Milan, Italy`
 - Short name: `milan`
-- Candidate repository: `kauevestena/opensidewalkmap_milan`
-- OSM municipal boundary: [relation 44915](https://www.openstreetmap.org/relation/44915)
-- Bounding box, in OSWM order `(south, west, north, east)`:
+- Intended repository: `kauevestena/opensidewalkmap_milan`
+- Exact OSM administrative boundary: [relation 44915](https://www.openstreetmap.org/relation/44915)
+- Fallback bounding box in OSWM order `(south, west, north, east)`:
   `(45.3867381, 9.0408867, 45.5358482, 9.2781103)`
 - Initial map center: `(45.4641943, 9.1896346)`
-- Shared codebase pin: `c8e101efded2cf0113e9f862602569d05e354bc3`
+- Metadata timezone: `Europe/Rome`
+- Daily schedule: `17 3 * * *` UTC
+- Weekly schedule: `43 4 * * 0` UTC
+- Shared codebase pin: `01d4bd2f6d1814f8bdd772be1406b1b4d550f8e2`
+- Core launch-readiness branch:
+  <https://github.com/kauevestena/oswm_codebase/tree/agent/global-launch-readiness>
 
-## Files introduced by this branch
+The exact relation prevents fuzzy Nominatim ranking from silently choosing a
+different Milan. The non-default cron values prove that node-specific schedule
+rendering survives managed core synchronization.
 
-- `scripts/reset_node_outputs.py`: dry-run-first removal of generated products
-  inherited from a node template.
-- `scripts/audit_node_readiness.py`: dependency-free checks for configuration,
-  city identity, submodule integrity, workflow safety, output completeness, and
-  GitHub file-size risks.
-- `scripts/test_node_readiness_tools.py`: unit tests for the cleanup and audit
-  helpers.
-- `.github/workflows/node_launch_readiness.yml`: read-only branch/PR stress run
-  that tests a Milan cold start and uploads diagnostic evidence.
+## Old-file finding and cleanup
 
-## Evidence collected
-
-### Template contamination and old files
-
-A config-only clone retained Curitiba boundaries, update state, raw and
-processed data, PMTiles, hazard products, quality-control pages, statistics,
-snapshot summaries, API pages, and embedded URLs.
+A config-only shallow clone was not a clean new node. It retained Curitiba
+boundaries, update state, raw/processed data, PMTiles, hazard and routing
+products, quality pages, statistics, snapshot summaries, static API pages, and
+embedded URLs.
 
 - Generated state selected for removal: `302,483,091` bytes.
-- Tracked generated files removed on this branch: `369`.
-- Approximate bytes explicitly matching Curitiba/template identity before the
+- Tracked generated files removed: `369`.
+- Approximate files explicitly carrying Curitiba/template identity before the
   reset: `221 MB`.
-- Remaining node-level Curitiba/template markers after the reset: `0`.
+- Remaining node-level Curitiba markers after reset: `0`.
 
-The reset preserves `README.md`, `index.html`, `config.py`, Git metadata, and
-the `oswm_codebase` submodule. It recreates only an empty
-`data/updates/registry.json` so the first acquisition is treated as a cold
-start.
+`scripts/reset_node_outputs.py` is dry-run-first and now delegates its path
+contract to `oswm_codebase/node_outputs.py`, so initialization and production
+rebuilds no longer maintain competing cleanup lists. It preserves Git data,
+`README.md`, `index.html`, `config.py`, and the codebase gitlink, then recreates
+only an empty `data/updates/registry.json`.
 
-### Current audit result
+Managed synchronization also removed three dangling workflow files:
 
-After removing inherited city products, the readiness audit reports:
+- `deploy_pages.yml` (superseded by the canonical `pages.yml`);
+- `fix_submodules.yml` (could silently move or recreate the gitlink);
+- `manual_stash.yml` (obsolete and unsafe automation).
 
-- **8 errors**
-- **11 warnings**
+The node-only `node_launch_readiness.yml` was preserved, demonstrating that
+core synchronization no longer replaces the complete workflow directory.
 
-Blocking errors:
+## Core changes exercised by Milan
 
-1. `workflow.force_push`: daily updates amend and force-push repository history.
-2. `workflow.requirements`: `customizable.yml` references a missing root
-   `requirements.txt`.
-3. `workflow.requirements`: `setup.yml` references a missing root
-   `requirements.txt`.
-4. `workflow.requirements`: `special_updates.yml` references a missing root
-   `requirements.txt`.
-5. `runner.masked_failures`: `runners/setup.sh` can exit successfully after all
-   commands fail.
-6. `core.workflow_replacement`: `special_updates.py` deletes node-specific
-   workflows before copying the core workflow directory.
-7. `core.pages_deploy_missing`: the canonical workflow set pushes generated
-   products but has no GitHub Pages deployment.
-8. `timestamps.naive_as_utc`: local naive update timestamps are later
-   interpreted as UTC.
+The node is pinned to the exact remote core feature-branch SHA above. The
+following behavior is active in the copied node workflows:
 
-Warnings cover node/core workflow drift, a manual dispatch hardcoded to `main`,
-the absence of a generated-file size gate, identical schedules across cloned
-nodes, a Brazil-specific timezone, broad `git add .` operations, an unrelated
-Nominatim user agent, and unbounded runtime dependencies.
+- normal commits, fetch/rebase, and non-force pushes;
+- one shared writer concurrency group across setup, daily, weekly, special,
+  custom, and codebase-update workflows;
+- scoped generated-output staging and a 95 MiB staged-file gate;
+- explicit least-privilege GitHub Pages deployment;
+- recorded gitlink checkout rather than an implicit pull of core `main`;
+- exact main-reachable SHA input for future codebase promotion;
+- literal Milan cron rendering from `config.py`;
+- managed-file state in `.oswm-managed-files.json`;
+- fail-fast setup/weekly runners and an error-propagating daily runner;
+- machine-readable cold/generate/rebuild/skip decisions;
+- full derived-output reconciliation, including stale sentinels;
+- UTC ISO timestamps with legacy local-time parsing;
+- exact-relation Nominatim lookup and bounded Overpass failover;
+- exact Python 3.12 runtime/development locks;
+- browser modules that also load under the Node test runner.
 
-### Tests
+## Current local evidence
 
-- Readiness helper tests: **4 passed**.
-- Core Python suite: **68 passed, 3 failed, 1 skipped, 12 subtests passed**.
-- Theme-chart JavaScript suite: **7 passed**.
-- Snapshot JavaScript suite: cannot start in Node because a module imports an
-  `https:` URL.
+The final dependency-free node audit reports:
 
-The three Python failures are webmap theme-chart contract drift involving the
-ECharts renderer, the renamed default scope, and the ECharts module URL.
+- **0 errors**
+- **0 warnings**
+- exact candidate gitlink equals checked-out core SHA
+- all commit-candidate files far below the 95 MiB guard
 
-### Production workflow history
+Tests and static validation:
 
-The current Curitiba node has improved recently, with the latest 20 daily runs
-succeeding. Across the latest 100 runs, however, 77 succeeded and 23 failed.
+- Milan readiness helpers: **4 passed**;
+- core Python suite through the Milan topology: **91 passed, plus 12
+  subtests**;
+- JavaScript module suite: **28 passed**;
+- Milan workflow YAML: all files parse;
+- core runner shell scripts: all parse;
+- rendered workflow tokens: none remain;
+- rendered schedules: daily `17 3 * * *`, weekly `43 4 * * 0`;
+- `git diff --check`: passes.
 
-The successful daily workflow still rewrites history. The run triggered from
-commit `d7a5be9541f10490cf0e4b64efa2da9f0ea91c5b` produced current main commit
-`db057e88aff7baf685bda7f94b565182f54f98da`; both commits have parent
-`22b5f10a83d54eba7d7912e39abbbfb963fdecc9`. This is replacement, not an
-ordinary descendant commit, and makes concurrent work and long-lived PR bases
-unsafe.
+The audit intentionally did not use `--require-generated`, because this branch
+contains no unverified Milan deployment products. That gate must remain red
+until the hosted cold-start job produces them.
 
-Draft [opensidewalkmap_beta PR #17](https://github.com/kauevestena/opensidewalkmap_beta/pull/17)
-contains part of the intended synchronization and normal-push design, but it is
-currently open and non-mergeable and its diff has accumulated generated data.
+## Run the checks locally
 
-### Milan acquisition stress probe
-
-Nominatim resolved `Milan, Italy` to the intended municipal relation and bounds.
-The public Overpass cold-fetch probe was much less encouraging:
-
-- Full OSWM tag union: HTTP `504` from `overpass-api.de`.
-- Highway-only OSWM subset: HTTP `200`, but already `69,954` elements
-  (`69,735` ways and `219` relations).
-- A second public Overpass provider also timed out during the investigation.
-
-This does not prove that OSMnx can never complete the request, but it does show
-that simultaneous cold starts for many nodes must not depend on best-effort
-public endpoints without backoff, staggering, and a fallback data source.
-
-## How to run the local checks
-
-From the node repository root:
+From the node root:
 
 ```bash
-# Inspect what would be removed; this is the default and does not mutate files.
+# Show inherited/generated reset targets without mutation.
 python scripts/reset_node_outputs.py
 
-# Apply the cleanup only when intentionally initializing a new node.
+# Apply only when deliberately initializing a fresh node checkout.
 python scripts/reset_node_outputs.py --apply
 
-# Audit configuration and infrastructure before generation.
+# Re-render the managed workflows from the pinned core and config literals.
+python oswm_codebase/special_updates.py
+
+# Audit infrastructure without requiring products that do not exist yet.
 python scripts/audit_node_readiness.py \
-  --json launch-readiness/audit.json \
-  --markdown launch-readiness/audit.md
+  --json /tmp/oswm-milan-audit.json \
+  --markdown /tmp/oswm-milan-audit.md
 
-# After a full generation, require all deployment products.
-python scripts/audit_node_readiness.py --require-generated \
-  --json launch-readiness/final-audit.json \
-  --markdown launch-readiness/final-audit.md
-
-# Dependency-free tests for the new tools.
+# Dependency-free node helper tests.
 python -m unittest scripts/test_node_readiness_tools.py -v
+
+# After a cold generation, make every deployment product mandatory.
+python scripts/audit_node_readiness.py --require-generated \
+  --json /tmp/oswm-milan-final-audit.json \
+  --markdown /tmp/oswm-milan-final-audit.md
 ```
 
-The audit intentionally returns a nonzero exit code while any blocking error is
-present.
+Core CI uses `oswm_codebase/requirements-dev.txt`, Python 3.12, pytest, and the
+two Node module suites.
 
-## How to run the GitHub-hosted Milan stress test
+## Hosted cold-start procedure
 
-The workflow has `contents: read`, does not push generated products, and does
-not deploy Pages. It performs the following actions in its temporary runner
-checkout:
+`.github/workflows/node_launch_readiness.yml` is read-only: it has
+`contents: read`, never commits, never pushes, and never deploys. In a temporary
+runner checkout it:
 
-1. Audits inherited template state.
-2. Installs the geospatial runtime dependencies.
-3. Runs Python and JavaScript tests.
-4. Removes inherited generated products.
-5. Patches the Milan identity into source pages.
-6. Plants obsolete-output sentinels.
-7. Runs a timed Milan cold start, limited to 150 minutes.
-8. Validates PMTiles and all required generated products.
-9. Checks whether obsolete sentinels survived generation.
-10. Uploads logs, audit reports, resource timing, footprint, and Git status for
-    14 days.
+1. audits the clean node state;
+2. installs the exact development lock;
+3. runs Python, JavaScript, and node-helper tests;
+4. applies the canonical initialization reset;
+5. patches source identity;
+6. plants obsolete-output sentinels;
+7. runs a Milan cold start with a 150-minute inner timeout;
+8. validates PMTiles and all required generated outputs;
+9. requires the sentinels to have disappeared;
+10. uploads logs, timing, disk footprint, audit reports, and Git status for 14
+    days.
 
-Because a newly introduced `workflow_dispatch` workflow cannot be launched
-until the workflow exists on the default branch, this branch also includes a
-narrow pull-request trigger restricted to
-`agent/milan-global-launch-readiness`. Opening or updating a PR from this
-branch starts the stress test. Manual dispatch remains available if the
-workflow is later adopted on the default branch.
+A workflow introduced only on a feature branch cannot be manually dispatched
+until it exists on the default branch. The workflow therefore also has a
+narrow PR trigger for this exact head branch. No PR is created by this work;
+triggering the hosted run remains a deliberate follow-up action.
 
-The first run is expected to be red while the documented infrastructure and
-test failures remain. Its purpose is to produce complete cold-start evidence,
-not to hide known failures.
+## What remains before accepting Milan
 
-## Work remaining before global launch
+1. Review/merge or otherwise promote the core launch-readiness branch, then
+   repin Milan to the resulting tested `main` SHA.
+2. Create the dedicated `opensidewalkmap_milan` repository from this clean
+   branch rather than changing the Curitiba reference node.
+3. Enable the repository's GitHub Pages environment and run the read-only cold
+   gate.
+4. Require nonempty boundary, raw, processed, PMTiles, routing, hazard,
+   snapshot, QC, statistics, metadata, homepage, webmap, and API products.
+5. Confirm no output reaches 95 MiB and capture duration, memory, disk, provider
+   attempts, and final repository size.
+6. Run an immediate second daily cycle; require decision mode `skip` and an
+   idempotent output tree.
+7. Apply a known small OSM fixture/change and prove the incremental watermark
+   and affected products are correct.
+8. Visually verify the deployed homepage, MapLibre themes, chart control,
+   printable snapshot, routing profiles, hazard views, quality pages,
+   statistics, metadata catalogue, and static API links.
 
-### Priority 0: repository and automation safety
+## What remains before a global fleet launch
 
-- Replace amend/force-push daily updates with serialized normal commits,
-  rebase-before-push, and fast-forward-only publication.
-- Rebase or supersede PR #17 with a clean infrastructure-only diff.
-- Make successful codebase synchronization write directly to `main`, while
-  failures create intervention PRs, following the existing OSWM policy.
-- Make every setup command fail the job when it fails.
-- Use `oswm_codebase/requirements.txt` consistently and introduce reproducible
-  dependency constraints or a lock file.
-- Stop `special_updates.py` from replacing the complete workflow directory.
-- Restore an explicit, validated Pages deployment in the canonical workflow.
-- Stage only declared generated paths; do not use broad `git add .` or
-  `git add -A` in production jobs.
+- Provide controlled Overpass or regional-extract capacity. Earlier Milan
+  probing produced a `504` for the full OSWM tag union at a public endpoint,
+  while a highway-only subset already represented about 70,000 elements.
+- Run the same acceptance sequence on at least two geographically and
+  operationally different nodes with distinct schedules.
+- Load-test concurrent codebase promotions and daily writers across pilot
+  repositories.
+- Add fleet observability for node/core SHA, last successful stage, duration,
+  output sizes, provider failures, and Pages deployment state.
+- Decide whether long-term generated assets belong in permanent Git history or
+  a bounded artifact/publication store.
+- Extend bounded provider/circuit-breaker policy to every optional acquisition,
+  OSM changeset, OHSOME history, and Copernicus request.
 
-### Priority 0: correct global node state
+## Acceptance criterion
 
-- Store registry timestamps as timezone-aware UTC ISO-8601 values and migrate
-  existing registry timestamps.
-- Add an explicit OSM relation/area identifier to node configuration so city
-  selection does not depend only on fuzzy place-name ranking.
-- Identify the Nominatim client as OSWM and comply with provider usage policy.
-- Convert the cleanup list into a canonical generated-output manifest shared by
-  initialization, daily reconciliation, audits, and deployment.
-- Ensure each generator removes outputs that are no longer declared. The
-  obsolete-output sentinel check must pass.
-
-### Priority 0: Milan pilot acceptance
-
-- Complete one clean Milan cold start within the workflow timeout.
-- Produce nonempty core PMTiles and all required API, routing, hazard, snapshot,
-  QC, statistics, homepage, and webmap products.
-- Pass the readiness audit with `--require-generated`.
-- Run a second no-change cycle and confirm it is idempotent.
-- Apply a known small OSM change or fixture and confirm the incremental cycle
-  updates only the expected products.
-- Confirm that no output exceeds the 95 MiB pre-push guard.
-- Visually verify the deployed Milan homepage, webmap themes, chart control,
-  snapshot, routing profiles, hazard views, QC pages, statistics, and API links.
-
-### Priority 1: many-node operations
-
-- Stagger schedules per node instead of cloning the same daily and weekly cron
-  times.
-- Add bounded retries, exponential backoff, and provider fallback for
-  Nominatim, Overpass, OHSOME, OSM, Copernicus DEM, and acquisition sources.
-- Evaluate regional extracts, a controlled Overpass instance, or another
-  reproducible bulk source for cold starts.
-- Separate source history from generated deployment artifacts to prevent every
-  node repository from growing indefinitely.
-- Add fleet observability: node version, codebase SHA, last successful stage,
-  product sizes, durations, provider failures, and deployment status.
-- Test concurrent synchronization and daily updates across multiple pilot
-  nodes before broad rollout.
-
-## Launch decision criteria
-
-Milan can be considered a successful pilot only when:
-
-- the cold-start, no-change, and incremental runs all pass;
-- all code and readiness tests are green;
-- the obsolete-output sentinels are removed;
-- no workflow rewrites shared history;
-- the canonical workflow preserves node-specific configuration and deploys
-  Pages explicitly;
-- external-provider failure produces a controlled retry or actionable failure,
-  never a falsely successful run; and
-- a newly cloned node contains no products or identity from its template city.
-
-Global rollout should begin only after the same workflow succeeds on several
-geographically and operationally different pilot nodes with staggered
-schedules.
+Milan is accepted only after cold, no-change, and incremental hosted runs all
+pass; no stale output or foreign city identity remains; the exact tested core
+SHA is recorded; no workflow rewrites history; Pages is visually verified; and
+provider failure is bounded and actionable. Fleet enrollment begins only after
+the same evidence exists for multiple staggered pilots.

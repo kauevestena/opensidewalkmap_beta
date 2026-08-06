@@ -1,57 +1,43 @@
 name: node_setup
 
-# Controls when the workflow will run
 on:
-  # # Triggers the workflow on push or pull request events but only for the "main" branch
-  # push:
-  #   branches: ["main"]
-  # pull_request:
-  #   branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+
+concurrency:
+  group: oswm-node-writer-${{ github.repository }}
+  cancel-in-progress: false
 
 jobs:
   node_setup:
     runs-on: ubuntu-latest
-    # continue-on-error: true
+    timeout-minutes: 120
     steps:
-      #### actions/checkout ____________________________________________________
-      # @see https://github.com/actions/checkout
-      - uses: actions/checkout@v3
-
-      #### setup-python ________________________________________________________
-      # @see https://github.com/actions/setup-python
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
         with:
-          python-version: "3.x"
-          cache: 'pip' # caching pip dependencies
-
-      #### setup submodule____________________________________________________________
-      - run: |
-          git submodule init
-          git submodule update
-          cd oswm_codebase
-          git pull -r https://github.com/kauevestena/oswm_codebase
-          cd ..
-
-      #### setup dependencies __________________________________________________
-      - run: pip install -r requirements.txt
-
-      #### main ________________________________________________________________
-      - run: sh oswm_codebase/runners/setup.sh
-
-      #### upload ______________________________________________________________
-      # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
-      - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git pull
-          git add .
-          git commit -m "node setup commit"
-          git push
+          fetch-depth: 0
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: oswm_codebase/requirements.txt
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gdal-bin libgdal-dev
+      - run: python -m pip install -r oswm_codebase/requirements.txt
+      - run: bash oswm_codebase/runners/setup.sh
+      - name: Commit generated setup files
+        run: |
+          python oswm_codebase/node_outputs.py --root . stage setup
+          python oswm_codebase/node_outputs.py --root . validate-sizes --max-mib 95
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: initialize OSWM node"
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"

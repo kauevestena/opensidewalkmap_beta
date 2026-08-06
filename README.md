@@ -32,3 +32,12 @@ Routing and hazard terrain context uses the globally available Copernicus DEM
 2021 Cloud Optimized GeoTIFFs from the AWS Open Data Registry. GLO-30 is the
 preferred source and GLO-90 is the worldwide fallback. These are surface models
 used as contextual terrain evidence, not surveyed sidewalk or cross slope.
+
+## Milan pilot status
+
+This feature branch is a clean, generated-data-free Milan launch pilot based
+on the `opensidewalkmap_beta` template. It pins an exact shared-core revision,
+OSM relation `44915`, and staggered UTC schedules. See
+[`MILAN_GLOBAL_LAUNCH_READINESS.md`](MILAN_GLOBAL_LAUNCH_READINESS.md) for the
+completed infrastructure audit, cleanup evidence, test commands, hosted cold
+gate, and remaining launch criteria.

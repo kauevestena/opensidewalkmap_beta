@@ -1,31 +1,50 @@
-name: Update oswm_codebase sub-module
+name: Update oswm_codebase submodule
 
-on:            # manual trigger only
+on:
   workflow_dispatch:
+    inputs:
+      revision:
+        description: Exact oswm_codebase commit SHA already tested on main
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oswm-node-writer-${{ github.repository }}
+  cancel-in-progress: false
 
 jobs:
-  bump-submodule:
+  bump_submodule:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout without submodules
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: false
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Initialise sub-module and bump to tip of main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check out the exact main-reachable core revision
+        env:
+          REVISION: ${{ inputs.revision }}
         run: |
-          git submodule sync --recursive
-          git submodule update --init oswm_codebase
-          cd oswm_codebase
-          git fetch origin
-          git checkout -B main origin/main   # always land on branch
-          cd ..
-          git add oswm_codebase
-          git diff --cached --quiet || {
-            git config user.name  "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -m "ci: bump oswm_codebase to latest origin/main ($(date +%Y-%m-%d))"
-            git push --recurse-submodules=on-demand
-          }
+          test -n "$REVISION"
+          rm -rf oswm_codebase
+          git clone --filter=blob:none --no-checkout https://github.com/kauevestena/oswm_codebase.git oswm_codebase
+          git -C oswm_codebase fetch origin main
+          git -C oswm_codebase cat-file -e "$REVISION^{commit}"
+          git -C oswm_codebase merge-base --is-ancestor "$REVISION" origin/main
+          git -C oswm_codebase checkout --detach "$REVISION"
+      - run: python oswm_codebase/special_updates.py
+      - name: Commit the exact tested gitlink
+        run: |
+          git add -- oswm_codebase .github/workflows .oswm-managed-files.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: update oswm_codebase to ${{ inputs.revision }}"
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"

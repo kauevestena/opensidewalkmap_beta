@@ -44,7 +44,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: oswm_codebase/requirements.txt
+          cache-dependency-path: oswm_codebase/requirements-dev.txt
 
       - name: Install geospatial system dependencies
         run: |
@@ -54,7 +54,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r oswm_codebase/requirements.txt pytest
+          python -m pip install -r oswm_codebase/requirements-dev.txt
           python -m pip check
 
       - name: Create report directory

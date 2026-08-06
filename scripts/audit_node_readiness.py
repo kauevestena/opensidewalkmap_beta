@@ -154,6 +154,14 @@ def validate_config(root: Path, config: dict[str, Any], findings: list[Finding])
         add(findings, "error", "config.midpoint", "Configured midpoint is outside BOUNDING_BOX", "config.py")
     if int(config["TILES_MIN_ZOOM"]) > int(config["TILES_MAX_ZOOM"]):
         add(findings, "error", "config.zoom", "TILES_MIN_ZOOM exceeds TILES_MAX_ZOOM", "config.py")
+    relation_id = config.get("OSM_RELATION_ID")
+    if not isinstance(relation_id, int) or relation_id <= 0:
+        add(findings, "error", "config.relation", "OSM_RELATION_ID must be a positive integer", "config.py")
+
+    for setting in ("NODE_DAILY_CRON", "NODE_WEEKLY_CRON"):
+        value = config.get(setting)
+        if not isinstance(value, str) or len(value.split()) != 5:
+            add(findings, "error", "config.cron", f"{setting} must be a five-field cron expression", "config.py")
 
 
 def validate_identity(root: Path, config: dict[str, Any], findings: list[Finding]) -> None:
@@ -251,8 +259,8 @@ def validate_identity(root: Path, config: dict[str, Any], findings: list[Finding
 
 
 def validate_submodule(root: Path, findings: list[Finding]) -> dict[str, str | None]:
-    pinned_line = git_output(root, "ls-tree", "HEAD", "oswm_codebase")
-    pinned = pinned_line.split()[2] if pinned_line and len(pinned_line.split()) >= 3 else None
+    pinned_line = git_output(root, "ls-files", "-s", "--", "oswm_codebase")
+    pinned = pinned_line.split()[1] if pinned_line and len(pinned_line.split()) >= 2 else None
     checked_out = git_output(root, "-C", "oswm_codebase", "rev-parse", "HEAD")
     if pinned is None:
         add(findings, "error", "submodule.pin", "No oswm_codebase gitlink is present", "oswm_codebase")
@@ -269,7 +277,15 @@ def validate_submodule(root: Path, findings: list[Finding]) -> dict[str, str | N
     return {"pinned": pinned, "checked_out": checked_out}
 
 
-def validate_workflows(root: Path, findings: list[Finding]) -> None:
+def render_core_workflow(text: str, config: dict[str, Any]) -> str:
+    return text.replace(
+        "__OSWM_DAILY_CRON__", str(config.get("NODE_DAILY_CRON", "30 7 * * *"))
+    ).replace(
+        "__OSWM_WEEKLY_CRON__", str(config.get("NODE_WEEKLY_CRON", "5 8 * * 0"))
+    )
+
+
+def validate_workflows(root: Path, config: dict[str, Any], findings: list[Finding]) -> None:
     workflow_root = root / ".github/workflows"
     core_root = root / "oswm_codebase/workflows"
     if workflow_root.exists() and core_root.exists():
@@ -277,7 +293,9 @@ def validate_workflows(root: Path, findings: list[Finding]) -> None:
             node_path = workflow_root / core_path.name
             if not node_path.exists():
                 add(findings, "warning", "workflow.missing", "Canonical workflow is absent from the node", str(node_path.relative_to(root)))
-            elif node_path.read_bytes() != core_path.read_bytes():
+            elif node_path.read_text(encoding="utf-8") != render_core_workflow(
+                core_path.read_text(encoding="utf-8"), config
+            ):
                 add(findings, "warning", "workflow.drift", "Node and oswm_codebase workflow copies differ", str(node_path.relative_to(root)))
 
     daily = workflow_root / "data_daily_updating.yml"
@@ -287,7 +305,7 @@ def validate_workflows(root: Path, findings: list[Finding]) -> None:
             add(findings, "error", "workflow.force_push", "Daily updates rewrite main history with amend/force-push", str(daily.relative_to(root)))
         if re.search(r"^\s*ref:\s*main(?:\s+#.*)?$", text, flags=re.MULTILINE):
             add(findings, "warning", "workflow.hardcoded_main", "Manual dispatches always check out main, so feature-branch tests are unsafe", str(daily.relative_to(root)))
-        if "FILE_LIMIT_GUARD" not in text and "100 * 1024 * 1024" not in text:
+        if "validate-sizes" not in text and "FILE_LIMIT_GUARD" not in text and "100 * 1024 * 1024" not in text:
             add(findings, "warning", "workflow.file_limit", "Workflow does not gate generated files before GitHub's 100 MiB hard limit", str(daily.relative_to(root)))
         if re.search(r"cron:\s*[\"']?30 7 \* \* \*[\"']?", text):
             add(
@@ -506,7 +524,7 @@ def main() -> int:
     if not any(item.code == "config.missing" for item in findings):
         validate_identity(root, config, findings)
     submodule = validate_submodule(root, findings)
-    validate_workflows(root, findings)
+    validate_workflows(root, config, findings)
     validate_core_behaviors(root, findings)
     files = validate_files(root, findings, require_generated=args.require_generated)
 
@@ -530,6 +548,9 @@ def main() -> int:
                 "MID_LGT",
                 "TILES_MIN_ZOOM",
                 "TILES_MAX_ZOOM",
+                "OSM_RELATION_ID",
+                "NODE_DAILY_CRON",
+                "NODE_WEEKLY_CRON",
             )
         },
         "submodule": submodule,

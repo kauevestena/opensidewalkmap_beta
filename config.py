@@ -22,6 +22,29 @@ CITY_NAME = "Milan, Italy"
 # simple name, spaces must be replaced by underscores, no special characters, all in lowercase
 CITY_SHORTNAME = "milan"
 
+# Exact municipal boundary and fleet-specific schedules. GitHub cron values
+# use UTC; the managed workflow synchronizer renders these literals without
+# executing this configuration file.
+OSM_RELATION_ID = 44915
+NODE_DAILY_CRON = "17 3 * * *"
+NODE_WEEKLY_CRON = "43 4 * * 0"
+METADATA_TIMEZONE = "Europe/Rome"
+
+NOMINATIM_URL = "https://nominatim.openstreetmap.org"
+NOMINATIM_USER_AGENT = (
+    "OpenSidewalkMap/1.0 (https://github.com/kauevestena/oswm_codebase)"
+)
+NOMINATIM_TIMEOUT_SECONDS = 30
+NOMINATIM_ATTEMPTS = 3
+NOMINATIM_BACKOFF_SECONDS = 2
+
+OVERPASS_ENDPOINTS = (
+    "https://overpass-api.de/api",
+    "https://overpass.kumi.systems/api",
+)
+OVERPASS_ATTEMPTS_PER_ENDPOINT = 2
+OVERPASS_BACKOFF_SECONDS = 5
+
 # username, for adresses
 USERNAME = "kauevestena"
 
