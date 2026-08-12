@@ -172,6 +172,7 @@
             text-align: left;
             padding: 0.75rem 1rem;
             border-bottom: 1px solid var(--card-border);
+            white-space: nowrap;
         }
         th {
             font-weight: 500;
@@ -226,7 +227,7 @@
     <div class="container">
         <div class="glass-panel">
             <h2>Current Status</h2>
-            <p style="color: var(--text-muted); margin-top: 0.5rem;">Last Checked: 2026-08-09T23:52:30Z</p>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Last Checked: 2026-08-12T23:05:22Z</p>
             <div class="status-grid">
                     <div class="status-card">
                     <h3>sidewalks</h3>
@@ -267,7 +268,7 @@
             
             <details>
                 <summary class="collapsible-header">
-                    <span style="font-weight: 500; font-size: 1.1rem;">Yesterday's Changesets</span>
+                    <span style="font-weight: 500; font-size: 1.1rem;">Yesterday's Top 10 Changesets</span>
                 </summary>
                 <div class="collapsible-content">
                     
@@ -278,7 +279,7 @@
                         <th>Changeset ID</th>
                         <th>User</th>
                         <th>Comment</th>
-                        <th>Changes</th>
+                        <th>OSWM Changes</th>
                         <th>Edits (Add/Mod/Del)</th>
                         <th>Links</th>
                     </tr>
@@ -286,46 +287,64 @@
                 <tbody>
         
                 <tr>
-                    <td><code>187153649</code></td>
-                    <td><a href="https://www.openstreetmap.org/user/c674a" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">c674a</a></td>
-                    <td><div class="comment-text" title="add details">add details</div></td>
-                    <td>86</td>
+                    <td><code>187264560</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/gscholz" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">gscholz</a></td>
+                    <td><div class="comment-text" title="Fix overlapping ways">Fix overlapping ways</div></td>
+                    <td>40</td>
                     <td>
-                        <span class="badge badge-add">+4</span>
-                        <span class="badge badge-mod">~5</span>
+                        <span class="badge badge-add">+33</span>
+                        <span class="badge badge-mod">~7</span>
                         <span class="badge badge-del">-0</span>
                     </td>
                     <td>
                         <div class="link-group">
-                            <a href="https://www.openstreetmap.org/changeset/187153649" target="_blank">OSM</a>
-                            <a href="https://osmcha.org/changesets/187153649" target="_blank">OSMCha</a>
+                            <a href="https://www.openstreetmap.org/changeset/187264560" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/187264560" target="_blank">OSMCha</a>
                         </div>
                     </td>
                 </tr>
             
                 <tr>
-                    <td><code>187127394</code></td>
-                    <td><a href="https://www.openstreetmap.org/user/EdoBoo" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">EdoBoo</a></td>
+                    <td><code>187280567</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/Aiman" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">Aiman</a></td>
+                    <td><div class="comment-text" title="+marciapiedi">+marciapiedi</div></td>
+                    <td>5</td>
+                    <td>
+                        <span class="badge badge-add">+5</span>
+                        <span class="badge badge-mod">~0</span>
+                        <span class="badge badge-del">-0</span>
+                    </td>
+                    <td>
+                        <div class="link-group">
+                            <a href="https://www.openstreetmap.org/changeset/187280567" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/187280567" target="_blank">OSMCha</a>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><code>187269911</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/sashokv36" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">sashokv36</a></td>
+                    <td><div class="comment-text" title="Maintained foot access">Maintained foot access</div></td>
+                    <td>3</td>
+                    <td>
+                        <span class="badge badge-add">+0</span>
+                        <span class="badge badge-mod">~3</span>
+                        <span class="badge badge-del">-0</span>
+                    </td>
+                    <td>
+                        <div class="link-group">
+                            <a href="https://www.openstreetmap.org/changeset/187269911" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/187269911" target="_blank">OSMCha</a>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><code>187299623</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/cheero" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">cheero</a></td>
                     <td><div class="comment-text" title="Specify path surfaces">Specify path surfaces</div></td>
-                    <td>7</td>
-                    <td>
-                        <span class="badge badge-add">+1</span>
-                        <span class="badge badge-mod">~5</span>
-                        <span class="badge badge-del">-0</span>
-                    </td>
-                    <td>
-                        <div class="link-group">
-                            <a href="https://www.openstreetmap.org/changeset/187127394" target="_blank">OSM</a>
-                            <a href="https://osmcha.org/changesets/187127394" target="_blank">OSMCha</a>
-                        </div>
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td><code>187134621</code></td>
-                    <td><a href="https://www.openstreetmap.org/user/aa30mom" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">aa30mom</a></td>
-                    <td><div class="comment-text" title="Civici Piazza Trento">Civici Piazza Trento</div></td>
-                    <td>139</td>
+                    <td>2</td>
                     <td>
                         <span class="badge badge-add">+0</span>
                         <span class="badge badge-mod">~2</span>
@@ -333,17 +352,17 @@
                     </td>
                     <td>
                         <div class="link-group">
-                            <a href="https://www.openstreetmap.org/changeset/187134621" target="_blank">OSM</a>
-                            <a href="https://osmcha.org/changesets/187134621" target="_blank">OSMCha</a>
+                            <a href="https://www.openstreetmap.org/changeset/187299623" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/187299623" target="_blank">OSMCha</a>
                         </div>
                     </td>
                 </tr>
             
                 <tr>
-                    <td><code>187136524</code></td>
-                    <td><a href="https://www.openstreetmap.org/user/aa30mom" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">aa30mom</a></td>
-                    <td><div class="comment-text" title="Civici Via Trebbia">Civici Via Trebbia</div></td>
-                    <td>238</td>
+                    <td><code>187304203</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/ottanium" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">ottanium</a></td>
+                    <td><div class="comment-text" title="Specify path surfaces">Specify path surfaces</div></td>
+                    <td>1</td>
                     <td>
                         <span class="badge badge-add">+0</span>
                         <span class="badge badge-mod">~1</span>
@@ -351,17 +370,17 @@
                     </td>
                     <td>
                         <div class="link-group">
-                            <a href="https://www.openstreetmap.org/changeset/187136524" target="_blank">OSM</a>
-                            <a href="https://osmcha.org/changesets/187136524" target="_blank">OSMCha</a>
+                            <a href="https://www.openstreetmap.org/changeset/187304203" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/187304203" target="_blank">OSMCha</a>
                         </div>
                     </td>
                 </tr>
             
                 <tr>
-                    <td><code>187133191</code></td>
-                    <td><a href="https://www.openstreetmap.org/user/aa30mom" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">aa30mom</a></td>
-                    <td><div class="comment-text" title="Civici Via Andrea Palladio">Civici Via Andrea Palladio</div></td>
-                    <td>141</td>
+                    <td><code>187297515</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/cheero" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">cheero</a></td>
+                    <td><div class="comment-text" title="Specify path surfaces">Specify path surfaces</div></td>
+                    <td>1</td>
                     <td>
                         <span class="badge badge-add">+0</span>
                         <span class="badge badge-mod">~1</span>
@@ -369,8 +388,26 @@
                     </td>
                     <td>
                         <div class="link-group">
-                            <a href="https://www.openstreetmap.org/changeset/187133191" target="_blank">OSM</a>
-                            <a href="https://osmcha.org/changesets/187133191" target="_blank">OSMCha</a>
+                            <a href="https://www.openstreetmap.org/changeset/187297515" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/187297515" target="_blank">OSMCha</a>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><code>187279582</code></td>
+                    <td><a href="https://www.openstreetmap.org/user/Aiman" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500;">Aiman</a></td>
+                    <td><div class="comment-text" title="+dettagli, ortopedia, parco">+dettagli, ortopedia, parco</div></td>
+                    <td>1</td>
+                    <td>
+                        <span class="badge badge-add">+1</span>
+                        <span class="badge badge-mod">~0</span>
+                        <span class="badge badge-del">-0</span>
+                    </td>
+                    <td>
+                        <div class="link-group">
+                            <a href="https://www.openstreetmap.org/changeset/187279582" target="_blank">OSM</a>
+                            <a href="https://osmcha.org/changesets/187279582" target="_blank">OSMCha</a>
                         </div>
                     </td>
                 </tr>
@@ -389,7 +426,7 @@
                         <th>User</th>
                         <th>Comment</th>
                         <th>Date</th>
-                        <th>Changes</th>
+                        <th>Total OSM Changes</th>
                         <th>OSWM Deletions</th>
                         <th>Links</th>
                     </tr>

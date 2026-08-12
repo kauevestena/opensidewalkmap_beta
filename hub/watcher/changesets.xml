@@ -4,86 +4,118 @@
     <title>OSWM Watcher Changeset Activity - Milan, Italy</title>
     <link>https://kauevestena.github.io/opensidewalkmap_milan/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Milan, Italy.</description>
-    <lastBuildDate>Sun, 09 Aug 2026 23:52:57 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 23:06:04 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 187153649 by c674a (4 additions, 5 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/187153649</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187153649&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/c674a&quot;&gt;c674a&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; add details&lt;/p&gt;
+        <title>[Activity] OSM Changeset 187264560 by gscholz (33 additions, 7 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187264560</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187264560&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/gscholz&quot;&gt;gscholz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Fix overlapping ways&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-    &lt;li&gt;Additions (creations): 4&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 5&lt;/li&gt;
+    &lt;li&gt;Additions (creations): 33&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 7&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187153649&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187153649&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187264560&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187264560&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 08 Aug 2026 21:15:43 GMT</pubDate>
-        <guid isPermaLink="false">activity_187153649</guid>
+        <pubDate>Tue, 11 Aug 2026 05:56:18 GMT</pubDate>
+        <guid isPermaLink="false">activity_187264560</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 187127394 by EdoBoo (1 additions, 5 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/187127394</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187127394&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/EdoBoo&quot;&gt;EdoBoo&lt;/a&gt;&lt;/p&gt;
+        <title>[Activity] OSM Changeset 187280567 by Aiman (5 additions, 0 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187280567</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187280567&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Aiman&quot;&gt;Aiman&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; +marciapiedi&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 5&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187280567&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187280567&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Aug 2026 11:41:02 GMT</pubDate>
+        <guid isPermaLink="false">activity_187280567</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 187269911 by sashokv36 (0 additions, 3 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187269911</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187269911&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/sashokv36&quot;&gt;sashokv36&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Maintained foot access&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 3&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187269911&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187269911&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Aug 2026 08:13:29 GMT</pubDate>
+        <guid isPermaLink="false">activity_187269911</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 187299623 by cheero (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187299623</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187299623&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/cheero&quot;&gt;cheero&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Specify path surfaces&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 5&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187127394&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187127394&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 08 Aug 2026 10:42:59 GMT</pubDate>
-        <guid isPermaLink="false">activity_187127394</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 187134621 by aa30mom (0 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/187134621</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187134621&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/aa30mom&quot;&gt;aa30mom&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Civici Piazza Trento&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187134621&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187134621&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187299623&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187299623&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 08 Aug 2026 13:32:24 GMT</pubDate>
-        <guid isPermaLink="false">activity_187134621</guid>
+        <pubDate>Tue, 11 Aug 2026 17:35:42 GMT</pubDate>
+        <guid isPermaLink="false">activity_187299623</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 187136524 by aa30mom (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/187136524</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187136524&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/aa30mom&quot;&gt;aa30mom&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Civici Via Trebbia&lt;/p&gt;
+        <title>[Activity] OSM Changeset 187304203 by ottanium (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187304203</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187304203&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/ottanium&quot;&gt;ottanium&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Specify path surfaces&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187136524&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187136524&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187304203&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187304203&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 08 Aug 2026 14:11:08 GMT</pubDate>
-        <guid isPermaLink="false">activity_187136524</guid>
+        <pubDate>Tue, 11 Aug 2026 19:19:52 GMT</pubDate>
+        <guid isPermaLink="false">activity_187304203</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 187133191 by aa30mom (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/187133191</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187133191&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/aa30mom&quot;&gt;aa30mom&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Civici Via Andrea Palladio&lt;/p&gt;
+        <title>[Activity] OSM Changeset 187297515 by cheero (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187297515</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187297515&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/cheero&quot;&gt;cheero&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Specify path surfaces&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187133191&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187133191&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187297515&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187297515&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 08 Aug 2026 13:05:02 GMT</pubDate>
-        <guid isPermaLink="false">activity_187133191</guid>
+        <pubDate>Tue, 11 Aug 2026 16:55:53 GMT</pubDate>
+        <guid isPermaLink="false">activity_187297515</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 187279582 by Aiman (1 additions, 0 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187279582</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187279582&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Aiman&quot;&gt;Aiman&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; +dettagli, ortopedia, parco&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187279582&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187279582&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Aug 2026 11:21:46 GMT</pubDate>
+        <guid isPermaLink="false">activity_187279582</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 183563407 by c674a (29 deletions)</title>
