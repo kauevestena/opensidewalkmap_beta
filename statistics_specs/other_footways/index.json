@@ -1,0 +1,13 @@
+{
+    "folder": "statistics_specs/other_footways",
+    "files": [
+        "other_footways_age.json",
+        "other_footways_length.json",
+        "other_footways_n_revs.json",
+        "other_footways_smoothness.json",
+        "other_footways_smoothness_x_surface.json",
+        "other_footways_subcategory.json",
+        "other_footways_surface.json"
+    ],
+    "subfolders": []
+}

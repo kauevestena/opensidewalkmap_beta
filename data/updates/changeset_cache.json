@@ -1,0 +1,52 @@
+{
+    "183563407": {
+        "id": 183563407,
+        "user": "c674a",
+        "uid": 13697350,
+        "created_at": "2026-06-02T20:21:05Z",
+        "closed_at": "2026-06-02T20:21:06Z",
+        "changes_count": 203,
+        "comment": "add details",
+        "created_by": "iD 2.40.0"
+    },
+    "185207121": {
+        "id": 185207121,
+        "user": "ja+",
+        "uid": 11242131,
+        "created_at": "2026-07-06T15:23:32Z",
+        "closed_at": "2026-07-06T15:23:34Z",
+        "changes_count": 440,
+        "comment": "Dettagli metropolitana Milano",
+        "created_by": "JOSM/1.5 (19555 it)"
+    },
+    "184836444": {
+        "id": 184836444,
+        "user": "Pucciotrex30",
+        "uid": 1801173,
+        "created_at": "2026-06-30T06:32:24Z",
+        "closed_at": "2026-06-30T06:33:14Z",
+        "changes_count": 190,
+        "comment": "https://blog.urbanfile.org/wp-content/uploads/2013/10/Piazza-Stuparich-03.png",
+        "created_by": "iD 2.41.2"
+    },
+    "183848228": {
+        "id": 183848228,
+        "user": "c674a",
+        "uid": 13697350,
+        "created_at": "2026-06-08T21:14:34Z",
+        "closed_at": "2026-06-08T21:14:35Z",
+        "changes_count": 388,
+        "comment": "add details",
+        "created_by": "iD 2.40.0"
+    },
+    "183730964": {
+        "id": 183730964,
+        "user": "c674a",
+        "uid": 13697350,
+        "created_at": "2026-06-06T10:06:31Z",
+        "closed_at": "2026-06-06T10:06:32Z",
+        "changes_count": 239,
+        "comment": "add details",
+        "created_by": "iD 2.40.0"
+    }
+}

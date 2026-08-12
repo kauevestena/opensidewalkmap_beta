@@ -1,0 +1,93 @@
+{
+  "edge_kind_counts": {
+    "crossing": 17606,
+    "footway": 17817,
+    "sidewalk": 21783,
+    "stairs": 2218
+  },
+  "elevation_provider_fingerprint": "a4a4bc7ab35d623e",
+  "feature_count": 59424,
+  "generated_at": "2026-08-09T21:57:13.805325+00:00",
+  "profile_audit": {
+    "blind": {
+      "grade_bands": {
+        "0": 16021,
+        "1-19": 0,
+        "20-39": 859,
+        "40-59": 32892,
+        "60-79": 8118,
+        "80-100": 1534
+      },
+      "maximum_grade": 99,
+      "mean_grade": 40.06,
+      "minimum_grade": 0,
+      "most_common_limiting_factors": {
+        "crossing": 8,
+        "incline": 3442,
+        "kerb_detectability": 341,
+        "lighting": 591,
+        "smoothness": 20111,
+        "surface": 15336,
+        "tactile_paving": 16836,
+        "width": 2759
+      }
+    },
+    "elderly": {
+      "grade_bands": {
+        "0": 4968,
+        "1-19": 3719,
+        "20-39": 4051,
+        "40-59": 40871,
+        "60-79": 5784,
+        "80-100": 31
+      },
+      "maximum_grade": 85,
+      "mean_grade": 45.5,
+      "minimum_grade": 0,
+      "most_common_limiting_factors": {
+        "cross_slope": 52,
+        "crossing": 265,
+        "incline": 9576,
+        "kerb": 2261,
+        "smoothness": 27426,
+        "surface": 16010,
+        "width": 3834
+      }
+    },
+    "wheelchair": {
+      "grade_bands": {
+        "0": 8739,
+        "1-19": 5,
+        "20-39": 3434,
+        "40-59": 46261,
+        "60-79": 985,
+        "80-100": 0
+      },
+      "maximum_grade": 75,
+      "mean_grade": 39.44,
+      "minimum_grade": 0,
+      "most_common_limiting_factors": {
+        "barrier": 2274,
+        "cross_slope": 64,
+        "crossing": 204,
+        "incline": 9015,
+        "kerb": 2304,
+        "smoothness": 26837,
+        "surface": 14912,
+        "width": 3814
+      }
+    }
+  },
+  "ruleset_hash": "90797572d833bc88",
+  "ruleset_version": "1.1.0",
+  "schema_version": 1,
+  "slope_source_counts": {
+    "copernicus_glo30": 59347,
+    "copernicus_glo90": 39,
+    "direct_osm_numeric": 38
+  },
+  "warnings": [
+    "Profile rules are provisional and require participatory calibration.",
+    "Global DEM providers describe terrain trend, not measured sidewalk or cross slope."
+  ]
+}

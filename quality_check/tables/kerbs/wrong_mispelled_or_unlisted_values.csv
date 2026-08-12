@@ -1,0 +1,5 @@
+osm_id,feat_type,key,value,commentary
+9560521488,node,kerb,flush;lowered,"unlisted at accepted/known values, probably wrong/misspelled"
+9560521489,node,kerb,flush;lowered,"unlisted at accepted/known values, probably wrong/misspelled"
+10576797405,node,kerb,lowered;flush,"unlisted at accepted/known values, probably wrong/misspelled"
+1022961785,way,kerb,yes,"unlisted at accepted/known values, probably wrong/misspelled"

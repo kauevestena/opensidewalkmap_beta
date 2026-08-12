@@ -1,0 +1,18 @@
+<OGRVRTDataSource>
+    <OGRVRTLayer name="hazard_pedestrian">
+        <SrcDataSource relativeToVRT="1">features_pedestrian.geojson</SrcDataSource>
+        <SrcLayer>features_pedestrian</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="hazard_wheelchair">
+        <SrcDataSource relativeToVRT="1">features_wheelchair.geojson</SrcDataSource>
+        <SrcLayer>features_wheelchair</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="hazard_blind">
+        <SrcDataSource relativeToVRT="1">features_blind.geojson</SrcDataSource>
+        <SrcLayer>features_blind</SrcLayer>
+    </OGRVRTLayer>
+    <OGRVRTLayer name="hazard_elderly">
+        <SrcDataSource relativeToVRT="1">features_elderly.geojson</SrcDataSource>
+        <SrcLayer>features_elderly</SrcLayer>
+    </OGRVRTLayer>
+</OGRVRTDataSource>

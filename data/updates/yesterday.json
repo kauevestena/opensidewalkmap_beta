@@ -1,0 +1,57 @@
+[
+    {
+        "id": 187153649,
+        "user": "c674a",
+        "uid": 13697350,
+        "comment": "add details",
+        "created_at": "2026-08-08T21:15:43Z",
+        "changes_count": 86,
+        "additions": 4,
+        "modifications": 5,
+        "deletions": 0
+    },
+    {
+        "id": 187127394,
+        "user": "EdoBoo",
+        "uid": 9522091,
+        "comment": "Specify path surfaces",
+        "created_at": "2026-08-08T10:42:59Z",
+        "changes_count": 7,
+        "additions": 1,
+        "modifications": 5,
+        "deletions": 0
+    },
+    {
+        "id": 187134621,
+        "user": "aa30mom",
+        "uid": 13840929,
+        "comment": "Civici Piazza Trento",
+        "created_at": "2026-08-08T13:32:24Z",
+        "changes_count": 139,
+        "additions": 0,
+        "modifications": 2,
+        "deletions": 0
+    },
+    {
+        "id": 187136524,
+        "user": "aa30mom",
+        "uid": 13840929,
+        "comment": "Civici Via Trebbia",
+        "created_at": "2026-08-08T14:11:08Z",
+        "changes_count": 238,
+        "additions": 0,
+        "modifications": 1,
+        "deletions": 0
+    },
+    {
+        "id": 187133191,
+        "user": "aa30mom",
+        "uid": 13840929,
+        "comment": "Civici Via Andrea Palladio",
+        "created_at": "2026-08-08T13:05:02Z",
+        "changes_count": 141,
+        "additions": 0,
+        "modifications": 1,
+        "deletions": 0
+    }
+]

@@ -1,0 +1,12 @@
+{
+    "folder": "data/updates",
+    "files": [
+        "changeset_cache.json",
+        "pipeline_decision.json",
+        "registry.json",
+        "watcher_decision.json",
+        "watcher_history.json",
+        "yesterday.json"
+    ],
+    "subfolders": []
+}

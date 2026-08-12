@@ -1,0 +1,25 @@
+{
+    "folder": "data/hazard_analysis",
+    "files": [
+        "features_blind.geojson",
+        "features_blind.parquet",
+        "features_elderly.geojson",
+        "features_elderly.parquet",
+        "features_pedestrian.geojson",
+        "features_pedestrian.parquet",
+        "features_wheelchair.geojson",
+        "features_wheelchair.parquet",
+        "hazard.pmtiles",
+        "hazard_layers.vrt",
+        "metadata.json",
+        "profiles.json",
+        "rules.json",
+        "terrain.json",
+        "terrain_blind.png",
+        "terrain_elderly.png",
+        "terrain_pedestrian.png",
+        "terrain_wheelchair.png",
+        "tile_generation_report.json"
+    ],
+    "subfolders": []
+}

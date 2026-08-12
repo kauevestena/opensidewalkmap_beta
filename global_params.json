@@ -1,0 +1,13 @@
+{
+    "tile_max_zoom": {
+        "sidewalks": 19,
+        "crossings": 20,
+        "kerbs": 20,
+        "stairways": 20,
+        "main_footways": 19,
+        "potential_footways": 20,
+        "informal_footways": 20,
+        "pedestrian_areas": 20,
+        "hazard": 18
+    }
+}

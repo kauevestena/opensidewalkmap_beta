@@ -1,0 +1,3373 @@
+{
+    "layers": {
+        "sidewalks": [
+            {
+                "date": "2026-03-29",
+                "count": 12,
+                "additions": 0,
+                "modifications": 12,
+                "deletions": 0
+            },
+            {
+                "date": "2026-03-30",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-03-31",
+                "count": 56,
+                "additions": 3,
+                "modifications": 53,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-01",
+                "count": 16,
+                "additions": 0,
+                "modifications": 14,
+                "deletions": 2
+            },
+            {
+                "date": "2026-04-02",
+                "count": 16,
+                "additions": 0,
+                "modifications": 15,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-03",
+                "count": 22,
+                "additions": 0,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-04",
+                "count": 11,
+                "additions": 0,
+                "modifications": 11,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-05",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-06",
+                "count": 28,
+                "additions": 2,
+                "modifications": 23,
+                "deletions": 3
+            },
+            {
+                "date": "2026-04-07",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-08",
+                "count": 8,
+                "additions": 0,
+                "modifications": 8,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-09",
+                "count": 42,
+                "additions": 4,
+                "modifications": 37,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-10",
+                "count": 14,
+                "additions": 0,
+                "modifications": 13,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-11",
+                "count": 10,
+                "additions": 0,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-12",
+                "count": 125,
+                "additions": 7,
+                "modifications": 107,
+                "deletions": 11
+            },
+            {
+                "date": "2026-04-13",
+                "count": 58,
+                "additions": 0,
+                "modifications": 51,
+                "deletions": 7
+            },
+            {
+                "date": "2026-04-14",
+                "count": 89,
+                "additions": 0,
+                "modifications": 89,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-15",
+                "count": 72,
+                "additions": 6,
+                "modifications": 64,
+                "deletions": 2
+            },
+            {
+                "date": "2026-04-16",
+                "count": 107,
+                "additions": 2,
+                "modifications": 28,
+                "deletions": 77
+            },
+            {
+                "date": "2026-04-17",
+                "count": 109,
+                "additions": 37,
+                "modifications": 57,
+                "deletions": 15
+            },
+            {
+                "date": "2026-04-18",
+                "count": 100,
+                "additions": 4,
+                "modifications": 81,
+                "deletions": 15
+            },
+            {
+                "date": "2026-04-19",
+                "count": 27,
+                "additions": 0,
+                "modifications": 27,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-20",
+                "count": 52,
+                "additions": 15,
+                "modifications": 34,
+                "deletions": 3
+            },
+            {
+                "date": "2026-04-21",
+                "count": 18,
+                "additions": 3,
+                "modifications": 15,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-22",
+                "count": 29,
+                "additions": 1,
+                "modifications": 28,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-23",
+                "count": 30,
+                "additions": 0,
+                "modifications": 18,
+                "deletions": 12
+            },
+            {
+                "date": "2026-04-24",
+                "count": 70,
+                "additions": 0,
+                "modifications": 68,
+                "deletions": 2
+            },
+            {
+                "date": "2026-04-25",
+                "count": 16,
+                "additions": 1,
+                "modifications": 9,
+                "deletions": 6
+            },
+            {
+                "date": "2026-04-26",
+                "count": 49,
+                "additions": 5,
+                "modifications": 32,
+                "deletions": 12
+            },
+            {
+                "date": "2026-04-27",
+                "count": 27,
+                "additions": 0,
+                "modifications": 27,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-28",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-29",
+                "count": 281,
+                "additions": 1,
+                "modifications": 280,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-30",
+                "count": 20,
+                "additions": 0,
+                "modifications": 20,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-01",
+                "count": 35,
+                "additions": 3,
+                "modifications": 25,
+                "deletions": 7
+            },
+            {
+                "date": "2026-05-02",
+                "count": 141,
+                "additions": 6,
+                "modifications": 102,
+                "deletions": 33
+            },
+            {
+                "date": "2026-05-03",
+                "count": 34,
+                "additions": 0,
+                "modifications": 34,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-04",
+                "count": 33,
+                "additions": 1,
+                "modifications": 29,
+                "deletions": 3
+            },
+            {
+                "date": "2026-05-05",
+                "count": 17,
+                "additions": 0,
+                "modifications": 17,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-06",
+                "count": 10,
+                "additions": 0,
+                "modifications": 9,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-07",
+                "count": 8,
+                "additions": 0,
+                "modifications": 8,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-08",
+                "count": 32,
+                "additions": 13,
+                "modifications": 15,
+                "deletions": 4
+            },
+            {
+                "date": "2026-05-09",
+                "count": 83,
+                "additions": 8,
+                "modifications": 53,
+                "deletions": 22
+            },
+            {
+                "date": "2026-05-10",
+                "count": 96,
+                "additions": 8,
+                "modifications": 46,
+                "deletions": 42
+            },
+            {
+                "date": "2026-05-11",
+                "count": 21,
+                "additions": 4,
+                "modifications": 14,
+                "deletions": 3
+            },
+            {
+                "date": "2026-05-12",
+                "count": 29,
+                "additions": 1,
+                "modifications": 28,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-13",
+                "count": 52,
+                "additions": 22,
+                "modifications": 30,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-14",
+                "count": 20,
+                "additions": 7,
+                "modifications": 13,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-15",
+                "count": 12,
+                "additions": 1,
+                "modifications": 11,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-16",
+                "count": 22,
+                "additions": 0,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-17",
+                "count": 21,
+                "additions": 0,
+                "modifications": 21,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-18",
+                "count": 14,
+                "additions": 0,
+                "modifications": 14,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-19",
+                "count": 176,
+                "additions": 0,
+                "modifications": 176,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-20",
+                "count": 27,
+                "additions": 4,
+                "modifications": 23,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-21",
+                "count": 18,
+                "additions": 0,
+                "modifications": 18,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-22",
+                "count": 13,
+                "additions": 0,
+                "modifications": 13,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-23",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-24",
+                "count": 31,
+                "additions": 0,
+                "modifications": 31,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-25",
+                "count": 24,
+                "additions": 4,
+                "modifications": 20,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-26",
+                "count": 45,
+                "additions": 0,
+                "modifications": 45,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-27",
+                "count": 23,
+                "additions": 0,
+                "modifications": 22,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-28",
+                "count": 3,
+                "additions": 0,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-29",
+                "count": 16,
+                "additions": 5,
+                "modifications": 11,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-30",
+                "count": 25,
+                "additions": 0,
+                "modifications": 25,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-31",
+                "count": 53,
+                "additions": 0,
+                "modifications": 53,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-01",
+                "count": 36,
+                "additions": 8,
+                "modifications": 27,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-02",
+                "count": 48,
+                "additions": 6,
+                "modifications": 41,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-03",
+                "count": 15,
+                "additions": 0,
+                "modifications": 13,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-04",
+                "count": 72,
+                "additions": 15,
+                "modifications": 53,
+                "deletions": 4
+            },
+            {
+                "date": "2026-06-05",
+                "count": 21,
+                "additions": 4,
+                "modifications": 8,
+                "deletions": 9
+            },
+            {
+                "date": "2026-06-06",
+                "count": 102,
+                "additions": 2,
+                "modifications": 38,
+                "deletions": 62
+            },
+            {
+                "date": "2026-06-07",
+                "count": 102,
+                "additions": 7,
+                "modifications": 58,
+                "deletions": 37
+            },
+            {
+                "date": "2026-06-08",
+                "count": 51,
+                "additions": 3,
+                "modifications": 43,
+                "deletions": 5
+            },
+            {
+                "date": "2026-06-09",
+                "count": 16,
+                "additions": 0,
+                "modifications": 16,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-10",
+                "count": 70,
+                "additions": 7,
+                "modifications": 61,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-11",
+                "count": 74,
+                "additions": 1,
+                "modifications": 61,
+                "deletions": 12
+            },
+            {
+                "date": "2026-06-12",
+                "count": 4,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-13",
+                "count": 55,
+                "additions": 6,
+                "modifications": 44,
+                "deletions": 5
+            },
+            {
+                "date": "2026-06-14",
+                "count": 42,
+                "additions": 1,
+                "modifications": 29,
+                "deletions": 12
+            },
+            {
+                "date": "2026-06-15",
+                "count": 43,
+                "additions": 6,
+                "modifications": 27,
+                "deletions": 10
+            },
+            {
+                "date": "2026-06-16",
+                "count": 5,
+                "additions": 1,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-17",
+                "count": 87,
+                "additions": 2,
+                "modifications": 81,
+                "deletions": 4
+            },
+            {
+                "date": "2026-06-18",
+                "count": 26,
+                "additions": 1,
+                "modifications": 8,
+                "deletions": 17
+            },
+            {
+                "date": "2026-06-19",
+                "count": 147,
+                "additions": 13,
+                "modifications": 128,
+                "deletions": 6
+            },
+            {
+                "date": "2026-06-20",
+                "count": 88,
+                "additions": 15,
+                "modifications": 71,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-21",
+                "count": 90,
+                "additions": 28,
+                "modifications": 61,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-22",
+                "count": 12,
+                "additions": 2,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-23",
+                "count": 11,
+                "additions": 4,
+                "modifications": 7,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-24",
+                "count": 27,
+                "additions": 3,
+                "modifications": 23,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-25",
+                "count": 37,
+                "additions": 7,
+                "modifications": 28,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-26",
+                "count": 51,
+                "additions": 4,
+                "modifications": 32,
+                "deletions": 15
+            },
+            {
+                "date": "2026-06-27",
+                "count": 18,
+                "additions": 0,
+                "modifications": 18,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-28",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-29",
+                "count": 17,
+                "additions": 1,
+                "modifications": 16,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-30",
+                "count": 38,
+                "additions": 5,
+                "modifications": 29,
+                "deletions": 4
+            },
+            {
+                "date": "2026-07-01",
+                "count": 31,
+                "additions": 1,
+                "modifications": 29,
+                "deletions": 1
+            },
+            {
+                "date": "2026-07-02",
+                "count": 32,
+                "additions": 3,
+                "modifications": 22,
+                "deletions": 7
+            },
+            {
+                "date": "2026-07-03",
+                "count": 39,
+                "additions": 7,
+                "modifications": 32,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-04",
+                "count": 15,
+                "additions": 0,
+                "modifications": 15,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-05",
+                "count": 62,
+                "additions": 6,
+                "modifications": 53,
+                "deletions": 3
+            },
+            {
+                "date": "2026-07-06",
+                "count": 12,
+                "additions": 0,
+                "modifications": 12,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-07",
+                "count": 17,
+                "additions": 0,
+                "modifications": 17,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-08",
+                "count": 11,
+                "additions": 0,
+                "modifications": 10,
+                "deletions": 1
+            },
+            {
+                "date": "2026-07-09",
+                "count": 16,
+                "additions": 0,
+                "modifications": 16,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-10",
+                "count": 11,
+                "additions": 0,
+                "modifications": 11,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-11",
+                "count": 9,
+                "additions": 0,
+                "modifications": 9,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-12",
+                "count": 66,
+                "additions": 19,
+                "modifications": 40,
+                "deletions": 7
+            },
+            {
+                "date": "2026-07-13",
+                "count": 9,
+                "additions": 0,
+                "modifications": 9,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-14",
+                "count": 35,
+                "additions": 0,
+                "modifications": 35,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-15",
+                "count": 6,
+                "additions": 1,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-16",
+                "count": 29,
+                "additions": 1,
+                "modifications": 28,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-17",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-18",
+                "count": 14,
+                "additions": 1,
+                "modifications": 12,
+                "deletions": 1
+            },
+            {
+                "date": "2026-07-19",
+                "count": 4,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-20",
+                "count": 11,
+                "additions": 2,
+                "modifications": 9,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-21",
+                "count": 14,
+                "additions": 0,
+                "modifications": 14,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-22",
+                "count": 58,
+                "additions": 0,
+                "modifications": 58,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-23",
+                "count": 17,
+                "additions": 0,
+                "modifications": 17,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-24",
+                "count": 7,
+                "additions": 0,
+                "modifications": 7,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-25",
+                "count": 52,
+                "additions": 10,
+                "modifications": 37,
+                "deletions": 5
+            },
+            {
+                "date": "2026-07-26",
+                "count": 18,
+                "additions": 0,
+                "modifications": 17,
+                "deletions": 1
+            }
+        ],
+        "crossings": [
+            {
+                "date": "2026-03-29",
+                "count": 11,
+                "additions": 8,
+                "modifications": 2,
+                "deletions": 1
+            },
+            {
+                "date": "2026-03-30",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-03-31",
+                "count": 4,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-01",
+                "count": 19,
+                "additions": 0,
+                "modifications": 15,
+                "deletions": 4
+            },
+            {
+                "date": "2026-04-02",
+                "count": 19,
+                "additions": 1,
+                "modifications": 17,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-03",
+                "count": 14,
+                "additions": 0,
+                "modifications": 14,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-04",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-05",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-06",
+                "count": 4,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-07",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-08",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-09",
+                "count": 19,
+                "additions": 2,
+                "modifications": 17,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-10",
+                "count": 4,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-11",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-12",
+                "count": 71,
+                "additions": 11,
+                "modifications": 59,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-13",
+                "count": 48,
+                "additions": 8,
+                "modifications": 37,
+                "deletions": 3
+            },
+            {
+                "date": "2026-04-14",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-15",
+                "count": 15,
+                "additions": 2,
+                "modifications": 13,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-16",
+                "count": 20,
+                "additions": 8,
+                "modifications": 12,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-17",
+                "count": 63,
+                "additions": 20,
+                "modifications": 41,
+                "deletions": 2
+            },
+            {
+                "date": "2026-04-18",
+                "count": 41,
+                "additions": 3,
+                "modifications": 37,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-19",
+                "count": 25,
+                "additions": 3,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-20",
+                "count": 25,
+                "additions": 10,
+                "modifications": 14,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-21",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-22",
+                "count": 9,
+                "additions": 1,
+                "modifications": 8,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-23",
+                "count": 12,
+                "additions": 1,
+                "modifications": 11,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-24",
+                "count": 15,
+                "additions": 2,
+                "modifications": 13,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-25",
+                "count": 8,
+                "additions": 3,
+                "modifications": 4,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-26",
+                "count": 13,
+                "additions": 5,
+                "modifications": 7,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-27",
+                "count": 13,
+                "additions": 0,
+                "modifications": 13,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-28",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-29",
+                "count": 285,
+                "additions": 4,
+                "modifications": 281,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-30",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-01",
+                "count": 7,
+                "additions": 1,
+                "modifications": 5,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-02",
+                "count": 52,
+                "additions": 18,
+                "modifications": 33,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-03",
+                "count": 7,
+                "additions": 0,
+                "modifications": 7,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-04",
+                "count": 16,
+                "additions": 0,
+                "modifications": 16,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-05",
+                "count": 6,
+                "additions": 1,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-06",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-07",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-08",
+                "count": 10,
+                "additions": 0,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-09",
+                "count": 72,
+                "additions": 19,
+                "modifications": 49,
+                "deletions": 4
+            },
+            {
+                "date": "2026-05-10",
+                "count": 72,
+                "additions": 31,
+                "modifications": 14,
+                "deletions": 27
+            },
+            {
+                "date": "2026-05-11",
+                "count": 20,
+                "additions": 8,
+                "modifications": 11,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-12",
+                "count": 13,
+                "additions": 1,
+                "modifications": 12,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-13",
+                "count": 15,
+                "additions": 1,
+                "modifications": 14,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-14",
+                "count": 3,
+                "additions": 1,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-15",
+                "count": 8,
+                "additions": 0,
+                "modifications": 6,
+                "deletions": 2
+            },
+            {
+                "date": "2026-05-16",
+                "count": 8,
+                "additions": 2,
+                "modifications": 6,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-17",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-18",
+                "count": 2,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-19",
+                "count": 3,
+                "additions": 0,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-20",
+                "count": 8,
+                "additions": 5,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-21",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-22",
+                "count": 7,
+                "additions": 0,
+                "modifications": 7,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-23",
+                "count": 3,
+                "additions": 0,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-24",
+                "count": 7,
+                "additions": 0,
+                "modifications": 7,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-25",
+                "count": 24,
+                "additions": 5,
+                "modifications": 16,
+                "deletions": 3
+            },
+            {
+                "date": "2026-05-26",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-27",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-28",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-29",
+                "count": 8,
+                "additions": 1,
+                "modifications": 7,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-30",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-31",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-01",
+                "count": 9,
+                "additions": 5,
+                "modifications": 3,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-02",
+                "count": 27,
+                "additions": 8,
+                "modifications": 9,
+                "deletions": 10
+            },
+            {
+                "date": "2026-06-03",
+                "count": 8,
+                "additions": 4,
+                "modifications": 3,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-04",
+                "count": 32,
+                "additions": 10,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-05",
+                "count": 34,
+                "additions": 18,
+                "modifications": 14,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-06",
+                "count": 27,
+                "additions": 6,
+                "modifications": 20,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-07",
+                "count": 28,
+                "additions": 9,
+                "modifications": 17,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-08",
+                "count": 29,
+                "additions": 4,
+                "modifications": 17,
+                "deletions": 8
+            },
+            {
+                "date": "2026-06-09",
+                "count": 5,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-10",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-11",
+                "count": 10,
+                "additions": 4,
+                "modifications": 4,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-12",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-13",
+                "count": 21,
+                "additions": 8,
+                "modifications": 9,
+                "deletions": 4
+            },
+            {
+                "date": "2026-06-14",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-15",
+                "count": 13,
+                "additions": 7,
+                "modifications": 4,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-16",
+                "count": 2,
+                "additions": 1,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-17",
+                "count": 20,
+                "additions": 7,
+                "modifications": 8,
+                "deletions": 5
+            },
+            {
+                "date": "2026-06-18",
+                "count": 1,
+                "additions": 1,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-19",
+                "count": 24,
+                "additions": 9,
+                "modifications": 14,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-20",
+                "count": 21,
+                "additions": 6,
+                "modifications": 14,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-21",
+                "count": 90,
+                "additions": 75,
+                "modifications": 13,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-22",
+                "count": 3,
+                "additions": 0,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-23",
+                "count": 12,
+                "additions": 4,
+                "modifications": 7,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-24",
+                "count": 21,
+                "additions": 6,
+                "modifications": 15,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-25",
+                "count": 14,
+                "additions": 5,
+                "modifications": 8,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-26",
+                "count": 21,
+                "additions": 9,
+                "modifications": 12,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-27",
+                "count": 12,
+                "additions": 0,
+                "modifications": 12,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-28",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-29",
+                "count": 5,
+                "additions": 2,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-30",
+                "count": 15,
+                "additions": 0,
+                "modifications": 7,
+                "deletions": 8
+            },
+            {
+                "date": "2026-07-01",
+                "count": 15,
+                "additions": 0,
+                "modifications": 15,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-02",
+                "count": 11,
+                "additions": 1,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-03",
+                "count": 31,
+                "additions": 16,
+                "modifications": 15,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-04",
+                "count": 7,
+                "additions": 0,
+                "modifications": 7,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-05",
+                "count": 30,
+                "additions": 10,
+                "modifications": 20,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-06",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-07",
+                "count": 9,
+                "additions": 0,
+                "modifications": 9,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-08",
+                "count": 13,
+                "additions": 0,
+                "modifications": 13,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-09",
+                "count": 4,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-10",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-11",
+                "count": 7,
+                "additions": 0,
+                "modifications": 7,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-12",
+                "count": 35,
+                "additions": 21,
+                "modifications": 14,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-13",
+                "count": 3,
+                "additions": 0,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-14",
+                "count": 18,
+                "additions": 0,
+                "modifications": 18,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-15",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-16",
+                "count": 21,
+                "additions": 0,
+                "modifications": 21,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-17",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-18",
+                "count": 14,
+                "additions": 1,
+                "modifications": 12,
+                "deletions": 1
+            },
+            {
+                "date": "2026-07-19",
+                "count": 4,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-20",
+                "count": 13,
+                "additions": 5,
+                "modifications": 8,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-21",
+                "count": 22,
+                "additions": 11,
+                "modifications": 9,
+                "deletions": 2
+            },
+            {
+                "date": "2026-07-22",
+                "count": 28,
+                "additions": 0,
+                "modifications": 28,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-23",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-24",
+                "count": 19,
+                "additions": 0,
+                "modifications": 19,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-25",
+                "count": 33,
+                "additions": 1,
+                "modifications": 32,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-26",
+                "count": 6,
+                "additions": 0,
+                "modifications": 6,
+                "deletions": 0
+            }
+        ],
+        "kerbs": [
+            {
+                "date": "2026-03-29",
+                "count": 98,
+                "additions": 0,
+                "modifications": 98,
+                "deletions": 0
+            },
+            {
+                "date": "2026-03-30",
+                "count": 15,
+                "additions": 0,
+                "modifications": 15,
+                "deletions": 0
+            },
+            {
+                "date": "2026-03-31",
+                "count": 29,
+                "additions": 2,
+                "modifications": 27,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-01",
+                "count": 13,
+                "additions": 4,
+                "modifications": 9,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-02",
+                "count": 8,
+                "additions": 2,
+                "modifications": 6,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-03",
+                "count": 52,
+                "additions": 2,
+                "modifications": 50,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-04",
+                "count": 13,
+                "additions": 0,
+                "modifications": 13,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-05",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-06",
+                "count": 135,
+                "additions": 2,
+                "modifications": 133,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-07",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-08",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-09",
+                "count": 119,
+                "additions": 8,
+                "modifications": 110,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-10",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-11",
+                "count": 19,
+                "additions": 0,
+                "modifications": 19,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-12",
+                "count": 55,
+                "additions": 18,
+                "modifications": 36,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-13",
+                "count": 110,
+                "additions": 4,
+                "modifications": 102,
+                "deletions": 4
+            },
+            {
+                "date": "2026-04-14",
+                "count": 57,
+                "additions": 1,
+                "modifications": 56,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-15",
+                "count": 22,
+                "additions": 4,
+                "modifications": 18,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-16",
+                "count": 22,
+                "additions": 0,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-17",
+                "count": 11,
+                "additions": 3,
+                "modifications": 8,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-18",
+                "count": 47,
+                "additions": 5,
+                "modifications": 42,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-19",
+                "count": 64,
+                "additions": 1,
+                "modifications": 63,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-20",
+                "count": 23,
+                "additions": 0,
+                "modifications": 23,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-21",
+                "count": 9,
+                "additions": 1,
+                "modifications": 8,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-22",
+                "count": 25,
+                "additions": 5,
+                "modifications": 20,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-23",
+                "count": 8,
+                "additions": 6,
+                "modifications": 1,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-24",
+                "count": 79,
+                "additions": 9,
+                "modifications": 69,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-25",
+                "count": 6,
+                "additions": 0,
+                "modifications": 6,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-26",
+                "count": 3,
+                "additions": 0,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-27",
+                "count": 7,
+                "additions": 4,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-28",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-29",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-30",
+                "count": 45,
+                "additions": 0,
+                "modifications": 45,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-01",
+                "count": 145,
+                "additions": 0,
+                "modifications": 143,
+                "deletions": 2
+            },
+            {
+                "date": "2026-05-02",
+                "count": 15,
+                "additions": 0,
+                "modifications": 15,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-03",
+                "count": 9,
+                "additions": 3,
+                "modifications": 6,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-04",
+                "count": 4,
+                "additions": 3,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-05",
+                "count": 4,
+                "additions": 1,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-06",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-07",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-08",
+                "count": 24,
+                "additions": 0,
+                "modifications": 24,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-09",
+                "count": 82,
+                "additions": 2,
+                "modifications": 73,
+                "deletions": 7
+            },
+            {
+                "date": "2026-05-10",
+                "count": 35,
+                "additions": 1,
+                "modifications": 27,
+                "deletions": 7
+            },
+            {
+                "date": "2026-05-11",
+                "count": 1,
+                "additions": 1,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-12",
+                "count": 56,
+                "additions": 0,
+                "modifications": 56,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-13",
+                "count": 12,
+                "additions": 0,
+                "modifications": 12,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-14",
+                "count": 7,
+                "additions": 0,
+                "modifications": 6,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-15",
+                "count": 4,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-16",
+                "count": 23,
+                "additions": 0,
+                "modifications": 23,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-17",
+                "count": 52,
+                "additions": 0,
+                "modifications": 52,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-18",
+                "count": 50,
+                "additions": 1,
+                "modifications": 49,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-19",
+                "count": 54,
+                "additions": 0,
+                "modifications": 52,
+                "deletions": 2
+            },
+            {
+                "date": "2026-05-20",
+                "count": 36,
+                "additions": 0,
+                "modifications": 36,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-21",
+                "count": 10,
+                "additions": 0,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-22",
+                "count": 2,
+                "additions": 2,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-23",
+                "count": 16,
+                "additions": 0,
+                "modifications": 16,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-24",
+                "count": 37,
+                "additions": 5,
+                "modifications": 32,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-25",
+                "count": 28,
+                "additions": 3,
+                "modifications": 25,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-26",
+                "count": 32,
+                "additions": 5,
+                "modifications": 27,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-27",
+                "count": 30,
+                "additions": 0,
+                "modifications": 30,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-28",
+                "count": 10,
+                "additions": 0,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-29",
+                "count": 17,
+                "additions": 7,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-30",
+                "count": 31,
+                "additions": 0,
+                "modifications": 31,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-31",
+                "count": 19,
+                "additions": 0,
+                "modifications": 19,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-01",
+                "count": 15,
+                "additions": 0,
+                "modifications": 9,
+                "deletions": 6
+            },
+            {
+                "date": "2026-06-02",
+                "count": 27,
+                "additions": 1,
+                "modifications": 3,
+                "deletions": 23
+            },
+            {
+                "date": "2026-06-03",
+                "count": 15,
+                "additions": 0,
+                "modifications": 12,
+                "deletions": 3
+            },
+            {
+                "date": "2026-06-04",
+                "count": 10,
+                "additions": 0,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-05",
+                "count": 14,
+                "additions": 1,
+                "modifications": 13,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-06",
+                "count": 2,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-07",
+                "count": 14,
+                "additions": 0,
+                "modifications": 10,
+                "deletions": 4
+            },
+            {
+                "date": "2026-06-08",
+                "count": 26,
+                "additions": 0,
+                "modifications": 16,
+                "deletions": 10
+            },
+            {
+                "date": "2026-06-09",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-10",
+                "count": 56,
+                "additions": 2,
+                "modifications": 53,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-11",
+                "count": 25,
+                "additions": 1,
+                "modifications": 24,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-12",
+                "count": 7,
+                "additions": 2,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-13",
+                "count": 35,
+                "additions": 2,
+                "modifications": 28,
+                "deletions": 5
+            },
+            {
+                "date": "2026-06-14",
+                "count": 11,
+                "additions": 0,
+                "modifications": 11,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-15",
+                "count": 14,
+                "additions": 0,
+                "modifications": 12,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-16",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-17",
+                "count": 4,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-18",
+                "count": 20,
+                "additions": 0,
+                "modifications": 20,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-19",
+                "count": 37,
+                "additions": 10,
+                "modifications": 24,
+                "deletions": 3
+            },
+            {
+                "date": "2026-06-20",
+                "count": 6,
+                "additions": 0,
+                "modifications": 6,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-21",
+                "count": 5,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-22",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-23",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-24",
+                "count": 6,
+                "additions": 0,
+                "modifications": 6,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-25",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-26",
+                "count": 20,
+                "additions": 1,
+                "modifications": 19,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-27",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-28",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-29",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-30",
+                "count": 22,
+                "additions": 0,
+                "modifications": 4,
+                "deletions": 18
+            },
+            {
+                "date": "2026-07-01",
+                "count": 20,
+                "additions": 0,
+                "modifications": 20,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-02",
+                "count": 6,
+                "additions": 4,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-03",
+                "count": 10,
+                "additions": 0,
+                "modifications": 10,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-04",
+                "count": 3,
+                "additions": 0,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-05",
+                "count": 16,
+                "additions": 0,
+                "modifications": 14,
+                "deletions": 2
+            },
+            {
+                "date": "2026-07-06",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-07",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-08",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-09",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-10",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-11",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-12",
+                "count": 3,
+                "additions": 0,
+                "modifications": 3,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-13",
+                "count": 6,
+                "additions": 0,
+                "modifications": 6,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-14",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-15",
+                "count": 6,
+                "additions": 0,
+                "modifications": 6,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-16",
+                "count": 18,
+                "additions": 0,
+                "modifications": 18,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-17",
+                "count": 1,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-18",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-19",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-20",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-21",
+                "count": 2,
+                "additions": 1,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-22",
+                "count": 0,
+                "additions": 0,
+                "modifications": 0,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-23",
+                "count": 2,
+                "additions": 0,
+                "modifications": 1,
+                "deletions": 1
+            },
+            {
+                "date": "2026-07-24",
+                "count": 22,
+                "additions": 0,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-25",
+                "count": 14,
+                "additions": 6,
+                "modifications": 8,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-26",
+                "count": 9,
+                "additions": 4,
+                "modifications": 5,
+                "deletions": 0
+            }
+        ],
+        "other_footways": [
+            {
+                "date": "2026-03-29",
+                "count": 41,
+                "additions": 16,
+                "modifications": 25,
+                "deletions": 0
+            },
+            {
+                "date": "2026-03-30",
+                "count": 28,
+                "additions": 3,
+                "modifications": 25,
+                "deletions": 0
+            },
+            {
+                "date": "2026-03-31",
+                "count": 101,
+                "additions": 3,
+                "modifications": 98,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-01",
+                "count": 53,
+                "additions": 0,
+                "modifications": 53,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-02",
+                "count": 85,
+                "additions": 3,
+                "modifications": 81,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-03",
+                "count": 71,
+                "additions": 0,
+                "modifications": 70,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-04",
+                "count": 70,
+                "additions": 1,
+                "modifications": 68,
+                "deletions": 1
+            },
+            {
+                "date": "2026-04-05",
+                "count": 2,
+                "additions": 1,
+                "modifications": 1,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-06",
+                "count": 45,
+                "additions": 4,
+                "modifications": 41,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-07",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-08",
+                "count": 23,
+                "additions": 0,
+                "modifications": 23,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-09",
+                "count": 108,
+                "additions": 10,
+                "modifications": 98,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-10",
+                "count": 32,
+                "additions": 0,
+                "modifications": 32,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-11",
+                "count": 52,
+                "additions": 7,
+                "modifications": 45,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-12",
+                "count": 336,
+                "additions": 40,
+                "modifications": 287,
+                "deletions": 9
+            },
+            {
+                "date": "2026-04-13",
+                "count": 142,
+                "additions": 19,
+                "modifications": 119,
+                "deletions": 4
+            },
+            {
+                "date": "2026-04-14",
+                "count": 97,
+                "additions": 0,
+                "modifications": 97,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-15",
+                "count": 139,
+                "additions": 11,
+                "modifications": 125,
+                "deletions": 3
+            },
+            {
+                "date": "2026-04-16",
+                "count": 148,
+                "additions": 18,
+                "modifications": 130,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-17",
+                "count": 245,
+                "additions": 39,
+                "modifications": 204,
+                "deletions": 2
+            },
+            {
+                "date": "2026-04-18",
+                "count": 200,
+                "additions": 16,
+                "modifications": 178,
+                "deletions": 6
+            },
+            {
+                "date": "2026-04-19",
+                "count": 93,
+                "additions": 12,
+                "modifications": 73,
+                "deletions": 8
+            },
+            {
+                "date": "2026-04-20",
+                "count": 117,
+                "additions": 36,
+                "modifications": 76,
+                "deletions": 5
+            },
+            {
+                "date": "2026-04-21",
+                "count": 36,
+                "additions": 14,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-22",
+                "count": 57,
+                "additions": 3,
+                "modifications": 54,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-23",
+                "count": 70,
+                "additions": 6,
+                "modifications": 64,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-24",
+                "count": 159,
+                "additions": 4,
+                "modifications": 155,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-25",
+                "count": 39,
+                "additions": 9,
+                "modifications": 28,
+                "deletions": 2
+            },
+            {
+                "date": "2026-04-26",
+                "count": 105,
+                "additions": 26,
+                "modifications": 74,
+                "deletions": 5
+            },
+            {
+                "date": "2026-04-27",
+                "count": 66,
+                "additions": 5,
+                "modifications": 59,
+                "deletions": 2
+            },
+            {
+                "date": "2026-04-28",
+                "count": 2,
+                "additions": 0,
+                "modifications": 2,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-29",
+                "count": 630,
+                "additions": 5,
+                "modifications": 625,
+                "deletions": 0
+            },
+            {
+                "date": "2026-04-30",
+                "count": 23,
+                "additions": 1,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-01",
+                "count": 52,
+                "additions": 8,
+                "modifications": 42,
+                "deletions": 2
+            },
+            {
+                "date": "2026-05-02",
+                "count": 319,
+                "additions": 50,
+                "modifications": 266,
+                "deletions": 3
+            },
+            {
+                "date": "2026-05-03",
+                "count": 87,
+                "additions": 11,
+                "modifications": 76,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-04",
+                "count": 130,
+                "additions": 9,
+                "modifications": 121,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-05",
+                "count": 51,
+                "additions": 1,
+                "modifications": 50,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-06",
+                "count": 30,
+                "additions": 0,
+                "modifications": 29,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-07",
+                "count": 8,
+                "additions": 0,
+                "modifications": 8,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-08",
+                "count": 92,
+                "additions": 25,
+                "modifications": 55,
+                "deletions": 12
+            },
+            {
+                "date": "2026-05-09",
+                "count": 234,
+                "additions": 48,
+                "modifications": 163,
+                "deletions": 23
+            },
+            {
+                "date": "2026-05-10",
+                "count": 242,
+                "additions": 63,
+                "modifications": 153,
+                "deletions": 26
+            },
+            {
+                "date": "2026-05-11",
+                "count": 66,
+                "additions": 14,
+                "modifications": 50,
+                "deletions": 2
+            },
+            {
+                "date": "2026-05-12",
+                "count": 75,
+                "additions": 5,
+                "modifications": 63,
+                "deletions": 7
+            },
+            {
+                "date": "2026-05-13",
+                "count": 176,
+                "additions": 43,
+                "modifications": 117,
+                "deletions": 16
+            },
+            {
+                "date": "2026-05-14",
+                "count": 37,
+                "additions": 10,
+                "modifications": 25,
+                "deletions": 2
+            },
+            {
+                "date": "2026-05-15",
+                "count": 43,
+                "additions": 7,
+                "modifications": 35,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-16",
+                "count": 56,
+                "additions": 2,
+                "modifications": 54,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-17",
+                "count": 101,
+                "additions": 25,
+                "modifications": 76,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-18",
+                "count": 30,
+                "additions": 3,
+                "modifications": 27,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-19",
+                "count": 229,
+                "additions": 2,
+                "modifications": 227,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-20",
+                "count": 112,
+                "additions": 46,
+                "modifications": 65,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-21",
+                "count": 59,
+                "additions": 14,
+                "modifications": 44,
+                "deletions": 1
+            },
+            {
+                "date": "2026-05-22",
+                "count": 36,
+                "additions": 0,
+                "modifications": 36,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-23",
+                "count": 22,
+                "additions": 0,
+                "modifications": 22,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-24",
+                "count": 59,
+                "additions": 1,
+                "modifications": 58,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-25",
+                "count": 132,
+                "additions": 25,
+                "modifications": 99,
+                "deletions": 8
+            },
+            {
+                "date": "2026-05-26",
+                "count": 82,
+                "additions": 4,
+                "modifications": 78,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-27",
+                "count": 40,
+                "additions": 0,
+                "modifications": 37,
+                "deletions": 3
+            },
+            {
+                "date": "2026-05-28",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-29",
+                "count": 36,
+                "additions": 7,
+                "modifications": 24,
+                "deletions": 5
+            },
+            {
+                "date": "2026-05-30",
+                "count": 26,
+                "additions": 0,
+                "modifications": 26,
+                "deletions": 0
+            },
+            {
+                "date": "2026-05-31",
+                "count": 59,
+                "additions": 0,
+                "modifications": 59,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-01",
+                "count": 90,
+                "additions": 17,
+                "modifications": 70,
+                "deletions": 3
+            },
+            {
+                "date": "2026-06-02",
+                "count": 127,
+                "additions": 16,
+                "modifications": 86,
+                "deletions": 25
+            },
+            {
+                "date": "2026-06-03",
+                "count": 34,
+                "additions": 4,
+                "modifications": 29,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-04",
+                "count": 148,
+                "additions": 30,
+                "modifications": 117,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-05",
+                "count": 107,
+                "additions": 51,
+                "modifications": 44,
+                "deletions": 12
+            },
+            {
+                "date": "2026-06-06",
+                "count": 215,
+                "additions": 41,
+                "modifications": 126,
+                "deletions": 48
+            },
+            {
+                "date": "2026-06-07",
+                "count": 196,
+                "additions": 45,
+                "modifications": 109,
+                "deletions": 42
+            },
+            {
+                "date": "2026-06-08",
+                "count": 163,
+                "additions": 40,
+                "modifications": 81,
+                "deletions": 42
+            },
+            {
+                "date": "2026-06-09",
+                "count": 72,
+                "additions": 3,
+                "modifications": 58,
+                "deletions": 11
+            },
+            {
+                "date": "2026-06-10",
+                "count": 129,
+                "additions": 15,
+                "modifications": 74,
+                "deletions": 40
+            },
+            {
+                "date": "2026-06-11",
+                "count": 170,
+                "additions": 14,
+                "modifications": 109,
+                "deletions": 47
+            },
+            {
+                "date": "2026-06-12",
+                "count": 22,
+                "additions": 3,
+                "modifications": 17,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-13",
+                "count": 135,
+                "additions": 24,
+                "modifications": 78,
+                "deletions": 33
+            },
+            {
+                "date": "2026-06-14",
+                "count": 106,
+                "additions": 3,
+                "modifications": 76,
+                "deletions": 27
+            },
+            {
+                "date": "2026-06-15",
+                "count": 70,
+                "additions": 15,
+                "modifications": 44,
+                "deletions": 11
+            },
+            {
+                "date": "2026-06-16",
+                "count": 17,
+                "additions": 2,
+                "modifications": 9,
+                "deletions": 6
+            },
+            {
+                "date": "2026-06-17",
+                "count": 127,
+                "additions": 14,
+                "modifications": 36,
+                "deletions": 77
+            },
+            {
+                "date": "2026-06-18",
+                "count": 48,
+                "additions": 6,
+                "modifications": 40,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-19",
+                "count": 197,
+                "additions": 31,
+                "modifications": 94,
+                "deletions": 72
+            },
+            {
+                "date": "2026-06-20",
+                "count": 128,
+                "additions": 24,
+                "modifications": 63,
+                "deletions": 41
+            },
+            {
+                "date": "2026-06-21",
+                "count": 303,
+                "additions": 157,
+                "modifications": 103,
+                "deletions": 43
+            },
+            {
+                "date": "2026-06-22",
+                "count": 44,
+                "additions": 8,
+                "modifications": 29,
+                "deletions": 7
+            },
+            {
+                "date": "2026-06-23",
+                "count": 39,
+                "additions": 12,
+                "modifications": 25,
+                "deletions": 2
+            },
+            {
+                "date": "2026-06-24",
+                "count": 59,
+                "additions": 11,
+                "modifications": 40,
+                "deletions": 8
+            },
+            {
+                "date": "2026-06-25",
+                "count": 102,
+                "additions": 26,
+                "modifications": 63,
+                "deletions": 13
+            },
+            {
+                "date": "2026-06-26",
+                "count": 95,
+                "additions": 26,
+                "modifications": 51,
+                "deletions": 18
+            },
+            {
+                "date": "2026-06-27",
+                "count": 46,
+                "additions": 13,
+                "modifications": 33,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-28",
+                "count": 12,
+                "additions": 3,
+                "modifications": 9,
+                "deletions": 0
+            },
+            {
+                "date": "2026-06-29",
+                "count": 37,
+                "additions": 7,
+                "modifications": 29,
+                "deletions": 1
+            },
+            {
+                "date": "2026-06-30",
+                "count": 75,
+                "additions": 5,
+                "modifications": 53,
+                "deletions": 17
+            },
+            {
+                "date": "2026-07-01",
+                "count": 67,
+                "additions": 11,
+                "modifications": 54,
+                "deletions": 2
+            },
+            {
+                "date": "2026-07-02",
+                "count": 101,
+                "additions": 24,
+                "modifications": 70,
+                "deletions": 7
+            },
+            {
+                "date": "2026-07-03",
+                "count": 136,
+                "additions": 44,
+                "modifications": 89,
+                "deletions": 3
+            },
+            {
+                "date": "2026-07-04",
+                "count": 32,
+                "additions": 1,
+                "modifications": 30,
+                "deletions": 1
+            },
+            {
+                "date": "2026-07-05",
+                "count": 139,
+                "additions": 38,
+                "modifications": 90,
+                "deletions": 11
+            },
+            {
+                "date": "2026-07-06",
+                "count": 53,
+                "additions": 0,
+                "modifications": 27,
+                "deletions": 26
+            },
+            {
+                "date": "2026-07-07",
+                "count": 36,
+                "additions": 0,
+                "modifications": 36,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-08",
+                "count": 60,
+                "additions": 0,
+                "modifications": 49,
+                "deletions": 11
+            },
+            {
+                "date": "2026-07-09",
+                "count": 55,
+                "additions": 0,
+                "modifications": 55,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-10",
+                "count": 33,
+                "additions": 2,
+                "modifications": 31,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-11",
+                "count": 20,
+                "additions": 0,
+                "modifications": 20,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-12",
+                "count": 119,
+                "additions": 46,
+                "modifications": 60,
+                "deletions": 13
+            },
+            {
+                "date": "2026-07-13",
+                "count": 31,
+                "additions": 0,
+                "modifications": 31,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-14",
+                "count": 61,
+                "additions": 0,
+                "modifications": 61,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-15",
+                "count": 17,
+                "additions": 1,
+                "modifications": 16,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-16",
+                "count": 90,
+                "additions": 11,
+                "modifications": 79,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-17",
+                "count": 5,
+                "additions": 0,
+                "modifications": 5,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-18",
+                "count": 66,
+                "additions": 8,
+                "modifications": 53,
+                "deletions": 5
+            },
+            {
+                "date": "2026-07-19",
+                "count": 20,
+                "additions": 0,
+                "modifications": 20,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-20",
+                "count": 39,
+                "additions": 7,
+                "modifications": 31,
+                "deletions": 1
+            },
+            {
+                "date": "2026-07-21",
+                "count": 74,
+                "additions": 15,
+                "modifications": 59,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-22",
+                "count": 123,
+                "additions": 0,
+                "modifications": 123,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-23",
+                "count": 48,
+                "additions": 3,
+                "modifications": 45,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-24",
+                "count": 55,
+                "additions": 1,
+                "modifications": 54,
+                "deletions": 0
+            },
+            {
+                "date": "2026-07-25",
+                "count": 184,
+                "additions": 42,
+                "modifications": 130,
+                "deletions": 12
+            },
+            {
+                "date": "2026-07-26",
+                "count": 51,
+                "additions": 11,
+                "modifications": 39,
+                "deletions": 1
+            }
+        ]
+    },
+    "last_updated": "2026-08-09T23:52:30Z"
+}

@@ -1,0 +1,34 @@
+{
+    "place_id": 76514440,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 44915,
+    "lat": "45.4641943",
+    "lon": "9.1896346",
+    "category": "boundary",
+    "type": "administrative",
+    "place_rank": 16,
+    "importance": 0.8015398856785414,
+    "addresstype": "city",
+    "name": "Milano",
+    "display_name": "Milano, Rodano, Milano, Lombardia, Italia",
+    "address": {
+        "city": "Milano",
+        "municipality": "Rodano",
+        "county": "Milano",
+        "ISO3166-2-lvl6": "IT-MI",
+        "state": "Lombardia",
+        "ISO3166-2-lvl4": "IT-25",
+        "country": "Italia",
+        "country_code": "it"
+    },
+    "boundingbox": [
+        "45.3867381",
+        "45.5358482",
+        "9.0408867",
+        "9.2781103"
+    ],
+    "selection": "exact_relation",
+    "requested_place": "Milan, Italy",
+    "requested_relation_id": 44915
+}

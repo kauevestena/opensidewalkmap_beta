@@ -131,6 +131,7 @@ python scripts/audit_node_readiness.py \
 python -m unittest scripts/test_node_readiness_tools.py -v
 
 # After a cold generation, make every deployment product mandatory.
+python oswm_codebase/node_outputs.py --root . manifest
 python scripts/audit_node_readiness.py --require-generated \
   --json /tmp/oswm-milan-final-audit.json \
   --markdown /tmp/oswm-milan-final-audit.md

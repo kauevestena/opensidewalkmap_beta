@@ -8,6 +8,7 @@ import ast
 import json
 import os
 import re
+import runpy
 import subprocess
 import sys
 from dataclasses import asdict, dataclass
@@ -19,7 +20,8 @@ GITHUB_FILE_LIMIT = 100 * 1024 * 1024
 FILE_LIMIT_GUARD = 95 * 1024 * 1024
 LARGE_FILE_WARNING = 50 * 1024 * 1024
 
-REQUIRED_GENERATED_FILES = (
+FALLBACK_REQUIRED_GENERATED_FILES = (
+    "data/index.json",
     "data/boundaries/infos.json",
     "data/boundaries/polygon.geojson",
     "data/boundaries/polygon.parquet",
@@ -41,13 +43,44 @@ REQUIRED_GENERATED_FILES = (
     "data/hazard_analysis/metadata.json",
     "data/hazard_analysis/hazard.pmtiles",
     "data/snapshots/node_summary.json",
+    "data/updates/index.html",
+    "metadata/index.json",
+    "statistics_specs/index.json",
+    "global_params.json",
     "quality_check/index.json",
+    "quality_check/index.html",
+    "quality_check/oswm_qc_main.html",
+    "quality_check/oswm_qc_external.html",
+    "quality_check/map.html",
+    "quality_check/completeness/index.html",
+    "quality_check/completeness/data.json",
     "statistics/index.html",
+    "hub/index.html",
     "hub/API/index.html",
+    "hub/acquisition/index.html",
+    "hub/acquisition/results.json",
+    "hub/watcher/index.html",
+    "hub/watcher/feed.xml",
+    "hub/watcher/changesets.xml",
     "index.html",
     "map.html",
     "webmap_params.json",
 )
+
+
+def required_generated_files(root: Path) -> tuple[str, ...]:
+    """Load the canonical manifest without importing geospatial dependencies."""
+    contract = root / "oswm_codebase/node_outputs.py"
+    try:
+        values = runpy.run_path(str(contract))
+        manifest = values.get("required_outputs")
+        if callable(manifest):
+            outputs = manifest(root)
+            if isinstance(outputs, tuple) and all(isinstance(item, str) for item in outputs):
+                return outputs
+    except (OSError, RuntimeError, TypeError, ValueError):
+        pass
+    return FALLBACK_REQUIRED_GENERATED_FILES
 
 
 @dataclass(frozen=True)
@@ -458,7 +491,7 @@ def validate_files(
             add(findings, "warning", "file.large", f"Commit candidate is {size / 1024 / 1024:.1f} MiB", relative)
 
     if require_generated:
-        for relative in REQUIRED_GENERATED_FILES:
+        for relative in required_generated_files(root):
             path = root / relative
             if not path.is_file() or path.stat().st_size == 0:
                 add(findings, "error", "output.missing", "Required generated output is missing or empty", relative)

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://raw.githubusercontent.com/kauevestena/oswm_codebase/main/metadata/schemas/oswm-metadata.schema.json",
+  "metadata_profile": {
+    "name": "OSWM Metadata Profile",
+    "version": "1.0.0",
+    "encoding": "application/json",
+    "alignment": "conceptual",
+    "domain": "geographic",
+    "aligned_with": [
+      {
+        "name": "ISO 15836-1:2017",
+        "role": "cross-domain resource description",
+        "url": "https://www.iso.org/standard/71339.html"
+      },
+      {
+        "name": "ISO 19115-1:2014",
+        "role": "geographic metadata fundamentals",
+        "url": "https://www.iso.org/standard/53798.html"
+      },
+      {
+        "name": "ISO 19115-2:2019",
+        "role": "acquisition and processing lineage",
+        "url": "https://www.iso.org/standard/67039.html"
+      },
+      {
+        "name": "ISO 19157-1:2023",
+        "role": "geographic data quality reporting",
+        "url": "https://www.iso.org/standard/78900.html"
+      }
+    ],
+    "conformance_note": "This is an OSWM JSON application profile. Geographic ISO concepts are applied only to geographic or mixed resources; the profile does not claim conformance to the ISO 19115-3 XML encoding."
+  },
+  "identifier": "https://kauevestena.github.io/opensidewalkmap_milan/metadata/hazard_analysis/terrain_elderly.png.metadata.json",
+  "resource_type": "image",
+  "title": "Milan, Italy — Terrain Elderly",
+  "abstract": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the PNG distribution at data/hazard_analysis/terrain_elderly.png.",
+  "language": "en",
+  "responsible_parties": [
+    {
+      "name": "kauevestena",
+      "role": "pointOfContact",
+      "url": "https://github.com/kauevestena"
+    },
+    {
+      "name": "OpenSidewalkMap",
+      "role": "publisher",
+      "url": "https://github.com/kauevestena/opensidewalkmap_milan"
+    }
+  ],
+  "spatial": {
+    "scope": "node_coverage",
+    "bbox": [
+      9.0408867,
+      45.3867381,
+      9.2781103,
+      45.5358482
+    ],
+    "bbox_order": [
+      "west",
+      "south",
+      "east",
+      "north"
+    ],
+    "reference_system": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
+    "geometry": "https://kauevestena.github.io/opensidewalkmap_milan/data/boundaries/polygon.geojson"
+  },
+  "temporal": {
+    "updated": "2026-08-09T23:49:54+00:00",
+    "node_registry": {
+      "Data Fetching": "2026-08-07T18:05:21Z",
+      "Data Pre-Processing": "2026-08-09T20:56:02Z",
+      "Completeness Analysis": "2026-08-09T21:43:39Z",
+      "Statistical Charts": "2026-08-09T21:44:31Z",
+      "Data Quality Tool": "2026-08-09T21:39:16Z",
+      "OSWM Codebase Revision": "01d4bd2f6d1814f8bdd772be1406b1b4d550f8e2",
+      "Pipeline Success": "2026-08-09T23:49:54Z"
+    }
+  },
+  "lineage": {
+    "process_description": "Derived from OSWM pedestrian features, accessibility rules, and configured terrain context.",
+    "sources": [
+      "data/processed",
+      "OpenStreetMap",
+      "Copernicus DEM"
+    ]
+  },
+  "quality": {
+    "scope": "resource",
+    "standard": "ISO 19157-1:2023",
+    "statement": "The record reports provenance and technical integrity. It does not assert a universal fitness-for-use threshold.",
+    "related_report": "https://kauevestena.github.io/opensidewalkmap_milan/quality_check/index.json"
+  },
+  "rights": {
+    "statement": "Licensing and attribution follow the upstream sources and the specific distribution being described."
+  },
+  "metadata_generation": {
+    "generator": "oswm_codebase.metadata.metadata_generation",
+    "profile_version": "1.0.0",
+    "generated_at": "2026-08-09T23:49:54+00:00",
+    "code": {
+      "repository": "https://github.com/kauevestena/oswm_codebase",
+      "commit": "01d4bd2f6d1814f8bdd772be1406b1b4d550f8e2",
+      "commit_date": "2026-08-06T05:45:22-03:00"
+    },
+    "source_root": "data",
+    "deterministic": true
+  },
+  "distribution": {
+    "resource_path": "data/hazard_analysis/terrain_elderly.png",
+    "access_url": "https://kauevestena.github.io/opensidewalkmap_milan/data/hazard_analysis/terrain_elderly.png",
+    "download_url": "https://kauevestena.github.io/opensidewalkmap_milan/data/hazard_analysis/terrain_elderly.png",
+    "media_type": "image/png",
+    "format": "PNG",
+    "byte_size": 26300,
+    "checksum": {
+      "algorithm": "SHA-256",
+      "value": "967b4c47ada8ec7c7ac819accd548e5b687190e45f7f61235b3e343e62eba216"
+    }
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://kauevestena.github.io/opensidewalkmap_milan/metadata/hazard_analysis/terrain_elderly.png.metadata.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "describes",
+      "href": "https://kauevestena.github.io/opensidewalkmap_milan/data/hazard_analysis/terrain_elderly.png",
+      "type": "image/png"
+    },
+    {
+      "rel": "collection",
+      "href": "https://kauevestena.github.io/opensidewalkmap_milan/metadata/hazard_analysis/index.json",
+      "type": "application/json"
+    }
+  ]
+}

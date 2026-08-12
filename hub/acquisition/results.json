@@ -1,0 +1,623 @@
+{
+  "node_name": "Milan, Italy",
+  "generated_at": "2026-08-10T00:01:29Z",
+  "bbox": [
+    45.3867381,
+    9.0408867,
+    45.5358482,
+    9.2781103
+  ],
+  "keywords_used": [
+    "oswm",
+    "OpenSidewalkMap",
+    "accessibility",
+    "pedestrian"
+  ],
+  "services_queried": [
+    "Tasking Manager",
+    "Pic4Review",
+    "MapRoulette"
+  ],
+  "service_status": {
+    "Tasking Manager": {
+      "status": "ok",
+      "instances": {
+        "https://tasks.hotosm.org/": "ok",
+        "https://tasks.teachosm.org/": "ok",
+        "https://tasks.mapwith.ai/": "ok"
+      }
+    },
+    "Pic4Review": {
+      "status": "ok",
+      "instances": {
+        "https://pic4review.pavie.info/#/": "ok"
+      }
+    },
+    "MapRoulette": {
+      "status": "ok",
+      "instances": {
+        "https://maproulette.org/": "ok"
+      }
+    }
+  },
+  "total_projects_found": 15,
+  "projects": [
+    {
+      "id": "2820",
+      "title": "accessibility - Missing Surface Materials",
+      "service": "Pic4Review",
+      "instance": "https://pic4review.pavie.info/#/",
+      "url": "https://pic4review.pavie.info/#/mission/2820",
+      "status": "online",
+      "description": "We're filling up the remaining surface=* tags, mainly for accessibility and oswm",
+      "matched_keywords": [
+        "oswm",
+        "accessibility"
+      ]
+    },
+    {
+      "id": 44846,
+      "title": "Milan - Cycleway Missing Foot Tags",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/56002/challenge/44846",
+      "status": "Ready",
+      "description": "This challenge identifies all cycleways that are missing\ninformation about access permission for pedestrians. Mappers are asked to add a foot tag to the\ncycleway to clearly identify whether foot traffic is allowed on the cycleway. Please see [Examples\nfrom the highway=cycleway wiki page](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway#Examples)\nto learn more about how to add a foot tag to the cycleway.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.094858519,
+              45.416851642
+            ],
+            [
+              9.094858519,
+              45.53338165
+            ],
+            [
+              9.267200151,
+              45.53338165
+            ],
+            [
+              9.267200151,
+              45.416851642
+            ],
+            [
+              9.094858519,
+              45.416851642
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "pedestrian"
+      ]
+    },
+    {
+      "id": 43949,
+      "title": "Milan - Fix Conflicting Crossing Feature Tags",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/55484/challenge/43949",
+      "status": "Ready",
+      "description": "This challenge is designed to assist OpenStreetMap contributors in identifying and resolving conflicts in tags associated with crossing ways and nodes. Both crossing ways and nodes may have tags that indicate whether the crossing is marked or unmarked, the type of marking, and the presence of traffic signals. Each task within this challenge pinpoints a pair of crossing way and crossing node that have conflicting tags.\nTo resolve these conflicts, please use aerial imagery to determine which tags should be retained and which should be modified. We recommend using the Rapid editor for making changes, as this tool has built-in validation tests that will simplify this process.\nPlease exercise caution when considering the deletion of tags. Only remove a tag if you are completely sure that it is incorrect. Your contributions are valuable in maintaining the accuracy and usefulness of OpenStreetMap. Thank you for your efforts.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.094938243,
+              45.415944903
+            ],
+            [
+              9.094938243,
+              45.531495756
+            ],
+            [
+              9.263674498,
+              45.531495756
+            ],
+            [
+              9.263674498,
+              45.415944903
+            ],
+            [
+              9.094938243,
+              45.415944903
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "crossing"
+      ]
+    },
+    {
+      "id": 41811,
+      "title": "Milan - Missing Crossing Way",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/56810/challenge/41811",
+      "status": "Ready",
+      "description": "This challenge focuses on identifying\ncrossing nodes that are not connected to a crossing way. A crossing *node* is\na specific type of node that indicates where pedestrian or bicycle crossings\nintersect with roads. A crossing *way*, on the other hand, represents the\nphysical crossing itself, such as a lined or zebra crossing.\n\nTypically, a crossing node should connect to both a highway and a footway\nor cycleway. However, we have found instances where crossing nodes are either\nincorrectly tagged or not connected to any crossing highway. Each task flags\nan instance of a crossing node that is not connected to a crossing way.\n\nWe ask that mappers working on these tasks use satellite imagery to identify\nthe crossing node and its connection to the highway. If the crossing node is\nis mistagged, or misplaced then please resolve the issue and make sure that\nthe crossing node is located at the intersection of a crossing way and a\nhighway.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.0943113,
+              45.4215123
+            ],
+            [
+              9.0943113,
+              45.5369883
+            ],
+            [
+              9.2671217,
+              45.5369883
+            ],
+            [
+              9.2671217,
+              45.4215123
+            ],
+            [
+              9.0943113,
+              45.4215123
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "crossing",
+        "footway",
+        "pedestrian"
+      ]
+    },
+    {
+      "id": 43340,
+      "title": "Milan - ML Crossing Detection",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/55433/challenge/43340",
+      "status": "Ready",
+      "description": "This challenge identifies potential\npedestrian crossings that have not been mapped. We are using machine learning\nto detect crosswalks from satellite imagery and then determine if an OSM\ncrosswalk exists at that location. When we find a crosswalk that appears not\nto have been mapped yet we flag that as a Map Roulette task.\n\nIt is important to have a human review of these tasks because there are many\nplaces where the crosswalk is not clear and human review together with street\nside photos are necessary to correctly map the crossing.\n\nIt is also important to realize that we are spotting the absence of something\nso when you are sent to the editor to make changes you may need to zoom in to\nbe able to spot the issue. We recommend using the + button to zoom in as\nthe area of importance will be in the center of the map.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.103421256,
+              45.422385685
+            ],
+            [
+              9.103421256,
+              45.529382631
+            ],
+            [
+              9.252122004,
+              45.529382631
+            ],
+            [
+              9.252122004,
+              45.422385685
+            ],
+            [
+              9.103421256,
+              45.422385685
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "crossing",
+        "pedestrian",
+        "walk"
+      ]
+    },
+    {
+      "id": 51847,
+      "title": "Milan - Sidewalks Maybe Missing",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/59883/challenge/51847",
+      "status": "Ready",
+      "description": "\nThis challenge focuses on improving the mapping of sidewalks in OSM by tagging road segments with appropriate sidewalk tags.\nMappers should aim to tag roads with sidewalk:left, sidewalk:right, or sidewalk:both if straightforward.\nIf not feasible, tag the road as sidewalk:both = separate and map all footways as separate ways using highway=footway tags.\nStreet-level imagery is recommended to assist in mapping these footways accurately. Your contributions will enhance the quality of\nOSM data and support various applications relying on this information. These are likley challenging to map from aerial imagery, we recommend using street level imagery to assist mapping these.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.113827404,
+              45.4242437
+            ],
+            [
+              9.113827404,
+              45.521124905
+            ],
+            [
+              9.267471745,
+              45.521124905
+            ],
+            [
+              9.267471745,
+              45.4242437
+            ],
+            [
+              9.113827404,
+              45.4242437
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "footway",
+        "sidewalk",
+        "walk"
+      ]
+    },
+    {
+      "id": 51168,
+      "title": "Milan - Complex Intersection Footways",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/59148/challenge/51168",
+      "status": "Ready",
+      "description": "This challenge aims to enhance the mapping of footways in OSM by creating detailed geometries around intersections and connecting them to existing networks.\nWe are relying on human editors to review and update the map data, ensuring that it accurately reflects real-world conditions.\nIt is essential to have a thorough understanding of OSM tagging conventions and best practices for mapping footways.\nYour contributions will help improve the overall quality of OSM data and support various applications that rely on this information. When working on these tasks, please pay close attention to the following aspects:\nCreate footway geometries around intersections, extending them beyond the intersection to connect with existing pedesterian networks.\nUpdate road tags to reflect the presence of separate sidewalks using the correct sidewalk = * tag\nAdd sidewalk and crossing ways, indicating whether they are marked or unmarked.\nCheck layer tags for overpasses and ensure that footways are correctly connected across layers.\nBy following these guidelines, you will be contributing to a more comprehensive and accurate representation of pedestrian infrastructure in OSM.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.095326298,
+              45.4228641
+            ],
+            [
+              9.095326298,
+              45.536830476
+            ],
+            [
+              9.267667552,
+              45.536830476
+            ],
+            [
+              9.267667552,
+              45.4228641
+            ],
+            [
+              9.095326298,
+              45.4228641
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "crossing",
+        "footway",
+        "pedestrian",
+        "sidewalk",
+        "walk"
+      ]
+    },
+    {
+      "id": 53724,
+      "title": "Milan - Non Noded Footway and Service Road Intersections",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/61774/challenge/53724",
+      "status": "Ready",
+      "description": "This challenge focuses on identifying and reviewing\ncases where OSM footways intersect with service roads on the same layer but the geometries do not connect to each other. These\nintersections may represent mapping issues where the relationship between the footway and service road\nneeds to be clarified. Mappers are asked to review these intersections verify wether or not the footway and service road should share a node.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.093331551,
+              45.424928685
+            ],
+            [
+              9.093331551,
+              45.528784929
+            ],
+            [
+              9.263669003,
+              45.528784929
+            ],
+            [
+              9.263669003,
+              45.424928685
+            ],
+            [
+              9.093331551,
+              45.424928685
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "footway"
+      ]
+    },
+    {
+      "id": 50969,
+      "title": "Milan - Validate Cycleway Foot Tag",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/59040/challenge/50969",
+      "status": "Ready",
+      "description": "This challenge focuses on verifying cycleways that are currently\ntagged with foot=no or foot=private to ensure the accuracy of pedestrian access information. Mappers are asked while\nreviewing these cycleways to confirm whether the foot=no or foot=private tag is appropriate or if adjustments are needed.\nFor guidance on using the foot tag, please refer to (https://wiki.openstreetmap.org/wiki/Key:foot)\nto learn more about how to use a foot tag.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.0941818,
+              45.42345455
+            ],
+            [
+              9.0941818,
+              45.5318633
+            ],
+            [
+              9.25482345,
+              45.5318633
+            ],
+            [
+              9.25482345,
+              45.42345455
+            ],
+            [
+              9.0941818,
+              45.42345455
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "pedestrian"
+      ]
+    },
+    {
+      "id": 52038,
+      "title": "Milan - OSM Footways That Are Potential Sidewalks",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/59969/challenge/52038",
+      "status": "Ready",
+      "description": "\nThis project aims to review OpenStreetMap (OSM) footways that potentially are sidewalks due to proximity to their road but missing the correct footway=* tag.\nThe primary goal is to add footway=sidewalk where appropriate. If the footway is not a sidewalk, consider adding footway=path or marking the task as not an issue depending on local OSM editing conventions.\nPlease review the footway and confirm if it is a sidewalk, pathway, or something else.\nConsider street level imagery to help with this task.\nEach challenge involves a footway that may be a sidewalk due to their proximity to the road.\nOur goal is to ensure accurate representation of sidewalks in OSM.\nYour contributions will enhance the quality of OSM data and support various applications relying on this information.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.1109387,
+              45.421940469
+            ],
+            [
+              9.1109387,
+              45.532193005
+            ],
+            [
+              9.268184945,
+              45.532193005
+            ],
+            [
+              9.268184945,
+              45.421940469
+            ],
+            [
+              9.1109387,
+              45.421940469
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "footway",
+        "sidewalk",
+        "walk"
+      ]
+    },
+    {
+      "id": 51966,
+      "title": "Milan - Residential Road Foot No tags",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/59934/challenge/51966",
+      "status": "Ready",
+      "description": "\nThis challenge focuses on reviewing and correcting the usage of foot=no tags on residential roads in OSM.\nMappers should aim to verify if the foot=no tag is correctly used, reserving it for cases where access on\nfoot or by pedestrians is prohibited (private roads) or obviously dangerous for foot traffic (like when a residential road meets a divided highway)\nIf not valid, update the sidewalk:both tag instead or use sidewalk:left/right when appropriate.\nAerial and street-level imagery are recommended to assist in verifying these tags accurately.\nYour contributions will enhance the quality of OSM data and support various applications relying on this information.\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.184459361,
+              45.468349947
+            ],
+            [
+              9.184459361,
+              45.50666521
+            ],
+            [
+              9.241693599,
+              45.50666521
+            ],
+            [
+              9.241693599,
+              45.468349947
+            ],
+            [
+              9.184459361,
+              45.468349947
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "pedestrian",
+        "sidewalk",
+        "walk"
+      ]
+    },
+    {
+      "id": 41810,
+      "title": "Milan - Untagged Crossing Ways",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/51593/challenge/41810",
+      "status": "Ready",
+      "description": "This challenge is all about finding\ncrossing ways that are missing a crossing tag. A crossing tag tells us\nwhether the crossing is marked or unmarked. For example, if the crossing\nis a zebra crossing, the crossing tag would be zebra - thats my\nfavorite kind of crossing!\n\nIts important to tag crossing ways with a crossing tag so that other\nmap users know what type of crossing it is and what markings to expect.\nThat way, they can stay safe and cross the road safely.\n\nThis challenge will help us identify crossing ways that are missing a\ncrossing tag so that we can fix them. We are going to use satellite\nimagery to see if we can tell whether the crossing is marked or unmarked.\nIf we can, we will add a crossing tag to the crossing way.\n\nBut if we can not tell from the satellite imagery whether the crossing is\nmarked or unmarked, we will leave the crossing way untagged. Its better\nto leave a crossing way untagged than to add a wrong crossing tag.\n\nSo, if you are up for a challenge, join us in our quest to make all crossing\nways safe and accessible for everyone. Crikey, its going to be a beaut!\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.101875349,
+              45.422916905
+            ],
+            [
+              9.101875349,
+              45.530917345
+            ],
+            [
+              9.26936617,
+              45.530917345
+            ],
+            [
+              9.26936617,
+              45.422916905
+            ],
+            [
+              9.101875349,
+              45.422916905
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "crossing"
+      ]
+    },
+    {
+      "id": 44413,
+      "title": "Milan - Review Possible Mistagged Unmarked Crossing Ways",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/55764/challenge/44413",
+      "status": "Ready",
+      "description": "Welcome to the Map Roulette\nproject for reviewing potentially mistagged pedestrian crossing ways! Our\ngoal is to improve the accuracy of OpenStreetMap data by verifying and\nupdating the tags for crosswalks that may be mislabeled as unmarked.\n\nUsing machine learning, we have identified potential mistagged crossings\nthat are labeled as 'unmarked' in OSM but may actually be marked. Your task\nis to review these crossings and update their tags to include the proper\n'crossing' and 'crossing:markings' tags.\n\nPlease note that some of these tasks may be false positives, so it's important\nto carefully review each case. If a marking appears unmarked across various\nsatellite imagery, mark it as 'Not An Issue'. Additionally, keep in mind that\nsome crossings may have been recently marked, so be sure to check different\nsatellite imagery layers/sources with the latest capture date to verify.\n\nBy participating in this challenge, you will be contributing to the\nimprovement of OpenStreetMap data and helping to make all crossing ways\nsafe and accessible for everyone. So, if you're up for a challenge, join\nus in our quest to create more accurate maps!\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.103001064,
+              45.435506202
+            ],
+            [
+              9.103001064,
+              45.519182314
+            ],
+            [
+              9.22594205,
+              45.519182314
+            ],
+            [
+              9.22594205,
+              45.435506202
+            ],
+            [
+              9.103001064,
+              45.435506202
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "crossing",
+        "pedestrian",
+        "walk"
+      ]
+    },
+    {
+      "id": 43763,
+      "title": "Milan - Suspicious Unmarked Crossing Ways",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/56077/challenge/43763",
+      "status": "Ready",
+      "description": "\nThe goal of this challenge is to identify and improve the mapping of unmarked crossings on busy or high-traffic roads.\nUnmarked crossings can be dangerous for pedestrians and other non-motorized road users, as they may not be easily visible to drivers.\nBy identifying and improving the mapping of these crossings, we can help make our streets safer and more accessible for everyone.\nTask Description:\nFor this challenge, we will be focusing on ways that are tagged as crossing=unmarked and cross busy or potentially high traffic roads.\nYour task is to verify that these crossings exist and are accurately mapped in OpenStreetMap. If the crossing does not exist or is not accurately mapped, please make the necessary changes to the map.\nTo complete this challenge, verify that an actual crossing exists as represented by the OSM feature and that it is accurately tagged.\nIf the crossing does not exist or is not accurately mapped, make the necessary changes to the map.\n- If the crossing exists (there are curb cuts or other indications) and there are no markings, you may leave the crossing as is.\n- If the crossing exists and is indicated by different surface types, change the crossing tag to crossing=marked and add a crossing:markings=surface tag.\n- If the crossing exists and is marked, change the crossing tag to marked, uncontrolled, or traffic_signals as appropriate.\n- If no formal crossing exists but it looks like a place where people cross the road, change the crossing tag to crossing=informal and change the highway tag to something other than crossing. This helps distinguish between unmarked official crossings and informal crossings.\n- If a crossing does not exist and would be dangerous for pedestrians to cross at this location, delete the crossing.\n\nBy completing tasks in this challenge, you will be helping to make OpenStreetMap more accurate and useful for pedestrians and other non-motorized road users. Good luck!\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.165637,
+              45.480669999
+            ],
+            [
+              9.165637,
+              45.504491858
+            ],
+            [
+              9.1914089,
+              45.504491858
+            ],
+            [
+              9.1914089,
+              45.480669999
+            ],
+            [
+              9.165637,
+              45.480669999
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "crossing",
+        "pedestrian"
+      ]
+    },
+    {
+      "id": 41808,
+      "title": "Milan - Conflicting Crossing Tags",
+      "service": "MapRoulette",
+      "instance": "https://maproulette.org/",
+      "url": "https://maproulette.org/admin/project/51593/challenge/41808",
+      "status": "Ready",
+      "description": "This challenge is all about finding\ncrossing ways that have conflicting crossing tags. That means that either\nthe crossing tag and crossing:markings tag do not agree with each other or\nperhaps the footway tag is inconsistent with the highway tag.\n\nFor example, if the crossing tag is set to zebra, but the crossing:markings\ntag is set to unmarked, that means that the crossing is tagged as both\nmarked and unmarked. Thats no good - have you ever seen a zebra with no\nmarkings?!?!\n\nThis challenge will help us identify crossing ways that have conflicting\ncrossing tags so that we can fix them. We are going to use satellite imagery\nto see if we can tell whether the crossing is marked or unmarked. If we can,\nwe will change the crossing tag and crossing:markings tag so that they match.\n\nBut if we can not tell from the satellite imagery whether the crossing is\nmarked or unmarked, we will leave the crossing tag and crossing:markings tag\nas they are. Its better to leave a tag blank than to add a wrong tag.\n\nRemember, its important to tag crossing ways correctly so that other map\nusers know what type of crossing it is and what markings to expect. That\nway, they can stay safe and cross the road safely.\n\nSo, if you are up for a challenge, join us in our quest to make all crossing\nways safe and accessible for everyone. Crikey, its going to be a beaut!\n",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.119281344,
+              45.43042802
+            ],
+            [
+              9.119281344,
+              45.516846197
+            ],
+            [
+              9.257642305,
+              45.516846197
+            ],
+            [
+              9.257642305,
+              45.43042802
+            ],
+            [
+              9.119281344,
+              45.43042802
+            ]
+          ]
+        ]
+      },
+      "matched_keywords": [
+        "crossing",
+        "footway"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-08-09T23:52:57Z",
+  "mode": "skip",
+  "reason": "no_osm_changes",
+  "watcher_status": 0,
+  "force": false,
+  "current_codebase_revision": "01d4bd2f6d1814f8bdd772be1406b1b4d550f8e2",
+  "recorded_codebase_revision": "01d4bd2f6d1814f8bdd772be1406b1b4d550f8e2",
+  "missing_raw": [],
+  "missing_required": []
+}

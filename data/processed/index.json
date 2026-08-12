@@ -1,0 +1,13 @@
+{
+    "folder": "data/processed",
+    "files": [
+        "crossings.parquet",
+        "kerbs.parquet",
+        "other_footways.parquet",
+        "roads_for_completeness.parquet",
+        "sidewalks.parquet"
+    ],
+    "subfolders": [
+        "other_footways"
+    ]
+}

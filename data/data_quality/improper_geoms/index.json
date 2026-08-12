@@ -1,0 +1,9 @@
+{
+    "folder": "data/data_quality/improper_geoms",
+    "files": [
+        "crossings_improper_geoms.parquet",
+        "kerbs_improper_geoms.parquet",
+        "sidewalks_improper_geoms.parquet"
+    ],
+    "subfolders": []
+}

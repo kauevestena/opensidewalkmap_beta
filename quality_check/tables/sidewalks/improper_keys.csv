@@ -1,0 +1,11 @@
+osm_id,feat_type,key,value,commentary
+755861239,way,crossing,uncontrolled,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+755861240,way,crossing,uncontrolled,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+982015591,way,crossing,uncontrolled,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+1031311514,way,crossing,uncontrolled,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+1031696467,way,crossing,traffic_signals,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+1185999075,way,barrier,yes,"if there's a barrier it may be a node in the sidewalk, but not the sidewalk itself"
+1448021677,way,crossing,traffic_signals,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+1448065050,way,crossing,uncontrolled,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+1448067175,way,crossing,uncontrolled,"It's inappropriate for Sidewalks, probably mistakenly tagged"
+1546922622,way,crossing,uncontrolled,"It's inappropriate for Sidewalks, probably mistakenly tagged"
