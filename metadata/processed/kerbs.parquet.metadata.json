@@ -70,14 +70,14 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-08-16T04:57:51-03:00",
+    "updated": "2026-08-23T04:59:51-03:00",
     "node_registry": {
-      "Data Fetching": "16/08/2026 04:55:35",
-      "Data Pre-Processing": "16/08/2026 04:55:40",
+      "Data Fetching": "23/08/2026 04:57:35",
+      "Data Pre-Processing": "23/08/2026 04:57:40",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "16/08/2026 04:57:51",
-      "Wiki check for keys": "09/08/2026 08:24:08",
-      "Data Quality Tool": "16/08/2026 04:57:38",
+      "Statistical Charts": "23/08/2026 04:59:51",
+      "Wiki check for keys": "16/08/2026 08:43:35",
+      "Data Quality Tool": "23/08/2026 04:59:38",
       "Versioning Data": "26/07/2026 08:56:31",
       "Completeness Analysis": "17/07/2026 21:42:02",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15"
@@ -102,7 +102,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-08-16T04:57:51-03:00",
+    "generated_at": "2026-08-23T04:59:51-03:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "42d1f4fe32942a27423bc028fef0341a2627139b",
@@ -117,10 +117,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/kerbs.parquet",
     "media_type": "application/vnd.apache.parquet",
     "format": "GeoParquet",
-    "byte_size": 106016,
+    "byte_size": 106028,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "c9ade60bde5b4386e582c6ce3db23572e05c1e17d1e602e5e93b948a389da31d"
+      "value": "8cf867b24e09cbde2fa8ad43608ba55567e7f720eaf598836c1d1fe7d2cea6de"
     }
   },
   "links": [
