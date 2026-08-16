@@ -1,20 +1,20 @@
 {
   "edge_kind_counts": {
     "crossing": 2096,
-    "footway": 6627,
+    "footway": 6635,
     "sidewalk": 8135,
     "stairs": 366
   },
   "elevation_provider_fingerprint": "a4a4bc7ab35d623e",
-  "feature_count": 17224,
-  "generated_at": "2026-08-16T07:58:41.116641+00:00",
+  "feature_count": 17232,
+  "generated_at": "2026-08-22T08:00:42.655051+00:00",
   "profile_audit": {
     "blind": {
       "grade_bands": {
         "0": 139,
         "1-19": 0,
         "20-39": 1963,
-        "40-59": 13880,
+        "40-59": 13888,
         "60-79": 1233,
         "80-100": 9
       },
@@ -26,8 +26,8 @@
         "crossing": 19,
         "incline": 35,
         "lighting": 103,
-        "smoothness": 3473,
-        "surface": 10333,
+        "smoothness": 3472,
+        "surface": 10342,
         "tactile_paving": 2077,
         "width": 1179
       }
@@ -37,20 +37,20 @@
         "0": 8,
         "1-19": 576,
         "20-39": 1595,
-        "40-59": 15021,
+        "40-59": 15029,
         "60-79": 24,
         "80-100": 0
       },
       "maximum_grade": 66,
-      "mean_grade": 41.68,
+      "mean_grade": 41.69,
       "minimum_grade": 0,
       "most_common_limiting_factors": {
         "barrier": 5,
         "crossing": 1562,
         "incline": 38,
         "kerb": 494,
-        "smoothness": 2974,
-        "surface": 11202,
+        "smoothness": 2973,
+        "surface": 11211,
         "width": 949
       }
     },
@@ -58,8 +58,8 @@
       "grade_bands": {
         "0": 606,
         "1-19": 7,
-        "20-39": 12070,
-        "40-59": 4536,
+        "20-39": 12067,
+        "40-59": 4547,
         "60-79": 5,
         "80-100": 0
       },
@@ -71,8 +71,8 @@
         "crossing": 593,
         "incline": 38,
         "kerb": 1307,
-        "smoothness": 2925,
-        "surface": 10977,
+        "smoothness": 2924,
+        "surface": 10986,
         "width": 981
       }
     }
@@ -81,9 +81,9 @@
   "ruleset_version": "1.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 28,
+    "copernicus_glo30": 39,
     "direct_osm_numeric": 13,
-    "missing": 17183
+    "missing": 17180
   },
   "warnings": [
     "Profile rules are provisional and require participatory calibration.",
