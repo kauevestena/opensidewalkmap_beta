@@ -1,7 +1,7 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-08-23T07:58:43.346467+00:00",
+    "generated_at": "2026-08-24T08:14:41.943091+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
@@ -776,10 +776,10 @@
             "unknown": 22,
             "unknownPercent": 0.11,
             "invalid": 0,
-            "min": 0.084873,
-            "max": 18.691307,
-            "mean": 3.577287,
-            "median": 3.701574,
+            "min": 0.087611,
+            "max": 18.694045,
+            "mean": 3.580025,
+            "median": 3.704312,
             "bins": [
                 {
                     "label": "0–<2",
