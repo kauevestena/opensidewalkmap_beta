@@ -1,36 +1,36 @@
 {
   "edge_kind_counts": {
     "crossing": 2096,
-    "footway": 6623,
-    "sidewalk": 8134,
+    "footway": 6635,
+    "sidewalk": 8135,
     "stairs": 366
   },
-  "feature_count": 17219,
-  "generated_at": "2026-08-01T08:23:28.080631+00:00",
+  "feature_count": 17232,
+  "generated_at": "2026-08-24T08:16:43.217563+00:00",
   "profile_audit": {
     "blind": {
       "most_common_decisive_rules": {
         "barrier_steps": 369,
         "crossing_tactile_no": 123,
+        "downhill_5_to_8_33": 9,
         "lowered_without_tactile": 24,
         "smoothness_bad": 220,
-        "smoothness_horrible": 8,
         "smoothness_very_bad": 22,
-        "surface_cobble_sett": 922,
+        "surface_cobble_sett": 923,
         "surface_grass": 43,
         "surface_gravel": 37,
         "surface_ground_earth_dirt": 116
       },
       "severity_counts": {
-        "0": 15418,
-        "1": 197,
-        "2": 1453,
+        "0": 15419,
+        "1": 206,
+        "2": 1456,
         "3": 138,
         "4": 13
       },
       "status_counts": {
-        "hazard_detected": 1801,
-        "insufficient_data": 15325,
+        "hazard_detected": 1813,
+        "insufficient_data": 15326,
         "no_detected_hazard": 93
       }
     },
@@ -41,22 +41,22 @@
         "smoothness_bad": 220,
         "smoothness_horrible": 8,
         "smoothness_very_bad": 22,
-        "surface_cobble_sett": 892,
+        "surface_cobble_sett": 893,
         "surface_compacted_fine_gravel": 23,
         "surface_grass": 86,
         "surface_gravel": 37,
         "surface_ground_earth_dirt": 122
       },
       "severity_counts": {
-        "0": 15318,
+        "0": 15319,
         "1": 29,
-        "2": 1255,
-        "3": 605,
+        "2": 1265,
+        "3": 607,
         "4": 12
       },
       "status_counts": {
-        "hazard_detected": 1901,
-        "insufficient_data": 15224,
+        "hazard_detected": 1913,
+        "insufficient_data": 15225,
         "no_detected_hazard": 94
       }
     },
@@ -68,21 +68,21 @@
         "smoothness_horrible": 8,
         "smoothness_very_bad": 22,
         "smoothness_very_horrible": 7,
-        "surface_cobble_sett": 919,
+        "surface_cobble_sett": 920,
         "surface_grass": 86,
         "surface_gravel": 37,
         "surface_ground_earth_dirt": 123
       },
       "severity_counts": {
-        "0": 15349,
-        "1": 1822,
-        "2": 36,
+        "0": 15350,
+        "1": 1832,
+        "2": 38,
         "3": 7,
         "4": 5
       },
       "status_counts": {
-        "hazard_detected": 1870,
-        "insufficient_data": 15255,
+        "hazard_detected": 1882,
+        "insufficient_data": 15256,
         "no_detected_hazard": 94
       }
     },
@@ -93,22 +93,22 @@
         "kerb_raised": 200,
         "smoothness_bad": 114,
         "smoothness_very_bad": 20,
-        "surface_cobble_sett": 892,
+        "surface_cobble_sett": 893,
         "surface_compacted_fine_gravel": 28,
         "surface_grass": 85,
         "surface_gravel": 37,
         "surface_ground_earth_dirt": 121
       },
       "severity_counts": {
-        "0": 15311,
+        "0": 15312,
         "1": 0,
-        "2": 139,
-        "3": 1152,
+        "2": 148,
+        "3": 1155,
         "4": 617
       },
       "status_counts": {
-        "hazard_detected": 1908,
-        "insufficient_data": 15221,
+        "hazard_detected": 1920,
+        "insufficient_data": 15222,
         "no_detected_hazard": 90
       }
     }
@@ -117,9 +117,9 @@
   "ruleset_version": "0.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 3,
+    "copernicus_glo30": 39,
     "direct_osm_numeric": 13,
-    "missing": 17203
+    "missing": 17180
   },
   "warnings": [
     "Hazard rules are provisional and require participatory calibration.",

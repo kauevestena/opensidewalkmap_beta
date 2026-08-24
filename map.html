@@ -11,6 +11,7 @@
     <!-- maplibre-gl v6 (ESM-only) -->
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css" />
     <link rel="stylesheet" href="oswm_codebase/assets/styles/webmap_snapshot.css" />
+    <link rel="stylesheet" href="oswm_codebase/assets/styles/webmap_theme_charts.css" />
     <!-- OSWM native legend control -->
     <link rel="stylesheet" href="oswm_codebase/assets/styles/oswm_legend_control.css" />
     <script type="module" src="oswm_codebase/assets/branding/branding.js"></script>
@@ -223,6 +224,7 @@
                 );
 
                 let legendControl; // Declared here so the style selector event listener can access it
+                let themeChartControl;
 
                 const homePosition = {
                 center: [144, -37],
@@ -426,6 +428,17 @@
                     });
                     map.addControl(legendControl, 'top-right');
 
+                    map.on('oswm-theme-chart-opened', () => {
+                        if (legendControl && legendControl.close) {
+                            legendControl.close();
+                        }
+                    });
+                    map.on('oswm-legend-opened', () => {
+                        if (themeChartControl && themeChartControl.close) {
+                            themeChartControl.close();
+                        }
+                    });
+
                 });
 
                 // // Terrain, someday! (TODO)
@@ -454,6 +467,7 @@
                     if (legendControl) {
                         legendControl.setActiveStyle(style);
                     }
+                    themeChartControl?.setActiveStyle(style);
                     
                     // Update detached legend symbology
                     const symbologyPanel = document.getElementById('oswm-symbology-panel');
@@ -461,6 +475,16 @@
                         symbologyPanel.innerHTML = params.legend_fragments[style];
                     }
                 });
+
+                import('./oswm_codebase/webmap/theme_charts/theme_chart_control.js')
+                    .then(({ installThemeChartControl }) => {
+                        themeChartControl = installThemeChartControl(map, params, {
+                            position: 'bottom-left',
+                            loadECharts: () => import('https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.esm.mjs'),
+                            getActiveStyleKey: () => styleSelector.value || 'footway_categories'
+                        });
+                    })
+                    .catch((error) => console.error('Theme charts could not be loaded:', error));
 
                 import('./oswm_codebase/webmap/snapshot/snapshot_control.js')
                     .then(({ installSnapshotControl }) => {

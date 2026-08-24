@@ -88,6 +88,8 @@ osm_id,feat_type,key,value,commentary
 9986507243,node,crossing,marked,"It's inappropriate for Kerbs, it's for crossings"
 10053848310,node,crossing,traffic_signals,"It's inappropriate for Kerbs, it's for crossings"
 13317860641,node,crossing,unmarked,"It's inappropriate for Kerbs, it's for crossings"
+14098091903,node,crossing,traffic_signals,"It's inappropriate for Kerbs, it's for crossings"
+14098091904,node,crossing,traffic_signals,"It's inappropriate for Kerbs, it's for crossings"
 24576715,way,crossing,zebra,"It's inappropriate for Kerbs, it's for crossings"
 659241105,way,crossing,zebra,"It's inappropriate for Kerbs, it's for crossings"
 953199745,way,crossing,unmarked,"It's inappropriate for Kerbs, it's for crossings"
