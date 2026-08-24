@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   # Prevent overlapping daily runs from stepping on each other
-  group: data_daily_updating
+  group: oswm-node-main-write
   cancel-in-progress: false
 
 env:
@@ -115,8 +115,9 @@ jobs:
           DATETIME="$(date +'%Y-%m-%d')"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit --amend -m "data updating at $DATETIME"
-            git push --force
+            git commit -m "data updating at $DATETIME"
+            git pull --rebase origin main
+            git push origin HEAD:main
           else
             echo "No changes to commit."
           fi

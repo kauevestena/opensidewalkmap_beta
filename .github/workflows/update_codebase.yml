@@ -1,31 +1,238 @@
-name: Update oswm_codebase sub-module
+name: Synchronize oswm_codebase
 
-on:            # manual trigger only
+on:
+  repository_dispatch:
+    types: [oswm-codebase-update]
   workflow_dispatch:
+    inputs:
+      codebase_sha:
+        description: "oswm_codebase commit to install (defaults to origin/main)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: oswm-node-main-write
+  cancel-in-progress: false
+
+env:
+  TZ: America/Sao_Paulo
 
 jobs:
-  bump-submodule:
+  synchronize:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout without submodules
+      - name: Checkout node main
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
           submodules: false
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Initialise sub-module and bump to tip of main
+      - name: Resolve and checkout requested codebase commit
+        id: target
+        env:
+          DISPATCH_SHA: ${{ github.event.client_payload.codebase_sha }}
+          MANUAL_SHA: ${{ inputs.codebase_sha }}
         run: |
+          TARGET_SHA="${DISPATCH_SHA:-$MANUAL_SHA}"
           git submodule sync --recursive
           git submodule update --init oswm_codebase
-          cd oswm_codebase
-          git fetch origin
-          git checkout -B main origin/main   # always land on branch
-          cd ..
+          git -C oswm_codebase fetch origin main
+          if [ -n "$TARGET_SHA" ]; then
+            git -C oswm_codebase fetch origin "$TARGET_SHA"
+          else
+            TARGET_SHA="$(git -C oswm_codebase rev-parse origin/main)"
+          fi
+          TARGET_SHA="$(git -C oswm_codebase rev-parse "$TARGET_SHA^{commit}")"
+          git -C oswm_codebase merge-base --is-ancestor "$TARGET_SHA" origin/main
+          git -C oswm_codebase checkout --detach "$TARGET_SHA"
+          echo "codebase_sha=$TARGET_SHA" >> "$GITHUB_OUTPUT"
+          echo "short_sha=${TARGET_SHA:0:12}" >> "$GITHUB_OUTPUT"
+
+      - name: Detect no-op synchronization
+        id: changes
+        run: |
           git add oswm_codebase
-          git diff --cached --quiet || {
-            git config user.name  "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -m "ci: bump oswm_codebase to latest origin/main ($(date +%Y-%m-%d))"
-            git push --recurse-submodules=on-demand
-          }
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install GDAL system dependencies
+        id: system_dependencies
+        if: steps.changes.outputs.changed == 'true'
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gdal-bin libgdal-dev
+
+      - name: Set up Python
+        id: setup_python
+        if: steps.changes.outputs.changed == 'true'
+        continue-on-error: true
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+          cache: pip
+          cache-dependency-path: oswm_codebase/requirements.txt
+
+      - name: Free runner disk space
+        id: disk_space
+        if: steps.changes.outputs.changed == 'true' && steps.system_dependencies.outcome == 'success' && steps.setup_python.outcome == 'success'
+        continue-on-error: true
+        run: |
+          sudo apt clean
+          docker system prune -af || true
+          sudo rm -rf /usr/local/lib/android /opt/ghc /usr/share/dotnet || true
+          rm -rf ~/.cache/pip || true
+          mkdir -p ~/.cache/pip
+
+      - name: Install codebase dependencies
+        id: python_dependencies
+        if: steps.changes.outputs.changed == 'true' && steps.disk_space.outcome == 'success'
+        continue-on-error: true
+        run: pip install --no-cache-dir -r oswm_codebase/requirements.txt
+
+      - name: Validate Python syntax
+        id: syntax
+        if: steps.changes.outputs.changed == 'true' && steps.python_dependencies.outcome == 'success'
+        continue-on-error: true
+        run: python -m compileall -q oswm_codebase
+
+      - name: Regenerate node with new codebase
+        id: regenerate
+        if: steps.changes.outputs.changed == 'true' && steps.syntax.outcome == 'success'
+        continue-on-error: true
+        env:
+          OSWM_FORCE_REGEN: "1"
+        run: sh oswm_codebase/runners/daily.sh
+
+      - name: Validate generated core tiles
+        id: validate
+        if: steps.changes.outputs.changed == 'true' && steps.regenerate.outcome == 'success'
+        continue-on-error: true
+        run: |
+          for layer in sidewalks crossings kerbs; do
+            FILE="data/tiles/${layer}.pmtiles"
+            test -f "$FILE"
+            test "$(stat -c%s "$FILE")" -ge 1024
+          done
+          if [ -f data/tiles/tile_generation_report.json ]; then
+            python oswm_codebase/other/auxiliary_scripts/validate_tiles.py
+          fi
+
+      - name: Summarize validation result
+        id: result
+        if: always() && steps.changes.outputs.changed == 'true'
+        env:
+          SYSTEM_DEPENDENCIES: ${{ steps.system_dependencies.outcome }}
+          SETUP_PYTHON: ${{ steps.setup_python.outcome }}
+          DISK_SPACE: ${{ steps.disk_space.outcome }}
+          PYTHON_DEPENDENCIES: ${{ steps.python_dependencies.outcome }}
+          SYNTAX: ${{ steps.syntax.outcome }}
+          REGENERATE: ${{ steps.regenerate.outcome }}
+          VALIDATE: ${{ steps.validate.outcome }}
+        run: |
+          SUCCESS=false
+          if [ "$SYSTEM_DEPENDENCIES" = success ] && \
+             [ "$SETUP_PYTHON" = success ] && \
+             [ "$DISK_SPACE" = success ] && \
+             [ "$PYTHON_DEPENDENCIES" = success ] && \
+             [ "$SYNTAX" = success ] && \
+             [ "$REGENERATE" = success ] && \
+             [ "$VALIDATE" = success ]; then
+            SUCCESS=true
+          fi
+          echo "success=$SUCCESS" >> "$GITHUB_OUTPUT"
+
+      - name: Commit validated synchronization directly to main
+        if: steps.result.outputs.success == 'true'
+        env:
+          TARGET_SHA: ${{ steps.target.outputs.codebase_sha }}
+        run: |
+          git config user.name "opensidewalkmap-node-sync[bot]"
+          git config user.email "4437706+opensidewalkmap-node-sync[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: synchronize oswm_codebase to ${TARGET_SHA:0:12}"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Configure GitHub Pages
+        if: steps.result.outputs.success == 'true'
+        uses: actions/configure-pages@v4
+
+      - name: Upload synchronized Pages artifact
+        if: steps.result.outputs.success == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy synchronized node
+        if: steps.result.outputs.success == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Prepare intervention branch after validation failure
+        if: steps.result.outputs.success == 'false'
+        id: intervention
+        env:
+          TARGET_SHA: ${{ steps.target.outputs.codebase_sha }}
+          SHORT_SHA: ${{ steps.target.outputs.short_sha }}
+        run: |
+          BRANCH="automation/oswm-codebase-${SHORT_SHA}"
+          git reset --hard HEAD
+          git submodule update --init oswm_codebase
+          git -C oswm_codebase fetch origin "$TARGET_SHA"
+          git -C oswm_codebase checkout --detach "$TARGET_SHA"
+          git add oswm_codebase
+          git config user.name "opensidewalkmap-node-sync[bot]"
+          git config user.email "4437706+opensidewalkmap-node-sync[bot]@users.noreply.github.com"
+          git commit -m "chore: review oswm_codebase synchronization to ${SHORT_SHA}"
+          git fetch origin "$BRANCH:refs/remotes/origin/$BRANCH" || true
+          git push --force-with-lease origin "HEAD:refs/heads/$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update intervention pull request
+        if: steps.intervention.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.intervention.outputs.branch }}
+          TARGET_SHA: ${{ steps.target.outputs.codebase_sha }}
+          SOURCE_RUN: ${{ github.event.client_payload.source_run }}
+          REGENERATE_OUTCOME: ${{ steps.regenerate.outcome }}
+          VALIDATE_OUTCOME: ${{ steps.validate.outcome }}
+          SYNTAX_OUTCOME: ${{ steps.syntax.outcome }}
+          DEPENDENCIES_OUTCOME: ${{ steps.python_dependencies.outcome }}
+        run: |
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          BODY="Automated synchronization to \`$TARGET_SHA\` needs intervention.\n\n- Dependencies: **$DEPENDENCIES_OUTCOME**\n- Syntax: **$SYNTAX_OUTCOME**\n- Regeneration: **$REGENERATE_OUTCOME**\n- Output validation: **$VALIDATE_OUTCOME**\n- [Node workflow run]($RUN_URL)"
+          if [ -n "$SOURCE_RUN" ]; then
+            BODY="$BODY\n- [Codebase dispatch run]($SOURCE_RUN)"
+          fi
+          BODY="$(printf '%b' "$BODY")"
+          EXISTING="$(gh pr list --head "$BRANCH" --base main --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$EXISTING" ]; then
+            gh api --method PATCH "repos/${{ github.repository }}/pulls/$EXISTING" -f "body=$BODY" >/dev/null
+          else
+            gh pr create --base main --head "$BRANCH" \
+              --title "chore: review oswm_codebase synchronization (${TARGET_SHA:0:12})" \
+              --body "$BODY"
+          fi
+
+      - name: Fail after creating intervention PR
+        if: steps.result.outputs.success == 'false'
+        run: exit 1
+
+      - name: Report already synchronized
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "Node already references oswm_codebase ${{ steps.target.outputs.codebase_sha }}"
