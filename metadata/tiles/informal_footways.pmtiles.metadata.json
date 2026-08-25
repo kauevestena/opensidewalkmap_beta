@@ -70,14 +70,14 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-08-24T05:15:50-03:00",
+    "updated": "2026-08-25T05:11:26-03:00",
     "node_registry": {
-      "Data Fetching": "24/08/2026 05:13:34",
-      "Data Pre-Processing": "24/08/2026 05:13:39",
+      "Data Fetching": "25/08/2026 05:09:10",
+      "Data Pre-Processing": "25/08/2026 05:09:15",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "24/08/2026 05:15:50",
+      "Statistical Charts": "25/08/2026 05:11:26",
       "Wiki check for keys": "23/08/2026 08:45:39",
-      "Data Quality Tool": "24/08/2026 05:15:35",
+      "Data Quality Tool": "25/08/2026 05:11:12",
       "Versioning Data": "26/07/2026 08:56:31",
       "Completeness Analysis": "17/07/2026 21:42:02",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15"
@@ -101,7 +101,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-08-24T05:15:50-03:00",
+    "generated_at": "2026-08-25T05:11:26-03:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "42d1f4fe32942a27423bc028fef0341a2627139b",
@@ -116,10 +116,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/informal_footways.pmtiles",
     "media_type": "application/vnd.pmtiles",
     "format": "PMTiles",
-    "byte_size": 3867130,
+    "byte_size": 3923936,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "5f6ec2a4216576cf15dbf25661fe7a4f34ad64103ad91e46331ffa60101c54a4"
+      "value": "66b5e0aa9538abc979417abe59788e8c2c977695da72eaa07e0f9ef63c8c8307"
     }
   },
   "links": [

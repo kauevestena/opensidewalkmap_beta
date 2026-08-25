@@ -4,7 +4,39 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Mon, 24 Aug 2026 08:10:42 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 08:06:03 GMT</lastBuildDate>
+    <item>
+        <title>[Activity] OSM Changeset 187943272 by Brains Coworking (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187943272</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187943272&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Brains Coworking&quot;&gt;Brains Coworking&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Cadastrei minha empresa&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187943272&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187943272&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 24 Aug 2026 14:53:04 GMT</pubDate>
+        <guid isPermaLink="false">activity_187943272</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 187915527 by RahadRiver (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187915527</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187915527&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/RahadRiver&quot;&gt;RahadRiver&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Modified highway near Rodovia do Café Governador Ney Braga #adt&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187915527&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187915527&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 24 Aug 2026 02:38:50 GMT</pubDate>
+        <guid isPermaLink="false">activity_187915527</guid>
+    </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
         <link>https://www.openstreetmap.org/changeset/182321412</link>

@@ -1194,6 +1194,9 @@
         "footway": [
             "sidewalk"
         ],
+        "note": [
+            "é na verdade uma ciclovia compartilhada, mas a construção do viaduto interrompe e não tem saída"
+        ],
         "bridge": [
             "yes"
         ],
@@ -1257,9 +1260,6 @@
         ],
         "ramp:wheelchair": [
             "no"
-        ],
-        "note": [
-            "é na verdade uma ciclovia compartilhada, mas a construção do viaduto interrompe e não tem saída"
         ],
         "check_date:smoothness": [
             "2025-02-05"
@@ -1721,12 +1721,12 @@
             "pedestrian",
             "service",
             "residential",
+            "construction",
             "footway",
             "steps",
             "tertiary",
             "cycleway",
             "living_street",
-            "construction",
             "path",
             "unclassified",
             "track",
@@ -1814,6 +1814,7 @@
             "Praça Zacarias",
             "Rua XV de Novembro",
             "Rua Sanito Rocha",
+            "Rua Professor João Mazzarotto",
             "Rua José Bonifácio",
             "Rua Mateus Leme",
             "Rua João Marchesini",
@@ -2727,6 +2728,25 @@
             "traffic_island",
             "access_aisle"
         ],
+        "check_date": [
+            "2026-08-25",
+            "2022-01-10",
+            "2025-08-13",
+            "2025-01-10",
+            "2026-03-19",
+            "2025-02-08"
+        ],
+        "construction": [
+            "tertiary",
+            "trunk",
+            "secondary",
+            "bridge",
+            "residential"
+        ],
+        "note": [
+            "Fim do bloqueio previsto para 22/09/2026",
+            "Vias em construção; material baseado no mapa disponibilizado pela UTAG em seu portal (Obras Novo Inter 2 - Lote 4)"
+        ],
         "bridge": [
             "yes",
             "boardwalk",
@@ -2775,13 +2795,6 @@
         "cutting": [
             "yes"
         ],
-        "check_date": [
-            "2022-01-10",
-            "2025-08-13",
-            "2025-01-10",
-            "2026-03-19",
-            "2025-02-08"
-        ],
         "leisure": [
             "park",
             "track"
@@ -2795,13 +2808,6 @@
         "motorcar": [
             "no",
             "yes"
-        ],
-        "construction": [
-            "trunk",
-            "secondary",
-            "bridge",
-            "residential",
-            "tertiary"
         ],
         "maxspeed:type": [
             "BR:urban",
@@ -2998,9 +3004,6 @@
         ],
         "bridge:structure": [
             "beam"
-        ],
-        "note": [
-            "Vias em construção; material baseado no mapa disponibilizado pela UTAG em seu portal (Obras Novo Inter 2 - Lote 4)"
         ],
         "source:alt_name": [
             "CNEFE 2022 / IBGE"

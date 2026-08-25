@@ -1,18 +1,18 @@
 {
   "edge_kind_counts": {
     "crossing": 2096,
-    "footway": 6635,
+    "footway": 6636,
     "sidewalk": 8135,
     "stairs": 366
   },
-  "feature_count": 17232,
-  "generated_at": "2026-08-24T08:16:43.217563+00:00",
+  "feature_count": 17233,
+  "generated_at": "2026-08-25T08:12:20.006650+00:00",
   "profile_audit": {
     "blind": {
       "most_common_decisive_rules": {
         "barrier_steps": 369,
         "crossing_tactile_no": 123,
-        "downhill_5_to_8_33": 9,
+        "downhill_5_to_8_33": 10,
         "lowered_without_tactile": 24,
         "smoothness_bad": 220,
         "smoothness_very_bad": 22,
@@ -23,13 +23,13 @@
       },
       "severity_counts": {
         "0": 15419,
-        "1": 206,
+        "1": 207,
         "2": 1456,
         "3": 138,
         "4": 13
       },
       "status_counts": {
-        "hazard_detected": 1813,
+        "hazard_detected": 1814,
         "insufficient_data": 15326,
         "no_detected_hazard": 93
       }
@@ -50,12 +50,12 @@
       "severity_counts": {
         "0": 15319,
         "1": 29,
-        "2": 1265,
+        "2": 1266,
         "3": 607,
         "4": 12
       },
       "status_counts": {
-        "hazard_detected": 1913,
+        "hazard_detected": 1914,
         "insufficient_data": 15225,
         "no_detected_hazard": 94
       }
@@ -75,13 +75,13 @@
       },
       "severity_counts": {
         "0": 15350,
-        "1": 1832,
+        "1": 1833,
         "2": 38,
         "3": 7,
         "4": 5
       },
       "status_counts": {
-        "hazard_detected": 1882,
+        "hazard_detected": 1883,
         "insufficient_data": 15256,
         "no_detected_hazard": 94
       }
@@ -102,12 +102,12 @@
       "severity_counts": {
         "0": 15312,
         "1": 0,
-        "2": 148,
+        "2": 149,
         "3": 1155,
         "4": 617
       },
       "status_counts": {
-        "hazard_detected": 1920,
+        "hazard_detected": 1921,
         "insufficient_data": 15222,
         "no_detected_hazard": 90
       }
@@ -117,9 +117,9 @@
   "ruleset_version": "0.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 39,
+    "copernicus_glo30": 42,
     "direct_osm_numeric": 13,
-    "missing": 17180
+    "missing": 17178
   },
   "warnings": [
     "Hazard rules are provisional and require participatory calibration.",

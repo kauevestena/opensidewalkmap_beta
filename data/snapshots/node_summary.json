@@ -1,12 +1,12 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-08-24T08:14:41.943091+00:00",
+    "generated_at": "2026-08-25T08:10:18.336042+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
-            "total": 20077,
-            "known": 20077,
+            "total": 20078,
+            "known": 20078,
             "unknown": 0,
             "unknownPercent": 0.0,
             "knownCategoryCount": 8,
@@ -49,7 +49,7 @@
                 },
                 {
                     "value": "informal_footways",
-                    "count": 198,
+                    "count": 199,
                     "percent": 0.99,
                     "color": "#b0645a"
                 },
@@ -66,19 +66,19 @@
                 "percent": 40.52,
                 "color": "steelblue"
             },
-            "shannonEntropy": 1.491293,
-            "effectiveDiversity": 4.442836,
-            "lengthFeatureCount": 17175,
-            "totalLengthKm": 912.543782,
+            "shannonEntropy": 1.491449,
+            "effectiveDiversity": 4.443528,
+            "lengthFeatureCount": 17176,
+            "totalLengthKm": 913.066362,
             "unknownLengthKm": 0.0,
             "lengthKmByCategory": {
                 "sidewalks": 320.282575,
-                "main_footways": 429.399784,
+                "main_footways": 429.475674,
                 "kerbs": 0.0,
                 "crossings": 24.515383,
                 "potential_footways": 98.238189,
                 "stairways": 5.128643,
-                "informal_footways": 34.979207,
+                "informal_footways": 35.425897,
                 "pedestrian_areas": 0.0
             },
             "id": "footway_categories",
@@ -771,15 +771,15 @@
         },
         "age": {
             "kind": "numeric",
-            "total": 20077,
+            "total": 20078,
             "known": 20055,
-            "unknown": 22,
+            "unknown": 23,
             "unknownPercent": 0.11,
             "invalid": 0,
-            "min": 0.087611,
-            "max": 18.694045,
-            "mean": 3.580025,
-            "median": 3.704312,
+            "min": 0.090349,
+            "max": 18.696783,
+            "mean": 3.582763,
+            "median": 3.70705,
             "bins": [
                 {
                     "label": "0–<2",
@@ -806,21 +806,21 @@
                     "label": "6–<8",
                     "lower": 6.0,
                     "upper": 8.0,
-                    "count": 701,
+                    "count": 689,
                     "color": "#31688e"
                 },
                 {
                     "label": "8–<10",
                     "lower": 8.0,
                     "upper": 10.0,
-                    "count": 386,
+                    "count": 395,
                     "color": "#443983"
                 },
                 {
                     "label": "10+",
                     "lower": 10.0,
                     "upper": null,
-                    "count": 314,
+                    "count": 317,
                     "color": "#440154"
                 }
             ],
@@ -851,9 +851,9 @@
         },
         "n_revs": {
             "kind": "numeric",
-            "total": 20077,
+            "total": 20078,
             "known": 20055,
-            "unknown": 22,
+            "unknown": 23,
             "unknownPercent": 0.11,
             "invalid": 0,
             "min": 1.0,
