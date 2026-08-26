@@ -4,93 +4,38 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Tue, 25 Aug 2026 08:06:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 08:08:58 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 187943272 by Brains Coworking (0 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/187943272</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187943272&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Brains Coworking&quot;&gt;Brains Coworking&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Cadastrei minha empresa&lt;/p&gt;
+        <title>[Activity] OSM Changeset 187980467 by Vinicius Moraes (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187980467</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187980467&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Melhoria na classificação de vias durante execução de obras nas proximidades do Terminal Capão da Imbuia&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187943272&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187943272&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187980467&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187980467&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 24 Aug 2026 14:53:04 GMT</pubDate>
-        <guid isPermaLink="false">activity_187943272</guid>
+        <pubDate>Tue, 25 Aug 2026 10:10:24 GMT</pubDate>
+        <guid isPermaLink="false">activity_187980467</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 187915527 by RahadRiver (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/187915527</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187915527&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/RahadRiver&quot;&gt;RahadRiver&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Modified highway near Rodovia do Café Governador Ney Braga #adt&lt;/p&gt;
+        <title>[Activity] OSM Changeset 187972719 by Vinicius Moraes (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/187972719</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 187972719&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Bloqueio total de via para obras com previsão de conclusão em 22/09/2026&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187915527&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187915527&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/187972719&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/187972719&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 24 Aug 2026 02:38:50 GMT</pubDate>
-        <guid isPermaLink="false">activity_187915527</guid>
-    </item>
-    <item>
-        <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/182321412</link>
-        <description>&lt;p&gt;&lt;strong&gt;High Deletion Alert for OSM Changeset 182321412&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização de supermercado e vias de condomínios residenciais&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Deletions to OSWM features:&lt;/strong&gt; 130&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/182321412&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/182321412&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 07 May 2026 05:21:54 GMT</pubDate>
-        <guid isPermaLink="false">deletion_alert_182321412</guid>
-    </item>
-    <item>
-        <title>[Alert] High Deletion OSM Changeset 182142041 by Vinicius Moraes (31 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/182142041</link>
-        <description>&lt;p&gt;&lt;strong&gt;High Deletion Alert for OSM Changeset 182142041&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Ajuste de nome arredor do Canal Belém; atualização de dados e correções gerais nos arredores&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Deletions to OSWM features:&lt;/strong&gt; 31&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/182142041&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/182142041&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 03 May 2026 04:42:55 GMT</pubDate>
-        <guid isPermaLink="false">deletion_alert_182142041</guid>
-    </item>
-    <item>
-        <title>[Alert] High Deletion OSM Changeset 183232534 by Victor 2015 (24 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/183232534</link>
-        <description>&lt;p&gt;&lt;strong&gt;High Deletion Alert for OSM Changeset 183232534&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Victor 2015&quot;&gt;Victor 2015&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualizações e correções&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Deletions to OSWM features:&lt;/strong&gt; 24&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/183232534&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/183232534&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 May 2026 23:48:46 GMT</pubDate>
-        <guid isPermaLink="false">deletion_alert_183232534</guid>
-    </item>
-    <item>
-        <title>[Alert] High Deletion OSM Changeset 183235387 by Victor 2015 (18 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/183235387</link>
-        <description>&lt;p&gt;&lt;strong&gt;High Deletion Alert for OSM Changeset 183235387&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Victor 2015&quot;&gt;Victor 2015&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualizações e correções&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Deletions to OSWM features:&lt;/strong&gt; 18&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/183235387&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/183235387&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 May 2026 03:04:48 GMT</pubDate>
-        <guid isPermaLink="false">deletion_alert_183235387</guid>
-    </item>
-    <item>
-        <title>[Alert] High Deletion OSM Changeset 183762617 by Victor 2015 (13 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/183762617</link>
-        <description>&lt;p&gt;&lt;strong&gt;High Deletion Alert for OSM Changeset 183762617&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Victor 2015&quot;&gt;Victor 2015&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualizações e correções&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Deletions to OSWM features:&lt;/strong&gt; 13&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/183762617&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/183762617&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 07 Jun 2026 03:55:02 GMT</pubDate>
-        <guid isPermaLink="false">deletion_alert_183762617</guid>
+        <pubDate>Tue, 25 Aug 2026 06:51:52 GMT</pubDate>
+        <guid isPermaLink="false">activity_187972719</guid>
     </item>
 </channel>
 </rss>
