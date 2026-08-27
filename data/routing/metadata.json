@@ -1,35 +1,35 @@
 {
   "edge_kind_counts": {
     "crossing": 2096,
-    "footway": 6636,
-    "sidewalk": 8135,
+    "footway": 6511,
+    "sidewalk": 8136,
     "stairs": 366
   },
   "elevation_provider_fingerprint": "a4a4bc7ab35d623e",
-  "feature_count": 17233,
-  "generated_at": "2026-08-26T08:18:13.537058+00:00",
+  "feature_count": 17109,
+  "generated_at": "2026-08-27T18:29:55.441782+00:00",
   "profile_audit": {
     "blind": {
       "grade_bands": {
         "0": 139,
         "1-19": 0,
         "20-39": 1963,
-        "40-59": 13889,
-        "60-79": 1233,
+        "40-59": 13753,
+        "60-79": 1245,
         "80-100": 9
       },
       "maximum_grade": 87,
-      "mean_grade": 46.72,
+      "mean_grade": 46.75,
       "minimum_grade": 0,
       "most_common_limiting_factors": {
         "barrier": 5,
         "crossing": 19,
-        "incline": 35,
+        "incline": 51,
         "lighting": 103,
-        "smoothness": 3472,
-        "surface": 10343,
+        "smoothness": 3436,
+        "surface": 10219,
         "tactile_paving": 2077,
-        "width": 1179
+        "width": 1199
       }
     },
     "elderly": {
@@ -37,43 +37,43 @@
         "0": 8,
         "1-19": 576,
         "20-39": 1595,
-        "40-59": 15030,
-        "60-79": 24,
+        "40-59": 14905,
+        "60-79": 25,
         "80-100": 0
       },
-      "maximum_grade": 66,
-      "mean_grade": 41.69,
+      "maximum_grade": 68,
+      "mean_grade": 41.71,
       "minimum_grade": 0,
       "most_common_limiting_factors": {
         "barrier": 5,
         "crossing": 1562,
-        "incline": 38,
+        "incline": 54,
         "kerb": 494,
-        "smoothness": 2973,
-        "surface": 11212,
-        "width": 949
+        "smoothness": 2937,
+        "surface": 11088,
+        "width": 969
       }
     },
     "wheelchair": {
       "grade_bands": {
         "0": 606,
         "1-19": 7,
-        "20-39": 12065,
-        "40-59": 4550,
+        "20-39": 11937,
+        "40-59": 4554,
         "60-79": 5,
         "80-100": 0
       },
       "maximum_grade": 61,
-      "mean_grade": 37.89,
+      "mean_grade": 37.91,
       "minimum_grade": 0,
       "most_common_limiting_factors": {
         "barrier": 403,
         "crossing": 593,
-        "incline": 38,
+        "incline": 54,
         "kerb": 1307,
-        "smoothness": 2924,
-        "surface": 10987,
-        "width": 981
+        "smoothness": 2888,
+        "surface": 10863,
+        "width": 1001
       }
     }
   },
@@ -81,9 +81,9 @@
   "ruleset_version": "1.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 42,
+    "copernicus_glo30": 51,
     "direct_osm_numeric": 13,
-    "missing": 17178
+    "missing": 17045
   },
   "warnings": [
     "Profile rules are provisional and require participatory calibration.",

@@ -1,18 +1,18 @@
 {
   "edge_kind_counts": {
     "crossing": 2096,
-    "footway": 6636,
-    "sidewalk": 8135,
+    "footway": 6511,
+    "sidewalk": 8136,
     "stairs": 366
   },
-  "feature_count": 17233,
-  "generated_at": "2026-08-26T08:18:26.100218+00:00",
+  "feature_count": 17109,
+  "generated_at": "2026-08-27T18:30:04.220663+00:00",
   "profile_audit": {
     "blind": {
       "most_common_decisive_rules": {
         "barrier_steps": 369,
         "crossing_tactile_no": 123,
-        "downhill_5_to_8_33": 10,
+        "downhill_5_to_8_33": 12,
         "lowered_without_tactile": 24,
         "smoothness_bad": 220,
         "smoothness_very_bad": 22,
@@ -22,16 +22,16 @@
         "surface_ground_earth_dirt": 116
       },
       "severity_counts": {
-        "0": 15419,
-        "1": 207,
+        "0": 15293,
+        "1": 209,
         "2": 1456,
         "3": 138,
         "4": 13
       },
       "status_counts": {
-        "hazard_detected": 1814,
-        "insufficient_data": 15326,
-        "no_detected_hazard": 93
+        "hazard_detected": 1816,
+        "insufficient_data": 15198,
+        "no_detected_hazard": 95
       }
     },
     "elderly": {
@@ -48,16 +48,16 @@
         "surface_ground_earth_dirt": 122
       },
       "severity_counts": {
-        "0": 15319,
+        "0": 15193,
         "1": 29,
-        "2": 1266,
+        "2": 1268,
         "3": 607,
         "4": 12
       },
       "status_counts": {
-        "hazard_detected": 1914,
-        "insufficient_data": 15225,
-        "no_detected_hazard": 94
+        "hazard_detected": 1916,
+        "insufficient_data": 15097,
+        "no_detected_hazard": 96
       }
     },
     "pedestrian": {
@@ -74,16 +74,16 @@
         "surface_ground_earth_dirt": 123
       },
       "severity_counts": {
-        "0": 15350,
-        "1": 1833,
+        "0": 15224,
+        "1": 1835,
         "2": 38,
         "3": 7,
         "4": 5
       },
       "status_counts": {
-        "hazard_detected": 1883,
-        "insufficient_data": 15256,
-        "no_detected_hazard": 94
+        "hazard_detected": 1885,
+        "insufficient_data": 15128,
+        "no_detected_hazard": 96
       }
     },
     "wheelchair": {
@@ -100,16 +100,16 @@
         "surface_ground_earth_dirt": 121
       },
       "severity_counts": {
-        "0": 15312,
+        "0": 15186,
         "1": 0,
-        "2": 149,
+        "2": 151,
         "3": 1155,
         "4": 617
       },
       "status_counts": {
-        "hazard_detected": 1921,
-        "insufficient_data": 15222,
-        "no_detected_hazard": 90
+        "hazard_detected": 1923,
+        "insufficient_data": 15094,
+        "no_detected_hazard": 92
       }
     }
   },
@@ -117,9 +117,9 @@
   "ruleset_version": "0.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 42,
+    "copernicus_glo30": 51,
     "direct_osm_numeric": 13,
-    "missing": 17178
+    "missing": 17045
   },
   "warnings": [
     "Hazard rules are provisional and require participatory calibration.",
