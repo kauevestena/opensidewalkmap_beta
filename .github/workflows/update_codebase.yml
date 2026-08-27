@@ -1,6 +1,10 @@
 name: Synchronize oswm_codebase
 
 on:
+  # Safety net for missed GitHub App dispatches. Runs before the daily data job
+  # and exits as a no-op when the submodule already matches origin/main.
+  schedule:
+    - cron: "30 6 * * *"
   repository_dispatch:
     types: [oswm-codebase-update]
   workflow_dispatch:
@@ -115,7 +119,7 @@ jobs:
         continue-on-error: true
         env:
           OSWM_FORCE_REGEN: "1"
-        run: sh oswm_codebase/runners/daily.sh
+        run: bash oswm_codebase/runners/daily.sh
 
       - name: Validate generated core tiles
         id: validate
