@@ -53,7 +53,7 @@ jobs:
       - name: Run weekly job
         id: weekly_job
         continue-on-error: true
-        run: sh oswm_codebase/runners/weekly.sh
+        run: bash oswm_codebase/runners/weekly.sh
   
       #### upload ______________________________________________________________
       # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token

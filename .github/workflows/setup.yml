@@ -44,7 +44,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       #### main ________________________________________________________________
-      - run: sh oswm_codebase/runners/setup.sh
+      - run: bash oswm_codebase/runners/setup.sh
 
       #### upload ______________________________________________________________
       # @see https://github.com/actions/checkout#push-a-commit-using-the-built-in-token

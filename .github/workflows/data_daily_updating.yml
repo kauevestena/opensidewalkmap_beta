@@ -67,7 +67,7 @@ jobs:
       - name: Run daily job
         id: daily_job
         continue-on-error: true
-        run: sh oswm_codebase/runners/daily.sh
+        run: bash oswm_codebase/runners/daily.sh
 
       - name: Validate generated tiles
         id: validate_tiles
