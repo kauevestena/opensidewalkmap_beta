@@ -1,10 +1,10 @@
 name: Synchronize oswm_codebase
 
 on:
-  # Safety net for missed GitHub App dispatches. Runs before the daily data job
-  # and exits as a no-op when the submodule already matches origin/main.
+  # Safety net for missed GitHub App dispatches. Runs at 05:30 UTC, two hours
+  # before the 07:30 UTC daily data job, and exits as a no-op when current.
   schedule:
-    - cron: "30 6 * * *"
+    - cron: "30 5 * * *"
   repository_dispatch:
     types: [oswm-codebase-update]
   workflow_dispatch:
