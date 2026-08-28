@@ -35,10 +35,10 @@
     ],
     "conformance_note": "This is an OSWM JSON application profile. Geographic ISO concepts are applied only to geographic or mixed resources; the profile does not claim conformance to the ISO 19115-3 XML encoding."
   },
-  "identifier": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/demo.geojson.metadata.json",
-  "resource_type": "dataset",
-  "title": "Curitiba — Demo",
-  "abstract": "Routing network, profiles, grades, and generation provenance for pedestrian routing. This record describes the GeoJSON distribution at data/routing/demo.geojson.",
+  "identifier": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/network.pmtiles.metadata.json",
+  "resource_type": "tileset",
+  "title": "Curitiba — Network",
+  "abstract": "Routing network, profiles, grades, and generation provenance for pedestrian routing. This record describes the PMTiles distribution at data/routing/network.pmtiles.",
   "language": "en",
   "responsible_parties": [
     {
@@ -70,16 +70,16 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-08-27T15:29:04-03:00",
+    "updated": "2026-08-28T19:35:54+00:00",
     "node_registry": {
       "Data Fetching": "27/08/2026 15:26:37",
-      "Data Pre-Processing": "27/08/2026 15:26:42",
+      "Data Pre-Processing": "2026-08-28T19:31:50Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "27/08/2026 15:29:04",
+      "Statistical Charts": "2026-08-28T19:35:54Z",
       "Wiki check for keys": "23/08/2026 08:45:39",
-      "Data Quality Tool": "27/08/2026 15:28:47",
+      "Data Quality Tool": "2026-08-28T19:33:09Z",
       "Versioning Data": "26/07/2026 08:56:31",
-      "Completeness Analysis": "17/07/2026 21:42:02",
+      "Completeness Analysis": "2026-08-28T19:35:40Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15"
     }
   },
@@ -103,37 +103,37 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-08-27T15:29:04-03:00",
+    "generated_at": "2026-08-28T19:35:54+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "42d1f4fe32942a27423bc028fef0341a2627139b",
-      "commit_date": "2026-08-05T18:24:38-03:00"
+      "commit": "b016ba26fa1f2eb34c5085ffb977fbcc68c922f7",
+      "commit_date": "2026-08-26T16:58:40-03:00"
     },
     "source_root": "data",
     "deterministic": true
   },
   "distribution": {
-    "resource_path": "data/routing/demo.geojson",
-    "access_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/routing/demo.geojson",
-    "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/routing/demo.geojson",
-    "media_type": "application/geo+json",
-    "format": "GeoJSON",
-    "byte_size": 13936018,
+    "resource_path": "data/routing/network.pmtiles",
+    "access_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/routing/network.pmtiles",
+    "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/routing/network.pmtiles",
+    "media_type": "application/vnd.pmtiles",
+    "format": "PMTiles",
+    "byte_size": 7410916,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "adbc192f1cf0f66449bca1f1aaafe54929fd69caf33456634fb6d9d5e4379d97"
+      "value": "b38aa1d198e7e855642b8c3785f640ba488118bd47dfe7cf5c561c72290b216c"
     }
   },
   "links": [
     {
       "rel": "self",
-      "href": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/demo.geojson.metadata.json",
+      "href": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/network.pmtiles.metadata.json",
       "type": "application/json"
     },
     {
       "rel": "describes",
-      "href": "https://kauevestena.github.io/opensidewalkmap_beta/data/routing/demo.geojson",
-      "type": "application/geo+json"
+      "href": "https://kauevestena.github.io/opensidewalkmap_beta/data/routing/network.pmtiles",
+      "type": "application/vnd.pmtiles"
     },
     {
       "rel": "collection",

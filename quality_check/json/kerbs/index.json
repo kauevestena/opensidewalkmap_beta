@@ -8,6 +8,7 @@
         "invalid_characters.json",
         "kerb_on_top_of_non_crossing.json",
         "keys_without_wiki.json",
+        "missing_tags.json",
         "older_than_five_years.json",
         "replaceable_values.json",
         "uncanny_keys.json",

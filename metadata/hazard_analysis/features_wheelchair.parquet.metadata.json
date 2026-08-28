@@ -70,16 +70,16 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-08-27T15:29:04-03:00",
+    "updated": "2026-08-28T19:35:54+00:00",
     "node_registry": {
       "Data Fetching": "27/08/2026 15:26:37",
-      "Data Pre-Processing": "27/08/2026 15:26:42",
+      "Data Pre-Processing": "2026-08-28T19:31:50Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "27/08/2026 15:29:04",
+      "Statistical Charts": "2026-08-28T19:35:54Z",
       "Wiki check for keys": "23/08/2026 08:45:39",
-      "Data Quality Tool": "27/08/2026 15:28:47",
+      "Data Quality Tool": "2026-08-28T19:33:09Z",
       "Versioning Data": "26/07/2026 08:56:31",
-      "Completeness Analysis": "17/07/2026 21:42:02",
+      "Completeness Analysis": "2026-08-28T19:35:40Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15"
     }
   },
@@ -103,11 +103,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-08-27T15:29:04-03:00",
+    "generated_at": "2026-08-28T19:35:54+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "42d1f4fe32942a27423bc028fef0341a2627139b",
-      "commit_date": "2026-08-05T18:24:38-03:00"
+      "commit": "b016ba26fa1f2eb34c5085ffb977fbcc68c922f7",
+      "commit_date": "2026-08-26T16:58:40-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -118,10 +118,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/hazard_analysis/features_wheelchair.parquet",
     "media_type": "application/vnd.apache.parquet",
     "format": "GeoParquet",
-    "byte_size": 1592369,
+    "byte_size": 1723348,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "1fd75b408b55ccfeec8e9dfb707bfa2c1e8f1b9f6223308b94c1f57b5e1441f4"
+      "value": "c997868f7d8b6bd8f945a52c0eeab99c0f6d4be2f4f163b17f700d0ee36d425c"
     }
   },
   "links": [

@@ -34,6 +34,11 @@
         "iso_19157_element": "Temporal Accuracy",
         "iso_19157_sub_element": "Temporal Validity"
     },
+    "missing_tags": {
+        "about": "Features that are missing important tags",
+        "iso_19157_element": "Completeness",
+        "iso_19157_sub_element": "Omission (missing data)"
+    },
     "disjointed_geometries": {
         "about": "Features with geometries that are not connected to others, i.e. disjointed. This is generally a special matter of concern for crossings, kerbs and sidewalks",
         "iso_19157_element": "Logical Consistency",

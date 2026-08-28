@@ -8,6 +8,7 @@
         "invalid_characters.csv",
         "kerb_on_top_of_non_crossing.csv",
         "keys_without_wiki.csv",
+        "missing_tags.csv",
         "older_than_five_years.csv",
         "replaceable_values.csv",
         "uncanny_keys.csv",

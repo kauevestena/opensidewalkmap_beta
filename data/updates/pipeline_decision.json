@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-08-28T19:31:46Z",
+  "mode": "rebuild",
+  "reason": "codebase_revision_changed",
+  "watcher_status": 0,
+  "force": false,
+  "current_codebase_revision": "b016ba26fa1f2eb34c5085ffb977fbcc68c922f7",
+  "recorded_codebase_revision": null,
+  "missing_raw": [],
+  "missing_required": [
+    "data/routing/network.parquet",
+    "data/routing/network.oswmg",
+    "data/routing/network.pmtiles",
+    "data/routing/tile_generation_report.json",
+    "global_params.json",
+    "quality_check/index.html",
+    "data/hazard_analysis/terrain_blind.png",
+    "data/hazard_analysis/terrain_elderly.png",
+    "data/hazard_analysis/terrain_pedestrian.png",
+    "data/hazard_analysis/terrain_wheelchair.png"
+  ]
+}

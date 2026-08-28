@@ -1,6 +1,6 @@
 {
   "node_name": "Curitiba",
-  "generated_at": "2026-08-27T18:25:26Z",
+  "generated_at": "2026-08-28T19:41:48Z",
   "bbox": [
     -25.6435043,
     -49.38914,
@@ -71,6 +71,41 @@
       "url": "https://pic4review.pavie.info/#/mission/2820",
       "status": "online",
       "description": "We're filling up the remaining surface=* tags, mainly for accessibility and oswm",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -49.2954929,
+              -25.4722665
+            ],
+            [
+              -49.2692727,
+              -25.4722665
+            ],
+            [
+              -49.2692727,
+              -25.4414
+            ],
+            [
+              -49.2954929,
+              -25.4414
+            ],
+            [
+              -49.2954929,
+              -25.4722665
+            ]
+          ]
+        ]
+      },
+      "bbox": [
+        -49.2954929,
+        -25.4722665,
+        -49.2692727,
+        -25.4414
+      ],
+      "spatial_status": "available",
+      "spatial_source": "geom",
       "matched_keywords": [
         "oswm",
         "accessibility"

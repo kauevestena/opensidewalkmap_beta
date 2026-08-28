@@ -1,5 +1,18 @@
 {
+  "analytical_network_filename": "network.parquet",
+  "display_source_layer": "routing",
+  "display_tiles_filename": "network.pmtiles",
   "distance_profile_id": "distance",
+  "graph_byte_size": 4280348,
+  "graph_filename": "network.oswmg",
+  "graph_profile_order": [
+    "distance",
+    "wheelchair",
+    "blind",
+    "elderly"
+  ],
+  "graph_schema_version": 2,
+  "graph_sha256": "5c65bb5b6357fab06e562c06f0313b1e66b6b89ce521024fa7dd497cf6cb1448",
   "profiles": {
     "blind": {
       "cost": {
