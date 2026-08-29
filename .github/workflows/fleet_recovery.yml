@@ -44,15 +44,12 @@ jobs:
           key: oswm-recovery-${{ runner.os }}-${{ hashFiles('config.py') }}
           restore-keys: oswm-recovery-${{ runner.os }}-
       - run: python -m pip install -r oswm_codebase/requirements.txt
-      - name: Synchronize managed node files
-        run: python oswm_codebase/special_updates.py
       - name: Force complete node regeneration
         run: bash oswm_codebase/runners/daily.sh
       - name: Validate generated PMTiles
         run: python oswm_codebase/other/auxiliary_scripts/validate_tiles.py
       - name: Commit recovered products
         run: |
-          python oswm_codebase/node_outputs.py --root . stage special
           python oswm_codebase/node_outputs.py --root . stage daily
           python oswm_codebase/node_outputs.py --root . validate-sizes --max-mib 95
           git config user.name "github-actions[bot]"
