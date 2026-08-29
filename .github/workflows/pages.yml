@@ -1,0 +1,45 @@
+name: deploy_pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "map.html"
+      - "webmap_params.json"
+      - "data/**"
+      - "metadata/**"
+      - "hub/**"
+      - "quality_check/**"
+      - "statistics/**"
+      - "statistics_specs/**"
+      - "assets/**"
+      - "oswm_codebase/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: oswm-pages-${{ github.repository }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
