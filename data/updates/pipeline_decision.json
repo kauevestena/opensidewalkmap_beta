@@ -1,20 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-08-29T04:14:29Z",
-  "mode": "generate",
-  "reason": "forced",
+  "checked_at": "2026-08-29T13:19:34Z",
+  "mode": "skip",
+  "reason": "no_osm_changes",
   "watcher_status": 0,
-  "force": true,
+  "force": false,
   "current_codebase_revision": "181d10276c184265f3de546a941386d9163efc23",
-  "recorded_codebase_revision": "b016ba26fa1f2eb34c5085ffb977fbcc68c922f7",
+  "recorded_codebase_revision": "181d10276c184265f3de546a941386d9163efc23",
   "missing_raw": [],
-  "missing_required": [
-    "data/basemaps/light.pmtiles",
-    "data/basemaps/dark.pmtiles",
-    "data/basemaps/generation_report.json",
-    "data/hazard_analysis/terrain_blind.png",
-    "data/hazard_analysis/terrain_elderly.png",
-    "data/hazard_analysis/terrain_pedestrian.png",
-    "data/hazard_analysis/terrain_wheelchair.png"
-  ]
+  "missing_required": []
 }
