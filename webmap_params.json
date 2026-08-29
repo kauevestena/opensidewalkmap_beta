@@ -10,7 +10,7 @@
         -49.2867291,
         -25.4942274
     ],
-    "basemap_url": "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+    "basemap_url": "pmtiles://data/basemaps/dark.pmtiles",
     "node_homepage": "index.html",
     "sidewalks_url": "data/tiles/sidewalks.pmtiles",
     "crossings_url": "data/tiles/crossings.pmtiles",
@@ -75,10 +75,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -342,10 +341,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -728,10 +726,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -2455,10 +2452,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -3390,10 +3386,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -3965,10 +3960,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -4684,10 +4678,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -5259,10 +5252,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -5906,10 +5898,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -6401,10 +6392,9 @@
                 },
                 "osm": {
                     "type": "raster",
-                    "tiles": [
-                        "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
-                    ],
-                    "attribution": "© <a href=\"https://openstreetmap.org\">OpenStreetMap Contributors</a>; basemap by <a href=\"https://carto.com/attribution\">CARTO</a>"
+                    "url": "pmtiles://data/basemaps/dark.pmtiles",
+                    "tileSize": 256,
+                    "attribution": "Basemap © <a href=\"https://openfreemap.org\">OpenFreeMap</a>, © <a href=\"https://openmaptiles.org\">OpenMapTiles</a>; data © <a href=\"https://openstreetmap.org\">OpenStreetMap contributors</a>"
                 },
                 "boundaries": {
                     "type": "geojson",
@@ -7538,5 +7528,18 @@
         "wheelchair": "<!-- GENERATED FRAGMENT - auto-generated by StandaloneLegendHTML - DO NOT EDIT -->\n<div class=\"legend-title\">Legend</div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #91bfdb; height: 8px;\"></span></div><span class=\"legend-text\">yes</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #91bfdb; height: 8px;\"></span></div><span class=\"legend-text\">designated</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #ffffbf; height: 8px;\"></span></div><span class=\"legend-text\">limited</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #fc8d59; height: 8px;\"></span></div><span class=\"legend-text\">no</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #434343; height: 8px;\"></span></div><span class=\"legend-text\">?</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: gray; height: 8px;\"></span></div><span class=\"legend-text\">other</span></div>",
         "age": "<!-- GENERATED FRAGMENT - auto-generated by StandaloneLegendHTML - DO NOT EDIT -->\n<div class=\"legend-title\">Legend</div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #90d743; height: 8px;\"></span></div><span class=\"legend-text\"> 0  -  2</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #35b779; height: 8px;\"></span></div><span class=\"legend-text\"> 2  -  4</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #21918c; height: 8px;\"></span></div><span class=\"legend-text\"> 4  -  6</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #31688e; height: 8px;\"></span></div><span class=\"legend-text\"> 6  -  8</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #443983; height: 8px;\"></span></div><span class=\"legend-text\"> 8  - 10</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #440154; height: 8px;\"></span></div><span class=\"legend-text\">10 +</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #808080; height: 8px;\"></span></div><span class=\"legend-text\">n.a.</span></div>",
         "n_revs": "<!-- GENERATED FRAGMENT - auto-generated by StandaloneLegendHTML - DO NOT EDIT -->\n<div class=\"legend-title\">Legend</div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #1d1147; height: 8px;\"></span></div><span class=\"legend-text\"> 0  -  5</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #51127c; height: 8px;\"></span></div><span class=\"legend-text\"> 5  - 10</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #832681; height: 8px;\"></span></div><span class=\"legend-text\">10 - 15</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #b73779; height: 8px;\"></span></div><span class=\"legend-text\">15 - 20</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #e75263; height: 8px;\"></span></div><span class=\"legend-text\">20 - 25</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #fc8961; height: 8px;\"></span></div><span class=\"legend-text\">25 - 30</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #fec488; height: 8px;\"></span></div><span class=\"legend-text\">30 +</span></div><div class=\"legend-item\"><div class=\"legend-symbol-container\"><span class=\"legend-symbol line\" style=\"background-color: #808080; height: 8px;\"></span></div><span class=\"legend-text\">n.a.</span></div>"
+    },
+    "basemaps": {
+        "default": "dark",
+        "options": {
+            "light": {
+                "name": "Light basemap",
+                "url": "pmtiles://data/basemaps/light.pmtiles"
+            },
+            "dark": {
+                "name": "Dark basemap",
+                "url": "pmtiles://data/basemaps/dark.pmtiles"
+            }
+        }
     }
 }

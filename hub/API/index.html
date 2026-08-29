@@ -881,6 +881,57 @@ print(data)</pre>
     "metadata_path": null
   },
   {
+    "category": "Basemaps Metadata",
+    "path": "metadata/basemaps/dark.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "Light and dark PMTiles context basemaps covering the node area. This record describes the PMTiles distribution at data/basemaps/dark.pmtiles.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Basemaps Metadata",
+    "path": "metadata/basemaps/generation_report.json.metadata.json",
+    "format": "JSON",
+    "description": "Light and dark PMTiles context basemaps covering the node area. This record describes the JSON distribution at data/basemaps/generation_report.json.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Basemaps Metadata",
+    "path": "metadata/basemaps/light.pmtiles.metadata.json",
+    "format": "JSON",
+    "description": "Light and dark PMTiles context basemaps covering the node area. This record describes the PMTiles distribution at data/basemaps/light.pmtiles.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
     "category": "Boundaries & Config",
     "path": "data/boundaries/infos.json",
     "format": "JSON",
@@ -990,6 +1041,23 @@ print(data)</pre>
     "path": "metadata/boundaries/polygon.parquet.metadata.json",
     "format": "JSON",
     "description": "Boundary geometry and descriptive information for the node coverage area. This record describes the GeoParquet distribution at data/boundaries/polygon.parquet.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Collection Metadata",
+    "path": "metadata/basemaps/index.json",
+    "format": "JSON",
+    "description": "Light and dark PMTiles context basemaps covering the node area. This collection mirrors data/basemaps without changing the source data directory.",
     "capabilities": {
       "action": "preview-json",
       "action_label": "Preview JSON",
@@ -3413,6 +3481,23 @@ print(data)</pre>
   },
   {
     "category": "Map Data Assets",
+    "path": "data/basemaps/generation_report.json",
+    "format": "JSON",
+    "description": "Raster basemap source provenance, zoom range, tile count, and size validation report.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "map_data",
+    "metadata_path": "metadata/basemaps/generation_report.json.metadata.json"
+  },
+  {
+    "category": "Map Data Assets",
     "path": "data/data_quality/crossings_lacking_kerbs/crossings_lacking_kerbs.parquet",
     "format": "GeoParquet",
     "description": "Asset file: crossings_lacking_kerbs.parquet",
@@ -5814,6 +5899,40 @@ print(data)</pre>
   },
   {
     "category": "Vector Tiles (PMTiles)",
+    "path": "data/basemaps/dark.pmtiles",
+    "format": "PMTiles",
+    "description": "Node-scoped dark raster basemap in PMTiles format, rendered from OpenFreeMap vector tiles.",
+    "capabilities": {
+      "action": "inspect-pmtiles",
+      "action_label": "Inspect Archive",
+      "snippets": [
+        "javascript",
+        "gdal",
+        "curl"
+      ]
+    },
+    "deliverable": "map_data",
+    "metadata_path": "metadata/basemaps/dark.pmtiles.metadata.json"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
+    "path": "data/basemaps/light.pmtiles",
+    "format": "PMTiles",
+    "description": "Node-scoped light raster basemap in PMTiles format, rendered from OpenFreeMap vector tiles.",
+    "capabilities": {
+      "action": "inspect-pmtiles",
+      "action_label": "Inspect Archive",
+      "snippets": [
+        "javascript",
+        "gdal",
+        "curl"
+      ]
+    },
+    "deliverable": "map_data",
+    "metadata_path": "metadata/basemaps/light.pmtiles.metadata.json"
+  },
+  {
+    "category": "Vector Tiles (PMTiles)",
     "path": "data/routing/network.pmtiles",
     "format": "PMTiles",
     "description": "Lightweight routing-network vector tiles used by the MapLibre demo.",
@@ -6125,6 +6244,23 @@ print(data)</pre>
     },
     "deliverable": "hazard_analysis",
     "metadata_path": "metadata/hazard_analysis/terrain_wheelchair.png.metadata.json"
+  },
+  {
+    "category": "Folder Indexes",
+    "path": "data/basemaps/index.json",
+    "format": "JSON",
+    "description": "Folder-level data index describing files and subdirectories available inside the 'basemaps' folder.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "map_data",
+    "metadata_path": "metadata/basemaps/index.json"
   },
   {
     "category": "Folder Indexes",

@@ -38,6 +38,8 @@
             border-radius: 4px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
             z-index: 1;
+            display: flex;
+            gap: 1px;
         }
 
         #oswm-symbology-panel {
@@ -56,17 +58,19 @@
             z-index: 1;
         }
 
-        #style-selector {
+        #style-selector,
+        #basemap-selector {
             border: none;
             padding: 10px;
             border-radius: 4px;
             background-color: #fff;
             font-size: 14px;
             cursor: pointer;
-            width: 100%;
+            min-width: 150px;
         }
 
-        #style-selector:focus {
+        #style-selector:focus,
+        #basemap-selector:focus {
             outline: none;
             border: none;
         }
@@ -156,7 +160,8 @@
 
 <body>
     <div id="style-changer">
-        <select id="style-selector"></select>
+        <select id="style-selector" aria-label="Data style"></select>
+        <select id="basemap-selector" aria-label="Basemap"></select>
     </div>
     <div id="map">
 
@@ -452,6 +457,7 @@
 
                 // Dynamically populate the dropdown options
                 const styleSelector = document.getElementById('style-selector');
+                const basemapSelector = document.getElementById('basemap-selector');
                 Object.keys(params['styles']).forEach(styleKey => {
                     const option = document.createElement('option');
                     option.value = styleKey;
@@ -460,10 +466,24 @@
                     styleSelector.appendChild(option);
                 });
 
+                Object.entries(params.basemaps.options).forEach(([basemapKey, basemap]) => {
+                    const option = document.createElement('option');
+                    option.value = basemapKey;
+                    option.textContent = basemap.name;
+                    basemapSelector.appendChild(option);
+                });
+                basemapSelector.value = params.basemaps.default;
+
+                function selectedStyle(styleKey) {
+                    const style = JSON.parse(JSON.stringify(params.styles[styleKey]));
+                    style.sources.osm.url = params.basemaps.options[basemapSelector.value].url;
+                    return style;
+                }
+
                 // Listen for style changes
                 styleSelector.addEventListener('change', function (e) {
                     const style = e.target.value;
-                    map.setStyle(params['styles'][style]);
+                    map.setStyle(selectedStyle(style));
                     if (legendControl) {
                         legendControl.setActiveStyle(style);
                     }
@@ -474,6 +494,10 @@
                     if (symbologyPanel && params.legend_fragments[style]) {
                         symbologyPanel.innerHTML = params.legend_fragments[style];
                     }
+                });
+
+                basemapSelector.addEventListener('change', () => {
+                    map.setStyle(selectedStyle(styleSelector.value || 'footway_categories'));
                 });
 
                 import('./oswm_codebase/webmap/theme_charts/theme_chart_control.js')

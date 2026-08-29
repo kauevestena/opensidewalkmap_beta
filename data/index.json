@@ -57,6 +57,15 @@
                 "tile_generation_report.json"
             ]
         },
+        "basemaps": {
+            "description": "Light and dark node-scoped raster basemaps packaged as PMTiles.",
+            "path": "data/basemaps",
+            "files": [
+                "dark.pmtiles",
+                "generation_report.json",
+                "light.pmtiles"
+            ]
+        },
         "updates": {
             "description": "Data update logs, registry status, and historical version tracking.",
             "path": "data/updates",
