@@ -2,151 +2,69 @@ name: data_daily_updating
 
 on:
   schedule:
-    # Runs every day at 07:30 UTC (04:30 in America/Sao_Paulo during BRT; 03:30 during BRST)
     - cron: "30 7 * * *"
   workflow_dispatch:
+    inputs:
+      force_regeneration:
+        description: Rebuild the complete derived output set
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
-  issues: write
-  pages: write
-  id-token: write
+  actions: write
 
 concurrency:
-  # Prevent overlapping daily runs from stepping on each other
-  group: oswm-node-main-write
+  group: oswm-node-writer-${{ github.repository }}
   cancel-in-progress: false
-
-env:
-  TZ: America/Sao_Paulo
 
 jobs:
   data_daily_updating:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 240
+    env:
+      PYTHONUNBUFFERED: "1"
+      OSWM_FORCE_REGEN: ${{ inputs.force_regeneration || 'false' }}
     steps:
-      # Checkout the latest commit on main and let it pull submodules properly
       - uses: actions/checkout@v4
         with:
-          ref: main               # ensure the run uses HEAD of main
-          fetch-depth: 2          # fetch 2 commits so HEAD~1 is present
-          submodules: recursive   # fetch submodules correctly
-
-      # Install GDAL system dependencies so packages like pyogrio can build
-      - name: Install GDAL system dependencies
+          fetch-depth: 0
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: oswm_codebase/requirements.txt
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y gdal-bin libgdal-dev
-
-      # (Optional but harmless) mark workspace safe for any git ops later
-      - name: Mark repo as safe for Git
-        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-
-      # Set up Python with built-in pip cache (fast installs on repeats)
-      - uses: actions/setup-python@v4
+      - uses: actions/cache@v4
         with:
-          python-version: "3.x"
-          cache: pip
-          cache-dependency-path: oswm_codebase/requirements.txt
-
-      - name: Free up disk space
+          path: .cache/oswm/elevation
+          key: oswm-elevation-${{ runner.os }}-${{ hashFiles('config.py') }}
+          restore-keys: oswm-elevation-${{ runner.os }}-
+      - run: python -m pip install -r oswm_codebase/requirements.txt
+      - run: bash oswm_codebase/runners/daily.sh
+      - name: Validate every generated PMTiles layer
+        run: python oswm_codebase/other/auxiliary_scripts/validate_tiles.py
+      - name: Commit generated data
+        id: commit
         run: |
-          sudo apt clean
-          docker system prune -af || true
-          sudo rm -rf /usr/local/lib/android || true
-          sudo rm -rf /opt/ghc || true
-          sudo rm -rf /usr/share/dotnet || true
-          rm -rf ~/.cache/pip || true
-          mkdir -p ~/.cache/pip
-
-      - name: Install dependencies
-        run: pip install --no-cache-dir -r oswm_codebase/requirements.txt
-
-      - name: Run daily job
-        id: daily_job
-        continue-on-error: true
-        run: bash oswm_codebase/runners/daily.sh
-
-      - name: Validate generated tiles
-        id: validate_tiles
-        continue-on-error: true
-        run: |
-          echo "=== PMTiles file sizes ==="
-          ls -la data/tiles/*.pmtiles 2>/dev/null || echo "No PMTiles files found!"
-          echo ""
-
-          VALIDATION_FAILED=0
-
-          # Fail if any core layer tile is missing or suspiciously small
-          for layer in sidewalks crossings kerbs; do
-            FILE="data/tiles/${layer}.pmtiles"
-            if [ ! -f "$FILE" ]; then
-              echo "MISSING: ${FILE}"
-              VALIDATION_FAILED=1
-            else
-              SIZE=$(stat -c%s "$FILE" 2>/dev/null || echo 0)
-              if [ "$SIZE" -lt 1024 ]; then
-                echo "TOO SMALL: ${FILE} (${SIZE} bytes)"
-                VALIDATION_FAILED=1
-              else
-                echo "OK: ${FILE} (${SIZE} bytes)"
-              fi
-            fi
-          done
-
-          # Check tile generation report if present
-          REPORT="data/tiles/tile_generation_report.json"
-          if [ -f "$REPORT" ]; then
-            echo ""
-            echo "=== Tile Generation Report ==="
-            cat "$REPORT"
-            python3 oswm_codebase/other/auxiliary_scripts/validate_tiles.py || VALIDATION_FAILED=1
-          fi
-
-          exit $VALIDATION_FAILED
-
-      - name: Commit and push changes (if any)
-        if: steps.daily_job.outcome == 'success' && steps.validate_tiles.outcome == 'success'
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          DATETIME="$(date +'%Y-%m-%d')"
-          git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "data updating at $DATETIME"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          else
-            echo "No changes to commit."
-          fi
-
-      - name: Setup Pages
-        if: steps.daily_job.outcome == 'success' && steps.validate_tiles.outcome == 'success'
-        uses: actions/configure-pages@v4
-
-      - name: Upload Pages Artifact
-        if: steps.daily_job.outcome == 'success' && steps.validate_tiles.outcome == 'success'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-
-      - name: Deploy to GitHub Pages
-        if: steps.daily_job.outcome == 'success' && steps.validate_tiles.outcome == 'success'
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Create failure issue
-
-        if: steps.daily_job.outcome == 'failure' || steps.validate_tiles.outcome == 'failure'
-        uses: actions/github-script@v7
+          echo "changed=false" >> "$GITHUB_OUTPUT"
+          python oswm_codebase/node_outputs.py --root . stage daily
+          python oswm_codebase/node_outputs.py --root . validate-sizes --max-mib 95
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: refresh node products $(date -u +%F)"
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Deploy published changes
+        if: steps.commit.outputs.changed == 'true'
         env:
-          DAILY_JOB_OUTCOME: ${{ steps.daily_job.outcome }}
-          VALIDATE_TILES_OUTCOME: ${{ steps.validate_tiles.outcome }}
-        with:
-          script-path: oswm_codebase/other/auxiliary_scripts/create_failure_issue.js
-
-      - name: Fail the workflow if pipeline or validation failed
-        if: steps.daily_job.outcome == 'failure' || steps.validate_tiles.outcome == 'failure'
-        run: exit 1
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "$GITHUB_REF_NAME"
