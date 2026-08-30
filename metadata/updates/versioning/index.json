@@ -65,19 +65,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-08-29T13:22:04+00:00",
+    "updated": "2026-08-30T13:52:49+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-08-29T04:15:25Z",
+      "Data Pre-Processing": "2026-08-30T13:49:41Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-08-29T04:20:33Z",
-      "Wiki check for keys": "23/08/2026 08:45:39",
-      "Data Quality Tool": "2026-08-29T04:17:58Z",
-      "Versioning Data": "26/07/2026 08:56:31",
+      "Statistical Charts": "2026-08-30T13:49:55Z",
+      "Wiki check for keys": "2026-08-30T13:52:49Z",
+      "Data Quality Tool": "2026-08-30T13:49:48Z",
+      "Versioning Data": "2026-08-30T13:49:36Z",
       "Completeness Analysis": "2026-08-29T04:20:20Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "181d10276c184265f3de546a941386d9163efc23",
-      "Pipeline Success": "2026-08-29T13:22:04Z"
+      "Pipeline Success": "2026-08-30T13:05:35Z"
     }
   },
   "lineage": {
@@ -100,7 +100,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-08-29T13:22:04+00:00",
+    "generated_at": "2026-08-30T13:52:49+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "181d10276c184265f3de546a941386d9163efc23",
@@ -116,10 +116,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/versioning/crossings_versioning.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 116458,
+      "byte_size": 136805,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "4a7fa86b1f5f197055a3890f133a1e563cc68640f76851c24390783f9bb82654"
+        "value": "8ee61cfd21ae3a3d0673c76ef45599605f702101cfed6282fef9b1f217d97cec"
       }
     },
     {
@@ -128,10 +128,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/versioning/kerbs_versioning.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 163776,
+      "byte_size": 176666,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "05432072c36efad4694568339f9c89888b006e399d00cf71e79c6bc4bbc5fab6"
+        "value": "7e7b9c0a471f660e2e7052cf171e1312d51911acdf0be8c4eb5fe489d336d70d"
       }
     },
     {
@@ -140,10 +140,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/versioning/other_footways_versioning.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 398442,
+      "byte_size": 395283,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "6924a2fde36fb2873118b95a0b71aaa94079161eef62ada0b5fab1f17d8dd8a0"
+        "value": "b7b51406d0e288f49ce66f53d4e0b91b407cf6dd28ca4f6b0a3a219c04f2e783"
       }
     },
     {
@@ -152,10 +152,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/versioning/sidewalks_versioning.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 469941,
+      "byte_size": 470494,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "220f398b253a47ec4d7e9439ebbc5726d07f9b7ce732c5de715fd7f923878261"
+        "value": "7c7d676fec6f2bffdfa6bd58dadc0b0428bb95deecaeb724f37a773be026684c"
       }
     }
   ],
