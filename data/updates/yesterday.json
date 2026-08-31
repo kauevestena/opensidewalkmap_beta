@@ -1,28 +1,15 @@
 [
     {
-        "id": 188175434,
-        "user": "oimarco12",
-        "uid": 23714670,
-        "comment": "super detalhes",
-        "created_at": "2026-08-29T01:13:46Z",
-        "changeset_changes_count": 84,
-        "oswm_changes_count": 12,
-        "changes_count": 84,
-        "additions": 11,
+        "id": 188273279,
+        "user": "Noisebloom",
+        "uid": 24491113,
+        "comment": "a",
+        "created_at": "2026-08-30T21:34:42Z",
+        "changeset_changes_count": 1,
+        "oswm_changes_count": 1,
+        "changes_count": 1,
+        "additions": 0,
         "modifications": 1,
-        "deletions": 0
-    },
-    {
-        "id": 188176048,
-        "user": "raldite",
-        "uid": 8774881,
-        "comment": "atualização de drenagens no uberaba",
-        "created_at": "2026-08-29T01:53:02Z",
-        "changeset_changes_count": 796,
-        "oswm_changes_count": 9,
-        "changes_count": 796,
-        "additions": 6,
-        "modifications": 3,
         "deletions": 0
     }
 ]

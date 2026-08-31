@@ -4,38 +4,22 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Sun, 30 Aug 2026 13:03:56 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 15:15:02 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 188175434 by oimarco12 (11 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/188175434</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188175434&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/oimarco12&quot;&gt;oimarco12&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; super detalhes&lt;/p&gt;
+        <title>[Activity] OSM Changeset 188273279 by Noisebloom (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188273279</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188273279&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Noisebloom&quot;&gt;Noisebloom&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; a&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-    &lt;li&gt;Additions (creations): 11&lt;/li&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188175434&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188175434&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188273279&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188273279&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 29 Aug 2026 01:13:46 GMT</pubDate>
-        <guid isPermaLink="false">activity_188175434</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 188176048 by raldite (6 additions, 3 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/188176048</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188176048&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/raldite&quot;&gt;raldite&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; atualização de drenagens no uberaba&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 6&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 3&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188176048&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188176048&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 29 Aug 2026 01:53:02 GMT</pubDate>
-        <guid isPermaLink="false">activity_188176048</guid>
+        <pubDate>Sun, 30 Aug 2026 21:34:42 GMT</pubDate>
+        <guid isPermaLink="false">activity_188273279</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
