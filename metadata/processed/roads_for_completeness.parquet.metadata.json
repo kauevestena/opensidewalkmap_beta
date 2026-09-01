@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-08-30T13:52:49+00:00",
+    "updated": "2026-09-01T12:45:59+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-08-30T13:49:41Z",
+      "Data Pre-Processing": "2026-09-01T12:42:15Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-08-30T13:49:55Z",
+      "Statistical Charts": "2026-09-01T12:45:59Z",
       "Wiki check for keys": "2026-08-30T13:52:49Z",
-      "Data Quality Tool": "2026-08-30T13:49:48Z",
+      "Data Quality Tool": "2026-09-01T12:43:37Z",
       "Versioning Data": "2026-08-30T13:49:36Z",
-      "Completeness Analysis": "2026-08-29T04:20:20Z",
+      "Completeness Analysis": "2026-09-01T12:45:44Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "181d10276c184265f3de546a941386d9163efc23",
-      "Pipeline Success": "2026-08-30T13:05:35Z"
+      "Pipeline Success": "2026-08-31T15:16:50Z"
     }
   },
   "lineage": {
@@ -104,11 +104,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-08-30T13:52:49+00:00",
+    "generated_at": "2026-09-01T12:45:59+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "181d10276c184265f3de546a941386d9163efc23",
-      "commit_date": "2026-08-29T00:50:56-03:00"
+      "commit": "7c0091b120eb30b8010c3508217590045ae7383a",
+      "commit_date": "2026-09-01T03:48:21-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -119,10 +119,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/roads_for_completeness.parquet",
     "media_type": "application/vnd.apache.parquet",
     "format": "GeoParquet",
-    "byte_size": 2852603,
+    "byte_size": 2844962,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "865594de02ef7573ac30103e8c860f1f1f54eb4ed5af29dcc7e9956f64635eeb"
+      "value": "08c154ddd25369a5478d5e5a1a44dc8f896781899bad2089d7e9cfcf5d4b034e"
     }
   },
   "links": [

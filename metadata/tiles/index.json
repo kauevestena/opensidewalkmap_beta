@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-08-30T13:52:49+00:00",
+    "updated": "2026-09-01T12:45:59+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-08-30T13:49:41Z",
+      "Data Pre-Processing": "2026-09-01T12:42:15Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-08-30T13:49:55Z",
+      "Statistical Charts": "2026-09-01T12:45:59Z",
       "Wiki check for keys": "2026-08-30T13:52:49Z",
-      "Data Quality Tool": "2026-08-30T13:49:48Z",
+      "Data Quality Tool": "2026-09-01T12:43:37Z",
       "Versioning Data": "2026-08-30T13:49:36Z",
-      "Completeness Analysis": "2026-08-29T04:20:20Z",
+      "Completeness Analysis": "2026-09-01T12:45:44Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "181d10276c184265f3de546a941386d9163efc23",
-      "Pipeline Success": "2026-08-30T13:05:35Z"
+      "Pipeline Success": "2026-08-31T15:16:50Z"
     }
   },
   "lineage": {
@@ -103,11 +103,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-08-30T13:52:49+00:00",
+    "generated_at": "2026-09-01T12:45:59+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "181d10276c184265f3de546a941386d9163efc23",
-      "commit_date": "2026-08-29T00:50:56-03:00"
+      "commit": "7c0091b120eb30b8010c3508217590045ae7383a",
+      "commit_date": "2026-09-01T03:48:21-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -119,10 +119,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/tiles/crossings.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 2639384,
+      "byte_size": 2646041,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "c69ba2adb622882278b11ffb2d4b2a1a0dd199d4ea20d8dd91d5ea33a74a9ea3"
+        "value": "cf2ca6c912497dc8eaea39ac7137adb85f2d248b6175dbe92bdc13b067b22911"
       }
     },
     {
@@ -131,10 +131,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/tiles/informal_footways.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 3950207,
+      "byte_size": 3954508,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "4b9831549d0d6b7095834f0d811f9112fdab87c12a325c7f4f99283d788c9468"
+        "value": "7ae9d5efcb174b72c7acd9ef5139b214ad2673f13aac1ccef9f597734c7c1a07"
       }
     },
     {
@@ -143,10 +143,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/tiles/kerbs.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 2075002,
+      "byte_size": 2081837,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "b95939af8e619357189793dce5e821e8d553675f6dd7c55ebfb882fb84123f3b"
+        "value": "34ccce1193e80dcae6901d56e09f589f3bb90f41301492ceca42242d6be2156f"
       }
     },
     {
@@ -155,10 +155,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/tiles/main_footways.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 35930412,
+      "byte_size": 35936857,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "9aa9b84fa8fdee793bf4182461e08b2ce3ad8a328ebd3c4861def0c6ccd052fc"
+        "value": "41e6355f243cded1f9236efdb5df5ff46e9f8423e1dcd5bc6e0b86c4eb102b1b"
       }
     },
     {
@@ -167,10 +167,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/tiles/pedestrian_areas.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 1105765,
+      "byte_size": 1105387,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "292bff134ba9a5c80a9dca635d679d3d5c5506e6b67950d41ba12132600b9c93"
+        "value": "16bb2127e75a86852744b80e144f898f18958c815565aa976555cfe9e444e64a"
       }
     },
     {
@@ -179,10 +179,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/tiles/potential_footways.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 10282444,
+      "byte_size": 10283012,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "8437ed1aca6336f9599d3c53b5c0020fb1d1faae7123323a77f2260816fd079d"
+        "value": "f849d6f593f01964d67b75659660cc96769f0f51d5c9289adff19275d81968db"
       }
     },
     {
@@ -191,10 +191,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/tiles/sidewalks.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 12483334,
+      "byte_size": 12514284,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "e682bedbf7ef69bd4c832386b6c4af7cf8f396711990446d674a21264a2fee9c"
+        "value": "de8001861e8ee9b2621f0f79a6666f4eb3ef18d285709ef8c5b9f807baf18fe4"
       }
     },
     {
@@ -203,10 +203,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/tiles/stairways.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 2043551,
+      "byte_size": 2043506,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "a2912c1a3c934a0c2a26c44247567b3bd2aaa69d986f6d3ece1e92463333cf1f"
+        "value": "f43b9b973e963dae7be2ca7844d49da0d3aa9c64ff76949652b2006e45b25165"
       }
     },
     {
@@ -218,7 +218,7 @@
       "byte_size": 936,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "0627426596b4b83a353acfe114309fae6267b3b1c42091829934960dfe0e90b4"
+        "value": "b4a774e846fc791f51edc521e6815e3be3ec9f1fe5dae1287f06a04ab3a90595"
       }
     }
   ],

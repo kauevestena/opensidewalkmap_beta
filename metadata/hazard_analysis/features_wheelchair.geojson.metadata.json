@@ -35,10 +35,10 @@
     ],
     "conformance_note": "This is an OSWM JSON application profile. Geographic ISO concepts are applied only to geographic or mixed resources; the profile does not claim conformance to the ISO 19115-3 XML encoding."
   },
-  "identifier": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/informal_footways.parquet.metadata.json",
+  "identifier": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/hazard_analysis/features_wheelchair.geojson.metadata.json",
   "resource_type": "dataset",
-  "title": "Curitiba — Informal Footways",
-  "abstract": "Cleaned and structured pedestrian-network layers prepared by OSWM. This record describes the GeoParquet distribution at data/processed/other_footways/informal_footways.parquet.",
+  "title": "Curitiba — Features Wheelchair",
+  "abstract": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_wheelchair.geojson.",
   "language": "en",
   "responsible_parties": [
     {
@@ -86,10 +86,11 @@
     }
   },
   "lineage": {
-    "process_description": "Derived from the node's raw OpenStreetMap extracts using OSWM filtering and normalization rules.",
+    "process_description": "Derived from OSWM pedestrian features, accessibility rules, and configured terrain context.",
     "sources": [
+      "data/processed",
       "OpenStreetMap",
-      "data/raw"
+      "Copernicus DEM"
     ]
   },
   "quality": {
@@ -114,31 +115,31 @@
     "deterministic": true
   },
   "distribution": {
-    "resource_path": "data/processed/other_footways/informal_footways.parquet",
-    "access_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/other_footways/informal_footways.parquet",
-    "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/other_footways/informal_footways.parquet",
-    "media_type": "application/vnd.apache.parquet",
-    "format": "GeoParquet",
-    "byte_size": 104097,
+    "resource_path": "data/hazard_analysis/features_wheelchair.geojson",
+    "access_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/hazard_analysis/features_wheelchair.geojson",
+    "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/hazard_analysis/features_wheelchair.geojson",
+    "media_type": "application/geo+json",
+    "format": "GeoJSON",
+    "byte_size": 16659959,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "0831c41c05b831019c29c86eca23f55384920b9f16aba5ec337323f5cd9a2155"
+      "value": "999413b4069f1ee4b866ac544cce901a4b27d99a2e5bb7170731db246d9c16df"
     }
   },
   "links": [
     {
       "rel": "self",
-      "href": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/informal_footways.parquet.metadata.json",
+      "href": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/hazard_analysis/features_wheelchair.geojson.metadata.json",
       "type": "application/json"
     },
     {
       "rel": "describes",
-      "href": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/other_footways/informal_footways.parquet",
-      "type": "application/vnd.apache.parquet"
+      "href": "https://kauevestena.github.io/opensidewalkmap_beta/data/hazard_analysis/features_wheelchair.geojson",
+      "type": "application/geo+json"
     },
     {
       "rel": "collection",
-      "href": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/index.json",
+      "href": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/hazard_analysis/index.json",
       "type": "application/json"
     }
   ]
