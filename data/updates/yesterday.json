@@ -1,1 +1,28 @@
-[]
+[
+    {
+        "id": 188417088,
+        "user": "maps11",
+        "uid": 4043656,
+        "comment": "Actualizar",
+        "created_at": "2026-09-02T12:39:20Z",
+        "changeset_changes_count": 33,
+        "oswm_changes_count": 5,
+        "changes_count": 33,
+        "additions": 0,
+        "modifications": 5,
+        "deletions": 0
+    },
+    {
+        "id": 188433181,
+        "user": "Ergosense",
+        "uid": 24507392,
+        "comment": "Rua pública de acesso livre. Rua sem saída.",
+        "created_at": "2026-09-02T17:56:06Z",
+        "changeset_changes_count": 4,
+        "oswm_changes_count": 1,
+        "changes_count": 4,
+        "additions": 0,
+        "modifications": 1,
+        "deletions": 0
+    }
+]
