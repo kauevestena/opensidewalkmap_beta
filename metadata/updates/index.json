@@ -65,19 +65,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-05T11:23:08+00:00",
+    "updated": "2026-09-06T12:12:52+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-01T12:42:15Z",
+      "Data Pre-Processing": "2026-09-06T12:09:32Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-01T12:45:59Z",
-      "Wiki check for keys": "2026-08-30T13:52:49Z",
-      "Data Quality Tool": "2026-09-01T12:43:37Z",
-      "Versioning Data": "2026-08-30T13:49:36Z",
+      "Statistical Charts": "2026-09-06T12:09:46Z",
+      "Wiki check for keys": "2026-09-06T12:12:52Z",
+      "Data Quality Tool": "2026-09-06T12:09:39Z",
+      "Versioning Data": "2026-09-06T12:09:28Z",
       "Completeness Analysis": "2026-09-01T12:45:44Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "7c0091b120eb30b8010c3508217590045ae7383a",
-      "Pipeline Success": "2026-09-05T11:23:08Z"
+      "Pipeline Success": "2026-09-06T11:46:18Z"
     }
   },
   "lineage": {
@@ -100,7 +100,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-05T11:23:08+00:00",
+    "generated_at": "2026-09-06T12:12:52+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "7c0091b120eb30b8010c3508217590045ae7383a",
@@ -131,7 +131,7 @@
       "byte_size": 3705,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "1d09d233317adc2e6ca98c3689d331200545e69331078840846cb2d203ab1324"
+        "value": "5118ccca5b57af32bea50dc3a5af5ff9798e9df39a2b2c399f27eecb1902f1bc"
       }
     },
     {
@@ -152,10 +152,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/registry.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 577,
+      "byte_size": 576,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "2b2302dae741ed4af6079e459d3d9f98afe340a9b4a8f14c3810929a92fcc36b"
+        "value": "19400c49524decdaad80fd301e37b31875ca3edabe379b1554f1bf15a3738172"
       }
     },
     {
