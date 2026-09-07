@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "renderer_version": 1,
+  "renderer_version": 2,
   "node": "Curitiba",
   "bounds": [
     -49.38914,
@@ -10,7 +10,7 @@
   ],
   "source": {
     "tilejson": "https://tiles.openfreemap.org/planet",
-    "versioned_template": "https://tiles.openfreemap.org/planet/20260823_080002_pt/{z}/{x}/{y}.pbf",
+    "versioned_template": "https://tiles.openfreemap.org/planet/20260830_080001_pt/{z}/{x}/{y}.pbf",
     "attribution": "Basemap \u00a9 OpenFreeMap, \u00a9 OpenMapTiles; data \u00a9 OpenStreetMap contributors"
   },
   "min_zoom": 10,
@@ -22,12 +22,12 @@
   "outputs": {
     "light": {
       "path": "data/basemaps/light.pmtiles",
-      "bytes": 41205166
+      "bytes": 41207847
     },
     "dark": {
       "path": "data/basemaps/dark.pmtiles",
-      "bytes": 35331506
+      "bytes": 35334792
     }
   },
-  "elapsed_seconds": 80.57604264000003
+  "elapsed_seconds": 95.17206953000004
 }

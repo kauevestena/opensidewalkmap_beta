@@ -65,16 +65,16 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-06T12:12:52+00:00",
+    "updated": "2026-09-07T13:46:44+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-06T12:09:32Z",
+      "Data Pre-Processing": "2026-09-07T13:38:30Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-06T12:09:46Z",
+      "Statistical Charts": "2026-09-07T13:46:44Z",
       "Wiki check for keys": "2026-09-06T12:12:52Z",
-      "Data Quality Tool": "2026-09-06T12:09:39Z",
+      "Data Quality Tool": "2026-09-07T13:41:29Z",
       "Versioning Data": "2026-09-06T12:09:28Z",
-      "Completeness Analysis": "2026-09-01T12:45:44Z",
+      "Completeness Analysis": "2026-09-07T13:46:29Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "7c0091b120eb30b8010c3508217590045ae7383a",
       "Pipeline Success": "2026-09-06T11:46:18Z"
@@ -100,11 +100,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-06T12:12:52+00:00",
+    "generated_at": "2026-09-07T13:46:44+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "7c0091b120eb30b8010c3508217590045ae7383a",
-      "commit_date": "2026-09-01T03:48:21-03:00"
+      "commit": "bf835ee2ff14405aac47e2a95786df615e25fa77",
+      "commit_date": "2026-09-07T18:54:55+09:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -131,7 +131,7 @@
       "byte_size": 3705,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "5118ccca5b57af32bea50dc3a5af5ff9798e9df39a2b2c399f27eecb1902f1bc"
+        "value": "62ade7289cd97a5bf55681a837d0400b9310caeec22f4b320b355832d9547756"
       }
     },
     {
@@ -140,10 +140,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/pipeline_decision.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 353,
+      "byte_size": 367,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "f3c560c8e96d892c172e5e6d10d898875f42251f27111d7ee0a6c2c6990da09c"
+        "value": "33bff1ddb31d1461b3677c49beb00c8a3dac5a8c8322e3d88e8183eac0ca537d"
       }
     },
     {
@@ -155,7 +155,7 @@
       "byte_size": 576,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "19400c49524decdaad80fd301e37b31875ca3edabe379b1554f1bf15a3738172"
+        "value": "5d090b8b6efab8fa3c3508d33b79f57d607512cb15b8ee76c620ed16686ad099"
       }
     },
     {
@@ -167,7 +167,7 @@
       "byte_size": 231,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "fe083b7a08a701de95cf7da67a370a6de7a07b11563e54e47f089e79559886ed"
+        "value": "16690f5f860c361efc63665c976dd077e93190065487c8f0ea5506d3d78155f4"
       }
     },
     {
@@ -179,7 +179,7 @@
       "byte_size": 93434,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "80ff42ed04998d4fceac8d23a1e7faef59a0d8eafe10945e173681b101a47e19"
+        "value": "1a2873efc2465359ffe21cc927a317c9de1430ee825d49350432ddf7420b5f45"
       }
     },
     {

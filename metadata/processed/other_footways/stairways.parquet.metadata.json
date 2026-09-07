@@ -70,16 +70,16 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-06T12:12:52+00:00",
+    "updated": "2026-09-07T13:46:44+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-06T12:09:32Z",
+      "Data Pre-Processing": "2026-09-07T13:38:30Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-06T12:09:46Z",
+      "Statistical Charts": "2026-09-07T13:46:44Z",
       "Wiki check for keys": "2026-09-06T12:12:52Z",
-      "Data Quality Tool": "2026-09-06T12:09:39Z",
+      "Data Quality Tool": "2026-09-07T13:41:29Z",
       "Versioning Data": "2026-09-06T12:09:28Z",
-      "Completeness Analysis": "2026-09-01T12:45:44Z",
+      "Completeness Analysis": "2026-09-07T13:46:29Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "7c0091b120eb30b8010c3508217590045ae7383a",
       "Pipeline Success": "2026-09-06T11:46:18Z"
@@ -104,11 +104,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-06T12:12:52+00:00",
+    "generated_at": "2026-09-07T13:46:44+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "7c0091b120eb30b8010c3508217590045ae7383a",
-      "commit_date": "2026-09-01T03:48:21-03:00"
+      "commit": "bf835ee2ff14405aac47e2a95786df615e25fa77",
+      "commit_date": "2026-09-07T18:54:55+09:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -122,7 +122,7 @@
     "byte_size": 98512,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "ad90d26810edaa0d69b9951dd5e16eaf1ba542c02237cb8ba900d0aa70bc8b97"
+      "value": "95f8f115ce96f29a0a1d8aa1d6734def82adf5025541b712cd18b6fd8005f375"
     }
   },
   "links": [

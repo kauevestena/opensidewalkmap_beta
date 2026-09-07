@@ -1,7 +1,7 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-09-01T12:43:24.725908+00:00",
+    "generated_at": "2026-09-07T13:41:17.455846+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
@@ -776,44 +776,44 @@
             "unknown": 0,
             "unknownPercent": 0.0,
             "invalid": 0,
-            "min": 0.008214,
-            "max": 22.061602,
-            "mean": 3.541304,
-            "median": 3.726215,
+            "min": 0.010951,
+            "max": 22.078029,
+            "mean": 3.554755,
+            "median": 3.742642,
             "bins": [
                 {
                     "label": "0–<2",
                     "lower": 0.0,
                     "upper": 2.0,
-                    "count": 2940,
+                    "count": 2954,
                     "color": "#90d743"
                 },
                 {
                     "label": "2–<4",
                     "lower": 2.0,
                     "upper": 4.0,
-                    "count": 13488,
+                    "count": 13475,
                     "color": "#35b779"
                 },
                 {
                     "label": "4–<6",
                     "lower": 4.0,
                     "upper": 6.0,
-                    "count": 2173,
+                    "count": 2172,
                     "color": "#21918c"
                 },
                 {
                     "label": "6–<8",
                     "lower": 6.0,
                     "upper": 8.0,
-                    "count": 682,
+                    "count": 681,
                     "color": "#31688e"
                 },
                 {
                     "label": "8–<10",
                     "lower": 8.0,
                     "upper": 10.0,
-                    "count": 375,
+                    "count": 376,
                     "color": "#443983"
                 },
                 {
@@ -858,21 +858,21 @@
             "invalid": 2,
             "min": 1.0,
             "max": 67.0,
-            "mean": 2.09675,
+            "mean": 2.097752,
             "median": 1.0,
             "bins": [
                 {
                     "label": "0–<5",
                     "lower": 0.0,
                     "upper": 5.0,
-                    "count": 18245,
+                    "count": 18243,
                     "color": "#1d1147"
                 },
                 {
                     "label": "5–<10",
                     "lower": 5.0,
                     "upper": 10.0,
-                    "count": 1447,
+                    "count": 1449,
                     "color": "#51127c"
                 },
                 {
