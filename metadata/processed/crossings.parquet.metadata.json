@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-07T13:46:44+00:00",
+    "updated": "2026-09-08T12:18:50+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-07T13:38:30Z",
+      "Data Pre-Processing": "2026-09-08T12:15:25Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-07T13:46:44Z",
+      "Statistical Charts": "2026-09-08T12:18:50Z",
       "Wiki check for keys": "2026-09-06T12:12:52Z",
-      "Data Quality Tool": "2026-09-07T13:41:29Z",
+      "Data Quality Tool": "2026-09-08T12:16:27Z",
       "Versioning Data": "2026-09-06T12:09:28Z",
-      "Completeness Analysis": "2026-09-07T13:46:29Z",
+      "Completeness Analysis": "2026-09-08T12:18:39Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
-      "OSWM Codebase Revision": "7c0091b120eb30b8010c3508217590045ae7383a",
-      "Pipeline Success": "2026-09-06T11:46:18Z"
+      "OSWM Codebase Revision": "bf835ee2ff14405aac47e2a95786df615e25fa77",
+      "Pipeline Success": "2026-09-07T13:54:02Z"
     }
   },
   "lineage": {
@@ -104,11 +104,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-07T13:46:44+00:00",
+    "generated_at": "2026-09-08T12:18:50+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "bf835ee2ff14405aac47e2a95786df615e25fa77",
-      "commit_date": "2026-09-07T18:54:55+09:00"
+      "commit": "9355a89512c865702b47ed7fdafb655caf7da425",
+      "commit_date": "2026-09-07T20:26:59+09:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -119,10 +119,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/crossings.parquet",
     "media_type": "application/vnd.apache.parquet",
     "format": "GeoParquet",
-    "byte_size": 193674,
+    "byte_size": 193677,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "895d088baac9d31024aa660227518d8de5f73f8e72d3f9c0c7870f12d8dda3d8"
+      "value": "08106142ba5e6a39bfcb59e5a87aaca7ed99cfc5c2a685e4bde60c973d59f2bc"
     }
   },
   "links": [

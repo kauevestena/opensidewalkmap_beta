@@ -1,1 +1,28 @@
-[]
+[
+    {
+        "id": 188664220,
+        "user": "MountWanniassa",
+        "uid": 24223258,
+        "comment": "Added access tags near Rua Saint Hilaire #adt",
+        "created_at": "2026-09-07T11:03:47Z",
+        "changeset_changes_count": 18,
+        "oswm_changes_count": 1,
+        "changes_count": 18,
+        "additions": 0,
+        "modifications": 1,
+        "deletions": 0
+    },
+    {
+        "id": 188644266,
+        "user": "Naaatchin120",
+        "uid": 24101019,
+        "comment": "acréscimo do desenho de cobertura no bairro umbará",
+        "created_at": "2026-09-07T00:12:41Z",
+        "changeset_changes_count": 894,
+        "oswm_changes_count": 1,
+        "changes_count": 894,
+        "additions": 0,
+        "modifications": 1,
+        "deletions": 0
+    }
+]
