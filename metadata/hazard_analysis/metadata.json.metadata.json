@@ -34,7 +34,7 @@
   ],
   "spatial": null,
   "temporal": {
-    "updated": "2026-09-08T12:18:50+00:00",
+    "updated": "2026-09-08T12:24:16+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
       "Data Pre-Processing": "2026-09-08T12:15:25Z",
@@ -45,8 +45,8 @@
       "Versioning Data": "2026-09-06T12:09:28Z",
       "Completeness Analysis": "2026-09-08T12:18:39Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
-      "OSWM Codebase Revision": "bf835ee2ff14405aac47e2a95786df615e25fa77",
-      "Pipeline Success": "2026-09-07T13:54:02Z"
+      "OSWM Codebase Revision": "9355a89512c865702b47ed7fdafb655caf7da425",
+      "Pipeline Success": "2026-09-08T12:24:16Z"
     }
   },
   "lineage": {
@@ -69,7 +69,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-08T12:18:50+00:00",
+    "generated_at": "2026-09-08T12:24:16+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "9355a89512c865702b47ed7fdafb655caf7da425",
