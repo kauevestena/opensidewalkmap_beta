@@ -65,19 +65,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-08T12:24:16+00:00",
+    "updated": "2026-09-10T12:24:07+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-08T12:15:25Z",
+      "Data Pre-Processing": "2026-09-10T12:19:28Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-08T12:18:50Z",
+      "Statistical Charts": "2026-09-10T12:24:07Z",
       "Wiki check for keys": "2026-09-06T12:12:52Z",
-      "Data Quality Tool": "2026-09-08T12:16:27Z",
+      "Data Quality Tool": "2026-09-10T12:20:47Z",
       "Versioning Data": "2026-09-06T12:09:28Z",
-      "Completeness Analysis": "2026-09-08T12:18:39Z",
+      "Completeness Analysis": "2026-09-10T12:23:54Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "9355a89512c865702b47ed7fdafb655caf7da425",
-      "Pipeline Success": "2026-09-08T12:24:16Z"
+      "Pipeline Success": "2026-09-09T12:29:13Z"
     }
   },
   "lineage": {
@@ -100,11 +100,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-08T12:24:16+00:00",
+    "generated_at": "2026-09-10T12:24:07+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "9355a89512c865702b47ed7fdafb655caf7da425",
-      "commit_date": "2026-09-07T20:26:59+09:00"
+      "commit": "ec230ff28d3fbf7433bdd602df2041c2f08f2e35",
+      "commit_date": "2026-09-09T18:15:00-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -131,7 +131,7 @@
       "byte_size": 3705,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "d8647abd484e4b88586c293a660cab331d5de9b504e0d2fea87e47f82896e183"
+        "value": "a99d462338e462d301aaeb828aa4dae6a4e7265d832cc824f076658a3738b0a6"
       }
     },
     {
@@ -140,10 +140,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/pipeline_decision.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 353,
+      "byte_size": 367,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "29b7b5a591c5e811aa89aa1b679908ff198400e8e82990f07b53ef3c00bb4eac"
+        "value": "9e79e284805319b34c830918283000bb297f3276f64a804ac7511694ed3a5175"
       }
     },
     {
@@ -152,10 +152,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/registry.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 577,
+      "byte_size": 576,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "0fcea6255e39184c1abb12f26afc728e3557c960b5dd63db803b4d6d00498d07"
+        "value": "f60b8520ee74b7645c85a4e183880a04befd4af78e3080e78bf46080ec1215e9"
       }
     },
     {
@@ -167,7 +167,7 @@
       "byte_size": 231,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "9a87e2f29c6bb07756198887d0f032b6c2e3c5aeab5df0caae3e6422dc35bcc9"
+        "value": "50cdf2609cd0c852e27224d90fdbbc2a04af52c90ac1415eea18265af70aebb4"
       }
     },
     {
@@ -179,7 +179,7 @@
       "byte_size": 93434,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "53259483923601ca4956a7827d7eaa52a09cc669daf7cefe64f25c52c0bdf681"
+        "value": "7556d922f0c1a7962313def247c6741d759600c944c3ce8c7739959589fca969"
       }
     },
     {
@@ -188,10 +188,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/yesterday.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 2,
+      "byte_size": 1578,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "value": "6b682df02771055bd100fb299a9daa5a877c4dc764c211196502d33d29fd5e36"
       }
     }
   ],
