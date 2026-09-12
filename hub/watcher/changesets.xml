@@ -4,38 +4,134 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Fri, 11 Sep 2026 12:29:22 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 11:42:09 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 188843108 by Andrezinpretin (1 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/188843108</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188843108&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colocando novas ciclovias em curitiba dado atualizado em 2019 pelo ippuc&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188843108&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188843108&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 10 Sep 2026 20:11:34 GMT</pubDate>
-        <guid isPermaLink="false">activity_188843108</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 188843584 by Andrezinpretin (0 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/188843584</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188843584&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
+        <title>[Activity] OSM Changeset 188888714 by Andrezinpretin (0 additions, 17 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188888714</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188888714&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colocando novas ciclovias em curitiba dado atualizado em 2019 pelo ippuc&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 17&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188843584&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188843584&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188888714&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188888714&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 10 Sep 2026 20:20:45 GMT</pubDate>
-        <guid isPermaLink="false">activity_188843584</guid>
+        <pubDate>Fri, 11 Sep 2026 19:41:33 GMT</pubDate>
+        <guid isPermaLink="false">activity_188888714</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 188890336 by Andrezinpretin (1 additions, 4 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188890336</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188890336&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colocando novas ciclovias em curitiba dado atualizado em 2019 pelo ippuc&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188890336&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188890336&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Sep 2026 20:27:44 GMT</pubDate>
+        <guid isPermaLink="false">activity_188890336</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 188889581 by Andrezinpretin (1 additions, 4 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188889581</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188889581&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colocando novas ciclovias em curitiba dado atualizado em 2019 pelo ippuc&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188889581&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188889581&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Sep 2026 20:06:39 GMT</pubDate>
+        <guid isPermaLink="false">activity_188889581</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 188880865 by Flynn Marquardt (0 additions, 5 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188880865</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188880865&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Flynn Marquardt&quot;&gt;Flynn Marquardt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Merge duplicated nodes without tags.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 5&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188880865&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188880865&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Sep 2026 16:16:34 GMT</pubDate>
+        <guid isPermaLink="false">activity_188880865</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 188888888 by Andrezinpretin (3 additions, 0 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188888888</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188888888&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colocando novas ciclovias em curitiba dado atualizado em 2019 pelo ippuc&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 3&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188888888&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188888888&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Sep 2026 19:45:45 GMT</pubDate>
+        <guid isPermaLink="false">activity_188888888</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 188890125 by Andrezinpretin (1 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188890125</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188890125&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colocando novas ciclovias em curitiba dado atualizado em 2019 pelo ippuc&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188890125&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188890125&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Sep 2026 20:22:16 GMT</pubDate>
+        <guid isPermaLink="false">activity_188890125</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 188888060 by Andrezinpretin (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188888060</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188888060&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colocando novas ciclovias em curitiba dado atualizado em 2019 pelo ippuc&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188888060&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188888060&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Sep 2026 19:23:25 GMT</pubDate>
+        <guid isPermaLink="false">activity_188888060</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 188887794 by Andrezinpretin (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/188887794</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 188887794&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Andrezinpretin&quot;&gt;Andrezinpretin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colocando novas ciclovias em curitiba dado atualizado em 2019 pelo ippuc&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/188887794&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/188887794&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Sep 2026 19:16:55 GMT</pubDate>
+        <guid isPermaLink="false">activity_188887794</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
