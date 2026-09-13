@@ -34,7 +34,7 @@
   ],
   "spatial": null,
   "temporal": {
-    "updated": "2026-09-11T12:29:23+00:00",
+    "updated": "2026-09-12T11:43:39+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
       "Data Pre-Processing": "2026-09-11T12:18:00Z",
@@ -46,7 +46,7 @@
       "Completeness Analysis": "2026-09-11T12:22:59Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "3023fa63ac1616fee45d5e874ef4278b3ca0b5ca",
-      "Pipeline Success": "2026-09-11T12:29:23Z"
+      "Pipeline Success": "2026-09-12T11:43:39Z"
     }
   },
   "lineage": {
@@ -69,7 +69,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-11T12:29:23+00:00",
+    "generated_at": "2026-09-12T11:43:39+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "3023fa63ac1616fee45d5e874ef4278b3ca0b5ca",
@@ -84,10 +84,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/updates/yesterday.json",
     "media_type": "application/json",
     "format": "JSON",
-    "byte_size": 3287,
+    "byte_size": 1377,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "4348357c2988fa1c3b6079bf9b531305b886444faa6223b0f60f8d9f017938d1"
+      "value": "c4f1bc899e471178017b749d1cb1d91d1782698e3eb7c24a7ccf85247a3f2a1b"
     }
   },
   "links": [
