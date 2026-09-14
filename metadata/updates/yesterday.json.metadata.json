@@ -84,10 +84,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/updates/yesterday.json",
     "media_type": "application/json",
     "format": "JSON",
-    "byte_size": 1377,
+    "byte_size": 2,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "c4f1bc899e471178017b749d1cb1d91d1782698e3eb7c24a7ccf85247a3f2a1b"
+      "value": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     }
   },
   "links": [
