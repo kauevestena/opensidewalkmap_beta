@@ -1,6 +1,6 @@
 {
   "node_name": "Curitiba",
-  "generated_at": "2026-09-14T14:19:40Z",
+  "generated_at": "2026-09-15T12:51:05Z",
   "bbox": [
     -25.6435043,
     -49.38914,
@@ -40,7 +40,7 @@
       }
     }
   },
-  "total_projects_found": 3,
+  "total_projects_found": 2,
   "projects": [
     {
       "id": 1330,
@@ -61,54 +61,6 @@
         -25.472648,
         -49.215111,
         -25.44371
-      ]
-    },
-    {
-      "id": "2820",
-      "title": "accessibility - Missing Surface Materials",
-      "service": "Pic4Review",
-      "instance": "https://pic4review.pavie.info/#/",
-      "url": "https://pic4review.pavie.info/#/mission/2820",
-      "status": "online",
-      "description": "We're filling up the remaining surface=* tags, mainly for accessibility and oswm",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -49.2954929,
-              -25.4722665
-            ],
-            [
-              -49.2692727,
-              -25.4722665
-            ],
-            [
-              -49.2692727,
-              -25.4414
-            ],
-            [
-              -49.2954929,
-              -25.4414
-            ],
-            [
-              -49.2954929,
-              -25.4722665
-            ]
-          ]
-        ]
-      },
-      "bbox": [
-        -49.2954929,
-        -25.4722665,
-        -49.2692727,
-        -25.4414
-      ],
-      "spatial_status": "available",
-      "spatial_source": "geom",
-      "matched_keywords": [
-        "oswm",
-        "accessibility"
       ]
     },
     {
