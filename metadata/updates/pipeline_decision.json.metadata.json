@@ -34,19 +34,19 @@
   ],
   "spatial": null,
   "temporal": {
-    "updated": "2026-09-16T12:45:15+00:00",
+    "updated": "2026-09-18T12:23:45+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-13T13:19:59Z",
+      "Data Pre-Processing": "2026-09-18T12:19:52Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-13T13:20:12Z",
+      "Statistical Charts": "2026-09-18T12:23:45Z",
       "Wiki check for keys": "2026-09-13T13:22:55Z",
-      "Data Quality Tool": "2026-09-13T13:20:06Z",
+      "Data Quality Tool": "2026-09-18T12:20:56Z",
       "Versioning Data": "2026-09-13T13:19:55Z",
-      "Completeness Analysis": "2026-09-11T12:22:59Z",
+      "Completeness Analysis": "2026-09-18T12:23:33Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "3023fa63ac1616fee45d5e874ef4278b3ca0b5ca",
-      "Pipeline Success": "2026-09-16T12:45:15Z"
+      "Pipeline Success": "2026-09-17T12:43:52Z"
     }
   },
   "lineage": {
@@ -69,11 +69,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-16T12:45:15+00:00",
+    "generated_at": "2026-09-18T12:23:45+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "3023fa63ac1616fee45d5e874ef4278b3ca0b5ca",
-      "commit_date": "2026-09-10T09:30:35-03:00"
+      "commit": "f5fa3e6205344e6fe917e0fb103e80405150dbb4",
+      "commit_date": "2026-09-17T15:30:18-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -84,10 +84,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/updates/pipeline_decision.json",
     "media_type": "application/json",
     "format": "JSON",
-    "byte_size": 353,
+    "byte_size": 367,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "9c05db13f7d147b0b206146a711ebeed310a84f699b19644c50ab20536fccc14"
+      "value": "12fa281ef9e03eb1f8af15d18c8c4efbb0faabdf16362f9328e2e3780ecef440"
     }
   },
   "links": [

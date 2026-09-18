@@ -1,15 +1,54 @@
 [
     {
-        "id": 189088240,
-        "user": "DodaBettaMountain",
-        "uid": 23638967,
-        "comment": "Modified service highway near Linha Verde #adt",
-        "created_at": "2026-09-16T01:53:16Z",
-        "changeset_changes_count": 9,
-        "oswm_changes_count": 1,
-        "changes_count": 9,
+        "id": 189136257,
+        "user": "SomeoneElse_Revert",
+        "uid": 1778799,
+        "comment": "Reverting some todo mechanical edits.  See https://www.openstreetmap.org/user_blocks/21276 . ",
+        "created_at": "2026-09-17T01:01:33Z",
+        "changeset_changes_count": 232,
+        "oswm_changes_count": 61,
+        "changes_count": 232,
         "additions": 0,
-        "modifications": 1,
+        "modifications": 61,
+        "deletions": 0
+    },
+    {
+        "id": 189136428,
+        "user": "SomeoneElse_Revert",
+        "uid": 1778799,
+        "comment": "Reverting some mechanical edits with no info as to what was changed.  See https://www.openstreetmap.org/user_blocks/21276 . ",
+        "created_at": "2026-09-17T01:15:07Z",
+        "changeset_changes_count": 260,
+        "oswm_changes_count": 7,
+        "changes_count": 260,
+        "additions": 0,
+        "modifications": 7,
+        "deletions": 0
+    },
+    {
+        "id": 189144488,
+        "user": "MarkaguntPlateau",
+        "uid": 18236253,
+        "comment": "Added oneway tag to the living_street way near Beco do Amor\n#adt",
+        "created_at": "2026-09-17T07:25:30Z",
+        "changeset_changes_count": 8,
+        "oswm_changes_count": 4,
+        "changes_count": 8,
+        "additions": 1,
+        "modifications": 3,
+        "deletions": 0
+    },
+    {
+        "id": 189176546,
+        "user": "gabrielaportugal",
+        "uid": 24565282,
+        "comment": "Parte da iclovia da região sul de Curitiba, baseada em dados do IPPUC",
+        "created_at": "2026-09-17T18:28:08Z",
+        "changeset_changes_count": 96,
+        "oswm_changes_count": 1,
+        "changes_count": 96,
+        "additions": 1,
+        "modifications": 0,
         "deletions": 0
     }
 ]

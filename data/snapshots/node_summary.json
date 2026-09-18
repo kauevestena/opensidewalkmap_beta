@@ -1,7 +1,7 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-09-11T12:19:07.440844+00:00",
+    "generated_at": "2026-09-18T12:20:47.881708+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
@@ -776,37 +776,37 @@
             "unknown": 0,
             "unknownPercent": 0.0,
             "invalid": 0,
-            "min": 0.021903,
-            "max": 22.08898,
-            "mean": 3.565706,
-            "median": 3.753593,
+            "min": 0.016427,
+            "max": 22.108145,
+            "mean": 3.578985,
+            "median": 3.772758,
             "bins": [
                 {
                     "label": "0–<2",
                     "lower": 0.0,
                     "upper": 2.0,
-                    "count": 2954,
+                    "count": 2983,
                     "color": "#90d743"
                 },
                 {
                     "label": "2–<4",
                     "lower": 2.0,
                     "upper": 4.0,
-                    "count": 13445,
+                    "count": 13411,
                     "color": "#35b779"
                 },
                 {
                     "label": "4–<6",
                     "lower": 4.0,
                     "upper": 6.0,
-                    "count": 2201,
+                    "count": 2207,
                     "color": "#21918c"
                 },
                 {
                     "label": "6–<8",
                     "lower": 6.0,
                     "upper": 8.0,
-                    "count": 682,
+                    "count": 681,
                     "color": "#31688e"
                 },
                 {
@@ -858,21 +858,21 @@
             "invalid": 2,
             "min": 1.0,
             "max": 67.0,
-            "mean": 2.097752,
+            "mean": 2.099454,
             "median": 1.0,
             "bins": [
                 {
                     "label": "0–<5",
                     "lower": 0.0,
                     "upper": 5.0,
-                    "count": 18243,
+                    "count": 18242,
                     "color": "#1d1147"
                 },
                 {
                     "label": "5–<10",
                     "lower": 5.0,
                     "upper": 10.0,
-                    "count": 1449,
+                    "count": 1450,
                     "color": "#51127c"
                 },
                 {
