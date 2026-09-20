@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-18T12:29:20+00:00",
+    "updated": "2026-09-20T12:38:11+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-18T12:19:52Z",
+      "Data Pre-Processing": "2026-09-20T12:33:58Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-18T12:23:45Z",
+      "Statistical Charts": "2026-09-20T12:38:11Z",
       "Wiki check for keys": "2026-09-13T13:22:55Z",
-      "Data Quality Tool": "2026-09-18T12:20:56Z",
+      "Data Quality Tool": "2026-09-20T12:35:17Z",
       "Versioning Data": "2026-09-13T13:19:55Z",
-      "Completeness Analysis": "2026-09-18T12:23:33Z",
+      "Completeness Analysis": "2026-09-20T12:37:58Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "f5fa3e6205344e6fe917e0fb103e80405150dbb4",
-      "Pipeline Success": "2026-09-18T12:29:20Z"
+      "Pipeline Success": "2026-09-19T12:04:11Z"
     }
   },
   "lineage": {
@@ -105,11 +105,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-18T12:29:20+00:00",
+    "generated_at": "2026-09-20T12:38:11+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "f5fa3e6205344e6fe917e0fb103e80405150dbb4",
-      "commit_date": "2026-09-17T15:30:18-03:00"
+      "commit": "5d7e470015e5e5327cdeaa4d3511d919e4e21d8b",
+      "commit_date": "2026-09-19T11:18:56-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -124,7 +124,7 @@
       "byte_size": 3020,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "131a2917f870117b1a7d5980d24970fdbc1b6327aa63300b2c2d4cfccebacd42"
+        "value": "24b00df8df67fb0f14eca781926b26e30c9382ae854358dd82c3bb57e77bcb72"
       }
     },
     {
@@ -157,10 +157,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/network.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 7414369,
+      "byte_size": 7414367,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "9eefa468099dae1a371c2af06c0b125963fc90b0f83de4575eb893f68758e20c"
+        "value": "2ce2f98db7783192217e8d561a3bcb90f0f3c3605088b3e1a004bf252d7eb78c"
       }
     },
     {
@@ -196,7 +196,7 @@
       "byte_size": 131,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "672a494898f9ed7e150f66d786adb5992cd5bed72fd97f279dc369958a30e6d7"
+        "value": "8db3883693939322d3a9e755d2e00ef63027c9526d685bd2648f401ef53c242e"
       }
     }
   ],

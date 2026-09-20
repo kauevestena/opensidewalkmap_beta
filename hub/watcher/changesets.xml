@@ -4,22 +4,38 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Sat, 19 Sep 2026 12:01:42 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 12:45:37 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 189189007 by Vinicius Moraes (0 additions, 47 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189189007</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189189007&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Inclusão de nome oficial da Linha Verde como Rodovia BR-476 e nome histórico; melhoria na classificação de vias no entroncamento do Contorno Norte com Linha Verde e Rodovia BR-116&lt;/p&gt;
+        <title>[Activity] OSM Changeset 189239763 by Fizzie-DWG (0 additions, 3 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/189239763</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189239763&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Fizzie-DWG&quot;&gt;Fizzie-DWG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; DWG revert - Fictitious mapping&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 47&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 3&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189189007&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189189007&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189239763&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189239763&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 18 Sep 2026 03:31:47 GMT</pubDate>
-        <guid isPermaLink="false">activity_189189007</guid>
+        <pubDate>Sat, 19 Sep 2026 07:19:36 GMT</pubDate>
+        <guid isPermaLink="false">activity_189239763</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 189256581 by OSMthechallenger (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/189256581</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189256581&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/OSMthechallenger&quot;&gt;OSMthechallenger&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; были даны названия населённым пунктам на русском.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189256581&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189256581&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 19 Sep 2026 14:37:19 GMT</pubDate>
+        <guid isPermaLink="false">activity_189256581</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
