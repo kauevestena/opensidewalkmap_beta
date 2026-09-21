@@ -20,6 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # A queued writer must start from the branch after the previous writer.
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
           submodules: recursive
       - uses: actions/setup-python@v5
