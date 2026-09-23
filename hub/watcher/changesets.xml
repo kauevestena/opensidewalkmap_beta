@@ -4,23 +4,7 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Tue, 22 Sep 2026 12:44:47 GMT</lastBuildDate>
-    <item>
-        <title>[Activity] OSM Changeset 189323417 by Darigaf (11 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189323417</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189323417&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Darigaf&quot;&gt;Darigaf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Adicionaod Ciclovia pinhais&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 11&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189323417&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189323417&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 21 Sep 2026 02:01:03 GMT</pubDate>
-        <guid isPermaLink="false">activity_189323417</guid>
-    </item>
+    <lastBuildDate>Wed, 23 Sep 2026 12:52:48 GMT</lastBuildDate>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
         <link>https://www.openstreetmap.org/changeset/182321412</link>
