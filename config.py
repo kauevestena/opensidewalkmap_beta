@@ -145,3 +145,9 @@ HAZARD_TERRAIN_CONFIG = {
     # communicates broad terrain context.
     "smoothing_sigma_pixels": 3.0,
 }
+
+# Explicit schedule for fleet health; matches the existing workflow.
+NODE_DAILY_CRON = '30 7 * * *'
+
+# Explicit schedule for fleet health; matches the existing workflow.
+NODE_WEEKLY_CRON = '5 8 * * 0'
