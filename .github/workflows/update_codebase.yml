@@ -20,45 +20,9 @@ concurrency:
 
 jobs:
   bump_submodule:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          submodules: false
-      - name: Check out the exact main-reachable core revision
-        id: core
-        env:
-          REVISION: ${{ inputs.revision }}
-        run: |
-          rm -rf oswm_codebase
-          git clone --filter=blob:none --no-checkout https://github.com/kauevestena/oswm_codebase.git oswm_codebase
-          git -C oswm_codebase fetch origin main
-          if [ -z "$REVISION" ]; then
-            REVISION="$(git -C oswm_codebase rev-parse origin/main)"
-          fi
-          git -C oswm_codebase cat-file -e "$REVISION^{commit}"
-          git -C oswm_codebase merge-base --is-ancestor "$REVISION" origin/main
-          git -C oswm_codebase checkout --detach "$REVISION"
-          REVISION="$(git -C oswm_codebase rev-parse HEAD)"
-          echo "revision=$REVISION" >> "$GITHUB_OUTPUT"
-      - name: Commit the exact tested gitlink
-        id: commit
-        run: |
-          echo "changed=false" >> "$GITHUB_OUTPUT"
-          # Keep this job limited to the gitlink. GitHub's workflow token cannot
-          # push changes under .github/workflows; those are synchronized separately.
-          git add -- oswm_codebase
-          if git diff --cached --quiet; then exit 0; fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: update oswm_codebase to ${{ steps.core.outputs.revision }}"
-          git fetch origin "$GITHUB_REF_NAME"
-          git rebase "origin/$GITHUB_REF_NAME"
-          git push origin "HEAD:$GITHUB_REF_NAME"
-          echo "changed=true" >> "$GITHUB_OUTPUT"
-      - name: Deploy published changes
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run pages.yml --ref "$GITHUB_REF_NAME"
+    permissions:
+      contents: write
+      actions: write
+    uses: kauevestena/oswm_codebase/.github/workflows/node_codebase_sync.yml@main
+    with:
+      revision: ${{ inputs.revision || '' }}
