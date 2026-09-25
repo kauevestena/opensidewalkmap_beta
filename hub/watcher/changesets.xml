@@ -4,86 +4,38 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Thu, 24 Sep 2026 13:03:10 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 13:04:20 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 189426827 by Vinicius Moraes (0 additions, 11 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189426827</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189426827&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Melhorias de classificação nas regionais Boqueirão e Cajuru&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 11&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189426827&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189426827&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 23 Sep 2026 03:07:39 GMT</pubDate>
-        <guid isPermaLink="false">activity_189426827</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 189427480 by Vinicius Moraes (1 additions, 3 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189427480</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189427480&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Melhorias de classificação na regional Portão; reclassificação visando adequação ao uso das vias e simplificação&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 3&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189427480&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189427480&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 23 Sep 2026 03:31:15 GMT</pubDate>
-        <guid isPermaLink="false">activity_189427480</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 189426300 by Vinicius Moraes (1 additions, 0 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189426300</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189426300&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Ajustes na classificação de vias visando continuidade do Contorno Norte conforme uso local&lt;/p&gt;
+        <title>[Activity] OSM Changeset 189508042 by Diogo RM (1 additions, 0 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/189508042</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189508042&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Diogo RM&quot;&gt;Diogo RM&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Ajuste de rua.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 1&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189426300&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189426300&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189508042&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189508042&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 23 Sep 2026 02:29:27 GMT</pubDate>
-        <guid isPermaLink="false">activity_189426300</guid>
+        <pubDate>Thu, 24 Sep 2026 16:52:00 GMT</pubDate>
+        <guid isPermaLink="false">activity_189508042</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 189426173 by Vinicius Moraes (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189426173</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189426173&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Ajustes de vias visando continuidade do Contorno Norte conforme uso local&lt;/p&gt;
+        <title>[Activity] OSM Changeset 189508012 by Diogo RM (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/189508012</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189508012&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Diogo RM&quot;&gt;Diogo RM&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Ajuste de rua.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189426173&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189426173&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189508012&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189508012&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 23 Sep 2026 02:19:28 GMT</pubDate>
-        <guid isPermaLink="false">activity_189426173</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 189425972 by Vinicius Moraes (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189425972</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189425972&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Melhorias na classificação do trevo da Linha Verde / BR 476; continuidade da malha primary&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189425972&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189425972&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 23 Sep 2026 02:03:29 GMT</pubDate>
-        <guid isPermaLink="false">activity_189425972</guid>
+        <pubDate>Thu, 24 Sep 2026 16:51:09 GMT</pubDate>
+        <guid isPermaLink="false">activity_189508012</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>

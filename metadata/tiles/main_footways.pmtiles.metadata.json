@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-24T12:55:55+00:00",
+    "updated": "2026-09-25T12:58:33+00:00",
     "node_registry": {
       "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-24T12:50:37Z",
+      "Data Pre-Processing": "2026-09-25T12:53:11Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-24T12:55:55Z",
+      "Statistical Charts": "2026-09-25T12:58:33Z",
       "Wiki check for keys": "2026-09-13T13:22:55Z",
-      "Data Quality Tool": "2026-09-24T12:52:00Z",
+      "Data Quality Tool": "2026-09-25T12:54:17Z",
       "Versioning Data": "2026-09-13T13:19:55Z",
-      "Completeness Analysis": "2026-09-24T12:55:40Z",
+      "Completeness Analysis": "2026-09-25T12:58:21Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
-      "OSWM Codebase Revision": "5d7e470015e5e5327cdeaa4d3511d919e4e21d8b",
-      "Pipeline Success": "2026-09-23T12:55:18Z"
+      "OSWM Codebase Revision": "231b2d9dc31ff40226041e9097f2a523feae5474",
+      "Pipeline Success": "2026-09-24T13:03:10Z"
     }
   },
   "lineage": {
@@ -103,11 +103,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-24T12:55:55+00:00",
+    "generated_at": "2026-09-25T12:58:33+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "231b2d9dc31ff40226041e9097f2a523feae5474",
-      "commit_date": "2026-09-23T16:13:34-03:00"
+      "commit": "e66ae89639df209eee5e54399f8722614ff97054",
+      "commit_date": "2026-09-25T06:58:12-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -118,10 +118,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/main_footways.pmtiles",
     "media_type": "application/vnd.pmtiles",
     "format": "PMTiles",
-    "byte_size": 35934623,
+    "byte_size": 35937618,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "b1b599e4db9a214944c049f554febf42b14702514a41458fb14bda42fc61f454"
+      "value": "29b966ce1c653288ce4c1952bed7b907dfbf2082dc8d8e66bcb6d95e29a544a6"
     }
   },
   "links": [
