@@ -1,6 +1,10 @@
 name: data_daily_updating
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/data_daily_updating.yml"
   schedule:
     - cron: "30 7 * * *"
   workflow_dispatch:
@@ -21,52 +25,11 @@ concurrency:
 
 jobs:
   data_daily_updating:
-    runs-on: ubuntu-latest
-    timeout-minutes: 240
-    env:
-      PYTHONUNBUFFERED: "1"
-      OSWM_FORCE_REGEN: ${{ inputs.force_regeneration || 'false' }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          # A queued writer must start from the branch after the previous writer.
-          ref: ${{ github.ref_name }}
-          fetch-depth: 0
-          submodules: recursive
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-          cache-dependency-path: oswm_codebase/requirements.txt
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk gdal-bin libgdal-dev
-      - uses: actions/cache@v4
-        with:
-          path: .cache/oswm/elevation
-          key: oswm-elevation-${{ runner.os }}-${{ hashFiles('config.py') }}
-          restore-keys: oswm-elevation-${{ runner.os }}-
-      - run: python -m pip install -r oswm_codebase/requirements.txt
-      - run: bash oswm_codebase/runners/daily.sh
-      - name: Validate every generated PMTiles layer
-        run: python oswm_codebase/other/auxiliary_scripts/validate_tiles.py
-      - name: Commit generated data
-        id: commit
-        run: |
-          echo "changed=false" >> "$GITHUB_OUTPUT"
-          python oswm_codebase/node_outputs.py --root . stage daily
-          python oswm_codebase/node_outputs.py --root . validate-sizes --max-mib 95
-          if git diff --cached --quiet; then exit 0; fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "data: refresh node products $(date -u +%F)"
-          git fetch origin "$GITHUB_REF_NAME"
-          git rebase "origin/$GITHUB_REF_NAME"
-          git push origin "HEAD:$GITHUB_REF_NAME"
-          echo "changed=true" >> "$GITHUB_OUTPUT"
-      - name: Deploy published changes
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run pages.yml --ref "$GITHUB_REF_NAME"
+    permissions:
+      contents: write
+      actions: write
+    uses: kauevestena/oswm_codebase/.github/workflows/node_build.yml@main
+    with:
+      mode: daily
+      core_ref: main
+      force_regeneration: ${{ github.event_name == 'push' || inputs.force_regeneration || false }}

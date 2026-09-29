@@ -7,6 +7,8 @@ on:
       - "index.html"
       - "map.html"
       - "webmap_params.json"
+      - "oswm-build.json"
+      - "oswm_runtime/**"
       - "data/**"
       - "metadata/**"
       - "hub/**"
@@ -14,7 +16,6 @@ on:
       - "statistics/**"
       - "statistics_specs/**"
       - "assets/**"
-      - "oswm_codebase/**"
   workflow_dispatch:
 
 permissions:
@@ -35,7 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: false
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
