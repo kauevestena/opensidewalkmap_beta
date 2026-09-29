@@ -884,7 +884,7 @@ print(data)</pre>
     "category": "Basemaps Metadata",
     "path": "metadata/basemaps/dark.pmtiles.metadata.json",
     "format": "JSON",
-    "description": "Light and dark PMTiles context basemaps covering the node area. This record describes the PMTiles distribution at data/basemaps/dark.pmtiles.",
+    "description": "Positron-based and Dark Matter-based PMTiles context basemaps covering the node area. This record describes the PMTiles distribution at data/basemaps/dark.pmtiles.",
     "capabilities": {
       "action": "preview-json",
       "action_label": "Preview JSON",
@@ -901,7 +901,7 @@ print(data)</pre>
     "category": "Basemaps Metadata",
     "path": "metadata/basemaps/generation_report.json.metadata.json",
     "format": "JSON",
-    "description": "Light and dark PMTiles context basemaps covering the node area. This record describes the JSON distribution at data/basemaps/generation_report.json.",
+    "description": "Positron-based and Dark Matter-based PMTiles context basemaps covering the node area. This record describes the JSON distribution at data/basemaps/generation_report.json.",
     "capabilities": {
       "action": "preview-json",
       "action_label": "Preview JSON",
@@ -918,7 +918,7 @@ print(data)</pre>
     "category": "Basemaps Metadata",
     "path": "metadata/basemaps/light.pmtiles.metadata.json",
     "format": "JSON",
-    "description": "Light and dark PMTiles context basemaps covering the node area. This record describes the PMTiles distribution at data/basemaps/light.pmtiles.",
+    "description": "Positron-based and Dark Matter-based PMTiles context basemaps covering the node area. This record describes the PMTiles distribution at data/basemaps/light.pmtiles.",
     "capabilities": {
       "action": "preview-json",
       "action_label": "Preview JSON",
@@ -1057,7 +1057,7 @@ print(data)</pre>
     "category": "Collection Metadata",
     "path": "metadata/basemaps/index.json",
     "format": "JSON",
-    "description": "Light and dark PMTiles context basemaps covering the node area. This collection mirrors data/basemaps without changing the source data directory.",
+    "description": "Positron-based and Dark Matter-based PMTiles context basemaps covering the node area. This collection mirrors data/basemaps without changing the source data directory.",
     "capabilities": {
       "action": "preview-json",
       "action_label": "Preview JSON",
@@ -1446,6 +1446,25 @@ print(data)</pre>
   },
   {
     "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_blind.geojson",
+    "format": "GeoJSON",
+    "description": "Asset file: features_blind.geojson",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview GeoJSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "gdal",
+        "curl"
+      ],
+      "attribute_filter": "id IS NOT NULL"
+    },
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_blind.geojson.metadata.json"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
     "path": "data/hazard_analysis/features_blind.parquet",
     "format": "GeoParquet",
     "description": "Asset file: features_blind.parquet",
@@ -1461,6 +1480,25 @@ print(data)</pre>
     },
     "deliverable": "hazard_analysis",
     "metadata_path": "metadata/hazard_analysis/features_blind.parquet.metadata.json"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_elderly.geojson",
+    "format": "GeoJSON",
+    "description": "Asset file: features_elderly.geojson",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview GeoJSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "gdal",
+        "curl"
+      ],
+      "attribute_filter": "id IS NOT NULL"
+    },
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_elderly.geojson.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -1482,6 +1520,25 @@ print(data)</pre>
   },
   {
     "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_pedestrian.geojson",
+    "format": "GeoJSON",
+    "description": "Asset file: features_pedestrian.geojson",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview GeoJSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "gdal",
+        "curl"
+      ],
+      "attribute_filter": "id IS NOT NULL"
+    },
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_pedestrian.geojson.metadata.json"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
     "path": "data/hazard_analysis/features_pedestrian.parquet",
     "format": "GeoParquet",
     "description": "Asset file: features_pedestrian.parquet",
@@ -1497,6 +1554,25 @@ print(data)</pre>
     },
     "deliverable": "hazard_analysis",
     "metadata_path": "metadata/hazard_analysis/features_pedestrian.parquet.metadata.json"
+  },
+  {
+    "category": "Data (Parquet & GeoJSON)",
+    "path": "data/hazard_analysis/features_wheelchair.geojson",
+    "format": "GeoJSON",
+    "description": "Asset file: features_wheelchair.geojson",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview GeoJSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "gdal",
+        "curl"
+      ],
+      "attribute_filter": "id IS NOT NULL"
+    },
+    "deliverable": "hazard_analysis",
+    "metadata_path": "metadata/hazard_analysis/features_wheelchair.geojson.metadata.json"
   },
   {
     "category": "Data (Parquet & GeoJSON)",
@@ -2114,9 +2190,43 @@ print(data)</pre>
   },
   {
     "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_blind.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_blind.geojson.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
     "path": "metadata/hazard_analysis/features_blind.parquet.metadata.json",
     "format": "JSON",
     "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoParquet distribution at data/hazard_analysis/features_blind.parquet.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_elderly.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_elderly.geojson.",
     "capabilities": {
       "action": "preview-json",
       "action_label": "Preview JSON",
@@ -2148,9 +2258,43 @@ print(data)</pre>
   },
   {
     "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_pedestrian.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_pedestrian.geojson.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
     "path": "metadata/hazard_analysis/features_pedestrian.parquet.metadata.json",
     "format": "JSON",
     "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoParquet distribution at data/hazard_analysis/features_pedestrian.parquet.",
+    "capabilities": {
+      "action": "preview-json",
+      "action_label": "Preview JSON",
+      "snippets": [
+        "javascript",
+        "python",
+        "curl"
+      ]
+    },
+    "deliverable": "metadata",
+    "metadata_path": null
+  },
+  {
+    "category": "Hazard Analysis Metadata",
+    "path": "metadata/hazard_analysis/features_wheelchair.geojson.metadata.json",
+    "format": "JSON",
+    "description": "Profile-specific hazard evidence, rules, tiles, and terrain-context products. This record describes the GeoJSON distribution at data/hazard_analysis/features_wheelchair.geojson.",
     "capabilities": {
       "action": "preview-json",
       "action_label": "Preview JSON",
@@ -5757,7 +5901,7 @@ print(data)</pre>
     "category": "Vector Tiles (PMTiles)",
     "path": "data/basemaps/dark.pmtiles",
     "format": "PMTiles",
-    "description": "Node-scoped dark raster basemap in PMTiles format, rendered from OpenFreeMap vector tiles.",
+    "description": "Node-scoped Dark Matter-based raster basemap in PMTiles format, rendered from OpenFreeMap vector tiles.",
     "capabilities": {
       "action": "inspect-pmtiles",
       "action_label": "Inspect Archive",
@@ -5774,7 +5918,7 @@ print(data)</pre>
     "category": "Vector Tiles (PMTiles)",
     "path": "data/basemaps/light.pmtiles",
     "format": "PMTiles",
-    "description": "Node-scoped light raster basemap in PMTiles format, rendered from OpenFreeMap vector tiles.",
+    "description": "Node-scoped Positron-based raster basemap in PMTiles format, rendered from OpenFreeMap vector tiles.",
     "capabilities": {
       "action": "inspect-pmtiles",
       "action_label": "Inspect Archive",

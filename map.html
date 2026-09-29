@@ -474,16 +474,53 @@
                 });
                 basemapSelector.value = params.basemaps.default;
 
-                function selectedStyle(styleKey) {
-                    const style = JSON.parse(JSON.stringify(params.styles[styleKey]));
-                    style.sources.osm.url = params.basemaps.options[basemapSelector.value].url;
+                const openFreeMapStyleCache = new Map();
+
+                async function loadOpenFreeMapStyle(styleUrl) {
+                    if (!openFreeMapStyleCache.has(styleUrl)) {
+                        const response = await fetch(styleUrl);
+                        if (!response.ok) {
+                            throw new Error(`OpenFreeMap style request failed: ${response.status}`);
+                        }
+                        openFreeMapStyleCache.set(styleUrl, await response.json());
+                    }
+                    return JSON.parse(JSON.stringify(openFreeMapStyleCache.get(styleUrl)));
+                }
+
+                async function selectedStyle(styleKey) {
+                    const overlayStyle = JSON.parse(JSON.stringify(params.styles[styleKey]));
+                    const basemap = params.basemaps.options[basemapSelector.value];
+
+                    if (basemap.type !== 'style') {
+                        overlayStyle.sources.osm.url = basemap.url;
+                        return overlayStyle;
+                    }
+
+                    const style = await loadOpenFreeMapStyle(basemap.style_url);
+                    delete overlayStyle.sources.osm;
+                    Object.entries(overlayStyle.sources).forEach(([sourceId, source]) => {
+                        style.sources[sourceId] = source;
+                    });
+                    overlayStyle.layers
+                        .filter(layer => layer.id !== 'osm-baselayer')
+                        .forEach(layer => style.layers.push(layer));
                     return style;
                 }
 
+                async function applySelectedStyle(styleKey) {
+                    try {
+                        map.setStyle(await selectedStyle(styleKey));
+                    } catch (error) {
+                        console.error('Basemap style could not be loaded:', error);
+                        basemapSelector.value = params.basemaps.default;
+                        map.setStyle(await selectedStyle(styleKey));
+                    }
+                }
+
                 // Listen for style changes
-                styleSelector.addEventListener('change', function (e) {
+                styleSelector.addEventListener('change', async function (e) {
                     const style = e.target.value;
-                    map.setStyle(selectedStyle(style));
+                    await applySelectedStyle(style);
                     if (legendControl) {
                         legendControl.setActiveStyle(style);
                     }
@@ -496,8 +533,8 @@
                     }
                 });
 
-                basemapSelector.addEventListener('change', () => {
-                    map.setStyle(selectedStyle(styleSelector.value || 'footway_categories'));
+                basemapSelector.addEventListener('change', async () => {
+                    await applySelectedStyle(styleSelector.value || 'footway_categories');
                 });
 
                 import('./oswm_codebase/webmap/theme_charts/theme_chart_control.js')

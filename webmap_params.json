@@ -7533,12 +7533,24 @@
         "default": "dark",
         "options": {
             "light": {
-                "name": "Light basemap",
+                "name": "Self-hosted Positron",
+                "type": "raster",
                 "url": "pmtiles://data/basemaps/light.pmtiles"
             },
             "dark": {
-                "name": "Dark basemap",
+                "name": "Self-hosted Dark Matter",
+                "type": "raster",
                 "url": "pmtiles://data/basemaps/dark.pmtiles"
+            },
+            "openfreemap_dark": {
+                "name": "OpenFreeMap Dark Matter",
+                "type": "style",
+                "style_url": "https://tiles.openfreemap.org/styles/dark"
+            },
+            "openfreemap_positron": {
+                "name": "OpenFreeMap Positron",
+                "type": "style",
+                "style_url": "https://tiles.openfreemap.org/styles/positron"
             }
         }
     }

@@ -4,54 +4,22 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Mon, 28 Sep 2026 15:42:04 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 14:25:34 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 189639356 by thiago-tco (0 additions, 7 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189639356</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189639356&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/thiago-tco&quot;&gt;thiago-tco&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Determine the heights of kerbs at crossings&lt;/p&gt;
+        <title>[Activity] OSM Changeset 189702482 by Vinicius Moraes (0 additions, 12 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/189702482</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189702482&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização de bloqueios e rotas de ônibus nas imediações da Praça Eufrásio Correia, no contexto das obras do Ligeirão Leste / Oeste&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 7&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 12&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189639356&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189639356&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189702482&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189702482&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 27 Sep 2026 16:16:04 GMT</pubDate>
-        <guid isPermaLink="false">activity_189639356</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 189640768 by JULIANO BARCIK (1 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189640768</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189640768&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/JULIANO BARCIK&quot;&gt;JULIANO BARCIK&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; ajuste limite municipio&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189640768&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189640768&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 27 Sep 2026 16:46:28 GMT</pubDate>
-        <guid isPermaLink="false">activity_189640768</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 189639333 by thiago-tco (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189639333</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189639333&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/thiago-tco&quot;&gt;thiago-tco&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Specify path surfaces&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189639333&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189639333&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 27 Sep 2026 16:15:33 GMT</pubDate>
-        <guid isPermaLink="false">activity_189639333</guid>
+        <pubDate>Mon, 28 Sep 2026 23:34:21 GMT</pubDate>
+        <guid isPermaLink="false">activity_189702482</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>

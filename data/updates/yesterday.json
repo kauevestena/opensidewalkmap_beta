@@ -1,41 +1,15 @@
 [
     {
-        "id": 189639356,
-        "user": "thiago-tco",
-        "uid": 16946278,
-        "comment": "Determine the heights of kerbs at crossings",
-        "created_at": "2026-09-27T16:16:04Z",
-        "changeset_changes_count": 7,
-        "oswm_changes_count": 7,
-        "changes_count": 7,
+        "id": 189702482,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Atualização de bloqueios e rotas de ônibus nas imediações da Praça Eufrásio Correia, no contexto das obras do Ligeirão Leste / Oeste",
+        "created_at": "2026-09-28T23:34:21Z",
+        "changeset_changes_count": 69,
+        "oswm_changes_count": 12,
+        "changes_count": 69,
         "additions": 0,
-        "modifications": 7,
-        "deletions": 0
-    },
-    {
-        "id": 189640768,
-        "user": "JULIANO BARCIK",
-        "uid": 24591228,
-        "comment": "ajuste limite municipio",
-        "created_at": "2026-09-27T16:46:28Z",
-        "changeset_changes_count": 59,
-        "oswm_changes_count": 2,
-        "changes_count": 59,
-        "additions": 1,
-        "modifications": 1,
-        "deletions": 0
-    },
-    {
-        "id": 189639333,
-        "user": "thiago-tco",
-        "uid": 16946278,
-        "comment": "Specify path surfaces",
-        "created_at": "2026-09-27T16:15:33Z",
-        "changeset_changes_count": 1,
-        "oswm_changes_count": 1,
-        "changes_count": 1,
-        "additions": 0,
-        "modifications": 1,
+        "modifications": 12,
         "deletions": 0
     }
 ]
