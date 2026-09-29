@@ -10,11 +10,11 @@
     <meta charset="utf-8" />
     <!-- maplibre-gl v6 (ESM-only) -->
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css" />
-    <link rel="stylesheet" href="oswm_codebase/assets/styles/webmap_snapshot.css" />
-    <link rel="stylesheet" href="oswm_codebase/assets/styles/webmap_theme_charts.css" />
+    <link rel="stylesheet" href="oswm_runtime/assets/styles/webmap_snapshot.css" />
+    <link rel="stylesheet" href="oswm_runtime/assets/styles/webmap_theme_charts.css" />
     <!-- OSWM native legend control -->
-    <link rel="stylesheet" href="oswm_codebase/assets/styles/oswm_legend_control.css" />
-    <script type="module" src="oswm_codebase/assets/branding/branding.js"></script>
+    <link rel="stylesheet" href="oswm_runtime/assets/styles/oswm_legend_control.css" />
+    <script type="module" src="oswm_runtime/assets/branding/branding.js"></script>
     <style>
         body {
             margin: 0;
@@ -547,7 +547,7 @@
                     })
                     .catch((error) => console.error('Theme charts could not be loaded:', error));
 
-                import('./oswm_codebase/webmap/snapshot/snapshot_control.js')
+                import('./oswm_runtime/webmap/snapshot/snapshot_control.js')
                     .then(({ installSnapshotControl }) => {
                         installSnapshotControl(map, params, {
                             position: 'top-right',

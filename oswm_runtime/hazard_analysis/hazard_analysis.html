@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSWM Hazard Analysis</title>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css">
+    <script type="module" src="../assets/branding/branding.js"></script>
+    <link rel="icon" data-oswm-branding="favicon">
+    <style>
+        :root { font-family: Inter, "Helvetica Neue", Arial, sans-serif; color: #1f2933; }
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        #map { width: 100vw; height: 100vh; }
+        .logo { position: fixed; z-index: 4; top: 7px; left: 7px; width: min(330px, 44vw); }
+        #panel {
+            position: absolute; z-index: 5; top: 16px; right: 48px;
+            width: min(330px, calc(100vw - 76px)); max-height: calc(100vh - 32px);
+            overflow: auto; padding: 15px; border-radius: 12px;
+            background: rgba(255,255,255,.96); box-shadow: 0 5px 20px rgba(0,0,0,.18);
+        }
+        .panel-header { display: flex; align-items: center; justify-content: space-between; margin: 0 0 5px; }
+        h1 { margin: 0; font-size: 20px; }
+        .guide-link { display: inline-block; padding: 4px 9px; font-size: 11px; font-weight: 700;
+            color: #165a72; background: #e8f4f8; border: 1px solid #b8dae6; border-radius: 5px;
+            text-decoration: none; white-space: nowrap; cursor: pointer; }
+        .guide-link:hover { background: #d0ecf4; }
+        .subtitle, .note { color: #59636e; font-size: 12px; line-height: 1.4; }
+        .control { margin-top: 12px; }
+        label { display: block; margin-bottom: 4px; font-size: 11px; font-weight: 750;
+            letter-spacing: .045em; text-transform: uppercase; }
+        select, input[type="range"] { width: 100%; }
+        select { padding: 7px; border: 1px solid #aeb6bf; border-radius: 6px; background: #fff; }
+        .inline { display: flex; gap: 9px; align-items: center; }
+        .inline input { margin: 0; }
+        .inline label { margin: 0; text-transform: none; letter-spacing: 0; font-size: 13px; }
+        #legend { margin-top: 13px; padding-top: 11px; border-top: 1px solid #d8dde2; }
+        .legend-row { display: flex; align-items: center; margin-bottom: 4px; }
+        .swatch { display: inline-block; width: 14px; height: 14px; margin-right: 6px; border-radius: 50%; border: 1px solid #aeb6bf; }
+
+        .popup-links {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-top: 1px solid #d8dde2;
+            padding-top: 8px;
+        }
+
+        .popup-links a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .popup-links a:hover {
+            text-decoration: underline;
+        }
+
+        #source { margin-top: 10px; font-size: 10px; color: #65717d; line-height: 1.35; }
+        #loading { display: none; margin-top: 9px; font-size: 12px; font-weight: 700; color: #8a4d00; }
+        #welcome {
+            position: fixed; z-index: 20; inset: 0; display: grid; place-items: center;
+            padding: 20px; background: rgba(14,22,31,.55);
+        }
+        #welcome[hidden] { display: none; }
+        .modal { max-width: 570px; padding: 24px; border-radius: 14px; background: white;
+            box-shadow: 0 10px 35px rgba(0,0,0,.3); }
+        .modal h2 { margin-top: 0; }
+        .modal p, .modal li { font-size: 14px; line-height: 1.5; }
+        button { padding: 9px 15px; border: 0; border-radius: 7px; color: white;
+            background: #165a72; font-weight: 700; cursor: pointer; }
+        .maplibregl-popup-content { max-width: 390px; max-height: 65vh; overflow: auto; }
+        .popup-title { font-weight: 800; font-size: 15px; margin-bottom: 5px; }
+        .badge { display: inline-block; padding: 2px 7px; margin: 2px 3px 2px 0;
+            border-radius: 999px; color: white; font-size: 11px; }
+        .evidence { margin: 7px 0 0; padding-left: 18px; font-size: 12px; }
+        @media (max-width: 650px) {
+            .logo { width: 190px; }
+            #panel { top: auto; bottom: 12px; right: 12px; width: calc(100vw - 24px);
+                max-height: 52vh; }
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" id="node_link" title="Click to go back to OSWM Node's Home">
+        <img class="logo" data-oswm-branding="logos.page" src="../assets/branding/logos/page_logo.png" alt="OpenSidewalkMap">
+    </a>
+    <div id="map"></div>
+    <aside id="panel">
+        <div class="panel-header">
+            <h1>Hazard Analysis</h1>
+            <a href="classification_guide.html" target="_blank" class="guide-link" id="guideLink" title="Open the full classification guide">📋 Guide</a>
+        </div>
+        <div class="subtitle">Evidence-based pedestrian difficulty and danger screening</div>
+        <div class="control">
+            <label for="profileSelect">User profile</label>
+            <select id="profileSelect"></select>
+            <div id="profileDescription" class="note"></div>
+        </div>
+        <div class="control">
+            <label for="categorySelect">Hazard category</label>
+            <select id="categorySelect"><option value="all">All categories</option></select>
+        </div>
+        <div class="control">
+            <label for="severitySelect">Minimum level</label>
+            <select id="severitySelect"></select>
+        </div>
+        <div class="control">
+            <label for="confidenceRange">Minimum confidence: <span id="confidenceValue">0</span>%</label>
+            <input id="confidenceRange" type="range" min="0" max="100" value="0" step="5">
+        </div>
+        <div class="control inline">
+            <input id="unknownToggle" type="checkbox">
+            <label for="unknownToggle">Show insufficient-data features</label>
+        </div>
+        <div class="control inline">
+            <input id="terrainToggle" type="checkbox">
+            <label for="terrainToggle">Terrain difficulty potential</label>
+        </div>
+        <div id="loading">Loading selected profile…</div>
+        <div id="legend"></div>
+        <div id="source"></div>
+    </aside>
+    <div id="welcome">
+        <div class="modal">
+            <h2>Read this map as a screening tool</h2>
+            <p>Hazards are inferred from available OSM attributes and a global terrain model. A feature with no detected hazard is <strong>not certified safe</strong>.</p>
+            <ul>
+                <li>Missing tactile, surface or kerb data remains unknown; it is never treated as "no".</li>
+                <li>Longitudinal terrain slope is contextual and directional. Cross slope is used only when <code>incline:across=*</code> is explicitly mapped.</li>
+                <li>Surface-material rules are provisional proxies. Critical means either an apparent barrier or an extreme contextual safety risk—the popup states which.</li>
+            </ul>
+            <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+                <button id="closeWelcome">Explore the map</button>
+                <a href="classification_guide.html" target="_blank" class="guide-link" style="padding:9px 15px;font-size:13px">📋 Classification Guide</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import * as maplibregl from 'https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.mjs';
+        import { Protocol as PmtilesProtocol } from 'https://cdn.jsdelivr.net/npm/pmtiles@4/+esm';
+
+        // Resolve the PMTiles and data URLs relative to this HTML file
+        const HAZARD_ROOT = new URL("../../data/hazard_analysis/", import.meta.url);
+        const PMTILES_URL = new URL("hazard.pmtiles", HAZARD_ROOT).href;
+        const BASEMAP_URL = new URL("../../data/basemaps/light.pmtiles", import.meta.url).href;
+
+        // Register PMTiles protocol
+        const protocol = new PmtilesProtocol();
+        maplibregl.addProtocol("pmtiles", protocol.tile);
+
+        const map = new maplibregl.Map({
+            container: "map",
+            style: {
+                version: 8,
+                sources: {
+                    "oswm-basemap": {
+                        type: "raster",
+                        url: `pmtiles://${BASEMAP_URL}`,
+                        tileSize: 256,
+                        attribution: "Basemap © OpenFreeMap, © OpenMapTiles; data © OpenStreetMap contributors"
+                    }
+                },
+                layers: [{ id: "oswm-basemap-tiles", type: "raster", source: "oswm-basemap" }]
+            },
+            center: [0, 0], zoom: 2
+        });
+        map.addControl(new maplibregl.NavigationControl(), "top-right");
+        map.addControl(new maplibregl.ScaleControl());
+
+        const state = { metadata: null, terrain: null, profile: null, fitted: false };
+        const $ = id => document.getElementById(id);
+        const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char =>
+            ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+        const objectValue = value => {
+            if (typeof value !== "string") return value;
+            try { return JSON.parse(value); } catch (_error) { return value; }
+        };
+
+        function setupControls() {
+            Object.entries(state.metadata.profiles).forEach(([id, profile]) => {
+                $("profileSelect").add(new Option(profile.label, id));
+            });
+            Object.entries(state.metadata.categories).forEach(([id, category]) => {
+                $("categorySelect").add(new Option(category.label, id));
+            });
+            Object.entries(state.metadata.severity_levels).forEach(([level, item]) => {
+                $("severitySelect").add(new Option(`${level} — ${item.label}`, level));
+            });
+            $("severitySelect").value = "1";
+            $("legend").innerHTML = Object.entries(state.metadata.severity_levels)
+                .map(([_level, item]) => `<div class="legend-row"><span class="swatch" style="background:${item.color}"></span>${escapeHtml(item.label)}</div>`)
+                .join("") + '<div class="legend-row"><span class="swatch" style="background:#6b7280;border:1px solid #4b5563"></span>Insufficient data</div>';
+            for (const id of ["profileSelect", "categorySelect", "severitySelect", "confidenceRange", "unknownToggle"]) {
+                $(id).addEventListener("input", id === "profileSelect" ? switchProfile : applyFilters);
+            }
+            $("terrainToggle").addEventListener("change", updateTerrain);
+        }
+
+        function switchProfile() {
+            const profile = $("profileSelect").value;
+            state.profile = profile;
+            $("profileDescription").textContent = state.metadata.profiles[profile].description;
+            const sourceLayer = `hazard_${profile}`;
+
+            // Update the source-layer on all hazard layers
+            for (const layerId of ["unknown-lines", "hazard-lines", "hazard-hit"]) {
+                if (map.getLayer(layerId)) {
+                    map.removeLayer(layerId);
+                }
+            }
+            addHazardLayers(sourceLayer);
+            applyFilters();
+            updateTerrain();
+
+            fitMapBounds();
+        }
+
+        function fitMapBounds() {
+            if (state.fitted) return;
+            if (state.terrain?.bounds) {
+                const [west, south, east, north] = state.terrain.bounds;
+                map.fitBounds([[west, south], [east, north]], { padding: 45, maxZoom: 16 });
+                state.fitted = true;
+            } else {
+                fetch(new URL("../../data/boundaries/polygon.geojson", import.meta.url).href)
+                    .then(res => res.json())
+                    .then(boundary => {
+                        if (boundary && !state.fitted) {
+                            let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+                            const coords = boundary.coordinates ? boundary.coordinates.flat(boundary.type === "MultiPolygon" ? 2 : 1) : [];
+                            for (const coord of coords) {
+                                if (Array.isArray(coord) && coord.length >= 2) {
+                                    const [lng, lat] = coord;
+                                    if (lng < minX) minX = lng;
+                                    if (lng > maxX) maxX = lng;
+                                    if (lat < minY) minY = lat;
+                                    if (lat > maxY) maxY = lat;
+                                }
+                            }
+                            if (Number.isFinite(minX)) {
+                                map.fitBounds([[minX, minY], [maxX, maxY]], { padding: 45, maxZoom: 16 });
+                                state.fitted = true;
+                            }
+                        }
+                    }).catch(() => {});
+            }
+        }
+
+        function addHazardLayers(sourceLayer) {
+            map.addLayer({ id: "unknown-lines", type: "line", source: "hazards",
+                "source-layer": sourceLayer,
+                filter: ["==", ["get", "status"], "insufficient_data"],
+                paint: { "line-color": "#6b7280", "line-width": 2, "line-dasharray": [2,2], "line-opacity": .55 } });
+            map.addLayer({ id: "hazard-lines", type: "line", source: "hazards",
+                "source-layer": sourceLayer,
+                paint: {
+                    "line-color": ["match", ["get", "severity"], 1,"#fee08b",2,"#fdae61",3,"#f46d43",4,"#a50026","#ffffff"],
+                    "line-width": [
+                        "interpolate", ["linear"], ["zoom"],
+                        10, ["case", ["boolean", ["feature-state", "hover"], false], 3, 1.5],
+                        17, ["case", ["boolean", ["feature-state", "hover"], false], 12, 6]
+                    ],
+                    "line-opacity": .9
+                }});
+            map.addLayer({ id: "hazard-hit", type: "line", source: "hazards",
+                "source-layer": sourceLayer,
+                paint: { "line-color": "rgba(0,0,0,0)", "line-width": 14 } });
+        }
+
+        function applyFilters() {
+            if (!map.getLayer("hazard-lines")) return;
+            const minimum = Number($("severitySelect").value);
+            const confidence = Number($("confidenceRange").value);
+            const category = $("categorySelect").value;
+            $("confidenceValue").textContent = confidence;
+            const severityField = category === "all" ? "severity" : `category_${category}`;
+            const hazardFilter = ["all",
+                ["!=", ["get", "status"], "insufficient_data"],
+                [">=", ["coalesce", ["get", severityField], 0], minimum],
+                [">=", ["coalesce", ["get", "confidence"], 0], confidence]
+            ];
+            map.setFilter("hazard-lines", hazardFilter);
+            map.setFilter("hazard-hit", hazardFilter);
+            map.setLayoutProperty("unknown-lines", "visibility",
+                $("unknownToggle").checked ? "visible" : "none");
+        }
+
+        function updateTerrain() {
+            const visible = $("terrainToggle").checked && state.terrain?.available;
+            if (map.getLayer("terrain-potential")) {
+                map.setLayoutProperty("terrain-potential", "visibility", visible ? "visible" : "none");
+            }
+            if (!visible || !state.profile) return;
+            const profile = state.terrain.profiles[state.profile];
+            const url = new URL("../../" + profile.path, import.meta.url).href;
+            if (map.getSource("terrain-source")) {
+                map.getSource("terrain-source").updateImage({ url, coordinates: state.terrain.coordinates });
+            }
+        }
+
+        function popupHtml(feature, lngLat) {
+            const properties = feature.properties;
+            const element = feature.geometry.type === 'Point' ? 'node' : 'way';
+            const severity = Number(properties.severity);
+            const level = state.metadata.severity_levels[String(severity)];
+            const directionName = Number(properties.severity_fwd) >= Number(properties.severity_bwd) ? "forward" : "backward";
+            const direction = objectValue(properties[directionName]) || {};
+            const impact = objectValue(properties.impact) || [];
+            const ruleIds = objectValue(direction.rule_ids) || [];
+            const rulesById = Object.fromEntries(state.metadata.rules.map(rule => [rule.id, rule]));
+            const evidence = ruleIds.map(ruleId => rulesById[ruleId]).filter(Boolean);
+            const criticalContext = severity === 4
+                ? (properties.traversability === "impassable" ? "Apparent mobility barrier" : "Extreme contextual safety risk")
+                : "";
+            return `<div class="popup-title">${escapeHtml(level.label)}</div>
+                ${criticalContext ? `<div><strong>${escapeHtml(criticalContext)}</strong></div>` : ""}
+                <div>Impact: ${escapeHtml(impact.join?.(", ") || impact || "—")}</div>
+                <div>Traversability: ${escapeHtml(properties.traversability)}</div>
+                <div>Forward / backward: ${properties.severity_fwd} / ${properties.severity_bwd}</div>
+                <div>Confidence: ${properties.confidence}% · evidence coverage: ${properties.coverage}%</div>
+                <div>Status: ${escapeHtml(properties.status)} · slope: ${escapeHtml(properties.slope_source)}</div>
+                <div>Feature: ${escapeHtml(properties.edge_kind)} · ${escapeHtml(properties.source_id)}</div>
+                <ul class="evidence">${evidence.map(item =>
+                    `<li><span class="badge" style="background:${state.metadata.severity_levels[String(item.effects[state.profile].severity)].color}">${escapeHtml(state.metadata.categories[item.category].label)}</span> ${escapeHtml(item.description)}</li>`
+                ).join("") || "<li>No hazard rule matched the available evidence.</li>"}</ul>
+                <div class="popup-links">
+                    <a href="https://www.openstreetmap.org/${element}/${properties.source_id}" target="_blank">OSM</a>
+                    <a href="https://www.mapillary.com/app/?lat=${lngLat.lat}&lng=${lngLat.lng}&z=19" target="_blank">Mapillary</a>
+                    <a href="https://geohack.toolforge.org/geohack.php?params=${lngLat.lat}_N_${lngLat.lng}_E" target="_blank">GeoHack</a>
+                </div>`;
+        }
+
+        async function initialise() {
+            const profilesUrl = new URL("profiles.json", HAZARD_ROOT).href;
+            const terrainUrl = new URL("terrain.json", HAZARD_ROOT).href;
+            [state.metadata, state.terrain] = await Promise.all([
+                fetch(profilesUrl).then(response => response.json()),
+                fetch(terrainUrl).then(response => response.json())
+            ]);
+            setupControls();
+            $("source").innerHTML = state.terrain.available
+                ? `${escapeHtml(state.terrain.description)}<br>${escapeHtml(state.terrain.source_attribution)}`
+                : "Terrain overlay unavailable for this generation.";
+
+            let hoveredStateId = null;
+
+            const addLayers = () => {
+                if (map.getSource("hazards")) return;
+
+                map.addSource("boundary", {
+                    type: "geojson",
+                    data: new URL("../../data/boundaries/polygon.geojson", import.meta.url).href
+                });
+                map.addLayer({
+                    id: "boundary-line",
+                    type: "line",
+                    source: "boundary",
+                    paint: { "line-color": "#9ca3af", "line-width": 2 }
+                });
+
+                map.addSource("terrain-source", {
+                    type: "image",
+                    url: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
+                    coordinates: state.terrain.coordinates || [[0,0],[0,0],[0,0],[0,0]]
+                });
+                map.addLayer({ id: "terrain-potential", type: "raster", source: "terrain-source",
+                    layout: { visibility: "none" }, paint: { "raster-opacity": .7 } });
+
+                // PMTiles vector source — all profiles as source-layers
+                map.addSource("hazards", {
+                    type: "vector",
+                    url: `pmtiles://${PMTILES_URL}`,
+                    promoteId: "source_id"
+                });
+
+                // Click + cursor handlers (registered once, layer is swapped on profile change)
+                map.on("click", "hazard-hit", event => {
+                    const feature = event.features[0];
+                    new maplibregl.Popup().setLngLat(event.lngLat)
+                        .setHTML(popupHtml(feature, event.lngLat)).addTo(map);
+                });
+                
+                map.on("mousemove", "hazard-hit", event => {
+                    map.getCanvas().style.cursor = "pointer";
+                    if (event.features.length > 0) {
+                        const sourceLayer = event.features[0].sourceLayer;
+                        if (hoveredStateId !== null && hoveredStateId !== event.features[0].id) {
+                            map.setFeatureState(
+                                { source: "hazards", sourceLayer: sourceLayer, id: hoveredStateId },
+                                { hover: false }
+                            );
+                        }
+                        hoveredStateId = event.features[0].id;
+                        map.setFeatureState(
+                            { source: "hazards", sourceLayer: sourceLayer, id: hoveredStateId },
+                            { hover: true }
+                        );
+                    }
+                });
+
+                map.on("mouseleave", "hazard-hit", () => {
+                    map.getCanvas().style.cursor = "";
+                    if (hoveredStateId !== null) {
+                        const profile = $("profileSelect").value;
+                        const sourceLayer = `hazard_${profile}`;
+                        map.setFeatureState(
+                            { source: "hazards", sourceLayer: sourceLayer, id: hoveredStateId },
+                            { hover: false }
+                        );
+                    }
+                    hoveredStateId = null;
+                });
+
+                switchProfile();
+            };
+            if (map.isStyleLoaded() || map.loaded?.()) {
+                addLayers();
+            } else {
+                map.on("load", addLayers);
+            }
+        }
+
+        $("closeWelcome").addEventListener("click", () => $("welcome").hidden = true);
+        initialise().catch(error => {
+            $("loading").style.display = "block";
+            $("loading").textContent = `Module metadata unavailable: ${error.message}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --primary: #00f2fe;
+    --primary-glow: rgba(0, 242, 254, 0.15);
+    --secondary: #4facfe;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-success: #10b981;
+    --accent-purple: #8b5cf6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Subtle glowing background decorations */
+body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.1) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -10%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: var(--text-main);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+p {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 1rem auto;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+.dq-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

@@ -1,0 +1,181 @@
+/* ═══════════════════════════════════════════════════════════
+   OswmLegendControl — scoped styles
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Toggle button ─────────────────────────────────────────── */
+
+.oswm-legend-toggle-btn {
+    width: 29px;
+    height: 29px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.oswm-legend-toggle-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ── Collapsible panel ─────────────────────────────────────── */
+
+.oswm-legend-panel {
+    position: absolute;
+    top: 0;
+    right: 36px;       /* clear the control-group button */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    padding: 10px 14px;
+    min-width: 190px;
+    max-width: 320px;
+    max-height: 70vh;
+    overflow-y: auto;
+    font-family: sans-serif;
+    font-size: 13px;
+    z-index: 1;
+}
+
+/* ── Header (title + close) ────────────────────────────────── */
+
+.oswm-legend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.oswm-legend-panel-title {
+    font-weight: bold;
+    font-size: 14px;
+    color: #222;
+}
+
+.oswm-legend-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    color: #666;
+    padding: 0 2px;
+}
+
+.oswm-legend-close-btn:hover {
+    color: #000;
+}
+
+/* ── Layer toggle items ────────────────────────────────────── */
+
+.oswm-legend-layers {
+    margin-bottom: 4px;
+}
+
+.oswm-legend-layer-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.oswm-legend-layer-item input[type="checkbox"] {
+    margin: 0 6px 0 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.oswm-legend-layer-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+    min-width: 0;
+}
+
+
+
+/* ── Layer label text ──────────────────────────────────────── */
+
+.oswm-legend-layer-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+
+/* ── Divider ───────────────────────────────────────────────── */
+
+.oswm-legend-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 8px 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Symbology section — scoped versions of
+   StandaloneLegendHTML's classes
+   ═══════════════════════════════════════════════════════════ */
+
+.oswm-legend-symbology .legend-title {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.oswm-legend-symbology .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.oswm-legend-symbology .legend-symbol-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 18px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.oswm-legend-symbology .legend-symbol {
+    display: block;
+}
+
+.oswm-legend-symbology .line {
+    height: 6px;
+    width: 26px;
+    border: 1px solid rgba(0, 0, 0, 0.85);
+    box-sizing: border-box;
+}
+
+.oswm-legend-symbology .marker {
+    height: 14px;
+    width: 14px;
+}
+
+.oswm-legend-symbology .patch {
+    height: 14px;
+    width: 26px;
+    border: 2px solid;
+}
+
+.oswm-legend-symbology .circle {
+    border-radius: 50%;
+}
+
+.oswm-legend-symbology .legend-text {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

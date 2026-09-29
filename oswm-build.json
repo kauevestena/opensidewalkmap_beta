@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "build_contract": 1,
+  "node": "Curitiba",
+  "generated_at": "2026-09-29T17:20:25Z",
+  "mode": "generate",
+  "core": {
+    "repository": "kauevestena/oswm_codebase",
+    "sha": "e729ceb75dc90a7fb51b52b526defe1854022a0e"
+  },
+  "runtime": {
+    "schema_version": 1,
+    "runtime_contract": 1,
+    "source": "kauevestena/oswm_codebase",
+    "paths": [
+      "assets",
+      "routing",
+      "hazard_analysis",
+      "webmap/snapshot"
+    ]
+  },
+  "products": {
+    "webmap": true,
+    "vector_tiles": true,
+    "routing": true,
+    "hazards": true,
+    "basemaps": {
+      "available": true,
+      "renderer_version": 3,
+      "style_basis": {
+        "light": "OpenFreeMap Positron",
+        "dark": "OpenFreeMap Dark Matter"
+      }
+    }
+  }
+}

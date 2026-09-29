@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-29T14:19:53+00:00",
+    "updated": "2026-09-29T17:15:32+00:00",
     "node_registry": {
-      "Data Fetching": "2026-08-29T04:15:21Z",
-      "Data Pre-Processing": "2026-09-29T14:15:14Z",
+      "Data Fetching": "2026-09-29T17:10:30Z",
+      "Data Pre-Processing": "2026-09-29T17:10:34Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-29T14:19:53Z",
+      "Statistical Charts": "2026-09-29T17:15:32Z",
       "Wiki check for keys": "2026-09-27T13:57:23Z",
-      "Data Quality Tool": "2026-09-29T14:17:48Z",
+      "Data Quality Tool": "2026-09-29T17:11:32Z",
       "Versioning Data": "2026-09-27T13:54:51Z",
-      "Completeness Analysis": "2026-09-29T14:19:41Z",
+      "Completeness Analysis": "2026-09-29T17:15:21Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
-      "OSWM Codebase Revision": "e66ae89639df209eee5e54399f8722614ff97054",
-      "Pipeline Success": "2026-09-28T15:43:27Z"
+      "OSWM Codebase Revision": "6ac4a5dc71428ca59abf294afb7bc3bb2ab20a82",
+      "Pipeline Success": "2026-09-29T14:25:34Z"
     }
   },
   "lineage": {
@@ -104,11 +104,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-29T14:19:53+00:00",
+    "generated_at": "2026-09-29T17:15:32+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "6ac4a5dc71428ca59abf294afb7bc3bb2ab20a82",
-      "commit_date": "2026-09-28T13:20:04-03:00"
+      "commit": "e729ceb75dc90a7fb51b52b526defe1854022a0e",
+      "commit_date": "2026-09-29T14:05:58-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -122,7 +122,7 @@
     "byte_size": 106019,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "7cf3254339a354641cf5ec03b3a93271dcbf17a6720e17215a3ac29376a34495"
+      "value": "4fbc72b432d345be87566feb33b36f8448555a6d37dbdd22036d781ab7fdd4c4"
     }
   },
   "links": [

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSWM Hazard Classification Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script type="module" src="../assets/branding/branding.js"></script>
+    <link rel="icon" data-oswm-branding="favicon">
+    <style>
+        :root {
+            --bg: #f8f9fb; --card: #ffffff; --border: #e2e6ea;
+            --text: #1f2933; --dim: #59636e; --accent: #165a72;
+            --accent-light: #e8f4f8;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0; font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.6;
+        }
+        .page { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+
+        /* ── Top bar ── */
+        .top-bar {
+            background: var(--accent); color: white; padding: 12px 24px;
+            display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+        }
+        .top-bar .brand {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: white;
+        }
+        .top-bar .brand img { height: 36px; }
+        .top-bar .brand-name {
+            font-family: 'Kdam Thmor Pro', sans-serif;
+            font-size: 18px; letter-spacing: .02em;
+        }
+        .top-bar a { color: white; text-decoration: none; font-weight: 600; }
+        .top-bar .spacer { flex: 1; }
+        .top-bar .back-link { font-size: 13px; opacity: .85; }
+
+        /* ── Headings ── */
+        h1 { font-size: 28px; margin: 24px 0 6px; }
+        h3 { font-size: 18px; margin: 22px 0 8px; }
+        .meta { color: var(--dim); font-size: 13px; margin-bottom: 18px; }
+
+        /* ── Collapsible h2 sections ── */
+        .section-collapse {
+            border: none; margin: 22px 0 6px;
+        }
+        .section-collapse > summary {
+            font-size: 21px; font-weight: 700;
+            cursor: pointer; list-style: none; user-select: none;
+            padding-bottom: 6px; border-bottom: 2px solid var(--border);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .section-collapse > summary::-webkit-details-marker { display: none; }
+        .section-collapse > summary::before {
+            content: '▸'; font-size: 16px; transition: transform .2s;
+            display: inline-block; width: 16px; color: var(--dim);
+        }
+        .section-collapse[open] > summary::before {
+            transform: rotate(90deg);
+        }
+        .section-collapse > .section-body {
+            padding-top: 8px;
+        }
+
+        /* ── Disclaimer ── */
+        .disclaimer {
+            background: #fff3cd; border-left: 4px solid #ffc107;
+            padding: 12px 16px; border-radius: 6px; margin: 18px 0;
+            font-size: 14px; line-height: 1.5;
+        }
+
+        /* ── Nav links ── */
+        .nav { margin: 14px 0; font-size: 14px; }
+        .nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .nav a:hover { text-decoration: underline; }
+
+        /* ── Profile cards ── */
+        .profiles { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
+        .profile-card {
+            display: flex; gap: 10px; align-items: center;
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 10px 14px; flex: 1 1 200px; min-width: 200px;
+        }
+        .profile-icon { font-size: 28px; }
+        .dim { color: var(--dim); font-size: 13px; }
+
+        /* ── Reference tables ── */
+        .ref-table {
+            width: 100%; border-collapse: collapse; margin: 10px 0 16px;
+            font-size: 14px;
+        }
+        .ref-table th { text-align: left; padding: 8px 10px; background: var(--accent-light); }
+        .ref-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+        .ref-table code { background: #f0f2f4; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+        .center { text-align: center; }
+
+        /* ── Search box ── */
+        .search-box {
+            width: 100%; padding: 10px 14px; border: 1px solid var(--border);
+            border-radius: 8px; font-size: 14px; background: var(--card);
+            margin: 10px 0 6px; outline: none;
+        }
+        .search-box:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(22,90,114,.15); }
+        .search-status {
+            font-size: 12px; color: var(--dim); margin-bottom: 10px;
+        }
+
+        /* ── Filter checkboxes panel ── */
+        .filter-panel {
+            border: 1px solid var(--border); border-radius: 8px;
+            background: var(--card); margin: 8px 0 14px; overflow: hidden;
+        }
+        .filter-panel > summary {
+            padding: 10px 14px; cursor: pointer; font-size: 13px;
+            font-weight: 700; color: var(--accent); user-select: none;
+            list-style: none;
+        }
+        .filter-panel > summary::-webkit-details-marker { display: none; }
+        .filter-panel > summary::before {
+            content: '▸ '; display: inline-block; transition: transform .15s;
+        }
+        .filter-panel[open] > summary::before {
+            transform: rotate(90deg);
+        }
+        .filter-group { padding: 4px 14px 8px; }
+        .filter-label { font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: .04em; color: var(--dim); margin-bottom: 6px; }
+        .filter-chips { display: flex; flex-wrap: wrap; gap: 6px 10px; }
+        .filter-chip {
+            display: inline-flex; align-items: center; gap: 4px;
+            font-size: 13px; cursor: pointer; user-select: none;
+        }
+        .filter-chip input { margin: 0; }
+        .filter-actions { padding: 4px 14px 12px; display: flex; gap: 8px; }
+        .small-btn {
+            padding: 4px 10px; font-size: 12px; border: 1px solid var(--border);
+            border-radius: 5px; background: var(--card); cursor: pointer;
+            color: var(--accent); font-weight: 600;
+        }
+        .small-btn:hover { background: var(--accent-light); }
+
+        /* ── Category sections ── */
+        .cat-section { margin-top: 24px; }
+        .cat-section.hidden-section { display: none; }
+        .cat-desc { color: var(--dim); font-size: 14px; margin: 0 0 14px; }
+
+        /* ── Rule cards ── */
+        .rule-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px 18px; margin-bottom: 14px;
+        }
+        .rule-card.hidden-card { display: none; }
+        .rule-header {
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+        .rule-id code {
+            font-size: 14px; font-weight: 700; background: var(--accent-light);
+            padding: 2px 8px; border-radius: 4px; color: var(--accent);
+        }
+        .dir-badge {
+            font-size: 11px; background: #e3f2fd; color: #1565c0;
+            padding: 2px 7px; border-radius: 999px; font-weight: 700;
+        }
+        .confidence-badge {
+            margin-left: auto; font-size: 12px; color: var(--dim); font-weight: 600;
+        }
+        .rule-desc { margin: 4px 0 10px; font-size: 14px; }
+        .rule-condition {
+            font-size: 13px; background: #f5f6f8; padding: 8px 12px;
+            border-radius: 6px; margin-bottom: 12px;
+        }
+        .rule-condition code { background: #e8eaed; padding: 1px 4px; border-radius: 3px; }
+
+        /* ── Effects table ── */
+        .effects-table {
+            width: 100%; border-collapse: collapse; font-size: 13px;
+        }
+        .effects-table th {
+            text-align: left; padding: 6px 8px; background: #f9fafb;
+            font-weight: 700; font-size: 12px; text-transform: uppercase;
+            letter-spacing: .03em; border-bottom: 2px solid var(--border);
+        }
+        .effects-table td { padding: 7px 8px; border-bottom: 1px solid #eef0f3; }
+        .profile-cell { white-space: nowrap; }
+
+        /* ── Severity pills and badges ── */
+        .severity-pill {
+            display: inline-block; padding: 2px 9px; border-radius: 999px;
+            color: white; font-size: 12px; font-weight: 700; white-space: nowrap;
+        }
+        .trav-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 999px;
+            font-size: 11px; font-weight: 600; white-space: nowrap;
+        }
+
+        /* ── Footer ── */
+        .guide-footer {
+            margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 12px; color: var(--dim);
+        }
+
+        @media (max-width: 600px) {
+            .page { padding: 14px 12px 40px; }
+            h1 { font-size: 22px; }
+            .rule-header { flex-direction: column; align-items: flex-start; }
+            .confidence-badge { margin-left: 0; }
+            .effects-table { font-size: 12px; }
+            .top-bar .brand-name { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a class="brand" href="../../index.html">
+            <img src="../assets/branding/logos/project_logo_100px.png" alt="OSWM logo">
+            <span class="brand-name">OpenSidewalkMap</span>
+        </a>
+        <span class="spacer"></span>
+        <a class="back-link" href="hazard_analysis.html">← Back to Hazard Analysis Map</a>
+    </div>
+
+    <div class="page">
+        <h1>Hazard Classification Guide</h1>
+        <div class="meta">
+            Ruleset version 0.1.0 ·
+            hash <code>e92f5f0ebaaf33f5</code> ·
+            29 rules ·
+            generated 2026-07-31 22:03 UTC
+        </div>
+
+        <div class="disclaimer">
+            <strong>⚠ Screening tool — not a safety certification.</strong>
+            These rules are provisional. A feature with no detected hazard is
+            <strong>not certified safe</strong>. Missing data is never treated as
+            evidence of absence. Severity levels, confidence scores and
+            surface-material proxies require participatory calibration.
+        </div>
+
+        <details class="section-collapse" open>
+            <summary>User Profiles</summary>
+            <div class="section-body">
+                <p>Each rule may affect one or more profiles differently:</p>
+                <div class="profiles"><div class="profile-card"><span class="profile-icon">🚶</span><div><strong>Pedestrian</strong><br><span class="dim">General walking comfort and safety.</span></div></div><div class="profile-card"><span class="profile-icon">♿</span><div><strong>Wheelchair user</strong><br><span class="dim">Continuous rollable access with manageable gradients.</span></div></div><div class="profile-card"><span class="profile-icon">🦯</span><div><strong>Blind or low-vision pedestrian</strong><br><span class="dim">Detectable, orientable and predictable transitions.</span></div></div><div class="profile-card"><span class="profile-icon">🧓</span><div><strong>Older or reduced-mobility pedestrian</strong><br><span class="dim">Stability, effort and fall-risk oriented assessment.</span></div></div></div>
+            </div>
+        </details>
+
+        <details class="section-collapse" open>
+            <summary>Severity Levels</summary>
+            <div class="section-body">
+                <table class="ref-table"><thead><tr><th>Level</th><th>Meaning</th></tr></thead><tbody><tr><td class="center"><span class="severity-pill" style="background:#ffffff;color:#1a1d20;border:1px solid #d8dde2;">0 — No detected hazard</span></td><td>No rule matched the available evidence.</td></tr><tr><td class="center"><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>May reduce comfort or require additional effort.</td></tr><tr><td class="center"><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Meaningfully degrades pedestrian accessibility.</td></tr><tr><td class="center"><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>May create a serious safety or mobility hazard.</td></tr><tr><td class="center"><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Potential barrier or extreme contextual safety risk.</td></tr></tbody></table>
+            </div>
+        </details>
+
+        <details class="section-collapse" open>
+            <summary>Hazard Categories</summary>
+            <div class="section-body">
+                <table class="ref-table"><thead><tr><th>ID</th><th>Label</th><th>Description</th></tr></thead><tbody><tr><td><code>longitudinal_slope</code></td><td><strong>Longitudinal slope</strong></td><td>Directional terrain or explicitly mapped incline.</td></tr><tr><td><code>cross_slope</code></td><td><strong>Cross slope</strong></td><td>Only explicit OSM incline:across evidence.</td></tr><tr><td><code>kerb</code></td><td><strong>Kerb transition</strong></td><td>Kerb height/type and transition traversability.</td></tr><tr><td><code>tactile_orientation</code></td><td><strong>Tactile and orientation</strong></td><td>Tactile evidence and detectable material transitions.</td></tr><tr><td><code>surface</code></td><td><strong>Surface</strong></td><td>Smoothness plus provisional surface-material proxies.</td></tr><tr><td><code>barrier</code></td><td><strong>Barrier</strong></td><td>Explicit or strongly inferred traversal barriers.</td></tr></tbody></table>
+            </div>
+        </details>
+
+        <details class="section-collapse" id="rulesSection" open>
+            <summary>Classification Rules</summary>
+            <div class="section-body">
+                <input type="text" class="search-box" id="ruleSearch"
+                       placeholder="Search rules by ID, description or condition…"
+                       autocomplete="off">
+                <details class="filter-panel" id="filterPanel"><summary>Filter by category / profile</summary><div class="filter-group"><div class="filter-label">Categories</div><div class="filter-chips"><label class="filter-chip"><input type="checkbox" class="filter-cat" value="longitudinal_slope" checked> Longitudinal slope</label><label class="filter-chip"><input type="checkbox" class="filter-cat" value="cross_slope" checked> Cross slope</label><label class="filter-chip"><input type="checkbox" class="filter-cat" value="kerb" checked> Kerb transition</label><label class="filter-chip"><input type="checkbox" class="filter-cat" value="tactile_orientation" checked> Tactile and orientation</label><label class="filter-chip"><input type="checkbox" class="filter-cat" value="surface" checked> Surface</label><label class="filter-chip"><input type="checkbox" class="filter-cat" value="barrier" checked> Barrier</label></div></div><div class="filter-group"><div class="filter-label">Profiles</div><div class="filter-chips"><label class="filter-chip"><input type="checkbox" class="filter-prof" value="pedestrian" checked> 🚶 Pedestrian</label><label class="filter-chip"><input type="checkbox" class="filter-prof" value="wheelchair" checked> ♿ Wheelchair user</label><label class="filter-chip"><input type="checkbox" class="filter-prof" value="blind" checked> 🦯 Blind or low-vision pedestrian</label><label class="filter-chip"><input type="checkbox" class="filter-prof" value="elderly" checked> 🧓 Older or reduced-mobility pedestrian</label></div></div><div class="filter-actions"><button type="button" class="small-btn" id="filterSelectAll">Select all</button> <button type="button" class="small-btn" id="filterClearAll">Clear all</button></div></details>
+                <div class="nav">Jump to: <a href="#cat-longitudinal_slope">Longitudinal slope</a> · <a href="#cat-cross_slope">Cross slope</a> · <a href="#cat-kerb">Kerb transition</a> · <a href="#cat-tactile_orientation">Tactile and orientation</a> · <a href="#cat-surface">Surface</a> · <a href="#cat-barrier">Barrier</a></div>
+                <div class="search-status" id="searchStatus"></div>
+                <div id="rulesContainer">
+                    <section class="cat-section" id="cat-longitudinal_slope"><h3>Longitudinal slope</h3><p class="cat-desc">Directional terrain or explicitly mapped incline.</p><div class="rule-card" data-category="longitudinal_slope" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="uphill_over_12_5" data-description="travel direction rises by more than 12.5%."><div class="rule-header"><span class="rule-id"><code>uphill_over_12_5</code></span> <span class="dir-badge">⇅ directional</span><span class="confidence-badge">80% confidence</span></div><p class="rule-desc">Travel direction rises by more than 12.5%.</p><div class="rule-condition"><strong>Condition:</strong> <code>directional_incline_percent</code> &gt; 12.5</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Extreme climbing effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Independent ascent may be impossible</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Extreme climbing effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Extreme exertion and fall risk</td><td><span class="trav-badge" style="background:#fff3e0;color:#e65100">Passable with extreme risk</span></td></tr></tbody></table></div><div class="rule-card" data-category="longitudinal_slope" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="uphill_8_33_to_12_5" data-description="travel direction rises by more than 8.33% and at most 12.5%."><div class="rule-header"><span class="rule-id"><code>uphill_8_33_to_12_5</code></span> <span class="dir-badge">⇅ directional</span><span class="confidence-badge">80% confidence</span></div><p class="rule-desc">Travel direction rises by more than 8.33% and at most 12.5%.</p><div class="rule-condition"><strong>Condition:</strong> 8.33 &lt; <code>directional_incline_percent</code> ≤ 12.5</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>High climbing effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Very difficult ascent</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>High climbing effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High exertion</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="longitudinal_slope" data-profiles="pedestrian wheelchair elderly" data-rule-id="uphill_5_to_8_33" data-description="travel direction rises by more than 5% and at most 8.33%."><div class="rule-header"><span class="rule-id"><code>uphill_5_to_8_33</code></span> <span class="dir-badge">⇅ directional</span><span class="confidence-badge">80% confidence</span></div><p class="rule-desc">Travel direction rises by more than 5% and at most 8.33%.</p><div class="rule-condition"><strong>Condition:</strong> 5 &lt; <code>directional_incline_percent</code> ≤ 8.33</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Increased climbing effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Difficult ascent</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Increased exertion</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="longitudinal_slope" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="downhill_over_12_5" data-description="travel direction descends by more than 12.5%."><div class="rule-header"><span class="rule-id"><code>downhill_over_12_5</code></span> <span class="dir-badge">⇅ directional</span><span class="confidence-badge">80% confidence</span></div><p class="rule-desc">Travel direction descends by more than 12.5%.</p><div class="rule-condition"><strong>Condition:</strong> <code>directional_incline_percent</code> &lt; -12.5</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Extreme braking and fall risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Loss-of-control risk</td><td><span class="trav-badge" style="background:#fff3e0;color:#e65100">Passable with extreme risk</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Extreme descent hazard</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Extreme fall risk</td><td><span class="trav-badge" style="background:#fff3e0;color:#e65100">Passable with extreme risk</span></td></tr></tbody></table></div><div class="rule-card" data-category="longitudinal_slope" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="downhill_8_33_to_12_5" data-description="travel direction descends by more than 8.33% and at most 12.5%."><div class="rule-header"><span class="rule-id"><code>downhill_8_33_to_12_5</code></span> <span class="dir-badge">⇅ directional</span><span class="confidence-badge">80% confidence</span></div><p class="rule-desc">Travel direction descends by more than 8.33% and at most 12.5%.</p><div class="rule-condition"><strong>Condition:</strong> 8.33 &lt; |<code>directional_incline_percent</code>| ≤ 12.5 (descent)</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>High braking effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Substantial loss-of-control risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Steep descent hazard</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High fall risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="longitudinal_slope" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="downhill_5_to_8_33" data-description="travel direction descends by more than 5% and at most 8.33%."><div class="rule-header"><span class="rule-id"><code>downhill_5_to_8_33</code></span> <span class="dir-badge">⇅ directional</span><span class="confidence-badge">80% confidence</span></div><p class="rule-desc">Travel direction descends by more than 5% and at most 8.33%.</p><div class="rule-condition"><strong>Condition:</strong> 5 &lt; |<code>directional_incline_percent</code>| ≤ 8.33 (descent)</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Increased braking effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Difficult controlled descent</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Increased descent care</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Increased fall risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div></section><section class="cat-section" id="cat-cross_slope"><h3>Cross slope</h3><p class="cat-desc">Only explicit OSM incline:across evidence.</p><div class="rule-card" data-category="cross_slope" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="cross_slope_over_5" data-description="explicit cross slope exceeds 5%."><div class="rule-header"><span class="rule-id"><code>cross_slope_over_5</code></span><span class="confidence-badge">95% confidence</span></div><p class="rule-desc">Explicit cross slope exceeds 5%.</p><div class="rule-condition"><strong>Condition:</strong> |<code>cross_slope_percent</code>| &gt; 5</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Strong lateral imbalance</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>High tip or drift risk</td><td><span class="trav-badge" style="background:#fff3e0;color:#e65100">Passable with extreme risk</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Strong lateral imbalance</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High fall risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="cross_slope" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="cross_slope_3_to_5" data-description="explicit cross slope is greater than 3% and at most 5%."><div class="rule-header"><span class="rule-id"><code>cross_slope_3_to_5</code></span><span class="confidence-badge">95% confidence</span></div><p class="rule-desc">Explicit cross slope is greater than 3% and at most 5%.</p><div class="rule-condition"><strong>Condition:</strong> 3 &lt; |<code>cross_slope_percent</code>| ≤ 5</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Lateral imbalance</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Substantial drift or tip risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Lateral imbalance</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Instability</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="cross_slope" data-profiles="wheelchair elderly" data-rule-id="cross_slope_2_to_3" data-description="explicit cross slope is greater than 2% and at most 3%."><div class="rule-header"><span class="rule-id"><code>cross_slope_2_to_3</code></span><span class="confidence-badge">95% confidence</span></div><p class="rule-desc">Explicit cross slope is greater than 2% and at most 3%.</p><div class="rule-condition"><strong>Condition:</strong> 2 &lt; |<code>cross_slope_percent</code>| ≤ 3</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Noticeable lateral effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Mild lateral instability</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div></section><section class="cat-section" id="cat-kerb"><h3>Kerb transition</h3><p class="cat-desc">Kerb height/type and transition traversability.</p><div class="rule-card" data-category="kerb" data-profiles="pedestrian wheelchair elderly" data-rule-id="kerb_raised" data-description="a raised kerb is associated with the crossing."><div class="rule-header"><span class="rule-id"><code>kerb_raised</code></span><span class="confidence-badge">90% confidence</span></div><p class="rule-desc">A raised kerb is associated with the crossing.</p><div class="rule-condition"><strong>Condition:</strong> <code>associated_kerbs</code> contains <code>raised</code> · applies to: <code>crossing</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Abrupt level change</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Kerb blocks independent passage</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Trip and fall hazard</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="kerb" data-profiles="wheelchair elderly" data-rule-id="kerb_ambiguous_yes" data-description="a kerb is mapped without a traversable kerb type."><div class="rule-header"><span class="rule-id"><code>kerb_ambiguous_yes</code></span><span class="confidence-badge">70% confidence</span></div><p class="rule-desc">A kerb is mapped without a traversable kerb type.</p><div class="rule-condition"><strong>Condition:</strong> <code>associated_kerbs</code> contains <code>yes</code> · applies to: <code>crossing</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Kerb traversability uncertain</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Potential abrupt level change</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="kerb" data-profiles="wheelchair blind elderly" data-rule-id="kerb_rolled" data-description="a rolled kerb can still require substantial effort."><div class="rule-header"><span class="rule-id"><code>kerb_rolled</code></span><span class="confidence-badge">85% confidence</span></div><p class="rule-desc">A rolled kerb can still require substantial effort.</p><div class="rule-condition"><strong>Condition:</strong> <code>associated_kerbs</code> contains <code>rolled</code> · applies to: <code>crossing</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Difficult rolling transition</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Weakly defined transition</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Unstable transition</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div></section><section class="cat-section" id="cat-tactile_orientation"><h3>Tactile and orientation</h3><p class="cat-desc">Tactile evidence and detectable material transitions.</p><div class="rule-card" data-category="tactile_orientation" data-profiles="blind elderly" data-rule-id="flush_without_tactile" data-description="a flush kerb is explicitly paired with absent tactile paving."><div class="rule-header"><span class="rule-id"><code>flush_without_tactile</code></span><span class="confidence-badge">95% confidence</span></div><p class="rule-desc">A flush kerb is explicitly paired with absent tactile paving.</p><div class="rule-condition"><strong>Condition:</strong> <code>associated_transition_states</code> has pair: kerb=<code>flush</code>, tactile_paving=<code>no</code> · applies to: <code>crossing</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Street boundary may be undetectable</td><td><span class="trav-badge" style="background:#fff3e0;color:#e65100">Passable with extreme risk</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Transition lacks tactile cue</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="tactile_orientation" data-profiles="blind" data-rule-id="lowered_without_tactile" data-description="a lowered kerb is explicitly paired with absent tactile paving."><div class="rule-header"><span class="rule-id"><code>lowered_without_tactile</code></span><span class="confidence-badge">90% confidence</span></div><p class="rule-desc">A lowered kerb is explicitly paired with absent tactile paving.</p><div class="rule-condition"><strong>Condition:</strong> <code>associated_transition_states</code> has pair: kerb=<code>lowered</code>, tactile_paving=<code>no</code> · applies to: <code>crossing</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Street boundary has weak tactile detection</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="tactile_orientation" data-profiles="blind" data-rule-id="crossing_tactile_no" data-description="tactile paving is explicitly absent at the crossing."><div class="rule-header"><span class="rule-id"><code>crossing_tactile_no</code></span><span class="confidence-badge">90% confidence</span></div><p class="rule-desc">Tactile paving is explicitly absent at the crossing.</p><div class="rule-condition"><strong>Condition:</strong> <code>associated_tactile_paving</code> contains <code>no</code> · applies to: <code>crossing</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>No mapped tactile warning at street transition</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="tactile_orientation" data-profiles="blind" data-rule-id="uniform_transition_surface" data-description="crossing, kerb and adjacent sidewalk share one explicitly mapped surface; this is a low-confidence detectability proxy."><div class="rule-header"><span class="rule-id"><code>uniform_transition_surface</code></span><span class="confidence-badge">45% confidence</span></div><p class="rule-desc">Crossing, kerb and adjacent sidewalk share one explicitly mapped surface; this is a low-confidence detectability proxy.</p><div class="rule-condition"><strong>Condition:</strong> <code>uniform_transition_surface</code> = <code>True</code> · applies to: <code>crossing</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Material transition may be difficult to detect</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div></section><section class="cat-section" id="cat-surface"><h3>Surface</h3><p class="cat-desc">Smoothness plus provisional surface-material proxies.</p><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="smoothness_very_horrible" data-description="very horrible smoothness indicates an extreme unevenness."><div class="rule-header"><span class="rule-id"><code>smoothness_very_horrible</code></span><span class="confidence-badge">90% confidence</span></div><p class="rule-desc">Very horrible smoothness indicates an extreme unevenness.</p><div class="rule-condition"><strong>Condition:</strong> <code>smoothness</code> = <code>very_horrible</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Extreme unevenness</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Independent rolling may be impossible</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Severe trip and orientation hazard</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Extreme fall risk</td><td><span class="trav-badge" style="background:#fff3e0;color:#e65100">Passable with extreme risk</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="smoothness_horrible" data-description="horrible smoothness indicates severe unevenness."><div class="rule-header"><span class="rule-id"><code>smoothness_horrible</code></span><span class="confidence-badge">90% confidence</span></div><p class="rule-desc">Horrible smoothness indicates severe unevenness.</p><div class="rule-condition"><strong>Condition:</strong> <code>smoothness</code> = <code>horrible</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Severe unevenness</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Rolling may be effectively blocked</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Severe trip hazard</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High fall risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="smoothness_very_bad" data-description="very bad smoothness creates substantial mobility difficulty."><div class="rule-header"><span class="rule-id"><code>smoothness_very_bad</code></span><span class="confidence-badge">90% confidence</span></div><p class="rule-desc">Very bad smoothness creates substantial mobility difficulty.</p><div class="rule-condition"><strong>Condition:</strong> <code>smoothness</code> = <code>very_bad</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Substantial unevenness</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Very difficult rolling surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Substantial trip hazard</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High instability</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="smoothness_bad" data-description="bad smoothness creates a meaningful mobility penalty."><div class="rule-header"><span class="rule-id"><code>smoothness_bad</code></span><span class="confidence-badge">90% confidence</span></div><p class="rule-desc">Bad smoothness creates a meaningful mobility penalty.</p><div class="rule-condition"><strong>Condition:</strong> <code>smoothness</code> = <code>bad</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Uneven walking surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Difficult rolling surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Trip hazard</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Instability and fall risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="surface_sand" data-description="surface material is a provisional mobility proxy."><div class="rule-header"><span class="rule-id"><code>surface_sand</code></span><span class="confidence-badge">55% confidence</span></div><p class="rule-desc">Surface material is a provisional mobility proxy.</p><div class="rule-condition"><strong>Condition:</strong> <code>surface</code> = <code>sand</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Loose surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Wheels may become immobilized</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Unstable surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High instability</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="surface_grass" data-description="surface material is a provisional mobility proxy."><div class="rule-header"><span class="rule-id"><code>surface_grass</code></span><span class="confidence-badge">55% confidence</span></div><p class="rule-desc">Surface material is a provisional mobility proxy.</p><div class="rule-condition"><strong>Condition:</strong> <code>surface</code> = <code>grass</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Variable natural surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High rolling resistance</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Variable surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Unstable footing</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="surface_ground_earth_dirt" data-description="surface material is a provisional mobility proxy."><div class="rule-header"><span class="rule-id"><code>surface_ground_earth_dirt</code></span><span class="confidence-badge">55% confidence</span></div><p class="rule-desc">Surface material is a provisional mobility proxy.</p><div class="rule-condition"><strong>Condition:</strong> <code>surface</code> ∈ {<code>ground</code>, <code>earth</code>, <code>dirt</code>, <code>unpaved</code>}</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Weather-sensitive surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High or variable rolling resistance</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Irregular surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Unstable footing</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="surface_gravel" data-description="surface material is a provisional mobility proxy."><div class="rule-header"><span class="rule-id"><code>surface_gravel</code></span><span class="confidence-badge">55% confidence</span></div><p class="rule-desc">Surface material is a provisional mobility proxy.</p><div class="rule-condition"><strong>Condition:</strong> <code>surface</code> = <code>gravel</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Loose aggregate</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Difficult rolling surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Loose aggregate</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Unstable footing</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="surface_cobble_sett" data-description="surface material is a provisional mobility proxy."><div class="rule-header"><span class="rule-id"><code>surface_cobble_sett</code></span><span class="confidence-badge">55% confidence</span></div><p class="rule-desc">Surface material is a provisional mobility proxy.</p><div class="rule-condition"><strong>Condition:</strong> <code>surface</code> ∈ {<code>cobblestone</code>, <code>unhewn_cobblestone</code>, <code>sett</code>}</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Uneven joints</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>Difficult vibration-heavy rolling</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Irregular trip-prone surface</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Trip and instability hazard</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="surface" data-profiles="wheelchair elderly" data-rule-id="surface_compacted_fine_gravel" data-description="surface material is a provisional mobility proxy."><div class="rule-header"><span class="rule-id"><code>surface_compacted_fine_gravel</code></span><span class="confidence-badge">50% confidence</span></div><p class="rule-desc">Surface material is a provisional mobility proxy.</p><div class="rule-condition"><strong>Condition:</strong> <code>surface</code> ∈ {<code>compacted</code>, <code>fine_gravel</code>}</div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Increased rolling resistance</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Potentially loose footing</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div></section><section class="cat-section" id="cat-barrier"><h3>Barrier</h3><p class="cat-desc">Explicit or strongly inferred traversal barriers.</p><div class="rule-card" data-category="barrier" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="barrier_steps" data-description="steps interrupt step-free movement."><div class="rule-header"><span class="rule-id"><code>barrier_steps</code></span><span class="confidence-badge">95% confidence</span></div><p class="rule-desc">Steps interrupt step-free movement.</p><div class="rule-condition"><strong>Condition:</strong> <code>highway</code> = <code>steps</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#fee08b;">1 — Uncomfortable</span></td><td>Additional effort</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Step-free passage blocked</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#fdae61;">2 — Unfavorable</span></td><td>Level change requires care</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#f46d43;">3 — Dangerous</span></td><td>High effort and fall risk</td><td><span class="trav-badge" style="background:#e8f5e9;color:#2e7d32">Passable</span></td></tr></tbody></table></div><div class="rule-card" data-category="barrier" data-profiles="wheelchair" data-rule-id="barrier_wheelchair_no" data-description="osm explicitly marks wheelchair access as unavailable."><div class="rule-header"><span class="rule-id"><code>barrier_wheelchair_no</code></span><span class="confidence-badge">95% confidence</span></div><p class="rule-desc">OSM explicitly marks wheelchair access as unavailable.</p><div class="rule-condition"><strong>Condition:</strong> <code>wheelchair</code> = <code>no</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Wheelchair access explicitly blocked</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr></tbody></table></div><div class="rule-card" data-category="barrier" data-profiles="pedestrian wheelchair blind elderly" data-rule-id="surface_impassable" data-description="osm explicitly describes the surface as impassable."><div class="rule-header"><span class="rule-id"><code>surface_impassable</code></span><span class="confidence-badge">95% confidence</span></div><p class="rule-desc">OSM explicitly describes the surface as impassable.</p><div class="rule-condition"><strong>Condition:</strong> <code>smoothness</code> = <code>impassable</code></div><table class="effects-table"><thead><tr><th>Profile</th><th>Severity</th><th>Impact</th><th>Traversability</th></tr></thead><tbody><tr><td class="profile-cell">🚶 Pedestrian</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Passage explicitly impassable</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">♿ Wheelchair user</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Passage explicitly impassable</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">🦯 Blind or low-vision pedestrian</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Passage explicitly impassable</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr><tr><td class="profile-cell">🧓 Older or reduced-mobility pedestrian</td><td><span class="severity-pill" style="background:#a50026;">4 — Critical</span></td><td>Passage explicitly impassable</td><td><span class="trav-badge" style="background:#ffebee;color:#b71c1c">Impassable</span></td></tr></tbody></table></div></section>
+                </div>
+            </div>
+        </details>
+
+        <div class="guide-footer">
+            OSWM Hazard Analysis Classification Guide · auto-generated from
+            <code>hazard_analysis/rules.py</code> ·
+            <a href="https://github.com/kauevestena/oswm_codebase">source</a>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        const search = document.getElementById('ruleSearch');
+        const status = document.getElementById('searchStatus');
+        const cards = document.querySelectorAll('.rule-card');
+        const sections = document.querySelectorAll('.cat-section');
+        const catChecks = document.querySelectorAll('.filter-cat');
+        const profChecks = document.querySelectorAll('.filter-prof');
+
+        function applyFilters() {
+            const query = search.value.trim().toLowerCase();
+            const activeCats = new Set(
+                [...catChecks].filter(c => c.checked).map(c => c.value)
+            );
+            const activeProfs = new Set(
+                [...profChecks].filter(c => c.checked).map(c => c.value)
+            );
+            let visible = 0;
+            cards.forEach(card => {
+                const cat = card.dataset.category;
+                const profs = card.dataset.profiles.split(' ');
+                const rid = card.dataset.ruleId;
+                const desc = card.dataset.description;
+
+                const catOk = activeCats.has(cat);
+                const profOk = profs.some(p => activeProfs.has(p));
+                let searchOk = true;
+                if (query) {
+                    searchOk = rid.includes(query) || desc.includes(query)
+                        || card.textContent.toLowerCase().includes(query);
+                }
+                const show = catOk && profOk && searchOk;
+                card.classList.toggle('hidden-card', !show);
+                if (show) visible++;
+            });
+            sections.forEach(sec => {
+                const hasVisible = sec.querySelector('.rule-card:not(.hidden-card)');
+                sec.classList.toggle('hidden-section', !hasVisible);
+            });
+            if (query || activeCats.size < catChecks.length || activeProfs.size < profChecks.length) {
+                status.textContent = `Showing ${visible} of ${cards.length} rules`;
+            } else {
+                status.textContent = '';
+            }
+        }
+
+        search.addEventListener('input', applyFilters);
+        catChecks.forEach(c => c.addEventListener('change', applyFilters));
+        profChecks.forEach(c => c.addEventListener('change', applyFilters));
+
+        document.getElementById('filterSelectAll').addEventListener('click', () => {
+            catChecks.forEach(c => c.checked = true);
+            profChecks.forEach(c => c.checked = true);
+            applyFilters();
+        });
+        document.getElementById('filterClearAll').addEventListener('click', () => {
+            catChecks.forEach(c => c.checked = false);
+            profChecks.forEach(c => c.checked = false);
+            applyFilters();
+        });
+    })();
+    </script>
+</body>
+</html>

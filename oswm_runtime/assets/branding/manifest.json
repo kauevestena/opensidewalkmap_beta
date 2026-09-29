@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "favicon": "assets/branding/favicon_homepage.png",
+  "logos": {
+    "page": "assets/branding/logos/page_logo.png",
+    "page_clean": "assets/branding/logos/page_logo_clean.png",
+    "page_dark_clean": "assets/branding/logos/page_logo_dark_clean.png",
+    "project": "assets/branding/logos/project_logo.png",
+    "project_100px": "assets/branding/logos/project_logo_100px.png"
+  },
+  "banners": {}
+}

@@ -1,7 +1,7 @@
 {
   "analytical_network": {
-    "byte_size": 1713368,
-    "feature_count": 17126,
+    "byte_size": 1745547,
+    "feature_count": 17190,
     "filename": "network.parquet",
     "format": "GeoParquet"
   },
@@ -12,13 +12,13 @@
       -49.1886809,
       -25.3473833
     ],
-    "byte_size": 4283736,
-    "cell_membership_count": 62641,
-    "directed_edge_count": 118598,
+    "byte_size": 4378868,
+    "cell_membership_count": 64082,
+    "directed_edge_count": 121234,
     "filename": "network.oswmg",
-    "grid_cols": 55,
-    "grid_rows": 90,
-    "node_count": 58341,
+    "grid_cols": 56,
+    "grid_rows": 91,
+    "node_count": 59617,
     "profile_count": 4,
     "profile_order": [
       "distance",
@@ -27,88 +27,88 @@
       "elderly"
     ],
     "schema_version": 2,
-    "segment_count": 59299,
-    "sha256": "85b33a13d9f4423c84b12001fe5986bd5f2bda78474f42851fc80ee6f5e2caef",
+    "segment_count": 60617,
+    "sha256": "c6b7ecb8f2b9574e0b9ce198fa096b4c794db90ad36d3110bd8aa4cc5f50ad69",
     "spatial_index": "uniform_grid",
     "topology_tolerance": 1e-05
   },
   "edge_kind_counts": {
-    "crossing": 2097,
-    "footway": 6517,
+    "crossing": 2096,
+    "footway": 6582,
     "sidewalk": 8145,
     "stairs": 367
   },
   "elevation_provider_fingerprint": "a4a4bc7ab35d623e",
-  "feature_count": 17126,
-  "generated_at": "2026-09-29T14:20:43.792605+00:00",
+  "feature_count": 17190,
+  "generated_at": "2026-09-29T17:16:14.297517+00:00",
   "profile_audit": {
     "blind": {
       "grade_bands": {
         "0": 139,
         "1-19": 0,
-        "20-39": 1967,
-        "40-59": 13492,
-        "60-79": 1402,
+        "20-39": 1966,
+        "40-59": 13544,
+        "60-79": 1415,
         "80-100": 126
       },
       "maximum_grade": 96,
-      "mean_grade": 48.96,
+      "mean_grade": 48.98,
       "minimum_grade": 0,
       "most_common_limiting_factors": {
         "barrier": 5,
         "crossing": 19,
-        "incline": 655,
+        "incline": 656,
         "lighting": 113,
-        "smoothness": 3299,
-        "surface": 9837,
-        "tactile_paving": 2078,
+        "smoothness": 3349,
+        "surface": 9851,
+        "tactile_paving": 2077,
         "width": 1120
       }
     },
     "elderly": {
       "grade_bands": {
-        "0": 692,
+        "0": 693,
         "1-19": 513,
-        "20-39": 1510,
-        "40-59": 13521,
+        "20-39": 1513,
+        "40-59": 13581,
         "60-79": 887,
         "80-100": 3
       },
       "maximum_grade": 84,
-      "mean_grade": 44.61,
+      "mean_grade": 44.63,
       "minimum_grade": 0,
       "most_common_limiting_factors": {
         "barrier": 5,
         "cross_slope": 32,
         "crossing": 1382,
-        "incline": 1859,
-        "kerb": 454,
+        "incline": 1863,
+        "kerb": 453,
         "lighting": 10,
-        "smoothness": 2663,
-        "surface": 9811,
+        "smoothness": 2711,
+        "surface": 9824,
         "width": 910
       }
     },
     "wheelchair": {
       "grade_bands": {
-        "0": 1229,
+        "0": 1230,
         "1-19": 7,
-        "20-39": 1721,
-        "40-59": 14082,
+        "20-39": 1727,
+        "40-59": 14139,
         "60-79": 87,
         "80-100": 0
       },
       "maximum_grade": 74,
-      "mean_grade": 39.99,
+      "mean_grade": 40.01,
       "minimum_grade": 0,
       "most_common_limiting_factors": {
         "barrier": 408,
         "cross_slope": 44,
         "crossing": 538,
-        "incline": 1735,
-        "kerb": 1158,
-        "smoothness": 2629,
-        "surface": 9677,
+        "incline": 1739,
+        "kerb": 1157,
+        "smoothness": 2677,
+        "surface": 9690,
         "width": 937
       }
     }
@@ -117,7 +117,7 @@
   "ruleset_version": "1.1.0",
   "schema_version": 1,
   "slope_source_counts": {
-    "copernicus_glo30": 17111,
+    "copernicus_glo30": 17175,
     "copernicus_glo90": 2,
     "direct_osm_numeric": 13
   },

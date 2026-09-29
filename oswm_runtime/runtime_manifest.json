@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "runtime_contract": 1,
+  "source": "kauevestena/oswm_codebase",
+  "paths": [
+    "assets",
+    "routing",
+    "hazard_analysis",
+    "webmap/snapshot"
+  ]
+}

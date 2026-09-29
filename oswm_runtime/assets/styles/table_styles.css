@@ -1,0 +1,54 @@
+table {
+    font-size: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2rem 0;
+    background: var(--card-bg, rgba(30, 41, 59, 0.7));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+th {
+    text-align: left;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    color: var(--primary, #00f2fe);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+}
+
+td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid var(--card-border, rgba(255, 255, 255, 0.05));
+    color: var(--text-main, #f8fafc);
+    transition: background 0.2s ease;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+tr:hover td {
+    background-color: rgba(0, 242, 254, 0.05);
+}
+
+/* Ensure links in tables are styled correctly */
+table a {
+    color: var(--primary, #00f2fe);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+table a:hover {
+    color: var(--secondary, #4facfe);
+    text-decoration: underline;
+}

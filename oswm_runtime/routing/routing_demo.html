@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSWM Accessible Routing and Reachability</title>
+    <!-- maplibre-gl v6 -->
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css" />
+    <script type="module" src="../assets/branding/branding.js"></script>
+    <link rel="icon" type="image/x-icon" data-oswm-branding="favicon">
+    <style>
+        :root {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            color: #202124;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .logo_img {
+            position: fixed;
+            left: 4px;
+            top: 4px;
+            z-index: 4;
+            max-width: min(40%, 330px);
+            height: auto;
+        }
+
+        #routingPanel {
+            position: absolute;
+            top: 18px;
+            right: 50px;
+            width: min(330px, calc(100vw - 90px));
+            z-index: 5;
+            padding: 14px 16px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+            box-sizing: border-box;
+        }
+
+        #routingPanel h2 {
+            margin: 0;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #routingPanel:not(.collapsed) h2 {
+            margin-bottom: 10px;
+        }
+
+        #panelToggleBtn {
+            background: none;
+            border: none;
+            font-size: 12px;
+            color: #565c62;
+            cursor: pointer;
+            padding: 2px 4px;
+            transition: transform 0.2s ease;
+        }
+
+        #routingPanel.collapsed #panelToggleBtn {
+            transform: rotate(-90deg);
+        }
+
+        #routingPanel.collapsed #routingPanelContent {
+            display: none;
+        }
+
+        #routingPanel label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        .mode-switch {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            margin-bottom: 12px;
+            padding: 3px;
+            border-radius: 8px;
+            background: #e7eaed;
+        }
+
+        .mode-switch button {
+            padding: 7px 8px;
+            border: 0;
+            border-radius: 6px;
+            color: #444b52;
+            background: transparent;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .mode-switch button.active {
+            color: #123b70;
+            background: white;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .16);
+        }
+
+        #profileSelect {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #aeb4ba;
+            border-radius: 6px;
+            background: white;
+            font-size: 14px;
+        }
+
+        #profileDescription {
+            margin: 8px 0 0;
+            color: #565c62;
+            font-size: 12px;
+            line-height: 1.35;
+        }
+
+        #compareOption {
+            margin-top: 10px;
+        }
+
+        #compareOption[hidden] {
+            display: none;
+        }
+
+        #routeOptions[hidden],
+        #isochroneOptions[hidden] {
+            display: none;
+        }
+
+        #routingPanel .compare-label {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin: 0;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0;
+            cursor: pointer;
+        }
+
+        .compare-label input {
+            margin: 0;
+        }
+
+        #routeInfo {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid #d7dadd;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        #routeInfo.hidden {
+            display: none;
+        }
+
+        #isochroneOptions {
+            margin-top: 11px;
+            padding-top: 10px;
+            border-top: 1px solid #d7dadd;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        #isochroneOptions p {
+            margin: 0 0 9px;
+        }
+
+        #isochroneOptions input[type="number"] {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 7px;
+            margin: 4px 0 10px;
+        }
+
+        .isochrone-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 8px 0 11px;
+            font-weight: 700;
+        }
+
+        .isochrone-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .isochrone-swatch {
+            width: 13px;
+            height: 13px;
+            border: 1px solid rgba(15, 55, 85, .72);
+            border-radius: 2px;
+        }
+
+        .isochrone-swatch.five {
+            background: #225ea8;
+        }
+
+        .isochrone-swatch.ten {
+            background: #41b6c4;
+        }
+
+        .isochrone-swatch.fifteen {
+            background: #a1dab4;
+        }
+
+        .action-button {
+            width: 100%;
+            padding: 8px 10px;
+            border: 0;
+            border-radius: 6px;
+            color: white;
+            background: #245f8f;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .action-button:disabled {
+            color: #6c737a;
+            background: #d9dde0;
+            cursor: not-allowed;
+        }
+
+        #isochroneInfo {
+            margin-top: 8px;
+            color: #40474e;
+        }
+
+        #isochroneInfo.error {
+            color: #9d1d20;
+            font-weight: 700;
+        }
+
+        #routeInfo .no-route {
+            color: #9d1d20;
+            font-weight: 700;
+        }
+
+        #routeInfo .experimental {
+            margin-top: 7px;
+            color: #745100;
+            font-size: 11px;
+        }
+
+        #comparisonInfo {
+            margin-top: 9px;
+            padding: 7px 9px;
+            border-left: 4px solid #d55e00;
+            background: #fff4eb;
+            font-size: 12px;
+        }
+
+        #comparisonInfo[hidden] {
+            display: none;
+        }
+
+        #comparisonInfo .comparison-title {
+            font-weight: 700;
+        }
+
+        .route-swatch {
+            display: inline-block;
+            width: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .route-swatch.selected {
+            border-top: 4px solid #123bd1;
+        }
+
+        .route-swatch.distance {
+            border-top: 3px dashed #d55e00;
+        }
+
+        .marker {
+            width: 13px;
+            height: 13px;
+            border: 2px solid white;
+            border-radius: 50%;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .55);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, .5);
+            box-sizing: border-box;
+        }
+
+        .modal-overlay.visible {
+            display: flex;
+        }
+
+        .modal {
+            width: min(390px, 100%);
+            padding: 22px;
+            border-radius: 10px;
+            background: white;
+            box-sizing: border-box;
+        }
+
+        .modal h2 {
+            margin-top: 0;
+        }
+
+        .modal li {
+            margin-bottom: 7px;
+        }
+
+        .modal button {
+            float: right;
+            padding: 8px 18px;
+            border: 0;
+            border-radius: 5px;
+            color: white;
+            background: steelblue;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            #routingPanel {
+                top: auto;
+                right: 10px;
+                bottom: 28px;
+                width: calc(100vw - 20px);
+            }
+
+            .logo_img {
+                max-width: 55%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map">
+        <a href="../../index.html" id="node_link">
+            <img data-oswm-branding="logos.page"
+                alt="OSWM Page Logo" title="Click for more OSWM Node's Resources!!" class="logo_img responsive">
+        </a>
+    </div>
+
+    <section id="routingPanel" aria-label="Routing options">
+        <h2 id="routingPanelHeader" title="Click to collapse/expand panel">
+            <span>Accessible routing</span>
+            <button id="panelToggleBtn" aria-label="Toggle panel" aria-expanded="true">▼</button>
+        </h2>
+        <div id="routingPanelContent">
+            <div class="mode-switch" role="group" aria-label="Routing mode">
+                <button type="button" id="routeModeBtn" class="active" aria-pressed="true">Route</button>
+                <button type="button" id="isochroneModeBtn" aria-pressed="false">Reachability</button>
+            </div>
+
+            <label for="profileSelect">Profile</label>
+            <select id="profileSelect"></select>
+            <p id="profileDescription">Loading routing profiles…</p>
+            <p id="routingStatus" role="status" aria-live="polite">Loading node map…</p>
+
+            <div id="routeOptions">
+                <div id="compareOption" hidden>
+                    <label class="compare-label" for="compareDistance">
+                        <input type="checkbox" id="compareDistance">
+                        Compare with distance-only
+                    </label>
+                </div>
+
+                <div id="routeInfo" class="hidden" aria-live="polite">
+                    <div class="route-result">
+                        <div>Distance: <strong><span id="distanceVal">-</span> km</strong></div>
+                        <div><span id="timeLabel">Accessibility-adjusted time</span>:
+                            <strong><span id="timeVal">-</span> min</strong>
+                        </div>
+                        <div>
+                            <span class="route-swatch selected"></span>
+                            Profile: <strong><span id="profileVal">-</span></strong>
+                        </div>
+                        <div class="experimental" id="experimentalNote"></div>
+                    </div>
+                    <div class="no-route" hidden>No route was found for this profile.</div>
+                    <div id="comparisonInfo" hidden>
+                        <div class="comparison-title">
+                            <span class="route-swatch distance"></span>
+                            Distance-only comparison
+                        </div>
+                        <div>
+                            Shortest route:
+                            <strong><span id="comparisonDistanceVal">-</span> km</strong>,
+                            <span id="comparisonTimeVal">-</span> min
+                        </div>
+                        <div id="comparisonDelta"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="isochroneOptions" hidden>
+                <p>Click one origin to calculate outward, accessibility-adjusted reachability.</p>
+                <label for="isochroneStart">Starting time (minutes)</label>
+                <input id="isochroneStart" type="number" min="1" max="120" step="1" value="5">
+                <label for="isochroneStep">Increment (minutes)</label>
+                <input id="isochroneStep" type="number" min="1" max="120" step="1" value="5">
+                <label for="isochroneCount">Number of increments</label>
+                <input id="isochroneCount" type="number" min="0" max="11" step="1" value="2">
+                <p>Increments follow the starting band. Maximum: 12 bands, up to 120 minutes.</p>
+                <div id="isochroneLegend" class="isochrone-legend" aria-label="Reachability bands"></div>
+                <button type="button" id="downloadIsochrone" class="action-button" disabled>
+                    Download GeoJSON
+                </button>
+                <div id="isochroneInfo" aria-live="polite"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay visible" id="welcomeModalOverlay">
+        <div class="modal">
+            <h2>OSWM accessible routing</h2>
+            <p>This experimental tool uses mapped OpenStreetMap accessibility information and estimated terrain slope.</p>
+            <ol>
+                <li>Choose Route or Reachability.</li>
+                <li>Select a routing profile.</li>
+                <li>For a route, click an origin and destination.</li>
+                <li>For reachability, choose a starting time, increment and number of increments, then click one origin.</li>
+                <li>Export calculated reachability polygons as GeoJSON when needed.</li>
+            </ol>
+            <p>Accessibility-adjusted times and polygons are approximate. Missing data can affect the result, and provisional profiles do not guarantee accessibility.</p>
+            <button id="modalOkBtn">Continue</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.0.0/dist/maplibre-gl.mjs';
+        import { Protocol as PmtilesProtocol } from 'https://cdn.jsdelivr.net/npm/pmtiles@4/+esm';
+
+        const pmtilesProtocol = new PmtilesProtocol();
+        maplibregl.addProtocol('pmtiles', pmtilesProtocol.tile);
+        let displayedIsochroneBands = [];
+
+        function readIsochroneCutoffs() {
+            const start = Number(document.getElementById('isochroneStart').value);
+            const step = Number(document.getElementById('isochroneStep').value);
+            const countValue = document.getElementById('isochroneCount').value.trim();
+            const count = countValue === '' ? NaN : Number(countValue);
+            if (![start, step, count].every(Number.isInteger)
+                || start < 1 || step < 1 || step > 120 || count < 0 || count > 11
+                || start + step * count > 120) {
+                throw new Error('Use whole minutes, a positive start and increment, 0–11 increments, and a final time of at most 120 minutes.');
+            }
+            return Array.from({ length: count + 1 }, (_, index) => start + step * index);
+        }
+
+        function isochroneBands(cutoffs) {
+            const stops = [[34, 94, 168], [65, 182, 196], [161, 218, 180]];
+            return cutoffs.map((minutes, index) => {
+                const position = cutoffs.length === 1 ? 0 : index / (cutoffs.length - 1) * 2;
+                const low = Math.min(1, Math.floor(position));
+                const fraction = position - low;
+                const rgb = stops[low].map((value, channel) =>
+                    Math.round(value + (stops[low + 1][channel] - value) * fraction));
+                return { minutes, color: `rgb(${rgb.join(',')})` };
+            });
+        }
+
+        function updateIsochroneLegend(cutoffs) {
+            const legend = document.getElementById('isochroneLegend');
+            legend.replaceChildren();
+            for (const band of isochroneBands(cutoffs)) {
+                const label = document.createElement('span');
+                const swatch = document.createElement('i');
+                swatch.className = 'isochrone-swatch';
+                swatch.style.backgroundColor = band.color;
+                label.append(swatch, `${band.minutes} min`);
+                legend.append(label);
+            }
+        }
+        const routingRoot = new URL('../../data/routing/', import.meta.url);
+        const basemapUrl = new URL('../../data/basemaps/light.pmtiles', import.meta.url).href;
+        const routingWorker = new Worker(
+            new URL('./routing_worker.js', import.meta.url),
+            { type: 'module' }
+        );
+        let nextWorkerRequestId = 0;
+        const pendingWorkerRequests = new Map();
+
+        routingWorker.addEventListener('message', event => {
+            const pending = pendingWorkerRequests.get(event.data.id);
+            if (!pending) return;
+            pendingWorkerRequests.delete(event.data.id);
+            if (event.data.ok) pending.resolve(event.data.result);
+            else pending.reject(new Error(event.data.error));
+        });
+
+        routingWorker.addEventListener('error', event => {
+            const error = new Error(event.message || 'The routing worker failed.');
+            for (const pending of pendingWorkerRequests.values()) pending.reject(error);
+            pendingWorkerRequests.clear();
+        });
+
+        function workerRequest(type, payload = {}) {
+            const id = ++nextWorkerRequestId;
+            return new Promise((resolve, reject) => {
+                pendingWorkerRequests.set(id, { resolve, reject });
+                routingWorker.postMessage({ id, type, ...payload });
+            });
+        }
+
+        const profileSelect = document.getElementById('profileSelect');
+        const profileDescription = document.getElementById('profileDescription');
+        const routingStatus = document.getElementById('routingStatus');
+        const routeOptions = document.getElementById('routeOptions');
+        const isochroneOptions = document.getElementById('isochroneOptions');
+        const routeModeButton = document.getElementById('routeModeBtn');
+        const isochroneModeButton = document.getElementById('isochroneModeBtn');
+        const compareOption = document.getElementById('compareOption');
+        const compareDistance = document.getElementById('compareDistance');
+        const comparisonInfo = document.getElementById('comparisonInfo');
+        const routeInfo = document.getElementById('routeInfo');
+        const isochroneInfo = document.getElementById('isochroneInfo');
+        const downloadIsochroneButton = document.getElementById('downloadIsochrone');
+        const routingPanel = document.getElementById('routingPanel');
+        const routingPanelHeader = document.getElementById('routingPanelHeader');
+        const panelToggleBtn = document.getElementById('panelToggleBtn');
+
+        function toggleRoutingPanel() {
+            const isCollapsed = routingPanel.classList.toggle('collapsed');
+            panelToggleBtn.setAttribute('aria-expanded', !isCollapsed);
+        }
+
+        routingPanelHeader.addEventListener('click', toggleRoutingPanel);
+
+        function updateReadyStatus() {
+            if (!routerReady) return;
+            const nodeCount = graphNodeCount.toLocaleString();
+            routingStatus.textContent = interactionMode === 'route'
+                ? `Routing ready (${nodeCount} nodes). Click an origin, then a destination.`
+                : `Reachability ready (${nodeCount} nodes). Click one origin.`;
+        }
+
+        function setInteractionMode(mode) {
+            if (!['route', 'isochrone'].includes(mode) || mode === interactionMode) return;
+            interactionMode = mode;
+            routeModeButton.classList.toggle('active', mode === 'route');
+            isochroneModeButton.classList.toggle('active', mode === 'isochrone');
+            routeModeButton.setAttribute('aria-pressed', mode === 'route');
+            isochroneModeButton.setAttribute('aria-pressed', mode === 'isochrone');
+            routeOptions.hidden = mode !== 'route';
+            isochroneOptions.hidden = mode !== 'isochrone';
+            resetPath();
+            updateProfileControls();
+            updateReadyStatus();
+        }
+
+        routeModeButton.addEventListener('click', () => setInteractionMode('route'));
+        isochroneModeButton.addEventListener('click', () => setInteractionMode('isochrone'));
+
+        let profilePayload = null;
+        let distanceProfileId = null;
+        let routerReady = false;
+        let graphNodeCount = 0;
+        let interactionMode = 'route';
+        let routeGeneration = 0;
+        let isochroneGeneration = 0;
+        let snapGeneration = 0;
+        let start = null;
+        let end = null;
+        let bestPath = null;
+        let comparisonPath = null;
+        let isochroneData = null;
+        let markers = [];
+
+        const map = new maplibregl.Map({
+            container: 'map',
+            style: {
+                version: 8,
+                sources: {
+                    'oswm-basemap': {
+                        type: 'raster',
+                        url: `pmtiles://${basemapUrl}`,
+                        tileSize: 256,
+                        attribution: 'Basemap © OpenFreeMap, © OpenMapTiles; data © OpenStreetMap contributors'
+                    }
+                },
+                layers: [{ id: 'oswm-basemap-tiles', type: 'raster', source: 'oswm-basemap' }]
+            }
+        });
+
+        function mapLoaded() {
+            if (map.loaded()) return Promise.resolve();
+            return new Promise(resolve => map.once('load', resolve));
+        }
+
+        function profileHeuristicScale(profileId) {
+            const profile = profilePayload.profiles[profileId];
+            if (profile.routing_mode === 'distance') return 1;
+            const multipliers = profile.cost?.grade_multipliers
+                ?.map(band => Number(band.multiplier))
+                .filter(Number.isFinite) || [];
+            return multipliers.length ? Math.min(1, ...multipliers) : 0;
+        }
+
+        function versionedRoutingUrl(filename) {
+            const url = new URL(filename, routingRoot);
+            if (profilePayload.graph_sha256) {
+                url.searchParams.set('v', profilePayload.graph_sha256.slice(0, 16));
+            }
+            return url.href;
+        }
+
+        function extendCoordinateBounds(bounds, coordinates) {
+            if (!Array.isArray(coordinates)) return;
+            if (
+                coordinates.length >= 2
+                && Number.isFinite(Number(coordinates[0]))
+                && Number.isFinite(Number(coordinates[1]))
+            ) {
+                bounds.extend([Number(coordinates[0]), Number(coordinates[1])]);
+                return;
+            }
+            for (const child of coordinates) extendCoordinateBounds(bounds, child);
+        }
+
+        async function initializeNodeBoundary() {
+            const boundary = await fetch(
+                '../../data/boundaries/polygon.geojson',
+                { cache: 'no-cache' }
+            )
+                .then(requireOk)
+                .then(response => response.json());
+            await mapLoaded();
+            map.addSource('boundaries', { type: 'geojson', data: boundary });
+            map.addLayer({
+                id: 'boundary-layer',
+                type: 'line',
+                source: 'boundaries',
+                paint: { 'line-color': '#000', 'line-width': .3 }
+            });
+            const bounds = new maplibregl.LngLatBounds();
+            extendCoordinateBounds(bounds, boundary.coordinates || boundary.geometry?.coordinates);
+            if (bounds.isEmpty()) throw new Error('Node boundary contains no coordinates.');
+            map.fitBounds(bounds, { padding: 35, animate: false });
+        }
+
+        function addMapDisplayLayers() {
+            map.addSource('aws-terrain', {
+                type: 'raster-dem',
+                tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+                encoding: 'terrarium',
+                tileSize: 256,
+                maxzoom: 15
+            });
+            map.setTerrain({ source: 'aws-terrain', exaggeration: 1.2 });
+            map.addLayer({
+                id: 'hills',
+                type: 'hillshade',
+                source: 'aws-terrain',
+                paint: {
+                    'hillshade-exaggeration': 0.45,
+                    'hillshade-shadow-color': '#473b30'
+                }
+            });
+
+            const tilesFilename = profilePayload.display_tiles_filename || 'network.pmtiles';
+            map.addSource('line', {
+                type: 'vector',
+                url: `pmtiles://${versionedRoutingUrl(tilesFilename)}`
+            });
+            map.addLayer({
+                id: 'line-layer',
+                type: 'line',
+                source: 'line',
+                'source-layer': profilePayload.display_source_layer || 'routing',
+                layout: { 'line-join': 'round', 'line-cap': 'round' },
+                paint: {
+                    'line-color': [
+                        'match', ['get', 'edge_kind'],
+                        'crossing', '#704ba0',
+                        'stairs', '#bd5b00',
+                        '#4682b4'
+                    ],
+                    'line-width': 4,
+                    'line-opacity': .82
+                }
+            });
+
+            map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }));
+            map.addControl(new maplibregl.TerrainControl({ source: 'aws-terrain', exaggeration: 1.2 }));
+            map.addControl(new maplibregl.FullscreenControl());
+            map.addControl(new maplibregl.ScaleControl());
+            map.addControl(new maplibregl.GeolocateControl({
+                positionOptions: { enableHighAccuracy: true },
+                trackUserLocation: true
+            }));
+        }
+
+        async function initializeRouting() {
+            const boundaryPromise = initializeNodeBoundary().catch(error => {
+                console.error(error);
+                routingStatus.textContent = `Node boundary could not be loaded: ${error.message}`;
+            });
+            profilePayload = await fetch(
+                '../../data/routing/profiles.json',
+                { cache: 'no-cache' }
+            )
+                .then(requireOk)
+                .then(response => response.json());
+            distanceProfileId = profilePayload.distance_profile_id;
+            if (
+                !distanceProfileId
+                || profilePayload.profiles[distanceProfileId]?.routing_mode !== 'distance'
+            ) {
+                throw new Error('No distance-only routing profile was provided.');
+            }
+            populateProfiles();
+            updateProfileControls();
+            const profileOrder = profilePayload.graph_profile_order;
+            if (!Array.isArray(profileOrder) || !profilePayload.graph_filename) {
+                throw new Error('Routing profile metadata does not identify a binary graph.');
+            }
+            const graphPromise = workerRequest('init', {
+                graphUrl: versionedRoutingUrl(profilePayload.graph_filename),
+                profileOrder,
+                profileHeuristicScales: profileOrder.map(profileHeuristicScale)
+            });
+            await mapLoaded();
+            addMapDisplayLayers();
+            await boundaryPromise;
+            routingStatus.textContent = 'Loading routing graph…';
+            const graphInfo = await graphPromise;
+            graphNodeCount = graphInfo.nodeCount;
+            routerReady = true;
+            updateReadyStatus();
+            showWelcomeModal();
+        }
+
+        initializeRouting().catch(error => {
+            console.error(error);
+            routingStatus.textContent = `Routing graph unavailable: ${error.message}`;
+            if (interactionMode === 'isochrone') {
+                showIsochroneMessage(`Routing data could not be loaded: ${error.message}`, true);
+            } else {
+                showNoRoute(`Routing data could not be loaded: ${error.message}`);
+            }
+        });
+
+        function requireOk(response) {
+            if (!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+            return response;
+        }
+
+        function populateProfiles() {
+            profileSelect.replaceChildren();
+            const profiles = Object.entries(profilePayload.profiles).sort(
+                ([leftId, left], [rightId, right]) => {
+                    if (leftId === rightId) return 0;
+                    if (leftId === 'wheelchair') return -1;
+                    if (rightId === 'wheelchair') return 1;
+                    if (leftId === distanceProfileId) return 1;
+                    if (rightId === distanceProfileId) return -1;
+                    return left.label.localeCompare(right.label);
+                }
+            );
+            for (const [profileId, profile] of profiles) {
+                const option = document.createElement('option');
+                option.value = profileId;
+                option.textContent = profile.label;
+                profileSelect.appendChild(option);
+            }
+            profileSelect.value = profilePayload.profiles['wheelchair'] ? 'wheelchair' : profiles[0][0];
+        }
+
+        function selectedProfile() {
+            return profilePayload.profiles[profileSelect.value];
+        }
+
+        function selectedProfileLabel() {
+            return selectedProfile().label;
+        }
+
+        function updateProfileControls() {
+            if (!profilePayload) return;
+            const profile = selectedProfile();
+            const isDistanceOnly = profile.routing_mode === 'distance';
+            profileDescription.textContent = profile.description;
+            compareOption.hidden = interactionMode !== 'route' || isDistanceOnly;
+            compareDistance.disabled = interactionMode !== 'route' || isDistanceOnly;
+            document.getElementById('timeLabel').textContent = isDistanceOnly
+                ? 'Estimated time'
+                : 'Accessibility-adjusted time';
+            if (isDistanceOnly) {
+                compareDistance.checked = false;
+                if (comparisonPath) removeComparisonPath();
+                comparisonInfo.hidden = true;
+            }
+        }
+
+        profileSelect.addEventListener('change', () => {
+            updateProfileControls();
+            if (interactionMode === 'isochrone' && start) {
+                calculateIsochrone();
+            } else if (start && end) {
+                calculateRoute();
+            }
+        });
+
+        compareDistance.addEventListener('change', () => {
+            if (start && end) {
+                calculateRoute();
+            } else if (!compareDistance.checked) {
+                removeComparisonPath();
+                comparisonInfo.hidden = true;
+            }
+        });
+
+        map.on('click', async event => {
+            if (!routerReady) return;
+            const requestGeneration = ++snapGeneration;
+            try {
+                const snapped = await workerRequest('snap', {
+                    coordinates: [event.lngLat.lng, event.lngLat.lat]
+                });
+                if (requestGeneration !== snapGeneration) return;
+
+                if (interactionMode === 'isochrone') {
+                    resetPath();
+                    start = snapped;
+                    addMarker(snapped.coordinates, '#0f5128');
+                    calculateIsochrone();
+                    return;
+                }
+
+                if (!start) {
+                    start = snapped;
+                    addMarker(snapped.coordinates, '#0f5128');
+                    hideRouteInfo();
+                } else if (!end) {
+                    end = snapped;
+                    addMarker(snapped.coordinates, '#8b0000');
+                    calculateRoute();
+                } else {
+                    resetPath();
+                    start = snapped;
+                    addMarker(snapped.coordinates, '#0f5128');
+                }
+            } catch (error) {
+                console.error(error);
+                if (interactionMode === 'isochrone') {
+                    showIsochroneMessage(
+                        `Could not snap to the routing network: ${error.message}`,
+                        true
+                    );
+                } else {
+                    showNoRoute(`Could not snap to the routing network: ${error.message}`);
+                }
+            }
+        });
+
+        function addMarker(coordinates, color) {
+            const element = document.createElement('div');
+            element.className = 'marker';
+            element.style.backgroundColor = color;
+            markers.push(new maplibregl.Marker({ element }).setLngLat(coordinates).addTo(map));
+        }
+
+        function hasUsablePath(pathResult) {
+            return Boolean(pathResult?.path && pathResult.path.length >= 2);
+        }
+
+        function pathTimeMinutes(pathResult, profile) {
+            const equivalentDistanceKm = pathResult.weight / 1000;
+            return Math.max(1, Math.round(equivalentDistanceKm / profile.speed_kmh * 60));
+        }
+
+        function setRouteLayer(pathResult, sourceId, layerId, paint) {
+            const data = {
+                type: 'FeatureCollection',
+                features: [{
+                    type: 'Feature',
+                    properties: {},
+                    geometry: { type: 'LineString', coordinates: pathResult.path }
+                }]
+            };
+            if (map.getSource(sourceId)) {
+                map.getSource(sourceId).setData(data);
+                return;
+            }
+            map.addSource(sourceId, { type: 'geojson', data });
+            map.addLayer({
+                id: layerId,
+                type: 'line',
+                source: sourceId,
+                layout: { 'line-join': 'round', 'line-cap': 'round' },
+                paint
+            });
+        }
+
+        function removeIsochroneLayers() {
+            for (const band of [...displayedIsochroneBands].reverse()) {
+                const lineLayerId = `isochrone-line-${band.minutes}`;
+                const fillLayerId = `isochrone-fill-${band.minutes}`;
+                if (map.getLayer(lineLayerId)) map.removeLayer(lineLayerId);
+                if (map.getLayer(fillLayerId)) map.removeLayer(fillLayerId);
+            }
+            if (map.getSource('isochrone-polygons')) {
+                map.removeSource('isochrone-polygons');
+            }
+            displayedIsochroneBands = [];
+        }
+
+        function setIsochroneLayers(data) {
+            removeIsochroneLayers();
+            displayedIsochroneBands = isochroneBands(data.metadata.cutoffs_minutes).reverse();
+            const displayData = {
+                type: 'FeatureCollection',
+                features: data.features
+            };
+            const existingSource = map.getSource('isochrone-polygons');
+            if (existingSource) {
+                existingSource.setData(displayData);
+                return;
+            }
+            map.addSource('isochrone-polygons', {
+                type: 'geojson',
+                data: displayData
+            });
+            const beforeLayer = map.getLayer('line-layer') ? 'line-layer' : undefined;
+            for (const band of displayedIsochroneBands) {
+                map.addLayer({
+                    id: `isochrone-fill-${band.minutes}`,
+                    type: 'fill',
+                    source: 'isochrone-polygons',
+                    filter: ['==', ['get', 'minutes'], band.minutes],
+                    paint: {
+                        'fill-color': band.color,
+                        'fill-opacity': .52
+                    }
+                }, beforeLayer);
+            }
+            for (const band of displayedIsochroneBands) {
+                map.addLayer({
+                    id: `isochrone-line-${band.minutes}`,
+                    type: 'line',
+                    source: 'isochrone-polygons',
+                    filter: ['==', ['get', 'minutes'], band.minutes],
+                    layout: { 'line-join': 'round' },
+                    paint: {
+                        'line-color': band.color,
+                        'line-width': 2,
+                        'line-opacity': .95
+                    }
+                }, beforeLayer);
+            }
+        }
+
+        function enrichIsochroneGeoJSON(result, profileId, profile) {
+            const generatedAt = new Date().toISOString();
+            const commonProperties = {
+                profile_id: profileId,
+                profile_label: profile.label,
+                profile_provisional: Boolean(profile.provisional),
+                ruleset_version: profilePayload.ruleset_version,
+                ruleset_hash: profilePayload.ruleset_hash,
+                graph_sha256: profilePayload.graph_sha256
+            };
+            return {
+                type: 'FeatureCollection',
+                name: 'OSWM accessibility-adjusted isochrones',
+                features: result.features.map(feature => ({
+                    ...feature,
+                    properties: {
+                        ...feature.properties,
+                        ...commonProperties
+                    }
+                })),
+                metadata: {
+                    ...result.metadata,
+                    ...commonProperties,
+                    generated_at: generatedAt,
+                    coordinate_reference_system: 'OGC:CRS84',
+                    disclaimer: (
+                        'Accessibility-adjusted times and polygon boundaries are approximate. '
+                        + 'Missing mapped data can affect the result and accessibility is not guaranteed.'
+                    )
+                }
+            };
+        }
+
+        function showIsochroneMessage(message, isError = false) {
+            isochroneInfo.textContent = message;
+            isochroneInfo.classList.toggle('error', isError);
+        }
+
+        async function calculateIsochrone() {
+            const requestGeneration = ++isochroneGeneration;
+            const profileId = profileSelect.value;
+            const profile = selectedProfile();
+            isochroneData = null;
+            downloadIsochroneButton.disabled = true;
+            removeIsochroneLayers();
+            try {
+                const cutoffsMinutes = readIsochroneCutoffs();
+                updateIsochroneLegend(cutoffsMinutes);
+                showIsochroneMessage(`Calculating ${cutoffsMinutes.join(', ')}-minute polygons…`);
+                const result = await workerRequest('isochrone', {
+                    origin: start,
+                    profileId,
+                    speedKmh: profile.speed_kmh,
+                    cutoffsMinutes
+                });
+                if (
+                    requestGeneration !== isochroneGeneration
+                    || interactionMode !== 'isochrone'
+                ) return;
+                if (!result.features.length) {
+                    removeIsochroneLayers();
+                    showIsochroneMessage(
+                        `No outward area is reachable for ${profile.label} from this origin.`,
+                        true
+                    );
+                    return;
+                }
+                isochroneData = enrichIsochroneGeoJSON(result, profileId, profile);
+                setIsochroneLayers(isochroneData);
+                downloadIsochroneButton.disabled = false;
+                const visitedNodes = result.metadata.visited_nodes.toLocaleString();
+                showIsochroneMessage(
+                    `${profile.label}: approximate outward polygons generated `
+                    + `after visiting ${visitedNodes} network nodes.`
+                );
+                const bounds = new maplibregl.LngLatBounds();
+                for (const feature of isochroneData.features) {
+                    extendCoordinateBounds(bounds, feature.geometry.coordinates);
+                }
+                if (!bounds.isEmpty()) {
+                    map.fitBounds(bounds, { padding: 55, maxZoom: 16 });
+                }
+            } catch (error) {
+                if (requestGeneration !== isochroneGeneration) return;
+                console.error(error);
+                removeIsochroneLayers();
+                showIsochroneMessage(`Reachability failed: ${error.message}`, true);
+            }
+        }
+
+        function downloadIsochroneGeoJSON() {
+            if (!isochroneData) return;
+            const blob = new Blob(
+                [JSON.stringify(isochroneData, null, 2)],
+                { type: 'application/geo+json' }
+            );
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            const timestamp = isochroneData.metadata.generated_at
+                .replace(/[:.]/g, '-')
+                .replace('T', '_')
+                .replace('Z', '');
+            link.href = url;
+            link.download = `oswm-isochrones-${isochroneData.metadata.profile_id}-${timestamp}.geojson`;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 0);
+        }
+
+        downloadIsochroneButton.addEventListener('click', downloadIsochroneGeoJSON);
+
+        updateIsochroneLegend(readIsochroneCutoffs());
+        for (const id of ['isochroneStart', 'isochroneStep', 'isochroneCount']) {
+            document.getElementById(id).addEventListener('input', () => {
+                isochroneGeneration += 1;
+                isochroneData = null;
+                downloadIsochroneButton.disabled = true;
+                removeIsochroneLayers();
+                document.getElementById('isochroneLegend').replaceChildren();
+                try {
+                    updateIsochroneLegend(readIsochroneCutoffs());
+                    showIsochroneMessage('');
+                    if (routerReady && interactionMode === 'isochrone' && start) calculateIsochrone();
+                } catch (error) {
+                    showIsochroneMessage(error.message, true);
+                }
+            });
+        }
+
+        async function calculateRoute() {
+            const requestGeneration = ++routeGeneration;
+            const profileId = profileSelect.value;
+            const profile = selectedProfile();
+            const shouldCompare = (
+                compareDistance.checked
+                && profile.routing_mode !== 'distance'
+            );
+            try {
+                const result = await workerRequest('route', {
+                    start,
+                    end,
+                    profileId,
+                    comparisonProfileId: shouldCompare ? distanceProfileId : null,
+                    fallbackProfileId: profile.routing_mode === 'distance'
+                        ? null
+                        : distanceProfileId
+                });
+                if (requestGeneration !== routeGeneration) return;
+                bestPath = result.primary;
+                const distancePath = profile.routing_mode === 'distance'
+                    ? bestPath
+                    : result.comparison;
+                comparisonPath = shouldCompare ? distancePath : null;
+
+                if (hasUsablePath(comparisonPath)) {
+                    setRouteLayer(
+                        comparisonPath,
+                        'distance-comparison-path',
+                        'distance-comparison-path-layer',
+                        {
+                            'line-color': '#d55e00',
+                            'line-width': 5,
+                            'line-dasharray': [2, 1.5],
+                            'line-offset': 5
+                        }
+                    );
+                } else {
+                    removeComparisonPath();
+                }
+
+                if (!hasUsablePath(bestPath)) {
+                    if (hasUsablePath(distancePath)) {
+                        showNoRoute(`No route found for ${profile.label}: path is blocked by barriers or steep inclines.`);
+                    } else {
+                        showNoRoute('No route found: start and destination belong to disconnected sidewalk networks (topological islands).');
+                    }
+                    removePrimaryPath();
+                    updateComparisonInfo(null, comparisonPath);
+                    return;
+                }
+
+                setRouteLayer(
+                    bestPath,
+                    'best-path',
+                    'best-path-layer',
+                    { 'line-color': '#123bd1', 'line-width': 8 }
+                );
+                if (map.getLayer('distance-comparison-path-layer')) {
+                    map.moveLayer('best-path-layer');
+                }
+
+                const distanceKm = bestPath.distanceM / 1000;
+                const timeMinutes = pathTimeMinutes(bestPath, profile);
+                document.getElementById('distanceVal').textContent = distanceKm.toFixed(2);
+                document.getElementById('timeVal').textContent = timeMinutes;
+                document.getElementById('profileVal').textContent = selectedProfileLabel();
+                document.getElementById('experimentalNote').textContent = profile.provisional
+                    ? 'This accessibility profile is provisional and requires calibration.'
+                    : '';
+                routeInfo.querySelector('.route-result').hidden = false;
+                routeInfo.querySelector('.no-route').hidden = true;
+                routeInfo.classList.remove('hidden');
+                updateComparisonInfo(bestPath, comparisonPath);
+            } catch (error) {
+                if (requestGeneration !== routeGeneration) return;
+                console.error(error);
+                removeDisplayedPaths();
+                showNoRoute(`Routing failed: ${error.message}`);
+            }
+        }
+
+        function updateComparisonInfo(selectedPath, distancePath) {
+            if (!compareDistance.checked || !hasUsablePath(distancePath)) {
+                comparisonInfo.hidden = true;
+                return;
+            }
+
+            const distanceKm = distancePath.distanceM / 1000;
+            const distanceProfile = profilePayload.profiles[distanceProfileId];
+            const timeMinutes = pathTimeMinutes(distancePath, distanceProfile);
+            document.getElementById('comparisonDistanceVal').textContent =
+                distanceKm.toFixed(2);
+            document.getElementById('comparisonTimeVal').textContent = timeMinutes;
+
+            const deltaElement = document.getElementById('comparisonDelta');
+            if (!hasUsablePath(selectedPath)) {
+                deltaElement.textContent =
+                    'A shortest-distance route exists, but the selected profile found no usable route.';
+            } else {
+                const selectedKm = selectedPath.distanceM / 1000;
+                const deltaKm = selectedKm - distanceKm;
+                if (Math.abs(deltaKm) < 0.005) {
+                    deltaElement.textContent =
+                        'The selected and distance-only routes have the same length.';
+                } else {
+                    const percentage = distanceKm > 0
+                        ? Math.abs(deltaKm) / distanceKm * 100
+                        : 0;
+                    const relation = deltaKm > 0 ? 'longer' : 'shorter';
+                    deltaElement.textContent =
+                        `Selected route: ${Math.abs(deltaKm).toFixed(2)} km ` +
+                        `${relation} (${percentage.toFixed(1)}%).`;
+                }
+            }
+            comparisonInfo.hidden = false;
+        }
+
+        function showNoRoute(customMessage = null) {
+            const message = routeInfo.querySelector('.no-route');
+            message.textContent = customMessage || 'No route was found for this profile.';
+            routeInfo.querySelector('.route-result').hidden = true;
+            message.hidden = false;
+            routeInfo.classList.remove('hidden');
+        }
+
+        function hideRouteInfo() {
+            routeInfo.classList.add('hidden');
+        }
+
+        function removePath(sourceId, layerId) {
+            if (map.getLayer(layerId)) map.removeLayer(layerId);
+            if (map.getSource(sourceId)) map.removeSource(sourceId);
+        }
+
+        function removePrimaryPath() {
+            removePath('best-path', 'best-path-layer');
+        }
+
+        function removeComparisonPath() {
+            removePath(
+                'distance-comparison-path',
+                'distance-comparison-path-layer'
+            );
+            comparisonPath = null;
+        }
+
+        function removeDisplayedPaths() {
+            removePrimaryPath();
+            removeComparisonPath();
+        }
+
+        function resetPath() {
+            routeGeneration += 1;
+            isochroneGeneration += 1;
+            snapGeneration += 1;
+            start = null;
+            end = null;
+            bestPath = null;
+            comparisonPath = null;
+            isochroneData = null;
+            markers.forEach(marker => marker.remove());
+            markers = [];
+            removeDisplayedPaths();
+            removeIsochroneLayers();
+            comparisonInfo.hidden = true;
+            downloadIsochroneButton.disabled = true;
+            showIsochroneMessage('');
+            hideRouteInfo();
+        }
+
+        function showWelcomeModal() {
+            document.getElementById('welcomeModalOverlay').classList.add('visible');
+        }
+
+        document.getElementById('modalOkBtn').addEventListener('click', () => {
+            document.getElementById('welcomeModalOverlay').classList.remove('visible');
+        });
+    </script>
+</body>
+
+</html>

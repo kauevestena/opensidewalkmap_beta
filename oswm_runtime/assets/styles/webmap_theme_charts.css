@@ -1,0 +1,242 @@
+.oswm-theme-chart-control {
+    position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    pointer-events: auto;
+}
+
+.maplibregl-ctrl button.oswm-theme-chart-toggle {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(23, 33, 38, .28);
+    border-radius: 50%;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 3px 11px rgba(0, 0, 0, .28);
+    cursor: pointer;
+}
+
+.maplibregl-ctrl button.oswm-theme-chart-toggle:hover,
+.maplibregl-ctrl button.oswm-theme-chart-toggle.is-active {
+    background-color: #e9f2e2;
+}
+
+.maplibregl-ctrl button.oswm-theme-chart-toggle.is-active {
+    border-color: #3a4f2e;
+    box-shadow: 0 0 0 3px rgba(58, 79, 46, .24), 0 3px 11px rgba(0, 0, 0, .28);
+}
+
+.maplibregl-ctrl button.oswm-theme-chart-toggle:focus-visible,
+.oswm-theme-chart-close:focus-visible,
+.oswm-theme-chart-scope input:focus-visible {
+    outline: 3px solid #2b7d92;
+    outline-offset: 2px;
+}
+
+.maplibregl-ctrl button.oswm-theme-chart-toggle svg {
+    width: 25px;
+    height: 25px;
+    fill: #263238;
+}
+
+.oswm-theme-chart-panel {
+    position: absolute;
+    bottom: 56px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(390px, calc(100vw - 24px));
+    max-height: min(70vh, 680px);
+    overflow: hidden;
+    border: 1px solid rgba(23, 33, 38, .22);
+    border-radius: 10px;
+    color: #172126;
+    background: rgba(255, 255, 255, .98);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .34);
+}
+
+.oswm-theme-chart-panel.is-hidden {
+    display: none;
+}
+
+.oswm-theme-chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #fff;
+    background: #3a4f2e;
+}
+
+.oswm-theme-chart-heading {
+    min-width: 0;
+}
+
+.oswm-theme-chart-eyebrow {
+    display: block;
+    margin-bottom: 2px;
+    color: #c5d4b3;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.oswm-theme-chart-title {
+    overflow: hidden;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.oswm-theme-chart-close {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    padding: 0;
+    color: #fff;
+    background: transparent;
+    font-size: 27px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.oswm-theme-chart-close:hover {
+    background: rgba(255, 255, 255, .14);
+}
+
+.oswm-theme-chart-controls {
+    padding: 10px 14px;
+    border-bottom: 1px solid #dce3e6;
+    background: #f7f9fa;
+}
+
+.oswm-theme-chart-scope {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.oswm-theme-chart-scope input {
+    width: 17px;
+    height: 17px;
+    accent-color: #3a4f2e;
+}
+
+.oswm-theme-chart-scope small {
+    color: #63747b;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.oswm-theme-chart-status {
+    margin: 0;
+    padding: 8px 14px;
+    border-bottom: 1px solid #e1e7e9;
+    color: #53656d;
+    background: #fff;
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+.oswm-theme-chart-content {
+    min-height: 100px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: 10px 12px 14px;
+}
+
+.oswm-theme-chart-section + .oswm-theme-chart-section {
+    margin-top: 13px;
+    border-top: 1px solid #dce3e6;
+    padding-top: 12px;
+}
+
+.oswm-theme-chart-section h3 {
+    margin: 0 0 4px;
+    font-size: 14px;
+}
+
+.oswm-theme-chart-canvas {
+    width: 100%;
+    min-height: 160px;
+}
+
+.oswm-theme-chart-metric {
+    margin: 3px 2px 0;
+    color: #40545c;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.oswm-theme-chart-empty,
+.oswm-theme-chart-error {
+    margin: 14px 4px;
+    padding: 12px;
+    border-radius: 6px;
+    color: #53656d;
+    background: #f1f5f6;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.oswm-theme-chart-error {
+    color: #7c2525;
+    background: #fff0f0;
+}
+
+.oswm-theme-chart-table-wrap {
+    margin-top: 9px;
+    color: #40545c;
+    font-size: 11px;
+}
+
+.oswm-theme-chart-table-wrap summary {
+    width: fit-content;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.oswm-theme-chart-table-wrap table {
+    width: 100%;
+    margin-top: 7px;
+    border-collapse: collapse;
+}
+
+.oswm-theme-chart-table-wrap th,
+.oswm-theme-chart-table-wrap td {
+    border-bottom: 1px solid #e1e7e9;
+    padding: 5px 4px;
+    text-align: right;
+}
+
+.oswm-theme-chart-table-wrap th:first-child,
+.oswm-theme-chart-table-wrap td:first-child {
+    text-align: left;
+}
+
+@media (max-width: 640px) {
+    .oswm-theme-chart-panel {
+        position: fixed;
+        right: 10px;
+        bottom: 68px;
+        left: 10px;
+        width: auto;
+        max-height: 62vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .oswm-theme-chart-toggle,
+    .oswm-theme-chart-panel {
+        transition: none;
+    }
+}
