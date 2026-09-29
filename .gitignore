@@ -192,3 +192,6 @@ data/hazard_analysis/.*.tmp.*
 tests/
 tests.pyscratch/
 scratch
+
+# OSWM build engine is checked out ephemerally by CI
+oswm_codebase/
