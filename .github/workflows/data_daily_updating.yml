@@ -1,6 +1,7 @@
 name: data_daily_updating
 
 on:
+  # Merging runtime repairs triggers a complete canary rebuild.
   push:
     branches: [main]
     paths:
