@@ -4,22 +4,54 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Tue, 29 Sep 2026 17:20:25 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 14:12:06 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 189702482 by Vinicius Moraes (0 additions, 12 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189702482</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189702482&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização de bloqueios e rotas de ônibus nas imediações da Praça Eufrásio Correia, no contexto das obras do Ligeirão Leste / Oeste&lt;/p&gt;
+        <title>[Activity] OSM Changeset 189703320 by Vinicius Moraes (4 additions, 18 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/189703320</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189703320&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Reclassificação de vias para tertiary, priorizando rede secondary, considerando Mapa do Sistema Viário 2025 e uso das vias baseado no conhecimento local&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 4&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 18&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189703320&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189703320&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Sep 2026 00:34:20 GMT</pubDate>
+        <guid isPermaLink="false">activity_189703320</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 189704899 by Vinicius Moraes (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/189704899</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189704899&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Nova estação-tubo Rodoferroviária; alinhamento da canaleta exclusiva para ônibus; atualização das rotas de ônibus na região&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 12&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189702482&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189702482&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189704899&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189704899&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 28 Sep 2026 23:34:21 GMT</pubDate>
-        <guid isPermaLink="false">activity_189702482</guid>
+        <pubDate>Tue, 29 Sep 2026 02:04:51 GMT</pubDate>
+        <guid isPermaLink="false">activity_189704899</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 189703986 by Vinicius Moraes (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/189703986</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189703986&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Implantação visual do novo Terminal Capão da Imbuia; obras em andamento visíveis no solo&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189703986&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189703986&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Sep 2026 01:11:24 GMT</pubDate>
+        <guid isPermaLink="false">activity_189703986</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>

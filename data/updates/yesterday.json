@@ -1,15 +1,41 @@
 [
     {
-        "id": 189702482,
+        "id": 189703320,
         "user": "Vinicius Moraes",
         "uid": 7920187,
-        "comment": "Atualização de bloqueios e rotas de ônibus nas imediações da Praça Eufrásio Correia, no contexto das obras do Ligeirão Leste / Oeste",
-        "created_at": "2026-09-28T23:34:21Z",
-        "changeset_changes_count": 69,
-        "oswm_changes_count": 12,
-        "changes_count": 69,
+        "comment": "Reclassificação de vias para tertiary, priorizando rede secondary, considerando Mapa do Sistema Viário 2025 e uso das vias baseado no conhecimento local",
+        "created_at": "2026-09-29T00:34:20Z",
+        "changeset_changes_count": 215,
+        "oswm_changes_count": 22,
+        "changes_count": 215,
+        "additions": 4,
+        "modifications": 18,
+        "deletions": 0
+    },
+    {
+        "id": 189704899,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Nova estação-tubo Rodoferroviária; alinhamento da canaleta exclusiva para ônibus; atualização das rotas de ônibus na região",
+        "created_at": "2026-09-29T02:04:51Z",
+        "changeset_changes_count": 90,
+        "oswm_changes_count": 2,
+        "changes_count": 90,
         "additions": 0,
-        "modifications": 12,
+        "modifications": 2,
+        "deletions": 0
+    },
+    {
+        "id": 189703986,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Implantação visual do novo Terminal Capão da Imbuia; obras em andamento visíveis no solo",
+        "created_at": "2026-09-29T01:11:24Z",
+        "changeset_changes_count": 39,
+        "oswm_changes_count": 2,
+        "changes_count": 39,
+        "additions": 0,
+        "modifications": 2,
         "deletions": 0
     }
 ]

@@ -1,15 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-09-29T17:09:20Z",
-  "mode": "generate",
-  "reason": "forced",
+  "checked_at": "2026-09-30T14:01:05Z",
+  "mode": "rebuild",
+  "reason": "codebase_revision_changed",
   "watcher_status": 0,
-  "force": true,
-  "current_codebase_revision": "e729ceb75dc90a7fb51b52b526defe1854022a0e",
-  "recorded_codebase_revision": "6ac4a5dc71428ca59abf294afb7bc3bb2ab20a82",
+  "force": false,
+  "current_codebase_revision": "965a16397ef6ea8277a23555af982076fa839163",
+  "recorded_codebase_revision": "e729ceb75dc90a7fb51b52b526defe1854022a0e",
   "missing_raw": [],
-  "missing_required": [
-    "oswm-build.json",
-    "oswm_runtime/runtime_manifest.json"
-  ]
+  "missing_required": []
 }
