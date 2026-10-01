@@ -14,6 +14,7 @@
             "uncontrolled"
         ],
         "crossing:markings": [
+            "yes",
             "no"
         ],
         "bicycle": [
@@ -57,6 +58,7 @@
             "Rua Jornalista Paulino de Almeida",
             "Rua Mem de Sá",
             "Rua Dinorá Cardoso de Lima",
+            "Avenida São José",
             "Alameda Princesa Izabel",
             "Rua Schiller",
             "Rua Monsenhor Celso",
@@ -1325,6 +1327,9 @@
         "wheelchair": [
             "yes"
         ],
+        "traffic_calming": [
+            "table"
+        ],
         "mapillary": [
             "820843575194518",
             "336765614713898",
@@ -1372,9 +1377,6 @@
             "unpaved",
             "paved",
             "concrete:plates"
-        ],
-        "traffic_calming": [
-            "table"
         ],
         "foot": [
             "permissive",
@@ -1499,6 +1501,10 @@
             "yes",
             "no",
             "limited"
+        ],
+        "traffic_calming": [
+            "table",
+            "hump"
         ],
         "mapillary": [
             "616392826423407",
@@ -1633,10 +1639,6 @@
             "unpaved",
             "cobblestone"
         ],
-        "traffic_calming": [
-            "table",
-            "hump"
-        ],
         "kerb": [
             "lowered",
             "flush",
@@ -1718,11 +1720,11 @@
         "highway": [
             "pedestrian",
             "service",
+            "tertiary",
             "residential",
             "construction",
             "footway",
             "steps",
-            "tertiary",
             "cycleway",
             "living_street",
             "path",
@@ -1813,6 +1815,7 @@
             "Jardim Ambiental Sete de Setembro",
             "Praça Zacarias",
             "Travessa da Lapa",
+            "Avenida Presidente Affonso Camargo",
             "Rua XV de Novembro",
             "Rua Sanito Rocha",
             "Rua Professor João Mazzarotto",
@@ -2346,7 +2349,6 @@
             "Rua Celina Terezinha Canha",
             "Rua Rio Araguari",
             "Caminho das Araucárias",
-            "PERIGO",
             "Rua Ivo Flemming",
             "Rua Alfredo Heisler",
             "Rua Fernando Cretella",
@@ -2447,6 +2449,9 @@
             "no",
             "limited"
         ],
+        "traffic_calming": [
+            "table"
+        ],
         "mapillary": [
             "325920459044689",
             "186590566672442",
@@ -2479,9 +2484,6 @@
             "Petit_Pavê",
             "compacted",
             "unhewn_cobblestone"
-        ],
-        "traffic_calming": [
-            "table"
         ],
         "foot": [
             "yes",
@@ -2584,8 +2586,8 @@
         ],
         "sidewalk": [
             "both",
-            "right",
             "no",
+            "right",
             "left",
             "yes"
         ],

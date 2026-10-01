@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-09-30T14:05:59+00:00",
+    "updated": "2026-10-01T00:35:41+00:00",
     "node_registry": {
-      "Data Fetching": "2026-09-29T17:10:30Z",
-      "Data Pre-Processing": "2026-09-30T14:01:10Z",
+      "Data Fetching": "2026-10-01T00:32:40Z",
+      "Data Pre-Processing": "2026-10-01T00:32:44Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-09-30T14:05:59Z",
+      "Statistical Charts": "2026-10-01T00:35:41Z",
       "Wiki check for keys": "2026-09-27T13:57:23Z",
-      "Data Quality Tool": "2026-09-30T14:02:29Z",
+      "Data Quality Tool": "2026-10-01T00:33:53Z",
       "Versioning Data": "2026-09-27T13:54:51Z",
-      "Completeness Analysis": "2026-09-30T14:05:45Z",
+      "Completeness Analysis": "2026-10-01T00:35:28Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
-      "OSWM Codebase Revision": "e729ceb75dc90a7fb51b52b526defe1854022a0e",
-      "Pipeline Success": "2026-09-29T17:20:26Z"
+      "OSWM Codebase Revision": "965a16397ef6ea8277a23555af982076fa839163",
+      "Pipeline Success": "2026-09-30T14:12:07Z"
     }
   },
   "lineage": {
@@ -104,11 +104,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-09-30T14:05:59+00:00",
+    "generated_at": "2026-10-01T00:35:41+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "965a16397ef6ea8277a23555af982076fa839163",
-      "commit_date": "2026-09-30T09:52:09-03:00"
+      "commit": "c440c911cb07c1f54658a799a6c1fedb028c0b0a",
+      "commit_date": "2026-09-30T21:27:17-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -119,10 +119,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/kerbs.parquet",
     "media_type": "application/vnd.apache.parquet",
     "format": "GeoParquet",
-    "byte_size": 106026,
+    "byte_size": 106028,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "527d35098bc72871ef7e73952ab022abd242cf0bb91c8157e4d809e1a6921750"
+      "value": "59fe9f4cf57455175c418dbe3cb102c036a0d140155276f3a6a427a228ecca50"
     }
   },
   "links": [

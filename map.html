@@ -183,7 +183,7 @@
 
         import * as maplibregl from 'https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.mjs';
         import { Protocol as PmtilesProtocol } from 'https://cdn.jsdelivr.net/npm/pmtiles@4/+esm';
-        import { OswmLegendControl } from './oswm_codebase/webmap/oswm_legend_control.js';
+        import { OswmLegendControl } from './oswm_runtime/webmap/oswm_legend_control.js';
 
 
         // Global Control Variables
@@ -537,7 +537,7 @@
                     await applySelectedStyle(styleSelector.value || 'footway_categories');
                 });
 
-                import('./oswm_codebase/webmap/theme_charts/theme_chart_control.js')
+                import('./oswm_runtime/webmap/theme_charts/theme_chart_control.js')
                     .then(({ installThemeChartControl }) => {
                         themeChartControl = installThemeChartControl(map, params, {
                             position: 'bottom-left',

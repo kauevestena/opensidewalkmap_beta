@@ -6,6 +6,8 @@
     "assets",
     "routing",
     "hazard_analysis",
-    "webmap/snapshot"
+    "webmap/snapshot",
+    "webmap/oswm_legend_control.js",
+    "webmap/theme_charts"
   ]
 }

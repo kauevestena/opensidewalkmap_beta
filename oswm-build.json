@@ -2,11 +2,11 @@
   "schema_version": 1,
   "build_contract": 1,
   "node": "Curitiba",
-  "generated_at": "2026-09-30T14:12:07Z",
-  "mode": "rebuild",
+  "generated_at": "2026-10-01T00:41:38Z",
+  "mode": "generate",
   "core": {
     "repository": "kauevestena/oswm_codebase",
-    "sha": "965a16397ef6ea8277a23555af982076fa839163"
+    "sha": "c440c911cb07c1f54658a799a6c1fedb028c0b0a"
   },
   "runtime": {
     "schema_version": 1,
@@ -16,7 +16,9 @@
       "assets",
       "routing",
       "hazard_analysis",
-      "webmap/snapshot"
+      "webmap/snapshot",
+      "webmap/oswm_legend_control.js",
+      "webmap/theme_charts"
     ]
   },
   "products": {
