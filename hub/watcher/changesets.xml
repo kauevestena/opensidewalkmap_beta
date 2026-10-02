@@ -4,71 +4,7 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Thu, 01 Oct 2026 14:42:26 GMT</lastBuildDate>
-    <item>
-        <title>[Activity] OSM Changeset 189756034 by Vinicius Moraes (1 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189756034</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189756034&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Remoção de caminho inseguro e não oficial para pedestres; melhoria na classificação e alinhamento de rodovias e cruzamentos&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189756034&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189756034&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Sep 2026 05:08:35 GMT</pubDate>
-        <guid isPermaLink="false">activity_189756034</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 189755504 by Vinicius Moraes (0 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189755504</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189755504&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Correção de ponto fixado erroneamente a rodovia no conjunto de alterações 188053784&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189755504&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189755504&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Sep 2026 04:42:24 GMT</pubDate>
-        <guid isPermaLink="false">activity_189755504</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 189768882 by Pan Perníček (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189768882</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189768882&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Pan Perníček&quot;&gt;Pan Perníček&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; #Mapycom - Removed parking, edited geometry of street&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189768882&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189768882&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Sep 2026 11:09:50 GMT</pubDate>
-        <guid isPermaLink="false">activity_189768882</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 189755125 by Vinicius Moraes (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/189755125</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 189755125&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Delimitação de imóveis na regional Cajuru&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/189755125&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/189755125&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Sep 2026 04:27:06 GMT</pubDate>
-        <guid isPermaLink="false">activity_189755125</guid>
-    </item>
+    <lastBuildDate>Fri, 02 Oct 2026 14:01:14 GMT</lastBuildDate>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
         <link>https://www.openstreetmap.org/changeset/182321412</link>
