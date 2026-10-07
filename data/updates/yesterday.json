@@ -1,1 +1,15 @@
-[]
+[
+    {
+        "id": 190108165,
+        "user": "Diogo RM",
+        "uid": 19463893,
+        "comment": "Ajuste de rua.",
+        "created_at": "2026-10-06T18:44:54Z",
+        "changeset_changes_count": 3,
+        "oswm_changes_count": 1,
+        "changes_count": 3,
+        "additions": 0,
+        "modifications": 1,
+        "deletions": 0
+    }
+]

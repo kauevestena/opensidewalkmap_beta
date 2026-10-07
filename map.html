@@ -541,7 +541,9 @@
                     .then(({ installThemeChartControl }) => {
                         themeChartControl = installThemeChartControl(map, params, {
                             position: 'bottom-left',
-                            loadECharts: () => import('https://cdn.jsdelivr.net/npm/echarts@6.1.0/+esm'),
+                            // Use the official single bundle: CDN +esm rebundling splits
+                            // ZRender class identities and produces empty SVG charts.
+                            loadECharts: () => import('https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.esm.min.js'),
                             getActiveStyleKey: () => styleSelector.value || 'footway_categories'
                         });
                     })

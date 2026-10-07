@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-10-05T16:17:47+00:00",
+    "updated": "2026-10-07T11:53:16+00:00",
     "node_registry": {
       "Data Fetching": "2026-10-01T00:32:40Z",
-      "Data Pre-Processing": "2026-10-04T13:57:09Z",
+      "Data Pre-Processing": "2026-10-07T11:49:31Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-10-04T13:57:23Z",
+      "Statistical Charts": "2026-10-07T11:53:16Z",
       "Wiki check for keys": "2026-10-04T13:59:38Z",
-      "Data Quality Tool": "2026-10-04T13:57:16Z",
+      "Data Quality Tool": "2026-10-07T11:50:53Z",
       "Versioning Data": "2026-10-04T13:57:05Z",
-      "Completeness Analysis": "2026-10-01T00:35:28Z",
+      "Completeness Analysis": "2026-10-07T11:53:02Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "c440c911cb07c1f54658a799a6c1fedb028c0b0a",
-      "Pipeline Success": "2026-10-05T16:17:47Z"
+      "Pipeline Success": "2026-10-06T14:21:35Z"
     }
   },
   "lineage": {
@@ -103,11 +103,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-10-05T16:17:47+00:00",
+    "generated_at": "2026-10-07T11:53:16+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "c440c911cb07c1f54658a799a6c1fedb028c0b0a",
-      "commit_date": "2026-09-30T21:27:17-03:00"
+      "commit": "0536100724de170e8d92353cd8a4bb8166eb2e70",
+      "commit_date": "2026-10-07T06:38:04-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -118,10 +118,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/potential_footways.pmtiles",
     "media_type": "application/vnd.pmtiles",
     "format": "PMTiles",
-    "byte_size": 10256948,
+    "byte_size": 10258631,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "5c4bd7a4bcb8d336e70d8c78590c14a262d91e08cb57c2ca3a1827d1a80ee4ec"
+      "value": "64ec92c1896ed3d067ae0748fc29240d534e6a0130b4ec1e94424ef9a679b53b"
     }
   },
   "links": [
