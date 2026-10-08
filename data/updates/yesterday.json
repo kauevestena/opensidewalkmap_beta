@@ -1,13 +1,26 @@
 [
     {
-        "id": 190108165,
-        "user": "Diogo RM",
-        "uid": 19463893,
-        "comment": "Ajuste de rua.",
-        "created_at": "2026-10-06T18:44:54Z",
-        "changeset_changes_count": 3,
+        "id": 190157086,
+        "user": "LakeInari",
+        "uid": 23046063,
+        "comment": "Modified geometry near Rua Eugênia Segala Foggiatto #adt",
+        "created_at": "2026-10-07T16:16:01Z",
+        "changeset_changes_count": 8,
         "oswm_changes_count": 1,
-        "changes_count": 3,
+        "changes_count": 8,
+        "additions": 0,
+        "modifications": 1,
+        "deletions": 0
+    },
+    {
+        "id": 190122812,
+        "user": "LakeShala",
+        "uid": 23638952,
+        "comment": "Created service highway near Rua Ipiranga #adt",
+        "created_at": "2026-10-07T04:10:36Z",
+        "changeset_changes_count": 40,
+        "oswm_changes_count": 1,
+        "changes_count": 40,
         "additions": 0,
         "modifications": 1,
         "deletions": 0

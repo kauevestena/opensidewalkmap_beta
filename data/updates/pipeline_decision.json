@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-10-07T14:39:18Z",
-  "mode": "skip",
-  "reason": "no_osm_changes",
-  "watcher_status": 0,
+  "checked_at": "2026-10-08T14:45:26Z",
+  "mode": "generate",
+  "reason": "osm_changes_or_inconclusive_check",
+  "watcher_status": 1,
   "force": false,
   "current_codebase_revision": "0536100724de170e8d92353cd8a4bb8166eb2e70",
   "recorded_codebase_revision": "0536100724de170e8d92353cd8a4bb8166eb2e70",

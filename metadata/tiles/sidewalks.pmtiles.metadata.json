@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-10-07T11:59:12+00:00",
+    "updated": "2026-10-08T14:50:51+00:00",
     "node_registry": {
-      "Data Fetching": "2026-10-01T00:32:40Z",
-      "Data Pre-Processing": "2026-10-07T11:49:31Z",
+      "Data Fetching": "2026-10-08T14:47:42Z",
+      "Data Pre-Processing": "2026-10-08T14:47:47Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-10-07T11:53:16Z",
+      "Statistical Charts": "2026-10-08T14:50:51Z",
       "Wiki check for keys": "2026-10-04T13:59:38Z",
-      "Data Quality Tool": "2026-10-07T11:50:53Z",
+      "Data Quality Tool": "2026-10-08T14:49:08Z",
       "Versioning Data": "2026-10-04T13:57:05Z",
-      "Completeness Analysis": "2026-10-07T11:53:02Z",
+      "Completeness Analysis": "2026-10-08T14:50:38Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "0536100724de170e8d92353cd8a4bb8166eb2e70",
-      "Pipeline Success": "2026-10-07T11:59:12Z"
+      "Pipeline Success": "2026-10-07T14:40:23Z"
     }
   },
   "lineage": {
@@ -103,7 +103,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-10-07T11:59:12+00:00",
+    "generated_at": "2026-10-08T14:50:51+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "0536100724de170e8d92353cd8a4bb8166eb2e70",
@@ -118,10 +118,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/sidewalks.pmtiles",
     "media_type": "application/vnd.pmtiles",
     "format": "PMTiles",
-    "byte_size": 12345277,
+    "byte_size": 12339937,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "3d4b702a2f9e6ffa1a1848642de4945f2d9150d0825158d387b5e76c773b86f8"
+      "value": "4ce21fda119e58b91a26ac1359abea4fc532c1b05b5501237df1266127e48ed3"
     }
   },
   "links": [

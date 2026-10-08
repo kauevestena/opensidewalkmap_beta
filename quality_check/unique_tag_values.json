@@ -1196,9 +1196,6 @@
         "footway": [
             "sidewalk"
         ],
-        "note": [
-            "é na verdade uma ciclovia compartilhada, mas a construção do viaduto interrompe e não tem saída"
-        ],
         "bridge": [
             "yes"
         ],
@@ -1256,6 +1253,9 @@
         ],
         "embankment": [
             "yes"
+        ],
+        "note": [
+            "é na verdade uma ciclovia compartilhada, mas a construção do viaduto interrompe e não tem saída"
         ],
         "ramp:wheelchair": [
             "no"
@@ -1722,11 +1722,11 @@
             "service",
             "tertiary",
             "residential",
-            "construction",
             "footway",
             "steps",
             "cycleway",
             "living_street",
+            "construction",
             "path",
             "unclassified",
             "track",
@@ -2733,30 +2733,6 @@
             "traffic_island",
             "access_aisle"
         ],
-        "check_date": [
-            "2026-08-25",
-            "2022-01-10",
-            "2026-09-09",
-            "2025-08-13",
-            "2026-08-26",
-            "2025-01-10",
-            "2026-03-19",
-            "2026-09-11",
-            "2025-02-08"
-        ],
-        "construction": [
-            "tertiary",
-            "trunk",
-            "secondary",
-            "primary",
-            "residential",
-            "bridge"
-        ],
-        "note": [
-            "Fim do bloqueio previsto para 22/09/2026",
-            "Data estimada de reabertura da via, podendo ocorrer antes ou depois",
-            "Vias em construção; material baseado no mapa disponibilizado pela UTAG em seu portal (Obras Novo Inter 2 - Lote 4)"
-        ],
         "bridge": [
             "yes",
             "boardwalk",
@@ -2808,6 +2784,16 @@
         "cutting": [
             "yes"
         ],
+        "check_date": [
+            "2022-01-10",
+            "2026-09-09",
+            "2025-08-13",
+            "2026-08-26",
+            "2025-01-10",
+            "2026-03-19",
+            "2026-09-11",
+            "2025-02-08"
+        ],
         "leisure": [
             "park",
             "track"
@@ -2821,6 +2807,14 @@
         "motorcar": [
             "no",
             "yes"
+        ],
+        "construction": [
+            "trunk",
+            "secondary",
+            "tertiary",
+            "primary",
+            "residential",
+            "bridge"
         ],
         "maxspeed:type": [
             "BR:urban",
@@ -2997,6 +2991,10 @@
         ],
         "sport": [
             "running"
+        ],
+        "note": [
+            "Data estimada de reabertura da via, podendo ocorrer antes ou depois",
+            "Vias em construção; material baseado no mapa disponibilizado pela UTAG em seu portal (Obras Novo Inter 2 - Lote 4)"
         ],
         "cycleway:left": [
             "lane"
