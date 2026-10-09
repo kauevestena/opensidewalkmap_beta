@@ -1,6 +1,6 @@
 {
   "node_name": "Curitiba",
-  "generated_at": "2026-10-08T14:57:07Z",
+  "generated_at": "2026-10-09T15:08:45Z",
   "bbox": [
     -25.6435043,
     -49.38914,
@@ -40,7 +40,7 @@
       }
     }
   },
-  "total_projects_found": 3,
+  "total_projects_found": 2,
   "projects": [
     {
       "id": 1330,
@@ -61,22 +61,6 @@
         -25.472648,
         -49.215111,
         -25.44371
-      ]
-    },
-    {
-      "id": 666,
-      "title": "Building the Street and Sidewalk Basemap for Glidden, Iowa",
-      "service": "Tasking Manager",
-      "instance": "https://tasks.teachosm.org/",
-      "url": "https://tasks.teachosm.org/projects/666",
-      "status": "Published",
-      "description": "The Iowa State University Geospatial Extension Team is working on a community planning project in the City of Glidden, Iowa.  They have asked us to help them get started by mapping the city's streets, alleys, sidewalks, crosswalks, and parks.",
-      "country": [
-        "United States"
-      ],
-      "matched_keywords": [
-        "sidewalk",
-        "walk"
       ]
     },
     {

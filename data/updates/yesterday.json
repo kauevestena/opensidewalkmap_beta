@@ -1,26 +1,13 @@
 [
     {
-        "id": 190157086,
-        "user": "LakeInari",
-        "uid": 23046063,
-        "comment": "Modified geometry near Rua Eugênia Segala Foggiatto #adt",
-        "created_at": "2026-10-07T16:16:01Z",
-        "changeset_changes_count": 8,
+        "id": 190211692,
+        "user": "TallebudgeraValley",
+        "uid": 24223240,
+        "comment": "Created highwya near Rua Câmara Júnior #adt",
+        "created_at": "2026-10-08T16:45:36Z",
+        "changeset_changes_count": 7,
         "oswm_changes_count": 1,
-        "changes_count": 8,
-        "additions": 0,
-        "modifications": 1,
-        "deletions": 0
-    },
-    {
-        "id": 190122812,
-        "user": "LakeShala",
-        "uid": 23638952,
-        "comment": "Created service highway near Rua Ipiranga #adt",
-        "created_at": "2026-10-07T04:10:36Z",
-        "changeset_changes_count": 40,
-        "oswm_changes_count": 1,
-        "changes_count": 40,
+        "changes_count": 7,
         "additions": 0,
         "modifications": 1,
         "deletions": 0
