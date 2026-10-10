@@ -1,15 +1,28 @@
 [
     {
-        "id": 190211692,
-        "user": "TallebudgeraValley",
-        "uid": 24223240,
-        "comment": "Created highwya near Rua Câmara Júnior #adt",
-        "created_at": "2026-10-08T16:45:36Z",
-        "changeset_changes_count": 7,
+        "id": 190250306,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Fechamento de via e sentido único na Av. Presidente Arthur Bernardes",
+        "created_at": "2026-10-09T12:20:43Z",
+        "changeset_changes_count": 8,
         "oswm_changes_count": 1,
-        "changes_count": 7,
+        "changes_count": 8,
         "additions": 0,
         "modifications": 1,
+        "deletions": 0
+    },
+    {
+        "id": 190228465,
+        "user": "Darigaf",
+        "uid": 19590814,
+        "comment": "Adicionado trilha informal, ajustado tag digitada errada",
+        "created_at": "2026-10-09T01:53:21Z",
+        "changeset_changes_count": 20,
+        "oswm_changes_count": 1,
+        "changes_count": 20,
+        "additions": 1,
+        "modifications": 0,
         "deletions": 0
     }
 ]

@@ -4,22 +4,38 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Fri, 09 Oct 2026 15:09:40 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 13:55:20 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 190211692 by TallebudgeraValley (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/190211692</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190211692&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/TallebudgeraValley&quot;&gt;TallebudgeraValley&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Created highwya near Rua Câmara Júnior #adt&lt;/p&gt;
+        <title>[Activity] OSM Changeset 190250306 by Vinicius Moraes (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/190250306</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190250306&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Fechamento de via e sentido único na Av. Presidente Arthur Bernardes&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190211692&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190211692&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190250306&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190250306&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 08 Oct 2026 16:45:36 GMT</pubDate>
-        <guid isPermaLink="false">activity_190211692</guid>
+        <pubDate>Fri, 09 Oct 2026 12:20:43 GMT</pubDate>
+        <guid isPermaLink="false">activity_190250306</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 190228465 by Darigaf (1 additions, 0 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/190228465</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190228465&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Darigaf&quot;&gt;Darigaf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Adicionado trilha informal, ajustado tag digitada errada&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190228465&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190228465&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Oct 2026 01:53:21 GMT</pubDate>
+        <guid isPermaLink="false">activity_190228465</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
