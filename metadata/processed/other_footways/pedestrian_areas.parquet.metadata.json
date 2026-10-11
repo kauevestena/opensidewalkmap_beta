@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-10-10T13:56:35+00:00",
+    "updated": "2026-10-11T15:00:51+00:00",
     "node_registry": {
       "Data Fetching": "2026-10-08T14:47:42Z",
-      "Data Pre-Processing": "2026-10-09T14:53:52Z",
+      "Data Pre-Processing": "2026-10-11T14:57:47Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-10-09T15:00:46Z",
-      "Wiki check for keys": "2026-10-04T13:59:38Z",
-      "Data Quality Tool": "2026-10-09T14:55:12Z",
-      "Versioning Data": "2026-10-04T13:57:05Z",
+      "Statistical Charts": "2026-10-11T14:58:01Z",
+      "Wiki check for keys": "2026-10-11T15:00:51Z",
+      "Data Quality Tool": "2026-10-11T14:57:54Z",
+      "Versioning Data": "2026-10-11T14:57:43Z",
       "Completeness Analysis": "2026-10-09T15:00:33Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "03f78441316cd5d9b56ce1c7f507a6e4d591b6be",
-      "Pipeline Success": "2026-10-10T13:56:35Z"
+      "Pipeline Success": "2026-10-11T14:16:42Z"
     }
   },
   "lineage": {
@@ -104,7 +104,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-10-10T13:56:35+00:00",
+    "generated_at": "2026-10-11T15:00:51+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "03f78441316cd5d9b56ce1c7f507a6e4d591b6be",
@@ -119,10 +119,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/processed/other_footways/pedestrian_areas.parquet",
     "media_type": "application/vnd.apache.parquet",
     "format": "GeoParquet",
-    "byte_size": 119464,
+    "byte_size": 119462,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "a0478ec9a5f13bac012493f8a1a7fe27985a3ffe93e45d9bc8c051628ac15d58"
+      "value": "505cc727c4939ac2301ca1ca805c18a9c71be31f9b528946419ef471cffd4a91"
     }
   },
   "links": [
