@@ -4,38 +4,38 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Sat, 10 Oct 2026 13:55:20 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 14:15:27 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 190250306 by Vinicius Moraes (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/190250306</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190250306&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Fechamento de via e sentido único na Av. Presidente Arthur Bernardes&lt;/p&gt;
+        <title>[Activity] OSM Changeset 190310519 by SomeoneElse_Revert (0 additions, 8 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/190310519</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190310519&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/SomeoneElse_Revert&quot;&gt;SomeoneElse_Revert&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Reverting vandalism.  See https://www.openstreetmap.org/user_blocks/21410&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 8&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190250306&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190250306&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190310519&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190310519&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 09 Oct 2026 12:20:43 GMT</pubDate>
-        <guid isPermaLink="false">activity_190250306</guid>
+        <pubDate>Sat, 10 Oct 2026 16:02:37 GMT</pubDate>
+        <guid isPermaLink="false">activity_190310519</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 190228465 by Darigaf (1 additions, 0 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/190228465</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190228465&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Darigaf&quot;&gt;Darigaf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Adicionado trilha informal, ajustado tag digitada errada&lt;/p&gt;
+        <title>[Activity] OSM Changeset 190307387 by Darigaf (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/190307387</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190307387&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Darigaf&quot;&gt;Darigaf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Ajustado traçacado rua baseado no esri mais atualizado. Alterado muros para refletir novas estruturas, adicionado estacionamento&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190228465&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190228465&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190307387&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190307387&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 09 Oct 2026 01:53:21 GMT</pubDate>
-        <guid isPermaLink="false">activity_190228465</guid>
+        <pubDate>Sat, 10 Oct 2026 15:01:04 GMT</pubDate>
+        <guid isPermaLink="false">activity_190307387</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
