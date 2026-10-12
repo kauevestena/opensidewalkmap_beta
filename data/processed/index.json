@@ -5,6 +5,7 @@
         "kerbs.parquet",
         "other_footways.parquet",
         "roads_for_completeness.parquet",
+        "roads_for_completeness.parquet.source.json",
         "sidewalks.parquet"
     ],
     "subfolders": [

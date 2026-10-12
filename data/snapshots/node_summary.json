@@ -1,7 +1,7 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-10-09T14:55:03.075181+00:00",
+    "generated_at": "2026-10-12T16:55:26.544047+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
@@ -772,34 +772,34 @@
         "age": {
             "kind": "numeric",
             "total": 20025,
-            "known": 20024,
-            "unknown": 1,
+            "known": 20025,
+            "unknown": 0,
             "unknownPercent": 0.0,
             "invalid": 0,
-            "min": 0.013689,
-            "max": 22.16564,
-            "mean": 3.60732,
-            "median": 3.830253,
+            "min": 0.005476,
+            "max": 22.173854,
+            "mean": 3.615076,
+            "median": 3.838467,
             "bins": [
                 {
                     "label": "0–<2",
                     "lower": 0.0,
                     "upper": 2.0,
-                    "count": 3094,
+                    "count": 3096,
                     "color": "#90d743"
                 },
                 {
                     "label": "2–<4",
                     "lower": 2.0,
                     "upper": 4.0,
-                    "count": 13343,
+                    "count": 13335,
                     "color": "#35b779"
                 },
                 {
                     "label": "4–<6",
                     "lower": 4.0,
                     "upper": 6.0,
-                    "count": 2226,
+                    "count": 2233,
                     "color": "#21918c"
                 },
                 {
@@ -852,20 +852,20 @@
         "n_revs": {
             "kind": "numeric",
             "total": 20025,
-            "known": 20022,
-            "unknown": 1,
+            "known": 20023,
+            "unknown": 0,
             "unknownPercent": 0.0,
             "invalid": 2,
             "min": 1.0,
             "max": 71.0,
-            "mean": 2.107632,
+            "mean": 2.107776,
             "median": 1.0,
             "bins": [
                 {
                     "label": "0–<5",
                     "lower": 0.0,
                     "upper": 5.0,
-                    "count": 18283,
+                    "count": 18284,
                     "color": "#1d1147"
                 },
                 {
@@ -886,14 +886,14 @@
                     "label": "15–<20",
                     "lower": 15.0,
                     "upper": 20.0,
-                    "count": 40,
+                    "count": 39,
                     "color": "#b73779"
                 },
                 {
                     "label": "20–<25",
                     "lower": 20.0,
                     "upper": 25.0,
-                    "count": 13,
+                    "count": 14,
                     "color": "#e75263"
                 },
                 {
