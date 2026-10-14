@@ -4,23 +4,7 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Tue, 13 Oct 2026 15:13:49 GMT</lastBuildDate>
-    <item>
-        <title>[Activity] OSM Changeset 190376157 by MountGerizim (2 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/190376157</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190376157&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/MountGerizim&quot;&gt;MountGerizim&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Added oneway tag near Rua Professora Olívia Nogueira #adt&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 2&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190376157&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190376157&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 12 Oct 2026 02:02:57 GMT</pubDate>
-        <guid isPermaLink="false">activity_190376157</guid>
-    </item>
+    <lastBuildDate>Wed, 14 Oct 2026 13:16:59 GMT</lastBuildDate>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
         <link>https://www.openstreetmap.org/changeset/182321412</link>
