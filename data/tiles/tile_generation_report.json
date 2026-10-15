@@ -1,57 +1,57 @@
 {
   "sidewalks": {
     "status": "ok",
-    "source_sha256": "179fc93e08996afc25d301ad9be663ba6aa3014ee2fede73db66f6fa24c77d27",
-    "filesize": 12338553,
+    "source_sha256": "6e112d18dbe7d6749ce0a3f78cd6b6b7bf3fbf081fe30aa57d9785f258365403",
+    "filesize": 12343867,
     "input_features": 8146,
     "max_zoom": 20
   },
   "crossings": {
     "status": "ok",
-    "source_sha256": "e42c0e4ff613b24878f39a03e4eac89c7a35e838c00f47c1e4f940b8542e3fc5",
-    "filesize": 2647338,
+    "source_sha256": "b20d55329f75ccf0d2ca6666ac8c174ac93d71ff7c53eb545c98515679602f6c",
+    "filesize": 2649058,
     "input_features": 2097,
     "max_zoom": 20
   },
   "kerbs": {
     "status": "ok",
-    "source_sha256": "e7c3bbf776c6f1799579c56f57035fbe2a44f2c94620f486407bdd73d7f70d54",
-    "filesize": 2081698,
+    "source_sha256": "70b8f9cf45996aee305c60469b326bbd036f6c3b1be7b92b89c6b4786ba154f8",
+    "filesize": 2082859,
     "input_features": 2853,
     "max_zoom": 20
   },
   "stairways": {
     "status": "ok",
-    "source_sha256": "c6f2c4a3b2860b055bcc098aa1f7b3b12be77b583848a8a3e0487a02d1a9e41d",
-    "filesize": 2071430,
+    "source_sha256": "9b1ef4ba0bab6afa7f458bc88ff5d300524e32ff4c9d1c245654ab87b5bf7a2f",
+    "filesize": 2071321,
     "input_features": 367,
     "max_zoom": 20
   },
   "main_footways": {
     "status": "ok",
-    "source_sha256": "bf018e7e5c8ad5e33b52af5b3956e9672870fe09b46d91fc5f7c022236d4b850",
-    "filesize": 39058750,
+    "source_sha256": "5c748ca1ea3bfe97aa09e36d0629d11761c251976eaed43b8a0c163e0db204c9",
+    "filesize": 39069354,
     "input_features": 5557,
     "max_zoom": 20
   },
   "potential_footways": {
     "status": "ok",
-    "source_sha256": "d9927851d48dc2b2cd45b83f265673a307015947c0292b4d398ca696ba17998c",
-    "filesize": 10262388,
+    "source_sha256": "36274427703fda9e2c4f0dcf234ca8a8def2bcb014fb553857ec5cb771cb0302",
+    "filesize": 10259539,
     "input_features": 740,
     "max_zoom": 20
   },
   "informal_footways": {
     "status": "ok",
-    "source_sha256": "aa03291d4a1e5e95e282e9342f82041381d0e29248fb072b5bd38124296b4b3f",
-    "filesize": 4285442,
+    "source_sha256": "e4ee3969fce71ceabefcf23c91138cebe1018496141c0310cf5ea3713909f771",
+    "filesize": 4287513,
     "input_features": 216,
     "max_zoom": 20
   },
   "pedestrian_areas": {
     "status": "ok",
-    "source_sha256": "504e30a488e45bc5a7e63e1283c5df478ba2a2970febc8bc609cfedbec72a77f",
-    "filesize": 1117958,
+    "source_sha256": "e53d4fef737be66315ab175b19a12fd51eeeacb38073447e499c69f5fad5c857",
+    "filesize": 1117680,
     "input_features": 49,
     "max_zoom": 20
   }
