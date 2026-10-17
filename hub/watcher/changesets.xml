@@ -4,54 +4,22 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Fri, 16 Oct 2026 12:37:38 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 11:43:44 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 190573560 by Vinicius Moraes (4 additions, 4 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/190573560</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190573560&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização das obras do Novo Inter 2 na região do Hauer; Rua Alcino Guanabara permanece com restrições para tráfego local, mas as obras estruturas já foram concluídas (por este motivo, removo tag highway=construction)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 4&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190573560&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190573560&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 15 Oct 2026 19:03:17 GMT</pubDate>
-        <guid isPermaLink="false">activity_190573560</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 190553808 by raldite (1 additions, 0 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/190553808</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190553808&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/raldite&quot;&gt;raldite&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; atualização de construções no parque&lt;/p&gt;
+        <title>[Activity] OSM Changeset 190625909 by Vinicius Moraes (1 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/190625909</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190625909&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Reclassificação do eixo estruturante Sul de forma condizente as placas de sinalização do local; é priorizado o acesso a Linha Verde e vice versa através das ruas Mário Gomes Cézar e Manoel Soares Lima&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190553808&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190553808&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190625909&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190625909&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 15 Oct 2026 12:03:31 GMT</pubDate>
-        <guid isPermaLink="false">activity_190553808</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 190551057 by raldite (1 additions, 0 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/190551057</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190551057&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/raldite&quot;&gt;raldite&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; atualização de ruas&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190551057&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190551057&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 15 Oct 2026 11:01:42 GMT</pubDate>
-        <guid isPermaLink="false">activity_190551057</guid>
+        <pubDate>Fri, 16 Oct 2026 20:53:43 GMT</pubDate>
+        <guid isPermaLink="false">activity_190625909</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>

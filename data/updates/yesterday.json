@@ -1,41 +1,15 @@
 [
     {
-        "id": 190573560,
+        "id": 190625909,
         "user": "Vinicius Moraes",
         "uid": 7920187,
-        "comment": "Atualização das obras do Novo Inter 2 na região do Hauer; Rua Alcino Guanabara permanece com restrições para tráfego local, mas as obras estruturas já foram concluídas (por este motivo, removo tag highway=construction)",
-        "created_at": "2026-10-15T19:03:17Z",
-        "changeset_changes_count": 63,
-        "oswm_changes_count": 8,
-        "changes_count": 63,
-        "additions": 4,
-        "modifications": 4,
-        "deletions": 0
-    },
-    {
-        "id": 190553808,
-        "user": "raldite",
-        "uid": 8774881,
-        "comment": "atualização de construções no parque",
-        "created_at": "2026-10-15T12:03:31Z",
-        "changeset_changes_count": 23,
-        "oswm_changes_count": 1,
-        "changes_count": 23,
+        "comment": "Reclassificação do eixo estruturante Sul de forma condizente as placas de sinalização do local; é priorizado o acesso a Linha Verde e vice versa através das ruas Mário Gomes Cézar e Manoel Soares Lima",
+        "created_at": "2026-10-16T20:53:43Z",
+        "changeset_changes_count": 86,
+        "oswm_changes_count": 3,
+        "changes_count": 86,
         "additions": 1,
-        "modifications": 0,
-        "deletions": 0
-    },
-    {
-        "id": 190551057,
-        "user": "raldite",
-        "uid": 8774881,
-        "comment": "atualização de ruas",
-        "created_at": "2026-10-15T11:01:42Z",
-        "changeset_changes_count": 26,
-        "oswm_changes_count": 1,
-        "changes_count": 26,
-        "additions": 1,
-        "modifications": 0,
+        "modifications": 2,
         "deletions": 0
     }
 ]
