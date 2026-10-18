@@ -65,7 +65,7 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-10-16T12:39:37+00:00",
+    "updated": "2026-10-17T11:44:52+00:00",
     "node_registry": {
       "Data Fetching": "2026-10-08T14:47:42Z",
       "Data Pre-Processing": "2026-10-15T12:46:32Z",
@@ -77,7 +77,7 @@
       "Completeness Analysis": "2026-10-15T12:50:35Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "bf6f98b2e72c48e8208e622d648dc7366e7d51f2",
-      "Pipeline Success": "2026-10-16T12:39:37Z"
+      "Pipeline Success": "2026-10-17T11:44:52Z"
     }
   },
   "lineage": {
@@ -100,7 +100,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-10-16T12:39:37+00:00",
+    "generated_at": "2026-10-17T11:44:52+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "bf6f98b2e72c48e8208e622d648dc7366e7d51f2",
@@ -143,7 +143,7 @@
       "byte_size": 353,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "7265f4a8e8f23208d534773d881257c40ea1a41addde5c3f4f29e486399daa9f"
+        "value": "b8e11de7e01b2266081950e23e229a774bd7dcad1fcc8eef81a54c0193140b5a"
       }
     },
     {
@@ -155,7 +155,7 @@
       "byte_size": 577,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "ee6009f6ae23e4a45b03c84c31fe66a35d0f845ee0b22900b4fe25b5702c529f"
+        "value": "dc4da911a891141668daf7e47a959f723e3d54288b521f82ccab8b9563deb33d"
       }
     },
     {
@@ -167,7 +167,7 @@
       "byte_size": 231,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "bbae14906d3135c9cfdc5135b885ed178e725e65eaa9d6526abd875858afb842"
+        "value": "461445863fd0dfe18bac23b5f09b4b952114fadf9cef78c229486ef676fd0758"
       }
     },
     {
@@ -179,7 +179,7 @@
       "byte_size": 93434,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "4531d6406a0d13333239a40b2b84538a03e776dc04ba3fb658ac04d8ec4104ac"
+        "value": "5f3fa60e822eae3b39d0e5357cac1931fdbf270fb9ab979d2d4f648e14ed4992"
       }
     },
     {
@@ -188,10 +188,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/updates/yesterday.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 552,
+      "byte_size": 3937,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "87b9612584a91d9b6e161209a07f62b1df6383641625d2458efaed859d19f318"
+        "value": "2f640edcc65b37b6c3864724ec337c444d4bcd8f30e576f41f08d138d80d43af"
       }
     }
   ],
