@@ -6,6 +6,8 @@ import {
     themeMetricSummary,
 } from "./theme_chart_options.js";
 
+// Stable capability marker for checking generated runtime deployments.
+export const THEME_CHART_VERSION = "viewport-idle-v1";
 const PANEL_ID = "oswm-theme-chart-panel";
 
 function createElement(tag, className, text) {
@@ -51,6 +53,11 @@ export class ThemeChartControl {
         this.handleStyleData = () => {
             if (this.opened && this.viewportInput?.checked) this.scheduleRender(180);
         };
+        this.handleIdle = () => {
+            // moveend can precede late tiles. idle runs after those tiles and
+            // their final frame have rendered, so re-query the visible features.
+            if (this.opened && this.viewportInput?.checked) this.scheduleRender();
+        };
         this.handleResize = () => this.charts.forEach((chart) => chart.resize());
     }
 
@@ -71,6 +78,7 @@ export class ThemeChartControl {
 
         this.panel = createElement("section", "oswm-theme-chart-panel is-hidden");
         this.panel.id = PANEL_ID;
+        this.panel.setAttribute("data-oswm-theme-chart-version", THEME_CHART_VERSION);
         this.panel.setAttribute("aria-label", "Map theme analysis");
 
         const header = createElement("header", "oswm-theme-chart-header");
@@ -106,6 +114,7 @@ export class ThemeChartControl {
 
         map.on("moveend", this.handleMoveEnd);
         map.on("styledata", this.handleStyleData);
+        map.on("idle", this.handleIdle);
         window.addEventListener("resize", this.handleResize);
         this.setActiveStyle(this.currentStyleKey());
         return this.container;
@@ -115,6 +124,7 @@ export class ThemeChartControl {
         clearTimeout(this.renderTimer);
         this.map?.off("moveend", this.handleMoveEnd);
         this.map?.off("styledata", this.handleStyleData);
+        this.map?.off("idle", this.handleIdle);
         window.removeEventListener("resize", this.handleResize);
         this.disposeCharts();
         this.container?.remove();

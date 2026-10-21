@@ -34,19 +34,19 @@
   ],
   "spatial": null,
   "temporal": {
-    "updated": "2026-10-19T14:52:12+00:00",
+    "updated": "2026-10-21T13:08:42+00:00",
     "node_registry": {
       "Data Fetching": "2026-10-08T14:47:42Z",
-      "Data Pre-Processing": "2026-10-18T12:37:38Z",
+      "Data Pre-Processing": "2026-10-21T13:04:07Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-10-18T12:37:52Z",
+      "Statistical Charts": "2026-10-21T13:08:42Z",
       "Wiki check for keys": "2026-10-18T12:41:02Z",
-      "Data Quality Tool": "2026-10-18T12:37:45Z",
+      "Data Quality Tool": "2026-10-21T13:05:23Z",
       "Versioning Data": "2026-10-18T12:37:33Z",
-      "Completeness Analysis": "2026-10-15T12:50:35Z",
+      "Completeness Analysis": "2026-10-21T13:08:28Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "bf6f98b2e72c48e8208e622d648dc7366e7d51f2",
-      "Pipeline Success": "2026-10-19T14:52:12Z"
+      "Pipeline Success": "2026-10-20T12:54:09Z"
     }
   },
   "lineage": {
@@ -69,11 +69,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-10-19T14:52:12+00:00",
+    "generated_at": "2026-10-21T13:08:42+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "bf6f98b2e72c48e8208e622d648dc7366e7d51f2",
-      "commit_date": "2026-10-14T10:11:45-03:00"
+      "commit": "74cbda522dbbc833c7fceabe1c16d83299e72c43",
+      "commit_date": "2026-10-20T10:38:11-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -84,10 +84,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/updates/yesterday.json",
     "media_type": "application/json",
     "format": "JSON",
-    "byte_size": 345,
+    "byte_size": 359,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "778877360862022218060689ee8b6be521fda3496028f0d3edc8e435c97397ee"
+      "value": "b674fb8a0d900b21ab9ff748f402a1a62ab68a0123999211bf7ac038324b2183"
     }
   },
   "links": [
