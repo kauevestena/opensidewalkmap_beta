@@ -4,22 +4,54 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Wed, 21 Oct 2026 13:14:29 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 13:05:47 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 190768752 by nicfer (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/190768752</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190768752&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/nicfer&quot;&gt;nicfer&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Colectora Camino Rivadavia&lt;/p&gt;
+        <title>[Activity] OSM Changeset 190813914 by Vinicius Moraes (3 additions, 9 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/190813914</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190813914&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Inserção de turn:lanes, maxspeed, sidewalk, lit e outras informações ao longo da Avenida Salgado Filho&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 3&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 9&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190813914&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190813914&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Oct 2026 01:18:28 GMT</pubDate>
+        <guid isPermaLink="false">activity_190813914</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 190814021 by Vinicius Moraes (0 additions, 4 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/190814021</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190814021&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização de restrições na região da Praça Eufrásio Correia&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190768752&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190768752&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190814021&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190814021&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 20 Oct 2026 02:51:32 GMT</pubDate>
-        <guid isPermaLink="false">activity_190768752</guid>
+        <pubDate>Wed, 21 Oct 2026 01:25:25 GMT</pubDate>
+        <guid isPermaLink="false">activity_190814021</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 190817899 by MountGerizim (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/190817899</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 190817899&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/MountGerizim&quot;&gt;MountGerizim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Modified geometry near Rua Professora Olívia Nogueira #adt #adt&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/190817899&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/190817899&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Oct 2026 05:23:05 GMT</pubDate>
+        <guid isPermaLink="false">activity_190817899</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>

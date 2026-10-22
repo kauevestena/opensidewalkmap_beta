@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-10-21T13:04:03Z",
-  "mode": "rebuild",
-  "reason": "codebase_revision_changed",
+  "checked_at": "2026-10-22T13:05:47Z",
+  "mode": "skip",
+  "reason": "no_osm_changes",
   "watcher_status": 0,
   "force": false,
   "current_codebase_revision": "74cbda522dbbc833c7fceabe1c16d83299e72c43",
-  "recorded_codebase_revision": "bf6f98b2e72c48e8208e622d648dc7366e7d51f2",
+  "recorded_codebase_revision": "74cbda522dbbc833c7fceabe1c16d83299e72c43",
   "missing_raw": [],
   "missing_required": []
 }
