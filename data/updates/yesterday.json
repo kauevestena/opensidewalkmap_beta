@@ -1,41 +1,15 @@
 [
     {
-        "id": 190813914,
+        "id": 190860920,
         "user": "Vinicius Moraes",
         "uid": 7920187,
-        "comment": "Inserção de turn:lanes, maxspeed, sidewalk, lit e outras informações ao longo da Avenida Salgado Filho",
-        "created_at": "2026-10-21T01:18:28Z",
-        "changeset_changes_count": 575,
-        "oswm_changes_count": 12,
-        "changes_count": 575,
+        "comment": "Novos bloqueios e desvios na região do Guabirotuba em decorrência das obras do Novo Inter 2",
+        "created_at": "2026-10-22T02:19:14Z",
+        "changeset_changes_count": 48,
+        "oswm_changes_count": 6,
+        "changes_count": 48,
         "additions": 3,
-        "modifications": 9,
-        "deletions": 0
-    },
-    {
-        "id": 190814021,
-        "user": "Vinicius Moraes",
-        "uid": 7920187,
-        "comment": "Atualização de restrições na região da Praça Eufrásio Correia",
-        "created_at": "2026-10-21T01:25:25Z",
-        "changeset_changes_count": 32,
-        "oswm_changes_count": 4,
-        "changes_count": 32,
-        "additions": 0,
-        "modifications": 4,
-        "deletions": 0
-    },
-    {
-        "id": 190817899,
-        "user": "MountGerizim",
-        "uid": 23638940,
-        "comment": "Modified geometry near Rua Professora Olívia Nogueira #adt #adt",
-        "created_at": "2026-10-21T05:23:05Z",
-        "changeset_changes_count": 2,
-        "oswm_changes_count": 2,
-        "changes_count": 2,
-        "additions": 0,
-        "modifications": 2,
+        "modifications": 3,
         "deletions": 0
     }
 ]
