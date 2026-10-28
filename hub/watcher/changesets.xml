@@ -4,7 +4,39 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Tue, 27 Oct 2026 13:26:11 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 14:11:49 GMT</lastBuildDate>
+    <item>
+        <title>[Activity] OSM Changeset 191115454 by maps11 (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/191115454</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191115454&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/maps11&quot;&gt;maps11&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Actualizar&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191115454&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191115454&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Oct 2026 18:22:13 GMT</pubDate>
+        <guid isPermaLink="false">activity_191115454</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 191114787 by maps11 (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/191114787</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191114787&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/maps11&quot;&gt;maps11&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Actualizar&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191114787&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191114787&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Oct 2026 18:03:48 GMT</pubDate>
+        <guid isPermaLink="false">activity_191114787</guid>
+    </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
         <link>https://www.openstreetmap.org/changeset/182321412</link>
