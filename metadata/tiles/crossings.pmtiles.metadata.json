@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-10-27T13:27:34+00:00",
+    "updated": "2026-10-29T14:37:09+00:00",
     "node_registry": {
       "Data Fetching": "2026-10-08T14:47:42Z",
-      "Data Pre-Processing": "2026-10-25T13:11:58Z",
+      "Data Pre-Processing": "2026-10-29T14:32:45Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-10-25T13:12:12Z",
+      "Statistical Charts": "2026-10-29T14:37:09Z",
       "Wiki check for keys": "2026-10-25T13:15:04Z",
-      "Data Quality Tool": "2026-10-25T13:12:05Z",
+      "Data Quality Tool": "2026-10-29T14:34:03Z",
       "Versioning Data": "2026-10-25T13:11:53Z",
-      "Completeness Analysis": "2026-10-21T13:08:28Z",
+      "Completeness Analysis": "2026-10-29T14:36:56Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "74cbda522dbbc833c7fceabe1c16d83299e72c43",
-      "Pipeline Success": "2026-10-27T13:27:34Z"
+      "Pipeline Success": "2026-10-28T14:13:04Z"
     }
   },
   "lineage": {
@@ -103,11 +103,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-10-27T13:27:34+00:00",
+    "generated_at": "2026-10-29T14:37:09+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "74cbda522dbbc833c7fceabe1c16d83299e72c43",
-      "commit_date": "2026-10-20T10:38:11-03:00"
+      "commit": "44cafc7c0f582ee1732e515446ed11a418b13afa",
+      "commit_date": "2026-10-28T18:09:46-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -118,10 +118,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/tiles/crossings.pmtiles",
     "media_type": "application/vnd.pmtiles",
     "format": "PMTiles",
-    "byte_size": 2645528,
+    "byte_size": 2648459,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "cb70efed3bff604cc84dd03b43a3fad66ca02c6a495d466e26f3e5b330ae2097"
+      "value": "1bd02203cbb23cc41e7a3b2bec6c46e07459dca696acaf8ee2be5cf24ee368f1"
     }
   },
   "links": [
