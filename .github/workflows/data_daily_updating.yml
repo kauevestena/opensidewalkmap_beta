@@ -30,9 +30,9 @@ jobs:
   preview:
     permissions:
       contents: read
-    uses: kauevestena/oswm_codebase/.github/workflows/node_replication_preview.yml@485fee6f959c85decdcddaba6bc7ec019182eae0
+    uses: kauevestena/oswm_codebase/.github/workflows/node_replication_preview.yml@e2e29d559f410de21bc3862098bd703eae817025
     with:
-      core_ref: 485fee6f959c85decdcddaba6bc7ec019182eae0
+      core_ref: e2e29d559f410de21bc3862098bd703eae817025
       bootstrap_url: ${{ github.event_name == 'push' && 'https://download.geofabrik.de/south-america/brazil/sul-261027.osm.pbf' || inputs.bootstrap_url }}
       start_sequence: ${{ github.event_name == 'push' && '2504' || inputs.start_sequence }}
       end_sequence: ${{ github.event_name == 'push' && '2506' || inputs.end_sequence }}
