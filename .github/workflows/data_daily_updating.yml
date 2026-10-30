@@ -1,6 +1,9 @@
 name: Curitiba incremental OSM preview
 
 on:
+  push:
+    branches: ["pilot/geofabrik-incremental-curitiba"]
+    paths: [".github/workflows/data_daily_updating.yml"]
   workflow_dispatch:
     inputs:
       bootstrap_url:
