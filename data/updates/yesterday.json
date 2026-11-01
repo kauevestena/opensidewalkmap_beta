@@ -1,1 +1,15 @@
-[]
+[
+    {
+        "id": 191262309,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Atualização de restrições na região da Praça Eufrásio Correia",
+        "created_at": "2026-10-31T03:40:21Z",
+        "changeset_changes_count": 100,
+        "oswm_changes_count": 5,
+        "changes_count": 100,
+        "additions": 0,
+        "modifications": 5,
+        "deletions": 0
+    }
+]
