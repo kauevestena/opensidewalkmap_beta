@@ -1,36 +1,38 @@
-name: data_daily_updating
+name: Curitiba incremental OSM preview
 
 on:
-  # Merging runtime repairs triggers a complete canary rebuild.
   push:
-    branches: [main]
-    paths:
-      - ".github/workflows/data_daily_updating.yml"
-  schedule:
-    - cron: "30 7 * * *"
+    branches: ["pilot/geofabrik-incremental-curitiba"]
+    paths: [".github/workflows/data_daily_updating.yml"]
   workflow_dispatch:
     inputs:
-      force_regeneration:
-        description: Rebuild the complete derived output set
-        required: false
-        type: boolean
-        default: false
+      bootstrap_url:
+        description: Optional retained regional snapshot for a bounded replay
+        type: string
+        default: ""
+      start_sequence:
+        description: Embedded sequence of the replay baseline
+        type: string
+        default: ""
+      end_sequence:
+        description: Published target sequence for the replay
+        type: string
+        default: ""
 
 permissions:
-  contents: write
-  actions: write
+  contents: read
 
 concurrency:
-  group: oswm-node-writer-${{ github.repository }}
+  group: oswm-replication-preview-${{ github.repository }}
   cancel-in-progress: false
 
 jobs:
-  data_daily_updating:
+  preview:
     permissions:
-      contents: write
-      actions: write
-    uses: kauevestena/oswm_codebase/.github/workflows/node_build.yml@main
+      contents: read
+    uses: kauevestena/oswm_codebase/.github/workflows/node_replication_preview.yml@f46fb97f98b5cbdeaa770ba6c2d62fa40f2331e3
     with:
-      mode: daily
-      core_ref: main
-      force_regeneration: ${{ github.event_name == 'push' || inputs.force_regeneration || false }}
+      core_ref: f46fb97f98b5cbdeaa770ba6c2d62fa40f2331e3
+      bootstrap_url: ${{ inputs.bootstrap_url }}
+      start_sequence: ${{ inputs.start_sequence }}
+      end_sequence: ${{ inputs.end_sequence }}
