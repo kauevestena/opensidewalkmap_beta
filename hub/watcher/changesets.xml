@@ -4,86 +4,22 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Tue, 03 Nov 2026 15:25:42 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 15:37:44 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 191346733 by Victor 2015 (1 additions, 19 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191346733</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191346733&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Victor 2015&quot;&gt;Victor 2015&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualizações e correções&lt;/p&gt;
+        <title>[Activity] OSM Changeset 191411369 by O Bicho Geográfico (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/191411369</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191411369&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/O Bicho Geográfico&quot;&gt;O Bicho Geográfico&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Curitiba&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 19&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191346733&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191346733&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 02 Nov 2026 03:26:53 GMT</pubDate>
-        <guid isPermaLink="false">activity_191346733</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191380463 by daymonpm (7 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191380463</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191380463&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/daymonpm&quot;&gt;daymonpm&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; inclusão e correção de locais&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 7&lt;/li&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191380463&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191380463&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191411369&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191411369&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 02 Nov 2026 17:43:18 GMT</pubDate>
-        <guid isPermaLink="false">activity_191380463</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191379956 by daymonpm (0 additions, 4 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191379956</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191379956&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/daymonpm&quot;&gt;daymonpm&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Inclusão e correção de locais&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191379956&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191379956&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 02 Nov 2026 17:33:08 GMT</pubDate>
-        <guid isPermaLink="false">activity_191379956</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191379127 by daymonpm (2 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191379127</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191379127&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/daymonpm&quot;&gt;daymonpm&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Inclusão e correção de locais&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 2&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191379127&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191379127&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 02 Nov 2026 17:17:12 GMT</pubDate>
-        <guid isPermaLink="false">activity_191379127</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191346494 by Victor 2015 (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191346494</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191346494&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Victor 2015&quot;&gt;Victor 2015&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; https://leis.org/3rxsg&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191346494&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191346494&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 02 Nov 2026 03:14:58 GMT</pubDate>
-        <guid isPermaLink="false">activity_191346494</guid>
+        <pubDate>Tue, 03 Nov 2026 11:28:47 GMT</pubDate>
+        <guid isPermaLink="false">activity_191411369</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
