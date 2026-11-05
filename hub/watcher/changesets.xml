@@ -4,22 +4,22 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Wed, 04 Nov 2026 15:37:44 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 15:41:09 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 191411369 by O Bicho Geográfico (0 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191411369</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191411369&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/O Bicho Geográfico&quot;&gt;O Bicho Geográfico&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Curitiba&lt;/p&gt;
+        <title>[Activity] OSM Changeset 191441827 by Vinicius Moraes (0 additions, 43 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/191441827</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191441827&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Fechamento total da Praça General Osório em decorrência de quedas de árvores e manutenção promovida pela prefeitura&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 43&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191411369&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191411369&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191441827&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191441827&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 03 Nov 2026 11:28:47 GMT</pubDate>
-        <guid isPermaLink="false">activity_191411369</guid>
+        <pubDate>Wed, 04 Nov 2026 01:38:32 GMT</pubDate>
+        <guid isPermaLink="false">activity_191441827</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
