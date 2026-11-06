@@ -1,15 +1,28 @@
 [
     {
-        "id": 191441827,
-        "user": "Vinicius Moraes",
-        "uid": 7920187,
-        "comment": "Fechamento total da Praça General Osório em decorrência de quedas de árvores e manutenção promovida pela prefeitura",
-        "created_at": "2026-11-04T01:38:32Z",
-        "changeset_changes_count": 43,
-        "oswm_changes_count": 43,
-        "changes_count": 43,
+        "id": 191525667,
+        "user": "HoaBinhLake",
+        "uid": 23470804,
+        "comment": "Updated the geometry near Rua João Antônio Xavier #adt",
+        "created_at": "2026-11-05T18:24:35Z",
+        "changeset_changes_count": 9,
+        "oswm_changes_count": 2,
+        "changes_count": 9,
         "additions": 0,
-        "modifications": 43,
+        "modifications": 2,
+        "deletions": 0
+    },
+    {
+        "id": 191501442,
+        "user": "BR_pebble",
+        "uid": 15458791,
+        "comment": "Added missing buildings #tomtom #maproulette mpr.lt/c/56208/t/360917543",
+        "created_at": "2026-11-05T09:18:59Z",
+        "changeset_changes_count": 42,
+        "oswm_changes_count": 1,
+        "changes_count": 42,
+        "additions": 0,
+        "modifications": 1,
         "deletions": 0
     }
 ]
