@@ -4,38 +4,38 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Fri, 06 Nov 2026 15:14:39 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 14:14:36 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 191525667 by HoaBinhLake (0 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191525667</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191525667&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/HoaBinhLake&quot;&gt;HoaBinhLake&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Updated the geometry near Rua João Antônio Xavier #adt&lt;/p&gt;
+        <title>[Activity] OSM Changeset 191573530 by ghs_ (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/191573530</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191573530&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/ghs_&quot;&gt;ghs_&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Specify path surfaces&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191525667&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191525667&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191573530&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191573530&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 05 Nov 2026 18:24:35 GMT</pubDate>
-        <guid isPermaLink="false">activity_191525667</guid>
+        <pubDate>Fri, 06 Nov 2026 19:08:47 GMT</pubDate>
+        <guid isPermaLink="false">activity_191573530</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 191501442 by BR_pebble (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191501442</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191501442&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/BR_pebble&quot;&gt;BR_pebble&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Added missing buildings #tomtom #maproulette mpr.lt/c/56208/t/360917543&lt;/p&gt;
+        <title>[Activity] OSM Changeset 191569393 by Emerson Palhares (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/191569393</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191569393&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Emerson Palhares&quot;&gt;Emerson Palhares&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; AJUSTE&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191501442&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191501442&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191569393&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191569393&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 05 Nov 2026 09:18:59 GMT</pubDate>
-        <guid isPermaLink="false">activity_191501442</guid>
+        <pubDate>Fri, 06 Nov 2026 17:38:32 GMT</pubDate>
+        <guid isPermaLink="false">activity_191569393</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
