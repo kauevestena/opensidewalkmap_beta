@@ -1,26 +1,13 @@
 [
     {
-        "id": 191573530,
-        "user": "ghs_",
-        "uid": 24739505,
-        "comment": "Specify path surfaces",
-        "created_at": "2026-11-06T19:08:47Z",
-        "changeset_changes_count": 2,
-        "oswm_changes_count": 2,
-        "changes_count": 2,
-        "additions": 0,
-        "modifications": 2,
-        "deletions": 0
-    },
-    {
-        "id": 191569393,
-        "user": "Emerson Palhares",
-        "uid": 20637660,
-        "comment": "AJUSTE",
-        "created_at": "2026-11-06T17:38:32Z",
-        "changeset_changes_count": 1,
+        "id": 191612641,
+        "user": "Claudio_S",
+        "uid": 24621829,
+        "comment": "As Vias Em Construção",
+        "created_at": "2026-11-07T16:27:21Z",
+        "changeset_changes_count": 117,
         "oswm_changes_count": 1,
-        "changes_count": 1,
+        "changes_count": 117,
         "additions": 0,
         "modifications": 1,
         "deletions": 0
