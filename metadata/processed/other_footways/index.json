@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-11-07T14:15:38+00:00",
+    "updated": "2026-11-08T15:07:08+00:00",
     "node_registry": {
       "Data Fetching": "2026-10-08T14:47:42Z",
-      "Data Pre-Processing": "2026-11-01T15:01:34Z",
+      "Data Pre-Processing": "2026-11-08T15:04:19Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-11-01T15:01:44Z",
-      "Wiki check for keys": "2026-11-01T15:04:07Z",
-      "Data Quality Tool": "2026-11-01T15:01:38Z",
-      "Versioning Data": "2026-11-01T15:01:30Z",
+      "Statistical Charts": "2026-11-08T15:04:30Z",
+      "Wiki check for keys": "2026-11-08T15:07:08Z",
+      "Data Quality Tool": "2026-11-08T15:04:24Z",
+      "Versioning Data": "2026-11-08T15:04:16Z",
       "Completeness Analysis": "2026-10-29T14:36:56Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "44cafc7c0f582ee1732e515446ed11a418b13afa",
-      "Pipeline Success": "2026-11-07T14:15:38Z"
+      "Pipeline Success": "2026-11-08T14:27:04Z"
     }
   },
   "lineage": {
@@ -104,7 +104,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-11-07T14:15:38+00:00",
+    "generated_at": "2026-11-08T15:07:08+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "44cafc7c0f582ee1732e515446ed11a418b13afa",
@@ -123,7 +123,7 @@
       "byte_size": 106552,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "768ed0df7d71502efa83a525cfc277b399c51281f241e9c648f784fa93f091fd"
+        "value": "d15aaf53b4fb000a3e8422986308f3327f334fe23247eed1473d3562939f68f2"
       }
     },
     {
@@ -132,10 +132,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/main_footways.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 639141,
+      "byte_size": 638390,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "e31c4d76bfab321fc979dbe18d03a7ea894ec9ce22f0af714bf42d7c5760582b"
+        "value": "9b0a4503aef49fdd22233f184571e7ab93f33d00eaf25712c07afcc2b3f2d290"
       }
     },
     {
@@ -144,10 +144,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/pedestrian_areas.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 119462,
+      "byte_size": 119476,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "82c921a09be8ab2974892d36f29cf01295ca587725fd8271c650127bd11ae837"
+        "value": "2a7c25aba64f88a54cc8620d10815f82a7515697ea29b8a23d4accf260677e54"
       }
     },
     {
@@ -156,10 +156,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/potential_footways.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 166335,
+      "byte_size": 166338,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "8aed9f2d658e93273bca508b30db30bca057b3ec59414a0805df7652764530da"
+        "value": "a49f4bce6bda14f6731e593509ec18f71b01e792c9fb9911862f6626b98ae029"
       }
     },
     {
@@ -168,10 +168,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/stairways.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 99688,
+      "byte_size": 99690,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "0b0b087ec9b25134a3f0fa271ead20f19dd6e8e492ea6e6fa4cb1e40f9bf0c8e"
+        "value": "b78d826b8a3f6aa21b2f0290111ccb2cb4599b2f55ceb80d0b373a25929d0451"
       }
     }
   ],
