@@ -4,70 +4,38 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 17:43:20 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 16:11:49 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 191631835 by Vinicius Moraes (13 additions, 36 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191631835</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191631835&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Adoção de highway=platform nas estações tubo da Linha Verde; inclusão das paradas e plataformas na linha 550; melhorias geométricas das vias exclusivas de ônibus; correções gerais das linhas de ônibus da Linha Verde&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 13&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 36&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191631835&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191631835&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 08 Nov 2026 05:58:42 GMT</pubDate>
-        <guid isPermaLink="false">activity_191631835</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191629631 by Vinicius Moraes (0 additions, 29 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191629631</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191629631&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Renomeação das vias locais (marginais) da Rod. Régis Bittecourt, no trecho entre a Linha Verde e Fazenda Rio Grande&lt;/p&gt;
+        <title>[Activity] OSM Changeset 191674927 by MountPelion (0 additions, 2 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/191674927</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191674927&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/MountPelion&quot;&gt;MountPelion&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Added oneway tag near Rodovia Henrique Herwig #adt&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 29&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191629631&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191629631&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191674927&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191674927&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 08 Nov 2026 03:15:20 GMT</pubDate>
-        <guid isPermaLink="false">activity_191629631</guid>
+        <pubDate>Mon, 09 Nov 2026 01:51:28 GMT</pubDate>
+        <guid isPermaLink="false">activity_191674927</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 191672292 by raphaelmirc (0 additions, 20 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191672292</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191672292&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/raphaelmirc&quot;&gt;raphaelmirc&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Correção de nomes de logradouros em vias que tinha nome generico no Brasil #UMBRAOSM #2022&lt;/p&gt;
+        <title>[Activity] OSM Changeset 191690347 by maps11 (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/191690347</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191690347&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/maps11&quot;&gt;maps11&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Actualizar&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 20&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191672292&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191672292&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191690347&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191690347&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 08 Nov 2026 23:13:26 GMT</pubDate>
-        <guid isPermaLink="false">activity_191672292</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191629165 by Vinicius Moraes (0 additions, 10 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191629165</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191629165&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Renomeação das vias locais (marginais) da Linha Verde, entre a BR-116 e Marechal Floriano Peixoto, para conformidade com a Lei 12.548 de 07/12/2007&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 10&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191629165&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191629165&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 08 Nov 2026 02:36:51 GMT</pubDate>
-        <guid isPermaLink="false">activity_191629165</guid>
+        <pubDate>Mon, 09 Nov 2026 11:17:34 GMT</pubDate>
+        <guid isPermaLink="false">activity_191690347</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
