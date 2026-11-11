@@ -34,19 +34,19 @@
   ],
   "spatial": null,
   "temporal": {
-    "updated": "2026-11-10T16:06:16+00:00",
+    "updated": "2026-11-11T17:06:30+00:00",
     "node_registry": {
       "Data Fetching": "2026-10-08T14:47:42Z",
-      "Data Pre-Processing": "2026-11-10T15:44:07Z",
+      "Data Pre-Processing": "2026-11-11T17:02:03Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-11-10T16:06:16Z",
+      "Statistical Charts": "2026-11-11T17:06:30Z",
       "Wiki check for keys": "2026-11-08T15:07:08Z",
-      "Data Quality Tool": "2026-11-10T15:45:27Z",
+      "Data Quality Tool": "2026-11-11T17:03:23Z",
       "Versioning Data": "2026-11-08T15:04:16Z",
-      "Completeness Analysis": "2026-11-10T16:06:02Z",
+      "Completeness Analysis": "2026-11-11T17:06:17Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
-      "OSWM Codebase Revision": "44cafc7c0f582ee1732e515446ed11a418b13afa",
-      "Pipeline Success": "2026-11-09T17:44:42Z"
+      "OSWM Codebase Revision": "3b626494e980a3d0bba34a982b3d43ca4275f541",
+      "Pipeline Success": "2026-11-10T16:11:49Z"
     }
   },
   "lineage": {
@@ -69,11 +69,11 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-11-10T16:06:16+00:00",
+    "generated_at": "2026-11-11T17:06:30+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
-      "commit": "3b626494e980a3d0bba34a982b3d43ca4275f541",
-      "commit_date": "2026-11-10T09:20:59-03:00"
+      "commit": "6f811852641f5dfab29d522535556999c683d8eb",
+      "commit_date": "2026-11-10T21:33:14-03:00"
     },
     "source_root": "data",
     "deterministic": true
@@ -87,7 +87,7 @@
     "byte_size": 93434,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "3f9c25e132dc3846a9da74ae3823ea8cc38714443b51406e1fa1cdb90e66e014"
+      "value": "c5783e7e369bf70b86d51639a187ca7d30ac6d1d6d06ad8e2daae061fce4e6cf"
     }
   },
   "links": [

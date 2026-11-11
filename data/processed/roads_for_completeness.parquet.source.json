@@ -1,9 +1,3 @@
 {
-    "provider": "geofabrik_pbf",
-    "region": "sul",
-    "source_url": "https://download.geofabrik.de/south-america/brazil/sul-latest.osm.pbf",
-    "snapshot_timestamp": "2026-11-09T21:22:17Z",
-    "acquired_at": "2026-11-10T16:05:02Z",
-    "sha256": "845d7cc44cd46c257084133826baa5ab699034d72708507e0068de33a242e2e0",
-    "cache_hit": false
+    "provider": "overpass"
 }

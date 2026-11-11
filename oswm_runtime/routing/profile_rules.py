@@ -16,7 +16,7 @@ users and accessibility specialists. The distance-only profile is a neutral
 baseline and does not generate redundant per-edge grades.
 """
 
-PROFILE_RULESET_VERSION = "1.1.0"
+PROFILE_RULESET_VERSION = "1.2.0"
 
 
 ROUTING_PROFILES = {
@@ -103,6 +103,11 @@ ROUTING_PROFILES = {
                 "field": "incline_percent",
                 "factor_weight": 5.0,
                 "unknown_grade": 40,
+                # A coarse DSM is evidence of difficulty, not proof that the
+                # sidewalk is impassable. Keep a severe soft cost below this
+                # confidence; mapped and higher-resolution slopes can block.
+                "zero_grade_min_confidence": 75,
+                "unconfirmed_zero_grade": 5,
                 "ascending": [
                     {"max": 2.0, "grade": 100},
                     {"max": 5.0, "grade": 82},
@@ -340,7 +345,9 @@ ROUTING_PROFILES = {
                 "values": {
                     "yes": 100,
                     "contrasted": 100,
-                    "no": 0,
+                    # Absence is a serious disadvantage, not a universal ban
+                    # on using every non-tactile crossing in the city.
+                    "no": 5,
                 },
             },
             "kerb_detectability": {
@@ -515,6 +522,8 @@ ROUTING_PROFILES = {
                 "field": "incline_percent",
                 "factor_weight": 5.0,
                 "unknown_grade": 40,
+                "zero_grade_min_confidence": 75,
+                "unconfirmed_zero_grade": 5,
                 "ascending": [
                     {"max": 2.0, "grade": 100},
                     {"max": 5.0, "grade": 78},

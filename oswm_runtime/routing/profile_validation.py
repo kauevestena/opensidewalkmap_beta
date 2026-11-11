@@ -84,6 +84,18 @@ def _validate_factor(profile_id: str, factor_id: str, rule: Any) -> None:
         raise ProfileValidationError(f"{location}.factor_weight must be positive")
     _check_grade(rule.get("unknown_grade"), f"{location}.unknown_grade")
 
+    confidence_keys = {"zero_grade_min_confidence", "unconfirmed_zero_grade"}
+    if confidence_keys.intersection(rule):
+        if factor_type != "directional_numeric_bands" or not confidence_keys.issubset(rule):
+            raise ProfileValidationError(
+                f"{location}: confidence-qualified zero grades require a directional "
+                "factor and both zero_grade_min_confidence and unconfirmed_zero_grade"
+            )
+        for key in confidence_keys:
+            _check_grade(rule[key], f"{location}.{key}")
+            if rule[key] <= 0:
+                raise ProfileValidationError(f"{location}.{key} must be positive")
+
     contexts = rule.get("applies_to", [])
     if not isinstance(contexts, list) or any(
         context not in KNOWN_EDGE_KINDS for context in contexts

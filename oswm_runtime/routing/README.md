@@ -23,6 +23,11 @@ with users and accessibility specialists.
 | `binary_graph.py` | Versioned typed-array graph serializer and spatial index |
 | `routing_worker.js` | Indexed snapping, A* routing and bounded isochrone search off the browser main thread |
 | `routing_demo.html` | Static MapLibre client with PMTiles network rendering and reachability controls |
+| `profile_guide.html` | Public explanation linked from the demo, covering every profile and isochrones |
+| `generate_profile_guide.py` | Deterministic guide renderer using the live policy tables |
+| `oswmg_guide.html` | Linked format specification, worked binary example and benchmark tables |
+| `generate_oswmg_guide.py` | Renders the format guide from writer constants and a real serialized fixture |
+| `benchmark_results.json` | Recorded reproducible Milan benchmark against client-side libraries |
 | `../generation/routing_demo_gen.py` | Offline routing-data generation |
 | `../generation/routing_tiles_gen.py` | Lightweight display PMTiles generation |
 
@@ -69,6 +74,24 @@ directly, snaps clicks through the embedded uniform-grid segment index, and
 runs A* in a Web Worker. Network drawing is intentionally separate: MapLibre
 streams the much smaller `network.pmtiles` archive and never downloads the
 analytical GeoParquet to calculate a route.
+
+Snapping uses the selected profile and a 100 m maximum offset. Profile changes
+snap the original clicks again; the distance-only comparison then uses those
+same snapped endpoints. The client reports the offsets explicitly: access from
+the original click to the network is neither verified nor included in travel
+distance or time. Usable nearby segments can still belong to disconnected
+components; the router never jumps to a distant connected component.
+
+### Policy corrections in 1.2.0
+
+Explicitly absent tactile paving is a severe disadvantage (factor grade 5),
+rather than a universal crossing exclusion for blind/low-vision routing.
+For wheelchair and elderly slope factors, a zero grade requires source
+confidence of at least 75/100; lower-confidence estimates use factor grade 5
+instead. Global DSM trends therefore remain costly without alone proving an
+impassable sidewalk. Explicit barriers, raised wheelchair crossing kerbs,
+confirmed steep inclines and very narrow wheelchair paths remain excluded.
+These are provisional policy corrections, not calibrated travel-time models.
 
 Displayed travel time is **accessibility-adjusted** for accessibility profiles.
 The accumulated generalized resistance (length multiplied by the profile's
@@ -159,6 +182,9 @@ that derived result in the browser.
 
    ```bash
    python -m unittest discover -s tests -p "test_routing_*.py" -v
+   python -m routing.generate_profile_guide
+   python -m routing.generate_oswmg_guide
+   python -m pytest -q tests/test_routing_guide.py
    node --test tests/routing_worker.test.mjs
    ```
 
@@ -168,3 +194,7 @@ that derived result in the browser.
 
 The generator records both a semantic version and a deterministic hash, making
 it clear which rules produced each node artifact.
+
+See [the benchmark methodology](../benchmarks/README.md) for a comparison with
+Turf (full scan and RBush), GeoJSON Path Finder and ngraph.path. It separates
+startup, snapping, route search, correctness and OSWM isochrone diagnostics.

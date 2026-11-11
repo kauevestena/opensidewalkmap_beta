@@ -2,11 +2,11 @@
   "schema_version": 1,
   "build_contract": 1,
   "node": "Curitiba",
-  "generated_at": "2026-11-10T16:11:49Z",
+  "generated_at": "2026-11-11T17:11:58Z",
   "mode": "rebuild",
   "core": {
     "repository": "kauevestena/oswm_codebase",
-    "sha": "3b626494e980a3d0bba34a982b3d43ca4275f541"
+    "sha": "6f811852641f5dfab29d522535556999c683d8eb"
   },
   "runtime": {
     "schema_version": 1,

@@ -1,7 +1,7 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-11-10T15:45:15.067059+00:00",
+    "generated_at": "2026-11-11T17:03:11.266944+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
@@ -776,44 +776,44 @@
             "unknown": 0,
             "unknownPercent": 0.0,
             "invalid": 0,
-            "min": 0.005476,
-            "max": 22.253251,
-            "mean": 3.678168,
-            "median": 3.917864,
+            "min": 0.008214,
+            "max": 22.255989,
+            "mean": 3.680906,
+            "median": 3.920602,
             "bins": [
                 {
                     "label": "0–<2",
                     "lower": 0.0,
                     "upper": 2.0,
-                    "count": 3012,
+                    "count": 3006,
                     "color": "#90d743"
                 },
                 {
                     "label": "2–<4",
                     "lower": 2.0,
                     "upper": 4.0,
-                    "count": 12862,
+                    "count": 12867,
                     "color": "#35b779"
                 },
                 {
                     "label": "4–<6",
                     "lower": 4.0,
                     "upper": 6.0,
-                    "count": 2796,
+                    "count": 2797,
                     "color": "#21918c"
                 },
                 {
                     "label": "6–<8",
                     "lower": 6.0,
                     "upper": 8.0,
-                    "count": 645,
+                    "count": 639,
                     "color": "#31688e"
                 },
                 {
                     "label": "8–<10",
                     "lower": 8.0,
                     "upper": 10.0,
-                    "count": 388,
+                    "count": 394,
                     "color": "#443983"
                 },
                 {

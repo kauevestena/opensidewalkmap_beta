@@ -12,7 +12,7 @@
     "elderly"
   ],
   "graph_schema_version": 2,
-  "graph_sha256": "f3107f5b511d32ba124f74bb9a1a60374e8c940345e263318298c25519d747a9",
+  "graph_sha256": "f2f151ccecce112d6f6b13695e163c997c7da62f3188851a3bced581418844eb",
   "profiles": {
     "blind": {
       "cost": {
@@ -148,7 +148,7 @@
       "speed_kmh": 3.5
     }
   },
-  "ruleset_hash": "90797572d833bc88",
-  "ruleset_version": "1.1.0",
+  "ruleset_hash": "7ae40754cf77b3e2",
+  "ruleset_version": "1.2.0",
   "schema_version": 2
 }

@@ -128,6 +128,8 @@ def _factor_grade(
         grade = _grade_from_bands(abs(directed_value), rule["ascending"])
     else:
         grade = _grade_from_bands(abs(directed_value), rule["descending"])
+    if grade == 0 and confidence < rule.get("zero_grade_min_confidence", 0):
+        grade = float(rule["unconfirmed_zero_grade"])
     return grade, confidence
 
 
