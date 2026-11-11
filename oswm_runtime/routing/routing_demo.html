@@ -44,6 +44,8 @@
             background: rgba(255, 255, 255, 0.94);
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
             box-sizing: border-box;
+            max-height: calc(100vh - 36px);
+            overflow-y: auto;
         }
 
         #routingPanel h2 {
@@ -128,6 +130,11 @@
             color: #565c62;
             font-size: 12px;
             line-height: 1.35;
+        }
+
+        #routingPanelContent > p {
+            font-size: 12px;
+            line-height: 1.4;
         }
 
         #compareOption {
@@ -379,7 +386,9 @@
             <label for="profileSelect">Profile</label>
             <select id="profileSelect"></select>
             <p id="profileDescription">Loading routing profiles…</p>
+            <p><a id="profileGuideLink" href="profile_guide.html" target="_blank" rel="noopener">Profiles, routing &amp; isochrones explained ↗</a></p>
             <p id="routingStatus" role="status" aria-live="polite">Loading node map…</p>
+            <p id="snapNotice" role="status" aria-live="polite"></p>
 
             <div id="routeOptions">
                 <div id="compareOption" hidden>
@@ -419,6 +428,7 @@
 
             <div id="isochroneOptions" hidden>
                 <p>Click one origin to calculate outward, accessibility-adjusted reachability.</p>
+                <p><a href="profile_guide.html#isochrones" target="_blank" rel="noopener">How to read these isochrones ↗</a></p>
                 <label for="isochroneStart">Starting time (minutes)</label>
                 <input id="isochroneStart" type="number" min="1" max="120" step="1" value="5">
                 <label for="isochroneStep">Increment (minutes)</label>
@@ -447,6 +457,7 @@
                 <li>Export calculated reachability polygons as GeoJSON when needed.</li>
             </ol>
             <p>Accessibility-adjusted times and polygons are approximate. Missing data can affect the result, and provisional profiles do not guarantee accessibility.</p>
+            <p><a href="profile_guide.html" target="_blank" rel="noopener">Read the profile and isochrone guide ↗</a></p>
             <button id="modalOkBtn">Continue</button>
         </div>
     </div>
@@ -586,6 +597,8 @@
         let snapGeneration = 0;
         let start = null;
         let end = null;
+        let startClick = null;
+        let endClick = null;
         let bestPath = null;
         let comparisonPath = null;
         let isochroneData = null;
@@ -806,6 +819,7 @@
             const profile = selectedProfile();
             const isDistanceOnly = profile.routing_mode === 'distance';
             profileDescription.textContent = profile.description;
+            document.getElementById('profileGuideLink').href = `profile_guide.html#profile-${encodeURIComponent(profileSelect.value)}`;
             compareOption.hidden = interactionMode !== 'route' || isDistanceOnly;
             compareDistance.disabled = interactionMode !== 'route' || isDistanceOnly;
             document.getElementById('timeLabel').textContent = isDistanceOnly
@@ -818,14 +832,63 @@
             }
         }
 
-        profileSelect.addEventListener('change', () => {
+        function showSnapNotice() {
+            const offsets = [start, end].filter(Boolean).map(point => Math.round(point.distanceM));
+            document.getElementById('snapNotice').textContent = offsets.length
+                ? `Clicks snapped ${offsets.join(' / ')} m to usable network segments (maximum 100 m). Access from the click to the network is not evaluated or timed.`
+                : '';
+        }
+
+        async function refreshProfileEndpoints() {
             updateProfileControls();
-            if (interactionMode === 'isochrone' && start) {
-                calculateIsochrone();
-            } else if (start && end) {
-                calculateRoute();
+            const requestGeneration = ++snapGeneration;
+            routeGeneration += 1;
+            isochroneGeneration += 1;
+            removeDisplayedPaths();
+            removeIsochroneLayers();
+            hideRouteInfo();
+            comparisonInfo.hidden = true;
+            isochroneData = null;
+            downloadIsochroneButton.disabled = true;
+            showIsochroneMessage('');
+            start = null;
+            end = null;
+            markers.forEach(marker => marker.remove());
+            markers = [];
+            showSnapNotice();
+            if (!startClick) return;
+            routingStatus.textContent = 'Finding usable endpoints for the selected profile…';
+            const profileId = profileSelect.value;
+            try {
+                const points = await Promise.all([
+                    workerRequest('snap', { coordinates: startClick, profileId, role: 'origin' }),
+                    endClick ? workerRequest('snap', { coordinates: endClick, profileId, role: 'destination' }) : null
+                ]);
+                if (requestGeneration !== snapGeneration) return;
+                [start, end] = points;
+                markers.forEach(marker => marker.remove());
+                markers = [];
+                addMarker(start.coordinates, '#0f5128');
+                if (end) addMarker(end.coordinates, '#8b0000');
+                updateReadyStatus();
+                showSnapNotice();
+                if (interactionMode === 'isochrone') calculateIsochrone();
+                else if (end) calculateRoute();
+            } catch (error) {
+                if (requestGeneration !== snapGeneration) return;
+                start = null;
+                end = null;
+                markers.forEach(marker => marker.remove());
+                markers = [];
+                showSnapNotice();
+                updateReadyStatus();
+                const message = `Could not place endpoints for ${selectedProfileLabel()}: ${error.message}`;
+                if (interactionMode === 'isochrone') showIsochroneMessage(message, true);
+                else showNoRoute(message);
             }
-        });
+        }
+
+        profileSelect.addEventListener('change', refreshProfileEndpoints);
 
         compareDistance.addEventListener('change', () => {
             if (start && end) {
@@ -841,32 +904,42 @@
             const requestGeneration = ++snapGeneration;
             try {
                 const snapped = await workerRequest('snap', {
-                    coordinates: [event.lngLat.lng, event.lngLat.lat]
+                    coordinates: [event.lngLat.lng, event.lngLat.lat],
+                    profileId: profileSelect.value,
+                    role: interactionMode === 'route' && start && !end ? 'destination' : 'origin'
                 });
                 if (requestGeneration !== snapGeneration) return;
 
                 if (interactionMode === 'isochrone') {
                     resetPath();
                     start = snapped;
+                    startClick = snapped.inputCoordinates;
                     addMarker(snapped.coordinates, '#0f5128');
+                    showSnapNotice();
                     calculateIsochrone();
                     return;
                 }
 
                 if (!start) {
                     start = snapped;
+                    startClick = snapped.inputCoordinates;
+                    endClick = null;
                     addMarker(snapped.coordinates, '#0f5128');
                     hideRouteInfo();
                 } else if (!end) {
                     end = snapped;
+                    endClick = snapped.inputCoordinates;
                     addMarker(snapped.coordinates, '#8b0000');
                     calculateRoute();
                 } else {
                     resetPath();
                     start = snapped;
+                    startClick = snapped.inputCoordinates;
                     addMarker(snapped.coordinates, '#0f5128');
                 }
+                showSnapNotice();
             } catch (error) {
+                if (requestGeneration !== snapGeneration) return;
                 console.error(error);
                 if (interactionMode === 'isochrone') {
                     showIsochroneMessage(
@@ -1149,7 +1222,7 @@
 
                 if (!hasUsablePath(bestPath)) {
                     if (hasUsablePath(distancePath)) {
-                        showNoRoute(`No route found for ${profile.label}: path is blocked by barriers or steep inclines.`);
+                        showNoRoute(`No route found for ${profile.label} under the current profile rules. Mapped barriers or missing or uncertain evidence may disconnect this route. See the profile guide for exclusions.`);
                     } else {
                         showNoRoute('No route found: start and destination belong to disconnected sidewalk networks (topological islands).');
                     }
@@ -1264,6 +1337,8 @@
             snapGeneration += 1;
             start = null;
             end = null;
+            startClick = null;
+            endClick = null;
             bestPath = null;
             comparisonPath = null;
             isochroneData = null;
@@ -1274,6 +1349,7 @@
             comparisonInfo.hidden = true;
             downloadIsochroneButton.disabled = true;
             showIsochroneMessage('');
+            showSnapNotice();
             hideRouteInfo();
         }
 

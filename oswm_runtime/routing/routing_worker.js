@@ -19,7 +19,7 @@ self.addEventListener('message', async event => {
     try {
         let result;
         if (type === 'init') result = await initialize(payload);
-        else if (type === 'snap') result = snapToNetwork(payload.coordinates);
+        else if (type === 'snap') result = snapToNetwork(payload.coordinates, payload);
         else if (type === 'route') result = routeRequest(payload);
         else if (type === 'isochrone') result = isochroneRequest(payload);
         else throw new Error(`Unknown routing worker request: ${type}`);
@@ -140,7 +140,17 @@ function projectedDistanceM(lon1, lat1, lon2, lat2, referenceLat) {
     return Math.hypot(x, y);
 }
 
-function inspectSegment(segmentId, lon, lat, best) {
+function nodeSupportsProfile(node, profileIndex, role) {
+    for (let edgeId = graph.adjacencyOffsets[node]; edgeId < graph.adjacencyOffsets[node + 1]; edgeId += 1) {
+        const usable = role === 'destination'
+            ? directedEdge(graph.targets[edgeId], node)
+            : edgeId;
+        if (Number.isFinite(edgeWeight(profileIndex, usable))) return true;
+    }
+    return false;
+}
+
+function inspectSegment(segmentId, lon, lat, best, profileIndex, role) {
     if (snapMarks[segmentId] === snapEpoch) return best;
     snapMarks[segmentId] = snapEpoch;
     const a = graph.segmentA[segmentId];
@@ -155,6 +165,15 @@ function inspectSegment(segmentId, lon, lat, best) {
     const dy = by - ay;
     const denominator = dx * dx + dy * dy;
     const t = denominator > 0 ? clamp(-(ax * dx + ay * dy) / denominator, 0, 1) : 0;
+    if (profileIndex !== undefined) {
+        const usable = t <= 1e-12
+            ? nodeSupportsProfile(a, profileIndex, role)
+            : t >= 1 - 1e-12
+                ? nodeSupportsProfile(b, profileIndex, role)
+                : Number.isFinite(edgeWeight(profileIndex, directedEdge(a, b)))
+                    || Number.isFinite(edgeWeight(profileIndex, directedEdge(b, a)));
+        if (!usable) return best;
+    }
     const distanceM = Math.hypot(ax + t * dx, ay + t * dy);
     if (distanceM >= best.distanceM) return best;
     return {
@@ -170,8 +189,16 @@ function inspectSegment(segmentId, lon, lat, best) {
     };
 }
 
-function snapToNetwork(coordinates) {
+function snapToNetwork(coordinates, { profileId, role = 'origin', maxDistanceM = 100 } = {}) {
     requireGraph();
+    const profileIndex = profileIndexes.get(profileId);
+    if (profileId !== undefined && profileIndex === undefined) {
+        throw new Error(`Unknown routing profile: ${profileId}`);
+    }
+    if (!['origin', 'destination'].includes(role)) throw new Error('Unknown snapping role.');
+    if (!Number.isFinite(maxDistanceM) || maxDistanceM <= 0) {
+        throw new Error('Maximum snapping distance must be positive.');
+    }
     const lon = Number(coordinates?.[0]);
     const lat = Number(coordinates?.[1]);
     if (!Number.isFinite(lon) || !Number.isFinite(lat)) {
@@ -209,7 +236,7 @@ function snapToNetwork(coordinates) {
                     index < graph.cellOffsets[cellId + 1];
                     index += 1
                 ) {
-                    best = inspectSegment(graph.cellSegments[index], lon, lat, best);
+                    best = inspectSegment(graph.cellSegments[index], lon, lat, best, profileIndex, role);
                 }
             }
         }
@@ -229,9 +256,13 @@ function snapToNetwork(coordinates) {
             && Number.isFinite(best.distanceM)
             && (outsideDistances.length === 0 || best.distanceM <= Math.min(...outsideDistances))
         ) break;
+        // Stop once all unvisited cells lie beyond the allowed access radius.
+        if (containsTarget && outsideDistances.length && Math.min(...outsideDistances) > maxDistanceM) break;
     }
-    if (!Number.isFinite(best.distanceM)) throw new Error('Routing graph has no snappable segments.');
-    return best;
+    if (!Number.isFinite(best.distanceM) || best.distanceM > maxDistanceM) {
+        throw new Error(`No usable network segment within ${maxDistanceM} m for this profile. Try a nearby mapped path.`);
+    }
+    return { ...best, inputCoordinates: [lon, lat] };
 }
 
 function edgeWeight(profileIndex, edgeId) {

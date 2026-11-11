@@ -1,0 +1,1274 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-11T00:26:52.321Z",
+  "dataset": "Milan; sandbox regeneration with routing policy 1.2.0",
+  "graph_sha256": "b365357c1ffe377c14613c0613112456f703f7aaba9a6bc3bd087db61e2b7e3d",
+  "dataset_source": "https://github.com/opensidewalkmap/milan/tree/7bd414cce789d33fd060459b36d746c9e658f987",
+  "worker_sha256": "66a4f4000485b3d3a5f36275b6984245899c8862a086cabc5562f6eddb4d7286",
+  "benchmark_script_sha256": "8edf2073f287400ecca4afaffd68994fbfd45175de7ec9b5ad37c85f53fffc19",
+  "ruleset_version": "1.2.0",
+  "ruleset_hash": "7ae40754cf77b3e2",
+  "environment": {
+    "runtime": "v24.22.1",
+    "v8": "13.6.233.17-node.58",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logical_cpus": 9,
+    "ram_bytes": 10451427328
+  },
+  "versions": {
+    "@turf/nearest-point-on-line": "7.4.0",
+    "geojson-path-finder": "2.1.0",
+    "ngraph.path": "1.6.1",
+    "ngraph.graph": "20.1.2",
+    "rbush": "4.0.1"
+  },
+  "counts": {
+    "nodes": 224586,
+    "directed_edges": 490364,
+    "segments": 245182,
+    "profiles": 4,
+    "largest_component_nodes": 213476
+  },
+  "methodology": {
+    "seed": 20261110,
+    "route_pairs": 30,
+    "snap_points": 8,
+    "repeats": 3,
+    "route_warmups": 3,
+    "snap_warmups": 2,
+    "route_endpoints": "Existing vertices in largest distance-profile component; shared across all profiles and engines",
+    "snapping": "Same 100 m access radius; 8 m east and 5 m north of seeded vertices; outbound eligibility",
+    "costs": "Identical precomputed Float32 directional costs for all routers; null is blocked in the derived GeoJSON",
+    "scope": "Node/V8 CPU benchmark of client-side libraries; excludes browser rendering, messaging, network latency and library download",
+    "correctness": "Route cost tolerance max(0.05 equivalent m, 1e-5 relative); snap distance tolerance 0.1 m; alternative shortest paths allowed",
+    "isochrones": "OSWM-only diagnostic: first three route origins, cutoffs 5/10/15 minutes; no warm-up, messaging or rendering; no cross-framework equivalence claim",
+    "startup": "Single CPU observation in each fresh process; input file reads excluded; OSWM parse includes worker initialization",
+    "known_comparator_limit": "GeoJSON Path Finder 2.1.0 can discard a cheaper parallel corridor during compaction; a pinned-version regression fixture reproduces 800 versus 300 equivalent metres. Cost mismatches disqualify equivalently-correct speed claims.",
+    "memory": "Fresh child per engine; GC before/after; deltas are approximate and exclude shared reference graph and runtime/module imports"
+  },
+  "payload_bytes": {
+    "oswmg": 17493084,
+    "geojson": 78496521,
+    "oswmg_gzip": 11280421,
+    "geojson_gzip": 14971844,
+    "oswmg_brotli": 9540553,
+    "geojson_brotli": 13521995
+  },
+  "queries": {
+    "routes": [
+      [
+        113387,
+        197766
+      ],
+      [
+        52348,
+        136624
+      ],
+      [
+        176640,
+        221529
+      ],
+      [
+        220445,
+        74628
+      ],
+      [
+        5096,
+        133306
+      ],
+      [
+        115661,
+        87276
+      ],
+      [
+        76291,
+        188126
+      ],
+      [
+        139201,
+        35840
+      ],
+      [
+        34683,
+        215088
+      ],
+      [
+        212204,
+        115232
+      ],
+      [
+        5304,
+        54288
+      ],
+      [
+        201643,
+        98788
+      ],
+      [
+        116502,
+        154942
+      ],
+      [
+        1481,
+        13150
+      ],
+      [
+        155055,
+        73986
+      ],
+      [
+        219659,
+        165420
+      ],
+      [
+        217433,
+        81572
+      ],
+      [
+        55563,
+        132832
+      ],
+      [
+        10181,
+        73970
+      ],
+      [
+        118292,
+        143024
+      ],
+      [
+        152722,
+        7474
+      ],
+      [
+        169360,
+        37226
+      ],
+      [
+        95934,
+        9748
+      ],
+      [
+        55107,
+        153503
+      ],
+      [
+        105234,
+        117057
+      ],
+      [
+        77925,
+        15954
+      ],
+      [
+        163617,
+        220549
+      ],
+      [
+        79573,
+        69171
+      ],
+      [
+        53745,
+        152501
+      ],
+      [
+        25568,
+        148927
+      ]
+    ],
+    "snaps": [
+      [
+        9.099306254435804,
+        45.50455536605063
+      ],
+      [
+        9.158915896454838,
+        45.52758456605063
+      ],
+      [
+        9.12168413115127,
+        45.43682566605063
+      ],
+      [
+        9.155691814314148,
+        45.42755696605063
+      ],
+      [
+        9.114954263803618,
+        45.50969196605063
+      ],
+      [
+        9.112416059104623,
+        45.50711556605063
+      ],
+      [
+        9.25270794304797,
+        45.49830926605063
+      ],
+      [
+        9.200870958169606,
+        45.50660286605063
+      ]
+    ],
+    "largest_component_nodes": 213476
+  },
+  "engines": [
+    {
+      "engine": "oswm",
+      "label": "OSWM .oswmg",
+      "input_parse_ms": 0.30446000000000595,
+      "shared_setup_ms": 0.0006499999999789452,
+      "memory_delta_bytes": {
+        "heapUsed": -864936,
+        "arrayBuffers": -15614012,
+        "rss": 59961344
+      },
+      "total_process_work_ms": 8677.83121,
+      "profiles": [
+        {
+          "profile_id": "distance",
+          "profile_setup_ms": 0.006479999999982056,
+          "routing": {
+            "n": 90,
+            "median_ms": 6.327647999999954,
+            "p95_ms": 26.74184200000002,
+            "min_ms": 0.37384499999996024,
+            "max_ms": 30.572557999999958
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 0.0280720000000656,
+            "p95_ms": 0.08298500000000786,
+            "min_ms": 0.008752999999842359,
+            "max_ms": 0.20501000000012937
+          },
+          "answers": [
+            8211.23961187154,
+            8752.884351372719,
+            13093.286056391895,
+            12700.51360885799,
+            9875.256741523743,
+            2159.3137449622154,
+            2032.0899317860603,
+            10918.35080769658,
+            3476.7937585115433,
+            12605.427158772945,
+            11619.359246909618,
+            9178.773560643196,
+            3202.552091240883,
+            8304.443511068821,
+            8030.89269721508,
+            5088.355073392391,
+            14643.453842654824,
+            2490.404379874468,
+            8255.249937683344,
+            9687.269917875528,
+            5207.37679040432,
+            5526.780072137713,
+            5269.279867231846,
+            1498.8210230469704,
+            5500.7229195684195,
+            6058.069843381643,
+            4161.549181073904,
+            8892.886340156198,
+            13236.355903953314,
+            7967.673888742924,
+            8211.23961187154,
+            8752.884351372719,
+            13093.286056391895,
+            12700.51360885799,
+            9875.256741523743,
+            2159.3137449622154,
+            2032.0899317860603,
+            10918.35080769658,
+            3476.7937585115433,
+            12605.427158772945,
+            11619.359246909618,
+            9178.773560643196,
+            3202.552091240883,
+            8304.443511068821,
+            8030.89269721508,
+            5088.355073392391,
+            14643.453842654824,
+            2490.404379874468,
+            8255.249937683344,
+            9687.269917875528,
+            5207.37679040432,
+            5526.780072137713,
+            5269.279867231846,
+            1498.8210230469704,
+            5500.7229195684195,
+            6058.069843381643,
+            4161.549181073904,
+            8892.886340156198,
+            13236.355903953314,
+            7967.673888742924,
+            8211.23961187154,
+            8752.884351372719,
+            13093.286056391895,
+            12700.51360885799,
+            9875.256741523743,
+            2159.3137449622154,
+            2032.0899317860603,
+            10918.35080769658,
+            3476.7937585115433,
+            12605.427158772945,
+            11619.359246909618,
+            9178.773560643196,
+            3202.552091240883,
+            8304.443511068821,
+            8030.89269721508,
+            5088.355073392391,
+            14643.453842654824,
+            2490.404379874468,
+            8255.249937683344,
+            9687.269917875528,
+            5207.37679040432,
+            5526.780072137713,
+            5269.279867231846,
+            1498.8210230469704,
+            5500.7229195684195,
+            6058.069843381643,
+            4161.549181073904,
+            8892.886340156198,
+            13236.355903953314,
+            7967.673888742924
+          ],
+          "isochrone": {
+            "n": 3,
+            "median_ms": 58.07007300000009,
+            "p95_ms": 87.236672,
+            "min_ms": 50.7364520000001,
+            "max_ms": 87.236672
+          },
+          "isochrone_band_counts": [
+            3,
+            3,
+            3
+          ],
+          "routing_successes": 90,
+          "snapping_successes": 24,
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0
+        },
+        {
+          "profile_id": "wheelchair",
+          "profile_setup_ms": 0.00330500000018219,
+          "routing": {
+            "n": 90,
+            "median_ms": 23.780160000000024,
+            "p95_ms": 62.7638730000001,
+            "min_ms": 0.11638499999980922,
+            "max_ms": 66.12695299999996
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 0.006449999999858846,
+            "p95_ms": 0.029424000000290107,
+            "min_ms": 0.003574999999727879,
+            "max_ms": 0.029465000000527652
+          },
+          "answers": [
+            22787.924702584743,
+            23591.269191145897,
+            36024.33119431138,
+            34448.35641947389,
+            27629.62596014142,
+            null,
+            5242.938910603523,
+            null,
+            null,
+            34995.81685936451,
+            32699.63384717703,
+            24457.642640173435,
+            8430.953328430653,
+            22378.773662924767,
+            22397.415355563164,
+            14576.457954406738,
+            40346.24595218897,
+            null,
+            22225.172341823578,
+            null,
+            15124.57117819786,
+            14584.369373351336,
+            15165.565332055092,
+            3907.0017226934433,
+            15407.699984908104,
+            17388.497145473957,
+            11527.99242925644,
+            25775.231530308723,
+            36008.49693888426,
+            null,
+            22787.924702584743,
+            23591.269191145897,
+            36024.33119431138,
+            34448.35641947389,
+            27629.62596014142,
+            null,
+            5242.938910603523,
+            null,
+            null,
+            34995.81685936451,
+            32699.63384717703,
+            24457.642640173435,
+            8430.953328430653,
+            22378.773662924767,
+            22397.415355563164,
+            14576.457954406738,
+            40346.24595218897,
+            null,
+            22225.172341823578,
+            null,
+            15124.57117819786,
+            14584.369373351336,
+            15165.565332055092,
+            3907.0017226934433,
+            15407.699984908104,
+            17388.497145473957,
+            11527.99242925644,
+            25775.231530308723,
+            36008.49693888426,
+            null,
+            22787.924702584743,
+            23591.269191145897,
+            36024.33119431138,
+            34448.35641947389,
+            27629.62596014142,
+            null,
+            5242.938910603523,
+            null,
+            null,
+            34995.81685936451,
+            32699.63384717703,
+            24457.642640173435,
+            8430.953328430653,
+            22378.773662924767,
+            22397.415355563164,
+            14576.457954406738,
+            40346.24595218897,
+            null,
+            22225.172341823578,
+            null,
+            15124.57117819786,
+            14584.369373351336,
+            15165.565332055092,
+            3907.0017226934433,
+            15407.699984908104,
+            17388.497145473957,
+            11527.99242925644,
+            25775.231530308723,
+            36008.49693888426,
+            null
+          ],
+          "isochrone": {
+            "n": 3,
+            "median_ms": 32.20008700000017,
+            "p95_ms": 51.33743299999969,
+            "min_ms": 31.728495000000294,
+            "max_ms": 51.33743299999969
+          },
+          "isochrone_band_counts": [
+            3,
+            3,
+            3
+          ],
+          "routing_successes": 72,
+          "snapping_successes": 24,
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0
+        },
+        {
+          "profile_id": "blind",
+          "profile_setup_ms": 0.0030749999996260158,
+          "routing": {
+            "n": 90,
+            "median_ms": 17.21404700000039,
+            "p95_ms": 49.942174999999224,
+            "min_ms": 1.0918689999998605,
+            "max_ms": 55.159267
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 0.0070209999994403915,
+            "p95_ms": 0.017375999999785563,
+            "min_ms": 0.0034949999999298598,
+            "max_ms": 0.02986499999951775
+          },
+          "answers": [
+            18868.57340103388,
+            21239.758565068245,
+            27949.659662902355,
+            29962.994753420353,
+            23126.536766648293,
+            4850.709851861,
+            4727.572446703911,
+            26882.821349442005,
+            8703.608856678009,
+            28696.10673418641,
+            26674.138216495514,
+            16268.859864890575,
+            7091.643986582756,
+            18636.445057868958,
+            16611.17878872156,
+            13506.093008160591,
+            32721.75007584691,
+            5994.257324695587,
+            18798.438895344734,
+            23081.81374335289,
+            12387.809836447239,
+            12533.784292161465,
+            12102.41107147932,
+            3768.3098096847534,
+            13002.492728024721,
+            14514.755188941956,
+            10734.617255210876,
+            20282.424884319305,
+            28838.811531424522,
+            18281.59642136097,
+            18868.57340103388,
+            21239.758565068245,
+            27949.659662902355,
+            29962.994753420353,
+            23126.536766648293,
+            4850.709851861,
+            4727.572446703911,
+            26882.821349442005,
+            8703.608856678009,
+            28696.10673418641,
+            26674.138216495514,
+            16268.859864890575,
+            7091.643986582756,
+            18636.445057868958,
+            16611.17878872156,
+            13506.093008160591,
+            32721.75007584691,
+            5994.257324695587,
+            18798.438895344734,
+            23081.81374335289,
+            12387.809836447239,
+            12533.784292161465,
+            12102.41107147932,
+            3768.3098096847534,
+            13002.492728024721,
+            14514.755188941956,
+            10734.617255210876,
+            20282.424884319305,
+            28838.811531424522,
+            18281.59642136097,
+            18868.57340103388,
+            21239.758565068245,
+            27949.659662902355,
+            29962.994753420353,
+            23126.536766648293,
+            4850.709851861,
+            4727.572446703911,
+            26882.821349442005,
+            8703.608856678009,
+            28696.10673418641,
+            26674.138216495514,
+            16268.859864890575,
+            7091.643986582756,
+            18636.445057868958,
+            16611.17878872156,
+            13506.093008160591,
+            32721.75007584691,
+            5994.257324695587,
+            18798.438895344734,
+            23081.81374335289,
+            12387.809836447239,
+            12533.784292161465,
+            12102.41107147932,
+            3768.3098096847534,
+            13002.492728024721,
+            14514.755188941956,
+            10734.617255210876,
+            20282.424884319305,
+            28838.811531424522,
+            18281.59642136097
+          ],
+          "isochrone": {
+            "n": 3,
+            "median_ms": 30.337918000000172,
+            "p95_ms": 33.82053799999994,
+            "min_ms": 29.983932000000095,
+            "max_ms": 33.82053799999994
+          },
+          "isochrone_band_counts": [
+            3,
+            3,
+            3
+          ],
+          "routing_successes": 90,
+          "snapping_successes": 24,
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0
+        },
+        {
+          "profile_id": "elderly",
+          "profile_setup_ms": 0.0029850000000806176,
+          "routing": {
+            "n": 90,
+            "median_ms": 20.213942000000316,
+            "p95_ms": 54.440708999999515,
+            "min_ms": 0.9894540000004781,
+            "max_ms": 57.407969999999295
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 0.006240000000616419,
+            "p95_ms": 0.024236999999629916,
+            "min_ms": 0.0030150000002322486,
+            "max_ms": 0.026049000000057276
+          },
+          "answers": [
+            21850.071117043495,
+            23635.48383450508,
+            35224.279276788235,
+            32718.492235392332,
+            26123.658197939396,
+            5426.775862455368,
+            5354.766940116882,
+            29840.164716899395,
+            9694.654482126236,
+            33560.515781998634,
+            31790.39060431719,
+            22917.932870090008,
+            7046.133694767952,
+            22691.88249874115,
+            21719.86147928238,
+            14447.983746290207,
+            38742.41301226616,
+            6263.206626057625,
+            21056.54797923565,
+            26431.55009174347,
+            14939.213205724955,
+            14595.602686107159,
+            14821.32588648796,
+            4109.779697060585,
+            14509.420487999916,
+            17040.073859214783,
+            11582.500442504883,
+            25186.5956684947,
+            34253.62577164173,
+            20882.2050203681,
+            21850.071117043495,
+            23635.48383450508,
+            35224.279276788235,
+            32718.492235392332,
+            26123.658197939396,
+            5426.775862455368,
+            5354.766940116882,
+            29840.164716899395,
+            9694.654482126236,
+            33560.515781998634,
+            31790.39060431719,
+            22917.932870090008,
+            7046.133694767952,
+            22691.88249874115,
+            21719.86147928238,
+            14447.983746290207,
+            38742.41301226616,
+            6263.206626057625,
+            21056.54797923565,
+            26431.55009174347,
+            14939.213205724955,
+            14595.602686107159,
+            14821.32588648796,
+            4109.779697060585,
+            14509.420487999916,
+            17040.073859214783,
+            11582.500442504883,
+            25186.5956684947,
+            34253.62577164173,
+            20882.2050203681,
+            21850.071117043495,
+            23635.48383450508,
+            35224.279276788235,
+            32718.492235392332,
+            26123.658197939396,
+            5426.775862455368,
+            5354.766940116882,
+            29840.164716899395,
+            9694.654482126236,
+            33560.515781998634,
+            31790.39060431719,
+            22917.932870090008,
+            7046.133694767952,
+            22691.88249874115,
+            21719.86147928238,
+            14447.983746290207,
+            38742.41301226616,
+            6263.206626057625,
+            21056.54797923565,
+            26431.55009174347,
+            14939.213205724955,
+            14595.602686107159,
+            14821.32588648796,
+            4109.779697060585,
+            14509.420487999916,
+            17040.073859214783,
+            11582.500442504883,
+            25186.5956684947,
+            34253.62577164173,
+            20882.2050203681
+          ],
+          "isochrone": {
+            "n": 3,
+            "median_ms": 31.84681200000159,
+            "p95_ms": 33.00001399999928,
+            "min_ms": 30.293165999999474,
+            "max_ms": 33.00001399999928
+          },
+          "isochrone_band_counts": [
+            3,
+            3,
+            3
+          ],
+          "routing_successes": 90,
+          "snapping_successes": 24,
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0
+        }
+      ]
+    },
+    {
+      "engine": "geojson-path-finder",
+      "label": "GeoJSON Path Finder",
+      "input_parse_ms": 413.88756,
+      "shared_setup_ms": 0.0020429999999578285,
+      "memory_delta_bytes": {
+        "heapUsed": 405596288,
+        "arrayBuffers": -16594740,
+        "rss": 1306398720
+      },
+      "total_process_work_ms": 47387.361769,
+      "profiles": [
+        {
+          "profile_id": "distance",
+          "profile_setup_ms": 3937.543517,
+          "routing": {
+            "n": 90,
+            "median_ms": 58.9838550000004,
+            "p95_ms": 122.35959399999956,
+            "min_ms": 2.6990359999999782,
+            "max_ms": 135.33816500000012
+          },
+          "snapping": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 39,
+          "snapping_mismatches": 0,
+          "routing_successes": 90,
+          "snapping_successes": 0
+        },
+        {
+          "profile_id": "wheelchair",
+          "profile_setup_ms": 5697.061735000001,
+          "routing": {
+            "n": 90,
+            "median_ms": 69.78707000000213,
+            "p95_ms": 129.3599119999999,
+            "min_ms": 0.07783700000072713,
+            "max_ms": 175.51190199999837
+          },
+          "snapping": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 15,
+          "snapping_mismatches": 0,
+          "routing_successes": 72,
+          "snapping_successes": 0
+        },
+        {
+          "profile_id": "blind",
+          "profile_setup_ms": 5474.386343999999,
+          "routing": {
+            "n": 90,
+            "median_ms": 66.8175659999979,
+            "p95_ms": 133.15247200000158,
+            "min_ms": 2.8185469999989436,
+            "max_ms": 187.80171300000075
+          },
+          "snapping": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 24,
+          "snapping_mismatches": 0,
+          "routing_successes": 90,
+          "snapping_successes": 0
+        },
+        {
+          "profile_id": "elderly",
+          "profile_setup_ms": 4935.202735999999,
+          "routing": {
+            "n": 90,
+            "median_ms": 64.12451999999757,
+            "p95_ms": 135.2759189999997,
+            "min_ms": 2.5451839999950607,
+            "max_ms": 381.0269749999934
+          },
+          "snapping": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 30,
+          "snapping_mismatches": 0,
+          "routing_successes": 90,
+          "snapping_successes": 0
+        }
+      ]
+    },
+    {
+      "engine": "ngraph.path",
+      "label": "ngraph.path A*",
+      "input_parse_ms": 418.055918,
+      "shared_setup_ms": 578.3180169999999,
+      "memory_delta_bytes": {
+        "heapUsed": 333471704,
+        "arrayBuffers": -16594740,
+        "rss": 544743424
+      },
+      "total_process_work_ms": 51280.730828,
+      "profiles": [
+        {
+          "profile_id": "distance",
+          "profile_setup_ms": 0.112920000000031,
+          "routing": {
+            "n": 90,
+            "median_ms": 33.20820000000003,
+            "p95_ms": 130.3957650000002,
+            "min_ms": 0.9525589999998374,
+            "max_ms": 142.3538950000002
+          },
+          "snapping": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 90,
+          "snapping_successes": 0
+        },
+        {
+          "profile_id": "wheelchair",
+          "profile_setup_ms": 0.02774200000021665,
+          "routing": {
+            "n": 90,
+            "median_ms": 160.8385990000006,
+            "p95_ms": 459.44259899999815,
+            "min_ms": 3.690124000000651,
+            "max_ms": 492.8899019999999
+          },
+          "snapping": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 72,
+          "snapping_successes": 0
+        },
+        {
+          "profile_id": "blind",
+          "profile_setup_ms": 0.02765200000067125,
+          "routing": {
+            "n": 90,
+            "median_ms": 101.29539300000033,
+            "p95_ms": 316.4263360000041,
+            "min_ms": 4.203568999997515,
+            "max_ms": 437.6111230000024
+          },
+          "snapping": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 90,
+          "snapping_successes": 0
+        },
+        {
+          "profile_id": "elderly",
+          "profile_setup_ms": 0.028021999998600222,
+          "routing": {
+            "n": 90,
+            "median_ms": 116.35380399999849,
+            "p95_ms": 319.5273870000019,
+            "min_ms": 4.171549999999115,
+            "max_ms": 402.2205759999997
+          },
+          "snapping": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 90,
+          "snapping_successes": 0
+        }
+      ]
+    },
+    {
+      "engine": "turf",
+      "label": "Turf linear scan",
+      "input_parse_ms": 453.51552000000004,
+      "shared_setup_ms": 0.0014820000000099753,
+      "memory_delta_bytes": {
+        "heapUsed": 167922920,
+        "arrayBuffers": -16594740,
+        "rss": 330256384
+      },
+      "total_process_work_ms": 100737.277533,
+      "profiles": [
+        {
+          "profile_id": "distance",
+          "profile_setup_ms": 93.77357900000004,
+          "routing": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 932.15582,
+            "p95_ms": 1002.1668680000002,
+            "min_ms": 894.7270400000002,
+            "max_ms": 1046.8512870000013
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 0,
+          "snapping_successes": 24
+        },
+        {
+          "profile_id": "wheelchair",
+          "profile_setup_ms": 33.436351000000286,
+          "routing": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 928.805505999997,
+            "p95_ms": 1007.548741999999,
+            "min_ms": 865.9068890000053,
+            "max_ms": 1035.8905419999974
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 0,
+          "snapping_successes": 24
+        },
+        {
+          "profile_id": "blind",
+          "profile_setup_ms": 29.2523810000057,
+          "routing": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 915.0386310000031,
+            "p95_ms": 1024.5392439999996,
+            "min_ms": 885.952065000005,
+            "max_ms": 1089.6822360000006
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 0,
+          "snapping_successes": 24
+        },
+        {
+          "profile_id": "elderly",
+          "profile_setup_ms": 26.508096000005025,
+          "routing": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 1033.1867699999857,
+            "p95_ms": 1210.3913949999987,
+            "min_ms": 883.1004359999934,
+            "max_ms": 1265.865393999993
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 0,
+          "snapping_successes": 24
+        }
+      ]
+    },
+    {
+      "engine": "turf-rbush",
+      "label": "Turf + RBush",
+      "input_parse_ms": 434.30995800000005,
+      "shared_setup_ms": 261.84836200000007,
+      "memory_delta_bytes": {
+        "heapUsed": 203784776,
+        "arrayBuffers": -16594740,
+        "rss": 362049536
+      },
+      "total_process_work_ms": 1179.2946619999998,
+      "profiles": [
+        {
+          "profile_id": "distance",
+          "profile_setup_ms": 83.97590300000013,
+          "routing": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 0.4584030000000894,
+            "p95_ms": 1.264660000000049,
+            "min_ms": 0.22714300000006915,
+            "max_ms": 12.866152000000056
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 0,
+          "snapping_successes": 24
+        },
+        {
+          "profile_id": "wheelchair",
+          "profile_setup_ms": 53.17088699999999,
+          "routing": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 0.45123100000000704,
+            "p95_ms": 0.9324389999999312,
+            "min_ms": 0.20651199999997516,
+            "max_ms": 0.9737500000001091
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 0,
+          "snapping_successes": 24
+        },
+        {
+          "profile_id": "blind",
+          "profile_setup_ms": 29.691534000000047,
+          "routing": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 0.44299899999987247,
+            "p95_ms": 0.7194060000001627,
+            "min_ms": 0.20204499999999825,
+            "max_ms": 0.7868679999999131
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 0,
+          "snapping_successes": 24
+        },
+        {
+          "profile_id": "elderly",
+          "profile_setup_ms": 27.68195999999989,
+          "routing": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "snapping": {
+            "n": 24,
+            "median_ms": 0.4172710000000279,
+            "p95_ms": 1.0496749999999793,
+            "min_ms": 0.18881499999997686,
+            "max_ms": 2.899979999999914
+          },
+          "isochrone": {
+            "n": 0,
+            "median_ms": null,
+            "p95_ms": null,
+            "min_ms": null,
+            "max_ms": null
+          },
+          "isochrone_band_counts": [],
+          "routing_mismatches": 0,
+          "snapping_mismatches": 0,
+          "routing_successes": 0,
+          "snapping_successes": 24
+        }
+      ]
+    }
+  ]
+}
