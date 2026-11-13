@@ -1,0 +1,9 @@
+{
+    "provider": "geofabrik_pbf",
+    "region": "sul",
+    "source_url": "https://download.geofabrik.de/south-america/brazil/sul-latest.osm.pbf",
+    "snapshot_timestamp": "2026-11-12T21:23:05Z",
+    "acquired_at": "2026-11-13T15:44:19Z",
+    "sha256": "a326344b9ac2029f9afa5a32ed81dcc36b9252196389d67fdbb610de0630d952",
+    "cache_hit": false
+}

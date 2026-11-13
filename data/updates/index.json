@@ -1,6 +1,7 @@
 {
     "folder": "data/updates",
     "files": [
+        "acquisition.json",
         "changeset_cache.json",
         "pipeline_decision.json",
         "registry.json",

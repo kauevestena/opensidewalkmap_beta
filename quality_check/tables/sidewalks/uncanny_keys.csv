@@ -57,6 +57,7 @@ osm_id,feat_type,key,value,commentary
 960593708,way,traffic_signals,no,may be used for crossings
 976309434,way,name,Rua Oscar Chanoski,most sidewalks don't have an actual name
 977034531,way,name,Rua Gerônimo Muraro,most sidewalks don't have an actual name
+1019342758,way,name,Rua Marechal Octávio Saldanha Mazza,most sidewalks don't have an actual name
 1019616100,way,name,Rua Cláudio Chatagnier,most sidewalks don't have an actual name
 1019616101,way,name,Rua Comendador Antônio Domingues de Barros,most sidewalks don't have an actual name
 1020215061,way,name,Praça Tiradentes,most sidewalks don't have an actual name
@@ -81,3 +82,5 @@ osm_id,feat_type,key,value,commentary
 1510179298,way,name,Rua Betty de Souza Paula Halila,most sidewalks don't have an actual name
 1510179302,way,name,Rua Ângelo João Gottardi,most sidewalks don't have an actual name
 1513060781,way,name,Rua Almeida Júnior,most sidewalks don't have an actual name
+1568597661,way,name,Rua Moysés Martins,most sidewalks don't have an actual name
+1569190375,way,name,Rua Marechal Octávio Saldanha Mazza,most sidewalks don't have an actual name

@@ -93,6 +93,7 @@
             "Alameda Augusto Stellfeld",
             "Rua Oscar Chanoski",
             "Rua Gerônimo Muraro",
+            "Rua Marechal Octávio Saldanha Mazza",
             "Rua Cláudio Chatagnier",
             "Rua Comendador Antônio Domingues de Barros",
             "Praça Tiradentes",
@@ -112,12 +113,63 @@
             "Rua Dídimo Agapito da Veiga",
             "Rua Betty de Souza Paula Halila",
             "Rua Ângelo João Gottardi",
-            "Rua Almeida Júnior"
+            "Rua Almeida Júnior",
+            "Rua Moysés Martins"
         ],
         "wheelchair": [
             "no",
             "yes",
             "limited"
+        ],
+        "tactile_paving": [
+            "no",
+            "yes"
+        ],
+        "surface": [
+            "sett",
+            "paving_stones",
+            "asphalt",
+            "cobblestone",
+            "concrete",
+            "rock",
+            "dirt",
+            "concrete:plates",
+            "wood",
+            "paved",
+            "Petit_Pavê",
+            "ground",
+            "grass",
+            "compacted",
+            "earth",
+            "pebblestone",
+            "fine_gravel",
+            "concrete:lanes",
+            "grass_paver",
+            "porcelain tiles",
+            "gravel",
+            "stepping_stones",
+            "betão",
+            "paver",
+            "interlock",
+            "unhewn_cobblestone",
+            "sand",
+            "grass_scrub",
+            "unpaved"
+        ],
+        "foot": [
+            "yes",
+            "designated",
+            "customers"
+        ],
+        "access": [
+            "yes",
+            "customers",
+            "permit"
+        ],
+        "horse": [
+            "no",
+            "permissive",
+            "yes"
         ],
         "mapillary": [
             "274023951128328",
@@ -1054,52 +1106,6 @@
             "2025-06-07",
             "2026-05-31"
         ],
-        "surface": [
-            "sett",
-            "paving_stones",
-            "asphalt",
-            "cobblestone",
-            "rock",
-            "concrete",
-            "dirt",
-            "concrete:plates",
-            "wood",
-            "paved",
-            "Petit_Pavê",
-            "ground",
-            "grass",
-            "compacted",
-            "earth",
-            "pebblestone",
-            "fine_gravel",
-            "concrete:lanes",
-            "grass_paver",
-            "porcelain tiles",
-            "gravel",
-            "stepping_stones",
-            "betão",
-            "paver",
-            "interlock",
-            "unhewn_cobblestone",
-            "sand",
-            "grass_scrub",
-            "unpaved"
-        ],
-        "foot": [
-            "yes",
-            "designated",
-            "customers"
-        ],
-        "access": [
-            "yes",
-            "customers",
-            "permit"
-        ],
-        "horse": [
-            "no",
-            "permissive",
-            "yes"
-        ],
         "addr:housenumber": [
             "701"
         ],
@@ -1109,16 +1115,15 @@
         "addr:suburb": [
             "Sítio Cercado"
         ],
-        "tactile_paving": [
-            "no",
-            "yes"
-        ],
         "source": [
             "yahoo_imagery",
             "GPS",
             "Bing"
         ],
         "bus": [
+            "no"
+        ],
+        "motorcar": [
             "no"
         ],
         "motorcycle": [
@@ -1136,8 +1141,8 @@
         ],
         "sidewalk": [
             "both",
-            "no",
-            "right"
+            "right",
+            "no"
         ],
         "description": [
             "low friction"
@@ -1183,8 +1188,8 @@
             "49.46"
         ],
         "lanes": [
-            "2",
-            "1"
+            "1",
+            "2"
         ],
         "oneway": [
             "no"
@@ -1219,13 +1224,13 @@
         "cutting": [
             "yes"
         ],
+        "check_date": [
+            "2026-11-06"
+        ],
         "leisure": [
             "park"
         ],
         "hgv": [
-            "no"
-        ],
-        "motorcar": [
             "no"
         ],
         "noname": [
@@ -1246,7 +1251,8 @@
         ],
         "check_date:surface": [
             "2026-04-10",
-            "2022-12-10"
+            "2022-12-10",
+            "2026-11-06"
         ],
         "indoor": [
             "yes"
@@ -1330,6 +1336,36 @@
         "traffic_calming": [
             "table"
         ],
+        "tactile_paving": [
+            "no"
+        ],
+        "surface": [
+            "asphalt",
+            "paving_stones",
+            "sett",
+            "concrete",
+            "compacted",
+            "wood",
+            "metal",
+            "grass",
+            "unpaved",
+            "paved",
+            "concrete:plates"
+        ],
+        "foot": [
+            "permissive",
+            "designated",
+            "yes",
+            "destination"
+        ],
+        "access": [
+            "customers",
+            "permissive",
+            "yes"
+        ],
+        "horse": [
+            "no"
+        ],
         "mapillary": [
             "820843575194518",
             "336765614713898",
@@ -1365,38 +1401,8 @@
             "2019-10-09",
             "2019-09-12"
         ],
-        "surface": [
-            "asphalt",
-            "paving_stones",
-            "sett",
-            "concrete",
-            "compacted",
-            "wood",
-            "metal",
-            "grass",
-            "unpaved",
-            "paved",
-            "concrete:plates"
-        ],
-        "foot": [
-            "permissive",
-            "designated",
-            "yes",
-            "destination"
-        ],
-        "access": [
-            "customers",
-            "permissive",
-            "yes"
-        ],
-        "horse": [
-            "no"
-        ],
         "crossing:island": [
             "yes",
-            "no"
-        ],
-        "tactile_paving": [
             "no"
         ],
         "smoothness": [
@@ -1474,12 +1480,12 @@
         "bicycle": [
             "yes"
         ],
+        "crossing_ref": [
+            "zebra"
+        ],
         "button_operated": [
             "yes",
             "no"
-        ],
-        "crossing_ref": [
-            "zebra"
         ],
         "crossing:signals": [
             "yes",
@@ -1505,6 +1511,35 @@
         "traffic_calming": [
             "table",
             "hump"
+        ],
+        "kerb": [
+            "lowered",
+            "flush",
+            "raised",
+            "no",
+            "rolled",
+            "unknown",
+            "regular",
+            "normal",
+            "lowered=no",
+            "barrier=kerb"
+        ],
+        "tactile_paving": [
+            "no",
+            "yes",
+            "contrasted",
+            "bad"
+        ],
+        "surface": [
+            "concrete:plates",
+            "paving_stones",
+            "concrete",
+            "sett",
+            "paver",
+            "asphalt",
+            "grass",
+            "unpaved",
+            "cobblestone"
         ],
         "mapillary": [
             "616392826423407",
@@ -1628,32 +1663,15 @@
             "2019-11-29",
             "2019-09-12"
         ],
-        "surface": [
-            "concrete:plates",
-            "paving_stones",
-            "concrete",
-            "sett",
-            "paver",
-            "asphalt",
-            "grass",
-            "unpaved",
-            "cobblestone"
-        ],
-        "kerb": [
-            "lowered",
-            "flush",
-            "raised",
-            "no",
-            "rolled",
-            "unknown",
-            "regular",
-            "normal",
-            "lowered=no",
-            "barrier=kerb"
-        ],
         "crossing:island": [
             "no",
             "yes"
+        ],
+        "side": [
+            "left"
+        ],
+        "traffic_sign:backward": [
+            "BR:R-1"
         ],
         "addr:housenumber": [
             "195"
@@ -1663,18 +1681,6 @@
         ],
         "addr:postcode": [
             "81280430"
-        ],
-        "tactile_paving": [
-            "no",
-            "yes",
-            "contrasted",
-            "bad"
-        ],
-        "side": [
-            "left"
-        ],
-        "traffic_sign:backward": [
-            "BR:R-1"
         ],
         "source:position": [
             "Mapillary 2019-04-27"
@@ -1762,21 +1768,20 @@
             "no",
             "dismount",
             "designated",
-            "destination",
             "permissive"
         ],
         "segregated": [
             "no",
             "yes"
         ],
+        "crossing_ref": [
+            "zebra"
+        ],
         "noexit": [
             "yes"
         ],
         "button_operated": [
             "yes"
-        ],
-        "crossing_ref": [
-            "zebra"
         ],
         "barrier": [
             "lift_gate",
@@ -1802,8 +1807,8 @@
             "permit",
             "no",
             "designated",
-            "destination",
-            "permissive"
+            "permissive",
+            "destination"
         ],
         "name": [
             "Condomínio Montreux Village",
@@ -1818,6 +1823,7 @@
             "Avenida Presidente Affonso Camargo",
             "Rua XV de Novembro",
             "Rua Sanito Rocha",
+            "Avenida Winston Churchill",
             "Rua Professor João Mazzarotto",
             "Rua José Bonifácio",
             "Rua Mateus Leme",
@@ -1849,7 +1855,6 @@
             "Ciclovia Batel Parque Barigui",
             "Trilha do Bosque do Papa",
             "Praça Tiradentes",
-            "Rua Alcino Guanabara",
             "Rua Ivo Leão",
             "Rua Trinta e Um de Março - Vila Militar",
             "Rua Natálio Scuissiato",
@@ -1866,7 +1871,6 @@
             "Rua Capitão Zeppin",
             "Marginal da BR-277",
             "Rua João Negrão",
-            "Rua Pedro Locatelli Júnior",
             "Rua Miguel Caluf",
             "Rua Presidente Rodrigo Otávio",
             "Avenida Sete de Setembro",
@@ -1978,6 +1982,7 @@
             "Rua Raimundo Becker",
             "Moradas do Parque",
             "Rua Romano Pizzato",
+            "Montmartre Residências",
             "Rua Fauser Abdo Calil",
             "Rua Engenheiro Rômulo Gutierrez",
             "Rua Wolfgang Mozart",
@@ -2181,7 +2186,6 @@
             "Rua Paulo Júlio Recksidler",
             "Rua Professor Arthur Virmond de Lacerda",
             "Rua Manoel Lorenso da Rosa",
-            "Rua Carlos de Laet",
             "Condomínio Residencial São Francisco",
             "Spazio Chardonnay",
             "Conjunto Residencial Cotolengo II",
@@ -2374,6 +2378,7 @@
             "Rua Leonil Dolores Nakamura",
             "Rua Joaquim Chagas Lima",
             "Condomínio América",
+            "Praça Eufrásio Correia",
             "Residencial Parque das Araucárias",
             "Rua Juvenal Dias Garcez",
             "Rua Raymundo Nina Rodrigues",
@@ -2421,7 +2426,6 @@
             "Rua Madre Maria dos Anjos",
             "Destro",
             "Rua Dante Honório",
-            "Rua Cônego Januário da Cunha Barbosa",
             "Rodovia Vereador Admar Bertolli",
             "Rodovia João Leopoldo Jacomel",
             "Acesso Neno Grande",
@@ -2442,7 +2446,8 @@
             "Condomínio Las Brisas",
             "Rua Eugênio Parolin",
             "Rua Desembargador Vieira Cavalcanti",
-            "Rua Duarte Cesino de Medeiros"
+            "Rua Duarte Cesino de Medeiros",
+            "Rua Edgard Lickfeldt"
         ],
         "wheelchair": [
             "yes",
@@ -2452,14 +2457,8 @@
         "traffic_calming": [
             "table"
         ],
-        "mapillary": [
-            "325920459044689",
-            "186590566672442",
-            "858476568079943"
-        ],
-        "survey:date": [
-            "2019-07-29",
-            "2020-02-18"
+        "tactile_paving": [
+            "no"
         ],
         "surface": [
             "paved",
@@ -2488,8 +2487,8 @@
         "foot": [
             "yes",
             "designated",
-            "destination",
             "permissive",
+            "destination",
             "permit"
         ],
         "access": [
@@ -2516,9 +2515,24 @@
             "Mo-Fr 08:00-18:00",
             "Mo-Fr 08:00-18:00; Sa 10:00-16:00"
         ],
+        "mapillary": [
+            "325920459044689",
+            "186590566672442",
+            "858476568079943"
+        ],
+        "survey:date": [
+            "2019-07-29",
+            "2020-02-18"
+        ],
         "crossing:island": [
             "yes",
             "no"
+        ],
+        "maxwidth": [
+            "1"
+        ],
+        "side": [
+            "right"
         ],
         "addr:housenumber": [
             "1323",
@@ -2543,9 +2557,6 @@
         "addr:suburb": [
             "Campo Comprido"
         ],
-        "tactile_paving": [
-            "no"
-        ],
         "source": [
             "survey",
             "yahoo_imagery",
@@ -2559,14 +2570,12 @@
             "designated",
             "no"
         ],
-        "public_transport": [
-            "stop_position"
+        "height": [
+            "2"
         ],
-        "maxwidth": [
-            "1"
-        ],
-        "side": [
-            "right"
+        "motorcar": [
+            "no",
+            "yes"
         ],
         "motorcycle": [
             "no"
@@ -2593,9 +2602,6 @@
         ],
         "railway": [
             "abandoned"
-        ],
-        "height": [
-            "2"
         ],
         "description": [
             "Acesso Condominio Flex Accanto"
@@ -2632,10 +2638,26 @@
             "10",
             "0.9"
         ],
+        "vehicle": [
+            "no"
+        ],
         "lanes": [
             "2",
             "1",
             "3"
+        ],
+        "oneway": [
+            "yes",
+            "no",
+            "-1"
+        ],
+        "turn:lanes": [
+            "merge_to_left",
+            "right",
+            "through",
+            "through|right",
+            "through|through;right",
+            "through;left|through;right"
         ],
         "official_name": [
             "Praça do Redentor"
@@ -2644,11 +2666,6 @@
             "Rua das Flores",
             "Estrada de Ferro Paraná;Linha Curitiba - Ponta Grossa",
             "Estrada de Ferro Paraná"
-        ],
-        "oneway": [
-            "yes",
-            "no",
-            "-1"
         ],
         "alt_name": [
             "Jardim Ambiental Sete de Setembro",
@@ -2690,7 +2707,6 @@
             "Rua B",
             "Rua Maestro Ilídio Donatti",
             "Rua Paulo Júlio Reksidler",
-            "Rua da Cerveja da Vila Hauer",
             "Conjunto Residencial Cotolengo Dois; Conjunto Residencial Cotolengo 2",
             "Rua José Mansur",
             "Rua Claudino dos Santos",
@@ -2715,7 +2731,8 @@
             "Rua Rubens Orlando Brunor",
             "Rua Três",
             "Travessa Vinte e Um de Novembro;Travessa 21 de Novembro",
-            "Rodoanel Contorno Norte;Rodovia Contorno Norte de Curitiba"
+            "Rodoanel Contorno Norte;Rodovia Contorno Norte de Curitiba",
+            "Rua Edgard Lickfeld"
         ],
         "short_name": [
             "Rua 15 de Novembro"
@@ -2751,14 +2768,6 @@
         "destination": [
             "Acesso CEASA"
         ],
-        "turn:lanes": [
-            "right",
-            "merge_to_left",
-            "through",
-            "through|right",
-            "through|through;right",
-            "through;left|through;right"
-        ],
         "tunnel": [
             "yes",
             "building_passage"
@@ -2786,13 +2795,15 @@
         ],
         "check_date": [
             "2022-01-10",
-            "2026-09-09",
-            "2025-08-13",
-            "2026-08-26",
+            "2026-10-20",
             "2025-01-10",
-            "2026-03-19",
+            "2026-09-09",
             "2026-09-11",
-            "2025-02-08"
+            "2026-10-30",
+            "2025-02-08",
+            "2026-03-19",
+            "2026-10-15",
+            "2025-08-13"
         ],
         "leisure": [
             "park",
@@ -2804,17 +2815,13 @@
         "hgv": [
             "no"
         ],
-        "motorcar": [
-            "no",
-            "yes"
-        ],
         "construction": [
             "trunk",
             "secondary",
-            "tertiary",
             "primary",
-            "residential",
-            "bridge"
+            "tertiary",
+            "bridge",
+            "motorway"
         ],
         "maxspeed:type": [
             "BR:urban",
@@ -2939,6 +2946,10 @@
         "embankment": [
             "yes"
         ],
+        "note": [
+            "Data estimada de reabertura da via, podendo ocorrer antes ou depois",
+            "Vias em construção; material baseado no mapa disponibilizado pela UTAG em seu portal (Obras Novo Inter 2 - Lote 4)"
+        ],
         "maxweight:signed": [
             "no"
         ],
@@ -2956,6 +2967,9 @@
         "opening_date": [
             "2025-02-28",
             "2026-10-13"
+        ],
+        "sport": [
+            "running"
         ],
         "mtb:scale:imba": [
             "2"
@@ -2985,16 +2999,6 @@
         "ford": [
             "seasonal",
             "stepping_stones"
-        ],
-        "vehicle": [
-            "no"
-        ],
-        "sport": [
-            "running"
-        ],
-        "note": [
-            "Data estimada de reabertura da via, podendo ocorrer antes ou depois",
-            "Vias em construção; material baseado no mapa disponibilizado pela UTAG em seu portal (Obras Novo Inter 2 - Lote 4)"
         ],
         "cycleway:left": [
             "lane"
