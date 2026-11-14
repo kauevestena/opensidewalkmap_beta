@@ -1,1 +1,28 @@
-[]
+[
+    {
+        "id": 191907455,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Criação de calçadas na Praça Rui Barbosa; adoção de highway=platform nas estações-tubo da Praça Rui Barbosa e Carlos Gomes; criação de caminho para pedestres na Travessa da Lapa entre as ruas Pedro Ivo e André de Barros",
+        "created_at": "2026-11-13T18:11:51Z",
+        "changeset_changes_count": 243,
+        "oswm_changes_count": 11,
+        "changes_count": 243,
+        "additions": 5,
+        "modifications": 6,
+        "deletions": 0
+    },
+    {
+        "id": 191906489,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Adoção de highway=platform nas estações tubo da Linha Verde Norte; reversão de busway para service nas vias que dão acesso as estações; criação de gramado no entorno das estações",
+        "created_at": "2026-11-13T17:48:30Z",
+        "changeset_changes_count": 272,
+        "oswm_changes_count": 6,
+        "changes_count": 272,
+        "additions": 0,
+        "modifications": 6,
+        "deletions": 0
+    }
+]
