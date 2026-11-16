@@ -4,150 +4,22 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Sun, 15 Nov 2026 14:54:15 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 17:14:08 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 191922889 by Fizzie-DWG (0 additions, 136 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191922889</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191922889&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Fizzie-DWG&quot;&gt;Fizzie-DWG&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; DWG revert - vandalism&lt;/p&gt;
+        <title>[Activity] OSM Changeset 192006894 by Vinicius Moraes (2 additions, 9 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/192006894</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192006894&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização de bloqueios e obras do Novo Inter 2 na regional Portão; melhorias da ortogonalização de vias&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 136&lt;/li&gt;
+    &lt;li&gt;Additions (creations): 2&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 9&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191922889&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191922889&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192006894&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192006894&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 14 Nov 2026 04:18:56 GMT</pubDate>
-        <guid isPermaLink="false">activity_191922889</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191955031 by Vinicius Moraes (9 additions, 3 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191955031</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191955031&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização de forma e tags do calçadão da Praça Padre João Bagozzi e entornos&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 9&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 3&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191955031&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191955031&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Nov 2026 19:09:35 GMT</pubDate>
-        <guid isPermaLink="false">activity_191955031</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191952705 by Vinicius Moraes (7 additions, 5 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191952705</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191952705&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Criação de praça e jardinete; criação de caminhos e melhoria geométrica&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 7&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 5&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191952705&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191952705&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Nov 2026 18:19:29 GMT</pubDate>
-        <guid isPermaLink="false">activity_191952705</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191953413 by Vinicius Moraes (0 additions, 10 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191953413</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191953413&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Liberação de tráfego na Av. Sete de Setembro, entre as ruas Desembargador Westphalen e Rockfeller&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 10&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191953413&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191953413&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Nov 2026 18:36:30 GMT</pubDate>
-        <guid isPermaLink="false">activity_191953413</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191953228 by Vinicius Moraes (3 additions, 5 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191953228</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191953228&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Adicionado tags layer e tunnel na trincheira nas imediações da Praça das Nações, onde as vias descendem de seu nível&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 3&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 5&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191953228&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191953228&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Nov 2026 18:31:15 GMT</pubDate>
-        <guid isPermaLink="false">activity_191953228</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191948838 by daymonpm (0 additions, 4 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191948838</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191948838&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/daymonpm&quot;&gt;daymonpm&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Inclusão e correção de locais&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191948838&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191948838&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Nov 2026 16:46:29 GMT</pubDate>
-        <guid isPermaLink="false">activity_191948838</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191955414 by Vinicius Moraes (0 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191955414</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191955414&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Reversão de highway:busway para highway:service nas vias internas do Terminal Capão Raso&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191955414&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191955414&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Nov 2026 19:17:41 GMT</pubDate>
-        <guid isPermaLink="false">activity_191955414</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191940729 by WesleyReis (0 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191940729</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191940729&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/WesleyReis&quot;&gt;WesleyReis&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Specify road surfaces&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191940729&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191940729&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Nov 2026 13:53:21 GMT</pubDate>
-        <guid isPermaLink="false">activity_191940729</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 191948971 by daymonpm (1 additions, 0 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/191948971</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 191948971&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/daymonpm&quot;&gt;daymonpm&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Inclusão e correção de locais&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/191948971&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/191948971&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Nov 2026 16:49:30 GMT</pubDate>
-        <guid isPermaLink="false">activity_191948971</guid>
+        <pubDate>Sun, 15 Nov 2026 22:44:14 GMT</pubDate>
+        <guid isPermaLink="false">activity_192006894</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
