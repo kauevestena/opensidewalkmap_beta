@@ -1,1 +1,106 @@
-[]
+[
+    {
+        "id": 192155356,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Realinhamento de vias baseado na Curitiba Ortofoto 2019; melhorias gerais",
+        "created_at": "2026-11-18T23:01:19Z",
+        "changeset_changes_count": 657,
+        "oswm_changes_count": 19,
+        "changes_count": 657,
+        "additions": 2,
+        "modifications": 17,
+        "deletions": 0
+    },
+    {
+        "id": 192117337,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Atualização de bloqueios e obras do Novo Inter 2 nas proximidades da fábrica da Electrolux; melhorias de turn:lanes e outras tags complementares",
+        "created_at": "2026-11-18T08:52:25Z",
+        "changeset_changes_count": 332,
+        "oswm_changes_count": 13,
+        "changes_count": 332,
+        "additions": 5,
+        "modifications": 8,
+        "deletions": 0
+    },
+    {
+        "id": 192122710,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Reversão de highway:busway para highway:service nas vias internas do Terminal Campo Comprido; melhoria do desenho do terminal usando imagem do IPPUC",
+        "created_at": "2026-11-18T10:46:02Z",
+        "changeset_changes_count": 145,
+        "oswm_changes_count": 8,
+        "changes_count": 145,
+        "additions": 2,
+        "modifications": 6,
+        "deletions": 0
+    },
+    {
+        "id": 192122026,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Reversão de highway:busway para highway:service nas vias internas do Terminal Campina do Siqueira; melhoria do desenho do terminal usando imagem do IPPUC; melhorias nas imediações",
+        "created_at": "2026-11-18T10:30:43Z",
+        "changeset_changes_count": 315,
+        "oswm_changes_count": 5,
+        "changes_count": 315,
+        "additions": 1,
+        "modifications": 4,
+        "deletions": 0
+    },
+    {
+        "id": 192110842,
+        "user": "ghs_",
+        "uid": 24739505,
+        "comment": "Specify path surfaces",
+        "created_at": "2026-11-18T05:29:27Z",
+        "changeset_changes_count": 4,
+        "oswm_changes_count": 4,
+        "changes_count": 4,
+        "additions": 0,
+        "modifications": 4,
+        "deletions": 0
+    },
+    {
+        "id": 192152181,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Reclassificação de vias secondary para tertiary e vice-versa com o objetivo de priorizar vias setoriais como secondary. Bloqueio de via para obras, melhorias geométricas usando como base a Curitiba Ortofoto 2019",
+        "created_at": "2026-11-18T21:26:46Z",
+        "changeset_changes_count": 282,
+        "oswm_changes_count": 3,
+        "changes_count": 282,
+        "additions": 1,
+        "modifications": 2,
+        "deletions": 0
+    },
+    {
+        "id": 192118779,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Atualização de bloqueios e obras do Novo Inter 2 nas proximidades da Praça das Mercês; reclassificação de trecho do Anel Viário para secondary visando manutenção da rede prioritária",
+        "created_at": "2026-11-18T09:21:53Z",
+        "changeset_changes_count": 151,
+        "oswm_changes_count": 3,
+        "changes_count": 151,
+        "additions": 0,
+        "modifications": 3,
+        "deletions": 0
+    },
+    {
+        "id": 192140029,
+        "user": "MountMeru",
+        "uid": 21827399,
+        "comment": "Modified the footway near Rua Professora Rosa Saporski #adt",
+        "created_at": "2026-11-18T16:58:28Z",
+        "changeset_changes_count": 4,
+        "oswm_changes_count": 1,
+        "changes_count": 4,
+        "additions": 0,
+        "modifications": 1,
+        "deletions": 0
+    }
+]
