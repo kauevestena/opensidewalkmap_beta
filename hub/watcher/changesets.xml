@@ -4,134 +4,70 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Thu, 19 Nov 2026 16:41:51 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 16:19:01 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 192155356 by Vinicius Moraes (2 additions, 17 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192155356</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192155356&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Realinhamento de vias baseado na Curitiba Ortofoto 2019; melhorias gerais&lt;/p&gt;
+        <title>[Activity] OSM Changeset 192193949 by Vinicius Moraes (6 additions, 4 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/192193949</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192193949&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Correção de nó erroneamente anexado a ponte; criação de linha demarcando calçada separada para pedestres e ciclistas&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-    &lt;li&gt;Additions (creations): 2&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 17&lt;/li&gt;
+    &lt;li&gt;Additions (creations): 6&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192155356&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192155356&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192193949&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192193949&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 18 Nov 2026 23:01:19 GMT</pubDate>
-        <guid isPermaLink="false">activity_192155356</guid>
+        <pubDate>Thu, 19 Nov 2026 18:38:15 GMT</pubDate>
+        <guid isPermaLink="false">activity_192193949</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 192117337 by Vinicius Moraes (5 additions, 8 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192117337</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192117337&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização de bloqueios e obras do Novo Inter 2 nas proximidades da fábrica da Electrolux; melhorias de turn:lanes e outras tags complementares&lt;/p&gt;
+        <title>[Activity] OSM Changeset 192169032 by Raquel Dezidério Souto (0 additions, 6 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/192169032</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192169032&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Raquel Dezidério Souto&quot;&gt;Raquel Dezidério Souto&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; #mapeadoresIVIDES fixing errors on geometry for Curitiba Paraná Brazil&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-    &lt;li&gt;Additions (creations): 5&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 8&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192117337&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192117337&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 18 Nov 2026 08:52:25 GMT</pubDate>
-        <guid isPermaLink="false">activity_192117337</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 192122710 by Vinicius Moraes (2 additions, 6 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192122710</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192122710&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Reversão de highway:busway para highway:service nas vias internas do Terminal Campo Comprido; melhoria do desenho do terminal usando imagem do IPPUC&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 2&lt;/li&gt;
+    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 6&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192122710&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192122710&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192169032&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192169032&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 18 Nov 2026 10:46:02 GMT</pubDate>
-        <guid isPermaLink="false">activity_192122710</guid>
+        <pubDate>Thu, 19 Nov 2026 08:45:07 GMT</pubDate>
+        <guid isPermaLink="false">activity_192169032</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 192122026 by Vinicius Moraes (1 additions, 4 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192122026</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192122026&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Reversão de highway:busway para highway:service nas vias internas do Terminal Campina do Siqueira; melhoria do desenho do terminal usando imagem do IPPUC; melhorias nas imediações&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192122026&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192122026&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 18 Nov 2026 10:30:43 GMT</pubDate>
-        <guid isPermaLink="false">activity_192122026</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 192110842 by ghs_ (0 additions, 4 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192110842</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192110842&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/ghs_&quot;&gt;ghs_&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Specify path surfaces&lt;/p&gt;
+        <title>[Activity] OSM Changeset 192157071 by Vinicius Moraes (0 additions, 4 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/192157071</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192157071&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Retirada de highway:construction e inclusão de motor_vehicle:no durante a execução das obras, por se tratar de via que já existe&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 4&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192110842&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192110842&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192157071&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192157071&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 18 Nov 2026 05:29:27 GMT</pubDate>
-        <guid isPermaLink="false">activity_192110842</guid>
+        <pubDate>Thu, 19 Nov 2026 00:06:01 GMT</pubDate>
+        <guid isPermaLink="false">activity_192157071</guid>
     </item>
     <item>
-        <title>[Activity] OSM Changeset 192152181 by Vinicius Moraes (1 additions, 2 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192152181</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192152181&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Reclassificação de vias secondary para tertiary e vice-versa com o objetivo de priorizar vias setoriais como secondary. Bloqueio de via para obras, melhorias geométricas usando como base a Curitiba Ortofoto 2019&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 2&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192152181&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192152181&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 18 Nov 2026 21:26:46 GMT</pubDate>
-        <guid isPermaLink="false">activity_192152181</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 192118779 by Vinicius Moraes (0 additions, 3 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192118779</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192118779&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Atualização de bloqueios e obras do Novo Inter 2 nas proximidades da Praça das Mercês; reclassificação de trecho do Anel Viário para secondary visando manutenção da rede prioritária&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 3&lt;/li&gt;
-    &lt;li&gt;Deletions: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192118779&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192118779&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 18 Nov 2026 09:21:53 GMT</pubDate>
-        <guid isPermaLink="false">activity_192118779</guid>
-    </item>
-    <item>
-        <title>[Activity] OSM Changeset 192140029 by MountMeru (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192140029</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192140029&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/MountMeru&quot;&gt;MountMeru&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Modified the footway near Rua Professora Rosa Saporski #adt&lt;/p&gt;
+        <title>[Activity] OSM Changeset 192156977 by Vinicius Moraes (0 additions, 1 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/192156977</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192156977&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Retirada de access:no adicionado erroneamente na Rua José Rietmeyer&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
     &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192140029&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192140029&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192156977&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192156977&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 18 Nov 2026 16:58:28 GMT</pubDate>
-        <guid isPermaLink="false">activity_192140029</guid>
+        <pubDate>Thu, 19 Nov 2026 00:02:14 GMT</pubDate>
+        <guid isPermaLink="false">activity_192156977</guid>
     </item>
     <item>
         <title>[Alert] High Deletion OSM Changeset 182321412 by Vinicius Moraes (130 deletions)</title>
