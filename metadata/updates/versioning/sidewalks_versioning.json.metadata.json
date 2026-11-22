@@ -65,19 +65,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-11-21T15:31:06+00:00",
+    "updated": "2026-11-22T16:15:54+00:00",
     "node_registry": {
       "Data Fetching": "2026-11-12T21:23:05Z",
-      "Data Pre-Processing": "2026-11-15T15:37:38Z",
+      "Data Pre-Processing": "2026-11-22T16:13:15Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-11-15T15:37:49Z",
-      "Wiki check for keys": "2026-11-15T15:40:09Z",
-      "Data Quality Tool": "2026-11-15T15:37:43Z",
-      "Versioning Data": "2026-11-15T15:37:34Z",
+      "Statistical Charts": "2026-11-22T16:13:25Z",
+      "Wiki check for keys": "2026-11-22T16:15:54Z",
+      "Data Quality Tool": "2026-11-22T16:13:19Z",
+      "Versioning Data": "2026-11-22T16:13:11Z",
       "Completeness Analysis": "2026-11-13T15:59:49Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "6f811852641f5dfab29d522535556999c683d8eb",
-      "Pipeline Success": "2026-11-21T15:31:06Z"
+      "Pipeline Success": "2026-11-22T15:32:25Z"
     }
   },
   "lineage": {
@@ -100,7 +100,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-11-21T15:31:06+00:00",
+    "generated_at": "2026-11-22T16:15:54+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "6f811852641f5dfab29d522535556999c683d8eb",
@@ -115,10 +115,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/updates/versioning/sidewalks_versioning.json",
     "media_type": "application/json",
     "format": "JSON",
-    "byte_size": 472774,
+    "byte_size": 472789,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "387cb84b910da649df5a04c7678549fbbe39d2f1ea9d42f1014f4632ba031178"
+      "value": "5e061c1cc9c76652974a6b0589ddeb3de5d79b59eef827d2904b687e75d56922"
     }
   },
   "links": [

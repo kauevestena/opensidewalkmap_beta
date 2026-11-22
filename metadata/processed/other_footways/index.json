@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-11-21T15:31:06+00:00",
+    "updated": "2026-11-22T16:15:54+00:00",
     "node_registry": {
       "Data Fetching": "2026-11-12T21:23:05Z",
-      "Data Pre-Processing": "2026-11-15T15:37:38Z",
+      "Data Pre-Processing": "2026-11-22T16:13:15Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-11-15T15:37:49Z",
-      "Wiki check for keys": "2026-11-15T15:40:09Z",
-      "Data Quality Tool": "2026-11-15T15:37:43Z",
-      "Versioning Data": "2026-11-15T15:37:34Z",
+      "Statistical Charts": "2026-11-22T16:13:25Z",
+      "Wiki check for keys": "2026-11-22T16:15:54Z",
+      "Data Quality Tool": "2026-11-22T16:13:19Z",
+      "Versioning Data": "2026-11-22T16:13:11Z",
       "Completeness Analysis": "2026-11-13T15:59:49Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "6f811852641f5dfab29d522535556999c683d8eb",
-      "Pipeline Success": "2026-11-21T15:31:06Z"
+      "Pipeline Success": "2026-11-22T15:32:25Z"
     }
   },
   "lineage": {
@@ -104,7 +104,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-11-21T15:31:06+00:00",
+    "generated_at": "2026-11-22T16:15:54+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "6f811852641f5dfab29d522535556999c683d8eb",
@@ -120,10 +120,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/informal_footways.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 109901,
+      "byte_size": 109908,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "4149a9e1120aa4752429d2e4650703dd9c9fd376964dea864cfd5db05a3cbf0f"
+        "value": "48dd7cb86c063e4a16c63b40508c829cfb2fa22ea7828bd54e62d2075b2fe1b0"
       }
     },
     {
@@ -132,10 +132,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/main_footways.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 631049,
+      "byte_size": 630460,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "87d6bff7c4b05913c62545f164ab247196c4529c599cfd5399e5489e4edf1aae"
+        "value": "08e11143742f3d6cb087b3b76abbc4e5177ff34f3dce7468cbacec102d3d0762"
       }
     },
     {
@@ -144,10 +144,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/pedestrian_areas.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 118957,
+      "byte_size": 118929,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "a431fe21f3c711a3b24071a5a137f14dc30478b82656afa8f2d25079f7da438a"
+        "value": "96c1d81cd0e1a212c71e8bec6a6aacc1f88bf1d9d47b97fad2e9ce01cd9450cb"
       }
     },
     {
@@ -156,10 +156,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/processed/other_footways/potential_footways.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 166629,
+      "byte_size": 166636,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "29cb58505e4027bc63761ff579c27e3c8bf3c959f400d2954fffb1a91ec77f11"
+        "value": "de9bdd126a484ac54d2c7a7826050fd215658bf8e1bfb38d31a4f6a7376bc9da"
       }
     },
     {
@@ -171,7 +171,7 @@
       "byte_size": 99356,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "09dd893858990f7cc781945db43636136ff221d74b27760701b4397e1de6d990"
+        "value": "a0f0ba15ad92cfbb1809a00693629ffc932f6c8b3307de9d3b385cee0dde9d59"
       }
     }
   ],
