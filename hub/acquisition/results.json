@@ -1,6 +1,6 @@
 {
   "node_name": "Curitiba",
-  "generated_at": "2026-11-24T19:03:19Z",
+  "generated_at": "2026-11-25T18:06:35Z",
   "bbox": [
     -25.6435043,
     -49.38914,
@@ -28,9 +28,9 @@
       }
     },
     "Pic4Review": {
-      "status": "ok",
+      "status": "offline",
       "instances": {
-        "https://pic4review.pavie.info/#/": "ok"
+        "https://pic4review.pavie.info/#/": "offline"
       }
     },
     "MapRoulette": {
