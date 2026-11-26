@@ -44,6 +44,7 @@
         ],
         "name": [
             "Rua Carmelo Rangel",
+            "Travessa Amando Mann",
             "Rua Gaspar Carrilho Júnior",
             "Rua Desembargador Otávio do Amaral",
             "Rua Deputado Leoberto Leal",
@@ -52,6 +53,7 @@
             "Rua São Miguel Febres Cordeiro",
             "Rua São Brás",
             "Rua Henrique Itiberê da Cunha",
+            "Rua Wolfgang Mozart",
             "Rua Edgard de Alencar Guimarães",
             "Rua Dona Emma Hecke de Castro",
             "Rua Doutor Othon Accioly Rodrigues da Costa",
@@ -93,6 +95,8 @@
             "Alameda Augusto Stellfeld",
             "Rua Oscar Chanoski",
             "Rua Gerônimo Muraro",
+            "Rua Constantino Alves dos Reis",
+            "Rua Francisco Gonzales Villanueva",
             "Rua Marechal Octávio Saldanha Mazza",
             "Rua Cláudio Chatagnier",
             "Rua Comendador Antônio Domingues de Barros",
@@ -108,13 +112,21 @@
             "Rua Padre Dehon",
             "Rua Dalila Rolim Vargas",
             "Rua Luiz Leopoldo Landal",
+            "Rua Doutor Constante Coelho",
             "Rua Tenente João Gomes da Silva",
             "Avenida Canal Belém (Marginal Leste)",
             "Rua Dídimo Agapito da Veiga",
             "Rua Betty de Souza Paula Halila",
             "Rua Ângelo João Gottardi",
             "Rua Almeida Júnior",
-            "Rua Moysés Martins"
+            "Rua Moysés Martins",
+            "Galeria Business",
+            "Travessa da Lapa",
+            "Rua Raul Joaquim Quadros Gomes",
+            "Rua Silvestre Kalenetz",
+            "Rua João Bettega",
+            "Rua Doutor Joaquim Ignácio Silveira da Motta",
+            "Avenida Coronel Francisco Heráclito dos Santos"
         ],
         "wheelchair": [
             "no",
@@ -133,6 +145,7 @@
             "concrete",
             "rock",
             "dirt",
+            "grass_paver",
             "concrete:plates",
             "wood",
             "paved",
@@ -144,7 +157,6 @@
             "pebblestone",
             "fine_gravel",
             "concrete:lanes",
-            "grass_paver",
             "porcelain tiles",
             "gravel",
             "stepping_stones",
@@ -1195,6 +1207,7 @@
             "no"
         ],
         "alt_name": [
+            "Rua Wolfgang Amadeus Mozart",
             "Rua Carlos Benetti",
             "Rua Canal Belém (Marginal Leste)"
         ],
@@ -1225,6 +1238,7 @@
             "yes"
         ],
         "check_date": [
+            "2026-11-18",
             "2026-11-06"
         ],
         "leisure": [
@@ -1246,10 +1260,8 @@
             "11",
             "10"
         ],
-        "footway:surface": [
-            "paving_stones"
-        ],
         "check_date:surface": [
+            "2026-11-18",
             "2026-04-10",
             "2022-12-10",
             "2026-11-06"
@@ -1265,6 +1277,9 @@
         ],
         "ramp:wheelchair": [
             "no"
+        ],
+        "foot:conditional": [
+            "no @ (22:00-06:00)"
         ],
         "check_date:smoothness": [
             "2025-02-05"
@@ -1725,8 +1740,8 @@
     "other_footways": {
         "highway": [
             "pedestrian",
-            "service",
             "tertiary",
+            "service",
             "residential",
             "footway",
             "steps",
@@ -1740,11 +1755,11 @@
             "tertiary_link"
         ],
         "maxspeed": [
-            "40",
             "50",
-            "30",
+            "40",
             "60",
             "20",
+            "30",
             "10",
             "80"
         ],
@@ -1819,7 +1834,6 @@
             "Largo da Ordem",
             "Jardim Ambiental Sete de Setembro",
             "Praça Zacarias",
-            "Travessa da Lapa",
             "Avenida Presidente Affonso Camargo",
             "Rua XV de Novembro",
             "Rua Sanito Rocha",
@@ -1847,6 +1861,7 @@
             "Rua Newton França Bittencourt",
             "Rua Vereador Oswaldo Nascimento Bittencourt",
             "Rua Joaquim Caetano da Silva",
+            "Rua Cecília Ribas Munhoz",
             "Rua João Bettega",
             "Rua Jorge Gomes Rosa",
             "Rua Pedro Ivo",
@@ -1985,7 +2000,6 @@
             "Montmartre Residências",
             "Rua Fauser Abdo Calil",
             "Rua Engenheiro Rômulo Gutierrez",
-            "Rua Wolfgang Mozart",
             "Rua Gastão Câmara",
             "Rua Emílio de Menezes",
             "Rua Professora Rosa Saporski",
@@ -2176,7 +2190,6 @@
             "Residencial Tanguá",
             "Acesso Anita/Flávio Dallegrave",
             "Rua Agostinho Zaniolo",
-            "Avenida Presidente Arthur da Silva Bernardes",
             "Condomínio Verona",
             "Rua Juvenal Negrello",
             "Rua Luzia dos Santos Silveira",
@@ -2243,7 +2256,6 @@
             "Rua José Antônio Nichele",
             "Rua Osiris de Brito",
             "Rua Dirceu Simões de Medeiros",
-            "Rua Professor João Soares Barcelos",
             "Rua da Cidadania do Carmo",
             "Rua Campina da Lagoa",
             "Rua da Cidadania Pinheirinho",
@@ -2340,6 +2352,7 @@
             "Rua Beethoven",
             "Rua Richard Wagner",
             "Rua Buruti",
+            "Avenida República Argentina",
             "Rua Curupis",
             "Rua Curupaitis",
             "Rua Silveira Peixoto",
@@ -2359,7 +2372,6 @@
             "Rua Júlio Augusto Ansiutti",
             "Trilha",
             "Rua João Batista Trentin",
-            "Rua Vital Brasil",
             "Trilha Entorno Parque Centenário da Imigração Japonesa",
             "Rua Waldemar Kost",
             "Condomínio Sherwood",
@@ -2421,6 +2433,7 @@
             "Rua Bôrtolo Gusso",
             "Rua Frederico Guilherme Virmond",
             "Avenida Henry Ford",
+            "Praça da Espanha",
             "Rua Capitão Tenente Maris de Barros",
             "Rua Via Firenze",
             "Rua Madre Maria dos Anjos",
@@ -2447,7 +2460,8 @@
             "Rua Eugênio Parolin",
             "Rua Desembargador Vieira Cavalcanti",
             "Rua Duarte Cesino de Medeiros",
-            "Rua Edgard Lickfeldt"
+            "Rua Edgard Lickfeldt",
+            "Rua Jacob Bertinato"
         ],
         "wheelchair": [
             "yes",
@@ -2474,7 +2488,6 @@
             "unpaved",
             "ground",
             "dirt",
-            "grass_paver",
             "rock",
             "fine_gravel",
             "grass",
@@ -2567,7 +2580,6 @@
             "IPPUC"
         ],
         "bus": [
-            "designated",
             "no"
         ],
         "height": [
@@ -2594,8 +2606,8 @@
             "impassable"
         ],
         "sidewalk": [
-            "both",
             "no",
+            "both",
             "right",
             "left",
             "yes"
@@ -2655,9 +2667,7 @@
             "merge_to_left",
             "right",
             "through",
-            "through|right",
-            "through|through;right",
-            "through;left|through;right"
+            "through|right"
         ],
         "official_name": [
             "Praça do Redentor"
@@ -2690,7 +2700,6 @@
             "Beco Um; Beco 1",
             "Rua José Henrique J Sikorski; Rua Henrique José Sikorski",
             "Rua Juracy Nadalin;Rua São Joaquim;Rua Juraci Nadalin",
-            "Rua Wolfgang Amadeus Mozart",
             "Rua Via Del Molino",
             "Rua Coronel João Cândido de Oliveira",
             "Rua 8;Rua Oito",
@@ -2699,7 +2708,6 @@
             "Rua José Culpi",
             "Rua Enrico Caruso",
             "Praça do Gaúcho",
-            "Rua Aluizio Franca",
             "Residencial Merces Dois; Residencial Merces 2",
             "Residencial Merces Tres; Residencial Merces 3",
             "Condomínio Parque das Pedras Dois; Condomínio Parque das Pedras 2",
@@ -2726,6 +2734,7 @@
             "Rua Ribeirão dos Padilhas",
             "Rua Um",
             "Avenida 7 de Setembro; Rua 7 de Setembro; Rua Sete de Setembro",
+            "Rua Aluizio Franca",
             "Rua Canal Belém (Marginal Oeste)",
             "Rua Liberato Evangelista do Prado",
             "Rua Rubens Orlando Brunor",
@@ -2797,13 +2806,11 @@
             "2022-01-10",
             "2026-10-20",
             "2025-01-10",
-            "2026-09-09",
             "2026-09-11",
             "2026-10-30",
             "2025-02-08",
             "2026-03-19",
-            "2026-10-15",
-            "2025-08-13"
+            "2026-10-15"
         ],
         "leisure": [
             "park",
@@ -2818,14 +2825,16 @@
         "construction": [
             "trunk",
             "secondary",
-            "primary",
-            "tertiary",
             "bridge",
-            "motorway"
+            "motorway",
+            "tertiary"
         ],
         "maxspeed:type": [
             "BR:urban",
             "sign"
+        ],
+        "narrow": [
+            "yes"
         ],
         "noname": [
             "yes"
@@ -2917,9 +2926,6 @@
             "Pedestrian_Bridge",
             "pier"
         ],
-        "narrow": [
-            "yes"
-        ],
         "indoor": [
             "yes",
             "footway"
@@ -2947,6 +2953,7 @@
             "yes"
         ],
         "note": [
+            "A via atende aos requisitos de living_street por estar elevada ao mesmo nível da calçada, não haver separação física para veículos ou pedestres; preferência absoluta de pedestres e veículos não motorizados; limite de velocidade baixo.",
             "Data estimada de reabertura da via, podendo ocorrer antes ou depois",
             "Vias em construção; material baseado no mapa disponibilizado pela UTAG em seu portal (Obras Novo Inter 2 - Lote 4)"
         ],
@@ -2965,8 +2972,7 @@
             "Galeria Júlio Moreira"
         ],
         "opening_date": [
-            "2025-02-28",
-            "2026-10-13"
+            "2025-02-28"
         ],
         "sport": [
             "running"
@@ -3010,6 +3016,7 @@
             "2"
         ],
         "oneway:bicycle": [
+            "yes",
             "no"
         ],
         "check_date:footway:surface": [

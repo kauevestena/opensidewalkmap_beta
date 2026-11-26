@@ -34,19 +34,19 @@
   ],
   "spatial": null,
   "temporal": {
-    "updated": "2026-11-24T19:03:23+00:00",
+    "updated": "2026-11-26T18:20:36+00:00",
     "node_registry": {
-      "Data Fetching": "2026-11-12T21:23:05Z",
-      "Data Pre-Processing": "2026-11-22T16:13:15Z",
+      "Data Fetching": "2026-11-25T21:22:46Z",
+      "Data Pre-Processing": "2026-11-26T18:05:44Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-11-22T16:13:25Z",
+      "Statistical Charts": "2026-11-26T18:20:36Z",
       "Wiki check for keys": "2026-11-22T16:15:54Z",
-      "Data Quality Tool": "2026-11-22T16:13:19Z",
+      "Data Quality Tool": "2026-11-26T18:07:06Z",
       "Versioning Data": "2026-11-22T16:13:11Z",
-      "Completeness Analysis": "2026-11-13T15:59:49Z",
+      "Completeness Analysis": "2026-11-26T18:20:21Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "6f811852641f5dfab29d522535556999c683d8eb",
-      "Pipeline Success": "2026-11-24T19:03:23Z"
+      "Pipeline Success": "2026-11-25T18:06:41Z"
     }
   },
   "lineage": {
@@ -69,7 +69,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-11-24T19:03:23+00:00",
+    "generated_at": "2026-11-26T18:20:36+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "6f811852641f5dfab29d522535556999c683d8eb",
@@ -84,10 +84,10 @@
     "download_url": "https://kauevestena.github.io/opensidewalkmap_beta/data/updates/registry.json",
     "media_type": "application/json",
     "format": "JSON",
-    "byte_size": 577,
+    "byte_size": 576,
     "checksum": {
       "algorithm": "SHA-256",
-      "value": "d905191a4fd8db7cbf8f13fcc0b4a7c846d6ba681495e00cd75c8bf8bd0ebcba"
+      "value": "9c3316961863e7f13386ef056ce6bfc2097e0acacacaf53f0d8c9fb0e84ac3f2"
     }
   },
   "links": [

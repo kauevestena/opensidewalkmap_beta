@@ -1,44 +1,44 @@
 {
     "schema_version": 1,
     "node_name": "Curitiba",
-    "generated_at": "2026-11-13T15:45:29.989284+00:00",
+    "generated_at": "2026-11-26T18:06:54.234028+00:00",
     "themes": {
         "footway_categories": {
             "kind": "categorical",
-            "total": 20024,
-            "known": 20024,
+            "total": 20025,
+            "known": 20025,
             "unknown": 0,
             "unknownPercent": 0.0,
             "knownCategoryCount": 8,
             "categories": [
                 {
                     "value": "sidewalks",
-                    "count": 8184,
-                    "percent": 40.87,
+                    "count": 8204,
+                    "percent": 40.97,
                     "color": "steelblue"
                 },
                 {
                     "value": "main_footways",
-                    "count": 5520,
-                    "percent": 27.57,
+                    "count": 5509,
+                    "percent": 27.51,
                     "color": "#299077"
                 },
                 {
                     "value": "kerbs",
-                    "count": 2849,
-                    "percent": 14.23,
+                    "count": 2848,
+                    "percent": 14.22,
                     "color": "steelblue"
                 },
                 {
                     "value": "crossings",
-                    "count": 2092,
-                    "percent": 10.45,
+                    "count": 2090,
+                    "percent": 10.44,
                     "color": "steelblue"
                 },
                 {
                     "value": "potential_footways",
-                    "count": 742,
-                    "percent": 3.71,
+                    "count": 739,
+                    "percent": 3.69,
                     "color": "#9569a4"
                 },
                 {
@@ -49,36 +49,36 @@
                 },
                 {
                     "value": "informal_footways",
-                    "count": 218,
-                    "percent": 1.09,
+                    "count": 214,
+                    "percent": 1.07,
                     "color": "#b0645a"
                 },
                 {
                     "value": "pedestrian_areas",
-                    "count": 49,
-                    "percent": 0.24,
+                    "count": 51,
+                    "percent": 0.25,
                     "color": "steelblue"
                 }
             ],
             "dominant": {
                 "value": "sidewalks",
-                "count": 8184,
-                "percent": 40.87,
+                "count": 8204,
+                "percent": 40.97,
                 "color": "steelblue"
             },
-            "shannonEntropy": 1.494119,
-            "effectiveDiversity": 4.455411,
+            "shannonEntropy": 1.493105,
+            "effectiveDiversity": 4.450896,
             "lengthFeatureCount": 17126,
-            "totalLengthKm": 941.513353,
+            "totalLengthKm": 940.183752,
             "unknownLengthKm": 0.0,
             "lengthKmByCategory": {
-                "sidewalks": 319.882934,
-                "main_footways": 452.218706,
+                "sidewalks": 320.164652,
+                "main_footways": 451.587878,
                 "kerbs": 0.0,
-                "crossings": 24.508108,
-                "potential_footways": 96.514441,
-                "stairways": 5.176969,
-                "informal_footways": 43.212195,
+                "crossings": 24.535768,
+                "potential_footways": 96.578689,
+                "stairways": 5.192997,
+                "informal_footways": 42.123769,
                 "pedestrian_areas": 0.0
             },
             "id": "footway_categories",
@@ -113,34 +113,34 @@
             "panels": [
                 {
                     "kind": "categorical",
-                    "total": 2092,
-                    "known": 1052,
-                    "unknown": 1040,
-                    "unknownPercent": 49.71,
+                    "total": 2090,
+                    "known": 1049,
+                    "unknown": 1041,
+                    "unknownPercent": 49.81,
                     "knownCategoryCount": 6,
                     "categories": [
                         {
                             "value": "unmarked",
-                            "count": 713,
-                            "percent": 67.78,
+                            "count": 712,
+                            "percent": 67.87,
                             "color": "#ffff99"
                         },
                         {
                             "value": "marked",
-                            "count": 121,
-                            "percent": 11.5,
+                            "count": 123,
+                            "percent": 11.73,
                             "color": "#a6cee3"
                         },
                         {
                             "value": "uncontrolled",
                             "count": 103,
-                            "percent": 9.79,
+                            "percent": 9.82,
                             "color": "#a6cee3"
                         },
                         {
                             "value": "traffic_signals",
-                            "count": 97,
-                            "percent": 9.22,
+                            "count": 93,
+                            "percent": 8.87,
                             "color": "#1f78b4"
                         },
                         {
@@ -158,20 +158,20 @@
                     ],
                     "dominant": {
                         "value": "unmarked",
-                        "count": 713,
-                        "percent": 67.78,
+                        "count": 712,
+                        "percent": 67.87,
                         "color": "#ffff99"
                     },
-                    "shannonEntropy": 1.036993,
-                    "effectiveDiversity": 2.820721,
-                    "lengthFeatureCount": 2092,
-                    "totalLengthKm": 24.508108,
-                    "unknownLengthKm": 11.918517,
+                    "shannonEntropy": 1.034529,
+                    "effectiveDiversity": 2.813781,
+                    "lengthFeatureCount": 2090,
+                    "totalLengthKm": 24.535768,
+                    "unknownLengthKm": 11.929468,
                     "lengthKmByCategory": {
-                        "unmarked": 8.133358,
-                        "marked": 1.597592,
-                        "uncontrolled": 1.254765,
-                        "traffic_signals": 1.40127,
+                        "unmarked": 8.119311,
+                        "marked": 1.66476,
+                        "uncontrolled": 1.268165,
+                        "traffic_signals": 1.351458,
                         "zebra": 0.161526,
                         "no": 0.04108
                     },
@@ -188,10 +188,10 @@
                 },
                 {
                     "kind": "categorical",
-                    "total": 2849,
+                    "total": 2848,
                     "known": 1085,
-                    "unknown": 1764,
-                    "unknownPercent": 61.92,
+                    "unknown": 1763,
+                    "unknownPercent": 61.9,
                     "knownCategoryCount": 9,
                     "categories": [
                         {
@@ -272,46 +272,46 @@
         },
         "surface": {
             "kind": "categorical",
-            "total": 8184,
-            "known": 2385,
-            "unknown": 5799,
-            "unknownPercent": 70.86,
+            "total": 8204,
+            "known": 2386,
+            "unknown": 5818,
+            "unknownPercent": 70.92,
             "knownCategoryCount": 27,
             "categories": [
                 {
                     "value": "paving_stones",
                     "count": 586,
-                    "percent": 24.57,
+                    "percent": 24.56,
                     "color": "#bebada"
                 },
                 {
                     "value": "sett",
-                    "count": 509,
-                    "percent": 21.34,
+                    "count": 510,
+                    "percent": 21.37,
                     "color": "#ffed6f"
                 },
                 {
                     "value": "concrete:plates",
                     "count": 378,
-                    "percent": 15.85,
+                    "percent": 15.84,
                     "color": "#fccde5"
                 },
                 {
                     "value": "asphalt",
-                    "count": 362,
-                    "percent": 15.18,
+                    "count": 361,
+                    "percent": 15.13,
                     "color": "#fb8072"
                 },
                 {
                     "value": "concrete",
                     "count": 341,
-                    "percent": 14.3,
+                    "percent": 14.29,
                     "color": "#80b1d3"
                 },
                 {
                     "value": "grass",
                     "count": 86,
-                    "percent": 3.61,
+                    "percent": 3.6,
                     "color": "#b3de69"
                 },
                 {
@@ -339,6 +339,12 @@
                     "color": "gray"
                 },
                 {
+                    "value": "grass_paver",
+                    "count": 8,
+                    "percent": 0.34,
+                    "color": "gray"
+                },
+                {
                     "value": "ground",
                     "count": 8,
                     "percent": 0.34,
@@ -349,12 +355,6 @@
                     "count": 7,
                     "percent": 0.29,
                     "color": "#ffed6f"
-                },
-                {
-                    "value": "grass_paver",
-                    "count": 7,
-                    "percent": 0.29,
-                    "color": "gray"
                 },
                 {
                     "value": "stepping_stones",
@@ -444,28 +444,28 @@
             "dominant": {
                 "value": "paving_stones",
                 "count": 586,
-                "percent": 24.57,
+                "percent": 24.56,
                 "color": "#bebada"
             },
-            "shannonEntropy": 1.937317,
-            "effectiveDiversity": 6.940108,
-            "lengthFeatureCount": 8184,
-            "totalLengthKm": 319.882934,
-            "unknownLengthKm": 213.609339,
+            "shannonEntropy": 1.938777,
+            "effectiveDiversity": 6.950245,
+            "lengthFeatureCount": 8204,
+            "totalLengthKm": 320.164652,
+            "unknownLengthKm": 214.735642,
             "lengthKmByCategory": {
-                "paving_stones": 23.865845,
-                "sett": 18.07338,
+                "paving_stones": 23.868665,
+                "sett": 18.051832,
                 "concrete:plates": 16.322299,
-                "asphalt": 19.140613,
-                "concrete": 20.627193,
+                "asphalt": 19.112411,
+                "concrete": 19.806604,
                 "grass": 2.231383,
                 "paved": 2.017721,
                 "concrete:lanes": 0.471512,
                 "wood": 0.401059,
                 "rock": 0.339054,
+                "grass_paver": 0.767404,
                 "ground": 0.563174,
                 "cobblestone": 0.41522,
-                "grass_paver": 0.74447,
                 "stepping_stones": 0.218483,
                 "compacted": 0.048263,
                 "fine_gravel": 0.059094,
@@ -494,10 +494,10 @@
         },
         "smoothness": {
             "kind": "categorical",
-            "total": 8184,
+            "total": 8204,
             "known": 1313,
-            "unknown": 6871,
-            "unknownPercent": 83.96,
+            "unknown": 6891,
+            "unknownPercent": 84.0,
             "knownCategoryCount": 8,
             "categories": [
                 {
@@ -557,9 +557,9 @@
             },
             "shannonEntropy": 1.378892,
             "effectiveDiversity": 3.970498,
-            "lengthFeatureCount": 8184,
-            "totalLengthKm": 319.882934,
-            "unknownLengthKm": 278.121587,
+            "lengthFeatureCount": 8204,
+            "totalLengthKm": 320.164652,
+            "unknownLengthKm": 278.403306,
             "lengthKmByCategory": {
                 "good": 19.04567,
                 "intermediate": 11.83753,
@@ -583,10 +583,10 @@
         },
         "tactile_paving": {
             "kind": "categorical",
-            "total": 8184,
+            "total": 8204,
             "known": 1016,
-            "unknown": 7168,
-            "unknownPercent": 87.59,
+            "unknown": 7188,
+            "unknownPercent": 87.62,
             "knownCategoryCount": 2,
             "categories": [
                 {
@@ -610,11 +610,11 @@
             },
             "shannonEntropy": 0.055277,
             "effectiveDiversity": 1.056833,
-            "lengthFeatureCount": 8184,
-            "totalLengthKm": 319.882934,
-            "unknownLengthKm": 287.112234,
+            "lengthFeatureCount": 8204,
+            "totalLengthKm": 320.164652,
+            "unknownLengthKm": 287.394535,
             "lengthKmByCategory": {
-                "no": 32.450107,
+                "no": 32.449525,
                 "yes": 0.320593
             },
             "id": "tactile_paving",
@@ -630,38 +630,38 @@
         },
         "lit": {
             "kind": "categorical",
-            "total": 8184,
-            "known": 471,
-            "unknown": 7713,
-            "unknownPercent": 94.24,
+            "total": 8204,
+            "known": 485,
+            "unknown": 7719,
+            "unknownPercent": 94.09,
             "knownCategoryCount": 2,
             "categories": [
                 {
                     "value": "yes",
-                    "count": 440,
-                    "percent": 93.42,
+                    "count": 454,
+                    "percent": 93.61,
                     "color": "#ffff99"
                 },
                 {
                     "value": "no",
                     "count": 31,
-                    "percent": 6.58,
+                    "percent": 6.39,
                     "color": "#6a3d9a"
                 }
             ],
             "dominant": {
                 "value": "yes",
-                "count": 440,
-                "percent": 93.42,
+                "count": 454,
+                "percent": 93.61,
                 "color": "#ffff99"
             },
-            "shannonEntropy": 0.242683,
-            "effectiveDiversity": 1.274664,
-            "lengthFeatureCount": 8184,
-            "totalLengthKm": 319.882934,
-            "unknownLengthKm": 294.186932,
+            "shannonEntropy": 0.237613,
+            "effectiveDiversity": 1.268219,
+            "lengthFeatureCount": 8204,
+            "totalLengthKm": 320.164652,
+            "unknownLengthKm": 292.97279,
             "lengthKmByCategory": {
-                "yes": 24.700625,
+                "yes": 26.196486,
                 "no": 0.995377
             },
             "id": "lit",
@@ -677,9 +677,9 @@
         },
         "traffic_calming": {
             "kind": "categorical",
-            "total": 2092,
+            "total": 2090,
             "known": 14,
-            "unknown": 2078,
+            "unknown": 2076,
             "unknownPercent": 99.33,
             "knownCategoryCount": 1,
             "categories": [
@@ -698,9 +698,9 @@
             },
             "shannonEntropy": -0.0,
             "effectiveDiversity": 1.0,
-            "lengthFeatureCount": 2092,
-            "totalLengthKm": 24.508108,
-            "unknownLengthKm": 24.355063,
+            "lengthFeatureCount": 2090,
+            "totalLengthKm": 24.535768,
+            "unknownLengthKm": 24.382722,
             "lengthKmByCategory": {
                 "table": 0.153045
             },
@@ -717,10 +717,10 @@
         },
         "wheelchair": {
             "kind": "categorical",
-            "total": 8184,
+            "total": 8204,
             "known": 161,
-            "unknown": 8023,
-            "unknownPercent": 98.03,
+            "unknown": 8043,
+            "unknownPercent": 98.04,
             "knownCategoryCount": 3,
             "categories": [
                 {
@@ -750,11 +750,11 @@
             },
             "shannonEntropy": 0.627316,
             "effectiveDiversity": 1.872578,
-            "lengthFeatureCount": 8184,
-            "totalLengthKm": 319.882934,
-            "unknownLengthKm": 314.481773,
+            "lengthFeatureCount": 8204,
+            "totalLengthKm": 320.164652,
+            "unknownLengthKm": 314.772534,
             "lengthKmByCategory": {
-                "yes": 3.809319,
+                "yes": 3.800277,
                 "no": 1.291036,
                 "limited": 0.300805
             },
@@ -771,56 +771,56 @@
         },
         "age": {
             "kind": "numeric",
-            "total": 20024,
-            "known": 19951,
-            "unknown": 73,
-            "unknownPercent": 0.36,
+            "total": 20025,
+            "known": 19978,
+            "unknown": 47,
+            "unknownPercent": 0.23,
             "invalid": 0,
             "min": 0.013689,
-            "max": 22.261465,
-            "mean": 3.699238,
-            "median": 3.926078,
+            "max": 22.297057,
+            "mean": 3.714132,
+            "median": 3.96167,
             "bins": [
                 {
                     "label": "0–<2",
                     "lower": 0.0,
                     "upper": 2.0,
-                    "count": 2935,
+                    "count": 3027,
                     "color": "#90d743"
                 },
                 {
                     "label": "2–<4",
                     "lower": 2.0,
                     "upper": 4.0,
-                    "count": 12863,
+                    "count": 12756,
                     "color": "#35b779"
                 },
                 {
                     "label": "4–<6",
                     "lower": 4.0,
                     "upper": 6.0,
-                    "count": 2798,
+                    "count": 2848,
                     "color": "#21918c"
                 },
                 {
                     "label": "6–<8",
                     "lower": 6.0,
                     "upper": 8.0,
-                    "count": 639,
+                    "count": 577,
                     "color": "#31688e"
                 },
                 {
                     "label": "8–<10",
                     "lower": 8.0,
                     "upper": 10.0,
-                    "count": 390,
+                    "count": 443,
                     "color": "#443983"
                 },
                 {
                     "label": "10+",
                     "lower": 10.0,
                     "upper": null,
-                    "count": 326,
+                    "count": 327,
                     "color": "#440154"
                 }
             ],
@@ -851,35 +851,35 @@
         },
         "n_revs": {
             "kind": "numeric",
-            "total": 20024,
-            "known": 19949,
-            "unknown": 73,
-            "unknownPercent": 0.36,
+            "total": 20025,
+            "known": 19976,
+            "unknown": 47,
+            "unknownPercent": 0.23,
             "invalid": 2,
             "min": 1.0,
-            "max": 71.0,
-            "mean": 2.108025,
+            "max": 67.0,
+            "mean": 2.107779,
             "median": 1.0,
             "bins": [
                 {
                     "label": "0–<5",
                     "lower": 0.0,
                     "upper": 5.0,
-                    "count": 18220,
+                    "count": 18238,
                     "color": "#1d1147"
                 },
                 {
                     "label": "5–<10",
                     "lower": 5.0,
                     "upper": 10.0,
-                    "count": 1450,
+                    "count": 1461,
                     "color": "#51127c"
                 },
                 {
                     "label": "10–<15",
                     "lower": 10.0,
                     "upper": 15.0,
-                    "count": 209,
+                    "count": 207,
                     "color": "#832681"
                 },
                 {
@@ -893,7 +893,7 @@
                     "label": "20–<25",
                     "lower": 20.0,
                     "upper": 25.0,
-                    "count": 15,
+                    "count": 16,
                     "color": "#e75263"
                 },
                 {
@@ -907,7 +907,7 @@
                     "label": "30+",
                     "lower": 30.0,
                     "upper": null,
-                    "count": 11,
+                    "count": 10,
                     "color": "#fec488"
                 }
             ],

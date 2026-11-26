@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-11-24T19:03:23+00:00",
+    "updated": "2026-11-26T18:20:36+00:00",
     "node_registry": {
-      "Data Fetching": "2026-11-12T21:23:05Z",
-      "Data Pre-Processing": "2026-11-22T16:13:15Z",
+      "Data Fetching": "2026-11-25T21:22:46Z",
+      "Data Pre-Processing": "2026-11-26T18:05:44Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-11-22T16:13:25Z",
+      "Statistical Charts": "2026-11-26T18:20:36Z",
       "Wiki check for keys": "2026-11-22T16:15:54Z",
-      "Data Quality Tool": "2026-11-22T16:13:19Z",
+      "Data Quality Tool": "2026-11-26T18:07:06Z",
       "Versioning Data": "2026-11-22T16:13:11Z",
-      "Completeness Analysis": "2026-11-13T15:59:49Z",
+      "Completeness Analysis": "2026-11-26T18:20:21Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "6f811852641f5dfab29d522535556999c683d8eb",
-      "Pipeline Success": "2026-11-24T19:03:23Z"
+      "Pipeline Success": "2026-11-25T18:06:41Z"
     }
   },
   "lineage": {
@@ -105,7 +105,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-11-24T19:03:23+00:00",
+    "generated_at": "2026-11-26T18:20:36+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "6f811852641f5dfab29d522535556999c683d8eb",
@@ -121,10 +121,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/metadata.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 3020,
+      "byte_size": 3019,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "def54e6134a6d6a990db1829b899e99f4828470c3ae2a3e2201d9f380f67d854"
+        "value": "d0f071daf6f4c8f95cc64a4a55ffabcff3131ad35243701c3b1689c0e69929f9"
       }
     },
     {
@@ -133,10 +133,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/network.oswmg.metadata.json",
       "media_type": "application/octet-stream",
       "format": "OSWM Binary Graph",
-      "byte_size": 4378856,
+      "byte_size": 4380776,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "579f0d060306b391c7a853fa4831b1dda389124db69d1c6150b77b0502bde9f2"
+        "value": "a185debf37f7f3f5f6642d1be2d1acdc74ea25ac246498bbb36ca2dbc47609fe"
       }
     },
     {
@@ -145,10 +145,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/network.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 1740057,
+      "byte_size": 1741931,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "af8458106901b09e60ee187d73727d19aa9dba19809d7f074a3cd861e71a828b"
+        "value": "35a372b4502f91aadfc529ec00f49a94e0f0b341b320c87b55e04f5754dec2c6"
       }
     },
     {
@@ -157,10 +157,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/network.pmtiles.metadata.json",
       "media_type": "application/vnd.pmtiles",
       "format": "PMTiles",
-      "byte_size": 7663571,
+      "byte_size": 7656345,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "eb59fdfe25b3213f6ab2e2ba6dc6944a9f3ccf7483cd4836aa308fbdb4923ff9"
+        "value": "73f13ab6ae58c732dde91618b9ba2502b0f1f40c9734adf05f8fc5bcbf9e730d"
       }
     },
     {
@@ -172,7 +172,7 @@
       "byte_size": 3922,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "40e64e815bf61ed9b797363300b1770f0634da8b1ea720eecb7446b8295680c7"
+        "value": "f7d7b34f71e54f7fab5b8874e01d6b9a989aaaa854b8b2ed512c3a076656016b"
       }
     },
     {
@@ -181,10 +181,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/routing/slope_cache.json.metadata.json",
       "media_type": "application/json",
       "format": "JSON",
-      "byte_size": 3029826,
+      "byte_size": 3029831,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "4a72a1b8703162ee57a25451d234230267a55f7ff58dc60ba723d26546d51ef1"
+        "value": "c7a2a90e04750fafafe2df65fce02fadd521f7b132ebb3e8979e7902d06ab128"
       }
     },
     {
@@ -196,7 +196,7 @@
       "byte_size": 218,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "a44f18657a58a0e648e4ca89bb4aacdce905503209ad83f77d9761779551c837"
+        "value": "052cae567968d00ded43d8acf937039c2a9894412c60d681ffab1260401fb8d8"
       }
     }
   ],

@@ -70,19 +70,19 @@
     "geometry": "https://kauevestena.github.io/opensidewalkmap_beta/data/boundaries/polygon.geojson"
   },
   "temporal": {
-    "updated": "2026-11-24T19:03:23+00:00",
+    "updated": "2026-11-26T18:20:36+00:00",
     "node_registry": {
-      "Data Fetching": "2026-11-12T21:23:05Z",
-      "Data Pre-Processing": "2026-11-22T16:13:15Z",
+      "Data Fetching": "2026-11-25T21:22:46Z",
+      "Data Pre-Processing": "2026-11-26T18:05:44Z",
       "Webmap Generation": "28/08/2024 07:33:01",
-      "Statistical Charts": "2026-11-22T16:13:25Z",
+      "Statistical Charts": "2026-11-26T18:20:36Z",
       "Wiki check for keys": "2026-11-22T16:15:54Z",
-      "Data Quality Tool": "2026-11-22T16:13:19Z",
+      "Data Quality Tool": "2026-11-26T18:07:06Z",
       "Versioning Data": "2026-11-22T16:13:11Z",
-      "Completeness Analysis": "2026-11-13T15:59:49Z",
+      "Completeness Analysis": "2026-11-26T18:20:21Z",
       "Completeness Analysis (Alt)": "17/07/2026 13:23:15",
       "OSWM Codebase Revision": "6f811852641f5dfab29d522535556999c683d8eb",
-      "Pipeline Success": "2026-11-24T19:03:23Z"
+      "Pipeline Success": "2026-11-25T18:06:41Z"
     }
   },
   "lineage": {
@@ -105,7 +105,7 @@
   "metadata_generation": {
     "generator": "oswm_codebase.metadata.metadata_generation",
     "profile_version": "1.0.0",
-    "generated_at": "2026-11-24T19:03:23+00:00",
+    "generated_at": "2026-11-26T18:20:36+00:00",
     "code": {
       "repository": "https://github.com/kauevestena/oswm_codebase",
       "commit": "6f811852641f5dfab29d522535556999c683d8eb",
@@ -133,10 +133,10 @@
       "metadata": "https://kauevestena.github.io/opensidewalkmap_beta/metadata/data_quality/improper_geoms/kerbs_improper_geoms.parquet.metadata.json",
       "media_type": "application/vnd.apache.parquet",
       "format": "GeoParquet",
-      "byte_size": 21916,
+      "byte_size": 21918,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "db3b71a8015cbea53598b3d19a4894e70d016492e3e0672dc8e614c41e5f700f"
+        "value": "b38cce6a1368f513c88443f2068b638535e49ce91f2e7e586a38be27ca2f6ca0"
       }
     },
     {
@@ -148,7 +148,7 @@
       "byte_size": 16402,
       "checksum": {
         "algorithm": "SHA-256",
-        "value": "d52103e1fa4f56f83482bb3ef9169f128c2c81f69b73233535c531419b519a84"
+        "value": "1e6ac0ba2fccf857b7aa2d260b663aa2c8a61b3d4379a9c8638ba10e3f833c94"
       }
     }
   ],
