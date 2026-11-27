@@ -1,26 +1,13 @@
 [
     {
-        "id": 192473875,
-        "user": "Vinicius Moraes",
-        "uid": 7920187,
-        "comment": "Liberação da alça de acesso a Rua Paulo Kissula",
-        "created_at": "2026-11-25T23:46:31Z",
-        "changeset_changes_count": 53,
-        "oswm_changes_count": 3,
-        "changes_count": 53,
-        "additions": 0,
-        "modifications": 3,
-        "deletions": 0
-    },
-    {
-        "id": 192447583,
+        "id": 192510120,
         "user": "Diogo RM",
         "uid": 19463893,
         "comment": "Ajuste de rua.",
-        "created_at": "2026-11-25T12:13:50Z",
-        "changeset_changes_count": 8,
+        "created_at": "2026-11-26T19:33:26Z",
+        "changeset_changes_count": 6,
         "oswm_changes_count": 1,
-        "changes_count": 8,
+        "changes_count": 6,
         "additions": 0,
         "modifications": 1,
         "deletions": 0
