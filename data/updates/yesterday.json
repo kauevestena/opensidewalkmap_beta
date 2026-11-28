@@ -1,15 +1,41 @@
 [
     {
-        "id": 192510120,
-        "user": "Diogo RM",
-        "uid": 19463893,
-        "comment": "Ajuste de rua.",
-        "created_at": "2026-11-26T19:33:26Z",
-        "changeset_changes_count": 6,
-        "oswm_changes_count": 1,
-        "changes_count": 6,
+        "id": 192561879,
+        "user": "Vinicius Moraes",
+        "uid": 7920187,
+        "comment": "Adicionei as tags lit, sidewalk, surface e maxspeed e ajustei a classificação da rede secondary na região atingida pelas obras das futuras trincheiras da Estação Vila São Pedro. Inlcuí o desenho das futuras alças de ligação da trincheira para Capão Raso",
+        "created_at": "2026-11-27T23:28:08Z",
+        "changeset_changes_count": 84,
+        "oswm_changes_count": 9,
+        "changes_count": 84,
+        "additions": 1,
+        "modifications": 8,
+        "deletions": 0
+    },
+    {
+        "id": 192560613,
+        "user": "raphaelmirc",
+        "uid": 4102129,
+        "comment": "Correção de Nomes Abreviados na Cidade de São Paulo-SP. #[QA] #Umbraosm #2026",
+        "created_at": "2026-11-27T22:35:18Z",
+        "changeset_changes_count": 180,
+        "oswm_changes_count": 8,
+        "changes_count": 180,
         "additions": 0,
-        "modifications": 1,
+        "modifications": 8,
+        "deletions": 0
+    },
+    {
+        "id": 192530658,
+        "user": "HurdenShipCanal",
+        "uid": 21470692,
+        "comment": "Modified Rua Astrogildo Romão dos Anjos based on Maps feedback near Rua Romualdo Gianordoli Filho #adt",
+        "created_at": "2026-11-27T10:01:14Z",
+        "changeset_changes_count": 55,
+        "oswm_changes_count": 1,
+        "changes_count": 55,
+        "additions": 1,
+        "modifications": 0,
         "deletions": 0
     }
 ]

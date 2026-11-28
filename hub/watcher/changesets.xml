@@ -4,22 +4,54 @@
     <title>OSWM Watcher Changeset Activity - Curitiba</title>
     <link>https://kauevestena.github.io/opensidewalkmap_beta/hub/watcher/index.html</link>
     <description>OSM changeset activity monitoring and deletion watch for OpenSidewalkMap interest features in Curitiba.</description>
-    <lastBuildDate>Fri, 27 Nov 2026 17:34:22 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 16:18:02 GMT</lastBuildDate>
     <item>
-        <title>[Activity] OSM Changeset 192510120 by Diogo RM (0 additions, 1 modifications, 0 deletions)</title>
-        <link>https://www.openstreetmap.org/changeset/192510120</link>
-        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192510120&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Diogo RM&quot;&gt;Diogo RM&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Ajuste de rua.&lt;/p&gt;
+        <title>[Activity] OSM Changeset 192561879 by Vinicius Moraes (1 additions, 8 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/192561879</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192561879&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/Vinicius Moraes&quot;&gt;Vinicius Moraes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Adicionei as tags lit, sidewalk, surface e maxspeed e ajustei a classificação da rede secondary na região atingida pelas obras das futuras trincheiras da Estação Vila São Pedro. Inlcuí o desenho das futuras alças de ligação da trincheira para Capão Raso&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 8&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192561879&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192561879&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Nov 2026 23:28:08 GMT</pubDate>
+        <guid isPermaLink="false">activity_192561879</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 192560613 by raphaelmirc (0 additions, 8 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/192560613</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192560613&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/raphaelmirc&quot;&gt;raphaelmirc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Correção de Nomes Abreviados na Cidade de São Paulo-SP. #[QA] #Umbraosm #2026&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Additions (creations): 0&lt;/li&gt;
-    &lt;li&gt;Modifications (tags/geom): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 8&lt;/li&gt;
     &lt;li&gt;Deletions: 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192510120&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192510120&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192560613&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192560613&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 26 Nov 2026 19:33:26 GMT</pubDate>
-        <guid isPermaLink="false">activity_192510120</guid>
+        <pubDate>Fri, 27 Nov 2026 22:35:18 GMT</pubDate>
+        <guid isPermaLink="false">activity_192560613</guid>
+    </item>
+    <item>
+        <title>[Activity] OSM Changeset 192530658 by HurdenShipCanal (1 additions, 0 modifications, 0 deletions)</title>
+        <link>https://www.openstreetmap.org/changeset/192530658</link>
+        <description>&lt;p&gt;&lt;strong&gt;OSM Changeset 192530658&lt;/strong&gt; by &lt;a href=&quot;https://www.openstreetmap.org/user/HurdenShipCanal&quot;&gt;HurdenShipCanal&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Comment:&lt;/strong&gt; Modified Rua Astrogildo Romão dos Anjos based on Maps feedback near Rua Romualdo Gianordoli Filho #adt&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edits to OSWM features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Additions (creations): 1&lt;/li&gt;
+    &lt;li&gt;Modifications (tags/geom): 0&lt;/li&gt;
+    &lt;li&gt;Deletions: 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://www.openstreetmap.org/changeset/192530658&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;https://osmcha.org/changesets/192530658&quot;&gt;OSMCha&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Nov 2026 10:01:14 GMT</pubDate>
+        <guid isPermaLink="false">activity_192530658</guid>
     </item>
 </channel>
 </rss>
